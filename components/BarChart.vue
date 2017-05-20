@@ -1,8 +1,7 @@
-
 <template lang="pug">
   .chartainer
-    | {{ sheet }}
-    canvas(:id="'chart-' + id")
+    | {{ sheet }}, {{ type }}
+    canvas(:id="'chart-' + testid")
 </template>
 
 <style lang="stylus">
@@ -17,11 +16,11 @@ import charts from '~/store/charts.json'
 let colors = [ '#ffd012', '#a6e50f', '#ff6d4a', '#624096', '#4da1ff' ]
 export default {
 
-  props: ['type', 'id'],
-
+  props: ['type', 'testid'],
   data () {
     return {
       sheet: null,
+      id: this._uid
     }
   },
   mounted () {
@@ -41,7 +40,8 @@ export default {
     let Chart = require('chart.js')
     Chart.defaults.global.defaultFontSize = 16
 
-    let ctx = 'chart-' + this.id
+    let ctx = 'chart-' + this.testid
+    console.log(ctx, document.getElementById(ctx))
     let myChart = new Chart(ctx, {
       type: chartType,
       width: 400,
