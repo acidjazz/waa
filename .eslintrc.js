@@ -11,6 +11,10 @@ module.exports = {
     'html'
   ],
   // add your custom rules here
-  rules: {},
+  rules: {
+    'no-unused-vars': 0,
+    'quotes': 0,
+    'comma-dangle': 0
+  },
   globals: {}
 }

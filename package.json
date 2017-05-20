@@ -5,12 +5,14 @@
   "author": "kevin olson <acidjazz@gmail.com>",
   "private": true,
   "dependencies": {
+    "chart.js": "^2.5.0",
     "jquery": "^3.2.1",
     "node-xlsx": "^0.7.4",
     "nuxt": "latest",
     "pug": "^2.0.0-rc.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
+    "vue-chartjs": "^2.6.3",
     "xls": "^0.5.1"
   },
   "scripts": {

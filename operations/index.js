@@ -1,7 +1,9 @@
+#!/usr/local/bin/node
+
 let xls = require('node-xlsx')
 let fs = require('fs')
 
-let excel = xls.parse('./operations/data.xlsx')
+let excel = xls.parse('./operations/charts.xlsx')
 
 let datas = []
 
@@ -18,16 +20,23 @@ for (let index in excel) {
   labels.shift()
   sheet.data.shift()
 
+  data.labels = labels
+
   for (let value in sheet.data) {
     let left = sheet.data[value][0]
-    sheet.data[value].shift()
-    data.data[left] = {}
+    if (left !== undefined) {
+      sheet.data[value].shift()
+      data.data[left] = {}
+      data.data[left] = sheet.data[value]
+    }
+    /*
     for (let subvalue in sheet.data[value]) {
       data.data[left][labels[subvalue]] = sheet.data[value][subvalue]
     }
+    */
   }
 
   datas.push(data)
 }
 
-fs.writeFileSync('./operations/data.json', JSON.stringify(datas, null, 2))
+fs.writeFileSync('./store/charts.json', JSON.stringify(datas, null, 2))

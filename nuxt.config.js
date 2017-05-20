@@ -3,14 +3,15 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'starter',
+    title: 'We Are Apartments',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' }
+      { hid: 'description', name: 'description', content: 'We Are Apartments.' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Maven+Pro|Roboto' }
     ]
   },
   /*
@@ -25,7 +26,8 @@ module.exports = {
     /*
      * various plugins like jQuery
      */
-    vendor: ['jQuery'],
+    vendor: ['jQuery', 'chart.js'],
+    // plugins: [ { src: '~/plugins/chart.js', ssr: false } ],
     /*
     ** Run ESLINT on save
     */
