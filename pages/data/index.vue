@@ -1,4 +1,3 @@
-
 <template lang="pug">
 .page.data
   .chart
@@ -9,7 +8,5 @@
 
 <script>
 import BarChart from '~components/BarChart.vue'
-export default {
-  components: { BarChart }
-}
+export default { components: { BarChart } }
 </script>
