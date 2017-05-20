@@ -13,33 +13,22 @@
 </style>
 
 <script>
-
 import charts from '~/store/charts.json'
-
-let colors = [
-  '#ffd012',
-  '#a6e50f',
-  '#ff6d4a',
-  '#624096',
-  '#4da1ff'
-]
-
-let graph = charts[0]
-
+let colors = [ '#ffd012', '#a6e50f', '#ff6d4a', '#624096', '#4da1ff' ]
 export default {
 
   props: ['type'],
   data () {
     return {
-      sheet: graph.sheet,
+      sheet: null,
       id: this._uid
     }
   },
   mounted () {
-    let chartType = this.$props.type
-
+    let graph = charts[0]
+    this.sheet = graph.sheet
+    let chartType = this.type
     let datasets = []
-
     for (let key in graph.data) {
       datasets.push({
         label: key,
@@ -53,6 +42,7 @@ export default {
     Chart.defaults.global.defaultFontSize = 16
 
     let ctx = 'chart-' + this._uid
+    console.log(ctx, document.getElementById(ctx))
     let myChart = new Chart(ctx, {
       type: chartType,
       width: 400,
