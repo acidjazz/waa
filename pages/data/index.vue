@@ -1,8 +1,8 @@
 
 <template lang="pug">
 .page.data
-  BarChart(type="bar")
-  BarChart(type="line")
+  BarChart(type="bar",id="bob")
+  BarChart(type="line",id="suzy")
 </template>
 
 <script>
