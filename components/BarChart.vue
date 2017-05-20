@@ -17,9 +17,15 @@ let colors = [ '#ffd012', '#a6e50f', '#ff6d4a', '#624096', '#4da1ff' ]
 export default {
 
   props: ['type', 'testid'],
+
+  beforeCreate () {
+    console.log(this._uid, this.id)
+  },
+
   data () {
     return {
       sheet: null,
+      id: this._uid
     }
   },
   mounted () {
