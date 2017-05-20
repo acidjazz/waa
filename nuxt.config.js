@@ -17,16 +17,20 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#3B8070' },
+  loading: { color: '#4da1ff' },
   /*
   ** Build configuration
   */
+  css: [
+    { src: '~assets/stylus/main.styl', lang: 'stylus' }
+  ],
   build: {
 
     /*
      * various plugins like jQuery
      */
-    vendor: ['jQuery', 'chart.js'],
+    // vendor: ['jQuery', 'chart.js'],
+    // vendor: ['chart.js/chart.min.js'],
     // plugins: [ { src: '~/plugins/chart.js', ssr: false } ],
     /*
     ** Run ESLINT on save
@@ -45,6 +49,7 @@ module.exports = {
 
   generate: {
     routes: [
+      '/error/',
       '/data/state/california',
       '/data/state/nebraska',
       '/data/state/virginia',

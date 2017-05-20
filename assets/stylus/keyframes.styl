@@ -1,0 +1,274 @@
+@keyframes rightToLeft
+  0%
+    left 100vw
+    right -100vw
+  50%
+    left 0vw
+    right -100vw
+  100%
+    right 100vw
+    left 0vw
+    
+@keyframes leftToRight
+  0%
+    right 100vw
+    left 0vw
+  50%
+    left 0vw
+    right 0vw
+  100%
+    left 100vw
+    right 0vw
+
+
+@keyframes starTop
+  from
+    opacity 0
+    transform rotate(30deg) translate(100px, -30px)
+  to
+    opacity 1
+    transform rotate(0deg) translate(0, 0)
+
+
+@keyframes starLeft
+  from
+    opacity 0
+    transform rotate(-4deg)
+  to
+    opacity 1
+    transform rotate(0deg)
+
+
+@keyframes starBottom
+  from
+    opacity 0
+    transform rotate(-30deg) translate(-200px, 50px)
+  to
+    opacity 1
+    transform rotate(0deg) translate(0px, 0px)
+
+
+@keyframes cInFromBottom
+  from
+    transform translate(0, 350px)
+  to
+    transform translate(0, 0)
+
+@keyframes cOutToBottom
+  from
+    opacity 1
+    transform translate(0, 0)
+  to
+    opacity 0
+    transform translate(0, 350px)
+
+@keyframes fInFromBottom
+  from
+    transform translate(0, 100%)
+    opacity 0
+  to
+    transform translate(0, 0)
+    opacity 1
+
+@keyframes fOutToTop
+  from
+    transform translate(0, 0)
+    opacity 1
+  to
+    transform translate(0, -100%)
+    opacity 0
+
+@keyframes fInFromTop
+  from
+    transform translate(0, -100%)
+    opacity 0
+  to
+    transform translate(0, 0)
+    opacity 1
+
+@keyframes fOutToBottom
+  from
+    transform translate(0, 0)
+    opacity 1
+  to
+    transform translate(0, 100%)
+    opacity 0
+
+
+@keyframes inFromLeft
+  from
+    transform translate(-200px, 0)
+    opacity 0
+  to
+    transform translate(0, 0)
+    opacity 1
+
+
+
+@keyframes fadeIn
+  from
+    opacity 0
+  to
+    opacity 1
+
+@keyframes zoomIn
+  from
+    transform scale(0.5)
+  to
+    transform scale(1)
+
+
+
+@keyframes rotateIn
+  from
+    opacity 0
+    transform rotate(180deg)
+  to
+    opacity 1
+    transform rotate(0deg)
+
+
+
+@keyframes fadeOut
+  from
+    opacity 1
+  to
+    opacity 0
+
+@keyframes charIn
+  from
+    opacity 0
+    transform perspective(200px) rotateY(90deg)
+  to
+    opacity 1
+    transform perspective(200px) rotateY(0deg)
+
+@keyframes cellInY
+  from
+    transform translate(0, 10px)
+    opacity 0
+  to
+    transform translate(0, 0)
+    opacity 1
+
+@keyframes cellOutY
+  from
+    transform translate(0, -10px)
+    opacity 0
+  to
+    transform translate(0, 0)
+    opacity 1
+
+@keyframes cellInX
+  from
+    transform translate(10px, 0)
+    opacity 0
+  to
+    transform translate(0, 0)
+    opacity 1
+
+@keyframes cellInXFull
+  from
+    transform translate(100vw, 0)
+    opacity 0
+  to
+    transform translate(0, 0)
+    opacity 1
+
+@keyframes cellOutXFull
+  from
+    transform translate(0, 0)
+    opacity 1
+  to
+    transform translate(100vw, 0)
+    opacity 0
+
+
+@keyframes cellOutY
+  from
+    transform translate(0, -10px)
+    opacity 0
+  to
+    transform translate(0, 0)
+    opacity 1
+
+@keyframes cellOutX
+  from
+    transform translate(-10px, 0)
+    opacity 0
+  to
+    transform translate(0, 0)
+    opacity 1
+
+
+
+@keyframes inFromTop
+  from
+    opacity 0
+    transform translate(0, -100px)
+  to
+    opacity 1
+    transform translate(0, 0)
+
+@keyframes inFromBottom
+  from
+    opacity 0
+    transform translate(0, 100px)
+  to
+    opacity 1
+    transform translate(0, 0)
+
+
+@keyframes outToTop
+  from
+    opacity 1
+    transform translate(0, 0)
+  to
+    opacity 0
+    transform translate(0, -100px)
+
+
+@keyframes outToBottom
+  from
+    opacity 1
+    transform translate(0, 0)
+  to
+    opacity 0
+    transform translate(0, 100px)
+
+
+@keyframes cInFromTop
+  from
+    transform translate(0, -350px)
+  to
+    transform translate(0, 0)
+
+@keyframes cOutToTop
+  from
+    opacity 1
+    transform translate(0, 0)
+  to
+    opacity 0
+    transform translate(0, -350px)
+
+/*
+@media all and (min-width: 1001px)
+
+@media all and (min-width: 1px) and (max-width: 1000px)
+  @keyframes cInFromTop
+    from
+      transform translate(0, -100px)
+    to
+      transform translate(0, 0)
+
+
+  @keyframes cOutToTop
+      from
+        opacity 1
+        transform translate(0, 0)
+      to
+        opacity 0
+        transform translate(0, -100px)
+
+
+*/

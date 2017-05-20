@@ -1,6 +1,4 @@
-<template lang="pug">
-section.container
-</template>
 
-<style lang="stylus">
-</style>
+<template lang="pug">
+.page.home this is the landing page
+</template>

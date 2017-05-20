@@ -12,7 +12,9 @@ export default {
 </script>
 
 <style lang="stylus">
-#top
-  > .title
-    float left
+#Top > .title, #Navigate > .inner > .content > .title
+  float left
+  font-size 26px
+  font-family 'Maven Pro'
+  margin 60px 0 0 60px
 </style>
