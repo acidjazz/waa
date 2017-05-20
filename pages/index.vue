@@ -1,4 +1,4 @@
 
 <template lang="pug">
-.page.home this is the landing page
+.page.home landing page
 </template>

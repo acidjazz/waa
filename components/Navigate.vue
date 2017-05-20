@@ -86,6 +86,9 @@ export default {
       line-height 100px
       border-radius 50%
       transition background-color 0.2s ease-in-out 0.2s
+      user-select none
+      > .copy:hover
+        text-decoration underline
     > .content
       > .title
         color white
@@ -98,7 +101,7 @@ export default {
           > a
             padding 0 20px
             color white
-            transition background-color 0.1s ease-in-out 0s
+            transition background-color 0.1s linear 0s
             &.router-link-exact-active
               background-color #323c47
 
