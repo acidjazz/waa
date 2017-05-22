@@ -1,6 +1,7 @@
 <template lang="pug">
 header#Top(:class="{ dark: type === 'dark' }")
-  .title We are Apartments
+  .title
+    router-link(to="/") We are Apartments
   Navigate
 </template>
 
@@ -31,6 +32,9 @@ export default {
   font-size 26px
   font-family 'Roboto Slab'
   margin 60px 0 0 60px
+  > a
+    color black
+    text-decoration none
 #Top.dark > .title
   color white
 #Top.light > .title

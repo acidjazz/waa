@@ -2,7 +2,7 @@
 nav#Navigate(:class="{ on: isOpen, off: !isOpen }")
   .blue
   .inner
-    .button(@click="isOpen = !isOpen")
+    .cbutton(@click="isOpen = !isOpen")
       .copy.copy_menu MENU
       .copy.copy_close CLOSE
     .content
@@ -11,7 +11,8 @@ nav#Navigate(:class="{ on: isOpen, off: !isOpen }")
         .option(@click="isOpen = false"): router-link(to="/data") Apartment Data
         .option(@click="isOpen = false"): router-link(to="/calculator") Apartment Calculator
         .option(@click="isOpen = false"): router-link(to="/initiative") The Initiative
-      .title We are Apartments
+      .title 
+        router-link(to="/") We are Apartments
 </template>
 
 <script>
@@ -24,6 +25,7 @@ export default {
 
 <style lang="stylus">
 @import '../assets/stylus/mixins.styl'
+json('../assets/colors.json')
 #Navigate
   position absolute
   top 0
@@ -36,9 +38,9 @@ export default {
     > .blue
       transform scale(30)
       transition transform 0.5s ease-in-out 0s
-    > .inner > .button
+    > .inner > .cbutton
       background-color white
-      color #4da1ff
+      color blue
       > .copy.copy_menu
         display none
     > .inner > .content
@@ -51,8 +53,8 @@ export default {
     > .blue
       transform scale(1)
       transition transform 0.3s ease-in-out 0s
-    > .inner > .button
-      background-color #4da1ff
+    > .inner > .cbutton
+      background-color blue
       color white
       > .copy.copy_close
         display none
@@ -62,7 +64,7 @@ export default {
 
   > .blue
     position absolute
-    background-color #4da1ff
+    background-color blue
     width 100px
     height 100px
     top 0
@@ -76,7 +78,7 @@ export default {
     right 0
     width 100vw
     height 100vh
-    > .button
+    > .cbutton
       width 100px
       height 100px
       position absolute
@@ -97,14 +99,16 @@ export default {
         float right
         margin 120px 60px 0 0
         font-size 40px
+        font-family 'Maven Pro'
         > .option 
           text-align right
           > a
             padding 0 20px
             color white
             transition background-color 0.1s linear 0s
-            font-family 'Maven Pro'
             &.router-link-exact-active
               background-color #323c47
+            &:hover
+              background-color rgba(#323c47, 0.5)
 
 </style>
