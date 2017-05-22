@@ -29,6 +29,7 @@ export default {
   top 0
   right 0
   overflow hidden
+  z-index 10
   &.on
     width 100vw
     height 100vh
@@ -42,7 +43,7 @@ export default {
         display none
     > .inner > .content
       opacity 1
-      transition opacity 0.1s ease-in-out 0.4s
+      transition opacity 0.1s ease-in-out 0.3s
   &.off
     width 100px
     height 100px
@@ -102,6 +103,7 @@ export default {
             padding 0 20px
             color white
             transition background-color 0.1s linear 0s
+            font-family 'Maven Pro'
             &.router-link-exact-active
               background-color #323c47
 
