@@ -28,11 +28,15 @@ json('../assets/colors.json')
 
       > .copy:first-child
         text-transform uppercase
+        animation fadeIn 0.2s linear 0s both
       > .copy:nth-child(2)
+        animation fadeIn 0.2s linear 0.1s both
         font-size 40px
         font-family 'Maven Pro'
         width 800px
         margin 60px auto
+      > .button
+        animation fadeIn 0.2s linear 0.2s both
 
 </style>
 

@@ -14,10 +14,6 @@ export default {
       default: 'light'
     }
   },
-  data () {
-    console.log(this.type)
-    return {}
-  },
   components: {
     Navigate
   }
@@ -35,9 +31,8 @@ export default {
   > a
     color black
     text-decoration none
-#Top.dark > .title
+#Top.dark > .title > a
   color white
-#Top.light > .title
+#Top.light > .title > a
   color black
-
 </style>

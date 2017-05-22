@@ -93,7 +93,7 @@ json('../assets/colors.json')
       > .copy:hover
         text-decoration underline
     > .content
-      > .title
+      > .title > a
         color white
       > .menu
         float right
@@ -102,6 +102,7 @@ json('../assets/colors.json')
         font-family 'Maven Pro'
         > .option 
           text-align right
+          margin 2px 0
           > a
             padding 0 20px
             color white
