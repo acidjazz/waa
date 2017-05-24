@@ -1,0 +1,17 @@
+{
+  "color": {
+
+    "yellow": "#ffd012", 
+    "green": "#a6e50f", 
+    "red": "#ff6d4a",
+    "purple": "#624096", 
+    "blue": "#4da1ff",
+    "darkblue": "#2F3E5D",
+    "lightgrey": "#f4f7f9",
+    "grey": "#989898",
+    "darkgray": "#323c47",
+    "white": "#ffffff",
+    "lightwhite": "#fafbfd",
+    "black": "#000000"
+  }
+}

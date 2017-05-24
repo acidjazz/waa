@@ -25,6 +25,7 @@ export default {
 
 <style lang="stylus">
 @import '../assets/stylus/mixins.styl'
+json('../assets/fonts.json')
 json('../assets/colors.json')
 #Navigate
   position absolute
@@ -98,8 +99,7 @@ json('../assets/colors.json')
       > .menu
         float right
         margin 120px 60px 0 0
-        font-size 40px
-        font-family 'Maven Pro'
+        font h2
         > .option 
           text-align right
           margin 2px 0

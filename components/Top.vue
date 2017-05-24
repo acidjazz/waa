@@ -21,12 +21,15 @@ export default {
 </script>
 
 <style lang="stylus">
+
+json('../assets/fonts.json')
+json('../assets/colors.json')
+
 #Top
   z-index 10
 #Top > .title, #Navigate > .inner > .content > .title
   float left
-  font-size 26px
-  font-family 'Roboto Slab'
+  font h1
   margin 60px 0 0 60px
   > a
     color black
