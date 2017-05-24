@@ -4,16 +4,20 @@
     .inner
       .copy filter apartment data by:
       .options
-        a.option national
-        a.option(@mouseover="modalState = !modalState") state
-        a.option metro
-        a.option district
+        // a.option national
+        a.option(@click="modalState = !modalState",v-if="this.state === 'National'"): .copy state
+        a.option.active(@click="modalState = !modalState",v-else)
+          .copy {{ state }}
+          router-link.close(to="/data") X
+        a.option: .copy metro
+        a.option: .copy district
       .clear
   .modals
-    .modal.modal_states(:class="{ on: modalState, off: !modalState }",@mouseover="modalState = true",@mouseout="modalState = false")
+    .modal.modal_states(:class="{ on: modalState, off: !modalState }")
       .option(v-for="State in data",:class="{ active: (state === State.State) }")
         router-link(v-bind:to="'/data/state/' + State.State.toLowerCase().replace(' ', '-')") {{ State.State }}
     .chevron.chevron_states(:class="{ on: modalState, off: !modalState }")
+      .inner
 </template>
 
 <script>
@@ -44,20 +48,26 @@ json('../assets/colors.json')
   margin 60px 0 0 0
   > .modals
     > .chevron
-      top 110px
-      left 50%
       position absolute
-      width 20px
-      height 20px
-      border-radius 3px
-      border-left 1px solid lightgrey
-      border-top 1px solid lightgrey
-      background-color lightwhite
-      transform rotate(45deg)
+      top 108px
+      left 50%
+      width 0
+      height 0
+      border-left 13px solid transparent
+      border-right 13px solid transparent
+      border-bottom 13px solid lightgrey
       onoff()
       &.chevron_states
-        margin-left 25px
-
+        margin-left -100px
+      > .inner
+        position relative
+        top 1px
+        left -13px
+        width 0
+        height 0
+        border-left 13px solid transparent
+        border-right 13px solid transparent
+        border-bottom 13px solid lightwhite
     > .modal
       position absolute
       top 120px
@@ -83,7 +93,6 @@ json('../assets/colors.json')
           &:hover
             color blue
             text-decoration underline
-
 
   > .filters
     clear both
@@ -111,6 +120,15 @@ json('../assets/colors.json')
           color grey
           border-radius 3px
           border 1px solid transparent
+          > .copy
+            float left
+          &.active
+            color green
+            text-decoration underline
+            > .close
+              float right
+              padding 0 0 0 10px
+              text-decoration none
           &:hover
             color blue
             background-color lightwhite
