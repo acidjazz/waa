@@ -1,19 +1,32 @@
 
 <template lang="pug">
-section.container
-  h1 the state is {{ state }}
+.page.page_data
+  DataPage(v-bind:state="state")
 </template>
-
 
 <script>
 
-export default {
+import DataPage from '~/components/DataPage.vue'
 
+function capitalizeFirstLetter (string) {
+  return string[0].toUpperCase() + string.slice(1)
+}
+
+function formatParam (string) {
+  let words = string.split('-')
+  for (let index in words) {
+    words[index] = capitalizeFirstLetter(words[index])
+  }
+  return words.join(' ')
+}
+
+export default {
   data () {
     return {
-      state: this.$route.params.state
+      state: formatParam(this.$route.params.state)
     }
-  }
+  },
+  components: { DataPage }
 }
 
 </script>

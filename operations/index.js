@@ -58,8 +58,7 @@ for (let index in excel) {
       }
     }
   }
-
-  datas.push(data)
+  // datas.push(data)
+  fs.writeFileSync('./store/' + sheet.name + '.json', JSON.stringify(data, null, 2))
 }
 
-fs.writeFileSync('./store/charts.json', JSON.stringify(datas, null, 2))

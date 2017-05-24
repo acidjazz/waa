@@ -1,5 +1,5 @@
 <template lang="pug">
-  .section.summary
+  #DataSummary
     .inner
       .copy National Data
       .copy Apartments and their residents contribute more than $3.5 billion to the economy every day.
@@ -31,7 +31,7 @@ export default {
 <style lang="stylus">
 json('../assets/colors.json')
 json('../assets/fonts.json')
-.page.page_data > .section.summary
+#DataSummary
   background-color darkblue
   color white
   padding 60px 0
@@ -54,6 +54,5 @@ json('../assets/fonts.json')
         > .value
           font h2
           padding 0 0 30px 0
-
 
 </style>
