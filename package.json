@@ -5,7 +5,9 @@
   "author": "kevin olson <acidjazz@gmail.com>",
   "private": true,
   "dependencies": {
+    "@nuxtjs/font-awesome": "^1.0.0",
     "chart.js": "^2.5.0",
+    "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
     "node-xlsx": "^0.7.4",
     "nuxt": "latest",
@@ -13,6 +15,7 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
     "vue-chartjs": "^2.6.3",
+    "vue-clickaway": "^2.1.0",
     "xls": "^0.5.1"
   },
   "scripts": {
