@@ -4,6 +4,12 @@
   .clear
   DataFilters(v-bind:state="this.state")
   DataSummary
+  .section.section_demand
+    p The Demand
+    p New research shows that demand for apartments is on the rise.  Whether it's young professionals, couples, families or empty nesters, the country will add 
+      b 4.6 million 
+      | new apartment households 
+      b by 2030
 </template>
 
 <script>
@@ -24,3 +30,24 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus">
+json('../assets/colors.json')
+json('../assets/fonts.json')
+#DataPage
+  > .section_demand
+    border-top 30px solid offwhite
+    padding 120px 0
+    text-align center
+    > p:first-child
+      font h1
+    > p:nth-child(2)
+      color grey
+      max-width 490px
+      margin auto
+      > b
+        color black
+
+
+
+</style>
