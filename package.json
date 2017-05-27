@@ -11,6 +11,7 @@
     "jquery": "^3.2.1",
     "node-xlsx": "^0.7.4",
     "nuxt": "latest",
+    "ordinal": "^1.0.2",
     "pug": "^2.0.0-rc.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",

@@ -37,6 +37,7 @@
 <script>
 import Filters from '../store/Filters.json'
 import { mixin as clickaway } from 'vue-clickaway'
+import ordinal from 'ordinal'
 export default {
   mixins: [ clickaway ],
   props: {
@@ -81,20 +82,7 @@ export default {
           }
 
           for (let i = 1; i !== item.District; i++) {
-            switch (i) {
-              case 1:
-                districts.push(this.state + ' 1st')
-                break
-              case 2:
-                districts.push(this.state + ' 2nd')
-                break
-              case 3:
-                districts.push(this.state + ' 3rd')
-                break
-              default:
-                districts.push(this.state + ' ' + i + 'th')
-                break
-            }
+            districts.push(this.state + " " + ordinal(i))
           }
         }
       }

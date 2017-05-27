@@ -2,6 +2,8 @@
 
 let fs = require('fs')
 
+let ordinal = require('ordinal')
+
 let Filters = require('../store/Filters.json')
 
 let items = {}
@@ -27,20 +29,7 @@ for (let metro of metros) {
 for (let state in items) {
   let lstate = state.toLowerCase().replace(/ /, '-')
   for (let i = 1; i !== items[state]; i++) {
-    switch (i) {
-      case 1:
-        routes.push('/data/district/' + lstate + '-1st')
-        break
-      case 2:
-        routes.push('/data/district/' + lstate + '-2nd')
-        break
-      case 3:
-        routes.push('/data/district/' + lstate + '-3rd')
-        break
-      default:
-        routes.push('/data/district/' + lstate + '-' + i + 'th')
-        break
-    }
+    routes.push('/data/district/' + lstate + '-' + ordinal(i))
   }
 }
 
