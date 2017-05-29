@@ -1,7 +1,7 @@
 <template lang="pug">
   #DataSummary
     .inner
-      .copy National Data
+      .copy {{ state }}
       .copy Apartments and their residents contribute more than $3.5 billion to the economy every day.
       .stats
         .stat
@@ -21,6 +21,12 @@
 
 <script>
 export default {
+  props: {
+    state: {
+      type: String,
+      default: 'National'
+    }
+  },
   data () {
     return {}
   }

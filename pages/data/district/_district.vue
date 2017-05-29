@@ -1,6 +1,6 @@
 <template lang="pug">
 .page.page_data
-  DataPage(v-bind:state="state")
+  DataPage(v-bind:district="district")
 </template>
 
 <script>
@@ -22,7 +22,7 @@ function formatParam (string) {
 export default {
   data () {
     return {
-      state: formatParam(this.$route.params.district)
+      district: formatParam(this.$route.params.district)
     }
   },
   components: { DataPage }

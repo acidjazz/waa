@@ -4,31 +4,30 @@
     .inner
       .copy filter apartment data by:
       .options
-        a.option.enabled(v-if="this.state === 'National'",@click="modal('state')")
-          .copy state
+        router-link.option.enabled(to="/data/",:class="{active: (choice() === 'National')}") National
+        a.option.enabled(:class="{active: (this.state !== 'National')}",@click="modal('state')")
+          | state
           .chevron.chevron_states(:class="{ on: modals.state, off: !modals.state }")
             .inner
-        .option.active(v-else,@click="modal('state')")
-          .copy {{ state }}
-          router-link.close(to="/data").fa.fa-times 
-          .chevron.chevron_states(:class="{ on: modals.state, off: !modals.state }")
-            .inner
-        a.option(v-if="this.metros !== false",@click="modal('metro')")
-          .copy metro
+        a.option(:class="{active: (this.metro !== 'None'), enabled: (choice() === 'state')}",@click="modal('metro')")
+          | metro
           .chevron.chevron_metros(:class="{ on: modals.metro, off: !modals.metro }")
             .inner
-        a.option(v-if="this.districts.length !== 0",@click="modal('district')")
-          .copy district
+        a.option(:class="{active: (this.district !== 'None'), enabled: (choice() === 'state')}",@click="modal('district')")
+          | district
           .chevron.chevron_districts(:class="{ on: modals.district, off: !modals.district }")
             .inner
       .clear
   .modals(v-on-clickaway="away")
+
     .modal.modal_states(:class="{ on: modals.state, off: !modals.state }")
       .option(v-for="State in data",:class="{ active: (state === State.State) }")
         router-link(v-bind:to="'/data/state/' + State.State.toLowerCase().replace(' ', '-')",@click.native="modal(false)") {{ State.State }}
+
     .modal.modal_metros(:class="{ on: modals.metro, off: !modals.metro }")
       .option(v-for="Metro in metros",:class="{ active: (metro === Metro) }")
         router-link(v-bind:to="'/data/metro/' + Metro.trim().toLowerCase().replace(/ /, '-')",@click.native="modal(false)") {{ Metro }}
+
     .modal.modal_districts(:class="{ on: modals.district, off: !modals.district }")
       .option(v-for="District in districts",:class="{ active: (district === District) }")
         router-link(v-bind:to="'/data/district/' + District.trim().toLowerCase().replace(/ /, '-')",@click.native="modal(false)") {{ District }}
@@ -56,11 +55,23 @@ export default {
   },
 
   methods: {
+    choice () {
+      if (this.state !== 'National' && this.metro === 'None' && this.district === 'None') {
+        return 'state'
+      }
+      if (this.metro !== 'None') {
+        return 'metro'
+      }
+      if (this.district !== 'None') {
+        return 'district'
+      }
+
+      return 'Natinoal'
+    },
     away () {
       for (let modal in this.modals) this.modals[modal] = false
     },
     modal (type) {
-      console.log('modal')
       for (let modal in this.modals) this.modals[modal] = false
       setTimeout(() => {
         if (type === 'state') this.modals[type] = true
@@ -73,6 +84,8 @@ export default {
     // look for and list metros if they exist
     let metros = false
     let districts = []
+
+    console.log(this.choice())
 
     if (this.state !== 'National') {
       for (let item of Filters.data) {
@@ -158,8 +171,8 @@ json('../assets/colors.json')
         margin-left -250px
       onoff()
       > .option
-        &.active > a
-          color green !important
+        &.active
+          color blue
         > a
           display block
           float left
@@ -189,33 +202,29 @@ json('../assets/colors.json')
         padding 11px 0
       > .options
         float left
-        > .option
+        > a.option
           position relative
-          min-width 145px
           user-select none
           display inline-block
           margin 0 10px
-          padding 10px 15px
+          padding 10px 20px
           color grey
           border-radius 3px
           border 1px solid transparent
-          background-color lightwhite
           text-align center
+          cursor pointer
+          &.enabled
+            color black
+            text-decoration underline
           > .copy
             display inline-block
-          &.active
-            color green
+          &.active, &.router-link-exact-active
+            color blue
             text-decoration underline
-            > a.close
-              float right
-              width 20px
-              height 20px
-              padding 5px 0 0 5px
-              text-decoration none
-              color darkblue
-          &:hover
+            background-color lightwhite
             cursor pointer
             color blue
-            border 1px solid lightgrey
-            text-decoration underline
+            border 1px solid lightblue
+          &:hover
+            background-color lightwhite
 </style>

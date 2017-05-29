@@ -2,8 +2,8 @@
 #DataPage
   Top(type="light")
   .clear
-  DataFilters(v-bind:state="this.state")
-  DataSummary
+  DataFilters(v-bind:state="this.state",v-bind:metro="this.metro",v-bind:district="this.district")
+  DataSummary(v-bind:state="this.state",v-bind:metro="this.metro",v-bind:district="this.district")
   .section.section_demand
     p The Demand
     p New research shows that demand for apartments is on the rise.  Whether it's young professionals, couples, families or empty nesters, the country will add 
@@ -21,6 +21,14 @@ export default {
     state: {
       type: String,
       default: 'National'
+    },
+    metro: {
+      type: String,
+      default: 'None'
+    },
+    district: {
+      type: String,
+      default: 'None'
     }
   },
   components: {
@@ -47,7 +55,5 @@ json('../assets/fonts.json')
       margin auto
       > b
         color black
-
-
 
 </style>
