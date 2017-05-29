@@ -85,8 +85,6 @@ export default {
     let metros = false
     let districts = []
 
-    console.log(this.choice())
-
     if (this.state !== 'National') {
       for (let item of Filters.data) {
         if (item.State === this.state) {
