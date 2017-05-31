@@ -12,17 +12,60 @@
       b by 2030
 
   .section.section_charts
-    .chart.chart_populationgrowth
-      Chart(type='line',data='popgrowth',id='popgrowth')
+    .chart
+      SingleLineChart(type='line',data='popgrowth',id='popgrowth',theme="cyan",width=400,height=300)
       .copys
         .copy Population Growth
         .copy Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna .  Lorem ipsum dolor sit amet, 
+    .chart
+      SingleLineChart(type='line',data='rvogrowth',id='rvogrowth',theme="lime",width=400,height=300)
+      .copys
+        .copy Renter vs Owner Growth
+        .copy Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna .  Lorem ipsum dolor sit amet, 
+    .chart
+      SingleLineChart(type='line',data='ahgrowth',id='ahgrowth',theme="orange",width=400,height=300)
+      .copys
+        .copy Apartment Household Growth
+        .copy Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna .  Lorem ipsum dolor sit amet, 
+    .clear
+
+  .section.section_chart
+    .top
+      .part.part_homes
+        .value 5,000,000
+        .copy Apartment Homes Needed.
+      .part.part_numbers
+        .graph
+          i.fa.fa-2x.fa-bar-chart
+        .copy 2017 Numbers
+        .value 22,000
+      .part.part_numbers
+        .graph
+          i.fa.fa-2x.fa-bar-chart
+        .copy 2017 Numbers
+        .value 15,550
+    .left
+      .copy We need to build more
+      .copy The country will need to build an average of 324,000 new apartment homes each year to keep up with demand. The industry average just 244,000 completions from 2011-2016.
+      .legend
+        .dot
+          .value
+          .copy current rate text
+        .clear
+        .dot
+          .value
+          .copy needed rate text
+    .chart
+      MultiLineChart(type='line',data='aptsneeded',id='aptsneeded',theme="red",width=830,height=300)
+    .clear
+  .clear
 
 </template>
 
 <script>
 import Top from '~/components/Top.vue'
-import Chart from '~/components/Chart.vue'
+import SingleLineChart from '~/components/SingleLineChart.vue'
+import MultiLineChart from '~/components/MultiLineChart.vue'
 import DataFilters from '~/components/DataFilters.vue'
 import DataSummary from '~/components/DataSummary.vue'
 import filtermixin from '~plugins/filter-mixin.js'
@@ -33,7 +76,8 @@ export default {
     Top,
     DataFilters,
     DataSummary,
-    Chart
+    SingleLineChart,
+    MultiLineChart,
   },
   methods: {
     capitalizeFirstLetter (string) {
@@ -75,11 +119,14 @@ json('../assets/fonts.json')
       > b
         color black
   > .section_charts
-    width 1200px
+    width 1260px
     margin auto
     > .chart
       float left
       width 400px
+      margin-right 30px
+      &:nth-child(3)
+        margin-right 0px
       > .copys
         margin 20px 0 0 0
         > .copy:first-child
@@ -87,6 +134,61 @@ json('../assets/fonts.json')
           padding 0 0 10px 0
         > .copy:nth-child(2)
           color grey
-
+  > .section_chart
+    margin 60px auto 200px auto
+    width 1260px
+    > .top
+      > .part
+        float right
+        width 260px
+        &.part_homes
+          text-align right
+          > .value
+            font h2
+          > .copy
+            color grey
+        &.part_numbers
+          > .graph
+            float left
+            margin 10px 10px 0 0
+            > i
+              color rgba(red, 0.5)
+          > .copy
+            margin 10px 0 0 20px
+            color grey
+            line-height 10px
+          > .value
+            margin 0 0 0 20px
+          &:nth-child(2) > .graph > i
+            color rgba(red, 1)
+    > .left
+      float left
+      width 300px
+      > .copy:first-child
+        font h2
+      > .copy:nth-child(2)
+        color grey
+        padding 30px 0 0 0
+      > .legend
+        padding 30px 0 0 0
+        font c1s
+        > .dot
+          > .value
+            float left
+            width 10px
+            height 10px
+            border-radius 50%
+            background-color red
+            margin 5px 0 0 0
+          > .copy
+            float left
+            text-transform uppercase
+            margin 0 0 0 10px
+      > .legend > .dot:first-child > .value
+        background-color rgba(red, 0.5)
+    > .chart
+      float right
+      width 830px
+      margin 0 0 0 30px
 
 </style>

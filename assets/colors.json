@@ -2,10 +2,19 @@
   "yellow": "#ffd012", 
   "green": "#a6e50f", 
   "red": "#ff6d4a",
+  "lightred": "#ffd4d7",
   "purple": "#624096", 
   "blue": "#4da1ff",
+
   "cyan": "#47e3ff",
   "lightcyan": "#e4fbff",
+
+  "lime": "#a6e50f",
+  "lightlime": "#f2fbdb",
+
+  "orange": "#ffd012",
+  "lightorange": "#fff8dc",
+
   "darkblue": "#2F3E5D",
   "lightblue": "#d0d7dd",
   "lightgrey": "#f4f7f9",
