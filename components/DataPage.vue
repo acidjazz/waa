@@ -10,10 +10,19 @@
       b 4.6 million 
       | new apartment households 
       b by 2030
+
+  .section.section_charts
+    .chart.chart_populationgrowth
+      Chart(type='line',data='popgrowth',id='popgrowth')
+      .copys
+        .copy Population Growth
+        .copy Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna .  Lorem ipsum dolor sit amet, 
+
 </template>
 
 <script>
 import Top from '~/components/Top.vue'
+import Chart from '~/components/Chart.vue'
 import DataFilters from '~/components/DataFilters.vue'
 import DataSummary from '~/components/DataSummary.vue'
 import filtermixin from '~plugins/filter-mixin.js'
@@ -23,14 +32,13 @@ export default {
   components: {
     Top,
     DataFilters,
-    DataSummary
+    DataSummary,
+    Chart
   },
   methods: {
-
     capitalizeFirstLetter (string) {
       return string[0].toUpperCase() + string.slice(1)
     },
-
     formatParam (type, string) {
       if (string === undefined) return this.$props[type]
       let words = string.split('-')
@@ -39,7 +47,6 @@ export default {
       }
       return words.join(' ')
     }
-
   },
   data () {
     return {
@@ -67,5 +74,19 @@ json('../assets/fonts.json')
       margin auto
       > b
         color black
+  > .section_charts
+    width 1200px
+    margin auto
+    > .chart
+      float left
+      width 400px
+      > .copys
+        margin 20px 0 0 0
+        > .copy:first-child
+          font c2
+          padding 0 0 10px 0
+        > .copy:nth-child(2)
+          color grey
+
 
 </style>
