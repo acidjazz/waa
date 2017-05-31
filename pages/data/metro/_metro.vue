@@ -1,31 +1,9 @@
 <template lang="pug">
 .page.page_data
-  DataPage(v-bind:metro="metro")
+  DataPage
 </template>
 
 <script>
-
 import DataPage from '~/components/DataPage.vue'
-
-function capitalizeFirstLetter (string) {
-  return string[0].toUpperCase() + string.slice(1)
-}
-
-function formatParam (string) {
-  let words = string.split('-')
-  for (let index in words) {
-    words[index] = capitalizeFirstLetter(words[index])
-  }
-  return words.join(' ')
-}
-
-export default {
-  data () {
-    return {
-      metro: formatParam(this.$route.params.metro)
-    }
-  },
-  components: { DataPage }
-}
-
+export default { components: { DataPage } }
 </script>

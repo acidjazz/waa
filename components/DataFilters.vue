@@ -4,16 +4,16 @@
     .inner
       .copy filter apartment data by:
       .options
-        router-link.option.enabled(to="/data/",:class="{active: (choice() === 'National')}") National
+        router-link.option.enabled(to="/data/",:class="{active: (choice().value === 'National')}") National
         a.option.enabled(:class="{active: (this.state !== 'National')}",@click="modal('state')")
           | state
           .chevron.chevron_states(:class="{ on: modals.state, off: !modals.state }")
             .inner
-        a.option(:class="{active: (this.metro !== 'None'), enabled: (choice() === 'state')}",@click="modal('metro')")
+        a.option(:class="{active: (this.choice().type === 'metro'), enabled: ( this.metros !== false)}",@click="modal('metro')")
           | metro
           .chevron.chevron_metros(:class="{ on: modals.metro, off: !modals.metro }")
             .inner
-        a.option(:class="{active: (this.district !== 'None'), enabled: (choice() === 'state')}",@click="modal('district')")
+        a.option(:class="{active: (this.choice().type === 'district'), enabled: (this.districts.length > 0)}",@click="modal('district')")
           | district
           .chevron.chevron_districts(:class="{ on: modals.district, off: !modals.district }")
             .inner
@@ -36,38 +36,11 @@
 <script>
 import Filters from '../store/Filters.json'
 import { mixin as clickaway } from 'vue-clickaway'
+import filtermixin from '~plugins/filter-mixin.js'
 import ordinal from 'ordinal'
 export default {
-  mixins: [ clickaway ],
-  props: {
-    state: {
-      type: String,
-      default: 'National'
-    },
-    metro: {
-      type: String,
-      default: 'None'
-    },
-    district: {
-      type: String,
-      default: 'None'
-    }
-  },
-
+  mixins: [ clickaway, filtermixin ],
   methods: {
-    choice () {
-      if (this.state !== 'National' && this.metro === 'None' && this.district === 'None') {
-        return 'state'
-      }
-      if (this.metro !== 'None') {
-        return 'metro'
-      }
-      if (this.district !== 'None') {
-        return 'district'
-      }
-
-      return 'Natinoal'
-    },
     away () {
       for (let modal in this.modals) this.modals[modal] = false
     },
@@ -85,15 +58,15 @@ export default {
     let metros = false
     let districts = []
 
-    if (this.state !== 'National') {
+    if (this.choice().type === 'state') {
       for (let item of Filters.data) {
-        if (item.State === this.state) {
+        if (item.State === this.choice().value) {
           if (item.Metro !== undefined) {
             metros = item.Metro.split(',')
           }
 
           for (let i = 1; i !== item.District; i++) {
-            districts.push(this.state + " " + ordinal(i))
+            districts.push(this.choice().value + " " + ordinal(i))
           }
         }
       }
@@ -223,6 +196,6 @@ json('../assets/colors.json')
             cursor pointer
             color blue
             border 1px solid lightblue
-          &:hover
+          &.enabled:hover
             background-color lightwhite
 </style>

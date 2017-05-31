@@ -63,7 +63,7 @@ module.exports = {
   modules: [
     '@nuxtjs/font-awesome'
   ],
-  // plugins: ['~plugins/directives.js'],
+  // plugins: ['~plugins/filter-mixin.js'],
   build: {
 
     /*

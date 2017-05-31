@@ -16,25 +16,37 @@
 import Top from '~/components/Top.vue'
 import DataFilters from '~/components/DataFilters.vue'
 import DataSummary from '~/components/DataSummary.vue'
+import filtermixin from '~plugins/filter-mixin.js'
+
 export default {
-  props: {
-    state: {
-      type: String,
-      default: 'National'
-    },
-    metro: {
-      type: String,
-      default: 'None'
-    },
-    district: {
-      type: String,
-      default: 'None'
-    }
-  },
+  mixins: [ filtermixin ],
   components: {
     Top,
     DataFilters,
     DataSummary
+  },
+  methods: {
+
+    capitalizeFirstLetter (string) {
+      return string[0].toUpperCase() + string.slice(1)
+    },
+
+    formatParam (type, string) {
+      if (string === undefined) return this.$props[type]
+      let words = string.split('-')
+      for (let index in words) {
+        words[index] = this.capitalizeFirstLetter(words[index])
+      }
+      return words.join(' ')
+    }
+
+  },
+  data () {
+    return {
+      metro: this.formatParam('metro', this.$route.params.metro),
+      state: this.formatParam('state', this.$route.params.state),
+      district: this.formatParam('district', this.$route.params.district)
+    }
   }
 }
 </script>

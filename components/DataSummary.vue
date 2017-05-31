@@ -1,7 +1,7 @@
 <template lang="pug">
   #DataSummary
     .inner
-      .copy {{ state }}
+      .copy {{ choice().value }}
       .copy Apartments and their residents contribute more than $3.5 billion to the economy every day.
       .stats
         .stat
@@ -20,13 +20,9 @@
 </template>
 
 <script>
+import filtermixin from '~plugins/filter-mixin.js'
 export default {
-  props: {
-    state: {
-      type: String,
-      default: 'National'
-    }
-  },
+  mixins: [ filtermixin ],
   data () {
     return {}
   }
