@@ -63,15 +63,17 @@
     .border.big
     DemandAndSupply
     .border.big
+    MultipleItems
+    .border.big
   .datapage_print
     .source Source Aavailable @ http://waa.256.io{{ path }}
     .section.section_demand
       p {{ this.choice().value }}
       p New research shows that demand for apartments is on the rise.  Whether it's young professionals, couples, families or empty nesters, 
         b the country will add 
-          o 4.6 million 
+          i 4.6 million 
           | new apartment households 
-          o by 2030
+          i by 2030
 
     .section.section_charts
       .chart
@@ -91,19 +93,18 @@
           .copy An aging population, international immigration and fewer home purchases are increasing the need for apartments. 
       .clear
 
-
-
-
 </template>
 
 <script>
+import filtermixin from '~plugins/filter-mixin.js'
+
 import Top from '~/components/Top.vue'
 import SingleLineChart from '~/components/SingleLineChart.vue'
 import MultiLineChart from '~/components/MultiLineChart.vue'
 import DataFilters from '~/components/DataFilters.vue'
 import DataSummary from '~/components/DataSummary.vue'
 import DemandAndSupply from '~/components/DemandAndSupply.vue'
-import filtermixin from '~plugins/filter-mixin.js'
+import MultipleItems from '~/components/MultipleItems.vue'
 
 export default {
   mixins: [ filtermixin ],
@@ -114,6 +115,7 @@ export default {
     SingleLineChart,
     MultiLineChart,
     DemandAndSupply,
+    MultipleItems,
   },
   methods: {
     capitalizeFirstLetter (string) {
@@ -160,7 +162,7 @@ json('../assets/fonts.json')
         margin auto
         > b
           color black
-          > o
+          > i
             color red
     > .section_charts
       width 765px

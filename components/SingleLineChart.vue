@@ -133,7 +133,7 @@ export default {
           yAxes: [{
             display: false,
             gridLines: { color: solid, display: false, zeroLineColor: solid },
-            ticks: { min: 5, max: 55 }
+            ticks: { suggestedMin: 5, suggestedMax: 55 }
           }],
           xAxes: [{
             gridLines: { color: solid, zeroLineColor: solid },

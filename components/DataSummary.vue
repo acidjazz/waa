@@ -42,6 +42,7 @@ json('../assets/fonts.json')
     padding 60px 0
     > .copy:first-child
       font-size 30px
+      animation inFromTop 0.2s ease-in-out 0s both
     > .copy
       padding 0 0 30px 0
 
