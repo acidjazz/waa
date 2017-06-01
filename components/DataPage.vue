@@ -60,6 +60,9 @@
         MultiLineChart(type='line',data='aptsneeded',id='aptsneeded',theme="red",width=830,height=300)
       .clear
     .clear
+    .border.big
+    DemandAndSupply
+    .border.big
   .datapage_print
     .source Source Aavailable @ http://waa.256.io{{ path }}
     .section.section_demand
@@ -99,6 +102,7 @@ import SingleLineChart from '~/components/SingleLineChart.vue'
 import MultiLineChart from '~/components/MultiLineChart.vue'
 import DataFilters from '~/components/DataFilters.vue'
 import DataSummary from '~/components/DataSummary.vue'
+import DemandAndSupply from '~/components/DemandAndSupply.vue'
 import filtermixin from '~plugins/filter-mixin.js'
 
 export default {
@@ -109,6 +113,7 @@ export default {
     DataSummary,
     SingleLineChart,
     MultiLineChart,
+    DemandAndSupply,
   },
   methods: {
     capitalizeFirstLetter (string) {
@@ -158,11 +163,11 @@ json('../assets/fonts.json')
           > o
             color red
     > .section_charts
-      width 670px
+      width 765px
       margin auto
       > .chart
         float left
-        width 223px
+        width 33%
         margin-right 0px
         &:nth-child(3)
           margin-right 0px
