@@ -35,7 +35,7 @@ json('../assets/colors.json')
 import colors from '~/assets/colors.json'
 export default {
 
-  props: ['type', 'id', 'data', 'theme', 'width', 'height'],
+  props: ['type', 'id', 'data', 'theme', 'width', 'height', 'animation'],
 
   data () {
     return {
@@ -126,6 +126,9 @@ export default {
           background: {
             chart: light
           }
+        },
+        animation: {
+          duration: 0
         },
         layout: {
           padding: { left: 0, top: 20, rigth: 0, bottom: 20 } },

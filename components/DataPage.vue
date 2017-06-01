@@ -14,17 +14,17 @@
 
     .section.section_charts
       .chart
-        SingleLineChart(type='line',data='popgrowth',id='popgrowth',theme="cyan",width=400,height=300)
+        SingleLineChart(type='line',data='popgrowth',id='popgrowth',theme="cyan",width=400,height=300,animation=false)
         .copys
           .copy Population Growth
           .copy Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna .  Lorem ipsum dolor sit amet, 
       .chart
-        SingleLineChart(type='line',data='rvogrowth',id='rvogrowth',theme="lime",width=400,height=300)
+        SingleLineChart(type='line',data='rvogrowth',id='rvogrowth',theme="lime",width=400,height=300,animation=false)
         .copys
           .copy Renter vs Owner Growth
           .copy Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna .  Lorem ipsum dolor sit amet, 
       .chart
-        SingleLineChart(type='line',data='ahgrowth',id='ahgrowth',theme="orange",width=400,height=300)
+        SingleLineChart(type='line',data='ahgrowth',id='ahgrowth',theme="orange",width=400,height=300,animation=false)
         .copys
           .copy Apartment Household Growth
           .copy Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna .  Lorem ipsum dolor sit amet, 
@@ -64,6 +64,8 @@
     DemandAndSupply
     .border.big
     MultipleItems
+    .border.big
+    SingleItem
     .border.big
   .datapage_print
     .source Source Aavailable @ http://waa.256.io{{ path }}
@@ -118,6 +120,7 @@ import DataFilters from '~/components/DataFilters.vue'
 import DataSummary from '~/components/DataSummary.vue'
 import DemandAndSupply from '~/components/DemandAndSupply.vue'
 import MultipleItems from '~/components/MultipleItems.vue'
+import SingleItem from '~/components/SingleItem.vue'
 
 import CircleChart from '~/components/CircleChart.vue'
 
@@ -131,6 +134,7 @@ export default {
     MultiLineChart,
     DemandAndSupply,
     MultipleItems,
+    SingleItem,
     CircleChart,
   },
   methods: {
