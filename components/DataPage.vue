@@ -91,7 +91,20 @@
         .copys
           .copy More Renters
           .copy An aging population, international immigration and fewer home purchases are increasing the need for apartments. 
+    .clear
+
+    .section.section_chart
+      .left
+        CircleChart(id="renters_print",width="255",height="255",value="70")
+      .right
+        MultiLineChart(type='line',data='aptsneeded',id='aptsneeded_print',theme="red",width=510,height=300)
       .clear
+      .copys.copyLeft
+        .copy Renting on the Rise
+        .copy Many people in your district call apartments home. They  appreciate mortgage-free living, the ability to follow new work opportunities and amenities that fit their lifestyles.
+      .copys.copyRight
+        .copy We Need to Buld More
+        .copy Apartment demand is growing and the industry needs to keep up. However, producing enough new apartments to meet demand requires new development approaches, more incentives and fewer restrictions.
 
 </template>
 
@@ -106,6 +119,8 @@ import DataSummary from '~/components/DataSummary.vue'
 import DemandAndSupply from '~/components/DemandAndSupply.vue'
 import MultipleItems from '~/components/MultipleItems.vue'
 
+import CircleChart from '~/components/CircleChart.vue'
+
 export default {
   mixins: [ filtermixin ],
   components: {
@@ -116,6 +131,7 @@ export default {
     MultiLineChart,
     DemandAndSupply,
     MultipleItems,
+    CircleChart,
   },
   methods: {
     capitalizeFirstLetter (string) {
@@ -174,15 +190,45 @@ json('../assets/fonts.json')
         &:nth-child(3)
           margin-right 0px
         > .copys
-          margin 20px 0 0 0
+          margin 20px 5px 0 5px
           > .copy:first-child
             font c2
             padding 0 0 10px 0
           > .copy:nth-child(2)
             color grey
+    > .section_chart
+      width 765px
+      margin auto
+      > .left
+        float left
+        width 255px
+        height 290px
+        border 1px solid lightgrey
+        border-radius 3px
+      > .right
+        float right
+        width 500px
+        height 290px
+        border 1px solid lightgrey
+        border-radius 3px
+      > .copyLeft
+        float left
+        width 255px
+      > .copyRight
+        float right
+        width 500px
+      > .copys
+        margin 20px 0 0 0
+        > .copy:nth-child(1)
+          font c2
+        > .copy:nth-child(2)
+          padding 10px 0 0 0
+          color grey
+          margin 0 10px 0 0
 
   .datapage_web
     visibility visible
+    // display none
     > .section_demand
       border-top 30px solid offwhite
       padding 120px 0

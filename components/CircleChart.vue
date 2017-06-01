@@ -17,7 +17,7 @@ json('../assets/fonts.json')
   > .value
     font h2b 
     text-align center
-    margin-top -200px
+    margin-top -70%
     > span
       font h2
   > .copy:nth-child(3)
@@ -25,7 +25,7 @@ json('../assets/fonts.json')
     margin auto
     color grey
   > .copy:nth-child(4)
-    margin 70px 0 0 0
+    margin 20% 0 0 0
     color grey
 
 </style>
