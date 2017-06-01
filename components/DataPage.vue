@@ -158,12 +158,12 @@ json('../assets/fonts.json')
           > o
             color red
     > .section_charts
-      width 1220px
+      width 670px
       margin auto
       > .chart
         float left
-        width 400px
-        margin-right 10px
+        width 223px
+        margin-right 0px
         &:nth-child(3)
           margin-right 0px
         > .copys
