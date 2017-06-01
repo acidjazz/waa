@@ -34,11 +34,12 @@ export default {
 json('../assets/colors.json')
 json('../assets/fonts.json')
 #DataSummary
-  background-color darkblue
+  background url('~static/building.jpg')
   color white
-  padding 60px 0
   text-align center
   > .inner
+    background-color rgba(darkblue, 0.9)
+    padding 60px 0
     > .copy:first-child
       font-size 30px
     > .copy

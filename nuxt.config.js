@@ -11,6 +11,7 @@ module.exports = {
   /*
   ** Headers of the page
   */
+  wconfig: config,
   head: {
     title: config.title,
     meta: [
