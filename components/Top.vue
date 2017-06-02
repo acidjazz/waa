@@ -27,6 +27,8 @@ json('../assets/colors.json')
 
 #Top
   z-index 10
+  position absolute
+  width 100%
 #Top > .title, #Navigate > .inner > .content > .title
   float left
   font h1

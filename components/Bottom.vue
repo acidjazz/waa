@@ -15,6 +15,7 @@
         a.fa.fa-facebook(href="/")
         a.fa.fa-twitter(href="/")
         a.fa.fa-linkedin(href="/")
+    .clear
   .lower
     .inner
       .section.title

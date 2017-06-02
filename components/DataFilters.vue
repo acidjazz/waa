@@ -118,7 +118,7 @@ json('../assets/colors.json')
 
 #Filters
   position relative
-  margin 60px 0 0 0
+  margin 120px 0 0 0
   > .modals
     > .modal
       position absolute

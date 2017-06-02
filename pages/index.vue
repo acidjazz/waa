@@ -11,6 +11,7 @@
       .copy A resource to provide the positives of the apartment industry using insightful data
       .button.is-centered
         router-link(to="/data") NATIONAL DATA
+  Bottom
 </template>
 
 <style lang="stylus">
@@ -21,8 +22,11 @@ json('../assets/fonts.json')
   > .hero
     color white
     height 100vh
+    width 100vw
     text-align center
+    overflow hidden
     position relative
+    z-index 5
     > video
       position absolute
       min-width 100%
@@ -60,5 +64,6 @@ json('../assets/fonts.json')
 
 <script>
 import Top from '~/components/Top.vue'
-export default { components: { Top } }
+import Bottom from '~/components/Bottom.vue'
+export default { components: { Top, Bottom } }
 </script>
