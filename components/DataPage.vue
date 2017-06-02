@@ -14,17 +14,17 @@
 
     .section.section_charts
       .chart
-        SingleLineChart(type='line',data='popgrowth',id='popgrowth',theme="cyan",width=400,height=300,animation=false)
+        SingleLineChart(type='line',data='popgrowth',id='popgrowth',theme="cyan",width=380,height=300,animation=false)
         .copys
           .copy Population Growth
           .copy Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna .  Lorem ipsum dolor sit amet, 
       .chart
-        SingleLineChart(type='line',data='rvogrowth',id='rvogrowth',theme="lime",width=400,height=300,animation=false)
+        SingleLineChart(type='line',data='rvogrowth',id='rvogrowth',theme="lime",width=380,height=300,animation=false)
         .copys
           .copy Renter vs Owner Growth
           .copy Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna .  Lorem ipsum dolor sit amet, 
       .chart
-        SingleLineChart(type='line',data='ahgrowth',id='ahgrowth',theme="orange",width=400,height=300,animation=false)
+        SingleLineChart(type='line',data='ahgrowth',id='ahgrowth',theme="orange",width=380,height=300,animation=false)
         .copys
           .copy Apartment Household Growth
           .copy Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna .  Lorem ipsum dolor sit amet, 
@@ -67,6 +67,23 @@
     .border.big
     SingleItem
     .border.big
+    .section.section_links
+      .inner
+        .area.left
+          .icon.icon-file
+          .copy Lorem ipsum dolor sit amet, consetetur sadips 
+            span National Data
+          a.button download
+        .area.right
+          .icon.icon-bars
+          .copy 
+            span About the data 
+            | consetetur sadipscing elitr, sed diam nonumy
+          a.button learn more
+        .clear
+
+    .border.big
+    Bottom
   .datapage_print
     .source Source Aavailable @ http://waa.256.io{{ path }}
     .section.section_demand
@@ -114,6 +131,7 @@
 import filtermixin from '~plugins/filter-mixin.js'
 
 import Top from '~/components/Top.vue'
+import Bottom from '~/components/Bottom.vue'
 import SingleLineChart from '~/components/SingleLineChart.vue'
 import MultiLineChart from '~/components/MultiLineChart.vue'
 import DataFilters from '~/components/DataFilters.vue'
@@ -128,6 +146,7 @@ export default {
   mixins: [ filtermixin ],
   components: {
     Top,
+    Bottom,
     DataFilters,
     DataSummary,
     SingleLineChart,
@@ -184,6 +203,7 @@ json('../assets/fonts.json')
           color black
           > i
             color red
+
     > .section_charts
       width 765px
       margin auto
@@ -246,11 +266,11 @@ json('../assets/fonts.json')
         > b
           color black
     > .section_charts
-      width 1260px
+      width 1200px
       margin auto
       > .chart
         float left
-        width 400px
+        width 380px
         margin-right 30px
         &:nth-child(3)
           margin-right 0px
@@ -263,7 +283,7 @@ json('../assets/fonts.json')
             color grey
     > .section_chart
       margin 60px auto 200px auto
-      width 1260px
+      width 1200px
       > .top
         > .part
           float right
@@ -317,6 +337,47 @@ json('../assets/fonts.json')
         float right
         width 830px
         margin 0 0 0 30px
+    > .section_links
+      > .inner
+        padding 60px 0
+        width 831px
+        margin auto
+        text-align center
+        > .area
+          float left
+          width 400px
+          &:nth-child(1)
+            margin-right 30px
+            border-right 1px solid lightgrey
+          > .icon
+            width 50px
+            height 50px
+            background-position contain
+            margin auto
+            &.icon-file
+              background-image url('~static/icon-file.png')
+            &.icon-bars
+              background-image url('~static/icon-bars.png')
+          > .copy
+            width 260px
+            margin auto
+            padding 30px 0
+            color grey
+            > span
+              color black
+
+          > .button
+            display inline-block
+            padding 10px 30px
+            text-transform uppercase
+            border-radius 3px
+          &:nth-child(1) > .button
+            border 1px solid blue
+            background-color blue
+            color white
+          &:nth-child(2) > .button
+            border 1px solid lightblue
+            color black
 
 @media print
   .datapage_web

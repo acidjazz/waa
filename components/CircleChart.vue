@@ -17,7 +17,7 @@ json('../assets/fonts.json')
   > .value
     font h2b 
     text-align center
-    margin-top -70%
+    margin-top -65%
     > span
       font h2
   > .copy:nth-child(3)
