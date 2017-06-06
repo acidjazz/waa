@@ -5,16 +5,16 @@
       .copy Apartments and their residents contribute more than $3.5 billion to the economy every day.
       .stats
         .stat
-          .value 38.8
+          .value 38.8m
           .copy Million Apartment Residents
         .stat
-          .value 20.4
+          .value 20.4m
           .copy Million Apartment Homes
         .stat
-          .value $1.3
+          .value $1.3t
           .copy Trillion Dollars Economic Contribution
         .stat
-          .value 12.3
+          .value 12.3m
           .copy Total Jobs Supported
         .clear
 </template>

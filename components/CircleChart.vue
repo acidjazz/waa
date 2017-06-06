@@ -47,7 +47,7 @@ export default {
 
     ctx.beginPath()
     ctx.arc(this.width / 2, this.width / 2, this.width / 3, 0, Math.PI * 2)
-    ctx.strokeStyle = colors.grey
+    ctx.strokeStyle = colors.lightgrey
     ctx.lineWidth = 5
     ctx.setLineDash([10, 10])
     ctx.stroke()

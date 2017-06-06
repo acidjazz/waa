@@ -53,14 +53,14 @@ json('../assets/fonts.json')
       > .item
         float left
         width 300px
-        height 360px
+        height 400px
         margin-right 27px
         border 1px solid lightblue
         border-radius 3px
         &:nth-child(3)
           margin-right 0px
         > .copy
-          padding 10px 0 0 10px
+          padding 20px 0 0 20px
           text-transform uppercase
 
 #DollarsEarned

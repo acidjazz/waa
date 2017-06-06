@@ -76,7 +76,7 @@
     {
       "State": "Illinois",
       "Abbeviation": "IL",
-      "Metro": "Chicago, St. Louis",
+      "Metro": "Chicago, St Louis",
       "District": 18
     },
     {
@@ -110,7 +110,7 @@
     {
       "State": "Maryland",
       "Abbeviation": "MD",
-      "Metro": "Balitmore",
+      "Metro": "Baltimore",
       "District": 8
     },
     {
@@ -134,7 +134,7 @@
     {
       "State": "Missouri",
       "Abbeviation": "MO",
-      "Metro": "St. Louis",
+      "Metro": "St Louis",
       "District": 8
     },
     {
@@ -194,7 +194,7 @@
     {
       "State": "Ohio",
       "Abbeviation": "OH",
-      "Metro": "Cincinnati, Colombus",
+      "Metro": "Cincinnati, Columbus",
       "District": 16
     },
     {
@@ -240,7 +240,7 @@
     {
       "State": "Texas",
       "Abbeviation": "TX",
-      "Metro": "Austin, Dalls, Houston, San Antonio",
+      "Metro": "Austin, Dallas, Houston, San Antonio",
       "District": 36
     },
     {

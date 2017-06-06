@@ -17,17 +17,17 @@ for (let item in Filters.data) {
 let routes = ['/error']
 
 for (let state in items) {
-  routes.push('/data/state/' + state.toLowerCase().replace(/ /, '-'))
+  routes.push('/data/state/' + state.toLowerCase().replace(/ /g, '-'))
 }
 
 for (let metro of metros) {
   for (let m of metro) {
-    routes.push('/data/metro/' + m.trim().toLowerCase().replace(/ /, '-'))
+    routes.push('/data/metro/' + m.trim().toLowerCase().replace(/ /g, '-'))
   }
 }
 
 for (let state in items) {
-  let lstate = state.toLowerCase().replace(/ /, '-')
+  let lstate = state.toLowerCase().replace(/ /g, '-')
   for (let i = 1; i !== items[state]; i++) {
     routes.push('/data/district/' + lstate + '-' + ordinal(i))
   }

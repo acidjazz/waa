@@ -136,7 +136,7 @@ export default {
             ticks: { suggestedMin: 5, suggestedMax: 55 }
           }],
           xAxes: [{
-            gridLines: { color: solid, zeroLineColor: solid },
+            gridLines: { color: solid, zeroLineColor: solid, display: false },
             ticks: {
               beginAtZero: true,
               fontColor: solid,

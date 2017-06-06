@@ -7,10 +7,11 @@
     DataSummary(v-bind:state="this.state",v-bind:metro="this.metro",v-bind:district="this.district")
     .section.section_demand
       p The Demand
-      p New research shows that demand for apartments is on the rise.  Whether it's young professionals, couples, families or empty nesters, the country will add 
-        b 4.6 million 
-        | new apartment households 
-        b by 2030
+      p New research shows that demand for apartments is on the rise.  Whether it's young professionals, couples, families or empty nesters, 
+        b the country will add 
+          span 4.6 million 
+          | new apartment households 
+          span by 2030
 
     .section.section_charts
       .chart
@@ -90,9 +91,9 @@
       p {{ this.choice().value }}
       p New research shows that demand for apartments is on the rise.  Whether it's young professionals, couples, families or empty nesters, 
         b the country will add 
-          i 4.6 million 
+          span 4.6 million 
           | new apartment households 
-          i by 2030
+          span by 2030
 
     .section.section_charts
       .chart
@@ -201,7 +202,7 @@ json('../assets/fonts.json')
         margin auto
         > b
           color black
-          > i
+          > span
             color red
 
     > .section_charts
@@ -265,6 +266,8 @@ json('../assets/fonts.json')
         margin auto
         > b
           color black
+          > span
+            color red
     > .section_charts
       width 1200px
       margin auto

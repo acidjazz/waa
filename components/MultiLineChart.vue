@@ -73,8 +73,8 @@ export default {
     }, {
       data: odatas,
       pointBackgroundColor: colors.white,
-      pointBorderWidth: 0,
-      pointRadius: 0,
+      pointBorderWidth: 4,
+      pointRadius: 5,
       pointBorderColor: solid,
       borderColor: solid,
       fill: false
