@@ -58,7 +58,7 @@ json('../assets/fonts.json')
         &:first-child, &:nth-child(2), &:nth-child(3)
           border-right 1px solid white
         > .value
-          font h2
+          font h5
           padding 0 0 30px 0
 
 </style>

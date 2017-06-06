@@ -5,15 +5,17 @@
     .clear
     DataFilters(v-bind:state="this.state",v-bind:metro="this.metro",v-bind:district="this.district")
     DataSummary(v-bind:state="this.state",v-bind:metro="this.metro",v-bind:district="this.district")
-    .section.section_demand
-      p The Demand
-      p New research shows that demand for apartments is on the rise.  Whether it's young professionals, couples, families or empty nesters, 
-        b the country will add 
-          span 4.6 million 
-          | new apartment households 
-          span by 2030
+    .section.section_demand(v-if="this.choice().type === 'state' || this.choice().type === 'national'")
+      include ../assets/pug/partial/section_demand
 
-    .section.section_charts
+
+    .section.section_district(v-if="this.choice().type === 'district'")
+      include ../assets/pug/partial/section_district
+
+    .section.section_trio(v-if="this.choice().type === 'district'")
+      DistrictTrio(type="web")
+
+    .section.section_charts(v-if="this.choice().type === 'state' || this.choice().type === 'national'")
       .chart
         SingleLineChart(type='line',data='popgrowth',id='popgrowth',theme="cyan",width=380,height=300,animation=false)
         .copys
@@ -31,7 +33,7 @@
           .copy Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna .  Lorem ipsum dolor sit amet, 
       .clear
 
-    .section.section_chart
+    .section.section_chart(v-if="this.choice().type === 'state' || this.choice().type === 'national'")
       .top
         .part.part_homes
           .value 5,000,000
@@ -86,8 +88,8 @@
     .border.big
     Bottom
   .datapage_print
-    .source Source Aavailable @ http://waa.256.io{{ path }}
-    .section.section_demand
+    .source Learn More @ http://waa.256.io{{ path }}
+    .section.section_demand(v-if="this.choice().type === 'state' || this.choice().type === 'national'")
       p {{ this.choice().value }}
       p New research shows that demand for apartments is on the rise.  Whether it's young professionals, couples, families or empty nesters, 
         b the country will add 
@@ -95,7 +97,17 @@
           | new apartment households 
           span by 2030
 
-    .section.section_charts
+    .section.section_district_name(v-if="this.choice().type === 'district'")
+      .copy {{ this.choice().value }}
+      .copy Apartments bring dolalrs and jobs that stay close to home
+    DataSummary(v-bind:state="this.state",v-bind:metro="this.metro",v-bind:district="this.district",v-if="this.choice().type === 'district'")
+    .section.section_district(v-if="this.choice().type === 'district'")
+      include ../assets/pug/partial/section_district
+
+    .section.section_trio(v-if="this.choice().type === 'district'")
+      DistrictTrio(type="print")
+
+    .section.section_charts(v-if="this.choice().type === 'state' || this.choice().type === 'national'")
       .chart
         SingleLineChart(type='line',data='popgrowth',id='popgrowth_print',theme="cyan",width=400,height=300)
         .copys
@@ -113,7 +125,7 @@
           .copy An aging population, international immigration and fewer home purchases are increasing the need for apartments. 
     .clear
 
-    .section.section_chart
+    .section.section_chart(v-if="this.choice().type === 'state' || this.choice().type === 'national'")
       .left
         CircleChart(id="renters_print",width="255",height="255",value="70")
       .right
@@ -126,7 +138,7 @@
         .copy We Need to Buld More
         .copy Apartment demand is growing and the industry needs to keep up. However, producing enough new apartments to meet demand requires new development approaches, more incentives and fewer restrictions.
     .clear
-    DataSummary(v-bind:state="this.state",v-bind:metro="this.metro",v-bind:district="this.district")
+    DataSummary(v-bind:state="this.state",v-bind:metro="this.metro",v-bind:district="this.district",v-if="this.choice().type === 'state' || this.choice().type === 'national'")
 
 </template>
 
@@ -139,6 +151,7 @@ import SingleLineChart from '~/components/SingleLineChart.vue'
 import MultiLineChart from '~/components/MultiLineChart.vue'
 import DataFilters from '~/components/DataFilters.vue'
 import DataSummary from '~/components/DataSummary.vue'
+import DistrictTrio from '~/components/DistrictTrio.vue'
 import DemandAndSupply from '~/components/DemandAndSupply.vue'
 import MultipleItems from '~/components/MultipleItems.vue'
 import SingleItem from '~/components/SingleItem.vue'
@@ -152,6 +165,7 @@ export default {
     Bottom,
     DataFilters,
     DataSummary,
+    DistrictTrio,
     SingleLineChart,
     MultiLineChart,
     DemandAndSupply,
@@ -187,9 +201,55 @@ export default {
 json('../assets/colors.json')
 json('../assets/fonts.json')
 #DataPage
+  > .datapage_web, > .datapage_print
+    > .section_district
+      > .inner
+        padding 30px 0
+        > .copy:first-child
+          text-align center
+          text-transform uppercase
+          padding 0 0 30px 0
+          font c1sb
+          color darkblue
+        > .copy:nth-child(2)
+          color grey
+          text-align center
+          width 300px
+          margin auto
+          padding 0 0 30px 0
+      > .pointers
+        width 1200px
+        // width 765px
+        margin auto
+        > .pointer
+          width 33.3333%
+          float left
+          > .icon
+            float left
+            width 30px
+            height 30px
+            background-size contain
+            &.icon-residents
+              background-image url('~static/icon-residents.png')
+              height 20px
+            &.icon-operation
+              background-image url('~static/icon-operations.png')
+            &.icon-graph
+              background-image url('~static/icon-graph.png')
+          > .copy
+            margin 0 10px 0 40px
+          > .copy:nth-child(2)
+            font h3
+            padding 0 0 10px 0
+          > .copy:nth-child(3)
+            font c1
+            color grey
+
+
+
   .datapage_print
-    overflow hidden
-    height 1px
+    // overflow hidden
+    // height 1px
     > #DataSummary
       background none
       color black
@@ -210,6 +270,8 @@ json('../assets/fonts.json')
           left 50%
           width 200px
           margin-left -100px
+          font c1sb
+          color darkblue
         > .stats
           border-top 1px solid lightblue
           width 765px
@@ -223,7 +285,6 @@ json('../assets/fonts.json')
             > .value
               padding 0 0 10px 0
               color purple
-              font h2b
             > .copy
               font c1s
     > .source
@@ -242,6 +303,34 @@ json('../assets/fonts.json')
           color black
           > span
             color red
+
+    > .section_district
+      > .inner
+        padding 10px 0
+        > .copy:first-child
+          padding 0 0 10px 0
+      > .pointers
+        width 765px
+
+    > .district_charts
+      background-color pink
+      padding 10px 0
+
+    > .section_district_name
+      text-align center
+      > .copy:first-child
+        font h1
+      > .copy:nth-child(2)
+        color grey
+        padding 30px 0
+    > .section_trio
+      > .district_charts
+        width 765px
+        > .dchart
+           > .inner
+             margin 3px
+           > .copys
+             margin 0 3px
 
     > .section_charts
       width 765px
@@ -293,10 +382,10 @@ json('../assets/fonts.json')
 
   .datapage_web
     visibility visible
-    // display none
+    display none
     > .section_demand
       border-top 30px solid offwhite
-      padding 120px 0
+      padding 60px 0
       text-align center
       > p:first-child
         font h1

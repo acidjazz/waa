@@ -2,10 +2,14 @@
   "h1": "26px\\/26px 'Roboto'",
   "h2": "40px\\/40px 'Maven Pro'",
   "h2b": "600 40px\\/40px 'Maven Pro'",
-  "h3": "26px\\/30px 'Maven Pro'",
+  "h3": "500 20px\\/26px 'Maven Pro'",
   "h4": "600 75px\\/75px 'Maven Pro'",
+  "h5": "700 40px\\/40px 'Roboto'",
 
   "c1": "16px\\/26px 'Roboto'",
+  "c1b": "700 16px\\/26px 'Roboto'",
+  "c1sb": "700 14px\\/20px 'Roboto'",
   "c1s": "14px\\/20px 'Roboto'",
-  "c2": "400 26px\\/32px 'Roboto'"
+  "c2": "400 26px\\/32px 'Roboto'",
+  "c3": "100 16px\\/20px 'Maven Pro'"
 }

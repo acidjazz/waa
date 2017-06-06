@@ -3,8 +3,6 @@
     canvas(:id="'chart-' + id",:width="width",:height="height")
     .value {{ value }}
       span %
-    .copy Of Apartment Renters
-    .copy Are spending over 30% of income on apartment rental
 </template>
 
 <style lang="stylus">
@@ -14,19 +12,18 @@ json('../assets/fonts.json')
 
 .circle-chart
   text-align center
+  position relative
   > .value
+    position absolute
+    top 50%
+    left 50%
+    margin-top -30px
+    margin-left -35px
     font h2b 
     text-align center
-    margin-top -65%
+    margin-top -100px 0 45% 0
     > span
       font h2
-  > .copy:nth-child(3)
-    width 120px
-    margin auto
-    color grey
-  > .copy:nth-child(4)
-    margin 20% 0 0 0
-    color grey
 
 </style>
 
@@ -44,6 +41,7 @@ export default {
   mounted () {
     let canvas = document.getElementById('chart-' + this.id)
     let ctx = canvas.getContext('2d')
+    ctx.clearRect(0, 0, this.width, this.height)
 
     ctx.beginPath()
     ctx.arc(this.width / 2, this.width / 2, this.width / 3, 0, Math.PI * 2)

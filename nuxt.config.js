@@ -40,7 +40,7 @@ module.exports = {
     ],
 
     link: [
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Maven+Pro|Roboto' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Maven+Pro:400,500|Roboto:100,400,700,900' },
 
       { rel: 'apple-touch-icon', sizes: '180x180', href: '/icons/apple-touch-icon.png' },
       { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/icons/favicon-32x32.png' },
