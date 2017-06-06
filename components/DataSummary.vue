@@ -3,6 +3,7 @@
     .inner
       .copy {{ choice().value }}
       .copy Apartments and their residents contribute more than $3.5 billion to the economy every day.
+      .copy_print Market Snapshot
       .stats
         .stat
           .value 38.8m
@@ -11,7 +12,7 @@
           .value 20.4m
           .copy Million Apartment Homes
         .stat
-          .value $1.3t
+          .value 1.3t
           .copy Trillion Dollars Economic Contribution
         .stat
           .value 12.3m
@@ -45,7 +46,8 @@ json('../assets/fonts.json')
       animation inFromTop 0.2s ease-in-out 0s both
     > .copy
       padding 0 0 30px 0
-
+    > .copy_print
+      display none
     > .stats
       > .stat
         padding 30px 

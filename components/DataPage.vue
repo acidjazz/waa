@@ -125,6 +125,8 @@
       .copys.copyRight
         .copy We Need to Buld More
         .copy Apartment demand is growing and the industry needs to keep up. However, producing enough new apartments to meet demand requires new development approaches, more incentives and fewer restrictions.
+    .clear
+    DataSummary(v-bind:state="this.state",v-bind:metro="this.metro",v-bind:district="this.district")
 
 </template>
 
@@ -188,6 +190,42 @@ json('../assets/fonts.json')
   .datapage_print
     overflow hidden
     height 1px
+    > #DataSummary
+      background none
+      color black
+      > .inner
+        position relative
+        background-color white
+        padding 10px 0
+        > .copy:first-child, > .copy:nth-child(2)
+          display none
+        > .copy_print
+          display block
+          margin 0 0 -14px 0
+          background-color white
+          text-transform uppercase
+          padding 0 10px
+          position absolute
+          top 0px
+          left 50%
+          width 200px
+          margin-left -100px
+        > .stats
+          border-top 1px solid lightblue
+          width 765px
+          margin auto
+          padding-top 10px
+          > .stat
+            padding 20px
+            max-width 150px
+            &:first-child, &:nth-child(2), &:nth-child(3)
+              border-right 1px solid lightblue
+            > .value
+              padding 0 0 10px 0
+              color purple
+              font h2b
+            > .copy
+              font c1s
     > .source
       text-align right
       color grey
@@ -217,10 +255,11 @@ json('../assets/fonts.json')
         > .copys
           margin 20px 5px 0 5px
           > .copy:first-child
-            font c2
+            font c1
             padding 0 0 10px 0
           > .copy:nth-child(2)
             color grey
+            font c1s
     > .section_chart
       width 765px
       margin auto
@@ -245,8 +284,9 @@ json('../assets/fonts.json')
       > .copys
         margin 20px 0 0 0
         > .copy:nth-child(1)
-          font c2
+          font c1
         > .copy:nth-child(2)
+          font c1s
           padding 10px 0 0 0
           color grey
           margin 0 10px 0 0
