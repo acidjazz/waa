@@ -64,6 +64,8 @@ export default {
       light = colors.lightred
     }
 
+    /*
+
     Chart.pluginService.register({
       id: 'background',
       beforeDraw: function (chart, easing, options) {
@@ -87,6 +89,7 @@ export default {
         ctx.restore()
       }
     })
+    */
 
     Chart.defaults.global.defaultFontSize = 16
     Chart.defaults.global.legend.display = false
@@ -116,8 +119,8 @@ export default {
           pointBorderColor: solid,
 
           borderColor: solid,
-          backgroundColor: colors.white,
-          fill: 'end'
+          backgroundColor: light,
+          fill: true
         }]
       },
 

@@ -48,7 +48,7 @@
             i.fa.fa-2x.fa-bar-chart
           .copy 2017 Numbers
           .value 15,550
-      .left
+      .left.left_buildmore(v-if="this.choice().type !== 'metro'")
         .copy We need to build more
         .copy The country will need to build an average of 324,000 new apartment homes each year to keep up with demand. The industry average just 244,000 completions from 2011-2016.
         .legend
@@ -59,6 +59,11 @@
           .dot
             .value
             .copy needed rate text
+      .left.left_inyourcity(v-if="this.choice().type === 'metro'")
+        .copy in your city
+        HeatChart(value="17")
+        .copy Barriers to New Apartments Index
+
       .chart
         MultiLineChart(type='line',data='aptsneeded',id='aptsneeded',theme="red",width=830,height=300)
       .clear
@@ -126,8 +131,10 @@
     .clear
 
     .section.section_chart(v-if="this.choice().type !== 'district'")
-      .left
+      .left(v-if="this.choice().type !== 'metro'")
         CircleChart(id="renters_print",width="225",height="225",value="70")
+      .left(v-else)
+        HeatChart(value="17")
       .right
         MultiLineChart(type='line',data='aptsneeded',id='aptsneeded_print',theme="red",width=510,height=225)
       .clear
@@ -138,7 +145,7 @@
         .copy We Need to Buld More
         .copy Apartment demand is growing and the industry needs to keep up. However, producing enough new apartments to meet demand requires new development approaches, more incentives and fewer restrictions.
     .clear
-    DataSummary(v-bind:state="this.state",v-bind:metro="this.metro",v-bind:district="this.district",v-if="this.choice().type === 'state' || this.choice().type === 'national'")
+    DataSummary(v-bind:state="this.state",v-bind:metro="this.metro",v-bind:district="this.district",v-if="this.choice().type !== 'district'")
 
 </template>
 
@@ -157,6 +164,7 @@ import MultipleItems from '~/components/MultipleItems.vue'
 import SingleItem from '~/components/SingleItem.vue'
 
 import CircleChart from '~/components/CircleChart.vue'
+import HeatChart from '~/components/HeatChart.vue'
 
 export default {
   mixins: [ filtermixin ],
@@ -172,6 +180,7 @@ export default {
     MultipleItems,
     SingleItem,
     CircleChart,
+    HeatChart,
   },
   methods: {
     capitalizeFirstLetter (string) {
@@ -219,7 +228,6 @@ json('../assets/fonts.json')
           padding 0 0 30px 0
       > .pointers
         width 1200px
-        // width 765px
         margin auto
         > .pointer
           width 33.3333%
@@ -368,6 +376,9 @@ json('../assets/fonts.json')
         height 225px
         border 1px solid lightgrey
         border-radius 3px
+        > .HeatChart
+          > .legend
+            margin-top -30px
       > .right
         float right
         width 500px
@@ -453,28 +464,41 @@ json('../assets/fonts.json')
       > .left
         float left
         width 300px
-        > .copy:first-child
-          font h2
-        > .copy:nth-child(2)
-          color grey
-          padding 30px 0 0 0
-        > .legend
-          padding 30px 0 0 0
-          font c1s
-          > .dot
-            > .value
-              float left
-              width 10px
-              height 10px
-              border-radius 50%
-              background-color red
-              margin 5px 0 0 0
-            > .copy
-              float left
-              text-transform uppercase
-              margin 0 0 0 10px
-        > .legend > .dot:first-child > .value
-          background-color rgba(red, 0.5)
+        &.left_buildmore
+          > .copy:first-child
+            font h2
+          > .copy:nth-child(2)
+            color grey
+            padding 30px 0 0 0
+          > .legend
+            padding 30px 0 0 0
+            font c1s
+            > .dot
+              > .value
+                float left
+                width 10px
+                height 10px
+                border-radius 50%
+                background-color red
+                margin 5px 0 0 0
+              > .copy
+                float left
+                text-transform uppercase
+                margin 0 0 0 10px
+          > .legend > .dot:first-child > .value
+            background-color rgba(red, 0.5)
+        &.left_inyourcity
+          height 340px
+          border 1px solid lightgrey
+          border-radius 3px
+          > .copy:first-child
+            color darkblue
+            font c1sb
+            text-transform uppercase
+            padding 25px 0 0 25px
+          > .copy:last-child
+            text-align center
+            color grey
       > .chart
         float right
         width 830px
