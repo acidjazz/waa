@@ -5,7 +5,7 @@
     .clear
     DataFilters(v-bind:state="this.state",v-bind:metro="this.metro",v-bind:district="this.district")
     DataSummary(v-bind:state="this.state",v-bind:metro="this.metro",v-bind:district="this.district")
-    .section.section_demand(v-if="this.choice().type === 'state' || this.choice().type === 'national'")
+    .section.section_demand(v-if="this.choice().type !== 'district'")
       include ../assets/pug/partial/section_demand
 
 
@@ -15,7 +15,7 @@
     .section.section_trio(v-if="this.choice().type === 'district'")
       DistrictTrio(type="web")
 
-    .section.section_charts(v-if="this.choice().type === 'state' || this.choice().type === 'national'")
+    .section.section_charts(v-if="this.choice().type !== 'district'")
       .chart
         SingleLineChart(type='line',data='popgrowth',id='popgrowth',theme="cyan",width=380,height=300,animation=false)
         .copys
@@ -33,7 +33,7 @@
           .copy Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna .  Lorem ipsum dolor sit amet, 
       .clear
 
-    .section.section_chart(v-if="this.choice().type === 'state' || this.choice().type === 'national'")
+    .section.section_chart(v-if="this.choice().type !== 'district'")
       .top
         .part.part_homes
           .value 5,000,000
@@ -89,7 +89,7 @@
     Bottom
   .datapage_print
     .source Learn More @ http://waa.256.io{{ path }}
-    .section.section_demand(v-if="this.choice().type === 'state' || this.choice().type === 'national'")
+    .section.section_demand(v-if="this.choice().type !== 'district'")
       p {{ this.choice().value }}
       p New research shows that demand for apartments is on the rise.  Whether it's young professionals, couples, families or empty nesters, 
         b the country will add 
@@ -107,7 +107,7 @@
     .section.section_trio(v-if="this.choice().type === 'district'")
       DistrictTrio(type="print")
 
-    .section.section_charts(v-if="this.choice().type === 'state' || this.choice().type === 'national'")
+    .section.section_charts(v-if="this.choice().type !== 'district'")
       .chart
         SingleLineChart(type='line',data='popgrowth',id='popgrowth_print',theme="cyan",width=400,height=300)
         .copys
@@ -125,7 +125,7 @@
           .copy An aging population, international immigration and fewer home purchases are increasing the need for apartments. 
     .clear
 
-    .section.section_chart(v-if="this.choice().type === 'state' || this.choice().type === 'national'")
+    .section.section_chart(v-if="this.choice().type !== 'district'")
       .left
         CircleChart(id="renters_print",width="255",height="255",value="70")
       .right
@@ -248,8 +248,8 @@ json('../assets/fonts.json')
 
 
   .datapage_print
-    // overflow hidden
-    // height 1px
+    overflow hidden
+    height 1px
     > #DataSummary
       background none
       color black
@@ -329,8 +329,17 @@ json('../assets/fonts.json')
         > .dchart
            > .inner
              margin 3px
+             height 300px
+             > .copy
+               margin -20px auto 0 auto
+               width 90%
+             > #percs
+               > .perc
+                 > .progress
+                   margin 5px 0
            > .copys
              margin 0 3px
+           
 
     > .section_charts
       width 765px
@@ -382,7 +391,7 @@ json('../assets/fonts.json')
 
   .datapage_web
     visibility visible
-    display none
+    // display none
     > .section_demand
       border-top 30px solid offwhite
       padding 60px 0
