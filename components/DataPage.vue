@@ -127,9 +127,9 @@
 
     .section.section_chart(v-if="this.choice().type !== 'district'")
       .left
-        CircleChart(id="renters_print",width="255",height="255",value="70")
+        CircleChart(id="renters_print",width="225",height="225",value="70")
       .right
-        MultiLineChart(type='line',data='aptsneeded',id='aptsneeded_print',theme="red",width=510,height=300)
+        MultiLineChart(type='line',data='aptsneeded',id='aptsneeded_print',theme="red",width=510,height=225)
       .clear
       .copys.copyLeft
         .copy Renting on the Rise
@@ -295,6 +295,7 @@ json('../assets/fonts.json')
       text-align center
       > p:first-child
         font h1
+        line-height 2px
       > p:nth-child(2)
         color grey
         max-width 490px
@@ -351,7 +352,7 @@ json('../assets/fonts.json')
         &:nth-child(3)
           margin-right 0px
         > .copys
-          margin 20px 5px 0 5px
+          margin 0px 5px 0 5px
           > .copy:first-child
             font c1
             padding 0 0 10px 0
@@ -364,13 +365,13 @@ json('../assets/fonts.json')
       > .left
         float left
         width 255px
-        height 290px
+        height 225px
         border 1px solid lightgrey
         border-radius 3px
       > .right
         float right
         width 500px
-        height 290px
+        height 225px
         border 1px solid lightgrey
         border-radius 3px
       > .copyLeft
@@ -380,14 +381,14 @@ json('../assets/fonts.json')
         float right
         width 500px
       > .copys
-        margin 20px 0 0 0
+        margin 10px 0 0 0
         > .copy:nth-child(1)
           font c1
         > .copy:nth-child(2)
           font c1s
-          padding 10px 0 0 0
+          padding 5px 0 0 0
           color grey
-          margin 0 10px 0 0
+          margin 0 5px 0 0
 
   .datapage_web
     visibility visible
