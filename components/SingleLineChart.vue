@@ -1,6 +1,6 @@
 <template lang="pug">
   .chartainer
-    canvas(:id="'chart-' + id",:width="width",:height="height-50")
+    canvas(:id="'chart-' + id",:width="width",:height="height")
     .spike(v-if="(spike > 0)")
       i.fa.fa-long-arrow-up(aria-hidden=true)
       .value {{ spike }}%
@@ -14,7 +14,6 @@ json('../assets/colors.json')
 .chartainer
   position relative
   > canvas
-    padding 50px 0 0 0
     width inherit
     height inherit
   > .spike
@@ -39,16 +38,17 @@ let numeral = require('numeral')
 
 export default {
 
-  props: ['id', 'data', 'type', 'theme', 'width', 'height'],
+  props: ['id', 'data', 'type', 'value', 'theme', 'width', 'height'],
 
   data () {
     return {
-      spike: (Math.random() * (20 - -20) + -20).toFixed(2)
+      spike: 0
+      // spike: (Math.random() * (20 - -20) + -20).toFixed(2)
     }
   },
 
   methods: {
-    toCurrent (data) {
+    toCurrent (data, index = undefined) {
       let current = new Date().getFullYear()
       let labels = []
       let datas = []
@@ -58,7 +58,11 @@ export default {
         if (key >= current) {
           if (key === current || key === '2030' || (++i % 4)) {
             labels.push(key)
-            datas.push(data[key])
+            if (index !== undefined) {
+              datas.push(data[key][index])
+            } else {
+              datas.push(data[key])
+            }
           }
         }
       }
@@ -75,6 +79,8 @@ export default {
       datas: []
     }
 
+    let json = {}
+
     for (let i = 0; i !== 6; i++) {
       data.datas.push(Math.floor(Math.random() * 40) + 10)
     }
@@ -83,6 +89,25 @@ export default {
 
       case this.type === 'national' && this.data === 'apthhgrowth':
         data = this.toCurrent(require('../store/US Apt HHs (Landing).json').data)
+        break
+
+      case this.type === 'state' && this.data === 'apthhgrowth':
+        json = require('../store/State New Apt HHs Per Year.json')
+        data = this.toCurrent(json.data, json.labels.indexOf(this.value))
+        break
+
+      case this.type === 'state' && this.data === 'rentgrowth':
+        json = require('../store/State Rentership Rate.json')
+        data.labels = [2017, 2030]
+        data.datas = json.data[this.value]
+        break
+
+      case this.type === 'state' && this.data === 'popgrowth':
+        json = require('../store/State HH Growth.json')
+        data.labels = [2017, 2030]
+        data.datas = [ 0, json.data[this.value] ]
+        this.spike = numeral(json.data[this.value]).format('0.00%').replace(/%/, '')
+
         break
 
       case this.type === 'national' && this.data === 'rentgrowth':
@@ -124,7 +149,7 @@ export default {
     Chart.defaults.global.showLines = false
     Chart.defaults.global.elements.rectangle.borderColor = solid
     Chart.defaults.global.elements.line.borderColor = colors.red
-    Chart.defaults.global.hover.animationDuration = 0
+    Chart.defaults.global.hover.animationDuration = 200
 
     Chart.defaults.global.elements.rectangle.borderColor = solid
     let myChart = new Chart(ctx, {
@@ -161,10 +186,15 @@ export default {
           callbacks: {
             label: function (item, data) {
               if (Number(item.yLabel) < 1 && Number(item.yLabel) > 0) {
-                return numeral(item.yLabel).format('0%')
+                return numeral(item.yLabel).format('0.00%')
               }
               return numeral(item.yLabel).format('0.0a')
             }
+          }
+        },
+        layout: {
+          padding: {
+            top: 100
           }
         },
         scales: {

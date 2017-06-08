@@ -40,7 +40,7 @@ let sheets = [
   'US Population (Landing)',
 
   // State Page - Apt Household Growth, rentership grwoth, population growth
-  'State New Apt HHs Per year',
+  'State New Apt HHs Per Year',
   'State Rentership Rate',
   'State HH Growth'
 
@@ -101,6 +101,7 @@ for (let index in excel) {
     case 'US Apt HHs (Landing)':
     case 'US Rentership Rate (Landing)':
     case 'US Population (Landing)':
+    case 'State HH Growth':
       data.data = {}
       for (let value in sheet.data) {
         if (sheet.data[value].length > 0) {
@@ -117,6 +118,17 @@ for (let index in excel) {
       for (let value in sheet.data) {
         if (sheet.data[value].length > 0) {
           data.data[[sheet.data[value][0]] + ' ' + ordinal(sheet.data[value][1])] = sheet.data[value][2]
+        }
+      }
+      break
+
+    // array of elements per-year, choose the elements using the label list
+    case 'State New Apt HHs Per Year':
+    case 'State Rentership Rate':
+      data.data = {}
+      for (let value in sheet.data) {
+        if (sheet.data[value].length > 0) {
+          data.data[[sheet.data[value].shift()]] = sheet.data[value]
         }
       }
       break
