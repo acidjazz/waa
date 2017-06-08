@@ -144,6 +144,7 @@ json('../assets/fonts.json')
     > .copy:first-child
       font-size 30px
       animation fadeIn 0.2s ease-in-out 0s both
+      z-index 1
     > .copy
       padding 0 0 30px 0
     > .copy_print
@@ -160,9 +161,9 @@ json('../assets/fonts.json')
         > .value
           font h5
           padding 0 0 30px 0
-          animation fadeIn 0.2s ease-in-out 0.1s both
+          animation fadeIn 0.2s ease-in-out 0s both
         for i in 1..4
           &:nth-child({i}) > .value
-            animation-delay unit((0.1*i) + 0.0, 's')
+            animation-delay unit((0.02*i) + 0.1, 's')
 
 </style>

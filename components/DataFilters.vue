@@ -135,7 +135,7 @@ json('../assets/colors.json')
       border-radius 3px
       box-shadow 0px 0px 1px 0px rgba(black, 0.2)
       animation fadeIn 0.2s ease-in-out 0s both
-      transform translate(0,0)
+      z-index 10
       
       &.modal_metros
         width 300px

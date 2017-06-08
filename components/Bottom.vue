@@ -1,21 +1,21 @@
 <template lang="pug">
 #Bottom
   .upper
-    .section.copyright &copy; 2017 All Rightgs Reserved
+    .section.navigation
+      .link: router-link(to="/data") apartment data
+      .link: router-link(to="/data") apartment calculator
+      .link: router-link(to="/data") the initiative
     .section.signup
       .inner
+        .copy Subscribe to the newsletter and we will keep you up to date.
         .input
-          input(type="text",placeholder="Enter your email here")
-        a.send(href="/")
-          i.fa.fa-paper-plane(area-hidden=true)
-          .copy Send
+          input(type="text",placeholder="E-mail")
+          a.send(href="/")
+            i.fa.fa-envelope(area-hidden=true)
         .clear
-    .section.socials
-      .social
-        a.fa.fa-facebook(href="/")
-        a.fa.fa-twitter(href="/")
-        a.fa.fa-linkedin(href="/")
     .clear
+  .clear
+  .border.big
   .lower
     .inner
       .section.title
@@ -37,55 +37,51 @@ json('../assets/fonts.json')
     padding 60px 0
     width 1200px
     margin auto
-    > .section
+    > .section.navigation
       float left
-      width 400px
-      &.copyright
-        color grey
-      &.signup
-        > .inner
-          width 300px
-          margin auto
-          border-bottom 1px solid grey
-          > .input
-            float left
-            > input
-              font c1
-              width 220px
-              padding 5px 0
-              border none
-              outline none
-
-          > .send
-            float right
-            padding 3px 5px
-            color blue
-            transition background-color 0.1s ease-in-out 0s, color 0.1s ease-in-out 0.05s
-            &:hover
-              border-radius 3px
-              background-color blue
-              color white
-            > i
-              float left
-              margin 5px 0 0 0
-            > .copy
-              float left
-              margin 0 0 0 10px
-      &.socials
-        > .social
-          text-align center
-          > a
-            display inlne-block
-            margin 0 5px
+      width calc(50% - 1px)
+      text-align center
+      > .link
+        margin 5px 0 0 0 
+        width 33.3333%
+        display inline-block
+        text-transform uppercase
+        > a
+          text-decoration none
+          border-radiux 3px
+          color darkblue
+          font c1sb
+          padding 10px
+          &:hover
+            background-color lightgrey
+    > .section.signup
+      border-left 2px solid lightgrey
+      width calc(50% - 1px)
+      float right
+      > .inner
+        padding 0 20px
+        > .copy
+          color lightblue
+          width 200px
+          float left
+          font c1s
+        > .input
+          float left
+          width 200px
+          border 1px solid lightblue
+          border-radius 3px
+          padding 0 10px
+          margin 0 0 0 30px
+          > input
+            border none
+            outline none
             padding 5px
-            width 20px
-            color grey
-            text-decoration none
-            transition background-color 0.1s ease-in-out 0s, color 0.1s ease-in-out 0.05s
-            &:hover
-              border-radius 3px
-              background-color blue
-              color white
+            font c1
+            &::placeholder
+              color lightblue
+          > a > i
+            color lightblue
+
   > .lower
     background-color darkblue
     padding 60px 0
