@@ -41,7 +41,7 @@ json('../assets/colors.json')
       transition transform 0.5s ease-in-out 0s
     > .inner > .cbutton
       background-color white
-      color blue
+      color darkblue
       > .copy.copy_menu
         display none
     > .inner > .content
@@ -55,7 +55,7 @@ json('../assets/colors.json')
       transform scale(1)
       transition transform 0.3s ease-in-out 0s
     > .inner > .cbutton
-      background-color blue
+      background-color darkblue
       color white
       > .copy.copy_close
         display none

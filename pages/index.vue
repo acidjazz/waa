@@ -38,7 +38,7 @@ json('../assets/fonts.json')
       transform translate(-50%, -50%)
     > .outer
       position absolute
-      background-color rgba(darkblue, 0.9)
+      background linear-gradient(-67deg, rgba(#0099ff, 0.7), rgba(#00cccc, 0.7))
       height 100vh
       fullsize()
     > .inner
@@ -59,6 +59,10 @@ json('../assets/fonts.json')
         margin 60px auto
       > .button
         animation fadeIn 0.2s linear 0.2s both
+        > a
+          background-color white
+          color darkblue
+          font c1sb
 
 </style>
 
