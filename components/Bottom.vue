@@ -1,5 +1,6 @@
 <template lang="pug">
 #Bottom
+  .border.big
   .upper
     .section.navigation
       .link: router-link(to="/data") apartment data

@@ -17,19 +17,20 @@
 
     .section.section_charts(v-if="this.choice().type !== 'district'")
       .chart
-        SingleLineChart(type='line',data='popgrowth',id='popgrowth',theme="cyan",width=380,height=300,animation=false)
+        SingleLineChart(type='line',data='ahgrowth',id='ahgrowth',theme="orange",width=380,height=300,animation=false)
         .copys
-          .copy Population Growth
+          .copy Apartment Household Growth
           .copy Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna .  Lorem ipsum dolor sit amet, 
       .chart
         SingleLineChart(type='line',data='rvogrowth',id='rvogrowth',theme="lime",width=380,height=300,animation=false)
         .copys
-          .copy Renter vs Owner Growth
+          .copy Growth in Rentership
           .copy Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna .  Lorem ipsum dolor sit amet, 
       .chart
-        SingleLineChart(type='line',data='ahgrowth',id='ahgrowth',theme="orange",width=380,height=300,animation=false)
+        SingleLineChart(type='line',data='popgrowth',id='popgrowth',theme="cyan",width=380,height=300,animation=false)
         .copys
-          .copy Apartment Household Growth
+          .copy(v-if="this.choice().type === 'state'") Household Growth
+          .copy(v-else) Population Growth
           .copy Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna .  Lorem ipsum dolor sit amet, 
       .clear
 
@@ -90,7 +91,6 @@
           a.button learn more
         .clear
 
-    .border.big
     Bottom
   .datapage_print
     .source Learn More @ http://waa.256.io{{ path }}

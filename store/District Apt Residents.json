@@ -440,6 +440,8 @@
   },
   "labels": [
     "congressionaldistrict",
-    "apartmentresidents"
+    "apartmentresidents",
+    null,
+    "Time Period: 2015"
   ]
 }

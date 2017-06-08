@@ -12,6 +12,7 @@ let sheets = [
 
   // filters
   'Filters',
+
   // DataSummary, residents, homes, and contribution
   'US Apt Residents',
   'State Apt Residents',
@@ -32,6 +33,9 @@ let sheets = [
   'State Jobs',
   'Metro Jobs',
   'District Total Jobs',
+
+  // Population Growth
+
 ]
 
 for (let index in excel) {

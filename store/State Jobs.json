@@ -54,6 +54,8 @@
     "Wyoming": 5560
   },
   "labels": [
-    "total jobs"
+    "total jobs",
+    null,
+    "Time Period: 2013"
   ]
 }

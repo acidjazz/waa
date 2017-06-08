@@ -4,6 +4,9 @@
     "Total U.S.": 20378207
   },
   "labels": [
-    "Apartment units"
+    "Apartment units",
+    null,
+    null,
+    "Time Period: 2015"
   ]
 }

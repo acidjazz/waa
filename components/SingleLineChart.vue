@@ -64,33 +64,6 @@ export default {
       light = colors.lightred
     }
 
-    /*
-
-    Chart.pluginService.register({
-      id: 'background',
-      beforeDraw: function (chart, easing, options) {
-        var color = options.chart
-
-        if (!color) {
-          return
-        }
-
-        var helpers = Chart.helpers
-        var area = chart.chartArea
-        var ctx = chart.ctx
-
-        ctx.save()
-        ctx.fillStyle = color
-        ctx.fillRect(
-          area.left,
-          area.top,
-          area.right - area.left,
-          area.bottom - area.top)
-        ctx.restore()
-      }
-    })
-    */
-
     Chart.defaults.global.defaultFontSize = 16
     Chart.defaults.global.legend.display = false
     Chart.defaults.global.showLines = false

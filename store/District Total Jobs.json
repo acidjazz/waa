@@ -440,6 +440,9 @@
   },
   "labels": [
     "congressionaldistrict",
-    "total jobs"
+    "total jobs",
+    null,
+    null,
+    "Time Period: 2013"
   ]
 }

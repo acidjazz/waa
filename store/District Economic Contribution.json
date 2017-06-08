@@ -440,6 +440,9 @@
   },
   "labels": [
     "congressionaldistrict",
-    "economic contribution"
+    "economic contribution",
+    null,
+    null,
+    "Time Period: 2013"
   ]
 }

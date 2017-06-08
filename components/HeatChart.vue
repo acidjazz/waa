@@ -29,7 +29,7 @@ export default {
   },
   mounted () {
     if (process.BROWSER_BUILD) {
-      this.carat = document.querySelectorAll('.HeatChart > .circle > .carat')
+      this.carat = this.$el.querySelectorAll('.HeatChart > .circle > .carat')
       this.alterCarat(this.value)
     }
   },

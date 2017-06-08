@@ -54,6 +54,8 @@
     "Wyoming": 38249
   },
   "labels": [
-    "apartment residents"
+    "apartment residents",
+    null,
+    "Time Period: 2015"
   ]
 }
