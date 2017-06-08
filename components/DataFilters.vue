@@ -48,9 +48,9 @@ export default {
       for (let modal in this.modals) this.modals[modal] = false
       setTimeout(() => {
         if (type === 'state') this.modals[type] = true
-        if (type === 'district') this.modals[type] = true
+        if (type === 'district' && this.districts.length > 0) this.modals[type] = true
         if (type === 'metro' && this.metros.length > 0) this.modals[type] = true
-      }, 200)
+      }, 20)
     },
     populate () {
       this.metros = []

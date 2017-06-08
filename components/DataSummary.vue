@@ -75,8 +75,6 @@ import jobsState from '../store/State Jobs.json'
 import jobsMetro from '../store/Metro Jobs.json'
 import jobsDistrict from '../store/District Total Jobs.json'
 
-console.log(residentsDistrict.data)
-
 let numeral = require('numeral')
 
 export default {
