@@ -1,197 +1,47 @@
 {
   "sheet": "Metro Economic Contribution",
-  "data": [
-    [
-      "Albuquerque, NM",
-      1260191639.457165
-    ],
-    [
-      "Atlanta-Sandy Springs-Roswell, GA",
-      15161642860.46683
-    ],
-    [
-      "Austin-Round Rock, TX",
-      7634747707.9214
-    ],
-    [
-      "Baltimore-Columbia-Towson, MD",
-      7914788600.142579
-    ],
-    [
-      "Birmingham-Hoover, AL",
-      1991154124.030252
-    ],
-    [
-      "Boston-Cambridge-Newton, MA-NH",
-      17655176458.16986
-    ],
-    [
-      "Charleston-North Charleston, SC",
-      1418220958.8806689
-    ],
-    [
-      "Charlotte-Concord-Gastonia, NC-SC",
-      5146374629.628245
-    ],
-    [
-      "Chicago-Naperville-Elgin, IL-IN-WI",
-      29757837476.57732
-    ],
-    [
-      "Cincinnati, OH-KY-IN",
-      4307236826.848204
-    ],
-    [
-      "Cleveland-Elyria, OH"
-    ],
-    [
-      "Columbus, OH",
-      4667113905.363241
-    ],
-    [
-      "Dallas-Fort Worth-Arlington, TX",
-      25106285832.66472
-    ],
-    [
-      "Denver-Aurora-Lakewood, CO",
-      10352083537.74694
-    ],
-    [
-      "Detroit-Warren-Dearborn, MI",
-      6971668618.530043
-    ],
-    [
-      "Houston-The Woodlands-Sugar Land, TX",
-      22601430234.027588
-    ],
-    [
-      "Indianapolis-Carmel-Anderson, IN",
-      3976251734.7029266
-    ],
-    [
-      "Kansas City, MO-KS"
-    ],
-    [
-      "Las Vegas-Henderson-Paradise, NV",
-      4454419892.86134
-    ],
-    [
-      "Little Rock-North Little Rock-Conway, AR"
-    ],
-    [
-      "Los Angeles-Long Beach-Anaheim, CA",
-      63093465295.66183
-    ],
-    [
-      "Louisville/Jefferson County, KY-IN",
-      2186196377.90778
-    ],
-    [
-      "Memphis, TN-MS-AR"
-    ],
-    [
-      "Miami-Fort Lauderdale-West Palm Beach, FL",
-      18700286637.15578
-    ],
-    [
-      "Milwaukee-Waukesha-West Allis, WI"
-    ],
-    [
-      "Minneapolis-St. Paul-Bloomington, MN-WI",
-      10524010175.55071
-    ],
-    [
-      "Nashville-Davidson--Murfreesboro--Franklin, TN",
-      4160267734.832636
-    ],
-    [
-      "New Orleans-Metairie, LA",
-      2040068326.3707616
-    ],
-    [
-      "New York-Newark-Jersey City, NY-NJ-PA",
-      111514466427.9699
-    ],
-    [
-      "Oklahoma City, OK"
-    ],
-    [
-      "Orlando-Kissimmee-Sanford, FL",
-      5813992127.686414
-    ],
-    [
-      "Philadelphia-Camden-Wilmington, PA-NJ-DE-MD",
-      14047926787.724329
-    ],
-    [
-      "Phoenix-Mesa-Scottsdale, AZ",
-      9935288670.93283
-    ],
-    [
-      "Pittsburgh, PA",
-      3699272524.535206
-    ],
-    [
-      "Portland-Vancouver-Hillsboro, OR-WA",
-      7136351345.158669
-    ],
-    [
-      "Raleigh, NC"
-    ],
-    [
-      "Richmond, VA",
-      2564367233.7483625
-    ],
-    [
-      "Riverside-San Bernardino-Ontario, CA",
-      5197330024.050048
-    ],
-    [
-      "Sacramento--Roseville--Arden-Arcade, CA"
-    ],
-    [
-      "St. Louis, MO-IL",
-      4401604220.870251
-    ],
-    [
-      "Salt Lake City, UT",
-      2684010333.672699
-    ],
-    [
-      "San Antonio-New Braunfels, TX",
-      4696842021.842802
-    ],
-    [
-      "San Diego-Carlsbad, CA",
-      11899482146.07526
-    ],
-    [
-      "San Francisco-Oakland-Hayward, CA",
-      25346043072.65328
-    ],
-    [
-      "San Jose-Sunnyvale-Santa Clara, CA"
-    ],
-    [
-      "Seattle-Tacoma-Bellevue, WA",
-      15511604062.452478
-    ],
-    [
-      "Tampa-St. Petersburg-Clearwater, FL",
-      7169138178.39711
-    ],
-    [
-      "Urban Honolulu, HI"
-    ],
-    [
-      "Washington-Arlington-Alexandria, DC-VA-MD-WV",
-      24903205482.943333
-    ],
-    [
-      "Sioux Falls, SD ",
-      349176945.581311
-    ]
-  ],
+  "data": {
+    "Albuquerque, NM": 1260191639.457165,
+    "Atlanta-Sandy Springs-Roswell, GA": 15161642860.46683,
+    "Austin-Round Rock, TX": 7634747707.9214,
+    "Baltimore-Columbia-Towson, MD": 7914788600.142579,
+    "Birmingham-Hoover, AL": 1991154124.030252,
+    "Boston-Cambridge-Newton, MA-NH": 17655176458.16986,
+    "Charleston-North Charleston, SC": 1418220958.8806689,
+    "Charlotte-Concord-Gastonia, NC-SC": 5146374629.628245,
+    "Chicago-Naperville-Elgin, IL-IN-WI": 29757837476.57732,
+    "Cincinnati, OH-KY-IN": 4307236826.848204,
+    "Columbus, OH": 4667113905.363241,
+    "Dallas-Fort Worth-Arlington, TX": 25106285832.66472,
+    "Denver-Aurora-Lakewood, CO": 10352083537.74694,
+    "Detroit-Warren-Dearborn, MI": 6971668618.530043,
+    "Houston-The Woodlands-Sugar Land, TX": 22601430234.027588,
+    "Indianapolis-Carmel-Anderson, IN": 3976251734.7029266,
+    "Las Vegas-Henderson-Paradise, NV": 4454419892.86134,
+    "Los Angeles-Long Beach-Anaheim, CA": 63093465295.66183,
+    "Louisville/Jefferson County, KY-IN": 2186196377.90778,
+    "Miami-Fort Lauderdale-West Palm Beach, FL": 18700286637.15578,
+    "Minneapolis-St. Paul-Bloomington, MN-WI": 10524010175.55071,
+    "Nashville-Davidson--Murfreesboro--Franklin, TN": 4160267734.832636,
+    "New Orleans-Metairie, LA": 2040068326.3707616,
+    "New York-Newark-Jersey City, NY-NJ-PA": 111514466427.9699,
+    "Orlando-Kissimmee-Sanford, FL": 5813992127.686414,
+    "Philadelphia-Camden-Wilmington, PA-NJ-DE-MD": 14047926787.724329,
+    "Phoenix-Mesa-Scottsdale, AZ": 9935288670.93283,
+    "Pittsburgh, PA": 3699272524.535206,
+    "Portland-Vancouver-Hillsboro, OR-WA": 7136351345.158669,
+    "Richmond, VA": 2564367233.7483625,
+    "Riverside-San Bernardino-Ontario, CA": 5197330024.050048,
+    "St. Louis, MO-IL": 4401604220.870251,
+    "Salt Lake City, UT": 2684010333.672699,
+    "San Antonio-New Braunfels, TX": 4696842021.842802,
+    "San Diego-Carlsbad, CA": 11899482146.07526,
+    "San Francisco-Oakland-Hayward, CA": 25346043072.65328,
+    "Seattle-Tacoma-Bellevue, WA": 15511604062.452478,
+    "Tampa-St. Petersburg-Clearwater, FL": 7169138178.39711,
+    "Washington-Arlington-Alexandria, DC-VA-MD-WV": 24903205482.943333,
+    "Sioux Falls, SD ": 349176945.581311
+  },
   "labels": [
     "economic contribution"
   ]

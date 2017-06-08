@@ -27,6 +27,11 @@ let sheets = [
   'State Economic Contribution',
   'Metro Economic Contribution',
   'District Economic Contribution',
+
+  'US Jobs',
+  'State Jobs',
+  'Metro Jobs',
+  'District Total Jobs',
 ]
 
 for (let index in excel) {
@@ -72,6 +77,12 @@ for (let index in excel) {
     case 'US Apts':
     case 'State Apartments':
     case 'Metro Occupied Apartments':
+    case 'US Economic Contribution':
+    case 'State Economic Contribution':
+    case 'Metro Economic Contribution':
+    case 'US Jobs':
+    case 'State Jobs':
+    case 'Metro Jobs':
       data.data = {}
       for (let value in sheet.data) {
         if (sheet.data[value].length > 0) {
@@ -82,6 +93,8 @@ for (let index in excel) {
 
     case 'District Apt Residents':
     case 'District Occupied Apts':
+    case 'District Economic Contribution':
+    case 'District Total Jobs':
       data.data = {}
       for (let value in sheet.data) {
         if (sheet.data[value].length > 0) {

@@ -12,10 +12,10 @@
           .value {{ homes }}
           .copy Apartment Homes
         .stat
-          .value 1.3t
+          .value {{ contrib }}
           .copy Economic Contribution
         .stat
-          .value 12.3m
+          .value {{ jobs }}
           .copy Total Jobs Supported
         .clear
 </template>
@@ -43,6 +43,14 @@ US Economic Contribution
 State Economic Contribution
 Metro Economic Contribution
 District Economic Contribution
+
+Jobs
+----
+US Jobs,
+State Jobs,
+Metro Jobs,
+District Total Jobs,
+
 */
 
 import filtermixin from '~plugins/filter-mixin.js'
@@ -57,6 +65,16 @@ import homesState from '../store/State Apartments.json'
 import homesMetro from '../store/Metro Occupied Apartments.json'
 import homesDistrict from '../store/District Occupied Apts.json'
 
+import contribUS from '../store/US Economic Contribution.json'
+import contribState from '../store/State Economic Contribution.json'
+import contribMetro from '../store/Metro Economic Contribution.json'
+import contribDistrict from '../store/District Economic Contribution.json'
+
+import jobsUS from '../store/US Jobs.json'
+import jobsState from '../store/State Jobs.json'
+import jobsMetro from '../store/Metro Jobs.json'
+import jobsDistrict from '../store/District Total Jobs.json'
+
 console.log(residentsDistrict.data)
 
 let numeral = require('numeral')
@@ -70,14 +88,20 @@ export default {
         case 'national':
           this.residents = numeral(residentsUS.data['Total U.S.']).format('0.0a')
           this.homes = numeral(homesUS.data['Total U.S.']).format('0.0a')
+          this.contrib = numeral(contribUS.data['Total U.S.']).format('0.0a')
+          this.jobs = numeral(jobsUS.data['Total U.S.']).format('0.0a')
           break
         case 'state':
           this.residents = numeral(residentsState.data[this.choice().value]).format('0.0a')
           this.homes = numeral(homesState.data[this.choice().value]).format('0.0a')
+          this.contrib = numeral(contribState.data[this.choice().value]).format('0.0a')
+          this.jobs = numeral(jobsState.data[this.choice().value]).format('0.0a')
           break
         case 'district':
           this.residents = numeral(residentsDistrict.data[this.choice().value]).format('0.0a')
           this.homes = numeral(homesDistrict.data[this.choice().value]).format('0.0a')
+          this.contrib = numeral(contribDistrict.data[this.choice().value]).format('0.0a')
+          this.jobs = numeral(jobsDistrict.data[this.choice().value]).format('0.0a')
           break
       }
     }
@@ -101,7 +125,7 @@ export default {
     return {
       residents: 0,
       homes: 0,
-      contribution: 0,
+      contrib: 0,
       jobs: 0,
     }
   }
@@ -138,6 +162,9 @@ json('../assets/fonts.json')
         > .value
           font h5
           padding 0 0 30px 0
-          animation fadeIn 0.2s ease-in-out 0.3s both
+          animation fadeIn 0.2s ease-in-out 0.1s both
+        for i in 1..4
+          &:nth-child({i}) > .value
+            animation-delay unit((0.1*i) + 0.0, 's')
 
 </style>

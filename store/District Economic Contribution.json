@@ -1,2187 +1,443 @@
 {
   "sheet": "District Economic Contribution",
-  "data": [
-    [
-      "Alabama",
-      1,
-      702800000
-    ],
-    [
-      "Alabama",
-      2,
-      613100000
-    ],
-    [
-      "Alabama",
-      3,
-      628200000
-    ],
-    [
-      "Alabama",
-      4,
-      338900000
-    ],
-    [
-      "Alabama",
-      5,
-      867500000
-    ],
-    [
-      "Alabama",
-      6,
-      816200000
-    ],
-    [
-      "Alabama",
-      7,
-      1233000000
-    ],
-    [
-      "Alaska",
-      1,
-      976300000
-    ],
-    [
-      "Arizona",
-      1,
-      522800000
-    ],
-    [
-      "Arizona",
-      2,
-      1601000000
-    ],
-    [
-      "Arizona",
-      3,
-      826300000
-    ],
-    [
-      "Arizona",
-      4,
-      489200000
-    ],
-    [
-      "Arizona",
-      5,
-      742200000
-    ],
-    [
-      "Arizona",
-      6,
-      1857000000
-    ],
-    [
-      "Arizona",
-      7,
-      1678000000
-    ],
-    [
-      "Arizona",
-      8,
-      815700000
-    ],
-    [
-      "Arizona",
-      9,
-      2762000000
-    ],
-    [
-      "Arkansas",
-      1,
-      389700000
-    ],
-    [
-      "Arkansas",
-      2,
-      924800000
-    ],
-    [
-      "Arkansas",
-      3,
-      865800000
-    ],
-    [
-      "Arkansas",
-      4,
-      414500000
-    ],
-    [
-      "California",
-      1,
-      901100000
-    ],
-    [
-      "California",
-      2,
-      1351000000
-    ],
-    [
-      "California",
-      3,
-      1479000000
-    ],
-    [
-      "California",
-      4,
-      974100000
-    ],
-    [
-      "California",
-      5,
-      1574000000
-    ],
-    [
-      "California",
-      6,
-      2884000000
-    ],
-    [
-      "California",
-      7,
-      1820000000
-    ],
-    [
-      "California",
-      8,
-      679600000
-    ],
-    [
-      "California",
-      9,
-      990500000
-    ],
-    [
-      "California",
-      10,
-      970200000
-    ],
-    [
-      "California",
-      11,
-      2114000000
-    ],
-    [
-      "California",
-      12,
-      6564000000
-    ],
-    [
-      "California",
-      13,
-      3789000000
-    ],
-    [
-      "California",
-      14,
-      2574000000
-    ],
-    [
-      "California",
-      15,
-      2123000000
-    ],
-    [
-      "California",
-      16,
-      1275000000
-    ],
-    [
-      "California",
-      17,
-      2993000000
-    ],
-    [
-      "California",
-      18,
-      2525000000
-    ],
-    [
-      "California",
-      19,
-      2012000000
-    ],
-    [
-      "California",
-      20,
-      1593000000
-    ],
-    [
-      "California",
-      21,
-      713100000
-    ],
-    [
-      "California",
-      22,
-      1289000000
-    ],
-    [
-      "California",
-      23,
-      1041000000
-    ],
-    [
-      "California",
-      24,
-      1828000000
-    ],
-    [
-      "California",
-      25,
-      1293000000
-    ],
-    [
-      "California",
-      26,
-      1426000000
-    ],
-    [
-      "California",
-      27,
-      2346000000
-    ],
-    [
-      "California",
-      28,
-      6592000000
-    ],
-    [
-      "California",
-      29,
-      3844000000
-    ],
-    [
-      "California",
-      30,
-      4707000000
-    ],
-    [
-      "California",
-      31,
-      2018000000
-    ],
-    [
-      "California",
-      32,
-      1438000000
-    ],
-    [
-      "California",
-      33,
-      4906000000
-    ],
-    [
-      "California",
-      34,
-      6328000000
-    ],
-    [
-      "California",
-      35,
-      1287000000
-    ],
-    [
-      "California",
-      36,
-      1219000000
-    ],
-    [
-      "California",
-      37,
-      5002000000
-    ],
-    [
-      "California",
-      38,
-      1669000000
-    ],
-    [
-      "California",
-      39,
-      1682000000
-    ],
-    [
-      "California",
-      40,
-      1779000000
-    ],
-    [
-      "California",
-      41,
-      1495000000
-    ],
-    [
-      "California",
-      42,
-      802000000
-    ],
-    [
-      "California",
-      43,
-      3429000000
-    ],
-    [
-      "California",
-      44,
-      1310000000
-    ],
-    [
-      "California",
-      45,
-      2471000000
-    ],
-    [
-      "California",
-      46,
-      2811000000
-    ],
-    [
-      "California",
-      47,
-      3303000000
-    ],
-    [
-      "California",
-      48,
-      2335000000
-    ],
-    [
-      "California",
-      49,
-      2049000000
-    ],
-    [
-      "California",
-      50,
-      1958000000
-    ],
-    [
-      "California",
-      51,
-      2346000000
-    ],
-    [
-      "California",
-      52,
-      3255000000
-    ],
-    [
-      "California",
-      53,
-      3621000000
-    ],
-    [
-      "Colorado",
-      1,
-      3632000000
-    ],
-    [
-      "Colorado",
-      2,
-      1691000000
-    ],
-    [
-      "Colorado",
-      3,
-      740300000
-    ],
-    [
-      "Colorado",
-      4,
-      962300000
-    ],
-    [
-      "Colorado",
-      5,
-      1402000000
-    ],
-    [
-      "Colorado",
-      6,
-      2230000000
-    ],
-    [
-      "Colorado",
-      7,
-      2148000000
-    ],
-    [
-      "Connecticut",
-      1,
-      1826000000
-    ],
-    [
-      "Connecticut",
-      2,
-      983200000
-    ],
-    [
-      "Connecticut",
-      3,
-      1628000000
-    ],
-    [
-      "Connecticut",
-      4,
-      1197000000
-    ],
-    [
-      "Connecticut",
-      5,
-      1277000000
-    ],
-    [
-      "Delaware",
-      1,
-      1268000000
-    ],
-    [
-      "District of Columbia",
-      1,
-      3793000000
-    ],
-    [
-      "Florida",
-      1,
-      822800000
-    ],
-    [
-      "Florida",
-      2,
-      1177000000
-    ],
-    [
-      "Florida",
-      3,
-      1057000000
-    ],
-    [
-      "Florida",
-      4,
-      1455000000
-    ],
-    [
-      "Florida",
-      5,
-      2086000000
-    ],
-    [
-      "Florida",
-      6,
-      903800000
-    ],
-    [
-      "Florida",
-      7,
-      1288000000
-    ],
-    [
-      "Florida",
-      8,
-      1032000000
-    ],
-    [
-      "Florida",
-      9,
-      1515000000
-    ],
-    [
-      "Florida",
-      10,
-      1411000000
-    ],
-    [
-      "Florida",
-      11,
-      433600000
-    ],
-    [
-      "Florida",
-      12,
-      1010000000
-    ],
-    [
-      "Florida",
-      13,
-      1814000000
-    ],
-    [
-      "Florida",
-      14,
-      2784000000
-    ],
-    [
-      "Florida",
-      15,
-      1094000000
-    ],
-    [
-      "Florida",
-      16,
-      968700000
-    ],
-    [
-      "Florida",
-      17,
-      423100000
-    ],
-    [
-      "Florida",
-      18,
-      838500000
-    ],
-    [
-      "Florida",
-      19,
-      1070000000
-    ],
-    [
-      "Florida",
-      20,
-      1985000000
-    ],
-    [
-      "Florida",
-      21,
-      1296000000
-    ],
-    [
-      "Florida",
-      22,
-      2153000000
-    ],
-    [
-      "Florida",
-      23,
-      2569000000
-    ],
-    [
-      "Florida",
-      24,
-      2509000000
-    ],
-    [
-      "Florida",
-      25,
-      1703000000
-    ],
-    [
-      "Florida",
-      26,
-      1002000000
-    ],
-    [
-      "Florida",
-      27,
-      2284000000
-    ],
-    [
-      "Georgia",
-      1,
-      974600000
-    ],
-    [
-      "Georgia",
-      2,
-      1031000000
-    ],
-    [
-      "Georgia",
-      3,
-      880200000
-    ],
-    [
-      "Georgia",
-      4,
-      1615000000
-    ],
-    [
-      "Georgia",
-      5,
-      3763000000
-    ],
-    [
-      "Georgia",
-      6,
-      2821000000
-    ],
-    [
-      "Georgia",
-      7,
-      1374000000
-    ],
-    [
-      "Georgia",
-      8,
-      818600000
-    ],
-    [
-      "Georgia",
-      9,
-      428400000
-    ],
-    [
-      "Georgia",
-      10,
-      791700000
-    ],
-    [
-      "Georgia",
-      11,
-      1888000000
-    ],
-    [
-      "Georgia",
-      12,
-      725400000
-    ],
-    [
-      "Georgia",
-      13,
-      1253000000
-    ],
-    [
-      "Georgia",
-      14,
-      498900000
-    ],
-    [
-      "Hawaii",
-      1,
-      2572000000
-    ],
-    [
-      "Hawaii",
-      2,
-      787500000
-    ],
-    [
-      "Idaho",
-      1,
-      347200000
-    ],
-    [
-      "Idaho",
-      2,
-      482000000
-    ],
-    [
-      "Illinois",
-      1,
-      2419000000
-    ],
-    [
-      "Illinois",
-      2,
-      1645000000
-    ],
-    [
-      "Illinois",
-      3,
-      985300000
-    ],
-    [
-      "Illinois",
-      4,
-      1597000000
-    ],
-    [
-      "Illinois",
-      5,
-      3639000000
-    ],
-    [
-      "Illinois",
-      6,
-      1324000000
-    ],
-    [
-      "Illinois",
-      7,
-      4661000000
-    ],
-    [
-      "Illinois",
-      8,
-      2304000000
-    ],
-    [
-      "Illinois",
-      9,
-      3613000000
-    ],
-    [
-      "Illinois",
-      10,
-      1646000000
-    ],
-    [
-      "Illinois",
-      11,
-      1397000000
-    ],
-    [
-      "Illinois",
-      12,
-      1132000000
-    ],
-    [
-      "Illinois",
-      13,
-      1817000000
-    ],
-    [
-      "Illinois",
-      14,
-      671800000
-    ],
-    [
-      "Illinois",
-      15,
-      698800000
-    ],
-    [
-      "Illinois",
-      16,
-      1030000000
-    ],
-    [
-      "Illinois",
-      17,
-      1439000000
-    ],
-    [
-      "Illinois",
-      18,
-      1092000000
-    ],
-    [
-      "Indiana",
-      1,
-      943300000
-    ],
-    [
-      "Indiana",
-      2,
-      847000000
-    ],
-    [
-      "Indiana",
-      3,
-      788500000
-    ],
-    [
-      "Indiana",
-      4,
-      820900000
-    ],
-    [
-      "Indiana",
-      5,
-      1033000000
-    ],
-    [
-      "Indiana",
-      6,
-      664700000
-    ],
-    [
-      "Indiana",
-      7,
-      1765000000
-    ],
-    [
-      "Indiana",
-      8,
-      773000000
-    ],
-    [
-      "Indiana",
-      9,
-      1020000000
-    ],
-    [
-      "Iowa",
-      1,
-      764500000
-    ],
-    [
-      "Iowa",
-      2,
-      1005000000
-    ],
-    [
-      "Iowa",
-      3,
-      1165000000
-    ],
-    [
-      "Iowa",
-      4,
-      740400000
-    ],
-    [
-      "Kansas",
-      1,
-      649300000
-    ],
-    [
-      "Kansas",
-      2,
-      749500000
-    ],
-    [
-      "Kansas",
-      3,
-      1294000000
-    ],
-    [
-      "Kansas",
-      4,
-      863000000
-    ],
-    [
-      "Kentucky",
-      1,
-      435900000
-    ],
-    [
-      "Kentucky",
-      2,
-      529300000
-    ],
-    [
-      "Kentucky",
-      3,
-      1584000000
-    ],
-    [
-      "Kentucky",
-      4,
-      798000000
-    ],
-    [
-      "Kentucky",
-      5,
-      353000000
-    ],
-    [
-      "Kentucky",
-      6,
-      1165000000
-    ],
-    [
-      "Louisiana",
-      1,
-      864700000
-    ],
-    [
-      "Louisiana",
-      2,
-      1247000000
-    ],
-    [
-      "Louisiana",
-      3,
-      641200000
-    ],
-    [
-      "Louisiana",
-      4,
-      674500000
-    ],
-    [
-      "Louisiana",
-      5,
-      423900000
-    ],
-    [
-      "Louisiana",
-      6,
-      880200000
-    ],
-    [
-      "Maine",
-      1,
-      728100000
-    ],
-    [
-      "Maine",
-      2,
-      610400000
-    ],
-    [
-      "Maryland",
-      1,
-      800500000
-    ],
-    [
-      "Maryland",
-      2,
-      2506000000
-    ],
-    [
-      "Maryland",
-      3,
-      2668000000
-    ],
-    [
-      "Maryland",
-      4,
-      3029000000
-    ],
-    [
-      "Maryland",
-      5,
-      1239000000
-    ],
-    [
-      "Maryland",
-      6,
-      1909000000
-    ],
-    [
-      "Maryland",
-      7,
-      2657000000
-    ],
-    [
-      "Maryland",
-      8,
-      2693000000
-    ],
-    [
-      "Massachusetts",
-      1,
-      1686000000
-    ],
-    [
-      "Massachusetts",
-      2,
-      1776000000
-    ],
-    [
-      "Massachusetts",
-      3,
-      2002000000
-    ],
-    [
-      "Massachusetts",
-      4,
-      1449000000
-    ],
-    [
-      "Massachusetts",
-      5,
-      2349000000
-    ],
-    [
-      "Massachusetts",
-      6,
-      1787000000
-    ],
-    [
-      "Massachusetts",
-      7,
-      3938000000
-    ],
-    [
-      "Massachusetts",
-      8,
-      2502000000
-    ],
-    [
-      "Massachusetts",
-      9,
-      1247000000
-    ],
-    [
-      "Michigan",
-      1,
-      555400000
-    ],
-    [
-      "Michigan",
-      2,
-      997500000
-    ],
-    [
-      "Michigan",
-      3,
-      801200000
-    ],
-    [
-      "Michigan",
-      4,
-      694300000
-    ],
-    [
-      "Michigan",
-      5,
-      951400000
-    ],
-    [
-      "Michigan",
-      6,
-      1063000000
-    ],
-    [
-      "Michigan",
-      7,
-      729400000
-    ],
-    [
-      "Michigan",
-      8,
-      1224000000
-    ],
-    [
-      "Michigan",
-      9,
-      1193000000
-    ],
-    [
-      "Michigan",
-      10,
-      670900000
-    ],
-    [
-      "Michigan",
-      11,
-      1258000000
-    ],
-    [
-      "Michigan",
-      12,
-      1507000000
-    ],
-    [
-      "Michigan",
-      13,
-      1308000000
-    ],
-    [
-      "Michigan",
-      14,
-      1504000000
-    ],
-    [
-      "Minnesota",
-      1,
-      943800000
-    ],
-    [
-      "Minnesota",
-      2,
-      1074000000
-    ],
-    [
-      "Minnesota",
-      3,
-      1621000000
-    ],
-    [
-      "Minnesota",
-      4,
-      2067000000
-    ],
-    [
-      "Minnesota",
-      5,
-      2955000000
-    ],
-    [
-      "Minnesota",
-      6,
-      813100000
-    ],
-    [
-      "Minnesota",
-      7,
-      1003000000
-    ],
-    [
-      "Minnesota",
-      8,
-      806300000
-    ],
-    [
-      "Mississippi",
-      1,
-      427900000
-    ],
-    [
-      "Mississippi",
-      2,
-      636800000
-    ],
-    [
-      "Mississippi",
-      3,
-      586400000
-    ],
-    [
-      "Mississippi",
-      4,
-      724700000
-    ],
-    [
-      "Missouri",
-      1,
-      1571000000
-    ],
-    [
-      "Missouri",
-      2,
-      1124000000
-    ],
-    [
-      "Missouri",
-      3,
-      490400000
-    ],
-    [
-      "Missouri",
-      4,
-      586900000
-    ],
-    [
-      "Missouri",
-      5,
-      1627000000
-    ],
-    [
-      "Missouri",
-      6,
-      787900000
-    ],
-    [
-      "Missouri",
-      7,
-      908100000
-    ],
-    [
-      "Missouri",
-      8,
-      429800000
-    ],
-    [
-      "Montana",
-      1,
-      716100000
-    ],
-    [
-      "Nebraska",
-      1,
-      975500000
-    ],
-    [
-      "Nebraska",
-      2,
-      1270000000
-    ],
-    [
-      "Nebraska",
-      3,
-      408700000
-    ],
-    [
-      "Nevada",
-      1,
-      2346000000
-    ],
-    [
-      "Nevada",
-      2,
-      1282000000
-    ],
-    [
-      "Nevada",
-      3,
-      1423000000
-    ],
-    [
-      "Nevada",
-      4,
-      806700000
-    ],
-    [
-      "New Hampshire",
-      1,
-      1274000000
-    ],
-    [
-      "New Hampshire",
-      2,
-      1024000000
-    ],
-    [
-      "New Jersey",
-      1,
-      1912000000
-    ],
-    [
-      "New Jersey",
-      2,
-      1390000000
-    ],
-    [
-      "New Jersey",
-      3,
-      965300000
-    ],
-    [
-      "New Jersey",
-      4,
-      1489000000
-    ],
-    [
-      "New Jersey",
-      5,
-      1293000000
-    ],
-    [
-      "New Jersey",
-      6,
-      2223000000
-    ],
-    [
-      "New Jersey",
-      7,
-      1094000000
-    ],
-    [
-      "New Jersey",
-      8,
-      4761000000
-    ],
-    [
-      "New Jersey",
-      9,
-      2540000000
-    ],
-    [
-      "New Jersey",
-      10,
-      3665000000
-    ],
-    [
-      "New Jersey",
-      11,
-      1381000000
-    ],
-    [
-      "New Jersey",
-      12,
-      2298000000
-    ],
-    [
-      "New Mexico",
-      1,
-      1002000000
-    ],
-    [
-      "New Mexico",
-      2,
-      321500000
-    ],
-    [
-      "New Mexico",
-      3,
-      270300000
-    ],
-    [
-      "New York",
-      1,
-      805200000
-    ],
-    [
-      "New York",
-      2,
-      648400000
-    ],
-    [
-      "New York",
-      3,
-      733600000
-    ],
-    [
-      "New York",
-      4,
-      1110000000
-    ],
-    [
-      "New York",
-      5,
-      2087000000
-    ],
-    [
-      "New York",
-      6,
-      4105000000
-    ],
-    [
-      "New York",
-      7,
-      6247000000
-    ],
-    [
-      "New York",
-      8,
-      5170000000
-    ],
-    [
-      "New York",
-      9,
-      6670000000
-    ],
-    [
-      "New York",
-      10,
-      8393000000
-    ],
-    [
-      "New York",
-      11,
-      2637000000
-    ],
-    [
-      "New York",
-      12,
-      11640000000
-    ],
-    [
-      "New York",
-      13,
-      11180000000
-    ],
-    [
-      "New York",
-      14,
-      5106000000
-    ],
-    [
-      "New York",
-      15,
-      9265000000
-    ],
-    [
-      "New York",
-      16,
-      4051000000
-    ],
-    [
-      "New York",
-      17,
-      1826000000
-    ],
-    [
-      "New York",
-      18,
-      1334000000
-    ],
-    [
-      "New York",
-      19,
-      839700000
-    ],
-    [
-      "New York",
-      20,
-      2181000000
-    ],
-    [
-      "New York",
-      21,
-      933400000
-    ],
-    [
-      "New York",
-      22,
-      1207000000
-    ],
-    [
-      "New York",
-      23,
-      1094000000
-    ],
-    [
-      "New York",
-      24,
-      1831000000
-    ],
-    [
-      "New York",
-      25,
-      2281000000
-    ],
-    [
-      "New York",
-      26,
-      1911000000
-    ],
-    [
-      "New York",
-      27,
-      1078000000
-    ],
-    [
-      "North Carolina",
-      1,
-      1475000000
-    ],
-    [
-      "North Carolina",
-      2,
-      890600000
-    ],
-    [
-      "North Carolina",
-      3,
-      816600000
-    ],
-    [
-      "North Carolina",
-      4,
-      2619000000
-    ],
-    [
-      "North Carolina",
-      5,
-      1254000000
-    ],
-    [
-      "North Carolina",
-      6,
-      1058000000
-    ],
-    [
-      "North Carolina",
-      7,
-      443600000
-    ],
-    [
-      "North Carolina",
-      8,
-      454100000
-    ],
-    [
-      "North Carolina",
-      9,
-      1430000000
-    ],
-    [
-      "North Carolina",
-      10,
-      840500000
-    ],
-    [
-      "North Carolina",
-      11,
-      455100000
-    ],
-    [
-      "North Carolina",
-      12,
-      2758000000
-    ],
-    [
-      "North Carolina",
-      13,
-      1038000000
-    ],
-    [
-      "North Dakota",
-      1,
-      1331000000
-    ],
-    [
-      "Ohio",
-      1,
-      1609000000
-    ],
-    [
-      "Ohio",
-      2,
-      1289000000
-    ],
-    [
-      "Ohio",
-      3,
-      2438000000
-    ],
-    [
-      "Ohio",
-      4,
-      632700000
-    ],
-    [
-      "Ohio",
-      5,
-      981100000
-    ],
-    [
-      "Ohio",
-      6,
-      495300000
-    ],
-    [
-      "Ohio",
-      7,
-      499000000
-    ],
-    [
-      "Ohio",
-      8,
-      786900000
-    ],
-    [
-      "Ohio",
-      9,
-      1396000000
-    ],
-    [
-      "Ohio",
-      10,
-      1292000000
-    ],
-    [
-      "Ohio",
-      11,
-      2118000000
-    ],
-    [
-      "Ohio",
-      12,
-      944100000
-    ],
-    [
-      "Ohio",
-      13,
-      1349000000
-    ],
-    [
-      "Ohio",
-      14,
-      995900000
-    ],
-    [
-      "Ohio",
-      15,
-      1027000000
-    ],
-    [
-      "Ohio",
-      16,
-      1201000000
-    ],
-    [
-      "Oklahoma",
-      1,
-      1388000000
-    ],
-    [
-      "Oklahoma",
-      2,
-      339200000
-    ],
-    [
-      "Oklahoma",
-      3,
-      493000000
-    ],
-    [
-      "Oklahoma",
-      4,
-      757800000
-    ],
-    [
-      "Oklahoma",
-      5,
-      1308000000
-    ],
-    [
-      "Oregon",
-      1,
-      1979000000
-    ],
-    [
-      "Oregon",
-      2,
-      757700000
-    ],
-    [
-      "Oregon",
-      3,
-      2076000000
-    ],
-    [
-      "Oregon",
-      4,
-      1140000000
-    ],
-    [
-      "Oregon",
-      5,
-      1459000000
-    ],
-    [
-      "Pennsylvania",
-      1,
-      1124000000
-    ],
-    [
-      "Pennsylvania",
-      2,
-      2306000000
-    ],
-    [
-      "Pennsylvania",
-      3,
-      824900000
-    ],
-    [
-      "Pennsylvania",
-      4,
-      836300000
-    ],
-    [
-      "Pennsylvania",
-      5,
-      946800000
-    ],
-    [
-      "Pennsylvania",
-      6,
-      1145000000
-    ],
-    [
-      "Pennsylvania",
-      7,
-      876000000
-    ],
-    [
-      "Pennsylvania",
-      8,
-      1106000000
-    ],
-    [
-      "Pennsylvania",
-      9,
-      640500000
-    ],
-    [
-      "Pennsylvania",
-      10,
-      503300000
-    ],
-    [
-      "Pennsylvania",
-      11,
-      848300000
-    ],
-    [
-      "Pennsylvania",
-      12,
-      859800000
-    ],
-    [
-      "Pennsylvania",
-      13,
-      1435000000
-    ],
-    [
-      "Pennsylvania",
-      14,
-      2171000000
-    ],
-    [
-      "Pennsylvania",
-      15,
-      1165000000
-    ],
-    [
-      "Pennsylvania",
-      16,
-      1113000000
-    ],
-    [
-      "Pennsylvania",
-      17,
-      832900000
-    ],
-    [
-      "Pennsylvania",
-      18,
-      1095000000
-    ],
-    [
-      "Rhode Island",
-      1,
-      937000000
-    ],
-    [
-      "Rhode Island",
-      2,
-      788500000
-    ],
-    [
-      "South Carolina",
-      1,
-      1122000000
-    ],
-    [
-      "South Carolina",
-      2,
-      554400000
-    ],
-    [
-      "South Carolina",
-      3,
-      478300000
-    ],
-    [
-      "South Carolina",
-      4,
-      1013000000
-    ],
-    [
-      "South Carolina",
-      5,
-      529900000
-    ],
-    [
-      "South Carolina",
-      6,
-      993100000
-    ],
-    [
-      "South Carolina",
-      7,
-      663000000
-    ],
-    [
-      "South Dakota",
-      1,
-      932700000
-    ],
-    [
-      "Tennessee",
-      1,
-      702300000
-    ],
-    [
-      "Tennessee",
-      2,
-      1207000000
-    ],
-    [
-      "Tennessee",
-      3,
-      794500000
-    ],
-    [
-      "Tennessee",
-      4,
-      700900000
-    ],
-    [
-      "Tennessee",
-      5,
-      2124000000
-    ],
-    [
-      "Tennessee",
-      6,
-      600500000
-    ],
-    [
-      "Tennessee",
-      7,
-      536900000
-    ],
-    [
-      "Tennessee",
-      8,
-      479100000
-    ],
-    [
-      "Tennessee",
-      9,
-      1643000000
-    ],
-    [
-      "Texas",
-      1,
-      927300000
-    ],
-    [
-      "Texas",
-      2,
-      2859000000
-    ],
-    [
-      "Texas",
-      3,
-      2899000000
-    ],
-    [
-      "Texas",
-      4,
-      745700000
-    ],
-    [
-      "Texas",
-      5,
-      1686000000
-    ],
-    [
-      "Texas",
-      6,
-      1734000000
-    ],
-    [
-      "Texas",
-      7,
-      4345000000
-    ],
-    [
-      "Texas",
-      8,
-      1076000000
-    ],
-    [
-      "Texas",
-      9,
-      3882000000
-    ],
-    [
-      "Texas",
-      10,
-      1872000000
-    ],
-    [
-      "Texas",
-      11,
-      1281000000
-    ],
-    [
-      "Texas",
-      12,
-      2104000000
-    ],
-    [
-      "Texas",
-      13,
-      989900000
-    ],
-    [
-      "Texas",
-      14,
-      1686000000
-    ],
-    [
-      "Texas",
-      15,
-      561800000
-    ],
-    [
-      "Texas",
-      16,
-      1537000000
-    ],
-    [
-      "Texas",
-      17,
-      2115000000
-    ],
-    [
-      "Texas",
-      18,
-      3134000000
-    ],
-    [
-      "Texas",
-      19,
-      1065000000
-    ],
-    [
-      "Texas",
-      20,
-      2482000000
-    ],
-    [
-      "Texas",
-      21,
-      3225000000
-    ],
-    [
-      "Texas",
-      22,
-      1286000000
-    ],
-    [
-      "Texas",
-      23,
-      668900000
-    ],
-    [
-      "Texas",
-      24,
-      4597000000
-    ],
-    [
-      "Texas",
-      25,
-      952400000
-    ],
-    [
-      "Texas",
-      26,
-      1602000000
-    ],
-    [
-      "Texas",
-      27,
-      1224000000
-    ],
-    [
-      "Texas",
-      28,
-      748600000
-    ],
-    [
-      "Texas",
-      29,
-      2092000000
-    ],
-    [
-      "Texas",
-      30,
-      2647000000
-    ],
-    [
-      "Texas",
-      31,
-      1485000000
-    ],
-    [
-      "Texas",
-      32,
-      3288000000
-    ],
-    [
-      "Texas",
-      33,
-      2168000000
-    ],
-    [
-      "Texas",
-      34,
-      629900000
-    ],
-    [
-      "Texas",
-      35,
-      2213000000
-    ],
-    [
-      "Texas",
-      36,
-      1238000000
-    ],
-    [
-      "Utah",
-      1,
-      681200000
-    ],
-    [
-      "Utah",
-      2,
-      992200000
-    ],
-    [
-      "Utah",
-      3,
-      815700000
-    ],
-    [
-      "Utah",
-      4,
-      1130000000
-    ],
-    [
-      "Vermont",
-      1,
-      506900000
-    ],
-    [
-      "Virginia",
-      1,
-      1122000000
-    ],
-    [
-      "Virginia",
-      2,
-      1875000000
-    ],
-    [
-      "Virginia",
-      3,
-      3026000000
-    ],
-    [
-      "Virginia",
-      4,
-      1150000000
-    ],
-    [
-      "Virginia",
-      5,
-      1052000000
-    ],
-    [
-      "Virginia",
-      6,
-      1522000000
-    ],
-    [
-      "Virginia",
-      7,
-      1466000000
-    ],
-    [
-      "Virginia",
-      8,
-      4905000000
-    ],
-    [
-      "Virginia",
-      9,
-      1096000000
-    ],
-    [
-      "Virginia",
-      10,
-      1127000000
-    ],
-    [
-      "Virginia",
-      11,
-      2604000000
-    ],
-    [
-      "Washington",
-      1,
-      1343000000
-    ],
-    [
-      "Washington",
-      2,
-      1851000000
-    ],
-    [
-      "Washington",
-      3,
-      1154000000
-    ],
-    [
-      "Washington",
-      4,
-      862600000
-    ],
-    [
-      "Washington",
-      5,
-      1600000000
-    ],
-    [
-      "Washington",
-      6,
-      1273000000
-    ],
-    [
-      "Washington",
-      7,
-      4099000000
-    ],
-    [
-      "Washington",
-      8,
-      932500000
-    ],
-    [
-      "Washington",
-      9,
-      2875000000
-    ],
-    [
-      "Washington",
-      10,
-      1537000000
-    ],
-    [
-      "West Virginia",
-      1,
-      394200000
-    ],
-    [
-      "West Virginia",
-      2,
-      296000000
-    ],
-    [
-      "West Virginia",
-      3,
-      316500000
-    ],
-    [
-      "Wisconsin",
-      1,
-      972800000
-    ],
-    [
-      "Wisconsin",
-      2,
-      1875000000
-    ],
-    [
-      "Wisconsin",
-      3,
-      854400000
-    ],
-    [
-      "Wisconsin",
-      4,
-      1938000000
-    ],
-    [
-      "Wisconsin",
-      5,
-      1360000000
-    ],
-    [
-      "Wisconsin",
-      6,
-      1046000000
-    ],
-    [
-      "Wisconsin",
-      7,
-      695500000
-    ],
-    [
-      "Wisconsin",
-      8,
-      1134000000
-    ],
-    [
-      "Wyoming",
-      1,
-      404800000
-    ]
-  ],
+  "data": {
+    "Alabama 1st": 702800000,
+    "Alabama 2nd": 613100000,
+    "Alabama 3rd": 628200000,
+    "Alabama 4th": 338900000,
+    "Alabama 5th": 867500000,
+    "Alabama 6th": 816200000,
+    "Alabama 7th": 1233000000,
+    "Alaska 1st": 976300000,
+    "Arizona 1st": 522800000,
+    "Arizona 2nd": 1601000000,
+    "Arizona 3rd": 826300000,
+    "Arizona 4th": 489200000,
+    "Arizona 5th": 742200000,
+    "Arizona 6th": 1857000000,
+    "Arizona 7th": 1678000000,
+    "Arizona 8th": 815700000,
+    "Arizona 9th": 2762000000,
+    "Arkansas 1st": 389700000,
+    "Arkansas 2nd": 924800000,
+    "Arkansas 3rd": 865800000,
+    "Arkansas 4th": 414500000,
+    "California 1st": 901100000,
+    "California 2nd": 1351000000,
+    "California 3rd": 1479000000,
+    "California 4th": 974100000,
+    "California 5th": 1574000000,
+    "California 6th": 2884000000,
+    "California 7th": 1820000000,
+    "California 8th": 679600000,
+    "California 9th": 990500000,
+    "California 10th": 970200000,
+    "California 11th": 2114000000,
+    "California 12th": 6564000000,
+    "California 13th": 3789000000,
+    "California 14th": 2574000000,
+    "California 15th": 2123000000,
+    "California 16th": 1275000000,
+    "California 17th": 2993000000,
+    "California 18th": 2525000000,
+    "California 19th": 2012000000,
+    "California 20th": 1593000000,
+    "California 21st": 713100000,
+    "California 22nd": 1289000000,
+    "California 23rd": 1041000000,
+    "California 24th": 1828000000,
+    "California 25th": 1293000000,
+    "California 26th": 1426000000,
+    "California 27th": 2346000000,
+    "California 28th": 6592000000,
+    "California 29th": 3844000000,
+    "California 30th": 4707000000,
+    "California 31st": 2018000000,
+    "California 32nd": 1438000000,
+    "California 33rd": 4906000000,
+    "California 34th": 6328000000,
+    "California 35th": 1287000000,
+    "California 36th": 1219000000,
+    "California 37th": 5002000000,
+    "California 38th": 1669000000,
+    "California 39th": 1682000000,
+    "California 40th": 1779000000,
+    "California 41st": 1495000000,
+    "California 42nd": 802000000,
+    "California 43rd": 3429000000,
+    "California 44th": 1310000000,
+    "California 45th": 2471000000,
+    "California 46th": 2811000000,
+    "California 47th": 3303000000,
+    "California 48th": 2335000000,
+    "California 49th": 2049000000,
+    "California 50th": 1958000000,
+    "California 51st": 2346000000,
+    "California 52nd": 3255000000,
+    "California 53rd": 3621000000,
+    "Colorado 1st": 3632000000,
+    "Colorado 2nd": 1691000000,
+    "Colorado 3rd": 740300000,
+    "Colorado 4th": 962300000,
+    "Colorado 5th": 1402000000,
+    "Colorado 6th": 2230000000,
+    "Colorado 7th": 2148000000,
+    "Connecticut 1st": 1826000000,
+    "Connecticut 2nd": 983200000,
+    "Connecticut 3rd": 1628000000,
+    "Connecticut 4th": 1197000000,
+    "Connecticut 5th": 1277000000,
+    "Delaware 1st": 1268000000,
+    "District of Columbia 1st": 3793000000,
+    "Florida 1st": 822800000,
+    "Florida 2nd": 1177000000,
+    "Florida 3rd": 1057000000,
+    "Florida 4th": 1455000000,
+    "Florida 5th": 2086000000,
+    "Florida 6th": 903800000,
+    "Florida 7th": 1288000000,
+    "Florida 8th": 1032000000,
+    "Florida 9th": 1515000000,
+    "Florida 10th": 1411000000,
+    "Florida 11th": 433600000,
+    "Florida 12th": 1010000000,
+    "Florida 13th": 1814000000,
+    "Florida 14th": 2784000000,
+    "Florida 15th": 1094000000,
+    "Florida 16th": 968700000,
+    "Florida 17th": 423100000,
+    "Florida 18th": 838500000,
+    "Florida 19th": 1070000000,
+    "Florida 20th": 1985000000,
+    "Florida 21st": 1296000000,
+    "Florida 22nd": 2153000000,
+    "Florida 23rd": 2569000000,
+    "Florida 24th": 2509000000,
+    "Florida 25th": 1703000000,
+    "Florida 26th": 1002000000,
+    "Florida 27th": 2284000000,
+    "Georgia 1st": 974600000,
+    "Georgia 2nd": 1031000000,
+    "Georgia 3rd": 880200000,
+    "Georgia 4th": 1615000000,
+    "Georgia 5th": 3763000000,
+    "Georgia 6th": 2821000000,
+    "Georgia 7th": 1374000000,
+    "Georgia 8th": 818600000,
+    "Georgia 9th": 428400000,
+    "Georgia 10th": 791700000,
+    "Georgia 11th": 1888000000,
+    "Georgia 12th": 725400000,
+    "Georgia 13th": 1253000000,
+    "Georgia 14th": 498900000,
+    "Hawaii 1st": 2572000000,
+    "Hawaii 2nd": 787500000,
+    "Idaho 1st": 347200000,
+    "Idaho 2nd": 482000000,
+    "Illinois 1st": 2419000000,
+    "Illinois 2nd": 1645000000,
+    "Illinois 3rd": 985300000,
+    "Illinois 4th": 1597000000,
+    "Illinois 5th": 3639000000,
+    "Illinois 6th": 1324000000,
+    "Illinois 7th": 4661000000,
+    "Illinois 8th": 2304000000,
+    "Illinois 9th": 3613000000,
+    "Illinois 10th": 1646000000,
+    "Illinois 11th": 1397000000,
+    "Illinois 12th": 1132000000,
+    "Illinois 13th": 1817000000,
+    "Illinois 14th": 671800000,
+    "Illinois 15th": 698800000,
+    "Illinois 16th": 1030000000,
+    "Illinois 17th": 1439000000,
+    "Illinois 18th": 1092000000,
+    "Indiana 1st": 943300000,
+    "Indiana 2nd": 847000000,
+    "Indiana 3rd": 788500000,
+    "Indiana 4th": 820900000,
+    "Indiana 5th": 1033000000,
+    "Indiana 6th": 664700000,
+    "Indiana 7th": 1765000000,
+    "Indiana 8th": 773000000,
+    "Indiana 9th": 1020000000,
+    "Iowa 1st": 764500000,
+    "Iowa 2nd": 1005000000,
+    "Iowa 3rd": 1165000000,
+    "Iowa 4th": 740400000,
+    "Kansas 1st": 649300000,
+    "Kansas 2nd": 749500000,
+    "Kansas 3rd": 1294000000,
+    "Kansas 4th": 863000000,
+    "Kentucky 1st": 435900000,
+    "Kentucky 2nd": 529300000,
+    "Kentucky 3rd": 1584000000,
+    "Kentucky 4th": 798000000,
+    "Kentucky 5th": 353000000,
+    "Kentucky 6th": 1165000000,
+    "Louisiana 1st": 864700000,
+    "Louisiana 2nd": 1247000000,
+    "Louisiana 3rd": 641200000,
+    "Louisiana 4th": 674500000,
+    "Louisiana 5th": 423900000,
+    "Louisiana 6th": 880200000,
+    "Maine 1st": 728100000,
+    "Maine 2nd": 610400000,
+    "Maryland 1st": 800500000,
+    "Maryland 2nd": 2506000000,
+    "Maryland 3rd": 2668000000,
+    "Maryland 4th": 3029000000,
+    "Maryland 5th": 1239000000,
+    "Maryland 6th": 1909000000,
+    "Maryland 7th": 2657000000,
+    "Maryland 8th": 2693000000,
+    "Massachusetts 1st": 1686000000,
+    "Massachusetts 2nd": 1776000000,
+    "Massachusetts 3rd": 2002000000,
+    "Massachusetts 4th": 1449000000,
+    "Massachusetts 5th": 2349000000,
+    "Massachusetts 6th": 1787000000,
+    "Massachusetts 7th": 3938000000,
+    "Massachusetts 8th": 2502000000,
+    "Massachusetts 9th": 1247000000,
+    "Michigan 1st": 555400000,
+    "Michigan 2nd": 997500000,
+    "Michigan 3rd": 801200000,
+    "Michigan 4th": 694300000,
+    "Michigan 5th": 951400000,
+    "Michigan 6th": 1063000000,
+    "Michigan 7th": 729400000,
+    "Michigan 8th": 1224000000,
+    "Michigan 9th": 1193000000,
+    "Michigan 10th": 670900000,
+    "Michigan 11th": 1258000000,
+    "Michigan 12th": 1507000000,
+    "Michigan 13th": 1308000000,
+    "Michigan 14th": 1504000000,
+    "Minnesota 1st": 943800000,
+    "Minnesota 2nd": 1074000000,
+    "Minnesota 3rd": 1621000000,
+    "Minnesota 4th": 2067000000,
+    "Minnesota 5th": 2955000000,
+    "Minnesota 6th": 813100000,
+    "Minnesota 7th": 1003000000,
+    "Minnesota 8th": 806300000,
+    "Mississippi 1st": 427900000,
+    "Mississippi 2nd": 636800000,
+    "Mississippi 3rd": 586400000,
+    "Mississippi 4th": 724700000,
+    "Missouri 1st": 1571000000,
+    "Missouri 2nd": 1124000000,
+    "Missouri 3rd": 490400000,
+    "Missouri 4th": 586900000,
+    "Missouri 5th": 1627000000,
+    "Missouri 6th": 787900000,
+    "Missouri 7th": 908100000,
+    "Missouri 8th": 429800000,
+    "Montana 1st": 716100000,
+    "Nebraska 1st": 975500000,
+    "Nebraska 2nd": 1270000000,
+    "Nebraska 3rd": 408700000,
+    "Nevada 1st": 2346000000,
+    "Nevada 2nd": 1282000000,
+    "Nevada 3rd": 1423000000,
+    "Nevada 4th": 806700000,
+    "New Hampshire 1st": 1274000000,
+    "New Hampshire 2nd": 1024000000,
+    "New Jersey 1st": 1912000000,
+    "New Jersey 2nd": 1390000000,
+    "New Jersey 3rd": 965300000,
+    "New Jersey 4th": 1489000000,
+    "New Jersey 5th": 1293000000,
+    "New Jersey 6th": 2223000000,
+    "New Jersey 7th": 1094000000,
+    "New Jersey 8th": 4761000000,
+    "New Jersey 9th": 2540000000,
+    "New Jersey 10th": 3665000000,
+    "New Jersey 11th": 1381000000,
+    "New Jersey 12th": 2298000000,
+    "New Mexico 1st": 1002000000,
+    "New Mexico 2nd": 321500000,
+    "New Mexico 3rd": 270300000,
+    "New York 1st": 805200000,
+    "New York 2nd": 648400000,
+    "New York 3rd": 733600000,
+    "New York 4th": 1110000000,
+    "New York 5th": 2087000000,
+    "New York 6th": 4105000000,
+    "New York 7th": 6247000000,
+    "New York 8th": 5170000000,
+    "New York 9th": 6670000000,
+    "New York 10th": 8393000000,
+    "New York 11th": 2637000000,
+    "New York 12th": 11640000000,
+    "New York 13th": 11180000000,
+    "New York 14th": 5106000000,
+    "New York 15th": 9265000000,
+    "New York 16th": 4051000000,
+    "New York 17th": 1826000000,
+    "New York 18th": 1334000000,
+    "New York 19th": 839700000,
+    "New York 20th": 2181000000,
+    "New York 21st": 933400000,
+    "New York 22nd": 1207000000,
+    "New York 23rd": 1094000000,
+    "New York 24th": 1831000000,
+    "New York 25th": 2281000000,
+    "New York 26th": 1911000000,
+    "New York 27th": 1078000000,
+    "North Carolina 1st": 1475000000,
+    "North Carolina 2nd": 890600000,
+    "North Carolina 3rd": 816600000,
+    "North Carolina 4th": 2619000000,
+    "North Carolina 5th": 1254000000,
+    "North Carolina 6th": 1058000000,
+    "North Carolina 7th": 443600000,
+    "North Carolina 8th": 454100000,
+    "North Carolina 9th": 1430000000,
+    "North Carolina 10th": 840500000,
+    "North Carolina 11th": 455100000,
+    "North Carolina 12th": 2758000000,
+    "North Carolina 13th": 1038000000,
+    "North Dakota 1st": 1331000000,
+    "Ohio 1st": 1609000000,
+    "Ohio 2nd": 1289000000,
+    "Ohio 3rd": 2438000000,
+    "Ohio 4th": 632700000,
+    "Ohio 5th": 981100000,
+    "Ohio 6th": 495300000,
+    "Ohio 7th": 499000000,
+    "Ohio 8th": 786900000,
+    "Ohio 9th": 1396000000,
+    "Ohio 10th": 1292000000,
+    "Ohio 11th": 2118000000,
+    "Ohio 12th": 944100000,
+    "Ohio 13th": 1349000000,
+    "Ohio 14th": 995900000,
+    "Ohio 15th": 1027000000,
+    "Ohio 16th": 1201000000,
+    "Oklahoma 1st": 1388000000,
+    "Oklahoma 2nd": 339200000,
+    "Oklahoma 3rd": 493000000,
+    "Oklahoma 4th": 757800000,
+    "Oklahoma 5th": 1308000000,
+    "Oregon 1st": 1979000000,
+    "Oregon 2nd": 757700000,
+    "Oregon 3rd": 2076000000,
+    "Oregon 4th": 1140000000,
+    "Oregon 5th": 1459000000,
+    "Pennsylvania 1st": 1124000000,
+    "Pennsylvania 2nd": 2306000000,
+    "Pennsylvania 3rd": 824900000,
+    "Pennsylvania 4th": 836300000,
+    "Pennsylvania 5th": 946800000,
+    "Pennsylvania 6th": 1145000000,
+    "Pennsylvania 7th": 876000000,
+    "Pennsylvania 8th": 1106000000,
+    "Pennsylvania 9th": 640500000,
+    "Pennsylvania 10th": 503300000,
+    "Pennsylvania 11th": 848300000,
+    "Pennsylvania 12th": 859800000,
+    "Pennsylvania 13th": 1435000000,
+    "Pennsylvania 14th": 2171000000,
+    "Pennsylvania 15th": 1165000000,
+    "Pennsylvania 16th": 1113000000,
+    "Pennsylvania 17th": 832900000,
+    "Pennsylvania 18th": 1095000000,
+    "Rhode Island 1st": 937000000,
+    "Rhode Island 2nd": 788500000,
+    "South Carolina 1st": 1122000000,
+    "South Carolina 2nd": 554400000,
+    "South Carolina 3rd": 478300000,
+    "South Carolina 4th": 1013000000,
+    "South Carolina 5th": 529900000,
+    "South Carolina 6th": 993100000,
+    "South Carolina 7th": 663000000,
+    "South Dakota 1st": 932700000,
+    "Tennessee 1st": 702300000,
+    "Tennessee 2nd": 1207000000,
+    "Tennessee 3rd": 794500000,
+    "Tennessee 4th": 700900000,
+    "Tennessee 5th": 2124000000,
+    "Tennessee 6th": 600500000,
+    "Tennessee 7th": 536900000,
+    "Tennessee 8th": 479100000,
+    "Tennessee 9th": 1643000000,
+    "Texas 1st": 927300000,
+    "Texas 2nd": 2859000000,
+    "Texas 3rd": 2899000000,
+    "Texas 4th": 745700000,
+    "Texas 5th": 1686000000,
+    "Texas 6th": 1734000000,
+    "Texas 7th": 4345000000,
+    "Texas 8th": 1076000000,
+    "Texas 9th": 3882000000,
+    "Texas 10th": 1872000000,
+    "Texas 11th": 1281000000,
+    "Texas 12th": 2104000000,
+    "Texas 13th": 989900000,
+    "Texas 14th": 1686000000,
+    "Texas 15th": 561800000,
+    "Texas 16th": 1537000000,
+    "Texas 17th": 2115000000,
+    "Texas 18th": 3134000000,
+    "Texas 19th": 1065000000,
+    "Texas 20th": 2482000000,
+    "Texas 21st": 3225000000,
+    "Texas 22nd": 1286000000,
+    "Texas 23rd": 668900000,
+    "Texas 24th": 4597000000,
+    "Texas 25th": 952400000,
+    "Texas 26th": 1602000000,
+    "Texas 27th": 1224000000,
+    "Texas 28th": 748600000,
+    "Texas 29th": 2092000000,
+    "Texas 30th": 2647000000,
+    "Texas 31st": 1485000000,
+    "Texas 32nd": 3288000000,
+    "Texas 33rd": 2168000000,
+    "Texas 34th": 629900000,
+    "Texas 35th": 2213000000,
+    "Texas 36th": 1238000000,
+    "Utah 1st": 681200000,
+    "Utah 2nd": 992200000,
+    "Utah 3rd": 815700000,
+    "Utah 4th": 1130000000,
+    "Vermont 1st": 506900000,
+    "Virginia 1st": 1122000000,
+    "Virginia 2nd": 1875000000,
+    "Virginia 3rd": 3026000000,
+    "Virginia 4th": 1150000000,
+    "Virginia 5th": 1052000000,
+    "Virginia 6th": 1522000000,
+    "Virginia 7th": 1466000000,
+    "Virginia 8th": 4905000000,
+    "Virginia 9th": 1096000000,
+    "Virginia 10th": 1127000000,
+    "Virginia 11th": 2604000000,
+    "Washington 1st": 1343000000,
+    "Washington 2nd": 1851000000,
+    "Washington 3rd": 1154000000,
+    "Washington 4th": 862600000,
+    "Washington 5th": 1600000000,
+    "Washington 6th": 1273000000,
+    "Washington 7th": 4099000000,
+    "Washington 8th": 932500000,
+    "Washington 9th": 2875000000,
+    "Washington 10th": 1537000000,
+    "West Virginia 1st": 394200000,
+    "West Virginia 2nd": 296000000,
+    "West Virginia 3rd": 316500000,
+    "Wisconsin 1st": 972800000,
+    "Wisconsin 2nd": 1875000000,
+    "Wisconsin 3rd": 854400000,
+    "Wisconsin 4th": 1938000000,
+    "Wisconsin 5th": 1360000000,
+    "Wisconsin 6th": 1046000000,
+    "Wisconsin 7th": 695500000,
+    "Wisconsin 8th": 1134000000,
+    "Wyoming 1st": 404800000
+  },
   "labels": [
     "congressionaldistrict",
     "economic contribution"
