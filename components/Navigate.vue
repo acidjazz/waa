@@ -55,7 +55,7 @@ json('../assets/colors.json')
       transform scale(1)
       transition transform 0.3s ease-in-out 0s
     > .inner > .cbutton
-      background-color darkblue
+      background-color rgba(darkblue)
       color white
       > .copy.copy_close
         display none
@@ -65,7 +65,7 @@ json('../assets/colors.json')
 
   > .blue
     position absolute
-    background-color blue
+    background-color darkblue
     width 100px
     height 100px
     top 0
@@ -106,10 +106,10 @@ json('../assets/colors.json')
           > a
             padding 0 20px
             color white
-            transition background-color 0.1s linear 0s
-            &.router-link-exact-active
-              background-color #323c47
+            transition background-color 0.2s ease-in-out 0.01s
+            &.nuxt-link-exact-active
+              background-color rgba(lightblue, 0.5)
             &:hover
-              background-color rgba(#323c47, 0.5)
+              background-color rgba(lightblue, 0.2)
 
 </style>
