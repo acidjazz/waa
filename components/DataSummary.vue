@@ -101,6 +101,12 @@ export default {
           this.contrib = numeral(contribDistrict.data[this.choice().value]).format('0.0a')
           this.jobs = numeral(jobsDistrict.data[this.choice().value]).format('0.0a')
           break
+        case 'metro':
+          this.residents = numeral(residentsMetro.data[this.choice().value]).format('0.0a')
+          this.homes = numeral(homesMetro.data[this.choice().value]).format('0.0a')
+          this.contrib = numeral(contribMetro.data[this.choice().value]).format('0.0a')
+          this.jobs = numeral(jobsMetro.data[this.choice().value]).format('0.0a')
+          break
       }
     }
   },

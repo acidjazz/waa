@@ -16,7 +16,7 @@ json('../assets/colors.json')
 import colors from '~/assets/colors.json'
 export default {
 
-  props: ['type', 'id', 'data', 'theme', 'width', 'height'],
+  props: ['id', 'data', 'type', 'theme', 'width', 'height'],
 
   data () {
     return { }
@@ -81,7 +81,7 @@ export default {
     }]
 
     let myChart = new Chart(ctx, {
-      type: this.type,
+      type: 'line',
       data: {
         labels: [2000, 2010, 2015, 2020, 2025, 2030],
 

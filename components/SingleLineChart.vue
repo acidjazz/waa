@@ -33,16 +33,35 @@ json('../assets/colors.json')
 
 <script>
 import colors from '~/assets/colors.json'
+
 export default {
 
-  props: ['type', 'id', 'data', 'theme', 'width', 'height'],
+  props: ['id', 'data', 'type', 'theme', 'width', 'height'],
 
   data () {
     return {
       spike: (Math.random() * (20 - -20) + -20).toFixed(2)
     }
   },
+
   mounted () {
+    let labels = [2000, 2010, 2015, 2020, 2025, 2030]
+    let datas = []
+
+    for (let i = 0; i !== 6; i++) {
+      datas.push(Math.floor(Math.random() * 40) + 10)
+    }
+
+    switch (true) {
+
+      case this.type === 'national' && this.data === 'apthhgrowth':
+        break
+
+      default:
+        break
+
+    }
+
     let Chart = require('chart.js')
     let ctx = 'chart-' + this.id
 
@@ -72,17 +91,10 @@ export default {
     Chart.defaults.global.hover.animationDuration = 0
 
     Chart.defaults.global.elements.rectangle.borderColor = solid
-
-    let datas = []
-    for (let i = 0; i !== 6; i++) {
-      datas.push(Math.floor(Math.random() * 40) + 10)
-    }
-
     let myChart = new Chart(ctx, {
-      type: this.type,
+      type: 'line',
       data: {
-        labels: [2000, 2010, 2015, 2020, 2025, 2030],
-
+        labels: labels,
         datasets: [{
           data: datas,
 
