@@ -8,7 +8,6 @@
     .section.section_demand(v-if="this.choice().type !== 'district'")
       include ../assets/pug/partial/section_demand
 
-
     .section.section_district(v-if="this.choice().type === 'district'")
       include ../assets/pug/partial/section_district
 
@@ -22,7 +21,7 @@
           .copy Apartment Household Growth
           .copy Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna .  Lorem ipsum dolor sit amet, 
       .chart
-        SingleLineChart(data='rvogrowth',id='rvogrowth',:type="this.choice().type",theme="lime",width=380,height=300,animation=false)
+        SingleLineChart(data='rentgrowth',id='rentgrowth',:type="this.choice().type",theme="lime",width=380,height=300,animation=false)
         .copys
           .copy Growth in Rentership
           .copy Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna .  Lorem ipsum dolor sit amet, 

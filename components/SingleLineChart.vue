@@ -1,6 +1,6 @@
 <template lang="pug">
   .chartainer
-    canvas(:id="'chart-' + id",:width="width",:height="height")
+    canvas(:id="'chart-' + id",:width="width",:height="height-50")
     .spike(v-if="(spike > 0)")
       i.fa.fa-long-arrow-up(aria-hidden=true)
       .value {{ spike }}%
@@ -14,6 +14,7 @@ json('../assets/colors.json')
 .chartainer
   position relative
   > canvas
+    padding 50px 0 0 0
     width inherit
     height inherit
   > .spike
@@ -34,6 +35,8 @@ json('../assets/colors.json')
 <script>
 import colors from '~/assets/colors.json'
 
+let numeral = require('numeral')
+
 export default {
 
   props: ['id', 'data', 'type', 'theme', 'width', 'height'],
@@ -44,17 +47,50 @@ export default {
     }
   },
 
+  methods: {
+    toCurrent (data) {
+      let current = new Date().getFullYear()
+      let labels = []
+      let datas = []
+      let i = 0
+
+      for (let key in data) {
+        if (key >= current) {
+          if (key === current || key === '2030' || (++i % 4)) {
+            labels.push(key)
+            datas.push(data[key])
+          }
+        }
+      }
+
+      return {labels: labels, datas: datas}
+    },
+
+  },
+
   mounted () {
-    let labels = [2000, 2010, 2015, 2020, 2025, 2030]
-    let datas = []
+
+    let data = {
+      labels: [2000, 2010, 2015, 2020, 2025, 2030],
+      datas: []
+    }
 
     for (let i = 0; i !== 6; i++) {
-      datas.push(Math.floor(Math.random() * 40) + 10)
+      data.datas.push(Math.floor(Math.random() * 40) + 10)
     }
 
     switch (true) {
 
       case this.type === 'national' && this.data === 'apthhgrowth':
+        data = this.toCurrent(require('../store/US Apt HHs (Landing).json').data)
+        break
+
+      case this.type === 'national' && this.data === 'rentgrowth':
+        data = this.toCurrent(require('../store/US Rentership Rate (Landing).json').data)
+        break
+
+      case this.type === 'national' && this.data === 'popgrowth':
+        data = this.toCurrent(require('../store/US Population (Landing).json').data)
         break
 
       default:
@@ -94,9 +130,9 @@ export default {
     let myChart = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: labels,
+        labels: data.labels,
         datasets: [{
-          data: datas,
+          data: data.datas,
 
           pointBackgroundColor: colors.white,
           pointBorderWidth: 4,
@@ -110,25 +146,38 @@ export default {
       },
 
       options: {
-        plugins: {
-          background: {
-            chart: light
+        tooltips: {
+          displayColors: false,
+          backgroundColor: colors.white,
+          bodyFontFamily: 'Maven Pro',
+          bodyFontSize: 20,
+          titleFontSize: 0,
+          titleSpacing: 0,
+          titleMarginBottom: -6,
+          bodyFontColor: solid,
+          yPadding: 10,
+          borderColor: colors.lightblue,
+          borderWidth: 4,
+          callbacks: {
+            label: function (item, data) {
+              if (Number(item.yLabel) < 1 && Number(item.yLabel) > 0) {
+                return numeral(item.yLabel).format('0%')
+              }
+              return numeral(item.yLabel).format('0.0a')
+            }
           }
         },
-        layout: {
-          padding: { left: 0, top: 20, rigth: 0, bottom: 20 } },
         scales: {
           yAxes: [{
             display: false,
             gridLines: { color: solid, display: false, zeroLineColor: solid },
-            ticks: { suggestedMin: 5, suggestedMax: 55 }
           }],
           xAxes: [{
             gridLines: { color: solid, zeroLineColor: solid, display: false },
             ticks: {
-              beginAtZero: true,
               fontColor: solid,
               color: solid,
+              maxRotation: 0,
             }
           }]
         }

@@ -34,7 +34,15 @@ let sheets = [
   'Metro Jobs',
   'District Total Jobs',
 
-  // Natinoal Page - Apt Household Growth
+  // Natinoal Page - Apt Household Growth, rentership grwoth, population growth
+  'US Apt HHs (Landing)',
+  'US Rentership Rate (Landing)',
+  'US Population (Landing)',
+
+  // State Page - Apt Household Growth, rentership grwoth, population growth
+  'State New APt HHS Per year',
+  'State Rentership Rate',
+  'State HH Growth'
 
 ]
 
@@ -61,6 +69,9 @@ for (let index in excel) {
 
     case 'Filters':
       for (let value in sheet.data) {
+        if (sheet.data[value].length === 0) {
+          continue
+        }
         let left = sheet.data[value][0]
         if (left !== undefined) {
           sheet.data[value].shift()
@@ -87,6 +98,9 @@ for (let index in excel) {
     case 'US Jobs':
     case 'State Jobs':
     case 'Metro Jobs':
+    case 'US Apt HHs (Landing)':
+    case 'US Rentership Rate (Landing)':
+    case 'US Population (Landing)':
       data.data = {}
       for (let value in sheet.data) {
         if (sheet.data[value].length > 0) {

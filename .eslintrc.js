@@ -14,7 +14,8 @@ module.exports = {
   rules: {
     'no-unused-vars': 0,
     'quotes': 0,
-    'comma-dangle': 0
+    'comma-dangle': 0,
+    'padded-blocks': 0
   },
   globals: {}
 }
