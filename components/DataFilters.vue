@@ -9,11 +9,11 @@
           | state
           .chevron.chevron_states(:class="{ on: modals.state, off: !modals.state }")
             .inner
-        a.option(:class="{active: (this.choice().type === 'metro'), enabled: ( this.metros !== false)}",@click="modal('metro')")
+        a.option(:class="{active: (this.choice().type === 'metro'), enabled: (this.metros.length > 0)}",@click="modal('metro')")
           | metro
           .chevron.chevron_metros(:class="{ on: modals.metro, off: !modals.metro }")
             .inner
-        a.option(:class="{active: (this.choice().type === 'district'), enabled: (this.districts.length > 0)}",@click="modal('district')")
+        a.option(:class="{active: (this.choice().type === 'district'), enabled: (districts.length > 0)}",@click="modal('district')")
           | district
           .chevron.chevron_districts(:class="{ on: modals.district, off: !modals.district }")
             .inner
@@ -22,15 +22,15 @@
 
     .modal.modal_states(:class="{ on: modals.state, off: !modals.state }")
       .option(v-for="State in data",:class="{ active: (state === State.State) }")
-        router-link(v-bind:to="'/data/state/' + State.State.toLowerCase().replace(/ /g, '-')",@click.native="modal(false)") {{ State.State }}
+        router-link.choice(v-bind:to="'/data/state/' + State.State.toLowerCase().replace(/ /g, '-')",@click.native="modal(false)") {{ State.State }}
 
     .modal.modal_metros(:class="{ on: modals.metro, off: !modals.metro }")
       .option(v-for="Metro in metros",:class="{ active: (metro === Metro) }")
-        router-link(v-bind:to="'/data/metro/' + Metro.trim().toLowerCase().replace(/ /g, '-')",@click.native="modal(false)") {{ Metro }}
+        router-link.choice(v-bind:to="'/data/metro/' + Metro.trim().toLowerCase().replace(/ /g, '-')",@click.native="modal(false)") {{ Metro }}
 
     .modal.modal_districts(:class="{ on: modals.district, off: !modals.district }")
       .option(v-for="District in districts",:class="{ active: (district === District) }")
-        router-link(v-bind:to="'/data/district/' + District.trim().toLowerCase().replace(/ /g, '-')",@click.native="modal(false)") {{ District }}
+        router-link.choice(v-bind:to="'/data/district/' + District.trim().toLowerCase().replace(/ /g, '-')",@click.native="modal(false)") {{ District }}
 </template>
 
 <script>
@@ -48,34 +48,36 @@ export default {
       for (let modal in this.modals) this.modals[modal] = false
       setTimeout(() => {
         if (type === 'state') this.modals[type] = true
-        if (type === 'district' && this.state !== 'National') this.modals[type] = true
-        if (type === 'metro' && this.metros !== false) this.modals[type] = true
-      }, 20)
+        if (type === 'district') this.modals[type] = true
+        if (type === 'metro' && this.metros.length > 0) this.modals[type] = true
+      }, 200)
     },
-  },
-  data () {
-    // look for and list metros if they exist
-    let metros = false
-    let districts = []
+    populate () {
+      this.metros = []
+      this.districts = []
+      if (this.choice().type === 'state' || this.choice().type === 'district') {
+        for (let item of Filters.data) {
+          if (item.State === this.choice().state) {
+            if (item.Metro !== undefined) {
+              this.metros = item.Metro.split(',')
+            }
 
-    if (this.choice().type === 'state') {
-      for (let item of Filters.data) {
-        if (item.State === this.choice().value) {
-          if (item.Metro !== undefined) {
-            metros = item.Metro.split(',')
-          }
-
-          for (let i = 1; i !== item.District; i++) {
-            districts.push(this.choice().value + " " + ordinal(i))
+            for (let i = 1; i !== item.District; i++) {
+              this.districts.push(this.choice().state + " " + ordinal(i))
+            }
           }
         }
       }
     }
-
+  },
+  created () {
+    this.populate()
+  },
+  data () {
     return {
       data: Filters.data,
-      metros: metros,
-      districts: districts,
+      metros: [],
+      districts: [],
       modals: {
         state: false,
         metro: false,
@@ -85,7 +87,7 @@ export default {
   },
   mounted () {
     this.popupItem = this.$el
-  }
+  },
 
 }
 </script>
@@ -133,6 +135,7 @@ json('../assets/colors.json')
       border-radius 3px
       box-shadow 0px 0px 1px 0px rgba(black, 0.2)
       animation fadeIn 0.2s ease-in-out 0s both
+      transform translate(0,0)
       
       &.modal_metros
         width 300px

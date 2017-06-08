@@ -17,7 +17,6 @@ export default {
   props: ['value'],
   methods: {
     alterCarat (value) {
-      console.log(this.carat)
       for (let carat of this.carat) {
         carat.style.transform = 'rotate(' + Math.round(value * 240 / 100 - 30) + 'deg)'
       }
