@@ -7,26 +7,57 @@
     .items
       .item
         #DollarsEarned
-          .value 1.3
-          .copy Trillian Dollars Earned
+          .value {{ contrib }}
+          .copy Dollars Earned
           .copy economic contribution
           .copy Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.
       .item
-        .copy TBD
+        .copy year apartment built
         PercChart
       .item
         .copy apartment households
         CircleChart(id="renters",width="300",height="300",value="70")
       .clear
 
+    .copys
+      .copyarea
+        .copy Title
+        .copy description description
+      .copyarea
+        .copy Supply at risk
+        .copy The nation's apartment stock is aging, with a majority built before 1980.  Without resources to support rehabilitation and preservation efforts, the current supply-demand imbalance will worsen, affecting affordability.
+      .copyarea
+        .copy We Need to build More
+        .copy Many people in your district call apartments home. They  appreciate mortgage-free living, the ability to follow new work opportunities and amenities that fit their lifestyles.  
+      .clear
+
 </template>
 <script>
+
+import contribUS from '../store/US Economic Contribution.json'
+
 import BarChart from '~/components/BarChart.vue'
 import CircleChart from '~/components/CircleChart.vue'
 import PercChart from '~/components/PercChart.vue'
+
+let numeral = require('numeral')
+
 export default {
   components: {
     BarChart, CircleChart, PercChart
+  },
+  methods: {
+    populate () {
+      this.contrib = numeral(contribUS.data['Total U.S.']).format('0.0a')
+    }
+  },
+  created () {
+    this.populate()
+  },
+  data () {
+    return {
+      contrib: 0
+    }
   }
 }
 </script>
@@ -56,13 +87,30 @@ json('../assets/fonts.json')
         width 300px
         height 400px
         margin-right 27px
-        border 1px solid lightblue
+        border 1px solid lightgrey
         border-radius 3px
         &:nth-child(3)
           margin-right 0px
         > .copy
           padding 20px 0 0 20px
           text-transform uppercase
+          font c1sb
+          color darkblue
+    > .copys
+      width 960px
+      margin auto
+      > .copyarea
+        float left
+        width 300px
+        margin-right 27px
+        margin-top 20px
+        &:nth-child(3)
+          margin-right 0px
+        > .copy:first-child
+          font h3
+          padding 0 0 10px 0
+        > .copy:nth-child(2)
+          color grey
 
 #DollarsEarned
   padding 40px

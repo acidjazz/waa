@@ -2,29 +2,115 @@
 #percs
   .perc.perc_orange
     .label 2000 or later
-    .value 85%
+    .value {{ value.today }}%
     .clear
     .progress &nbsp;
-      .inner(style="width: 85%")
+      .inner(:style="'width: ' + bar.today + '%'")
   .perc.perc_lime
     .label 1980 - 1999
-    .value 37%
+    .value {{ value.eighties }}%
     .clear
     .progress &nbsp;
-      .inner(style="width: 37%")
+      .inner(:style="'width: ' + bar.eighties + '%'")
   .perc.perc_red
     .label 1960 - 1979
-    .value 85%
+    .value {{ value.sixties }}%
     .clear
     .progress &nbsp;
-      .inner(style="width: 85%")
+      .inner(:style="'width: ' + bar.sixties + '%'")
   .perc.perc_purple
     .label 1959 or earlier
-    .value 37%
+    .value {{ value.fifties }}%
     .clear
     .progress &nbsp;
-      .inner(style="width: 37%")
+      .inner(:style="'width: ' + bar.fifties + '%'")
 </template>
+
+<script>
+
+import data from '../store/District Age of Occupied Stock'
+let numeral = require('numeral')
+
+export default {
+
+  props: ['district'],
+
+  methods: {
+    add (a, b) {
+      return a + b
+    },
+    average (values, index) {
+      return Math.round(values[index] * 100 / values.reduce(this.add, 0))
+    },
+    populate () {
+      let values    = data.data[this.district]
+      this.bar.fifties  = this.average(values, 0)
+      this.bar.sixties  = this.average(values, 1)
+      this.bar.eighties = this.average(values, 2)
+      this.bar.today    = this.average(values, 3)
+
+      this.randto('fifties', this.average(values, 0), 1000)
+      this.randto('sixties', this.average(values, 1), 1000)
+      this.randto('eighties', this.average(values, 2), 1000)
+      this.randto('today', this.average(values, 3), 1000)
+    },
+    randto (key, value, speed) {
+
+      let min = []
+      let max = []
+      let timer = 0
+
+      for (let i = 0; i !== value.toString().length; i++) {
+        min.push(1)
+        max.push(9)
+      }
+
+      min = min.join('')
+      max = max.join('')
+
+      let random = this.randomInt(min, max)
+
+      let interval = setInterval(() => {
+        timer += 20
+        this.value[key] = this.randomInt(min, max)
+
+        if (timer > speed) {
+          clearInterval(interval)
+        }
+
+      }, 20)
+
+    },
+    randomInt (min, max) {
+      return Math.floor(Math.random() * (max - min) + min)
+    }
+  },
+
+  mounted () {
+    this.populate()
+  },
+
+  data () {
+
+    return {
+      bar: {
+        today    : 0,
+        eighties : 0,
+        sixties  : 0,
+        fifties  : 0,
+      },
+      value: {
+        today    : 0,
+        eighties : 0,
+        sixties  : 0,
+        fifties  : 0,
+      }
+    }
+
+  }
+
+}
+</script>
 
 <style lang="stylus">
 json('../assets/colors.json')
@@ -49,10 +135,10 @@ json('../assets/fonts.json')
         position absolute
         top 0
         left 0
-        width 100%
         height 10px
         background-color brown
         border-radius 6px
+        transition width 1s ease-in-out 0s
     &.perc_orange
       > .value
         color orange
@@ -81,5 +167,4 @@ json('../assets/fonts.json')
         background-color lightpurple
         > .inner
           background-color purple
-
 </style>

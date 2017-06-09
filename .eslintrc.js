@@ -15,7 +15,9 @@ module.exports = {
     'no-unused-vars': 0,
     'quotes': 0,
     'comma-dangle': 0,
-    'padded-blocks': 0
+    'padded-blocks': 0,
+    'no-multi-spaces': 0,
+    'key-spacing': 0
   },
   globals: {}
 }

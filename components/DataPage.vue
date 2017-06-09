@@ -12,7 +12,7 @@
       DistrictCopy(:district="this.choice().value")
 
     .section.section_trio(v-if="this.choice().type === 'district'")
-      DistrictTrio(type="web",:state="this.choice().state")
+      DistrictTrio(type="web",:state="this.choice().state",:district="this.choice().value")
 
     .section.section_charts(v-if="this.choice().type !== 'district'")
       .chart
@@ -67,13 +67,14 @@
       .chart
         MultiLineChart(:type="this.choice().type",:value="this.choice().value",data='aptsneeded',id='aptsneeded',theme="red",width=830,height=300)
       .clear
+
     .clear
     .border.big
     //DemandAndSupply
     //.border.big
-    MultipleItems
+    MultipleItems(v-if="this.choice().type === 'national'")
     .border.big
-    SingleItem
+    SingleItem(v-if="this.choice().type === 'national'")
     .border.big
     .section.section_links
       .inner
@@ -89,6 +90,7 @@
             | consetetur sadipscing elitr, sed diam nonumy
           a.button learn more
         .clear
+    DualItems(v-if="this.choice().type === 'metro'")
 
     Bottom
   .datapage_print
@@ -109,7 +111,7 @@
       DistrictCopy(:district="this.choice().value")
 
     .section.section_trio(v-if="this.choice().type === 'district'")
-      DistrictTrio(type="print",:state="this.choice().state")
+      DistrictTrio(type="print",:state="this.choice().state",:district="this.choice().value")
 
     .section.section_charts(v-if="this.choice().type !== 'district'")
       .chart
@@ -137,12 +139,14 @@
       .right
         MultiLineChart(:type="this.choice().type",:value="this.choice().value",data='aptsneeded',id='aptsneeded_print',theme="red",width=510,height=225)
       .clear
+
       .copys.copyLeft
         .copy Renting on the Rise
         .copy Many people in your district call apartments home. They  appreciate mortgage-free living, the ability to follow new work opportunities and amenities that fit their lifestyles.
       .copys.copyRight
         .copy We Need to Buld More
         .copy Apartment demand is growing and the industry needs to keep up. However, producing enough new apartments to meet demand requires new development approaches, more incentives and fewer restrictions.
+
     .clear
     DataSummary(v-bind:state="this.state",v-bind:metro="this.metro",v-bind:district="this.district",v-if="this.choice().type !== 'district'")
 
@@ -161,6 +165,7 @@ import DistrictCopy from '~/components/DistrictCopy.vue'
 import DistrictTrio from '~/components/DistrictTrio.vue'
 // import DemandAupply from '~/components/DemandAndSupply.vue'
 import MultipleItems from '~/components/MultipleItems.vue'
+import DualItems from '~/components/DualItems.vue'
 import SingleItem from '~/components/SingleItem.vue'
 
 import CircleChart from '~/components/CircleChart.vue'
@@ -179,6 +184,7 @@ export default {
     MultiLineChart,
     // DemandAndSupply,
     MultipleItems,
+    DualItems,
     SingleItem,
     CircleChart,
     HeatChart,
@@ -433,12 +439,12 @@ json('../assets/fonts.json')
         > .copys
           margin 20px 0 0 0
           > .copy:first-child
-            font c2
+            font h3
             padding 0 0 10px 0
           > .copy:nth-child(2)
             color grey
     > .section_chart
-      margin 60px auto 200px auto
+      margin 60px auto auto
       width 1200px
       > .top
         > .part
@@ -502,6 +508,23 @@ json('../assets/fonts.json')
           > .copy:last-child
             text-align center
             color grey
+      > .mbottom
+        width 1200px
+        padding 0 0 30px 0
+        > .copys.copyLeft
+          float left
+          width 300px
+        > .copys.copyRight
+          float right
+          width 830px
+          margin 0 0 0 30px
+        > .copys
+          > .copy:first-child
+            font h3
+            padding 0 0 10px 0
+          > .copy:nth-child(2)
+            color grey
+
       > .chart
         float right
         width 830px

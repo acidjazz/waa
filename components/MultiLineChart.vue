@@ -99,7 +99,7 @@ export default {
       data: data.datas[1],
       pointBackgroundColor: colors.white,
       pointBorderWidth: 0,
-      pointRadius: 6,
+      pointRadius: 0,
       pointBorderColor: colors.white,
 
       borderColor: light,

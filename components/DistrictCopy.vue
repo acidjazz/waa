@@ -6,7 +6,7 @@
   .pointers
     .pointer
       .icon.icon-residents
-      .copy The residents
+      .copy The Residents
       .copy Who live in those 
         b 100 apartments 
         | annually generate an additional 

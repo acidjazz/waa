@@ -60,6 +60,9 @@ let sheets = [
   // district page copy values
   'district economic impact',
 
+  // yera apt built perc chart
+  'District Age of Occupied Stock',
+
 ]
 
 for (let index in excel) {
@@ -139,6 +142,7 @@ for (let index in excel) {
       }
       break
     case 'district economic impact':
+    case 'District Age of Occupied Stock':
       data.data = {}
       for (let value in sheet.data) {
         if (sheet.data[value].length > 0) {

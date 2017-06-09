@@ -12,7 +12,7 @@
   .dchart
     .inner
       .title year apartment built
-      PercChart
+      PercChart(:district="this.district")
     .copys
       .copy Supply at risk
       .copy The nation's apartment stock is aging, with a majority built before 1980.  Without resources to support rehabilitation and preservation efforts, the current supply-demand imabalance will worsen, affecting affordability.
@@ -32,7 +32,7 @@ import CircleChart from '~components/CircleChart.vue'
 import PercChart from '~components/PercChart.vue'
 import SingleLineChart from '~components/SingleLineChart.vue'
 export default {
-  props: [ 'type', 'state' ],
+  props: [ 'type', 'state', 'district' ],
   components: { CircleChart, PercChart, SingleLineChart },
   mounted () {
   }
