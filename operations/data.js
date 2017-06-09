@@ -52,6 +52,11 @@ let sheets = [
   // Metro page - Restriction Index (heat graph)
   'Metro Restriction Index',
 
+  // build more - all pages
+  'US Building 2',
+  'State Building Current',
+  'State Building Needed',
+
 ]
 
 for (let index in excel) {
@@ -137,6 +142,9 @@ for (let index in excel) {
     case 'Metro New Apt HHs Per Year':
     case 'Metro Rentership Rate':
     case 'Metro Pop Growth':
+    case 'US Building 2':
+    case 'State Building Current':
+    case 'State Building Needed':
       data.data = {}
       for (let value in sheet.data) {
         if (sheet.data[value].length > 0) {

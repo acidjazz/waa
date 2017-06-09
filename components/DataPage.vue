@@ -65,7 +65,7 @@
         .copy Barriers to New Apartments Index
 
       .chart
-        MultiLineChart(data='aptsneeded',id='aptsneeded',theme="red",width=830,height=300)
+        MultiLineChart(:type="this.choice().type",:value="this.choice().value",data='aptsneeded',id='aptsneeded',theme="red",width=830,height=300)
       .clear
     .clear
     .border.big
@@ -135,7 +135,7 @@
       .left(v-else)
         HeatChart(:metro="this.choice().value")
       .right
-        MultiLineChart(type='line',data='aptsneeded',id='aptsneeded_print',theme="red",width=510,height=225)
+        MultiLineChart(:type="this.choice().type",:value="this.choice().value",data='aptsneeded',id='aptsneeded_print',theme="red",width=510,height=225)
       .clear
       .copys.copyLeft
         .copy Renting on the Rise
