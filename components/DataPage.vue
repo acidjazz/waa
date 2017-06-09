@@ -264,6 +264,7 @@ json('../assets/fonts.json')
       color black
       > .inner
         position relative
+        background none
         background-color white
         padding 10px 0
         > .copy:first-child, > .copy:nth-child(2)
