@@ -91,6 +91,14 @@ export default {
         data = this.toCurrent(require('../store/US Apt HHs (Landing).json').data)
         break
 
+      case this.type === 'national' && this.data === 'rentgrowth':
+        data = this.toCurrent(require('../store/US Rentership Rate (Landing).json').data)
+        break
+
+      case this.type === 'national' && this.data === 'popgrowth':
+        data = this.toCurrent(require('../store/US Population (Landing).json').data)
+        break
+
       case this.type === 'state' && this.data === 'apthhgrowth':
         json = require('../store/State New Apt HHs Per Year.json')
         data = this.toCurrent(json.data, json.labels.indexOf(this.value))
@@ -106,22 +114,29 @@ export default {
         json = require('../store/State HH Growth.json')
         data.labels = [2017, 2030]
         data.datas = [ 0, json.data[this.value] ]
-        this.spike = numeral(json.data[this.value]).format('0.00%').replace(/%/, '')
-
         break
 
-      case this.type === 'national' && this.data === 'rentgrowth':
-        data = this.toCurrent(require('../store/US Rentership Rate (Landing).json').data)
+      case this.type === 'metro' && this.data === 'apthhgrowth':
+        json = require('../store/Metro New Apt HHs Per Year.json')
+        data = this.toCurrent(json.data, json.labels.indexOf(this.value))
         break
 
-      case this.type === 'national' && this.data === 'popgrowth':
-        data = this.toCurrent(require('../store/US Population (Landing).json').data)
+      case this.type === 'metro' && this.data === 'rentgrowth':
+        json = require('../store/Metro Rentership Rate.json')
+        data = {'labels': [2017, 2030], 'datas': json.data[this.value].slice(0, 2)}
+        break
+
+      case this.type === 'metro' && this.data === 'popgrowth':
+        json = require('../store/Metro Pop Growth.json')
+        data = this.toCurrent(json.data, json.labels.indexOf(this.value))
         break
 
       default:
         break
 
     }
+
+    this.spike = numeral((data.datas[data.datas.length - 1] - data.datas[0]) / data.datas[0]).format('0.00%').replace(/%/, '')
 
     let Chart = require('chart.js')
     let ctx = 'chart-' + this.id
@@ -188,7 +203,7 @@ export default {
               if (Number(item.yLabel) < 1 && Number(item.yLabel) > 0) {
                 return numeral(item.yLabel).format('0.00%')
               }
-              return numeral(item.yLabel).format('0.0a')
+              return numeral(item.yLabel).format('0.00a')
             }
           }
         },

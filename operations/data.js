@@ -42,7 +42,13 @@ let sheets = [
   // State Page - Apt Household Growth, rentership grwoth, population growth
   'State New Apt HHs Per Year',
   'State Rentership Rate',
-  'State HH Growth'
+  'State HH Growth',
+
+  // Metro Page - Apt Household Growth, rentership grwoth, population growth
+  'Metro New Apt HHs Per Year',
+  'Metro Rentership Rate',
+  'Metro Pop Growth',
+  'Metro Restriction Index',
 
 ]
 
@@ -125,6 +131,9 @@ for (let index in excel) {
     // array of elements per-year, choose the elements using the label list
     case 'State New Apt HHs Per Year':
     case 'State Rentership Rate':
+    case 'Metro New Apt HHs Per Year':
+    case 'Metro Rentership Rate':
+    case 'Metro Pop Growth':
       data.data = {}
       for (let value in sheet.data) {
         if (sheet.data[value].length > 0) {
