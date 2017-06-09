@@ -56,7 +56,7 @@ export default {
 
       for (let key in data) {
         if (key >= current) {
-          if (key === current || key === '2030' || (++i % 4)) {
+          if (key === current || key === '2030' || !(++i % 3)) {
             labels.push(key)
             if (index !== undefined) {
               datas.push(data[key][index])
