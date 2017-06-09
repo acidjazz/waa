@@ -9,7 +9,6 @@
       include ../assets/pug/partial/section_demand
 
     .section.section_district(v-if="this.choice().type === 'district'")
-      include ../assets/pug/partial/section_district
       DistrictCopy(:district="this.choice().value")
 
     .section.section_trio(v-if="this.choice().type === 'district'")
