@@ -145,7 +145,7 @@ json('../assets/fonts.json')
   color white
   text-align center
   > .inner
-    background-color rgba(darkblue, 0.9)
+    background linear-gradient(-67deg, rgba(#0099ff, 0.7), rgba(#00cccc, 0.7))
     padding 60px 0
     > .copy:first-child
       font-size 30px
