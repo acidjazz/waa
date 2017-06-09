@@ -57,6 +57,10 @@ let sheets = [
   'State Building Current',
   'State Building Needed',
 
+  // district page copy values
+  'district economic impact',
+  // 'District Apt Residents',
+
 ]
 
 for (let index in excel) {
@@ -132,6 +136,14 @@ for (let index in excel) {
       for (let value in sheet.data) {
         if (sheet.data[value].length > 0) {
           data.data[[sheet.data[value][0]] + ' ' + ordinal(sheet.data[value][1])] = sheet.data[value][2]
+        }
+      }
+      break
+    case 'district economic impact':
+      data.data = {}
+      for (let value in sheet.data) {
+        if (sheet.data[value].length > 0) {
+          data.data[[sheet.data[value].shift()] + ' ' + ordinal(sheet.data[value].shift())] = sheet.data[value]
         }
       }
       break

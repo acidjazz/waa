@@ -10,6 +10,7 @@
 
     .section.section_district(v-if="this.choice().type === 'district'")
       include ../assets/pug/partial/section_district
+      DistrictCopy(:district="this.choice().value")
 
     .section.section_trio(v-if="this.choice().type === 'district'")
       DistrictTrio(type="web")
@@ -106,7 +107,7 @@
       .copy Apartments bring dolalrs and jobs that stay close to home
     DataSummary(v-bind:state="this.state",v-bind:metro="this.metro",v-bind:district="this.district",v-if="this.choice().type === 'district'")
     .section.section_district(v-if="this.choice().type === 'district'")
-      include ../assets/pug/partial/section_district
+      DistrictCopy(:district="this.choice().value")
 
     .section.section_trio(v-if="this.choice().type === 'district'")
       DistrictTrio(type="print")
@@ -157,6 +158,7 @@ import SingleLineChart from '~/components/SingleLineChart.vue'
 import MultiLineChart from '~/components/MultiLineChart.vue'
 import DataFilters from '~/components/DataFilters.vue'
 import DataSummary from '~/components/DataSummary.vue'
+import DistrictCopy from '~/components/DistrictCopy.vue'
 import DistrictTrio from '~/components/DistrictTrio.vue'
 import DemandAndSupply from '~/components/DemandAndSupply.vue'
 import MultipleItems from '~/components/MultipleItems.vue'
@@ -172,6 +174,7 @@ export default {
     Bottom,
     DataFilters,
     DataSummary,
+    DistrictCopy,
     DistrictTrio,
     SingleLineChart,
     MultiLineChart,
@@ -210,46 +213,47 @@ json('../assets/fonts.json')
 #DataPage
   > .datapage_web, > .datapage_print
     > .section_district
-      > .inner
-        padding 30px 0
-        > .copy:first-child
-          text-align center
-          text-transform uppercase
-          padding 0 0 30px 0
-          font c1sb
-          color darkblue
-        > .copy:nth-child(2)
-          color grey
-          text-align center
-          width 300px
-          margin auto
-          padding 0 0 30px 0
-      > .pointers
-        width 1200px
-        margin auto
-        > .pointer
-          width 33.3333%
-          float left
-          > .icon
-            float left
-            width 30px
-            height 30px
-            background-size contain
-            &.icon-residents
-              background-image url('~static/icon-residents.png')
-              height 20px
-            &.icon-operation
-              background-image url('~static/icon-operations.png')
-            &.icon-graph
-              background-image url('~static/icon-graph.png')
-          > .copy
-            margin 0 10px 0 40px
+      > .DistrictCopy
+        > .inner
+          padding 30px 0
+          > .copy:first-child
+            text-align center
+            text-transform uppercase
+            padding 0 0 30px 0
+            font c1sb
+            color darkblue
           > .copy:nth-child(2)
-            font h3
-            padding 0 0 10px 0
-          > .copy:nth-child(3)
-            font c1
             color grey
+            text-align center
+            width 300px
+            margin auto
+            padding 0 0 30px 0
+        > .pointers
+          width 1200px
+          margin auto
+          > .pointer
+            width 33.3333%
+            float left
+            > .icon
+              float left
+              width 30px
+              height 30px
+              background-size contain
+              &.icon-residents
+                background-image url('~static/icon-residents.png')
+                height 20px
+              &.icon-operation
+                background-image url('~static/icon-operations.png')
+              &.icon-graph
+                background-image url('~static/icon-graph.png')
+            > .copy
+              margin 0 10px 0 40px
+            > .copy:nth-child(2)
+              font h3
+              padding 0 0 10px 0
+            > .copy:nth-child(3)
+              font c1
+              color grey
 
 
 
@@ -312,12 +316,13 @@ json('../assets/fonts.json')
             color red
 
     > .section_district
-      > .inner
-        padding 10px 0
-        > .copy:first-child
-          padding 0 0 10px 0
-      > .pointers
-        width 765px
+      > .DistrictCopy
+        > .inner
+          padding 10px 0
+          > .copy:first-child
+            padding 0 0 10px 0
+        > .pointers
+          width 765px
 
     > .district_charts
       background-color pink

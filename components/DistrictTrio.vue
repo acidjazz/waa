@@ -27,6 +27,18 @@
 
 </template>
 
+<script>
+import CircleChart from '~components/CircleChart.vue'
+import PercChart from '~components/PercChart.vue'
+import SingleLineChart from '~components/SingleLineChart.vue'
+export default {
+  props: [ 'type' ],
+  components: { CircleChart, PercChart, SingleLineChart },
+  mounted () {
+  }
+}
+</script>
+
 <style lang="stylus">
 
 json('../assets/colors.json')
@@ -64,12 +76,3 @@ json('../assets/fonts.json')
 
 </style>
 
-<script>
-import CircleChart from '~components/CircleChart.vue'
-import PercChart from '~components/PercChart.vue'
-import SingleLineChart from '~components/SingleLineChart.vue'
-export default {
-  props: [ 'type' ],
-  components: { CircleChart, PercChart, SingleLineChart }
-}
-</script>
