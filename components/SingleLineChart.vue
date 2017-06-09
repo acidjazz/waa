@@ -136,8 +136,8 @@ export default {
 
     }
 
-    this.spike = numeral((data.datas[data.datas.length - 1] - data.datas[0]) / data.datas[0]).format('0.00%').replace(/%/, '')
-
+    let spike = numeral((data.datas[data.datas.length - 1] - data.datas[0]) / data.datas[0]).format('0.00%').replace(/%/, '')
+    this.spike = isNaN(spike) ? 100 : spike
     let Chart = require('chart.js')
     let ctx = 'chart-' + this.id
 

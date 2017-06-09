@@ -13,12 +13,16 @@
 </template>
 
 <script>
+import index from '../store/Metro Restriction Index.json'
+let numeral = require('numeral')
 export default {
-  props: ['value'],
+  props: ['metro'],
   methods: {
     alterCarat (value) {
+      this.value = numeral(value).format('0.0')
       for (let carat of this.carat) {
-        carat.style.transform = 'rotate(' + Math.round(value * 240 / 100 - 30) + 'deg)'
+        let perc = (value - -5.9) / (19.9 - -5.9)
+        carat.style.transform = 'rotate(' + Math.round((perc * 100) * 240 / 100 - 30) + 'deg)'
       }
     }
   },
@@ -30,12 +34,13 @@ export default {
   mounted () {
     if (process.BROWSER_BUILD) {
       this.carat = this.$el.querySelectorAll('.HeatChart > .circle > .carat')
-      this.alterCarat(this.value)
+      this.alterCarat(index.data[this.metro])
     }
   },
   data () {
     return {
-      carat: [{ style: { transform: null } }]
+      carat: [{ style: { transform: null } }],
+      value: 0
     }
   }
 }
@@ -84,6 +89,7 @@ json('../assets/fonts.json')
       margin-top -39px
       margin-left -39px
       > .inner
+        animation fadeIn 0.2s ease-in-out 0
         width inherit
         height inherit
         text-align center

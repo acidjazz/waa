@@ -61,7 +61,7 @@
             .copy needed rate text
       .left.left_inyourcity(v-if="this.choice().type === 'metro'")
         .copy in your city
-        HeatChart(value="17")
+        HeatChart(:metro="this.choice().value")
         .copy Barriers to New Apartments Index
 
       .chart
@@ -133,7 +133,7 @@
       .left(v-if="this.choice().type !== 'metro'")
         CircleChart(id="renters_print",width="225",height="225",value="70")
       .left(v-else)
-        HeatChart(value="17")
+        HeatChart(:metro="this.choice().value")
       .right
         MultiLineChart(type='line',data='aptsneeded',id='aptsneeded_print',theme="red",width=510,height=225)
       .clear

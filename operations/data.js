@@ -48,6 +48,8 @@ let sheets = [
   'Metro New Apt HHs Per Year',
   'Metro Rentership Rate',
   'Metro Pop Growth',
+
+  // Metro page - Restriction Index (heat graph)
   'Metro Restriction Index',
 
 ]
@@ -108,6 +110,7 @@ for (let index in excel) {
     case 'US Rentership Rate (Landing)':
     case 'US Population (Landing)':
     case 'State HH Growth':
+    case 'Metro Restriction Index':
       data.data = {}
       for (let value in sheet.data) {
         if (sheet.data[value].length > 0) {
