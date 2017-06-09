@@ -12,7 +12,7 @@
       DistrictCopy(:district="this.choice().value")
 
     .section.section_trio(v-if="this.choice().type === 'district'")
-      DistrictTrio(type="web")
+      DistrictTrio(type="web",:state="this.choice().state")
 
     .section.section_charts(v-if="this.choice().type !== 'district'")
       .chart
@@ -69,8 +69,8 @@
       .clear
     .clear
     .border.big
-    DemandAndSupply
-    .border.big
+    //DemandAndSupply
+    //.border.big
     MultipleItems
     .border.big
     SingleItem
@@ -109,7 +109,7 @@
       DistrictCopy(:district="this.choice().value")
 
     .section.section_trio(v-if="this.choice().type === 'district'")
-      DistrictTrio(type="print")
+      DistrictTrio(type="print",:state="this.choice().state")
 
     .section.section_charts(v-if="this.choice().type !== 'district'")
       .chart
@@ -159,7 +159,7 @@ import DataFilters from '~/components/DataFilters.vue'
 import DataSummary from '~/components/DataSummary.vue'
 import DistrictCopy from '~/components/DistrictCopy.vue'
 import DistrictTrio from '~/components/DistrictTrio.vue'
-import DemandAndSupply from '~/components/DemandAndSupply.vue'
+// import DemandAupply from '~/components/DemandAndSupply.vue'
 import MultipleItems from '~/components/MultipleItems.vue'
 import SingleItem from '~/components/SingleItem.vue'
 
@@ -177,7 +177,7 @@ export default {
     DistrictTrio,
     SingleLineChart,
     MultiLineChart,
-    DemandAndSupply,
+    // DemandAndSupply,
     MultipleItems,
     SingleItem,
     CircleChart,

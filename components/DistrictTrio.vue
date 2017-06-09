@@ -19,7 +19,7 @@
   .dchart
     .inner
       .title in your state
-      SingleLineChart(type='line',data='buildmore',:id="'buildmore_' + this.type",theme="lime",:width="(this.type === 'print') ? 200 : 300",:height="(this.type === 'print') ? 200 : 300",animation=false)
+      SingleLineChart(type='line',data='inyourstate',:id="'inyourstate_' + this.type",:value="this.state",theme="lime",:width="(this.type === 'print') ? 200 : 300",:height="(this.type === 'print') ? 200 : 300",animation=false)
     .copys
       .copy We Need to Build More
       .copy Apartment demand is growing and the industry needs to keep up.  However, producing enough new apartments to meet demand requires new development approaches, more incentives and fewer restrictions.
@@ -32,7 +32,7 @@ import CircleChart from '~components/CircleChart.vue'
 import PercChart from '~components/PercChart.vue'
 import SingleLineChart from '~components/SingleLineChart.vue'
 export default {
-  props: [ 'type' ],
+  props: [ 'type', 'state' ],
   components: { CircleChart, PercChart, SingleLineChart },
   mounted () {
   }

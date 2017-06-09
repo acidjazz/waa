@@ -131,6 +131,11 @@ export default {
         data = this.toCurrent(json.data, json.labels.indexOf(this.value))
         break
 
+      case this.data === 'inyourstate':
+        json = require('../store/State New Apt HHs Per Year.json')
+        data = this.toCurrent(json.data, json.labels.indexOf(this.value))
+        break
+
       default:
         break
 

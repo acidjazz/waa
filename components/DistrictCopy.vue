@@ -46,14 +46,12 @@ export default {
   },
   watch: {
     '$route' (newVal, oldVal) {
-      console.log('$route', this.choice().value)
       this.populate()
     }
   },
   methods: {
     populate () {
       let data = datas.data[this.choice().value]
-      console.log(data[0], data[2], data[4])
       this.operations.impact = numeral(data[0]).format('$0.00a')
       this.operations.jobs = numeral(data[1]).format('0,0')
       this.residents.impact = numeral(data[2]).format('$0.00a')

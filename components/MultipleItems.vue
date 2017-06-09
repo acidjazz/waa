@@ -12,10 +12,10 @@
           .copy economic contribution
           .copy Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.
       .item
-        .copy other stat?
-        BarChart(id="employed",width="300",height="340")
+        .copy TBD
+        PercChart
       .item
-        .copy apartment renters
+        .copy apartment households
         CircleChart(id="renters",width="300",height="300",value="70")
       .clear
 
@@ -23,9 +23,10 @@
 <script>
 import BarChart from '~/components/BarChart.vue'
 import CircleChart from '~/components/CircleChart.vue'
+import PercChart from '~/components/PercChart.vue'
 export default {
   components: {
-    BarChart, CircleChart
+    BarChart, CircleChart, PercChart
   }
 }
 </script>

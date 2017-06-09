@@ -59,7 +59,6 @@ let sheets = [
 
   // district page copy values
   'district economic impact',
-  // 'District Apt Residents',
 
 ]
 
