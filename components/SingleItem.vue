@@ -1,11 +1,11 @@
 <template lang="pug">
 #SingleItem
   .inner
-    .left
+    .left.area
       .copy One item example.
       .copy As supply is unable to keep up with demand, more and more people have to pay higher rent to live.
-      .cta Learn more
-    .right
+      //.cta Learn more
+    .right.area
       DualLineChart(id="dualLine",width=300,height=200)
     .clear
   .clear
@@ -27,7 +27,7 @@ json('../assets/fonts.json')
     width 630px
     margin auto
     height 400px
-    > .left
+    > .left.area
       float left
       width 300px
       > .copy:nth-child(1)
@@ -38,7 +38,7 @@ json('../assets/fonts.json')
       > .cta
         color blue
         padding 30px 0 0 0
-    > .right
+    > .right.area
       float right
       width 300px
 </style>

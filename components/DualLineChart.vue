@@ -2,11 +2,11 @@
   .chartainer.chartainer_dualline
     .top
       .left.area
-        .value +13%
+        .value +{{ affordability }}
         .copy Affordability
         .line
       .right.area
-        .value +21%
+        .value {{ income }}
         .copy Income
         .line
     .clear
@@ -48,35 +48,54 @@ json('../assets/fonts.json')
 </style>
 
 <script>
+
+let numeral = require('numeral')
+
+import json from '~/store/US Affordability (Landing).json'
 import colors from '~/assets/colors.json'
 export default {
 
   props: ['id', 'width', 'height'],
 
   data () {
-    return {}
+    return {
+      affordability: 0,
+      income: 0,
+    }
   },
 
   mounted () {
+
+    let data = {
+      labels: [],
+      datas: [[], []]
+    }
+
+    for (let key in json.data) {
+      data.labels.push(key)
+      data.datas[0].push(json.data[key][0])
+      data.datas[1].push(json.data[key][1])
+    }
+
+    this.affordability = numeral((data.datas[0][data.datas[0].length - 1] - data.datas[0][0]) / data.datas[0][0]).format('0%')
+    this.income = numeral((data.datas[1][data.datas[1].length - 1] - data.datas[1][0]) / data.datas[1][0]).format('0%')
+
     let Chart = require('chart.js')
     let ctx = 'chart-' + this.id
 
-    let datas = []
-    let odatas = []
-    for (let i = 0; i !== 6; i++) {
-      datas.push(Math.floor(Math.random() * 100000) + 10000)
-      odatas.push(Math.floor(Math.random() * 100000) + 10000)
-    }
-
     let dataset = [{
-      data: datas,
+      label: 'A',
+      yAxisID: 'A',
+      data: data.datas[0],
       borderColor: colors.orange,
       pointRadius: 0,
       lineTension: 0,
       fill: false
     },
     {
-      data: odatas,
+      label: 'B',
+      yAxisID: 'B',
+      data: data.datas[1],
       borderColor: colors.green,
       pointRadius: 0,
       lineTension: 0,
@@ -86,17 +105,36 @@ export default {
     let myChart = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: [2005, 2010, 2015, 2020, 2025, 2030],
+        labels: data.labels,
         datasets: dataset
       },
       options: {
         scales: {
-          yAxes: [{
-            display: false,
-            gridLines: { display: false },
-          }],
+          yAxes: [
+            {
+              id: 'A',
+              position: 'left',
+              display: false,
+              gridLines: { display: false },
+              ticks: {
+                maxTicksLimit: 5,
+              }
+            }, {
+              id: 'B',
+              position: 'right',
+              display: false,
+              gridLines: { display: false },
+              ticks: {
+                maxTicksLimit: 5,
+              }
+            }
+          ],
           xAxes: [{
             gridLines: { display: false },
+            ticks: {
+              maxTicksLimit: 6,
+              maxRotation: 0,
+            }
           }],
         }
       }

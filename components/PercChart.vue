@@ -28,7 +28,8 @@
 
 <script>
 
-import data from '../store/District Age of Occupied Stock'
+import ddata from '../store/District Age of Occupied Stock'
+import udata from '../store/US Age of Stock'
 let numeral = require('numeral')
 
 export default {
@@ -43,16 +44,21 @@ export default {
       return Math.round(values[index] * 100 / values.reduce(this.add, 0))
     },
     populate () {
-      let values    = data.data[this.district]
+
+      let values    = udata.data['Total U.S.'].slice(0, 4)
+      if (this.district !== undefined) {
+        values    = ddata.data[this.district]
+      }
+
       this.bar.fifties  = this.average(values, 0)
       this.bar.sixties  = this.average(values, 1)
       this.bar.eighties = this.average(values, 2)
       this.bar.today    = this.average(values, 3)
 
-      this.randto('fifties', this.average(values, 0), 1000)
-      this.randto('sixties', this.average(values, 1), 1000)
-      this.randto('eighties', this.average(values, 2), 1000)
-      this.randto('today', this.average(values, 3), 1000)
+      this.randto('fifties', this.average(values, 0), 400)
+      this.randto('sixties', this.average(values, 1), 400)
+      this.randto('eighties', this.average(values, 2), 400)
+      this.randto('today', this.average(values, 3), 400)
     },
     randto (key, value, speed) {
 
@@ -75,6 +81,7 @@ export default {
         this.value[key] = this.randomInt(min, max)
 
         if (timer > speed) {
+          this.value[key] = value
           clearInterval(interval)
         }
 
@@ -138,7 +145,7 @@ json('../assets/fonts.json')
         height 10px
         background-color brown
         border-radius 6px
-        transition width 1s ease-in-out 0s
+        transition width 2s ease-in-out 0s
     &.perc_orange
       > .value
         color orange

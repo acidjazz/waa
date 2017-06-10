@@ -32,8 +32,8 @@ json('../assets/colors.json')
 </style>
 
 <script>
-import colors from '~/assets/colors.json'
 
+import colors from '~/assets/colors.json'
 let numeral = require('numeral')
 
 export default {

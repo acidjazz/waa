@@ -42,7 +42,6 @@ export default {
           data.datas[0].push(json.data[key][1])
           data.datas[1].push(json.data[key][3])
         }
-        console.log(data)
         break
 
       case this.type === 'state' && this.data === 'aptsneeded':

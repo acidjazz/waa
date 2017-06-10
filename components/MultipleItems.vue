@@ -1,22 +1,22 @@
 <template lang="pug">
 #MultipleItems
   .inner
-    .copy Multiple Items
-    .copy Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.
-    .border.small
+    // .copy Multiple Items
+    // .copy Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.
+    //.border.small
     .items
       .item
         #DollarsEarned
           .value {{ contrib }}
           .copy Dollars Earned
           .copy economic contribution
-          .copy Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.
+          .copy The apartment industry and its residences contribute $1.3t to the economy each year.
       .item
         .copy year apartment built
         PercChart
       .item
         .copy apartment households
-        CircleChart(id="renters",width="300",height="300",value="70")
+        CircleChart(id="renters",width="300",height="300")
       .clear
 
     .copys
