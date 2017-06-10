@@ -145,7 +145,7 @@ json('../assets/fonts.json')
         height 10px
         background-color brown
         border-radius 6px
-        transition width 2s ease-in-out 0s
+        transition width 1.5s ease-in-out 0s
     &.perc_orange
       > .value
         color orange

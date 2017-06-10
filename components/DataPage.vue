@@ -73,9 +73,11 @@
     //DemandAndSupply
     //.border.big
     MultipleItems(v-if="this.choice().type === 'national'")
-    .border.big
+    .border.big(v-if="this.choice().type === 'national'")
     SingleItem(v-if="this.choice().type === 'national'")
-    .border.big
+    .border.big(v-if="this.choice().type === 'national'")
+    DualItems(v-if="this.choice().type === 'metro'")
+    .border.big(v-if="this.choice().type === 'metro'")
     .section.section_links
       .inner
         .area.left
@@ -90,7 +92,6 @@
             | consetetur sadipscing elitr, sed diam nonumy
           a.button learn more
         .clear
-    DualItems(v-if="this.choice().type === 'metro'")
 
     Bottom
   .datapage_print
@@ -307,6 +308,7 @@ json('../assets/fonts.json')
       text-align right
       color grey
       padding 6px
+      font c1s
     > .section_demand
       text-align center
       > p:first-child
@@ -330,9 +332,18 @@ json('../assets/fonts.json')
         > .pointers
           width 765px
 
-    > .district_charts
-      background-color pink
-      padding 10px 0
+    > .section_trio
+      > .district_charts
+        padding 10px 0
+        > .dchart > .inner
+          > .circle-chart
+            > .value
+              margin-top -25px
+          > .copy:nth-child(3)
+            display none
+          > .copy:nth-child(4)
+            margin -20px auto 0 auto
+
 
     > .section_district_name
       text-align center
@@ -345,6 +356,8 @@ json('../assets/fonts.json')
       > .district_charts
         width 765px
         > .dchart
+           > .copys
+            display none
            > .inner
              margin 3px
              height 300px

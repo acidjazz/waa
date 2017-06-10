@@ -5,6 +5,7 @@
     .inner
       .title in your district
       CircleChart(:id="'district_' + this.type",:width="(this.type === 'print') ? 200 : 255",:height="(this.type === 'print') ? 200 : 255",value="80")
+      .copy Of apartment Renters
       .copy Of your district residents call an apartment home
     .copys
       .copy Renting on the rise
@@ -51,9 +52,11 @@ json('../assets/fonts.json')
   > .dchart
     float left
     width 33%
+    > .inner > .circle-chart > .value
+      margin-top -40px
     > .inner
       margin 20px
-      border 1px solid lightblue
+      border 1px solid lightgrey
       border-radius 3px
       height 400px
       > .title
@@ -61,10 +64,16 @@ json('../assets/fonts.json')
         text-transform uppercase
         font c1sb
         color darkblue
-      > .copy
+      > .copy:nth-child(3)
+        color grey
+        width 100px
+        margin -120px auto 0 auto
+        text-align center
+        line-height 22px
+      > .copy:nth-child(4)
         color grey
         width 70%
-        margin auto
+        margin 80px auto 0 auto
         text-align center
     > .copys
       margin 0 20px
