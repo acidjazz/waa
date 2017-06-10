@@ -4,8 +4,8 @@
   .upper
     .section.navigation
       .link: router-link(to="/data") apartment data
-      .link: router-link(to="/data") apartment calculator
-      .link: router-link(to="/data") the initiative
+      .link: router-link(to="/calculator") apartment calculator
+      .link: router-link(to="/initiative") the initiative
     .section.signup
       .inner
         .copy Subscribe to the newsletter and we will keep you up to date.
