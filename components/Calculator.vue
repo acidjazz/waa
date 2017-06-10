@@ -45,7 +45,6 @@
           .pulldown(:class="{ selected: (national === true) }",@click="national = true;metro = 'Metro Area'; state = 'State'")
             .checkbox: .fa.fa-check
             .pullarea
-              .pull: .fa.fa-chevron-down
               .copy National
   .cta calculate
 </template>
