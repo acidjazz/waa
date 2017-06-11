@@ -149,7 +149,7 @@
         .copy We Need to Buld More
         .copy Apartment demand is growing and the industry needs to keep up. However, producing enough new apartments to meet demand requires new ..
     .clear
-    DataSummary(v-bind:state="this.state",v-bind:metro="this.metro",v-bind:district="this.district",v-if="this.choice().type !== 'district'")
+    DataSummary(:state="state",:metro="metro",:district="district",v-if="this.choice().type !== 'district'")
 
 </template>
 
@@ -221,10 +221,10 @@ export default {
     return {
       path: false,
       metro: false,
-      state: false,
+      state: this.choice().state,
       district: false,
-      value: false,
-      type: false,
+      value: this.choice().value,
+      type: this.choice().type,
     }
   }
 }

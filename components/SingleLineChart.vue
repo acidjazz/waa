@@ -42,16 +42,9 @@ export default {
 
   methods: {
     populate () {
-      let data = {
-        labels: [2000, 2010, 2015, 2020, 2025, 2030],
-        datas: []
-      }
 
+      let data = {labels: [], datas: []}
       let json = {}
-
-      for (let i = 0; i !== 6; i++) {
-        data.datas.push(Math.floor(Math.random() * 40) + 10)
-      }
 
       switch (true) {
 
