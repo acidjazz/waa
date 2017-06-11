@@ -36,6 +36,8 @@ export default {
       }
 
       let data = {labels: [], datas: [[], []]}
+      let jsonc = {}
+      let jsonn = {}
 
       switch (true) {
 
@@ -55,26 +57,41 @@ export default {
           }
           break
 
-        case (this.type === 'state' || this.type === 'metro') && this.data === 'aptsneeded':
+        case this.type === 'state' && this.data === 'aptsneeded':
           data = {labels: [], datas: [[], []]}
-          let jsonc = require('../store/State Building Current.json')
-          let jsonn = require('../store/State Building Needed.json')
+          jsonc = require('../store/State Building Current.json')
+          jsonn = require('../store/State Building Needed.json')
           let state = jsonc.labels.indexOf(this.state)
           for (let key in jsonc.data) {
             data.labels.push(key)
-
             if (this.isNumeric(jsonc.data[key][state])) {
               data.datas[0].push(jsonc.data[key][state])
             }
-
             if (this.isNumeric(jsonn.data[key][state])) {
               data.datas[1].push(jsonn.data[key][state])
             }
-
           }
+          break
+
+        case this.type === 'metro' && this.data === 'aptsneeded':
+          data = {labels: [], datas: [[], []]}
+          jsonc = require('../store/Metro Building Current.json')
+          jsonn = require('../store/Metro Building Needed.json')
+          let metro = jsonc.labels.indexOf(this.value)
+          for (let key in jsonc.data) {
+            data.labels.push(key)
+            if (this.isNumeric(jsonc.data[key][metro])) {
+              data.datas[0].push(jsonc.data[key][metro])
+            }
+            if (this.isNumeric(jsonn.data[key][metro])) {
+              data.datas[1].push(jsonn.data[key][metro])
+            }
+          }
+          break
+
       }
 
-      this.$store.state.homesNeeded = numeral(data.datas[0][data.datas[1].length - 1]).format('0,0')
+      this.$store.state.homesNeeded = numeral(data.datas[1][data.datas[1].length - 1]).format('0,0')
 
       let Chart = require('chart.js')
       let ctx = 'chart-' + this.id

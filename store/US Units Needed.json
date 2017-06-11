@@ -1,0 +1,21 @@
+{
+  "sheet": "US Units Needed",
+  "data": {
+    "Total U.S.": [
+      4598379.424568865,
+      0.20035969874781842,
+      null,
+      null,
+      null,
+      "Source: Hoyt Advisory Services"
+    ]
+  },
+  "labels": [
+    "5+ units needed by 2030",
+    "5+ units needed by 2030 (% increase)",
+    null,
+    null,
+    null,
+    "Time Period: 2016-2030"
+  ]
+}

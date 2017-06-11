@@ -4,29 +4,34 @@
     // .copy Multiple Items
     // .copy Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.
     //.border.small
-    .items
-      .item
+    .items(:class="{ double: choice.type === 'state' || choice.type === 'metro' }")
+      .item(v-if="choice.type === 'national'")
+        .copy economic contribution
         #DollarsEarned
           .value {{ contrib }}
           .copy Dollars Earned
-          .copy economic contribution
-          .copy The apartment industry and its residences contribute $1.3t to the economy each year.
+          .copy The apartment industry and its residents contribute $1.3t to the economy each year.
       .item
         .copy year apartment built
-        PercChart
+        PercChart(:metro="choice.value",v-if="choice.type === 'metro'")
+        PercCart(v-else)
       .item
-        .copy apartment households
-        CircleChart(id="renters",width="300",height="300")
-        .copy Are spending over 30% of income
+        .copy apartment residents
+        CircleChart(id="metroresidents",width="300",height="300",:value="choice.value",v-if="choice.type === 'metro'")
+        CircleChart(id="ontherise",width="300",height="300",v-else)
+        .copy(v-if="choice.type === 'national'") Of the country calls<br /> an apartment home
+        .copy(v-if="choice.type === 'state'") Of the state calls<br /> an apartment home
+        .copy(v-if="choice.type === 'metro'") Of the metro calls<br /> an apartment home
+        .copy(v-if="choice.type === 'district'") Of the district calls<br /> an apartment home
       .clear
 
-    .copys
-      .copyarea
-        .copy Title
-        .copy description description
+    .copys(:class="{ double: choice.type === 'state' || choice.type === 'metro' }")
+      .copyarea(v-if="choice.type === 'national'")
+        .copy Dollars and Jobs
+        .copy The construction, operations and resident spending supports more than 12 million jobs nationwide, with an economic contribution that is $3.5 billion every day. 
       .copyarea
         .copy Supply at Risk
-        .copy The nation's apartment stock is aging, with a majority built before 1980.  Without resources to support rehabilitation and preservation efforts, the current supply-demand imbalance will worsen, affecting affordability.
+        .copy The nation's apartment stock is aging, with about half built before 1980. Without resources to support rehabilitation and preservation efforts, the current supply-demand imbalance will worsen, affecting affordability.
       .copyarea
         .copy Renting on the Rise
         .copy Many people call apartments home. They  appreciate mortgage-free living, the ability to follow new work opportunities and amenities that fit their lifestyles.  
@@ -34,8 +39,6 @@
 
 </template>
 <script>
-
-import filtermixin from '~plugins/filter-mixin.js'
 
 import contribUS from '../store/US Economic Contribution.json'
 
@@ -46,13 +49,13 @@ import PercChart from '~/components/PercChart.vue'
 let numeral = require('numeral')
 
 export default {
-  mixins: [ filtermixin ],
+  props: [ 'choice' ],
   components: {
     BarChart, CircleChart, PercChart
   },
   methods: {
     populate () {
-      this.contrib = numeral(contribUS.data['Total U.S.']).format('0.0a')
+      this.contrib = numeral(contribUS.data['Total U.S.']).format('$0.0a')
     }
   },
   created () {
@@ -60,7 +63,12 @@ export default {
   },
   data () {
     return {
-      contrib: 0
+      contrib: 0,
+    }
+  },
+  watch: {
+    '$route' () {
+      this.populate()
     }
   }
 }
@@ -70,7 +78,7 @@ json('../assets/colors.json')
 json('../assets/fonts.json')
 #MultipleItems
   > .inner
-    padding 60px 0
+    padding 90px 0
     > .copy:first-child
       text-align center
       font h2
@@ -86,6 +94,10 @@ json('../assets/fonts.json')
     > .items
       width 960px
       margin auto
+      &.double
+        width 670px
+        > .item:nth-child(2)
+          float right
       > .item
         float left
         width 300px
@@ -107,6 +119,10 @@ json('../assets/fonts.json')
     > .copys
       width 960px
       margin auto
+      &.double
+        width 670px
+        > .copyarea:nth-child(2)
+          float right
       > .copyarea
         float left
         width 300px
@@ -130,8 +146,7 @@ json('../assets/fonts.json')
     padding 0 0 30px 0
     text-align center
   > .copy:nth-child(3)
-    color red
-    text-transform uppercase
+    color grey
   > .copy:nth-child(4)
     color grey
 </style>

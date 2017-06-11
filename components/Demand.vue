@@ -29,17 +29,24 @@ export default {
     populate () {
 
       let json = {}
+      let index = false
 
       switch (true) {
 
         case (this.type === 'national'):
-          json = require('../store/US % Total Pop.json').data
+          json = require('../store/US Units Needed.json').data
+          this.households = numeral(json['Total U.S.'][0]).format('0.0a')
           break
 
         case (this.type === 'state'):
           json = require('../store/State New Apt HHs Per Year.json')
-          let index = json.labels.indexOf(this.value)
+          index = json.labels.indexOf(this.value)
           this.households = numeral(json.data[""][index]).format('0,0a')
+          break
+
+        case (this.type === 'metro'):
+          json = require('../store/Metros Units Needed.json')
+          this.households = numeral(json.data[this.value][0]).format('0,0a')
           break
       }
 

@@ -31,6 +31,7 @@ json('../assets/fonts.json')
 
 import colors from '~/assets/colors.json'
 import data from '~/store/US Housing Costs.json'
+import datab from '~/store/US % Total Pop.json'
 export default {
 
   props: ['id', 'width', 'height', 'value'],
@@ -46,6 +47,15 @@ export default {
         this.perc = Math.round(data.data['Total U.S.'] * 100)
       } else {
         this.perc = this.value
+      }
+
+      if (this.id === 'ontherise') {
+        this.perc = Math.round(datab.data['Total U.S.'][0] * 100)
+      }
+
+      if (this.id === 'metroresidents') {
+        let json = require('../store/Metro Apt Residents.json')
+        this.perc = Math.round(json.data[this.value][1] * 100)
       }
 
       let canvas = document.getElementById('chart-' + this.id)

@@ -39,7 +39,8 @@
         .part.part_homes
           .value {{ $store.state.homesNeeded }} 
           .copy Apartment <br />Homes Needed in 
-            b {{ this.choice().value }}
+            b(v-if="(this.choice().value == 'National')") the Country
+            b(v-else) {{ this.choice().value }}
         .part.part_numbers
           .graph
             i.fa.fa-2x.fa-bar-chart
@@ -60,23 +61,27 @@
             .value
             .copy needed rate text
       .left.left_inyourcity(v-if="this.choice().type === 'metro'")
-        .copy in your city
+        .copy barriers to new apartments index
         HeatChart(:metro="this.choice().value")
-        .copy Barriers to New Apartments Index
-
       .chart
         MultiLineChart(:type="this.choice().type",:value="this.choice().value",:state="this.choice().state",data='aptsneeded',id='aptsneeded',theme="red",width=830,height=300)
       .clear
+      .copys.copyLeft
+        .copy Red Tape Rating
+        .copy Over the last three decades, regulatory barriers to apartment construction have increased significantly, most notably at the local level
+      .copys.copyRight
+        .copy We Need to Build More
+        .copy Apartment demand is growing and the industry needs to keep up. However, producing enough new apartments to meet demand requires new development approaches, more incentives and fewer restrictions.
 
     .clear
     .border.big
     //DemandAndSupply
     //.border.big
-    MultipleItems(v-if="this.choice().type === 'national'")
-    .border.big(v-if="this.choice().type === 'national'")
-    SingleItem(v-if="this.choice().type === 'national'")
-    .border.big(v-if="this.choice().type === 'national'")
-    DualItems(v-if="this.choice().type === 'metro'")
+    MultipleItems(:choice="this.choice()")
+    .border.big
+    //SingleItem(v-if="this.choice().type === 'national'")
+    //.border.big(v-if="this.choice().type === 'national'")
+    //DualItems(v-if="this.choice().type === 'metro'")
     .border.big(v-if="this.choice().type === 'metro'")
     .section.section_links
       .inner
@@ -84,14 +89,14 @@
           .icon.icon-file
           .copy 
             span Download 
-            | the report on apartment demand.
+            | this page on apartment demand.
           a.button download
         .area.right
           .icon.icon-bars
           .copy 
             span About the data 
             | Read about the methodology behind all of the data. 
-          a.button learn more
+          router-link(to='/about').button learn more
         .clear
 
     .sources Source: 
@@ -555,6 +560,22 @@ json('../assets/fonts.json')
               margin 0 0 0 20px
             &:nth-child(2) > .graph > i
               color rgba(red, 1)
+      > .copyLeft
+        float left
+        width 300px
+      > .copyRight
+        float right
+        width 800px
+      > .copys
+        > .copy:nth-child(1)
+          font h1
+          padding 0 0 10px 0
+        > .copy:nth-child(2)
+          font c1
+          padding 5px 0 60px 0
+          color grey
+          margin 0 5px 0 0
+
       > .left
         float left
         width 300px

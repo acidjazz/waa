@@ -30,11 +30,12 @@
 
 import ddata from '../store/District Age of Occupied Stock'
 import udata from '../store/US Age of Stock'
+import mdata from '../store/Metro Age of Occupied Stock'
 let numeral = require('numeral')
 
 export default {
 
-  props: ['district'],
+  props: ['district', 'metro'],
 
   methods: {
     add (a, b) {
@@ -45,9 +46,13 @@ export default {
     },
     populate () {
 
-      let values    = udata.data['Total U.S.'].slice(0, 4)
+      let values = udata.data['Total U.S.'].slice(0, 4)
       if (this.district !== undefined) {
-        values    = ddata.data[this.district]
+        values = ddata.data[this.district]
+      }
+
+      if (this.metro !== undefined) {
+        values = mdata.data[this.metro]
       }
 
       this.bar.fifties  = this.average(values, 0)

@@ -70,6 +70,14 @@ let sheets = [
 
   'US % Total Pop',
 
+  'US Units Needed',
+  'Metros Units Needed',
+
+  'Metro Building Needed',
+  'Metro Building Current',
+
+  'Metro Age of Occupied Stock',
+
 ]
 
 for (let index in excel) {
@@ -115,7 +123,6 @@ for (let index in excel) {
 
     case 'US Apt Residents':
     case 'State Apt Residents':
-    case 'Metro Apt Residents':
     case 'US Apts':
     case 'State Apartments':
     case 'Metro Occupied Apartments':
@@ -172,6 +179,13 @@ for (let index in excel) {
     case 'US Age of Stock':
     case 'US Affordability (Landing)':
     case 'US % Total Pop':
+    case 'US Units Needed':
+    case 'Metros Units Needed':
+    case 'Metro Building Needed':
+    case 'Metro Building Current':
+    case 'Metro Apt Residents':
+    case 'Metro Age of Occupied Stock':
+
       data.data = {}
       for (let value in sheet.data) {
         if (sheet.data[value].length > 0) {
