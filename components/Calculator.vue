@@ -20,10 +20,10 @@
       .label: .copy number
       .options
         .input
-          input(type="number",placeholder="How many apartment homes?",v-model="number",:class="{ error: errors.number }")
+          input(type="number",placeholder="How many apartment homes?",v-model="number",:class="{ error: errors.number, success: errors.success.number }")
     .param
       .label: .copy calculate
-      .options(:class="{ error: errors.calculate }")
+      .options(:class="{ error: errors.calculate, success: errors.success.calculate }")
         .copy Calculate By:
         .pulldowns
           .pulldown(:class="{ selected: (by === 'metro') }",@change="state = 'State'; by = 'metro'; value = metro")
@@ -56,6 +56,7 @@
 
     .inner
       .source Source: https://weareapartments.org/ {{ $route.path }}
+      .clear
       router-link.close(:to="'/calculator' + $route.hash")
         .fa.fa-times.fa-2x
 
@@ -212,10 +213,19 @@ export default {
   watch: {
     number (n) {
       if (this.isNumeric(n)) {
+        if (this.errors.number === true) {
+          this.errors.success.number = true
+        }
         this.errors.number = false
+      } else {
+        this.errors.success.number = false
       }
     },
     by (n) {
+
+      if (this.errors.calculate === true && n !== null) {
+        this.errors.success.calculate = true
+      }
       if (n !== null) {
         this.errors.calculate = false
       }
@@ -395,7 +405,7 @@ export default {
         return true
       }
 
-      if (!this.isNumeric(this.number)) {
+      if (!this.isNumeric(this.number) || this.number === null || this.number === '') {
         this.errors.number = true
       }
 
@@ -403,10 +413,11 @@ export default {
         this.errors.calculate = true
       }
 
-      if (this.errors.number === true && this.errors.calculate === true) {
+      if (this.errors.number === true || this.errors.calculate === true) {
         return false
       }
 
+      window.scrollTo(0, 120)
       next()
 
     })
@@ -416,6 +427,10 @@ export default {
       errors: {
         number: false,
         calculate: false,
+        success: {
+          number: false,
+          calculate: false
+        }
       },
       states: [],
       metros: [],

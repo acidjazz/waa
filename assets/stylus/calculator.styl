@@ -33,7 +33,7 @@
       animation fadeIn 0.5s ease-in-out 0s both
       for i in 1..3
         &:nth-child({i})
-          animation-delay unit((0.1*i), 's')
+          animation-delay unit((0.02*i), 's')
       &:last-child
         border-bottom none
       &:nth-child(1) > .label
@@ -54,11 +54,13 @@
       > .options
         margin 0 0 0 100px
         padding 10px
+        border-radius 6px
         border 1px solid transparent
-        transition border 1s ease-in-out 0s
+        transition border 0.5s ease-in-out 0s
         &.error
           border 1px solid tomato
-          border-radius 6px
+        &.success
+          border 1px solid green
         > .option
           padding 10px
           border-radius 6px
@@ -95,7 +97,7 @@
               border 1px solid grey
         > .input
           > input
-            transition border 1s ease-in-out 0s
+            transition border 0.5s ease-in-out 0s
             border-radius 3px
             border 1px solid lightblue
             font c3
@@ -106,6 +108,8 @@
               color grey
             &.error
               border 1px solid tomato
+            &.success
+              border 1px solid green
         > .copy
           font c3
           margin 0 0 20px 0
@@ -194,7 +198,7 @@
     padding 20px 0
     border-radius 3px
     text-transform uppercase
-    animation fadeIn 0.5s ease-in-out 0.3s both
+    animation fadeIn 0.2s ease-in-out 0.3s both
     font c1b
     text-align center
     margin 0 auto
@@ -203,7 +207,7 @@
       transition transform 0.2s ease-in-out 0s
       transform scale(1.05)
 .fade
-  background-color rgba(black, 0.8)
+  background-color rgba(black, 0.9)
   position absolute
   top 0
   left 0
@@ -211,6 +215,7 @@
   right 0
   width 100vw
   height 2500px
+  animation fadeIn 0.1s ease-in-out 0s both
   &.on
     display block
   &.off
@@ -224,7 +229,8 @@
   top 200px
   left 50%
   margin-left -500px
-  animation zoomIn 1s eaes-in-out 0s both
+  animation zoomIn 0.2s ease-in-out 0.05s both
+  // animation-timing-function: cubic-bezier(.87,-.41,.19,1.44)
   &.on
     display block
   &.off
@@ -256,13 +262,13 @@
         transform scale(1.05)
       color white
       text-decoration none
-    > .copy:nth-child(3)
+    > .copy:nth-child(4)
       padding 60px 0 20px 0
       font c1sb
       text-transform uppercase
       color grey
       text-align center
-    > .copy:nth-child(4)
+    > .copy:nth-child(5)
       text-align center
       font h2
     > .data
@@ -311,6 +317,10 @@
           
 
 @media print 
+  .fade
+    display none !important
+  header#Top
+    display none
   nav
     display none
   .calculated
@@ -324,12 +334,15 @@
     > .inner > .close
       display none
     > .inner
-      > .copy:nth-child(3)
-        padding 30px 0 10px 0
+      > .copy:nth-child(4)
+        display none !important
+      > .copy:nth-child(5)
+        padding 10px 0 10px 0
       > .data
-        padding 20px 0
-      > .data >.inner > .copy_header
-        padding 10px 
+        padding 10px 0
+        margin 10px 0
+      > .data > .inner > .copy_header
+        padding 10px !important 
       > .data >.inner > .copy_body
         padding 0px
       > .data >.inner > .stat.colored
