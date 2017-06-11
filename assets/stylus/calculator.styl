@@ -232,6 +232,13 @@
   > .inner
     width inherit
     position relative
+    > .source
+      float right
+      font c1s
+      color grey
+      clear both
+      padding 10px 10px 0 0
+      display none
     > .close
       cursor pointer
       position absolute
@@ -249,13 +256,13 @@
         transform scale(1.05)
       color white
       text-decoration none
-    > .copy:nth-child(2)
+    > .copy:nth-child(3)
       padding 60px 0 20px 0
       font c1sb
       text-transform uppercase
       color grey
       text-align center
-    > .copy:nth-child(3)
+    > .copy:nth-child(4)
       text-align center
       font h2
     > .data
@@ -302,3 +309,31 @@
           &.blue
             background-color blue
           
+
+@media print 
+  nav
+    display none
+  .calculated
+    width 100vw
+    top 0
+    left 0
+    right 0
+    margin-left 0px
+    > .inner > .source
+      display block
+    > .inner > .close
+      display none
+    > .inner
+      > .copy:nth-child(3)
+        padding 30px 0 10px 0
+      > .data
+        padding 20px 0
+      > .data >.inner > .copy_header
+        padding 10px 
+      > .data >.inner > .copy_body
+        padding 0px
+      > .data >.inner > .stat.colored
+        margin 10px 0 0 0
+
+
+

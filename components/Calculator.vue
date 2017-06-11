@@ -55,6 +55,7 @@
   .calculated(:class="{ on: ($route.name === 'calculated'), off: ($route.name !== 'calculated')}",v-if="browser()")
 
     .inner
+      .source Source: https://weareapartments.org/ {{ $route.path }}
       router-link.close(:to="'/calculator' + $route.hash")
         .fa.fa-times.fa-2x
 
