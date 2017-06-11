@@ -22,6 +22,14 @@ export default {
   data () {
     return { }
   },
+
+  methods: {
+
+    isNumeric (n) {
+      return !isNaN(parseFloat(n)) && isFinite(n)
+    }
+
+  },
   mounted () {
 
     let data = {
@@ -39,8 +47,15 @@ export default {
         data = {labels: [], datas: [[], []]}
         for (let key in json.data) {
           data.labels.push(key)
-          data.datas[0].push(json.data[key][1])
-          data.datas[1].push(json.data[key][3])
+
+          if (this.isNumeric(json.data[key][1])) {
+            data.datas[0].push(json.data[key][1])
+          }
+
+          if (this.isNumeric(json.data[key][3])) {
+            data.datas[1].push(json.data[key][3])
+          }
+
         }
         break
 
@@ -51,10 +66,20 @@ export default {
         let state = jsonc.labels.indexOf(this.state)
         for (let key in jsonc.data) {
           data.labels.push(key)
-          data.datas[0].push(jsonc.data[key][state])
-          data.datas[1].push(jsonn.data[key][state])
+
+          if (this.isNumeric(jsonc.data[key][state])) {
+            data.datas[0].push(jsonc.data[key][state])
+          }
+
+          if (this.isNumeric(jsonn.data[key][state])) {
+            data.datas[1].push(jsonn.data[key][state])
+          }
+
         }
     }
+
+    console.log(data.datas[0])
+    this.$store.state.homesNeeded = numeral(data.datas[0][data.datas[1].length - 1]).format('0,0')
 
     let Chart = require('chart.js')
     let ctx = 'chart-' + this.id

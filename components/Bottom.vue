@@ -98,7 +98,7 @@ json('../assets/fonts.json')
             font h2
             text-decoration none
           > .copy:nth-child(2)
-            color grey
+            color white
             padding 10px 0 0 0
         &.logos
           float right

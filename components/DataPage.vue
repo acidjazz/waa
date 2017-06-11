@@ -36,7 +36,7 @@
     .section.section_chart(v-if="this.choice().type !== 'district'")
       .top
         .part.part_homes
-          .value 5,000,000
+          .value {{ $store.state.homesNeeded }}
           .copy Apartment Homes Needed.
         .part.part_numbers
           .graph
