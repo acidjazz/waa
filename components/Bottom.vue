@@ -107,12 +107,12 @@ json('../assets/fonts.json')
             float right
             background-size contain
             &.logo-naa
-              background-image url('~static/logo-naa.png')
+              background-image url('~static/icon-naa.png')
               width 143px
               height 61px
               margin 0 20px 0 0
             &.logo-nmhc
-              background-image url('~static/logo-nmhc.png')
+              background-image url('~static/icon-nmhc.png')
               width 246px
               height 51px
 </style>

@@ -390,6 +390,11 @@ export default {
 
     this.$router.beforeEach((to, from, next) => {
 
+      if (to.name !== 'calculated') {
+        next()
+        return true
+      }
+
       if (!this.isNumeric(this.number)) {
         this.errors.number = true
       }
