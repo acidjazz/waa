@@ -28,6 +28,5 @@ json('../../assets/fonts.json')
       border-radius 5px
       width 1000px
       margin 0 auto
-      height 800px
       padding 60px 0
 </style>

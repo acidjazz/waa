@@ -53,6 +53,12 @@
           padding 5px 20px 0 0
       > .options
         margin 0 0 0 100px
+        padding 10px
+        border 1px solid transparent
+        transition border 1s ease-in-out 0s
+        &.error
+          border 1px solid tomato
+          border-radius 6px
         > .option
           padding 10px
           border-radius 6px
@@ -89,6 +95,7 @@
               border 1px solid grey
         > .input
           > input
+            transition border 1s ease-in-out 0s
             border-radius 3px
             border 1px solid lightblue
             font c3
@@ -97,6 +104,8 @@
             padding 15px
             &::placeholder
               color grey
+            &.error
+              border 1px solid tomato
         > .copy
           font c3
           margin 0 0 20px 0
@@ -158,7 +167,7 @@
                   cursor pointer
                   background-color white
                   -webkit-appearance none
-                  width 358px
+                  width 328px
                   padding 15px
                   outline none
                   > option
@@ -188,7 +197,7 @@
     animation fadeIn 0.5s ease-in-out 0.3s both
     font c1b
     text-align center
-    margin auto
+    margin 0 auto
     transition transform 0.5s ease-in-out 0.2s
     &:hover
       transition transform 0.2s ease-in-out 0s
@@ -201,7 +210,7 @@
   bottom 0
   right 0
   width 100vw
-  height 2000px
+  height 2500px
   &.on
     display block
   &.off
@@ -222,9 +231,9 @@
     display none
   > .inner
     width inherit
-    height inherit
     position relative
     > .close
+      cursor pointer
       position absolute
       top  -30px
       right -30px
@@ -238,9 +247,8 @@
       &:hover
         transition transform 0.2s ease-in-out 0s
         transform scale(1.05)
-      > a
-        color white
-        text-decoration none
+      color white
+      text-decoration none
     > .copy:nth-child(2)
       padding 60px 0 20px 0
       font c1sb
@@ -265,7 +273,7 @@
         > .copy.copy_header
           font h1
           color black
-          padding 60px 0 20px 0
+          padding 40px 0 20px 0
         > .copy_body
           color grey
           width 300px
@@ -291,4 +299,6 @@
             background-color yellow
           &.green
             background-color green
+          &.blue
+            background-color blue
           
