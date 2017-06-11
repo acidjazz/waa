@@ -12,7 +12,7 @@
           .value {{ homes }}
           .copy Apartment Homes
         .stat
-          .value {{ contrib }}
+          .value ${{ contrib }}
           .copy Economic Contribution
         .stat
           .value {{ jobs }}

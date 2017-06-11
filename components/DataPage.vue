@@ -91,6 +91,8 @@
           a.button learn more
         .clear
 
+    .sources Source: 
+      b Hoyt Advisory Services; NMHC/NAA; U.S. Census Bureau. 
     Bottom
   .datapage_print
     .source Learn More @ http://waa.256.io{{ path }}
@@ -216,6 +218,12 @@ json('../assets/colors.json')
 json('../assets/fonts.json')
 #DataPage
   > .datapage_web, > .datapage_print
+    > .sources
+      font c1s
+      padding 0 0 20px 0
+      width 1200px
+      margin auto
+      color grey
     > .section_district
       > .DistrictCopy
         > .inner

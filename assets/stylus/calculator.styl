@@ -176,6 +176,8 @@
                   margin 0 10px 0 0
                   color grey
   > .cta
+    display block
+    text-decoration none
     color white
     cursor pointer
     background-color blue
@@ -191,7 +193,102 @@
     &:hover
       transition transform 0.2s ease-in-out 0s
       transform scale(1.05)
+.fade
+  background-color rgba(black, 0.8)
+  position absolute
+  top 0
+  left 0
+  bottom 0
+  right 0
+  width 100vw
+  height 2000px
+  &.on
+    display block
+  &.off
+    display none
 
-
-
-
+.calculated
+  background-color white
+  border-radius 6px
+  position absolute
+  width 1000px
+  top 200px
+  left 50%
+  margin-left -500px
+  animation zoomIn 1s eaes-in-out 0s both
+  &.on
+    display block
+  &.off
+    display none
+  > .inner
+    width inherit
+    height inherit
+    position relative
+    > .close
+      position absolute
+      top  -30px
+      right -30px
+      background-color blue
+      width 60px
+      height 60px
+      border-radius 50%
+      line-height 70px
+      text-align center
+      transition transform 0.5s ease-in-out 0.2s
+      &:hover
+        transition transform 0.2s ease-in-out 0s
+        transform scale(1.05)
+      > a
+        color white
+        text-decoration none
+    > .copy:nth-child(2)
+      padding 60px 0 20px 0
+      font c1sb
+      text-transform uppercase
+      color grey
+      text-align center
+    > .copy:nth-child(3)
+      text-align center
+      font h2
+    > .data
+      padding 60px 0
+      margin 60px 0
+      border-top 2px solid lightblue
+      border-bottom 2px solid lightblue
+      > .inner
+        width 420px
+        margin auto
+        > .copy
+          color grey
+        > .copy:nth-child(1)
+          color tomato
+        > .copy.copy_header
+          font h1
+          color black
+          padding 60px 0 20px 0
+        > .copy_body
+          color grey
+          width 300px
+          padding 0 0 30px 0
+        > .stat
+          width 380px
+          border-radius 6px
+          padding 5px 10px
+          > .copy
+            float left
+          > .value
+            float right
+            color grey
+          &.colored
+            margin 30px 0 0 0
+            > .copy
+              color white
+            > .value
+              color white
+          &.tomato
+            background-color tomato
+          &.yellow
+            background-color yellow
+          &.green
+            background-color green
+          
