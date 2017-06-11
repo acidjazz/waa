@@ -2,19 +2,22 @@
 #SingleItem
   .inner
     .left.area
-      .copy One item example.
-      .copy As supply is unable to keep up with demand, more and more people have to pay higher rent to live.
+      .copy We Need to build More
+      .copy Apartment demand is growing and the industry needs to keep up. However, producing enough new apartments to meet demand requires new development approaches, more incentives and fewer restrictions. 
       //.cta Learn more
     .right.area
-      DualLineChart(id="dualLine",width=300,height=200)
+      // DualLineChart(id="dualLine",width=300,height=200)
+      CircleChart(id="rentersb",width="300",height="300")
+      .copy Are spending over 30% of income
     .clear
   .clear
 </template>
 
 <script>
-import DualLineChart from '~components/DualLineChart.vue'
+// import DualLineChart from '~components/DualLineChart.vue'
+import CircleChart from '~/components/CircleChart.vue'
 export default {
-  components: { DualLineChart }
+  components: { CircleChart }
 }
 </script>
 
@@ -41,4 +44,8 @@ json('../assets/fonts.json')
     > .right.area
       float right
       width 300px
+      > .copy:nth-child(2)
+        color grey
+        text-align center
+        marign -20px 0 0 0
 </style>

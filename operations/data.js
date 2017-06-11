@@ -68,9 +68,12 @@ let sheets = [
 
   'US Affordability (Landing)',
 
+  'US % Total Pop',
+
 ]
 
 for (let index in excel) {
+  console.log(excel[index].name)
   if (sheets.indexOf(excel[index].name) === -1) {
     continue
   }
@@ -168,6 +171,7 @@ for (let index in excel) {
     case 'State Building Needed':
     case 'US Age of Stock':
     case 'US Affordability (Landing)':
+    case 'US % Total Pop':
       data.data = {}
       for (let value in sheet.data) {
         if (sheet.data[value].length > 0) {

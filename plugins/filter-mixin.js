@@ -20,6 +20,12 @@ module.exports = {
   },
   methods: {
     capitalizeFirstLetter (string) {
+      if (string === 'of') {
+        return string
+      }
+      if (string === 'd.c.') {
+        return 'D.C.'
+      }
       return string[0].toUpperCase() + string.slice(1)
     },
     formatParam (type, string) {
@@ -38,7 +44,7 @@ module.exports = {
     },
     choice () {
       if (this.state !== 'National' && this.metro === 'None' && this.district === 'None') {
-        return { type: 'state', value: this.state, state: this.state }
+        return { type: 'state', value: this.state.trim(), state: this.state.trim() }
       }
       if (this.metro !== 'None') {
 

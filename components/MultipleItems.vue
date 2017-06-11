@@ -17,6 +17,7 @@
       .item
         .copy apartment households
         CircleChart(id="renters",width="300",height="300")
+        .copy Are spending over 30% of income
       .clear
 
     .copys
@@ -24,15 +25,17 @@
         .copy Title
         .copy description description
       .copyarea
-        .copy Supply at risk
+        .copy Supply at Risk
         .copy The nation's apartment stock is aging, with a majority built before 1980.  Without resources to support rehabilitation and preservation efforts, the current supply-demand imbalance will worsen, affecting affordability.
       .copyarea
-        .copy We Need to build More
-        .copy Many people in your district call apartments home. They  appreciate mortgage-free living, the ability to follow new work opportunities and amenities that fit their lifestyles.  
+        .copy Renting on the Rise
+        .copy Many people call apartments home. They  appreciate mortgage-free living, the ability to follow new work opportunities and amenities that fit their lifestyles.  
       .clear
 
 </template>
 <script>
+
+import filtermixin from '~plugins/filter-mixin.js'
 
 import contribUS from '../store/US Economic Contribution.json'
 
@@ -43,6 +46,7 @@ import PercChart from '~/components/PercChart.vue'
 let numeral = require('numeral')
 
 export default {
+  mixins: [ filtermixin ],
   components: {
     BarChart, CircleChart, PercChart
   },
@@ -91,11 +95,15 @@ json('../assets/fonts.json')
         border-radius 3px
         &:nth-child(3)
           margin-right 0px
-        > .copy
+        > .copy:first-child
           padding 20px 0 0 20px
           text-transform uppercase
           font c1sb
           color darkblue
+        > .copy:nth-child(3)
+          text-align center
+          color grey
+          margin -20px 0 0 0
     > .copys
       width 960px
       margin auto

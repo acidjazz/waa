@@ -1,7 +1,7 @@
 <template lang="pug">
 header#Top(:class="{ dark: type === 'dark' }")
   .title
-    router-link(to="/") We are Apartments
+    router-link(to="/") We Are Apartments
   Navigate
 </template>
 

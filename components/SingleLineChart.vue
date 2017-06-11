@@ -197,7 +197,8 @@ export default {
 
     },
     toCurrent (data, index = undefined) {
-      let current = new Date().getFullYear()
+      // let current = new Date().getFullYear()
+      let current = 2016
       let labels = []
       let datas = []
       let i = 0

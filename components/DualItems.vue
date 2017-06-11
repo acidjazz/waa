@@ -8,7 +8,7 @@
           .copy Of Apartment Renters
           .copy Are spending over 20% of income on apartment rental
         .copys
-          .copy Supply at risk
+          .copy Supply at Risk
           .copy The nation's apartment stock is aging, with a majority built before 1980. Without resources to support rehabilitation and preservation efforts, the current supply-demand imbalance will worsen, affecting affordability.
       .area.right
         .box

@@ -47,6 +47,12 @@
       "District": 1
     },
     {
+      "State": "District of Columbia",
+      "Abbeviation": "DC",
+      "Metro": "Washington D.C.",
+      "District": 1
+    },
+    {
       "State": "Florida",
       "Abbeviation": "FL",
       "Metro": "Miami, Orlando, Tampa",

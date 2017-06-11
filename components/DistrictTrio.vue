@@ -5,18 +5,19 @@
     .inner
       .title in your district
       CircleChart(:id="'district_' + this.type",:width="(this.type === 'print') ? 200 : 255",:height="(this.type === 'print') ? 200 : 255",value="80")
-      .copy Of apartment Renters
+      .copy Of Your Residents
       .copy Of your district residents call an apartment home
     .copys
-      .copy Renting on the rise
+      .copy Renting on The Rise
       .copy Many people in your district call apartments home.  They appreciate mortgage-free living, the ability to follow new work opportunities and amenities that fit their lifestyles.
   .dchart
     .inner
       .title year apartment built
       PercChart(:district="this.district")
     .copys
-      .copy Supply at risk
-      .copy The nation's apartment stock is aging, with a majority built before 1980.  Without resources to support rehabilitation and preservation efforts, the current supply-demand imabalance will worsen, affecting affordability.
+      .copy Supply at Risk
+      .copy The nation's apartment stock is aging, with about half nationwide being built before 1980. Without resources to support rehabilitation and preservation efforts, the current supply-demand imbalance will worsen, affecting affordability.
+      
   .dchart
     .inner
       .title in your state

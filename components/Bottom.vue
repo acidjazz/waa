@@ -23,8 +23,8 @@
         router-link.copy(to="/") We Are Apartments
         .copy Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.
       .section.logos
-        a.logo.logo-nmhc(href="/")
-        a.logo.logo-naa(href="/")
+        a.logo.logo-nmhc(href="http://www.nmhc.org/",target="_new")
+        a.logo.logo-naa(href="https://www.naahq.org/",target="_new")
       .clear
 </template>
 

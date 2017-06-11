@@ -1,6 +1,6 @@
 let config = {
-  title: 'We Are Apartments',
-  description: 'Description for We Are Apartments',
+  title: 'We Are Apartments: Learn about the demand for apartments in your area',
+  description: 'America needs to build more than 4.6 million new apartments by 2030 through bold, innovative solutions that will help meet America’s housing shortfall.',
   url: 'http://waa.256.io',
   image: '/share.png',
   keywords: 'keywords, for, we, are, apartments'

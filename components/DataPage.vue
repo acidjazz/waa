@@ -6,7 +6,8 @@
     DataFilters(:state="state",:metro="metro",:district="district")
     DataSummary(:state="state",:metro="metro",:district="district")
     .section.section_demand(v-if="this.choice().type !== 'district'")
-      include ../assets/pug/partial/section_demand
+      p The Demand
+      Demand(:type="this.choice().type",:value="this.choice().value")
 
     .section.section_district(v-if="this.choice().type === 'district'")
       DistrictCopy(:district="this.choice().value")
@@ -36,8 +37,9 @@
     .section.section_chart(v-if="this.choice().type !== 'district'")
       .top
         .part.part_homes
-          .value {{ $store.state.homesNeeded }}
-          .copy Apartment Homes Needed.
+          .value {{ $store.state.homesNeeded }} 
+          .copy Apartment <br />Homes Needed in 
+            b {{ this.choice().value }}
         .part.part_numbers
           .graph
             i.fa.fa-2x.fa-bar-chart
@@ -48,8 +50,8 @@
           .copy New Apartments Needed
       .left.left_buildmore(v-if="this.choice().type !== 'metro'")
         .copy We need to build more
-        .copy The country will need to build an average of 324,000 new apartment homes each year to keep up with demand. The industry average just 244,000 completions from 2011-2016.
-        .legend
+        .copy The country will need to add over 325,000 new apartment homes each year on average to keep up with demand. The industry averaged just 225,000 completions from 2011-2016
+        //.legend
           .dot
             .value
             .copy current rate text
@@ -80,14 +82,15 @@
       .inner
         .area.left
           .icon.icon-file
-          .copy Lorem ipsum dolor sit amet, consetetur sadips 
-            span National Data
+          .copy 
+            span Download 
+            | the report on apartment demand.
           a.button download
         .area.right
           .icon.icon-bars
           .copy 
             span About the data 
-            | consetetur sadipscing elitr, sed diam nonumy
+            | Read about the methodology behind all of the data. 
           a.button learn more
         .clear
 
@@ -98,12 +101,7 @@
     .source Learn More @ http://waa.256.io{{ path }}
     .section.section_demand(v-if="this.choice().type !== 'district'")
       p {{ this.choice().value }}
-      p New research shows that demand for apartments is on the rise.  Whether it's young professionals, couples, families or empty nesters, 
-        b the country will add 
-          span 4.6 million 
-          | new apartment households 
-          span by 2030
-
+      Demand(:type="this.choice().type",:value="this.choice().value")
     .section.section_district_name(v-if="this.choice().type === 'district'")
       .copy {{ this.choice().value }}
       .copy Apartments bring dolalrs and jobs that stay close to home
@@ -116,17 +114,17 @@
 
     .section.section_charts(v-if="this.choice().type !== 'district'")
       .chart
-        SingleLineChart(data='ahgrowth',id='ahgrowth_print',:type="this.choice().type",:value="this.choice().value",:state="this.choice().state",theme="orange",width=400,height=300)
+        SingleLineChart(data='apthhgrowth',id='ahgrowth_print',:type="type",:value="value",:state="state",theme="orange",width=400,height=300)
         .copys
           .copy Apartment Household Growth
           .copy Population growth and a higher propensity to rent will create a ..
       .chart
-        SingleLineChart(data='rvogrowth',id='rvogrowth_print',:type="this.choice().type",:value="this.choice().value",:state="this.choice().state",theme="lime",width=400,height=300)
+        SingleLineChart(data='rentgrowth',id='rvogrowth_print',:type="type",:value="value",:state="state",theme="lime",width=400,height=300)
         .copys
           .copy Growth in Rentership
           .copy An aging population, international immigration and fewer ..
       .chart
-        SingleLineChart(data='popgrowth',id='popgrowth_print',:type="this.choice().type",:value="this.choice().value",:state="this.choice().state",theme="cyan",width=400,height=300)
+        SingleLineChart(data='popgrowth',id='popgrowth_print',:type="type",:value="value",:state="state",theme="cyan",width=400,height=300)
         .copys
           .copy(v-if="this.choice().type === 'state'") Household Growth
           .copy(v-else) Population Growth
@@ -134,6 +132,19 @@
     .clear
 
     .section.section_chart(v-if="this.choice().type !== 'district'")
+      .top
+        .part.part_homes
+          .value {{ $store.state.homesNeeded }} 
+          .copy Apartment <br />Homes Needed in 
+            b {{ this.choice().value }}
+        .part.part_numbers
+          .graph
+            i.fa.fa-2x.fa-bar-chart
+          .copy Avg Annual Construction Rate (2011-2016)
+        .part.part_numbers
+          .graph
+            i.fa.fa-2x.fa-bar-chart
+          .copy New Apartments Needed
       .left(v-if="this.choice().type !== 'metro'")
         CircleChart(id="renters_print",width="225",height="225",value="70")
       .left(v-else)
@@ -165,6 +176,7 @@ import DataSummary from '~/components/DataSummary.vue'
 import DistrictCopy from '~/components/DistrictCopy.vue'
 import DistrictTrio from '~/components/DistrictTrio.vue'
 // import DemandAupply from '~/components/DemandAndSupply.vue'
+import Demand from '~/components/Demand.vue'
 import MultipleItems from '~/components/MultipleItems.vue'
 import DualItems from '~/components/DualItems.vue'
 import SingleItem from '~/components/SingleItem.vue'
@@ -184,6 +196,7 @@ export default {
     SingleLineChart,
     MultiLineChart,
     // DemandAndSupply,
+    Demand,
     MultipleItems,
     DualItems,
     SingleItem,
@@ -413,9 +426,39 @@ json('../assets/fonts.json')
           > .copy:nth-child(2)
             color grey
             font c1s
+            display none
     > .section_chart
       width 765px
       margin auto
+      > .top
+        > .part
+          float right
+          width 255px
+          &.part_homes
+            text-align left
+            line-height 20px
+            padding 5px 0 0 0
+            > .value
+              display inline
+            > .copy
+              color grey
+              display inline
+          &.part_numbers
+            > .graph
+              float left
+              margin 10px 10px 0 0
+              > i
+                color rgba(red, 0.5)
+            > .copy
+              margin 5px 0 0 40px
+              color grey
+              line-height 10px
+              width 184px
+              line-height 20px
+            > .value
+              margin 0 0 0 20px
+            &:nth-child(2) > .graph > i
+              color rgba(red, 1)
       > .left
         float left
         width 255px
@@ -488,11 +531,14 @@ json('../assets/fonts.json')
           float right
           width 260px
           &.part_homes
-            text-align right
+            text-align left
+            line-height 20px
+            padding 5px 0 0 0
             > .value
-              font h3
+              display inline
             > .copy
               color grey
+              display inline
           &.part_numbers
             > .graph
               float left

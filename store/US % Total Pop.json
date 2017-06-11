@@ -1,0 +1,27 @@
+{
+  "sheet": "US % Total Pop",
+  "data": {
+    "Total U.S.": [
+      0.12379617959812562,
+      null,
+      "Source: 2015 American Community Survey, 1-Year Estimates",
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      38791276,
+      313347925,
+      0.1237961796
+    ]
+  },
+  "labels": [
+    "% apartment residents of total population",
+    null,
+    "Time Period: 2015"
+  ]
+}

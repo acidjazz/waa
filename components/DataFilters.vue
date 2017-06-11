@@ -22,7 +22,8 @@
 
     .modal.modal_states(:class="{ on: modals.state, off: !modals.state }")
       .option(v-for="State in data",:class="{ active: (state === State.State) }")
-        router-link.choice(:to="'/data/state/' + State.State.toLowerCase().replace(/ /g, '-')",@click.native="modal(false)") {{ State.State }}
+        router-link.choice(v-if="State.State == 'District of Columbia'",:to="'/data/state/' + State.State.toLowerCase().replace(/ /g, '-')",@click.native="modal(false)") D.C.
+        router-link.choice(v-else,:to="'/data/state/' + State.State.toLowerCase().replace(/ /g, '-')",@click.native="modal(false)") {{ State.State }}
 
     .modal.modal_metros(:class="{ on: modals.metro, off: !modals.metro }")
       .option(v-for="Metro in metros",:class="{ active: (metro === Metro) }")
