@@ -51,7 +51,7 @@
           .copy New Apartments Needed
       .left.left_buildmore(v-if="this.choice().type !== 'metro'")
         .copy We need to build more
-        .copy The country will need to add over 325,000 new apartment homes each year on average to keep up with demand. The industry averaged just 225,000 completions from 2011-2016
+        BuildMore(:choice="this.choice()")
         //.legend
           .dot
             .value
@@ -66,16 +66,15 @@
       .chart
         MultiLineChart(:type="this.choice().type",:value="this.choice().value",:state="this.choice().state",data='aptsneeded',id='aptsneeded',theme="red",width=830,height=300)
       .clear
-      .copys.copyLeft
+      .copys.copyLeft(v-if="this.choice().type === 'district'")
         .copy Red Tape Rating
         .copy Over the last three decades, regulatory barriers to apartment construction have increased significantly, most notably at the local level
-      .copys.copyRight
+      .copys.copyRight(v-if="this.choice().type === 'district'")
         .copy We Need to Build More
         .copy Apartment demand is growing and the industry needs to keep up. However, producing enough new apartments to meet demand requires new development approaches, more incentives and fewer restrictions.
 
     .clear
     .border.big
-    //DemandAndSupply
     //.border.big
     MultipleItems(:choice="this.choice()",v-if="(this.choice().type !== 'district')")
     .border.big(v-if="(this.choice().type !== 'district')")
@@ -180,8 +179,8 @@ import DataFilters from '~/components/DataFilters.vue'
 import DataSummary from '~/components/DataSummary.vue'
 import DistrictCopy from '~/components/DistrictCopy.vue'
 import DistrictTrio from '~/components/DistrictTrio.vue'
-// import DemandAupply from '~/components/DemandAndSupply.vue'
 import Demand from '~/components/Demand.vue'
+import BuildMore from '~/components/BuildMore.vue'
 import MultipleItems from '~/components/MultipleItems.vue'
 import DualItems from '~/components/DualItems.vue'
 import SingleItem from '~/components/SingleItem.vue'
@@ -200,8 +199,8 @@ export default {
     DistrictTrio,
     SingleLineChart,
     MultiLineChart,
-    // DemandAndSupply,
     Demand,
+    BuildMore,
     MultipleItems,
     DualItems,
     SingleItem,
