@@ -4,11 +4,13 @@ json('../colors.json')
 json('../fonts.json')
 
 body
-  background-color white
+  background-color darkblue
   font c1
   margin 0
   padding 0
   -webkit-print-color-adjust exact
+.page
+  background-color white
 
 .border
   height 5px
@@ -42,3 +44,10 @@ body
     clear: both
   zoom: 1 if support-for-ie
 
+/*
+.page-enter-active, .page-leave-active
+  transition: opacity .3s
+
+.page-enter, .page-leave-to 
+  opacity: 0
+*/

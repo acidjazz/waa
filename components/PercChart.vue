@@ -93,6 +93,12 @@ export default {
     }
   },
 
+  watch: {
+    '$route' () {
+      this.populate()
+    }
+  },
+
   mounted () {
     this.populate()
   },

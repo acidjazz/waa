@@ -40,14 +40,169 @@ export default {
 
   props: ['id', 'data', 'type', 'value', 'theme', 'width', 'height'],
 
-  data () {
-    return {
-      spike: 0
-      // spike: (Math.random() * (20 - -20) + -20).toFixed(2)
-    }
-  },
-
   methods: {
+    populate () {
+      let data = {
+        labels: [2000, 2010, 2015, 2020, 2025, 2030],
+        datas: []
+      }
+
+      let json = {}
+
+      for (let i = 0; i !== 6; i++) {
+        data.datas.push(Math.floor(Math.random() * 40) + 10)
+      }
+
+      switch (true) {
+
+        case this.type === 'national' && this.data === 'apthhgrowth':
+          data = this.toCurrent(require('../store/US Apt HHs (Landing).json').data)
+          break
+
+        case this.type === 'national' && this.data === 'rentgrowth':
+          data = this.toCurrent(require('../store/US Rentership Rate (Landing).json').data)
+          break
+
+        case this.type === 'national' && this.data === 'popgrowth':
+          data = this.toCurrent(require('../store/US Population (Landing).json').data)
+          break
+
+        case this.type === 'state' && this.data === 'apthhgrowth':
+          json = require('../store/State New Apt HHs Per Year.json')
+          data = this.toCurrent(json.data, json.labels.indexOf(this.value))
+          break
+
+        case this.type === 'state' && this.data === 'rentgrowth':
+          json = require('../store/State Rentership Rate.json')
+          data.labels = [2017, 2030]
+          data.datas = json.data[this.value]
+          break
+
+        case this.type === 'state' && this.data === 'popgrowth':
+          json = require('../store/State HH Growth.json')
+          data.labels = [2017, 2030]
+          data.datas = [ 0, json.data[this.value] ]
+          break
+
+        case this.type === 'metro' && this.data === 'apthhgrowth':
+          json = require('../store/Metro New Apt HHs Per Year.json')
+          data = this.toCurrent(json.data, json.labels.indexOf(this.value))
+          break
+
+        case this.type === 'metro' && this.data === 'rentgrowth':
+          json = require('../store/Metro Rentership Rate.json')
+          data = {'labels': [2017, 2030], 'datas': json.data[this.value].slice(0, 2)}
+          break
+
+        case this.type === 'metro' && this.data === 'popgrowth':
+          json = require('../store/Metro Pop Growth.json')
+          data = this.toCurrent(json.data, json.labels.indexOf(this.value))
+          break
+
+        case this.data === 'inyourstate':
+          json = require('../store/State New Apt HHs Per Year.json')
+          data = this.toCurrent(json.data, json.labels.indexOf(this.value))
+          break
+
+        default:
+          break
+
+      }
+
+      let spike = numeral((data.datas[data.datas.length - 1] - data.datas[0]) / data.datas[0]).format('0.00%').replace(/%/, '')
+      this.spike = isNaN(spike) ? 100 : spike
+      let Chart = require('chart.js')
+      let ctx = 'chart-' + this.id
+
+      let solid = colors.cyan
+      let light = colors.lightcyan
+
+      if (this.theme === 'lime') {
+        solid = colors.lime
+        light = colors.lightlime
+      }
+
+      if (this.theme === 'orange') {
+        solid = colors.orange
+        light = colors.lightorange
+      }
+
+      if (this.theme === 'red') {
+        solid = colors.red
+        light = colors.lightred
+      }
+
+      Chart.defaults.global.defaultFontSize = 16
+      Chart.defaults.global.legend.display = false
+      Chart.defaults.global.showLines = false
+      Chart.defaults.global.elements.rectangle.borderColor = solid
+      Chart.defaults.global.elements.line.borderColor = colors.red
+      Chart.defaults.global.hover.animationDuration = 200
+
+      Chart.defaults.global.elements.rectangle.borderColor = solid
+      let myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: data.labels,
+          datasets: [{
+            data: data.datas,
+
+            pointBackgroundColor: colors.white,
+            pointBorderWidth: 4,
+            pointRadius: 5,
+            pointBorderColor: solid,
+
+            borderColor: solid,
+            backgroundColor: light,
+            fill: true
+          }]
+        },
+
+        options: {
+          tooltips: {
+            displayColors: false,
+            backgroundColor: colors.white,
+            bodyFontFamily: 'Maven Pro',
+            bodyFontSize: 20,
+            titleFontSize: 0,
+            titleSpacing: 0,
+            titleMarginBottom: -6,
+            bodyFontColor: solid,
+            yPadding: 10,
+            borderColor: colors.lightblue,
+            borderWidth: 4,
+            callbacks: {
+              label: function (item, data) {
+                if (Number(item.yLabel) < 1 && Number(item.yLabel) > 0) {
+                  return numeral(item.yLabel).format('0.00%')
+                }
+                return numeral(item.yLabel).format('0.00a')
+              }
+            }
+          },
+          layout: {
+            padding: {
+              top: 100
+            }
+          },
+          scales: {
+            yAxes: [{
+              display: false,
+              gridLines: { color: solid, display: false, zeroLineColor: solid },
+            }],
+            xAxes: [{
+              gridLines: { color: solid, zeroLineColor: solid, display: false },
+              ticks: {
+                fontColor: solid,
+                color: solid,
+                maxRotation: 0,
+              }
+            }]
+          }
+        }
+      })
+
+    },
     toCurrent (data, index = undefined) {
       let current = new Date().getFullYear()
       let labels = []
@@ -73,166 +228,17 @@ export default {
   },
 
   mounted () {
-
-    let data = {
-      labels: [2000, 2010, 2015, 2020, 2025, 2030],
-      datas: []
+    this.populate()
+  },
+  watch: {
+    '$route' () {
+      this.populate()
     }
-
-    let json = {}
-
-    for (let i = 0; i !== 6; i++) {
-      data.datas.push(Math.floor(Math.random() * 40) + 10)
+  },
+  data () {
+    return {
+      spike: 0,
     }
-
-    switch (true) {
-
-      case this.type === 'national' && this.data === 'apthhgrowth':
-        data = this.toCurrent(require('../store/US Apt HHs (Landing).json').data)
-        break
-
-      case this.type === 'national' && this.data === 'rentgrowth':
-        data = this.toCurrent(require('../store/US Rentership Rate (Landing).json').data)
-        break
-
-      case this.type === 'national' && this.data === 'popgrowth':
-        data = this.toCurrent(require('../store/US Population (Landing).json').data)
-        break
-
-      case this.type === 'state' && this.data === 'apthhgrowth':
-        json = require('../store/State New Apt HHs Per Year.json')
-        data = this.toCurrent(json.data, json.labels.indexOf(this.value))
-        break
-
-      case this.type === 'state' && this.data === 'rentgrowth':
-        json = require('../store/State Rentership Rate.json')
-        data.labels = [2017, 2030]
-        data.datas = json.data[this.value]
-        break
-
-      case this.type === 'state' && this.data === 'popgrowth':
-        json = require('../store/State HH Growth.json')
-        data.labels = [2017, 2030]
-        data.datas = [ 0, json.data[this.value] ]
-        break
-
-      case this.type === 'metro' && this.data === 'apthhgrowth':
-        json = require('../store/Metro New Apt HHs Per Year.json')
-        data = this.toCurrent(json.data, json.labels.indexOf(this.value))
-        break
-
-      case this.type === 'metro' && this.data === 'rentgrowth':
-        json = require('../store/Metro Rentership Rate.json')
-        data = {'labels': [2017, 2030], 'datas': json.data[this.value].slice(0, 2)}
-        break
-
-      case this.type === 'metro' && this.data === 'popgrowth':
-        json = require('../store/Metro Pop Growth.json')
-        data = this.toCurrent(json.data, json.labels.indexOf(this.value))
-        break
-
-      case this.data === 'inyourstate':
-        json = require('../store/State New Apt HHs Per Year.json')
-        data = this.toCurrent(json.data, json.labels.indexOf(this.value))
-        break
-
-      default:
-        break
-
-    }
-
-    let spike = numeral((data.datas[data.datas.length - 1] - data.datas[0]) / data.datas[0]).format('0.00%').replace(/%/, '')
-    this.spike = isNaN(spike) ? 100 : spike
-    let Chart = require('chart.js')
-    let ctx = 'chart-' + this.id
-
-    let solid = colors.cyan
-    let light = colors.lightcyan
-
-    if (this.theme === 'lime') {
-      solid = colors.lime
-      light = colors.lightlime
-    }
-
-    if (this.theme === 'orange') {
-      solid = colors.orange
-      light = colors.lightorange
-    }
-
-    if (this.theme === 'red') {
-      solid = colors.red
-      light = colors.lightred
-    }
-
-    Chart.defaults.global.defaultFontSize = 16
-    Chart.defaults.global.legend.display = false
-    Chart.defaults.global.showLines = false
-    Chart.defaults.global.elements.rectangle.borderColor = solid
-    Chart.defaults.global.elements.line.borderColor = colors.red
-    Chart.defaults.global.hover.animationDuration = 200
-
-    Chart.defaults.global.elements.rectangle.borderColor = solid
-    let myChart = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: data.labels,
-        datasets: [{
-          data: data.datas,
-
-          pointBackgroundColor: colors.white,
-          pointBorderWidth: 4,
-          pointRadius: 5,
-          pointBorderColor: solid,
-
-          borderColor: solid,
-          backgroundColor: light,
-          fill: true
-        }]
-      },
-
-      options: {
-        tooltips: {
-          displayColors: false,
-          backgroundColor: colors.white,
-          bodyFontFamily: 'Maven Pro',
-          bodyFontSize: 20,
-          titleFontSize: 0,
-          titleSpacing: 0,
-          titleMarginBottom: -6,
-          bodyFontColor: solid,
-          yPadding: 10,
-          borderColor: colors.lightblue,
-          borderWidth: 4,
-          callbacks: {
-            label: function (item, data) {
-              if (Number(item.yLabel) < 1 && Number(item.yLabel) > 0) {
-                return numeral(item.yLabel).format('0.00%')
-              }
-              return numeral(item.yLabel).format('0.00a')
-            }
-          }
-        },
-        layout: {
-          padding: {
-            top: 100
-          }
-        },
-        scales: {
-          yAxes: [{
-            display: false,
-            gridLines: { color: solid, display: false, zeroLineColor: solid },
-          }],
-          xAxes: [{
-            gridLines: { color: solid, zeroLineColor: solid, display: false },
-            ticks: {
-              fontColor: solid,
-              color: solid,
-              maxRotation: 0,
-            }
-          }]
-        }
-      }
-    })
   }
 }
 </script>

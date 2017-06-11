@@ -24,18 +24,24 @@ export default {
         let perc = (value - -5.9) / (19.9 - -5.9)
         carat.style.transform = 'rotate(' + Math.round((perc * 100) * 240 / 100 - 30) + 'deg)'
       }
+    },
+    populate () {
+      if (process.BROWSER_BUILD) {
+        this.carat = this.$el.querySelectorAll('.HeatChart > .circle > .carat')
+        this.alterCarat(index.data[this.metro])
+      }
     }
   },
   watch: {
     'value' (newVal, oldVal) {
       this.alterCarat(newVal)
+    },
+    '$route' () {
+      this.populate()
     }
   },
   mounted () {
-    if (process.BROWSER_BUILD) {
-      this.carat = this.$el.querySelectorAll('.HeatChart > .circle > .carat')
-      this.alterCarat(index.data[this.metro])
-    }
+    this.populate()
   },
   data () {
     return {

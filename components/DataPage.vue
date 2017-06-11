@@ -3,8 +3,8 @@
   .datapage_web
     Top(type="light")
     .clear
-    DataFilters(v-bind:state="this.state",v-bind:metro="this.metro",v-bind:district="this.district")
-    DataSummary(v-bind:state="this.state",v-bind:metro="this.metro",v-bind:district="this.district")
+    DataFilters(:state="state",:metro="metro",:district="district")
+    DataSummary(:state="state",:metro="metro",:district="district")
     .section.section_demand(v-if="this.choice().type !== 'district'")
       include ../assets/pug/partial/section_demand
 
@@ -16,17 +16,17 @@
 
     .section.section_charts(v-if="this.choice().type !== 'district'")
       .chart
-        SingleLineChart(data='apthhgrowth',id='apthhgrowth',:type="this.choice().type",:value="this.choice().value",theme="orange",width=380,height=300,animation=false)
+        SingleLineChart(data='apthhgrowth',id='apthhgrowth',:type="type",:value="value",:state="this.choice().state",theme="orange",width=380,height=300,animation=false)
         .copys
           .copy Apartment Household Growth
           .copy Population growth and a higher propensity to rent will create a need for more apartments by 2030. 
       .chart
-        SingleLineChart(data='rentgrowth',id='rentgrowth',:type="this.choice().type",:value="this.choice().value",theme="lime",width=380,height=300,animation=false)
+        SingleLineChart(data='rentgrowth',id='rentgrowth',:type="type",:value="value",:state="state",theme="lime",width=380,height=300,animation=false)
         .copys
           .copy Growth in Rentership
           .copy An aging population, international immigration and fewer home purchases are increasing the need for apartments. 
       .chart
-        SingleLineChart(data='popgrowth',id='popgrowth',:type="this.choice().type",:value="this.choice().value",theme="cyan",width=380,height=300,animation=false)
+        SingleLineChart(data='popgrowth',id='popgrowth',:type="type",:value="value",:state="choice().state",theme="cyan",width=380,height=300,animation=false)
         .copys
           .copy(v-if="this.choice().type === 'state'") Household Growth
           .copy(v-else) Population Growth
@@ -107,7 +107,7 @@
     .section.section_district_name(v-if="this.choice().type === 'district'")
       .copy {{ this.choice().value }}
       .copy Apartments bring dolalrs and jobs that stay close to home
-    DataSummary(v-bind:state="this.state",v-bind:metro="this.metro",v-bind:district="this.district",v-if="this.choice().type === 'district'")
+    DataSummary(:state="state",:metro="metro",:district="district",v-if="this.choice().type === 'district'")
     .section.section_district(v-if="this.choice().type === 'district'")
       DistrictCopy(:district="this.choice().value")
 
@@ -116,17 +116,17 @@
 
     .section.section_charts(v-if="this.choice().type !== 'district'")
       .chart
-        SingleLineChart(data='ahgrowth',id='ahgrowth_print',:type="this.choice().type",:value="this.choice().value",theme="orange",width=400,height=300)
+        SingleLineChart(data='ahgrowth',id='ahgrowth_print',:type="this.choice().type",:value="this.choice().value",:state="this.choice().state",theme="orange",width=400,height=300)
         .copys
           .copy Apartment Household Growth
           .copy Population growth and a higher propensity to rent will create a ..
       .chart
-        SingleLineChart(data='rvogrowth',id='rvogrowth_print',:type="this.choice().type",:value="this.choice().value",theme="lime",width=400,height=300)
+        SingleLineChart(data='rvogrowth',id='rvogrowth_print',:type="this.choice().type",:value="this.choice().value",:state="this.choice().state",theme="lime",width=400,height=300)
         .copys
           .copy Growth in Rentership
           .copy An aging population, international immigration and fewer ..
       .chart
-        SingleLineChart(data='popgrowth',id='popgrowth_print',:type="this.choice().type",:value="this.choice().value",theme="cyan",width=400,height=300)
+        SingleLineChart(data='popgrowth',id='popgrowth_print',:type="this.choice().type",:value="this.choice().value",:state="this.choice().state",theme="cyan",width=400,height=300)
         .copys
           .copy(v-if="this.choice().type === 'state'") Household Growth
           .copy(v-else) Population Growth
@@ -202,12 +202,29 @@ export default {
   created () {
     this.populate()
   },
+  watch: {
+    '$route' () {
+      this.value = this.choice().value
+      this.type = this.choice().type
+      if (this.choice().type === 'metro') {
+        this.metro = this.choice().value
+      }
+      if (this.choice().type === 'state') {
+        this.state = this.choice().value
+      }
+      if (this.choice().type === 'district') {
+        this.district = this.choice().value
+      }
+    }
+  },
   data () {
     return {
       path: false,
       metro: false,
       state: false,
-      district: false
+      district: false,
+      value: false,
+      type: false,
     }
   }
 }

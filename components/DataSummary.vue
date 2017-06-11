@@ -22,37 +22,6 @@
 
 <script>
 
-/*
-Residents
----------
-US Apt Residents
-State Apt Residents
-Metro Apt Residents
-District Apt Residents
-
-Homes
------
-US Apts
-State Apartments
-Metro Occupied Apartments
-District Occupied Apartments
-
-Contribution
-------------
-US Economic Contribution
-State Economic Contribution
-Metro Economic Contribution
-District Economic Contribution
-
-Jobs
-----
-US Jobs,
-State Jobs,
-Metro Jobs,
-District Total Jobs,
-
-*/
-
 import filtermixin from '~plugins/filter-mixin.js'
 
 import residentsUS from '../store/US Apt Residents.json'

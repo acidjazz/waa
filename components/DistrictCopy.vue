@@ -45,7 +45,7 @@ export default {
     this.populate()
   },
   watch: {
-    '$route' (newVal, oldVal) {
+    '$route' () {
       this.populate()
     }
   },

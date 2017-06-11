@@ -40,35 +40,42 @@ export default {
       perc: 0
     }
   },
+  methods: {
+    populate () {
+      if (this.value === undefined) {
+        this.perc = Math.round(data.data['Total U.S.'] * 100)
+      } else {
+        this.perc = this.value
+      }
 
-  mounted () {
+      let canvas = document.getElementById('chart-' + this.id)
+      let ctx = canvas.getContext('2d')
+      ctx.clearRect(0, 0, this.width, this.height)
 
-    if (this.value === undefined) {
-      this.perc = Math.round(data.data['Total U.S.'] * 100)
-    } else {
-      this.perc = this.value
+      ctx.beginPath()
+      ctx.arc(this.width / 2, this.width / 2, this.width / 3, 0, Math.PI * 2)
+      ctx.strokeStyle = colors.lightgrey
+      ctx.lineWidth = 5
+      ctx.setLineDash([10, 10])
+      ctx.stroke()
+
+      let hundo = Math.PI * 2
+      let value = this.perc / 100 * hundo
+      ctx.beginPath()
+      ctx.arc(this.width / 2, this.width / 2, this.width / 3, 4.65, value + 4.65)
+      ctx.strokeStyle = colors.orange
+      ctx.lineWidth = 10
+      ctx.setLineDash([0, 0])
+      ctx.stroke()
     }
-
-    let canvas = document.getElementById('chart-' + this.id)
-    let ctx = canvas.getContext('2d')
-    ctx.clearRect(0, 0, this.width, this.height)
-
-    ctx.beginPath()
-    ctx.arc(this.width / 2, this.width / 2, this.width / 3, 0, Math.PI * 2)
-    ctx.strokeStyle = colors.lightgrey
-    ctx.lineWidth = 5
-    ctx.setLineDash([10, 10])
-    ctx.stroke()
-
-    let hundo = Math.PI * 2
-    let value = this.perc / 100 * hundo
-    ctx.beginPath()
-    ctx.arc(this.width / 2, this.width / 2, this.width / 3, 4.65, value + 4.65)
-    ctx.strokeStyle = colors.orange
-    ctx.lineWidth = 10
-    ctx.setLineDash([0, 0])
-    ctx.stroke()
+  },
+  watch: {
+    '$route' () {
+      this.populate()
+    }
+  },
+  mounted () {
+    this.populate()
   }
-
 }
 </script>
