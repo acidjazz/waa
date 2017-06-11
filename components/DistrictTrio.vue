@@ -4,7 +4,7 @@
   .dchart
     .inner
       .title in your district
-      CircleChart(:id="'district_' + this.type",:width="(this.type === 'print') ? 200 : 255",:height="(this.type === 'print') ? 200 : 255",value="80")
+      CircleChart(:id="'district_' + this.type",:district="this.district",:width="(this.type === 'print') ? 200 : 255",:height="(this.type === 'print') ? 200 : 255",value="80")
       .copy Of Your Residents
       .copy Of your district residents call an apartment home
     .copys
@@ -49,7 +49,7 @@ json('../assets/fonts.json')
 .district_charts
   width 1200px
   margin auto
-  padding 30px 0
+  padding 30px 0 90px 0
   > .dchart
     float left
     width 33%

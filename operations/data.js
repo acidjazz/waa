@@ -146,7 +146,6 @@ for (let index in excel) {
       }
       break
 
-    case 'District Apt Residents':
     case 'District Occupied Apts':
     case 'District Economic Contribution':
     case 'District Total Jobs':
@@ -157,6 +156,7 @@ for (let index in excel) {
         }
       }
       break
+    case 'District Apt Residents':
     case 'district economic impact':
     case 'District Age of Occupied Stock':
       data.data = {}

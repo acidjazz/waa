@@ -12,7 +12,7 @@ nav#Navigate(:class="{ on: isOpen, off: !isOpen }")
         .option(@click="isOpen = false"): router-link(to="/calculator") Apartment Calculator
         .option(@click="isOpen = false"): router-link(to="/about") The Initiative
       .title 
-        router-link(to="/") We are Apartments
+        router-link(to="/") We Are Apartments
 </template>
 
 <script>

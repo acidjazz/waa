@@ -5,11 +5,11 @@
     .section.section_top
       .copy In communities across the country, apartments work – helping people live in a home that’s right for them. 
       .logos
-        img(src="/logo-nmhc.png")
-        img(src="/logo-naa.png")
+       a(href="http://www.nmhc.org/",target="_new"): img(src="/logo-nmhc.png")
+       a(href="https://www.naahq.org/",target="_new"): img(src="/logo-naa.png")
       .copys
-        .copy The We Are Apartments initiative
-        p In communities across the country, apartments work – helping people live in a home that’s right for them. Whether it’s young professionals starting out, empty nesters looking to downsize and simplify, workers wanting to live near their jobs, married couples without children or families building a better life, apartment homes provide a sensible choice to meet their specific housing needs.
+        .copy The We Are Apartments Initiative
+        p Whether it’s young professionals starting out, empty nesters looking to downsize and simplify, workers wanting to live near their jobs, married couples without children or families building a better life, apartment homes provide a sensible choice to meet their specific housing needs.
         p Demand for apartments continues to grow. America needs to build more than 4.6 million new apartment homes at a variety of price points by 2030, according to new research from Hoyt Advisory Services (HAS), commissioned by the National Multifamily Housing Council (NMHC) and the National Apartment Association (NAA).
         p To that end, NMHC and NAA are committed to finding bold, innovative solutions that will help meet America’s housing shortfall.
         p For more than 20 years, NMHC and NAA have partnered on behalf of America’s apartment industry.
@@ -57,20 +57,15 @@ json('../../assets/fonts.json')
         text-align center
         border-bottom 1px solid lightgrey
         margin-bottom 30px
-        > img
+        > a > img
           height 60px
       > .copys
         width 700px
         margin auto
+        padding 0 0 90px 0
         > .copy:nth-child(1)
           font h2
           padding 0 0 30px 0
-        > p:nth-child(4)
-          width 50%
-          float left
-        > p:nth-child(5)
-          width 50%
-          float right
     &.section_about
       margin 60px auto
       > .copy:nth-child(1)

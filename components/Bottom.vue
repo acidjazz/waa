@@ -21,7 +21,7 @@
     .inner
       .section.title
         router-link.copy(to="/") We Are Apartments
-        .copy Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt.
+        .copy In communities across the country, apartments work -- helping people live in a home that’s right for them. 
       .section.logos
         a.logo.logo-nmhc(href="http://www.nmhc.org/",target="_new")
         a.logo.logo-naa(href="https://www.naahq.org/",target="_new")

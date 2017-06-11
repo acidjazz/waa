@@ -65,7 +65,7 @@ export default {
           this.jobs = numeral(jobsState.data[this.choice().value]).format('0.0a')
           break
         case 'district':
-          this.residents = numeral(residentsDistrict.data[this.choice().value]).format('0.0a')
+          this.residents = numeral(residentsDistrict.data[this.choice().value][0]).format('0.0a')
           this.homes = numeral(homesDistrict.data[this.choice().value]).format('0.0a')
           this.contrib = numeral(contribDistrict.data[this.choice().value]).format('0.0a')
           this.jobs = numeral(jobsDistrict.data[this.choice().value]).format('0.0a')

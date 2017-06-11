@@ -48,7 +48,7 @@ export default {
 
       let values = udata.data['Total U.S.'].slice(0, 4)
       if (this.district !== undefined) {
-        values = ddata.data[this.district]
+        values = ddata.data[this.district].slice(0, 4)
       }
 
       if (this.metro !== undefined) {

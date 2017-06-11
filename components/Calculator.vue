@@ -105,11 +105,11 @@
           .copy.copy_header(v-if="type === 'new'") Building Apartments
           .copy.copy_body(v-if="type === 'new'") Apartment construction continues as a bright spot in the economy, helping lead the housing recovery
 
-          .stat(v-if="type === 'new'")
+          //.stat(v-if="type === 'new'")
             .copy Construction Dollars Spent
             .value {{ data.construction.dollars }}
             .clear
-          .stat(v-if="type === 'new'")
+          //.stat(v-if="type === 'new'")
             .copy On-site Jobs
             .value {{ data.construction.jobsOnsite }}
             .clear

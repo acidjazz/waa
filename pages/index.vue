@@ -1,4 +1,3 @@
-
 <template lang="pug">
 .page.home 
   Top(type="dark")
@@ -8,9 +7,9 @@
     .outer
     .inner
       .copy welcome to we are apartments.
-      .copy A resource to provide the positives of the apartment industry using insightful data
+      .copy The country needs 4.6 million new apartments by 2030.
       .button.is-centered
-        router-link(to="/data") NATIONAL DATA
+        router-link(to="/data") LEARN MOR:
   Bottom
 </template>
 
@@ -57,6 +56,7 @@ json('../assets/fonts.json')
         font h2
         width 800px
         margin 60px auto
+        line-height 50px
       > .button
         animation fadeIn 0.2s linear 0.2s both
         > a
