@@ -26,7 +26,7 @@
       .options(:class="{ error: errors.calculate, success: errors.success.calculate }")
         .copy Calculate By:
         .pulldowns
-          .pulldown(:class="{ selected: (by === 'metro') }",@change="state = 'State'; by = 'metro'; value = metro")
+          .pulldown(:class="{ selected: (by === 'metro') }",@change="change('metro')")
             .checkbox: .fa.fa-check
             .pullarea
               .pull: .fa.fa-chevron-down
@@ -36,7 +36,7 @@
                   option(v-for="option in metros",:value="option",selected,v-if="option === metro") {{ option }}
                   option(v-for="option in metros",:value="option",v-else) {{ option }}
 
-          .pulldown(:class="{ selected: (by === 'state') }",@change="metro = 'Metro Area'; national = false; by = 'state'; value = state")
+          .pulldown(:class="{ selected: (by === 'state') }",@change="change('state')")
             .checkbox: .fa.fa-check
             .pullarea
               .pull: .fa.fa-chevron-down
@@ -234,6 +234,31 @@ export default {
   },
 
   methods: {
+
+    change (type) {
+
+      if (type === 'metro') {
+        if (this.metro === 'Metro Area') {
+          this.by = null
+          this.value = null
+        } else {
+          this.state = 'State'
+          this.by = 'metro'
+          this.value = this.metro
+        }
+      }
+
+      if (type === 'state') {
+        if (this.state === 'State') {
+          this.by = null
+          this.value = null
+        } else {
+          this.metro = 'Metro Area'
+          this.by = 'state'
+          this.value = this.state
+        }
+      }
+    },
 
     isNumeric (n) {
       return !isNaN(parseFloat(n)) && isFinite(n)
