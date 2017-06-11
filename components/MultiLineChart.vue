@@ -17,7 +17,7 @@ import colors from '~/assets/colors.json'
 let numeral = require('numeral')
 export default {
 
-  props: ['id', 'data', 'type', 'value', 'theme', 'width', 'height'],
+  props: ['id', 'data', 'type', 'state', 'value', 'theme', 'width', 'height'],
 
   data () {
     return { }
@@ -44,11 +44,11 @@ export default {
         }
         break
 
-      case this.type === 'state' && this.data === 'aptsneeded':
+      case (this.type === 'state' || this.type === 'metro') && this.data === 'aptsneeded':
         data = {labels: [], datas: [[], []]}
         let jsonc = require('../store/State Building Current.json')
         let jsonn = require('../store/State Building Needed.json')
-        let state = jsonc.labels.indexOf(this.value)
+        let state = jsonc.labels.indexOf(this.state)
         for (let key in jsonc.data) {
           data.labels.push(key)
           data.datas[0].push(jsonc.data[key][state])
@@ -140,8 +140,14 @@ export default {
         scales: {
           yAxes: [{
             gridLines: { display: false },
+            position: 'right',
             ticks: {
-              display: false,
+              display: true,
+              position: 'right',
+              callback: function (label, index, labels) {
+                return numeral(label).format('0a')
+              },
+              maxTicksLimit: 5,
             }
           }],
           xAxes: [{
@@ -149,6 +155,8 @@ export default {
             ticks: {
               fontColor: colors.grey,
               color: solid,
+              maxTicksLimit: 10,
+              maxRotation: 0,
             }
           }]
         }

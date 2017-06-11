@@ -41,7 +41,28 @@ module.exports = {
         return { type: 'state', value: this.state, state: this.state }
       }
       if (this.metro !== 'None') {
-        return { type: 'metro', value: this.metro }
+
+        var Filters =  require('../store/Filters.json')
+        let state = false
+
+        for (let key in Filters.data) {
+          if (Filters.data[key].Metro !== undefined) {
+            let value = this.metro.indexOf(Filters.data[key].Metro.split(','))
+            let metros = Filters.data[key].Metro.split(',')
+            for (let bkey in metros) {
+              if (metros[bkey].trim() === this.metro) {
+                state = Filters.data[key].State
+              }
+            }
+          }
+        }
+
+        return {
+          type: 'metro',
+          value: this.metro,
+          state: state
+        }
+
       }
       if (this.district !== 'None') {
         return {

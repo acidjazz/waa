@@ -19,18 +19,18 @@
         SingleLineChart(data='apthhgrowth',id='apthhgrowth',:type="this.choice().type",:value="this.choice().value",theme="orange",width=380,height=300,animation=false)
         .copys
           .copy Apartment Household Growth
-          .copy Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna .  Lorem ipsum dolor sit amet, 
+          .copy Population growth and a higher propensity to rent will create a need for more apartments by 2030. 
       .chart
         SingleLineChart(data='rentgrowth',id='rentgrowth',:type="this.choice().type",:value="this.choice().value",theme="lime",width=380,height=300,animation=false)
         .copys
           .copy Growth in Rentership
-          .copy Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna .  Lorem ipsum dolor sit amet, 
+          .copy An aging population, international immigration and fewer home purchases are increasing the need for apartments. 
       .chart
         SingleLineChart(data='popgrowth',id='popgrowth',:type="this.choice().type",:value="this.choice().value",theme="cyan",width=380,height=300,animation=false)
         .copys
           .copy(v-if="this.choice().type === 'state'") Household Growth
           .copy(v-else) Population Growth
-          .copy Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna .  Lorem ipsum dolor sit amet, 
+          .copy As our population grows, this puts strain on the existing housing supply. A variety of housing options will be needed to meet diverse needs. 
       .clear
 
     .section.section_chart(v-if="this.choice().type !== 'district'")
@@ -41,13 +41,11 @@
         .part.part_numbers
           .graph
             i.fa.fa-2x.fa-bar-chart
-          .copy 2017 Numbers
-          .value 22,000
+          .copy Avg Annual Construction Rate (2012-2016)
         .part.part_numbers
           .graph
             i.fa.fa-2x.fa-bar-chart
-          .copy 2017 Numbers
-          .value 15,550
+          .copy New Apartments Needed
       .left.left_buildmore(v-if="this.choice().type !== 'metro'")
         .copy We need to build more
         .copy The country will need to build an average of 324,000 new apartment homes each year to keep up with demand. The industry average just 244,000 completions from 2011-2016.
@@ -65,7 +63,7 @@
         .copy Barriers to New Apartments Index
 
       .chart
-        MultiLineChart(:type="this.choice().type",:value="this.choice().value",data='aptsneeded',id='aptsneeded',theme="red",width=830,height=300)
+        MultiLineChart(:type="this.choice().type",:value="this.choice().value",:state="this.choice().state",data='aptsneeded',id='aptsneeded',theme="red",width=830,height=300)
       .clear
 
     .clear
@@ -116,20 +114,21 @@
 
     .section.section_charts(v-if="this.choice().type !== 'district'")
       .chart
-        SingleLineChart(data='popgrowth',id='popgrowth_print',:type="this.choice().type",:value="this.choice().value",theme="cyan",width=400,height=300)
+        SingleLineChart(data='ahgrowth',id='ahgrowth_print',:type="this.choice().type",:value="this.choice().value",theme="orange",width=400,height=300)
         .copys
-          .copy Growing Apartment Demand
-          .copy Population growth and a higher propensity to rent will create a need for more apartments by 2030. 
+          .copy Apartment Household Growth
+          .copy Population growth and a higher propensity to rent will create a ..
       .chart
         SingleLineChart(data='rvogrowth',id='rvogrowth_print',:type="this.choice().type",:value="this.choice().value",theme="lime",width=400,height=300)
         .copys
-          .copy More People
-          .copy As our population grows, this puts strain on the existing housing supply. A variety of housing options will be needed to meet diverse needs. 
+          .copy Growth in Rentership
+          .copy An aging population, international immigration and fewer ..
       .chart
-        SingleLineChart(data='ahgrowth',id='ahgrowth_print',:type="this.choice().type",:value="this.choice().value",theme="orange",width=400,height=300)
+        SingleLineChart(data='popgrowth',id='popgrowth_print',:type="this.choice().type",:value="this.choice().value",theme="cyan",width=400,height=300)
         .copys
-          .copy More Renters
-          .copy An aging population, international immigration and fewer home purchases are increasing the need for apartments. 
+          .copy(v-if="this.choice().type === 'state'") Household Growth
+          .copy(v-else) Population Growth
+          .copy As our population grows, this puts strain on the existing housing ..
     .clear
 
     .section.section_chart(v-if="this.choice().type !== 'district'")
@@ -138,16 +137,15 @@
       .left(v-else)
         HeatChart(:metro="this.choice().value")
       .right
-        MultiLineChart(:type="this.choice().type",:value="this.choice().value",data='aptsneeded',id='aptsneeded_print',theme="red",width=510,height=225)
+        MultiLineChart(:type="this.choice().type",:value="this.choice().value",:state="this.choice().state",data='aptsneeded',id='aptsneeded_print',theme="red",width=510,height=225)
       .clear
 
       .copys.copyLeft
         .copy Renting on the Rise
-        .copy Many people in your district call apartments home. They  appreciate mortgage-free living, the ability to follow new work opportunities and amenities that fit their lifestyles.
+        .copy Many people in your district call apartments home. They  ..
       .copys.copyRight
         .copy We Need to Buld More
-        .copy Apartment demand is growing and the industry needs to keep up. However, producing enough new apartments to meet demand requires new development approaches, more incentives and fewer restrictions.
-
+        .copy Apartment demand is growing and the industry needs to keep up. However, producing enough new apartments to meet demand requires new ..
     .clear
     DataSummary(v-bind:state="this.state",v-bind:metro="this.metro",v-bind:district="this.district",v-if="this.choice().type !== 'district'")
 
@@ -269,6 +267,7 @@ json('../assets/fonts.json')
     > #DataSummary
       background none
       color black
+      padding-top 20px
       > .inner
         position relative
         background none
@@ -457,7 +456,7 @@ json('../assets/fonts.json')
           > .copy:nth-child(2)
             color grey
     > .section_chart
-      margin 60px auto auto
+      margin 90px auto 30px auto
       width 1200px
       > .top
         > .part
@@ -466,7 +465,7 @@ json('../assets/fonts.json')
           &.part_homes
             text-align right
             > .value
-              font h2
+              font h3
             > .copy
               color grey
           &.part_numbers
@@ -476,9 +475,11 @@ json('../assets/fonts.json')
               > i
                 color rgba(red, 0.5)
             > .copy
-              margin 10px 0 0 20px
+              margin 5px 0 0 40px
               color grey
               line-height 10px
+              width 184px
+              line-height 20px
             > .value
               margin 0 0 0 20px
             &:nth-child(2) > .graph > i
@@ -540,8 +541,8 @@ json('../assets/fonts.json')
 
       > .chart
         float right
-        width 830px
-        margin 0 0 0 30px
+        width 800px
+        margin 0  0 30px
     > .section_links
       > .inner
         padding 60px 0
