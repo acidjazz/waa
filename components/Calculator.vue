@@ -45,7 +45,7 @@
                   option(selected,value="State") State
                   option(v-for="option in states",:value="option",selected,v-if="option === state") {{ option }}
                   option(v-for="option in states",:value="option",v-else) {{ option }}
-          .pulldown(:class="{ selected: (national === true) }",@click="national = true;metro = 'Metro Area'; state = 'State'; by = 'national'; value = 'national'")
+          .pulldown(:class="{ selected: (by === 'national') }",@click="national = true;metro = 'Metro Area'; state = 'State'; by = 'national'; value = 'national'")
             .checkbox: .fa.fa-check
             .pullarea
               .copy National
@@ -216,7 +216,6 @@ export default {
       }
     },
     by (n) {
-      console.log(n)
       if (n !== null) {
         this.errors.calculate = false
       }
@@ -393,15 +392,11 @@ export default {
 
       if (!this.isNumeric(this.number)) {
         this.errors.number = true
-        console.log('number error')
       }
 
       if (this.by === null) {
         this.errors.calculate = true
-        console.log('calculate error')
       }
-
-      console.log(this.errors)
 
       if (this.errors.number === true && this.errors.calculate === true) {
         return false
