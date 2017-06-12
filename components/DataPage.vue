@@ -160,7 +160,7 @@
         .copy Renting on the Rise
         .copy Many people in your district call apartments home. They  ..
       .copys.copyRight
-        .copy We Need to Buld More
+        .copy We Need to Build More
         .copy Apartment demand is growing and the industry needs to keep up. However, producing enough new apartments to meet demand requires new ..
     .clear
     DataSummary(:state="state",:metro="metro",:district="district",v-if="this.choice().type !== 'district'")

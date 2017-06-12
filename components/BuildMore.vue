@@ -3,7 +3,7 @@
   b {{ homes }} 
   | new apartment homes each year on average to keep up with demand. The industry averaged just  
   b {{ completions }} 
-  | {{ wording }} from 2011-2016 
+  | {{ wording }} from 2011-2016 .
 </template>
 
 <script>
