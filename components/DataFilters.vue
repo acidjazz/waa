@@ -1,7 +1,9 @@
 <template lang="pug">
 #Filters
-  .filters
+  .filters.closed(:class="{ open: !closed , closed: closed }")
     .inner
+      .drawer(@click="closed = !closed")
+        i.fa.fa-arrow-circle-down.fa-2x
       .copy filter apartment data by:
       .options
         router-link.option.enabled(to="/data/",:class="{active: (choice().value === 'National')}") National
@@ -21,15 +23,18 @@
   .modals(v-on-clickaway="away")
 
     .modal.modal_states(:class="{ on: modals.state, off: !modals.state }")
+      .close: .fa.fa-times(@click="modal(false)")
       .option(v-for="State in data",:class="{ active: (state === State.State) }")
         router-link.choice(v-if="State.State == 'District of Columbia'",:to="'/data/state/' + State.State.toLowerCase().replace(/ /g, '-')",@click.native="modal(false)") D.C.
         router-link.choice(v-else,:to="'/data/state/' + State.State.toLowerCase().replace(/ /g, '-')",@click.native="modal(false)") {{ State.State }}
 
     .modal.modal_metros(:class="{ on: modals.metro, off: !modals.metro }")
+      .close: .fa.fa-times(@click="modal(false)")
       .option(v-for="Metro in metros",:class="{ active: (metro === Metro) }")
         router-link.choice(:to="'/data/metro/' + Metro.trim().toLowerCase().replace(/ /g, '-')",@click.native="modal(false)") {{ Metro }}
 
     .modal.modal_districts(:class="{ on: modals.district, off: !modals.district }")
+      .close: .fa.fa-times(@click="modal(false)")
       .option(v-for="District in districts",:class="{ active: (district === District) }")
         router-link.choice(:to="'/data/district/' + District.trim().toLowerCase().replace(/ /g, '-')",@click.native="modal(false)") {{ District }}
 </template>
@@ -76,6 +81,7 @@ export default {
   },
   data () {
     return {
+      closed: true,
       data: Filters.data,
       metros: [],
       districts: [],
@@ -137,6 +143,8 @@ json('../assets/colors.json')
       box-shadow 0px 0px 1px 0px rgba(black, 0.2)
       animation fadeIn 0.2s ease-in-out 0s both
       z-index 10
+      > .close
+        display none
       
       &.modal_metros
         width 300px
@@ -202,4 +210,7 @@ json('../assets/colors.json')
             border 1px solid lightblue
           &.enabled:hover
             background-color lightwhite
+
+@import '../assets/stylus/datafilters-mobile.styl'
+
 </style>

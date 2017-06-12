@@ -142,6 +142,10 @@ json('../assets/colors.json')
         > .menu
           margin 90px 30px 0 0
           font h1
+          > .option
+            margin 40px 0
+            > a
+              padding 10px 20px
 
 
 

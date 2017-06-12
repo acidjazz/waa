@@ -45,9 +45,9 @@ json('../assets/colors.json')
 @media all and (min-width: 1px) and (max-width: 1000px)
   #Top > .title, #Navigate > .inner > .content > .title
     position absolute
-    font c1sb
-    top 10px
-    left 10px
+    font c1b
+    top 20px
+    left 20px
     margin 0
 
 </style>

@@ -1,0 +1,76 @@
+@media all and (min-width: 1px) and (max-width: 1000px)
+  .chevron
+    display none !important
+  #Filters
+    margin 70px 0 0 0
+    > .modals
+      position relative
+      > .modal
+        top -200px
+        left 10px
+        margin-left 0
+        right 10px
+        width auto
+        height auto
+        max-height calc(100vh - 120px) 
+        box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+        &.modal_metros
+          width auto
+          margin-left 0
+        &.modal_districts
+          width auto
+          margin-left 0
+        > .close
+          display block
+          position fixed
+          z-index 1
+          top 120px
+          right 20px
+          color white
+          background-color darkblue
+          border-radius 50%
+          width 40px
+          height 40px
+          line-height 40px
+          text-align center
+          > .fa
+            color white
+        > .option
+          > a
+            width calc(50% - 20px)
+
+    > .filters
+      padding 0
+      border none
+      height auto
+      overflow hidden
+      border-top 1px solid darkblue
+      transition height 0.5s ease-in-out 
+      &.closed
+        height 50px
+        > .inner > .drawer > i
+          transform rotate(0deg)
+      &.open
+        height 240px
+        > .inner > .drawer > i
+          transform rotate(180deg)
+      > .inner
+        width auto
+        > .drawer
+          display block
+          float left
+          width 30px
+          height 30px
+          text-align center
+          margin 10px 20px 0 20px
+          > i
+            transition transform 0.5s ease-in-out
+            color darkblue
+        > .copy
+          display block
+          float none
+        > .options
+          float none
+          > a.option
+            display block
+            margin auto 10px

@@ -141,4 +141,6 @@ json('../assets/fonts.json')
           &:nth-child({i}) > .value
             animation-delay unit((0.02*i) + 0.1, 's')
 
+@import '../assets/stylus/datasummary-mobile.styl'
+
 </style>
