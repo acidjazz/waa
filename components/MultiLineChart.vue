@@ -20,7 +20,9 @@ export default {
   props: ['id', 'data', 'type', 'state', 'value', 'theme', 'width', 'height'],
 
   data () {
-    return { }
+    return {
+      myChart: undefined
+    }
   },
 
   methods: {
@@ -30,10 +32,6 @@ export default {
     },
 
     populate () {
-
-      if (myChart !== undefined) {
-        myChart.destroy()
-      }
 
       let data = {labels: [], datas: [[], []]}
       let jsonc = {}
@@ -151,62 +149,70 @@ export default {
         fill: true
       }]
 
-      let myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: data.labels,
-          datasets: dataset
-        },
+      if (this.myChart !== undefined) {
 
-        options: {
-          tooltips: {
-            displayColors: false,
-            backgroundColor: colors.white,
-            bodyFontFamily: 'Maven Pro',
-            bodyFontSize: 20,
-            titleFontSize: 0,
-            titleSpacing: 0,
-            titleMarginBottom: -6,
-            bodyFontColor: solid,
-            yPadding: 10,
-            borderColor: colors.lightblue,
-            borderWidth: 4,
-            callbacks: {
-              label: function (item, data) {
-                if (Number(item.yLabel) < 1 && Number(item.yLabel) > 0) {
-                  return numeral(item.yLabel).format('0.00%')
-                }
-                return numeral(item.yLabel).format('0.00a')
-              }
-            }
+        this.myChart.data.datasets = dataset
+        this.myChart.update()
+
+      } else {
+
+        this.myChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: data.labels,
+            datasets: dataset
           },
-          layout: {
-            padding: { left: 0, top: 20, rigth: 0, bottom: 20 } },
-          scales: {
-            yAxes: [{
-              gridLines: { display: false },
-              position: 'right',
-              ticks: {
-                display: true,
+
+          options: {
+            tooltips: {
+              displayColors: false,
+              backgroundColor: colors.white,
+              bodyFontFamily: 'Maven Pro',
+              bodyFontSize: 20,
+              titleFontSize: 0,
+              titleSpacing: 0,
+              titleMarginBottom: -6,
+              bodyFontColor: solid,
+              yPadding: 10,
+              borderColor: colors.lightblue,
+              borderWidth: 4,
+              callbacks: {
+                label: function (item, data) {
+                  if (Number(item.yLabel) < 1 && Number(item.yLabel) > 0) {
+                    return numeral(item.yLabel).format('0.00%')
+                  }
+                  return numeral(item.yLabel).format('0.00a')
+                }
+              }
+            },
+            layout: {
+              padding: { left: 0, top: 20, rigth: 0, bottom: 20 } },
+            scales: {
+              yAxes: [{
+                gridLines: { display: false },
                 position: 'right',
-                callback: function (label, index, labels) {
-                  return numeral(label).format('0a')
-                },
-                maxTicksLimit: 5,
-              }
-            }],
-            xAxes: [{
-              gridLines: { display: false },
-              ticks: {
-                fontColor: colors.grey,
-                color: solid,
-                maxTicksLimit: 10,
-                maxRotation: 0,
-              }
-            }]
+                ticks: {
+                  display: true,
+                  position: 'right',
+                  callback: function (label, index, labels) {
+                    return numeral(label).format('0a')
+                  },
+                  maxTicksLimit: 5,
+                }
+              }],
+              xAxes: [{
+                gridLines: { display: false },
+                ticks: {
+                  fontColor: colors.grey,
+                  color: solid,
+                  maxTicksLimit: 10,
+                  maxRotation: 0,
+                }
+              }]
+            }
           }
-        }
-      })
+        })
+      }
 
     }
 

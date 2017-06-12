@@ -41,7 +41,16 @@ export default {
   props: ['id', 'data', 'choice', 'theme', 'width', 'height'],
 
   methods: {
+
+    clean () {
+      let selection = this.$el.querySelectorAll('.chartainer > iframe')
+      for (let i = 0; i !== selection.length; i++) {
+        selection[i].remove()
+      }
+    },
     populate () {
+
+      // this.clean()
 
       let data = {labels: [], datas: []}
       let json = {}
@@ -138,67 +147,87 @@ export default {
       Chart.defaults.global.hover.animationDuration = 200
 
       Chart.defaults.global.elements.rectangle.borderColor = solid
-      let myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: data.labels,
-          datasets: [{
-            data: data.datas,
 
-            pointBackgroundColor: colors.white,
-            pointBorderWidth: 4,
-            pointRadius: 5,
-            pointBorderColor: solid,
+      if (this.myChart !== undefined) {
 
-            borderColor: solid,
-            backgroundColor: light,
-            fill: true
-          }]
-        },
+        this.myChart.data.datasets = [{
+          data: data.datas,
+          pointBackgroundColor: colors.white,
+          pointBorderWidth: 4,
+          pointRadius: 5,
+          pointBorderColor: solid,
+          borderColor: solid,
+          backgroundColor: light,
+          fill: true
+        }]
 
-        options: {
-          tooltips: {
-            displayColors: false,
-            backgroundColor: colors.white,
-            bodyFontFamily: 'Maven Pro',
-            bodyFontSize: 20,
-            titleFontSize: 0,
-            titleSpacing: 0,
-            titleMarginBottom: -6,
-            bodyFontColor: solid,
-            yPadding: 10,
-            borderColor: colors.lightblue,
-            borderWidth: 4,
-            callbacks: {
-              label: function (item, data) {
-                if (Number(item.yLabel) < 1 && Number(item.yLabel) > 0) {
-                  return numeral(item.yLabel).format('0.00%')
-                }
-                return numeral(item.yLabel).format('0.00a')
-              }
-            }
-          },
-          layout: {
-            padding: {
-              top: 100
-            }
-          },
-          scales: {
-            yAxes: [{
-              display: false,
-              gridLines: { color: solid, display: false, zeroLineColor: solid },
-            }],
-            xAxes: [{
-              gridLines: { color: solid, zeroLineColor: solid, display: false },
-              ticks: {
-                fontColor: solid,
-                color: solid,
-                maxRotation: 0,
-              }
+        this.myChart.update()
+
+      } else {
+
+        this.myChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+            labels: data.labels,
+            datasets: [{
+              data: data.datas,
+
+              pointBackgroundColor: colors.white,
+              pointBorderWidth: 4,
+              pointRadius: 5,
+              pointBorderColor: solid,
+
+              borderColor: solid,
+              backgroundColor: light,
+              fill: true
             }]
+          },
+
+          options: {
+            tooltips: {
+              displayColors: false,
+              backgroundColor: colors.white,
+              bodyFontFamily: 'Maven Pro',
+              bodyFontSize: 20,
+              titleFontSize: 0,
+              titleSpacing: 0,
+              titleMarginBottom: -6,
+              bodyFontColor: solid,
+              yPadding: 10,
+              borderColor: colors.lightblue,
+              borderWidth: 4,
+              callbacks: {
+                label: function (item, data) {
+                  if (Number(item.yLabel) < 1 && Number(item.yLabel) > 0) {
+                    return numeral(item.yLabel).format('0.00%')
+                  }
+                  return numeral(item.yLabel).format('0.00a')
+                }
+              }
+            },
+            layout: {
+              padding: {
+                top: 100
+              }
+            },
+            scales: {
+              yAxes: [{
+                display: false,
+                gridLines: { color: solid, display: false, zeroLineColor: solid },
+              }],
+              xAxes: [{
+                gridLines: { color: solid, zeroLineColor: solid, display: false },
+                ticks: {
+                  fontColor: solid,
+                  color: solid,
+                  maxRotation: 0,
+                }
+              }]
+            }
           }
-        }
-      })
+        })
+
+      }
 
     },
     toCurrent (data, index = undefined) {
@@ -236,6 +265,7 @@ export default {
   },
   data () {
     return {
+      myChart: undefined,
       spike: 0,
     }
   }

@@ -281,7 +281,7 @@ export default {
           }
         }
       }
-
+      this.metros = Array.from(new Set(this.metros))
     },
 
     reset () {
