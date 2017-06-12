@@ -139,7 +139,7 @@
         .part.part_homes
           .value {{ $store.state.homesNeeded }} 
           .copy Apartment <br />Homes Needed in 
-            b {{ this.choice().value }}
+            b the Country
         .part.part_numbers
           .graph
             i.fa.fa-2x.fa-bar-chart
@@ -503,7 +503,7 @@ json('../assets/fonts.json')
     > .logos
       width 750px
       height 30px
-      margin auto
+      margin 40px auto 0 auto
       text-align right
       > img
         height 50px

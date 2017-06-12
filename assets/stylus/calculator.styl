@@ -253,12 +253,26 @@
     width inherit
     position relative
     > .source
-      float right
+      position absolute
+      top 10px
+      right 5px
       font c1s
       color grey
       clear both
-      padding 10px 10px 0 0
       display none
+    > .pdf
+      position absolute
+      top 130px
+      right 60px
+      cursor pointer
+      color blue
+      > .fa, > .copy
+        float left
+      > .copy
+        color black
+        padding 5px 0 0 10px
+        font c1b
+
     > .close
       cursor pointer
       position absolute
@@ -328,9 +342,18 @@
             background-color green
           &.blue
             background-color blue
+        > .logos
+          display none
           
 
 @media print 
+  .page.page_calc
+    > .page_content
+      margin 0
+      background none
+      > .inner
+        padding 0
+        width auto
   #Top
     display none
   #Bottom
@@ -349,24 +372,45 @@
     right 0
     margin-left 0px
     margin auto
+    > .inner > .pdf
+      display none
     > .inner > .source
-      display block
+      display none
     > .inner > .close
       display none
     > .inner
       > .copy:nth-child(4)
         display none !important
-      > .copy:nth-child(5)
+      > .copy:nth-child(6)
         padding 10px 0 10px 0
       > .data
         padding 10px 0
         margin 10px 0
       > .data > .inner > .copy_header
-        padding 10px !important 
+        padding 10px 0 !important 
       > .data >.inner > .copy_body
         padding 0px
       > .data >.inner > .stat.colored
         margin 10px 0 0 0
+      > .data
+        > .inner
+          width 750px
+          > .copy:first-child
+            text-align center
+          > .copy
+            width auto
+          > .copy.copy_header
+            font c1b
+          > .stat
+            width auto
+
+          > .logos
+            display block
+            height 30px
+            margin 20px auto 0 auto
+            text-align right
+            > img
+              height 50px
 
 
 

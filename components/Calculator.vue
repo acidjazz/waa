@@ -54,7 +54,9 @@
   .calculated(:class="{ on: $route.name === 'calculated', off: $route.name !== 'calculated'}")
     .inner
       .source Source: https://weareapartments.org/ {{ $route.path }}
-      .clear
+      a.pdf(:href=" 'http://pdf.weareapartments.org?url=/calculated'+hashv")
+        .fa.fa-2x.fa-file-pdf-o
+        .copy Create PDF
       router-link.close(:to="'/calculator' + $route.hash")
         .fa.fa-times.fa-2x
 
@@ -136,6 +138,10 @@
             .copy Total Jobs Supported
             .value {{ data.total.jobs }}
             .clear
+
+          .logos
+             img(src="/logo-nmhc.png")
+             img(src="/logo-naa.png")
 </template>
 
 <style lang="stylus">
@@ -209,6 +215,8 @@ export default {
     '$route' () {
       this.populate()
       this.decide()
+      this.hashv = this.$route.hash
+      console.log(this.hashv)
     }
   },
 
@@ -458,6 +466,7 @@ export default {
   created () {
     this.populate()
     this.hash()
+    console.log(this.hashv)
   },
 
   mounted () {
@@ -465,6 +474,7 @@ export default {
   },
   data () {
     return {
+      hashv: this.$route.hash,
       subtitle: 'national',
       title: 'United States',
       errors: {

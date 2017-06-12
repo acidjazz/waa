@@ -173,8 +173,8 @@ export default {
               data: data.datas,
 
               pointBackgroundColor: colors.white,
-              pointBorderWidth: 4,
-              pointRadius: 5,
+              pointBorderWidth: this.id.indexOf('print') !== -1 ? 2 : 4,
+              pointRadius: this.id.indexOf('print') !== -1 ? 2 : 5,
               pointBorderColor: solid,
 
               borderColor: solid,
