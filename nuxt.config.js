@@ -62,9 +62,10 @@ module.exports = {
     'font-awesome/css/font-awesome.css',
   ],
   modules: [
-    '@nuxtjs/font-awesome'
+    // ['@nuxtjs/google-analytics', { ua: 'UA-30941015-2' }],
+    '@nuxtjs/font-awesome',
   ],
-  plugins: [{src: '~plugins/ga.js', ssr: false}],
+  // plugins: [{src: '~plugins/ga.js', ssr: false}],
   build: {
 
     /*

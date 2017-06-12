@@ -45,6 +45,7 @@ export default {
 
       let data = {labels: [], datas: []}
       let json = {}
+      let spike = false
 
       switch (true) {
 
@@ -67,24 +68,26 @@ export default {
 
         case this.choice.type === 'state' && this.data === 'rentgrowth':
           json = require('../store/State Rentership Rate.json')
-          data.labels = [2017, 2030]
+          data.labels = [2016, 2030]
           data.datas = json.data[this.choice.value]
           break
 
         case this.choice.type === 'state' && this.data === 'popgrowth':
           json = require('../store/State HH Growth.json')
-          data.labels = [2017, 2030]
+          data.labels = [2016, 2030]
           data.datas = [ 0, json.data[this.choice.value] ]
+          spike = numeral(json.data[this.choice.value]).format('0.00%').replace(/%/, '')
           break
 
         case this.choice.type === 'metro' && this.data === 'apthhgrowth':
           json = require('../store/Metro New Apt HHs Per Year.json')
           data = this.toCurrent(json.data, json.labels.indexOf(this.choice.value))
+          console.log(data)
           break
 
         case this.choice.type === 'metro' && this.data === 'rentgrowth':
           json = require('../store/Metro Rentership Rate.json')
-          data = {'labels': [2017, 2030], 'datas': json.data[this.choice.value].slice(0, 2)}
+          data = {'labels': [2016, 2030], 'datas': json.data[this.choice.value].slice(0, 2)}
           break
 
         case this.choice.type === 'metro' && this.data === 'popgrowth':
@@ -102,7 +105,9 @@ export default {
 
       }
 
-      let spike = numeral((data.datas[data.datas.length - 1] - data.datas[0]) / data.datas[0]).format('0.00%').replace(/%/, '')
+      if (spike === false) {
+        spike = numeral((data.datas[data.datas.length - 1] - data.datas[0]) / data.datas[0]).format('0.00%').replace(/%/, '')
+      }
       this.spike = isNaN(spike) ? 100 : spike
       let Chart = require('chart.js')
       let ctx = 'chart-' + this.id

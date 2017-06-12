@@ -44,7 +44,7 @@
         .part.part_numbers
           .graph
             i.fa.fa-2x.fa-bar-chart
-          .copy Avg Annual Construction Rate (2012-2016)
+          .copy Avg Annual Construction Rate (2011-2016)
         .part.part_numbers
           .graph
             i.fa.fa-2x.fa-bar-chart

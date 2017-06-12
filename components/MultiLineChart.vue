@@ -49,15 +49,15 @@ export default {
             }
 
             if (this.isNumeric(json.data[key][1])) {
-              data.datas[0].push(json.data[key][1])
+              data.datas[1].push(json.data[key][1])
             }
 
             if (this.isNumeric(json.data[key][3])) {
-              data.datas[1].push(json.data[key][3])
+              data.datas[0].push(json.data[key][3])
             }
 
           }
-          this.$store.state.homesNeeded = numeral(data.datas[0][data.datas[0].length - 1]).format('0,0')
+          this.$store.state.homesNeeded = numeral(data.datas[1][data.datas[1].length - 1]).format('0,0')
           break
 
         case this.type === 'state' && this.data === 'aptsneeded':
