@@ -57,6 +57,7 @@ export default {
             }
 
           }
+          this.$store.state.homesNeeded = numeral(data.datas[0][data.datas[0].length - 1]).format('0,0')
           break
 
         case this.type === 'state' && this.data === 'aptsneeded':
@@ -75,6 +76,7 @@ export default {
               data.datas[1].push(jsonn.data[key][state])
             }
           }
+          this.$store.state.homesNeeded = numeral(data.datas[1][data.datas[1].length - 1]).format('0,0')
           break
 
         case this.type === 'metro' && this.data === 'aptsneeded':
@@ -93,11 +95,10 @@ export default {
               data.datas[1].push(jsonn.data[key][metro])
             }
           }
+          this.$store.state.homesNeeded = numeral(data.datas[1][data.datas[1].length - 1]).format('0,0')
           break
 
       }
-
-      this.$store.state.homesNeeded = numeral(data.datas[1][data.datas[1].length - 1]).format('0,0')
 
       let Chart = require('chart.js')
       let ctx = 'chart-' + this.id

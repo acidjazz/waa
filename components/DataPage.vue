@@ -76,8 +76,8 @@
     .clear
     .border.big
     //.border.big
-    MultipleItems(:choice="this.choice()",v-if="(this.choice().type !== 'district')")
-    .border.big(v-if="(this.choice().type !== 'district')")
+    // MultipleItems(:choice="this.choice()",v-if="(this.choice().type !== 'district')")
+    // .border.big(v-if="(this.choice().type !== 'district')")
     //SingleItem(v-if="this.choice().type === 'national'")
     //.border.big(v-if="this.choice().type === 'national'")
     //DualItems(v-if="this.choice().type === 'metro'")

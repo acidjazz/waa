@@ -14,7 +14,7 @@
       .item
         .copy year apartment built
         PercChart(:metro="choice.value",v-if="choice.type === 'metro'")
-        PercChart(v-else)
+        PercChart(:choice="choice",v-else)
       .item
         .copy apartment residents
         CircleChart(id="metroresidents",width="300",height="300",:value="choice.value",v-if="choice.type === 'metro'")
