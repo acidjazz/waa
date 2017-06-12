@@ -142,6 +142,7 @@
 json('../assets/colors.json')
 json('../assets/fonts.json')
 @import '../assets/stylus/calculator.styl'
+@import '../assets/stylus/calculator-mobile.styl'
 </style>
 
 <script>

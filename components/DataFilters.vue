@@ -179,6 +179,8 @@ json('../assets/colors.json')
       text-transform uppercase
       font-size 14px
       letter-spacing 0.5px
+      > .drawer
+        display none
       > .copy
         float left
         display inline-block
