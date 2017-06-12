@@ -101,7 +101,7 @@
       b Hoyt Advisory Services; NMHC/NAA; U.S. Census Bureau.; Axiometrics, a RealPage Company
     Bottom
   .datapage_print
-    .source Learn More @ http://waa.256.io{{ path }}
+    .source Learn More @ https://weareapartments.org{{ path }}
     .section.section_demand(v-if="this.choice().type !== 'district'")
       p {{ this.choice().value }}
       Demand(:type="this.choice().type",:value="this.choice().value")
