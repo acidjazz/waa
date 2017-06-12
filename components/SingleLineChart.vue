@@ -94,7 +94,7 @@ export default {
 
         case this.data === 'inyourstate':
           json = require('../store/State New Apt HHs Per Year.json')
-          data = this.toCurrent(json.data, json.labels.indexOf(this.value))
+          data = this.toCurrent(json.data, json.labels.indexOf(this.choice.state))
           break
 
         default:

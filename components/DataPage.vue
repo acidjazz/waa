@@ -13,7 +13,7 @@
       DistrictCopy(:district="this.choice().value")
 
     .section.section_trio(v-if="this.choice().type === 'district'")
-      DistrictTrio(type="web",:state="this.choice().state",:district="this.choice().value")
+      DistrictTrio(type="web",:choice="this.choice()")
 
     .section.section_charts(v-if="this.choice().type !== 'district'")
       .chart
@@ -99,7 +99,7 @@
         .clear
 
     .sources Source: 
-      b Hoyt Advisory Services; NMHC/NAA; U.S. Census Bureau. 
+      b Hoyt Advisory Services; NMHC/NAA; U.S. Census Bureau.; Axiometrics, a RealPage Company
     Bottom
   .datapage_print
     .source Learn More @ http://waa.256.io{{ path }}
@@ -114,7 +114,7 @@
       DistrictCopy(:district="this.choice().value")
 
     .section.section_trio(v-if="this.choice().type === 'district'")
-      DistrictTrio(type="print",:state="this.choice().state",:district="this.choice().value")
+      DistrictTrio(type="print",:choice="this.choice()")
 
     .section.section_charts(v-if="this.choice().type !== 'district'")
       .chart
