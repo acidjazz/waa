@@ -40,21 +40,22 @@
             .pullarea
               .pull: .fa.fa-chevron-down
               .select.select_state
-                select(v-model="state",v-if="browser()",@change="change('state', $event.target.value)")
+                select(v-model="state",@change="change('state', $event.target.value)")
                   option(selected,value="State") State
                   option(v-for="option in states",:value="option",:selected="option === state") {{ option }}
-          .pulldown(:class="{ selected: (by === 'national') }",@click="national = true;metro = 'Metro Area'; state = 'State'; by = 'national'; value = 'national'")
+          .pulldown(:class="{ selected: (by === 'national') }",@click="change('national')")
             .checkbox: .fa.fa-check
             .pullarea
               .copy National
-  router-link.cta(@click.native="decide()",:to="'/calculator#by-' + by + '-value-' + value + '-number-' + number + '-type-' + type") Calculate
+
+  router-link.cta(@click.native="decide()",:to="'/calculated#by-' + by + '-value-' + value + '-number-' + number + '-type-' + type") Calculate
 
   .fade(:class="{ on: calculated === true, off: calculated == false}")
   .calculated(:class="{ on: calculated === true, off: calculated === false}")
     .inner
       .source Source: https://weareapartments.org/ {{ $route.path }}
       .clear
-      .close(@click="close()")
+      router-link.close(to="/calculator")
         .fa.fa-times.fa-2x
 
       .copy(v-if="by === 'metro'") metro area
@@ -68,14 +69,6 @@
           .copy Economic Impact of {{ number }} New Apartment Homes
           .copy.copy_header Managing Apartments
           .copy.copy_body Apartment homes are economic engines, driving dollars and jobs that strengthen local communities.
-
-          
-          //.copy Total Apartment Homes &nbsp;
-            b {{ data.homes }}
-          //-.copy Operation Dollars Spent &nbsp;
-            b $69,058,231,708
-          //.copy DIrect On-site Jobs &nbsp;
-            b 468,955
 
           .stat
             .copy Total Apartment Homes
@@ -102,14 +95,6 @@
           .copy.copy_header(v-if="type === 'new'") Building Apartments
           .copy.copy_body(v-if="type === 'new'") Apartment construction continues as a bright spot in the economy, helping lead the housing recovery
 
-          //.stat(v-if="type === 'new'")
-            .copy Construction Dollars Spent
-            .value {{ data.construction.dollars }}
-            .clear
-          //.stat(v-if="type === 'new'")
-            .copy On-site Jobs
-            .value {{ data.construction.jobsOnsite }}
-            .clear
           .stat.colored.yellow(v-if="type === 'new'")
             .copy Total Economic Contribution 
             .value {{ data.construction.contribution }}
@@ -122,10 +107,6 @@
           .copy.copy_header Living in Apartments
           .copy.copy_body Renting can be a smart choice for w ide range of individuals and faimilies across all income levels.  That's why a diverse array of people call apartments home.
 
-          //.stat
-            .copy Apartment Residents
-            .value {{ data.spending.residents }}
-            .clear
           .stat
             .copy Spending Power
             .value {{ data.spending.dollars }}
@@ -265,14 +246,18 @@ export default {
           this.state = value
         }
       }
+
+      if (type === 'national') {
+        this.national = true
+        this.metro = 'Metro Area'
+        this.state = 'State'
+        this.by = 'national'
+        this.value = 'national'
+      }
     },
 
     isNumeric (n) {
       return !isNaN(parseFloat(n)) && isFinite(n)
-    },
-
-    browser () {
-      return process.BROWSER_BUILD
     },
 
     hash () {
@@ -317,14 +302,14 @@ export default {
 
     decide () {
 
-      if (this.value !== null && this.by !== null && this.number !== null) {
+      if (this.value !== null && this.by !== null && this.number !== null && this.$route.name === 'calculated') {
         this.calculate()
         this.calculated = true
       }
 
       this.$router.beforeEach((to, from, next) => {
 
-        if (to.name !== 'calculator') {
+        if (to.name !== 'calculated') {
           next()
           return true
         }
@@ -408,8 +393,6 @@ export default {
         json.impact[by].operation[value][4] /
         json.impact[by].operation[value][5]
       ).format('0,0')
-
-      // this.data.spending.residents = numeral(json.impact[this.by].spending[value][0]).format('0,0')
 
       this.data.spending.dollars = numeral(
         this.number *
