@@ -12,7 +12,9 @@
 import Top from '~/components/Top.vue'
 import Calculator from '~/components/Calculator.vue'
 import Bottom from '~/components/Bottom.vue'
-export default { components: { Top, Calculator, Bottom } }
+export default {
+  components: { Top, Calculator, Bottom }
+}
 </script>
 
 <style lang="stylus">

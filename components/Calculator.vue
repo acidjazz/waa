@@ -26,38 +26,35 @@
       .options(:class="{ error: errors.calculate, success: errors.success.calculate }")
         .copy Calculate By:
         .pulldowns
-          .pulldown(:class="{ selected: (by === 'metro') }",@change="change('metro')")
+          .pulldown(:class="{ selected: (by === 'metro') }")
             .checkbox: .fa.fa-check
             .pullarea
               .pull: .fa.fa-chevron-down
               .select.select_metro
-                select(v-model="metro")
+                select(v-model="metro",@change="change('metro', $event.target.value)")
                   option(value="Metro Area") Metro Area
-                  option(v-for="option in metros",:value="option",selected,v-if="option === metro") {{ option }}
-                  option(v-for="option in metros",:value="option",v-else) {{ option }}
+                  option(v-for="option in metros",:value="option",:selected="(option === metro)") {{ option }}
 
-          .pulldown(:class="{ selected: (by === 'state') }",@change="change('state')")
+          .pulldown(:class="{ selected: (by === 'state') }")
             .checkbox: .fa.fa-check
             .pullarea
               .pull: .fa.fa-chevron-down
               .select.select_state
-                select(v-model="state",v-if="browser()")
+                select(v-model="state",v-if="browser()",@change="change('state', $event.target.value)")
                   option(selected,value="State") State
-                  option(v-for="option in states",:value="option",selected,v-if="option === state") {{ option }}
-                  option(v-for="option in states",:value="option",v-else) {{ option }}
+                  option(v-for="option in states",:value="option",:selected="option === state") {{ option }}
           .pulldown(:class="{ selected: (by === 'national') }",@click="national = true;metro = 'Metro Area'; state = 'State'; by = 'national'; value = 'national'")
             .checkbox: .fa.fa-check
             .pullarea
               .copy National
-  router-link.cta(:to="'/calculated#by-' + by + '-value-' + value + '-number-' + number + '-type-' + type") Calculate
+  router-link.cta(@click.native="decide()",:to="'/calculator#by-' + by + '-value-' + value + '-number-' + number + '-type-' + type") Calculate
 
-  .fade(:class="{ on: ($route.name === 'calculated'), off: ($route.name !== 'calculated')}")
-  .calculated(:class="{ on: ($route.name === 'calculated'), off: ($route.name !== 'calculated')}",v-if="browser()")
-
+  .fade(:class="{ on: calculated === true, off: calculated == false}")
+  .calculated(:class="{ on: calculated === true, off: calculated === false}")
     .inner
       .source Source: https://weareapartments.org/ {{ $route.path }}
       .clear
-      router-link.close(:to="'/calculator' + $route.hash")
+      .close(@click="close()")
         .fa.fa-times.fa-2x
 
       .copy(v-if="by === 'metro'") metro area
@@ -229,13 +226,21 @@ export default {
       if (n !== null) {
         this.errors.calculate = false
       }
+    },
+    '$route' () {
+      this.populate()
+      this.decide()
     }
-
   },
 
   methods: {
 
-    change (type) {
+    close () {
+      this.calculated = false
+      this.reset()
+    },
+
+    change (type, value) {
 
       if (type === 'metro') {
         if (this.metro === 'Metro Area') {
@@ -244,7 +249,8 @@ export default {
         } else {
           this.state = 'State'
           this.by = 'metro'
-          this.value = this.metro
+          this.value = value
+          this.metro = value
         }
       }
 
@@ -255,7 +261,8 @@ export default {
         } else {
           this.metro = 'Metro Area'
           this.by = 'state'
-          this.value = this.state
+          this.value = value
+          this.state = value
         }
       }
     },
@@ -279,7 +286,7 @@ export default {
         if (this.by === 'state') {
           this.state = params[3]
         }
-        if (this.by === 'state') {
+        if (this.by === 'metro') {
           this.metro = params[3]
         }
       }
@@ -288,14 +295,57 @@ export default {
     populate () {
       for (let key in Filters.data) {
         if (Filters.data[key].State !== undefined) {
-          this.states.push(Filters.data[key].State)
+          this.states.push(Filters.data[key].State.trim())
         }
         if (Filters.data[key].Metro !== undefined) {
           for (let metro of Filters.data[key].Metro.split(',')) {
-            this.metros.push(metro)
+            this.metros.push(metro.trim())
           }
         }
       }
+
+    },
+
+    reset () {
+      this.by = null
+      this.value = null
+      this.state = 'State'
+      this.metro = 'Metro Area'
+      this.number = null
+      this.$route.hash = '#'
+    },
+
+    decide () {
+
+      if (this.value !== null && this.by !== null && this.number !== null) {
+        this.calculate()
+        this.calculated = true
+      }
+
+      this.$router.beforeEach((to, from, next) => {
+
+        if (to.name !== 'calculator') {
+          next()
+          return true
+        }
+
+        if (!this.isNumeric(this.number) || this.number === null || this.number === '') {
+          this.errors.number = true
+        }
+
+        if (this.by === null) {
+          this.errors.calculate = true
+        }
+
+        if (this.errors.number === true || this.errors.calculate === true) {
+          return false
+        }
+
+        window.scrollTo(0, 120)
+        next()
+
+      })
+
     },
 
     calculate () {
@@ -419,36 +469,14 @@ export default {
   created () {
     this.populate()
     this.hash()
-    if (this.value !== null && this.by !== null && this.number !== null && this.$route.name === 'calculated') {
-      this.calculate()
-    }
+  },
 
-    this.$router.beforeEach((to, from, next) => {
-
-      if (to.name !== 'calculated') {
-        next()
-        return true
-      }
-
-      if (!this.isNumeric(this.number) || this.number === null || this.number === '') {
-        this.errors.number = true
-      }
-
-      if (this.by === null) {
-        this.errors.calculate = true
-      }
-
-      if (this.errors.number === true || this.errors.calculate === true) {
-        return false
-      }
-
-      window.scrollTo(0, 120)
-      next()
-
-    })
+  mounted () {
+    this.decide()
   },
   data () {
     return {
+      calculated: false,
       errors: {
         number: false,
         calculate: false,

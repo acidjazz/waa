@@ -39,8 +39,7 @@
         .part.part_homes
           .value {{ $store.state.homesNeeded }} 
           .copy Apartment <br />Homes Needed in 
-            b(v-if="(this.choice().value == 'National')") the Country
-            b(v-else) {{ this.choice().value }}
+            b the Country
         .part.part_numbers
           .graph
             i.fa.fa-2x.fa-bar-chart
