@@ -117,6 +117,7 @@ json('../assets/fonts.json')
               background-image url('~static/icon-nmhc.png')
               width 246px
               height 51px
-// @media all and (min-width: 1px) and (max-width: 1000px)
+
+@import '../assets/stylus/bottom-mobile.styl'
 
 </style>
