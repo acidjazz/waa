@@ -81,7 +81,6 @@ let sheets = [
 ]
 
 for (let index in excel) {
-  console.log(excel[index].name)
   if (sheets.indexOf(excel[index].name) === -1) {
     continue
   }

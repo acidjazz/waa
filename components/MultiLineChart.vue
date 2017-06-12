@@ -97,8 +97,6 @@ export default {
 
       }
 
-      console.log(data)
-
       this.$store.state.homesNeeded = numeral(data.datas[1][data.datas[1].length - 1]).format('0,0')
 
       let Chart = require('chart.js')
