@@ -50,19 +50,16 @@
 
   router-link.cta(@click.native="decide()",:to="'/calculated#by-' + by + '-value-' + value + '-number-' + number + '-type-' + type") Calculate
 
-  .fade(:class="{ on: calculated === true, off: calculated == false}")
-  .calculated(:class="{ on: calculated === true, off: calculated === false}")
+  .fade(:class="{ on: $route.name === 'calculated', off: $route.name !== 'calculated'}")
+  .calculated(:class="{ on: $route.name === 'calculated', off: $route.name !== 'calculated'}")
     .inner
       .source Source: https://weareapartments.org/ {{ $route.path }}
       .clear
-      router-link.close(to="/calculator")
+      router-link.close(:to="'/calculator' + $route.hash")
         .fa.fa-times.fa-2x
 
-      .copy(v-if="by === 'metro'") metro area
-      .copy(v-if="by === 'state'") state
-      .copy(v-if="by === 'national'") National
-      .copy(v-if="by !== 'national'") {{ value }}
-      .copy(v-else) United States
+      .copy {{ subtitle }}
+      .copy {{ title }}
 
       .data
         .inner
@@ -216,11 +213,6 @@ export default {
 
   methods: {
 
-    close () {
-      this.calculated = false
-      this.reset()
-    },
-
     change (type, value) {
 
       if (type === 'metro') {
@@ -304,7 +296,6 @@ export default {
 
       if (this.value !== null && this.by !== null && this.number !== null && this.$route.name === 'calculated') {
         this.calculate()
-        this.calculated = true
       }
 
       this.$router.beforeEach((to, from, next) => {
@@ -337,6 +328,20 @@ export default {
 
       let value = this.value.trim()
       let by = this.by
+      this.secondary = this.value
+
+      switch (by) {
+        case 'metro':
+          this.title = 'metro area'
+          break
+        case 'state':
+          this.title = 'state'
+          break
+        case 'national':
+          this.title = 'United States'
+          this.secondary = 'national'
+          break
+      }
 
       if (this.by === 'national') {
         by = 'state'
@@ -459,7 +464,8 @@ export default {
   },
   data () {
     return {
-      calculated: false,
+      subtitle: 'national',
+      title: 'United States',
       errors: {
         number: false,
         calculate: false,
