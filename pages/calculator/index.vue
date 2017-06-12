@@ -22,6 +22,7 @@ json('../../assets/fonts.json')
   > .page_content
     margin 180px 0 0 0
     background-color tomato
+    background linear-gradient(-67deg, rgba(#e7266f, 1), rgba(#f59c43, 1))
     padding 60px 0
     > .inner
       background-color white

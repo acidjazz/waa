@@ -44,7 +44,9 @@ export default {
         case this.type === 'national' && this.data === 'aptsneeded':
           let json = require('../store/US Building 2.json')
           for (let key in json.data) {
-            data.labels.push(key)
+            if (key !== "") {
+              data.labels.push(key)
+            }
 
             if (this.isNumeric(json.data[key][1])) {
               data.datas[0].push(json.data[key][1])
@@ -63,7 +65,9 @@ export default {
           jsonn = require('../store/State Building Needed.json')
           let state = jsonc.labels.indexOf(this.state)
           for (let key in jsonc.data) {
-            data.labels.push(key)
+            if (key !== "") {
+              data.labels.push(key)
+            }
             if (this.isNumeric(jsonc.data[key][state])) {
               data.datas[0].push(jsonc.data[key][state])
             }
@@ -79,7 +83,9 @@ export default {
           jsonn = require('../store/Metro Building Needed.json')
           let metro = jsonc.labels.indexOf(this.value)
           for (let key in jsonc.data) {
-            data.labels.push(key)
+            if (key !== "") {
+              data.labels.push(key)
+            }
             if (this.isNumeric(jsonc.data[key][metro])) {
               data.datas[0].push(jsonc.data[key][metro])
             }
@@ -90,6 +96,8 @@ export default {
           break
 
       }
+
+      console.log(data)
 
       this.$store.state.homesNeeded = numeral(data.datas[1][data.datas[1].length - 1]).format('0,0')
 

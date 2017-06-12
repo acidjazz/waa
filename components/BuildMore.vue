@@ -3,7 +3,7 @@
   b {{ homes }} 
   | new apartment homes each year on average to keep up with demand. The industry averaged just  
   b {{ completions }} 
-  | completions from 2011-2016 
+  | {{ wording }} from 2011-2016 
 </template>
 
 <script>
@@ -31,6 +31,7 @@ export default {
           json = require('../store/State Building Current.json')
           this.completions = numeral(json.data[2017][json.labels.indexOf(this.choice.value)]).format('0,0a')
           this.type = 'state'
+          this.wording = 'permits'
           break
       }
     },
@@ -49,6 +50,7 @@ export default {
       homes: 0,
       completions: 0,
       type: 'country',
+      wording: 'completions',
     }
   }
 }

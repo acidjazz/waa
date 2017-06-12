@@ -77,11 +77,13 @@ json('../assets/fonts.json')
             border none
             outline none
             padding 5px
+            width 170px
             font c1
             &::placeholder
               color lightblue
           > a > i
             color lightblue
+            padding 10px 0 0 0
 
   > .lower
     background-color darkblue
