@@ -63,7 +63,7 @@ export default {
               this.metros = item.Metro.split(',')
             }
 
-            for (let i = 1; i !== item.District; i++) {
+            for (let i = 1; i <= item.District; i++) {
               this.districts.push(this.choice().state + " " + ordinal(i))
             }
           }

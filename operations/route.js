@@ -28,7 +28,7 @@ for (let metro of metros) {
 
 for (let state in items) {
   let lstate = state.toLowerCase().replace(/ /g, '-')
-  for (let i = 1; i !== items[state]; i++) {
+  for (let i = 1; i <= items[state]; i++) {
     routes.push('/data/district/' + lstate + '-' + ordinal(i))
   }
 }
