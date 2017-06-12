@@ -151,7 +151,7 @@
       .left(v-if="this.choice().type !== 'metro'")
         CircleChart(id="renters_print",width="225",height="225",value="70")
       .left(v-else)
-        HeatChart(:metro="this.choice().value")
+        //HeatChart(:metro="this.choice().value")
       .right
         MultiLineChart(:type="this.choice().type",:value="this.choice().value",:state="this.choice().state",data='aptsneeded',id='aptsneeded_print',theme="red",width=510,height=225)
       .clear
