@@ -28,7 +28,7 @@
           .copy Economic impact data (spending, economic contribution, and jobs created) were estimated by Dr. Stephen Fuller of George Mason University’s Center for Regional Analysis for 2013. 
         .clear
         .block
-          .title curent and historical demographic
+          .title current and historical demographic
           .copy Descriptive current and historical demographic and housing data (such as the number of apartment residents and the size of the apartment stock) are NMHC tabulations of the most recently available American Community Survey microdata. 
         .block
           .title forecasted demographic
