@@ -149,14 +149,14 @@
             i.fa.fa-2x.fa-bar-chart
           .copy New Apartments Needed
       .left(v-if="this.choice().type !== 'metro'")
-        CircleChart(id="renters_print",width="225",height="225",value="70")
+        // CircleChart(id="renters_print",width="225",height="225",value="70")
       .left(v-else)
         //HeatChart(:metro="this.choice().value")
       .right
         MultiLineChart(:type="this.choice().type",:value="this.choice().value",:state="this.choice().state",data='aptsneeded',id='aptsneeded_print',theme="red",width=510,height=225)
       .clear
 
-      .copys.copyLeft
+      //.copys.copyLeft
         .copy Renting on the Rise
         .copy Many people in your district call apartments home. They  ..
       .copys.copyRight

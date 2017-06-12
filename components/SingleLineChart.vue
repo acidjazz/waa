@@ -194,8 +194,8 @@ export default {
               titleMarginBottom: -6,
               bodyFontColor: solid,
               yPadding: 10,
-              borderColor: colors.lightblue,
-              borderWidth: 4,
+              borderColor: colors.lightgrey,
+              borderWidth: 1,
               callbacks: {
                 label: function (item, data) {
                   if (Number(item.yLabel) < 1 && Number(item.yLabel) > 0) {
