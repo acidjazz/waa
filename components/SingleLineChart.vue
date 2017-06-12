@@ -69,7 +69,7 @@ export default {
         case this.choice.type === 'state' && this.data === 'rentgrowth':
           json = require('../store/State Rentership Rate.json')
           data.labels = [2016, 2030]
-          data.datas = json.data[this.choice.value]
+          data.datas = json.data[this.choice.value].slice(0, 2)
           break
 
         case this.choice.type === 'state' && this.data === 'popgrowth':
