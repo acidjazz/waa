@@ -5,6 +5,8 @@ nav#Navigate(:class="{ on: isOpen, off: !isOpen }")
     .cbutton(@click="isOpen = !isOpen")
       .copy.copy_menu MENU
       .copy.copy_close CLOSE
+      .icon.icon_menu: i.fa.fa-lg.fa-bars
+      .icon.icon_close: i.fa.fa-lg.fa-times
     .content
       .menu
         .option(@click="isOpen = false"): router-link(to="/") Home
@@ -33,6 +35,8 @@ json('../assets/colors.json')
   right 0
   overflow hidden
   z-index 10
+  > .inner > .cbutton > .icon
+    display none
   &.on
     width 100vw
     height 100vh
@@ -44,6 +48,8 @@ json('../assets/colors.json')
       color darkblue
       > .copy.copy_menu
         display none
+      > .icon.icon_menu
+        display none !important
     > .inner > .content
       opacity 1
       transition opacity 0.1s ease-in-out 0.3s
@@ -59,6 +65,8 @@ json('../assets/colors.json')
       color white
       > .copy.copy_close
         display none
+      > .icon.icon_close
+        display none !important
     > .inner > .content
       opacity 0
       transition opacity 0.1s ease-in-out 0.1s
@@ -111,5 +119,30 @@ json('../assets/colors.json')
               background-color rgba(lightblue, 0.5)
             &:hover
               background-color rgba(lightblue, 0.2)
+
+@media all and (min-width: 1px) and (max-width: 1000px)
+  nav#Navigate
+    > .blue
+      width 60px
+      height 60px
+    > .inner
+      > .cbutton
+        width 60px
+        height 60px
+        line-height 60px
+        > .copy
+          display none !important
+        > .icon
+          display block
+      > .content
+        > .title
+          position absolute
+          top 10px
+          left 10px
+        > .menu
+          margin 90px 30px 0 0
+          font h1
+
+
 
 </style>

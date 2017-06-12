@@ -64,6 +64,13 @@ json('../assets/fonts.json')
           color darkblue
           font c1sb
 
+@media all and (min-width: 1px) and (max-width: 1000px)
+  .page.home
+    > .hero
+      > .inner
+        > .copy:nth-child(2)
+          font h1
+          width auto
 </style>
 
 <script>

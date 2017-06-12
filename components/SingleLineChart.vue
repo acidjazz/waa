@@ -38,7 +38,7 @@ let numeral = require('numeral')
 
 export default {
 
-  props: ['id', 'data', 'type', 'value', 'theme', 'width', 'height'],
+  props: ['id', 'data', 'choice', 'theme', 'width', 'height'],
 
   methods: {
     populate () {
@@ -48,48 +48,48 @@ export default {
 
       switch (true) {
 
-        case this.type === 'national' && this.data === 'apthhgrowth':
+        case this.choice.type === 'national' && this.data === 'apthhgrowth':
           data = this.toCurrent(require('../store/US Apt HHs (Landing).json').data)
           break
 
-        case this.type === 'national' && this.data === 'rentgrowth':
+        case this.choice.type === 'national' && this.data === 'rentgrowth':
           data = this.toCurrent(require('../store/US Rentership Rate (Landing).json').data)
           break
 
-        case this.type === 'national' && this.data === 'popgrowth':
+        case this.choice.type === 'national' && this.data === 'popgrowth':
           data = this.toCurrent(require('../store/US Population (Landing).json').data)
           break
 
-        case this.type === 'state' && this.data === 'apthhgrowth':
+        case this.choice.type === 'state' && this.data === 'apthhgrowth':
           json = require('../store/State New Apt HHs Per Year.json')
-          data = this.toCurrent(json.data, json.labels.indexOf(this.value))
+          data = this.toCurrent(json.data, json.labels.indexOf(this.choice.value))
           break
 
-        case this.type === 'state' && this.data === 'rentgrowth':
+        case this.choice.type === 'state' && this.data === 'rentgrowth':
           json = require('../store/State Rentership Rate.json')
           data.labels = [2017, 2030]
-          data.datas = json.data[this.value]
+          data.datas = json.data[this.choice.value]
           break
 
-        case this.type === 'state' && this.data === 'popgrowth':
+        case this.choice.type === 'state' && this.data === 'popgrowth':
           json = require('../store/State HH Growth.json')
           data.labels = [2017, 2030]
-          data.datas = [ 0, json.data[this.value] ]
+          data.datas = [ 0, json.data[this.choice.value] ]
           break
 
-        case this.type === 'metro' && this.data === 'apthhgrowth':
+        case this.choice.type === 'metro' && this.data === 'apthhgrowth':
           json = require('../store/Metro New Apt HHs Per Year.json')
-          data = this.toCurrent(json.data, json.labels.indexOf(this.value))
+          data = this.toCurrent(json.data, json.labels.indexOf(this.choice.value))
           break
 
-        case this.type === 'metro' && this.data === 'rentgrowth':
+        case this.choice.type === 'metro' && this.data === 'rentgrowth':
           json = require('../store/Metro Rentership Rate.json')
-          data = {'labels': [2017, 2030], 'datas': json.data[this.value].slice(0, 2)}
+          data = {'labels': [2017, 2030], 'datas': json.data[this.choice.value].slice(0, 2)}
           break
 
-        case this.type === 'metro' && this.data === 'popgrowth':
+        case this.choice.type === 'metro' && this.data === 'popgrowth':
           json = require('../store/Metro Pop Growth.json')
-          data = this.toCurrent(json.data, json.labels.indexOf(this.value))
+          data = this.toCurrent(json.data, json.labels.indexOf(this.choice.value))
           break
 
         case this.data === 'inyourstate':

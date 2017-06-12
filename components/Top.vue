@@ -40,4 +40,14 @@ json('../assets/colors.json')
   color white
 #Top.light > .title > a
   color black
+
+
+@media all and (min-width: 1px) and (max-width: 1000px)
+  #Top > .title, #Navigate > .inner > .content > .title
+    position absolute
+    font c1sb
+    top 10px
+    left 10px
+    margin 0
+
 </style>
