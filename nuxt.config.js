@@ -1,9 +1,9 @@
 let config = {
   title: 'We Are Apartments: Learn about the demand for apartments in your area',
   description: 'America needs to build more than 4.6 million new apartments by 2030 through bold, innovative solutions that will help meet America’s housing shortfall.',
-  url: 'http://waa.256.io',
+  url: 'https://weareapartments.org',
   image: '/share.png',
-  keywords: 'keywords, for, we, are, apartments'
+  keywords: 'affordable, data, apartments, census, calculator'
 }
 let routes = require('./store/routes.json')
 
