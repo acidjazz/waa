@@ -60,8 +60,8 @@
             .value
             .copy needed rate text
       .left.left_inyourcity(v-if="this.choice().type === 'metro'")
-        .copy barriers to new apartments index
-        HeatChart(:metro="this.choice().value")
+        // .copy barriers to new apartments index
+        // HeatChart(:metro="this.choice().value")
       .chart
         MultiLineChart(:type="this.choice().type",:value="this.choice().value",:state="this.choice().state",data='aptsneeded',id='aptsneeded',theme="red",width=830,height=300)
       .clear
