@@ -1,0 +1,26 @@
+@media all and (min-width: 1px) and (max-width: 1000px)
+  #MultipleItems
+    > .inner
+      padding 30px 0
+      > .border
+        width auto
+      > .items
+        width auto
+        &.double
+          width auto
+          > .item:nth-child(2)
+            float none
+        > .item
+          float none
+          margin auto
+      > .copys
+        width auto
+        &.double
+          width auto
+          > .copyarea:nth-child(2)
+            float none
+        > .copyarea
+          float none
+          margin auto
+
+

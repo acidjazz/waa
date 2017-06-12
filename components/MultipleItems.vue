@@ -149,4 +149,7 @@ json('../assets/fonts.json')
     color grey
   > .copy:nth-child(4)
     color grey
+
+@import '../assets/stylus/multipleitems-mobile.styl'
+
 </style>

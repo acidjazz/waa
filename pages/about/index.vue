@@ -101,10 +101,7 @@ json('../../assets/fonts.json')
           > .copy
             padding 0 80px 0 0
             color grey
-
-
-
-
+@import '~assets/stylus/about-mobile.styl'
 </style>
 
 <script>

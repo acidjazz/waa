@@ -683,4 +683,6 @@ json('../assets/fonts.json')
     overflow visible
     height auto !important
 
+@import '../assets/stylus/datapage-mobile.styl'
+
 </style>

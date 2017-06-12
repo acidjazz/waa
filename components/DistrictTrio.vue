@@ -84,5 +84,7 @@ json('../assets/fonts.json')
       > .copy:nth-child(2)
         color grey
 
+@import '../assets/stylus/districttrio-mobile.styl'
+
 </style>
 
