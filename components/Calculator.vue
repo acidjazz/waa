@@ -54,7 +54,7 @@
   .calculated(:class="{ on: $route.name === 'calculated', off: $route.name !== 'calculated'}")
     .inner
       .source Source: https://weareapartments.org/ {{ $route.path }}
-      a.pdf(:href=" 'http://pdf.weareapartments.org?url=/calculated'+hashv")
+      a.pdf(:href=" 'http://pdf.weareapartments.org?url=/calculated'+hashv.replace(/#/, 'hash')")
         .fa.fa-2x.fa-file-pdf-o
         .copy Create PDF
       router-link.close(:to="'/calculator' + $route.hash")
