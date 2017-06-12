@@ -88,7 +88,7 @@
           .copy 
             span Download 
             | this page on apartment demand.
-          a.button(:href="'http://pdf.weareapartments.org' + $route.path") download
+          a.button(:href="'http://pdf.weareapartments.org?url=' + $route.path") download
         .area.right
           .icon.icon-bars
           .copy 

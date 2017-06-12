@@ -1,7 +1,7 @@
 <template lang="pug">
 #Bottom
   .border.big
-  .upper
+  //.upper
     .section.navigation
       .link: router-link(to="/data") apartment data
       .link: router-link(to="/calculator") apartment calculator
