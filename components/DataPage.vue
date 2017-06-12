@@ -107,7 +107,7 @@
       Demand(:type="this.choice().type",:value="this.choice().value")
     .section.section_district_name(v-if="this.choice().type === 'district'")
       .copy {{ this.choice().value }}
-      .copy Apartments bring dolalrs and jobs that stay close to home
+      .copy Apartments and their residents contribute more than $3.5 billion to the economy every day.
     DataSummary(:state="state",:metro="metro",:district="district",v-if="this.choice().type === 'district'")
     .section.section_district(v-if="this.choice().type === 'district'")
       DistrictCopy(:district="this.choice().value")
