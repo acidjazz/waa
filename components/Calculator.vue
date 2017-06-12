@@ -329,18 +329,18 @@ export default {
 
       let value = this.value.trim()
       let by = this.by
-      this.secondary = this.value
+      this.title = this.value
 
       switch (by) {
         case 'metro':
-          this.title = 'metro area'
+          this.subtitle = 'metro area'
           break
         case 'state':
-          this.title = 'state'
+          this.subtitle = 'state'
           break
         case 'national':
           this.title = 'United States'
-          this.secondary = 'national'
+          this.subtitle = 'national'
           break
       }
 
