@@ -29,7 +29,7 @@
         .clear
         .block
           .title current and historical demographic
-          .copy Descriptive current and historical demographic and housing data (such as the number of apartment residents and the size of the apartment stock) are NMHC tabulations of the most recently available American Community Survey microdata. 
+          .copy Descriptive current and historical demographic and housing data (such as the number of apartment residents and the size of the apartment stock) are NMHC tabulations of the most recently available American Community Survey microdata.
         .block
           .title forecasted demographic
           .copy All forecasted demographic and housing data (such as the change in the rentership rate over time) are provided by Hoyt Advisory Services. 

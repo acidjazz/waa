@@ -161,9 +161,13 @@
         .copy Many people in your district call apartments home. They  ..
       .copys.copyRight
         .copy We Need to Build More
-        .copy Apartment demand is growing and the industry needs to keep up. However, producing enough new apartments to meet demand requires new ..
+        .copy Apartment demand is growing and the industry needs to keep up. However, producing enough new apartments to meet demand requires new development approaches, more incentives and fewer restrictions
     .clear
     DataSummary(:state="state",:metro="metro",:district="district",v-if="this.choice().type !== 'district'")
+    .logos
+       img(src="/logo-nmhc.png")
+       img(src="/logo-naa.png")
+    .clear
 
 </template>
 
@@ -318,7 +322,7 @@ json('../assets/fonts.json')
           display none
         > .copy_print
           display block
-          margin 0 0 -14px 0
+          margin 0 
           background-color white
           text-transform uppercase
           padding 0 10px
@@ -331,12 +335,13 @@ json('../assets/fonts.json')
           color darkblue
         > .stats
           border-top 1px solid lightblue
-          width 765px
+          width 750px
           margin auto
-          padding-top 10px
+          padding-top 5px
           > .stat
-            padding 20px
+            padding 10px
             max-width 150px
+            height 60px
             &:first-child, &:nth-child(2), &:nth-child(3)
               border-right 1px solid lightblue
             > .value
@@ -413,7 +418,7 @@ json('../assets/fonts.json')
            
 
     > .section_charts
-      width 765px
+      width 750px
       margin auto
       > .chart
         float left
@@ -431,12 +436,13 @@ json('../assets/fonts.json')
             font c1s
             display none
     > .section_chart
-      width 765px
+      width 750px
       margin auto
       > .top
+        background-color green
         > .part
           float right
-          width 255px
+          width 250px
           &.part_homes
             text-align left
             line-height 20px
@@ -464,27 +470,29 @@ json('../assets/fonts.json')
               color rgba(red, 1)
       > .left
         float left
-        width 255px
+        border none
+        width 0px
         height 225px
-        border 1px solid lightgrey
-        border-radius 3px
         > .HeatChart
           > .legend
             margin-top -30px
       > .right
         float right
-        width 500px
+        border none
+        margin 10px auto
+        width 550px
         height 225px
-        border 1px solid lightgrey
-        border-radius 3px
       > .copyLeft
         float left
         width 255px
+        display none
       > .copyRight
-        float right
-        width 500px
+        //float right
+        padding-top 20px
+        width 200px
+        margin -230px 0 0 0
       > .copys
-        margin 10px 0 0 0
+        float left
         > .copy:nth-child(1)
           font c1
         > .copy:nth-child(2)
@@ -492,6 +500,14 @@ json('../assets/fonts.json')
           padding 5px 0 0 0
           color grey
           margin 0 5px 0 0
+    > .logos
+      width 750px
+      height 30px
+      margin auto
+      text-align right
+      > img
+        height 50px
+
 
   .datapage_web
     visibility visible
@@ -680,7 +696,7 @@ json('../assets/fonts.json')
     display none
   .datapage_print
     visibility visible
-    overflow visible
+    overflow visible !important
     height auto !important
 
 @import '../assets/stylus/datapage-mobile.styl'

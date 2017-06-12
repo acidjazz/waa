@@ -207,7 +207,7 @@ export default {
             },
             layout: {
               padding: {
-                top: 100
+                top: this.id.indexOf('print') !== -1 ? 50 : 70
               }
             },
             scales: {
