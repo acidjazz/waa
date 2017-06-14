@@ -59,7 +59,7 @@
           .dot
             .value
             .copy needed rate text
-      .left.left_inyourcity(v-if="this.choice().type === 'metro'")
+      // .left.left_inyourcity(v-if="this.choice().type === 'metro'")
         // .copy barriers to new apartments index
         // HeatChart(:metro="this.choice().value")
       .chart
@@ -68,7 +68,7 @@
       .copys.copyLeft(v-if="this.choice().type === 'district'")
         .copy Red Tape Rating
         .copy Over the last three decades, regulatory barriers to apartment construction have increased significantly, most notably at the local level
-      .copys.copyRight(v-if="this.choice().type === 'district'")
+      .copys.copyRight(v-if="this.choice().type === 'district' || this.choice().type === 'metro'")
         .copy We Need to Build More
         .copy Apartment demand is growing and the industry needs to keep up. However, producing enough new apartments to meet demand requires new development approaches, more incentives and fewer restrictions.
 
@@ -368,6 +368,9 @@ json('../assets/fonts.json')
           > span
             color red
 
+    > .section_district_name
+      > .copy:nth-child(2)
+        padding 10px 0 !important
     > .section_district
       > .DistrictCopy
         > .inner
@@ -578,8 +581,12 @@ json('../assets/fonts.json')
         float left
         width 300px
       > .copyRight
-        float right
-        width 800px
+        // float right
+        // width 800px
+        //float right
+        padding-top 20px
+        width 300px
+        margin -330px 0 0 40px
       > .copys
         > .copy:nth-child(1)
           font h1

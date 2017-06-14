@@ -41,6 +41,7 @@ export default {
 
         case this.type === 'national' && this.data === 'aptsneeded':
         case this.type === 'state' && this.data === 'aptsneeded':
+        case this.type === 'metro' && this.data === 'aptsneeded':
           let json = require('../store/US Building 2.json')
           for (let key in json.data) {
             if (key !== "") {
@@ -75,7 +76,7 @@ export default {
           this.$store.state.homesNeeded = numeral(data.datas[1][data.datas[1].length - 1]).format('0,0')
           break
 
-        case this.type === 'metro' && this.data === 'aptsneeded':
+        case this.type === 'WAS_METRO_DISABLED_AS_WELL' && this.data === 'aptsneeded':
           data = {labels: [], datas: [[], []]}
           jsonc = require('../store/Metro Building Current.json')
           jsonn = require('../store/Metro Building Needed.json')
