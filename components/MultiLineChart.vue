@@ -159,13 +159,13 @@ export default {
             displayColors: false,
             backgroundColor: colors.white,
             bodyFontFamily: 'Maven Pro',
-            bodyFontSize: 20,
+            bodyFontSize: 12,
             titleFontSize: 0,
             titleSpacing: 0,
             titleMarginBottom: -6,
             bodyFontColor: solid,
             yPadding: 10,
-            borderColor: colors.lightblue,
+            borderColor: colors.red,
             borderWidth: 1,
             callbacks: {
               label: function (item, data) {
@@ -188,12 +188,15 @@ export default {
                 callback: function (label, index, labels) {
                   return numeral(label).format('0a')
                 },
+                fontSize: 12,
+                fontColor: colors.grey,
                 maxTicksLimit: 5,
               }
             }],
             xAxes: [{
               gridLines: { display: false },
               ticks: {
+                fontSize: 12,
                 fontColor: colors.grey,
                 color: solid,
                 maxTicksLimit: 10,

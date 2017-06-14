@@ -115,9 +115,13 @@ export default {
       }
 
       if (spike === false) {
-        spike = numeral((data.datas[data.datas.length - 1] - data.datas[0]) / data.datas[0]).format('0.00%').replace(/%/, '')
+        spike = numeral(
+          (data.datas[data.datas.length - 1] - data.datas[0]) / data.datas[0]
+        ).format('0.00%').replace(/%/, '')
       }
+
       this.spike = isNaN(spike) ? 100 : spike
+
       let Chart = require('chart.js')
       let ctx = 'chart-' + this.id
 
@@ -212,8 +216,23 @@ export default {
             },
             scales: {
               yAxes: [{
-                display: false,
-                gridLines: { color: solid, display: false, zeroLineColor: solid },
+                position: 'right',
+                gridLines: {
+                  color: solid,
+                  display: false,
+                  zeroLineColor: solid,
+                },
+                ticks: {
+                  fontSize: 12,
+                  fontColor: colors.grey,
+                  maxTicksLimit: 6,
+                  callback: function (label, index, labels) {
+                    if (label.toString().indexOf('.') !== -1) {
+                      return numeral(label).format('0%')
+                    }
+                    return numeral(label).format('0a')
+                  }
+                }
               }],
               xAxes: [{
                 gridLines: { color: solid, zeroLineColor: solid, display: false },
