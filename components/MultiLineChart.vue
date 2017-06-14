@@ -129,6 +129,7 @@ export default {
       let dataset = [{
         data: data.datas[0],
         pointBackgroundColor: colors.white,
+        pointHoverBackgroundColor: solid,
         pointBorderWidth: 4,
         pointRadius: 5,
         pointBorderColor: solid,
@@ -137,6 +138,7 @@ export default {
       }, {
         data: data.datas[1],
         pointBackgroundColor: colors.white,
+        pointHoverBackgroundColor: solid,
         pointBorderWidth: 0,
         pointRadius: 0,
         pointBorderColor: colors.white,
