@@ -154,7 +154,7 @@ export default {
       } else {
 
         let options =  {
-          showAllTooltips: true,
+          showAllTooltips: false,
           tooltips: {
             displayColors: false,
             backgroundColor: colors.white,
@@ -180,7 +180,11 @@ export default {
             padding: { left: 0, top: 20, rigth: 0, bottom: 20 } },
           scales: {
             yAxes: [{
-              gridLines: { display: false },
+              gridLines: {
+                color: solid,
+                display: false,
+                zeroLineColor: solid,
+              },
               position: 'right',
               ticks: {
                 display: true,
@@ -194,7 +198,11 @@ export default {
               }
             }],
             xAxes: [{
-              gridLines: { display: false },
+              gridLines: {
+                color: solid,
+                display: false,
+                zeroLineColor: solid,
+              },
               ticks: {
                 fontSize: 12,
                 fontColor: colors.grey,

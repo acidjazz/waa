@@ -19,7 +19,7 @@ json('../assets/colors.json')
   > .spike
     position absolute
     top 30px
-    right 30px
+    right 50px
     > .fa
       float left
       padding 5px 10px 0 0
@@ -192,13 +192,13 @@ export default {
               displayColors: false,
               backgroundColor: colors.white,
               bodyFontFamily: 'Maven Pro',
-              bodyFontSize: 20,
+              bodyFontSize: 16,
               titleFontSize: 0,
               titleSpacing: 0,
               titleMarginBottom: -6,
               bodyFontColor: solid,
               yPadding: 10,
-              borderColor: colors.lightgrey,
+              borderColor: solid,
               borderWidth: 1,
               callbacks: {
                 label: function (item, data) {
