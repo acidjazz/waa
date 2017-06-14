@@ -54,7 +54,7 @@
   .calculated(:class="{ on: $route.name === 'calculated', off: $route.name !== 'calculated'}")
     .inner
       .source Source: https://weareapartments.org/ {{ $route.path }}
-      a.pdf(:href=" 'http://pdf.weareapartments.org?url=/calculated'+hashv.replace(/#/, 'hash')")
+      a.pdf(:href="'http://pdf.weareapartments.org?url=/calculated'+hashv.replace(/#/, 'hash')")
         .fa.fa-2x.fa-file-pdf-o
         .copy Create PDF
       router-link.close(:to="'/calculator' + $route.hash")
@@ -216,7 +216,6 @@ export default {
       this.populate()
       this.decide()
       this.hashv = this.$route.hash
-      console.log(this.hashv)
     }
   },
 
@@ -275,6 +274,7 @@ export default {
         if (this.by === 'metro') {
           this.metro = params[3]
         }
+        this.hashv = this.$route.hash
       }
     },
 
@@ -466,7 +466,6 @@ export default {
   created () {
     this.populate()
     this.hash()
-    console.log(this.hashv)
   },
 
   mounted () {

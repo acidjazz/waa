@@ -63,7 +63,7 @@
         // .copy barriers to new apartments index
         // HeatChart(:metro="this.choice().value")
       .chart
-        MultiLineChart(:type="this.choice().type",:value="this.choice().value",:state="this.choice().state",data='aptsneeded',id='aptsneeded',theme="red",width=830,height=300)
+        MultiLineChart(:animation="true",:type="this.choice().type",:value="this.choice().value",:state="this.choice().state",data='aptsneeded',id='aptsneeded',theme="red",width=830,height=300)
       .clear
       .copys.copyLeft(v-if="this.choice().type === 'district'")
         .copy Red Tape Rating
@@ -153,7 +153,7 @@
       .left(v-else)
         //HeatChart(:metro="this.choice().value")
       .right
-        MultiLineChart(:type="this.choice().type",:value="this.choice().value",:state="this.choice().state",data='aptsneeded',id='aptsneeded_print',theme="red",width=510,height=225)
+        MultiLineChart(:animation="false",:type="this.choice().type",:value="this.choice().value",:state="this.choice().state",data='aptsneeded',id='aptsneeded_print',theme="red",width=510,height=225)
       .clear
 
       //.copys.copyLeft
