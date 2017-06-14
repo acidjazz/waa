@@ -8,9 +8,15 @@
     .section.section_demand(v-if="this.choice().type !== 'district'")
       p The Demand
       Demand(:type="this.choice().type",:value="this.choice().value")
+      a.pdf(:href="'http://pdf.weareapartments.org?url=' + $route.path")
+        .fa.fa-2x.fa-file-pdf-o
+        .copy Create PDF
 
     .section.section_district(v-if="this.choice().type === 'district'")
       DistrictCopy(:district="this.choice().value")
+      a.pdf(:href="'http://pdf.weareapartments.org?url=' + $route.path")
+        .fa.fa-2x.fa-file-pdf-o
+        .copy Create PDF
 
     .section.section_trio(v-if="this.choice().type === 'district'")
       DistrictTrio(type="web",:choice="this.choice()")
@@ -87,8 +93,8 @@
           .icon.icon-file
           .copy 
             span Download 
-            | this page on apartment demand.
-          a.button(:href="'http://pdf.weareapartments.org?url=' + $route.path") download
+            | the report on the 2030 demand for apartments.
+          a.button(href="/NMHC-NAA-US-Apartment-Demand-in-2030.pdf") download
         .area.right
           .icon.icon-bars
           .copy 
@@ -519,6 +525,12 @@ json('../assets/fonts.json')
       border-top 30px solid offwhite
       padding 60px 0
       text-align center
+      position relative
+      width 1200px
+      margin auto
+      > .pdf
+        top 30px
+        right 60px
       > p:first-child
         font h1
       > p:nth-child(2)
@@ -529,6 +541,13 @@ json('../assets/fonts.json')
           color black
           > span
             color red
+    > .section_district
+      width 1200px
+      margin auto
+      position relative
+      > .pdf
+        top 30px
+        right 60px
     > .section_charts
       width 1200px
       margin auto
