@@ -7,8 +7,8 @@
       .logos
        a(href="http://www.nmhc.org/",target="_new"): img(src="/logo-nmhc.png")
        a(href="https://www.naahq.org/",target="_new"): img(src="/logo-naa.png")
-    .border
-    .section.section_data
+    //.border
+    //.section.section_data
       .copys
         .copy The Data
         .copy Demand for apartments continues to grow. America needs to build more than 4.6 million new apartment homes at a variety of price points by 2030, according to new research from Hoyt Advisory Services (HAS), commissioned by the National Multifamily Housing Council (NMHC) and the National Apartment Association (NAA).
