@@ -82,10 +82,10 @@ export default {
           break
 
         case this.choice.type === 'state' && this.data === 'popgrowth':
-          json = require('../store/State HH Growth.json')
+          json = require('../store/State HH Growth.json').data[this.choice.value]
           data.labels = [2016, 2030]
-          data.datas = [ 0, json.data[this.choice.value] ]
-          spike = numeral(json.data[this.choice.value]).format('0.00%').replace(/%/, '')
+          data.datas = [json[0], json[1]]
+          spike = numeral(json[2]).format('0.00%').replace(/%/, '')
           break
 
         case this.choice.type === 'metro' && this.data === 'apthhgrowth':

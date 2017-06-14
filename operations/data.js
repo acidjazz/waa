@@ -134,7 +134,6 @@ for (let index in excel) {
     case 'US Apt HHs (Landing)':
     case 'US Rentership Rate (Landing)':
     case 'US Population (Landing)':
-    case 'State HH Growth':
     case 'Metro Restriction Index':
     case 'US Housing Costs':
       data.data = {}
@@ -184,6 +183,7 @@ for (let index in excel) {
     case 'Metro Building Current':
     case 'Metro Apt Residents':
     case 'Metro Age of Occupied Stock':
+    case 'State HH Growth':
 
       data.data = {}
       for (let value in sheet.data) {
