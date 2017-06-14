@@ -5,25 +5,25 @@
     .value {{ value.today }}%
     .clear
     .progress &nbsp;
-      .inner(:style="'width: ' + bar.today + '%'")
+      .inner(:style="'width: ' + bar.today + '%'",:class="{ animated: this.animation }")
   .perc.perc_lime
     .label 1980 - 1999
     .value {{ value.eighties }}%
     .clear
     .progress &nbsp;
-      .inner(:style="'width: ' + bar.eighties + '%'")
+      .inner(:style="'width: ' + bar.eighties + '%'",:class="{ animated: this.animation }")
   .perc.perc_red
     .label 1960 - 1979
     .value {{ value.sixties }}%
     .clear
     .progress &nbsp;
-      .inner(:style="'width: ' + bar.sixties + '%'")
+      .inner(:style="'width: ' + bar.sixties + '%'",:class="{ animated: this.animation }")
   .perc.perc_purple
     .label 1959 or earlier
     .value {{ value.fifties }}%
     .clear
     .progress &nbsp;
-      .inner(:style="'width: ' + bar.fifties + '%'")
+      .inner(:style="'width: ' + bar.fifties + '%'",:class="{ animated: this.animation }")
 </template>
 
 <script>
@@ -35,7 +35,7 @@ let numeral = require('numeral')
 
 export default {
 
-  props: ['district', 'metro'],
+  props: ['district', 'metro', 'animation'],
 
   methods: {
     add (a, b) {
@@ -60,10 +60,19 @@ export default {
       this.bar.eighties = this.average(values, 2)
       this.bar.today    = this.average(values, 3)
 
-      this.randto('fifties', this.average(values, 0), 400)
-      this.randto('sixties', this.average(values, 1), 400)
-      this.randto('eighties', this.average(values, 2), 400)
-      this.randto('today', this.average(values, 3), 400)
+      if (this.animation) {
+        this.randto('fifties', this.average(values, 0), 400)
+        this.randto('sixties', this.average(values, 1), 400)
+        this.randto('eighties', this.average(values, 2), 400)
+        this.randto('today', this.average(values, 3), 400)
+      } else {
+        console.log(values)
+        this.value.fifties = this.average(values, 0)
+        this.value.sixties = this.average(values, 1)
+        this.value.eighties = this.average(values, 2)
+        this.value.today = this.average(values, 3)
+      }
+
     },
     randto (key, value, speed) {
 
@@ -156,7 +165,8 @@ json('../assets/fonts.json')
         height 10px
         background-color brown
         border-radius 6px
-        transition width 1.5s ease-in-out 0s
+        &.animated
+          transition width 1.5s ease-in-out 0s
     &.perc_orange
       > .value
         color orange

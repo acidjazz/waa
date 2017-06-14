@@ -38,7 +38,7 @@ let numeral = require('numeral')
 
 export default {
 
-  props: ['id', 'data', 'choice', 'theme', 'width', 'height'],
+  props: ['id', 'data', 'choice', 'theme', 'width', 'height', 'animation'],
 
   methods: {
 
@@ -91,7 +91,6 @@ export default {
         case this.choice.type === 'metro' && this.data === 'apthhgrowth':
           json = require('../store/Metro New Apt HHs Per Year.json')
           data = this.toCurrent(json.data, json.labels.indexOf(this.choice.value))
-          console.log(data)
           break
 
         case this.choice.type === 'metro' && this.data === 'rentgrowth':
@@ -168,87 +167,139 @@ export default {
         this.myChart.update()
 
       } else {
+        let options = {
+          showAllTooltips: false,
+          tooltips: {
+            displayColors: false,
+            backgroundColor: colors.white,
+            bodyFontFamily: 'Maven Pro',
+            bodyFontSize: 16,
+            titleFontSize: 0,
+            titleSpacing: 0,
+            titleMarginBottom: -6,
+            bodyFontColor: solid,
+            yPadding: 10,
+            borderColor: solid,
+            borderWidth: 1,
+            callbacks: {
+              label: function (item, data) {
+                if (Number(item.yLabel) < 1 && Number(item.yLabel) > 0) {
+                  return numeral(item.yLabel).format('0.00%')
+                }
+                return numeral(item.yLabel).format('0.00a')
+              }
+            }
+          },
+          layout: {
+            padding: {
+              top: this.id.indexOf('print') !== -1 ? 50 : 70
+            }
+          },
+          scales: {
+            yAxes: [{
+              position: 'right',
+              gridLines: {
+                color: solid,
+                display: false,
+                zeroLineColor: solid,
+              },
+              ticks: {
+                fontSize: 12,
+                fontColor: colors.grey,
+                maxTicksLimit: 6,
+                callback: function (label, index, labels) {
+                  if (label.toString().indexOf('.') !== -1) {
+                    return numeral(label).format('0%')
+                  }
+                  return numeral(label).format('0a')
+                }
+              }
+            }],
+            xAxes: [{
+              gridLines: { color: solid, zeroLineColor: solid, display: false },
+              ticks: {
+                fontColor: solid,
+                color: solid,
+                maxRotation: 0,
+              }
+            }]
+          }
+        }
+
+        if (this.animation === false) {
+          options.animation = false
+        }
+
+        let datasets = [{
+          data: data.datas,
+          pointBackgroundColor: colors.white,
+          pointBorderWidth: this.id.indexOf('print') !== -1 ? 2 : 4,
+          pointRadius: this.id.indexOf('print') !== -1 ? 2 : 5,
+          pointBorderColor: solid,
+          borderColor: solid,
+          backgroundColor: light,
+          fill: true
+        }]
+
+        Chart.pluginService.register({
+          beforeRender: function (chart) {
+            if (chart.config.options.showAllTooltips) {
+              // create an array of tooltips
+              // we can't use the chart tooltip because there is only one tooltip per chart
+              chart.pluginTooltips = []
+              chart.config.data.datasets.forEach(function (dataset, i) {
+                chart.getDatasetMeta(i).data.forEach(function (sector, j) {
+                  chart.pluginTooltips.push(new Chart.Tooltip({
+                    _chart: chart.chart,
+                    _chartInstance: chart,
+                    _data: chart.data,
+                    _options: chart.options.tooltips,
+                    _active: [sector]
+                  }, chart))
+                })
+              })
+
+              // turn off normal tooltips
+              chart.options.tooltips.enabled = false
+            }
+          },
+          afterDraw: function (chart, easing) {
+            if (chart.config.options.showAllTooltips) {
+              // we don't want the permanent tooltips to animate, so don't do anything till the animation runs atleast once
+              if (!chart.allTooltipsOnce) {
+                if (easing !== 1) {
+                  return
+                }
+                chart.allTooltipsOnce = true
+              }
+
+              // turn on tooltips
+              chart.options.tooltips.enabled = true
+              Chart.helpers.each(chart.pluginTooltips, function (tooltip) {
+                tooltip.initialize()
+                tooltip.update()
+                // we don't actually need this since we are not animating tooltips
+                tooltip.pivot()
+                tooltip.transition(easing).draw()
+              })
+              chart.options.tooltips.enabled = false
+            }
+          }
+        })
 
         this.myChart = new Chart(ctx, {
           type: 'line',
           data: {
             labels: data.labels,
-            datasets: [{
-              data: data.datas,
-
-              pointBackgroundColor: colors.white,
-              pointBorderWidth: this.id.indexOf('print') !== -1 ? 2 : 4,
-              pointRadius: this.id.indexOf('print') !== -1 ? 2 : 5,
-              pointBorderColor: solid,
-
-              borderColor: solid,
-              backgroundColor: light,
-              fill: true
-            }]
+            datasets:  datasets
           },
-
-          options: {
-            tooltips: {
-              displayColors: false,
-              backgroundColor: colors.white,
-              bodyFontFamily: 'Maven Pro',
-              bodyFontSize: 16,
-              titleFontSize: 0,
-              titleSpacing: 0,
-              titleMarginBottom: -6,
-              bodyFontColor: solid,
-              yPadding: 10,
-              borderColor: solid,
-              borderWidth: 1,
-              callbacks: {
-                label: function (item, data) {
-                  if (Number(item.yLabel) < 1 && Number(item.yLabel) > 0) {
-                    return numeral(item.yLabel).format('0.00%')
-                  }
-                  return numeral(item.yLabel).format('0.00a')
-                }
-              }
-            },
-            layout: {
-              padding: {
-                top: this.id.indexOf('print') !== -1 ? 50 : 70
-              }
-            },
-            scales: {
-              yAxes: [{
-                position: 'right',
-                gridLines: {
-                  color: solid,
-                  display: false,
-                  zeroLineColor: solid,
-                },
-                ticks: {
-                  fontSize: 12,
-                  fontColor: colors.grey,
-                  maxTicksLimit: 6,
-                  callback: function (label, index, labels) {
-                    if (label.toString().indexOf('.') !== -1) {
-                      return numeral(label).format('0%')
-                    }
-                    return numeral(label).format('0a')
-                  }
-                }
-              }],
-              xAxes: [{
-                gridLines: { color: solid, zeroLineColor: solid, display: false },
-                ticks: {
-                  fontColor: solid,
-                  color: solid,
-                  maxRotation: 0,
-                }
-              }]
-            }
-          }
+          options: options
         })
 
       }
 
     },
+
     toCurrent (data, index = undefined) {
       // let current = new Date().getFullYear()
       let current = 2016

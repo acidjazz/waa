@@ -5,6 +5,7 @@
     .clear
     DataFilters(:state="state",:metro="metro",:district="district")
     DataSummary(:state="state",:metro="metro",:district="district")
+    .border.big
     .section.section_demand(v-if="this.choice().type !== 'district'")
       p The Demand
       Demand(:type="this.choice().type",:value="this.choice().value")
@@ -23,17 +24,17 @@
 
     .section.section_charts(v-if="this.choice().type !== 'district'")
       .chart
-        SingleLineChart(data='apthhgrowth',id='apthhgrowth',:choice="this.choice()",theme="orange",width=380,height=300,animation=false)
+        SingleLineChart(data='apthhgrowth',id='apthhgrowth',:choice="this.choice()",:animation="true",theme="orange",width=380,height=300)
         .copys
           .copy Apartment Household Growth
           .copy Population growth and a higher propensity to rent will create a need for more apartments by 2030. 
       .chart
-        SingleLineChart(data='rentgrowth',id='rentgrowth',:choice="this.choice()",theme="lime",width=380,height=300,animation=false)
+        SingleLineChart(data='rentgrowth',id='rentgrowth',:choice="this.choice()",:animation="true",theme="lime",width=380,height=300)
         .copys
           .copy Growth in Rentership
           .copy An aging population, immigration and fewer home purchases are increasing the need for apartments. 
       .chart
-        SingleLineChart(data='popgrowth',id='popgrowth',:choice="this.choice()",theme="cyan",width=380,height=300,animation=false)
+        SingleLineChart(data='popgrowth',id='popgrowth',:choice="this.choice()",:animation="true",theme="cyan",width=380,height=300)
         .copys
           .copy(v-if="this.choice().type === 'state'") Household Growth
           .copy(v-else) Population Growth
@@ -123,17 +124,17 @@
 
     .section.section_charts(v-if="this.choice().type !== 'district'")
       .chart
-        SingleLineChart(data='apthhgrowth',id='ahgrowth_print',:choice="this.choice()",theme="orange",width=400,height=300)
+        SingleLineChart(data='apthhgrowth',id='ahgrowth_print',:choice="this.choice()",:animation="false",theme="orange",width=400,height=300)
         .copys
           .copy Apartment Household Growth
           .copy Population growth and a higher propensity to rent will create a ..
       .chart
-        SingleLineChart(data='rentgrowth',id='rentgrowth_print',:choice="this.choice()",theme="lime",width=400,height=300)
+        SingleLineChart(data='rentgrowth',id='rentgrowth_print',:choice="this.choice()",:animation="false",theme="lime",width=400,height=300)
         .copys
           .copy Growth in Rentership
           .copy An aging population, immigration and fewer ..
       .chart
-        SingleLineChart(data='popgrowth',id='popgrowth_print',:choice="this.choice()",theme="cyan",width=400,height=300)
+        SingleLineChart(data='popgrowth',id='popgrowth_print',:choice="this.choice()",:animation="false",theme="cyan",width=400,height=300)
         .copys
           .copy(v-if="this.choice().type === 'state'") Household Growth
           .copy(v-else) Population Growth
@@ -522,7 +523,6 @@ json('../assets/fonts.json')
     visibility visible
     // display none
     > .section_demand
-      border-top 30px solid offwhite
       padding 60px 0
       text-align center
       position relative

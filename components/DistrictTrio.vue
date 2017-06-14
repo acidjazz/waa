@@ -13,7 +13,7 @@
   .dchart
     .inner
       .title year apartment built
-      PercChart(:district="this.choice.value")
+      PercChart(:district="this.choice.value",:animation="this.type === 'web'")
     .copys
       .copy Supply at Risk
       .copy The nation's apartment stock is aging, with about half nationwide being built before 1980. Without resources to support rehabilitation and preservation efforts, the current supply-demand imbalance will worsen, affecting affordability.
@@ -21,7 +21,7 @@
   .dchart
     .inner
       .title in your state
-      SingleLineChart(type='line',data='inyourstate',:id="'inyourstate_' + this.type",:choice="this.choice",theme="lime",:width="(this.type === 'print') ? 200 : 300",:height="(this.type === 'print') ? 200 : 300",animation=false)
+      SingleLineChart(type='line',data='inyourstate',:id="'inyourstate_' + this.type",:animation="(this.type === 'web')",:choice="this.choice",theme="lime",:width="(this.type === 'print') ? 200 : 300",:height="(this.type === 'print') ? 200 : 300")
     .copys
       .copy We Need to Build More
       .copy Apartment demand is growing and the industry needs to keep up.  However, producing enough new apartments to meet demand requires new development approaches, more incentives and fewer restrictions.
@@ -36,8 +36,7 @@ import SingleLineChart from '~components/SingleLineChart.vue'
 export default {
   props: [ 'choice', 'type' ],
   components: { CircleChart, PercChart, SingleLineChart },
-  mounted () {
-  }
+  mounted () { }
 }
 </script>
 
