@@ -1,0 +1,90 @@
+json('../../assets/colors.json')
+json('../../assets/fonts.json')
+
+.page.page_init > .page_content
+  padding 120px 0 30px 0
+  > .section
+    width 900px
+    margin 0 auto
+    &.section_top
+      > .copy:nth-child(1)
+        font h6
+        text-align center
+        width 500px
+        margin auto
+      > .logos
+        padding 60px 0
+        width 410px
+        margin auto
+        text-align center
+        border-bottom 1px solid lightgrey
+        margin-bottom 30px
+        > a > img
+          height 60px
+    &.section_data
+      padding 60px 0 90px 0
+      width 700px
+      margin auto
+      > .copys
+        width 50%
+        width 320px
+        margin 90px 0 0 0
+        float left
+        > .copy:nth-child(1)
+          font h6
+          padding 0 0 20px 0
+        > .copy:nth-child(2)
+          color grey
+      > .charts
+        width 50%
+        float right
+        > .inner
+          width 460px
+          height 461px
+          background-image url('/charts.png')
+          background-size contain
+    &.section_weare
+      padding 60px 0
+      > .copys
+        width 700px
+        margin auto
+        > .copy:nth-child(1)
+          font h2
+          padding 0 0 30px 0
+    &.section_about
+      margin 60px auto
+      > .copy:nth-child(1)
+        text-transform uppercase
+        color grey
+        text-align center
+      > .copy:nth-child(2)
+        text-align center
+        font h2
+        line-height 50px
+        width 700px
+        margin auto
+        border-bottom 1px solid lightgrey
+        padding-bottom 30px
+        margin-bottom 30px
+      > .copys
+        > .block
+          float left
+          width 50%
+          padding 20px 0
+          &:nth-child(1) > .title
+            color green
+          &:nth-child(2) > .title
+            color tomato
+          &:nth-child(4) > .title
+            color blue
+          &:nth-child(5) > .title
+            color purple
+          > .title
+            text-transform uppercase
+            padding 0 0 10px 0
+            font c1b
+          > .copy
+            padding 0 80px 0 0
+            color grey
+
+@import '~assets/stylus/about-mobile.styl'
