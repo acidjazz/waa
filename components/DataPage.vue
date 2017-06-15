@@ -46,7 +46,8 @@
         .part.part_homes
           .value {{ $store.state.homesNeeded }} 
           .copy Apartment <br />Homes Needed in 
-            b the Country
+            b(v-if="this.choice().type !== 'metro'") the Country
+            b(v-if="this.choice().type === 'metro'") {{ this.choice().value }}
         .part.part_numbers
           .graph
             i.fa.fa-2x.fa-bar-chart
@@ -146,7 +147,8 @@
         .part.part_homes
           .value {{ $store.state.homesNeeded }} 
           .copy Apartment <br />Homes Needed in 
-            b the Country
+            b(v-if="this.choice().type !== 'metro'") the Country
+            b(v-if="this.choice().type === 'metro'") {{ this.choice().value }}
         .part.part_numbers
           .graph
             i.fa.fa-2x.fa-bar-chart
