@@ -11,13 +11,13 @@
         .stat
           .value {{ homes }}
           .copy Apartment Homes
-        .stat
+        .stat(v-if="value(contrib) !== 0")
           .value ${{ contrib }}
           .copy Economic Contribution
-        .stat
+        .stat(v-if="value(contrib) !== 0")
           .value {{ jobs }}
           .copy Total Jobs Supported
-        .clear
+          .clear
 </template>
 
 <script>
@@ -50,6 +50,10 @@ export default {
   mixins: [ filtermixin ],
 
   methods: {
+
+    value (text) {
+      return numeral(text).value()
+    },
     populate () {
       switch (this.choice().type) {
         case 'national':
@@ -131,8 +135,9 @@ json('../assets/fonts.json')
         max-width 170px
         vertical-align top
         display inline-block
-        &:first-child, &:nth-child(2), &:nth-child(3)
-          border-right 1px solid white
+        border-right 1px solid white
+        &:last-child
+          border-right none
         > .value
           font h5
           padding 0 0 30px 0
