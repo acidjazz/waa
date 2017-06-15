@@ -29,20 +29,20 @@
           .pulldown(:class="{ selected: (by === 'metro') }")
             .checkbox: .fa.fa-check
             .pullarea
-              .pull: .fa.fa-chevron-down
               .select.select_metro
                 select(v-model="metro",@change="change('metro', $event.target.value)")
                   option(value="Metro Area") Metro Area
                   option(v-for="option in metros",:value="option",:selected="(option === metro)") {{ option }}
+              .pull: .fa.fa-chevron-down
 
           .pulldown(:class="{ selected: (by === 'state') }")
             .checkbox: .fa.fa-check
             .pullarea
-              .pull: .fa.fa-chevron-down
               .select.select_state
                 select(v-model="state",@change="change('state', $event.target.value)")
                   option(selected,value="State") State
                   option(v-for="option in states",:value="option",:selected="option === state") {{ option }}
+              .pull: .fa.fa-chevron-down
           .pulldown(:class="{ selected: (by === 'national') }",@click="change('national')")
             .checkbox: .fa.fa-check
             .pullarea
