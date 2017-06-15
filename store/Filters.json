@@ -15,6 +15,7 @@
     {
       "State": "Arkansas",
       "Abbeviation": "AR",
+      "Metro": "Little Rock",
       "District": 4
     },
     {
@@ -26,7 +27,7 @@
     {
       "State": "California",
       "Abbeviation": "CA",
-      "Metro": "Los Angeles, Riverside, San Diego, San Francisco",
+      "Metro": "Los Angeles, Riverside, San Diego, San Francisco, Sacramento, San Jose",
       "District": 53
     },
     {
@@ -67,6 +68,7 @@
     {
       "State": "Hawaii",
       "Abbeviation": "HI",
+      "Metro": "Honolulu",
       "District": 2
     },
     {
@@ -94,6 +96,7 @@
     {
       "State": "Kansas",
       "Abbeviation": "KS",
+      "Metro": "Kansas City",
       "District": 4
     },
     {
@@ -110,7 +113,7 @@
     },
     {
       "State": "Maine",
-      "Abbeviation": "MA",
+      "Abbeviation": "ME",
       "District": 2
     },
     {
@@ -121,7 +124,7 @@
     },
     {
       "State": "Massachusetts",
-      "Abbeviation": "ME",
+      "Abbeviation": "MA",
       "Metro": "Boston",
       "District": 9
     },
@@ -200,12 +203,13 @@
     {
       "State": "Ohio",
       "Abbeviation": "OH",
-      "Metro": "Cincinnati, Columbus",
+      "Metro": "Cincinnati, Columbus, Cleveland",
       "District": 16
     },
     {
       "State": "Oklahoma",
       "Abbeviation": "OK",
+      "Metro": "Oklahoma City",
       "District": 5
     },
     {
@@ -275,6 +279,7 @@
     {
       "State": "Wisconsin",
       "Abbeviation": "WI",
+      "Metro": "Milwaukee",
       "District": 8
     },
     {
