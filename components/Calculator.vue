@@ -51,7 +51,7 @@
   router-link.cta(@click.native="decide()",:to="'/calculated#by-' + by + '-value-' + value + '-number-' + number + '-type-' + type") Calculate
 
   .fade(:class="{ on: $route.name === 'calculated', off: $route.name !== 'calculated'}")
-  .calculated(:class="{ on: $route.name === 'calculated', off: $route.name !== 'calculated'}")
+  .calculated(:class="{ on: $route.name === 'calculated', off: $route.name !== 'calculated'}",v-on-clickaway="away")
     .inner
       .source Source: https://weareapartments.org/ {{ $route.path }}
       a.pdf(:href="'http://pdf.weareapartments.org?url=/calculated'+hashv.replace(/#/, 'hash')")
@@ -176,6 +176,8 @@ const json = {
 
 import Filters from '~/store/Filters.json'
 
+import { mixin as clickaway } from 'vue-clickaway'
+
 json.homes.national  = require('../store/US Apts.json').data['Total U.S.']
 json.homes.state  = require('../store/State Apartments.json').data
 json.homes.metro  = require('../store/Metro Occupied Apartments.json').data
@@ -191,6 +193,8 @@ json.impact.metro.spending = require('~/store/Spending Impacts (metro).json').da
 let numeral = require('numeral')
 
 export default {
+
+  mixins: [ clickaway ],
 
   watch: {
     number (n) {
@@ -220,6 +224,12 @@ export default {
   },
 
   methods: {
+
+    away () {
+      if (this.$route.name === 'calculated') {
+        this.$router.push('/calculator' + this.$route.hash)
+      }
+    },
 
     change (type, value) {
 
