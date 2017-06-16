@@ -163,10 +163,15 @@
       "District": 13
     },
     {
-      "State": "Nevada",
+      "State": "North Dakota",
       "Abbeviation": "ND",
-      "Metro": "Las Vegas",
       "District": 1
+    },
+    {
+      "State": "Nevada",
+      "Abbeviation": "NV",
+      "Metro": "Las Vegas",
+      "District": 4
     },
     {
       "State": "Nebraska",
@@ -188,11 +193,6 @@
       "Abbeviation": "NM",
       "Metro": "Albuquerque",
       "District": 3
-    },
-    {
-      "State": "Nevada",
-      "Abbeviation": "NV",
-      "District": 4
     },
     {
       "State": "New York",
