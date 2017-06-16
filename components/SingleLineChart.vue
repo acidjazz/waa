@@ -83,9 +83,8 @@ export default {
 
         case this.choice.type === 'state' && this.data === 'popgrowth':
           json = require('../store/State HH Growth.json').data[this.choice.value]
-          console.log(json)
           data.labels = [2016, 2030]
-          data.datas = [json[0], json[3]]
+          data.datas = [json[2], json[3]]
           spike = numeral(json[4]).format('0.00%').replace(/%/, '')
           break
 
