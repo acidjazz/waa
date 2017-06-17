@@ -89,16 +89,15 @@ module.exports = {
     }
   },
 
+  /*
   router: {
     scrollBehavior: function (to, from, savedPosition) {
-      return savedPosition
-      /*
-      if (to.name.indexOf('data') !== -1 && from.name.indexOf('data') !== -1) {
+      if (to.name.indexOf('data') !== -1 && from.name.indexOf('data') !== -1 && savedPosition) {
         return savedPosition
       }
-      */
     }
   },
+  */
 
   generate: {
     routes: routes

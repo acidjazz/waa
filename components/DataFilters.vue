@@ -104,6 +104,7 @@ export default {
       window.addEventListener('scroll', this.handleScroll)
       this.handleScroll()
     }
+
   },
   destroyed () {
     if (process.BROWSER_BUILD) {
@@ -166,6 +167,7 @@ json('../assets/colors.json')
     width 100%
     margin 0
     top 0
+    animation inFromTop 1s ease 0s both
     > .filters
       padding 10px 0
       height auto
@@ -220,8 +222,6 @@ json('../assets/colors.json')
     padding 60px 0
     border-top 2px solid lightgrey
     height 100px
-    &.sticky
-      position fixed
     > .inner
       width 792px
       margin auto
