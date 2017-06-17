@@ -244,7 +244,7 @@ export default {
       if (this.choice().type === 'district') {
         this.district = this.choice().value
       }
-    }
+    },
   },
   data () {
     return {

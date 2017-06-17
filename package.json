@@ -16,7 +16,6 @@
     "pug": "^2.0.0-rc.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
-    "vue-chartjs": "^2.6.3",
     "vue-clickaway": "^2.1.0",
     "vue-style-loader": "^3.0.1",
     "xls": "^0.5.1"

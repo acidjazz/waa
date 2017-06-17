@@ -66,7 +66,6 @@ export default {
         this.randto('eighties', this.average(values, 2), 400)
         this.randto('today', this.average(values, 3), 400)
       } else {
-        console.log(values)
         this.value.fifties = this.average(values, 0)
         this.value.sixties = this.average(values, 1)
         this.value.eighties = this.average(values, 2)

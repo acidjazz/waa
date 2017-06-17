@@ -1,23 +1,23 @@
 <template lang="pug">
-  #DataSummary
-    .inner
-      .copy {{ selection }}
-      .copy Apartments and their residents contribute more than $3.5 billion to the economy every day.
-      .copy_print Market Snapshot
-      .stats
-        .stat
-          .value {{ residents }}
-          .copy Apartment Residents
-        .stat
-          .value {{ homes }}
-          .copy Apartment Homes
-        .stat(v-if="value(contrib) !== 0")
-          .value ${{ contrib }}
-          .copy Economic Contribution
-        .stat(v-if="value(contrib) !== 0")
-          .value {{ jobs }}
-          .copy Total Jobs Supported
-          .clear
+#DataSummary(:class="{ filtersSticky: filtersSticky }")
+  .inner
+    .copy {{ selection }}
+    .copy Apartments and their residents contribute more than $3.5 billion to the economy every day.
+    .copy_print Market Snapshot
+    .stats
+      .stat
+        .value {{ residents }}
+        .copy Apartment Residents
+      .stat
+        .value {{ homes }}
+        .copy Apartment Homes
+      .stat(v-if="value(contrib) !== 0")
+        .value ${{ contrib }}
+        .copy Economic Contribution
+      .stat(v-if="value(contrib) !== 0")
+        .value {{ jobs }}
+        .copy Total Jobs Supported
+        .clear
 </template>
 
 <script>
@@ -89,7 +89,10 @@ export default {
   watch: {
     '$route' () {
       this.populate()
-    }
+    },
+    '$store.state.sticky' () {
+      this.filtersSticky = this.$store.state.sticky
+    },
   },
 
   computed: {
@@ -100,6 +103,7 @@ export default {
 
   data () {
     return {
+      filtersSticky: this.$store.state.sticky,
       residents: 0,
       homes: 0,
       contrib: 0,
@@ -117,6 +121,8 @@ json('../assets/fonts.json')
   background url('~static/building.jpg')
   color white
   text-align center
+  &.filtersSticky
+    margin 340px 0 0 0
   > .inner
     background linear-gradient(-67deg, rgba(#0099ff, 0.7), rgba(#00cccc, 0.7))
     padding 60px 0

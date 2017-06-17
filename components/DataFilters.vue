@@ -1,5 +1,5 @@
 <template lang="pug">
-#Filters
+#Filters(:class="{ sticky: $store.state.sticky }")
   .filters.closed(:class="{ open: !closed , closed: closed }")
     .inner
       .drawer(@click="closed = !closed")
@@ -47,6 +47,28 @@ import ordinal from 'ordinal'
 export default {
   mixins: [ clickaway, filtermixin ],
   methods: {
+    handleScroll () {
+
+      this.sticky = this.checkSticky()
+
+      if (this.$store.state.sticky !== this.sticky) {
+        this.$store.state.sticky = this.sticky
+        this.$store.commit('alterSticky', this.sticky)
+        this.$emit('alteredSticky')
+      }
+
+    },
+
+    checkSticky () {
+      if (!process.BROWSER_BUILD) {
+        return false
+      }
+      if (window.scrollY >= 240 && window.innerWidth >= 1000) {
+        return true
+      }
+      return false
+    },
+
     away () {
       for (let modal in this.modals) this.modals[modal] = false
     },
@@ -76,11 +98,22 @@ export default {
       }
     }
   },
-  created () {
+  mounted () {
     this.populate()
+    if (process.BROWSER_BUILD) {
+      window.addEventListener('scroll', this.handleScroll)
+      this.handleScroll()
+    }
   },
+  destroyed () {
+    if (process.BROWSER_BUILD) {
+      window.removeEventListener('scroll', this.handleScroll)
+    }
+  },
+
   data () {
     return {
+      sticky: this.checkSticky(),
       closed: true,
       data: Filters.data,
       metros: [],
@@ -91,11 +124,7 @@ export default {
         district: false
       }
     }
-  },
-  mounted () {
-    this.popupItem = this.$el
-  },
-
+  }
 }
 </script>
 
@@ -106,6 +135,7 @@ json('../assets/colors.json')
 .chevron
   position absolute
   left 50%
+  top 50px
   margin-left -13px
   bottom -12px
   width 0
@@ -114,6 +144,7 @@ json('../assets/colors.json')
   border-right 13px solid transparent
   border-bottom 13px solid lightblue
   z-index 20
+  animation inFromBottom 0.2s ease 0.1s both
   onoff()
   > .inner
     position relative
@@ -126,12 +157,28 @@ json('../assets/colors.json')
     border-bottom 13px solid lightwhite
 
 #Filters
+  &.sticky
+    position fixed
+    background-color rgba(255,255,255,0.95)
+    border-top 1px lightblue
+    border-bottom 1px lightblue
+    z-index 10
+    width 100%
+    margin 0
+    top 0
+    > .filters
+      padding 10px 0
+      height auto
+    > .modals
+      top 76px
+      > .modal
+        top 76px
   position relative
   margin 120px 0 0 0
   > .modals
     > .modal
       position absolute
-      top 120px
+      top 126px
       left 50%
       margin-left -300px
       width 600px
@@ -141,7 +188,7 @@ json('../assets/colors.json')
       border 1px solid lightblue
       border-radius 3px
       box-shadow 0px 0px 1px 0px rgba(black, 0.2)
-      animation fadeIn 0.2s ease-in-out 0s both
+      animation scaleIn 0.2s ease 0s both
       z-index 10
       > .close
         display none
@@ -173,6 +220,8 @@ json('../assets/colors.json')
     padding 60px 0
     border-top 2px solid lightgrey
     height 100px
+    &.sticky
+      position fixed
     > .inner
       width 792px
       margin auto
