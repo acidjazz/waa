@@ -125,6 +125,8 @@ json('../assets/fonts.json')
     margin 340px 0 0 0
   > .inner
     background linear-gradient(-67deg, rgba(#0099ff, 0.7), rgba(#00cccc, 0.7))
+    background-size 150% 150%
+    animation gradients 30s ease infinite
     padding 60px 0
     > .copy:first-child
       font-size 30px
@@ -153,5 +155,13 @@ json('../assets/fonts.json')
             animation-delay unit((0.02*i) + 0.1, 's')
 
 @import '../assets/stylus/datasummary-mobile.styl'
+@keyframes gradients
+  0%
+    background-position 0% 14%
+  50%
+    background-position 100% 87%
+  100%
+    background-position 0% 14%
+
 
 </style>
