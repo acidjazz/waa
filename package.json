@@ -6,6 +6,7 @@
   "private": true,
   "dependencies": {
     "@nuxtjs/font-awesome": "^1.0.0",
+    "aws-sdk": "^2.72.0",
     "chart.js": "^2.5.0",
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
@@ -13,12 +14,15 @@
     "numeral": "^2.0.6",
     "nuxt": "^1.0.0-alpha.4",
     "ordinal": "^1.0.2",
+    "progressbar": "^1.1.1",
     "pug": "^2.0.0-rc.1",
+    "s3": "^4.4.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
     "vue-clickaway": "^2.1.0",
     "vue-style-loader": "^3.0.1",
-    "xls": "^0.5.1"
+    "xls": "^0.5.1",
+    "yesno": "^0.0.1"
   },
   "scripts": {
     "dev": "nuxt",
