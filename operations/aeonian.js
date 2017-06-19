@@ -230,10 +230,11 @@ exports.updateCloudFrontOrigin = (id, domain, environment, complete) => {
       updateParams.Id = id
       updateParams.IfMatch = updateParams.ETag
       delete updateParams.ETag
-      updateParams.Origins.Items[0].DomainName = domain
 
       let previous = updateParams.Origins.Items[0].DomainName.replace('.s3-website-us-east-1.amazonaws.com', '')
-      domain = domain.replace('s3-website-us-east-1.amazonaws.com', '')
+      let current = domain.replace('s3-website-us-east-1.amazonaws.com', '')
+
+      updateParams.Origins.Items[0].DomainName = domain
 
       cloudfront.updateDistribution(updateParams, (terror, tdata) => {
         this.next('Updating ' + environment + ' CloudFront Origin with domain: ' + domain)
@@ -241,9 +242,9 @@ exports.updateCloudFrontOrigin = (id, domain, environment, complete) => {
           this.error('cf.updateDistribution Error' +  terror)
         } else {
           this.succeed()
-          if (domain !== previous) {
+          if (current !== previous) {
             this.next('Destroying previous bucket: ' + previous)
-            this.bucketDestroy(previous, () => {
+            this.destroyBucket(previous, () => {
               this.succeed()
             })
           } else {
