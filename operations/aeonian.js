@@ -15,7 +15,6 @@ const ora = require('ora')
 const spinner = ora('Loading aeonian').start()
 const AWS = require('aws-sdk')
 
-const yesno = require('yesno')
 const Progress = require('ascii-progress')
 
 var s3 = null
@@ -84,25 +83,18 @@ exports.deploy = (environment) => {
     return false
   }
 
-  yesno.ask('⚠ Deploy to ' + environment + ' with commit ' + revision + ' ? [yes/no]', true, (ok) => {
-    if (ok) {
-      this.listBuckets((buckets) => {
-        if (buckets.indexOf(bucket) !== -1) {
-          this.next('Bucket exists, removing')
-          this.info()
-          this.emptyBucket(bucket, () => {
-            this.deleteBucket(bucket, () => {
-              this.process(bucket, domain, environment)
-            })
-          })
-        } else {
-          this.process(bucket, domain, environment)
-        }
+  this.listBuckets((buckets) => {
+    if (buckets.indexOf(bucket) !== -1) {
+      this.next('Bucket exists, removing')
+      this.info()
+      this.destroyBucket(bucket, () => {
+        this.process(bucket, domain, environment)
       })
     } else {
-      console.log('aborting')
+      this.process(bucket, domain, environment)
     }
-  }, ['Yes'], ['No'])
+  })
+
 }
 
 exports.process = (bucket, domain, environment) => {
@@ -129,6 +121,14 @@ exports.listBuckets = (complete) => {
       buckets.push(data.Buckets[key].Name)
     }
     complete(buckets)
+  })
+}
+
+exports.destroyBucket = (bucket, complete) => {
+  this.emptyBucket(bucket, () => {
+    this.deleteBucket(bucket, () => {
+      complete()
+    })
   })
 }
 
@@ -178,32 +178,17 @@ exports.uploadToBucket = (bucket, complete) => {
 
   let uploader = client.uploadDir(params)
   uploader.on('error', (error) => {
-    console.log('unable to sync:', error.stack)
+    this.error('unable to sync:', error.stack)
   })
 
-  // let bar = false
   uploader.on('progress', () => {
-
     if (!isNaN(uploader.progressAmount / uploader.progressTotal)) {
-
       let done = (uploader.progressAmount / uploader.progressTotal * 100).toFixed(2)
       spinner.text = done + '% Uploading to bucket: ' + bucket
-
-      /*
-      if (bar === false) {
-        bar = new Progress({
-          schema: '[:bar.gradient(blue, green)] :percent.cyan :elapseds.blue :etas.green',
-          total: 100,
-        })
-      }
-      bar.update(done)
-      */
     }
-
   })
 
   uploader.on('end', () => {
-    // bar.clear()
     complete()
   })
 
@@ -239,20 +224,33 @@ exports.updateCloudFrontOrigin = (id, domain, environment, complete) => {
     if (error) {
       this.error('cf.getDistributionConfig Error ' +  error)
     } else {
+
       this.succeed()
       let updateParams = data
       updateParams.Id = id
       updateParams.IfMatch = updateParams.ETag
       delete updateParams.ETag
-      let previous = updateParams.Origins.Items[0].DomainName
       updateParams.Origins.Items[0].DomainName = domain
+
+      let previous = updateParams.Origins.Items[0].DomainName.replace('.s3-website-us-east-1.amazonaws.com', '')
+      domain = domain.replace('s3-website-us-east-1.amazonaws.com', '')
+
       cloudfront.updateDistribution(updateParams, (terror, tdata) => {
         this.next('Updating ' + environment + ' CloudFront Origin with domain: ' + domain)
         if (terror) {
           this.error('cf.updateDistribution Error' +  terror)
         } else {
           this.succeed()
-          complete()
+          if (domain !== previous) {
+            this.next('Destroying previous bucket: ' + previous)
+            this.bucketDestroy(previous, () => {
+              this.succeed()
+            })
+          } else {
+            this.next('Previous bucket was the same, leaving it alone')
+            this.succeed()
+            complete()
+          }
         }
       })
     }
