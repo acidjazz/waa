@@ -44,7 +44,7 @@ module.exports = {
     },
     choice () {
       if (this.state !== 'National' && this.metro === 'None' && this.district === 'None') {
-        return { type: 'state', value: this.state.trim(), state: this.state.trim() }
+        return { type: 'state', value: this.state.trim(), state: this.state.trim(), copy: this.state.trim() }
       }
       if (this.metro !== 'None') {
 
@@ -66,6 +66,7 @@ module.exports = {
         return {
           type: 'metro',
           value: this.metro,
+          copy: (this.metro === 'Dallas Fort Worth') ? 'Dallas-Fort Worth' : this.metro,
           state: state
         }
 
@@ -74,10 +75,11 @@ module.exports = {
         return {
           type: 'district',
           value: this.district,
+          copy: this.district,
           state: this.district.split(' ').slice(0, -1).join(' ')
         }
       }
-      return { type: 'national', value: 'National' }
+      return { type: 'national', value: 'National', copy: 'National' }
     }
   }
 }

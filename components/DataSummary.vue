@@ -75,6 +75,7 @@ export default {
           this.jobs = numeral(jobsDistrict.data[this.choice().value]).format('0.0a')
           break
         case 'metro':
+          console.log(jobsMetro.data['Dallas-Fort Worth'])
           this.residents = numeral(residentsMetro.data[this.choice().value][0]).format('0.0a')
           this.homes = numeral(homesMetro.data[this.choice().value]).format('0.0a')
           this.contrib = numeral(contribMetro.data[this.choice().value]).format('0.0a')
@@ -97,7 +98,7 @@ export default {
 
   computed: {
     selection () {
-      return this.choice().value
+      return this.choice().copy
     }
   },
 
