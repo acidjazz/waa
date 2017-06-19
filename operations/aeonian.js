@@ -1,5 +1,3 @@
-#!/usr/local/bin/node
-
 let cfg = {
   aws: {
     profile: 'default'
