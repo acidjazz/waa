@@ -11,4 +11,4 @@ let ae = require('./aeonian.js').config({
     production: 'E2V8N3K27D7G8H',
   }
 })
-ae.deploy('staging')
+ae.deploy('production')

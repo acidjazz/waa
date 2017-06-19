@@ -84,7 +84,7 @@ exports.deploy = (environment) => {
     return false
   }
 
-  yesno.ask('⚠ Deploy ' + environment + ' with commit ' + revision + ' ? [yes/no]', true, (ok) => {
+  yesno.ask('⚠ Deploy to ' + environment + ' with commit ' + revision + ' ? [yes/no]', true, (ok) => {
     if (ok) {
       this.listBuckets((buckets) => {
         if (buckets.indexOf(bucket) !== -1) {
@@ -167,9 +167,8 @@ exports.createBucket = (bucket, complete) => {
 
 exports.uploadToBucket = (bucket, complete) => {
   this.next('00.00% Uploading to bucket: ' + bucket)
-  // this.info()
   let params = {
-    localDir: "./dist/",
+    localDir: this.cfg.bucket.localDir,
     deleteRemoved: true,
     s3Params: {
       Bucket: bucket,

@@ -33,7 +33,7 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",
     "staging": "npm run generate;node operations/staging.js",
-    "rprod": "npm run generate;s3cmd sync dist/ s3://weareapartments.org/; s3cmd setacl s3://weareapartments.org/ --acl-public --recursive"
+    "production": "npm run generate;node operations/production.js"
   },
   "devDependencies": {
     "babel-eslint": "^7.1.1",

@@ -10,8 +10,8 @@
       .copy The country needs 4.6 million new apartments by 2030.
       .button.is-centered
         router-link(to="/data") LEARN MORE:
-  .border.big
-  GradientChart
+  //.border.big
+  //GradientChart
   Bottom
 </template>
 
