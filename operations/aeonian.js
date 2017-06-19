@@ -166,8 +166,8 @@ exports.createBucket = (bucket, complete) => {
 }
 
 exports.uploadToBucket = (bucket, complete) => {
-  this.next('Uploading to bucket: ' + bucket)
-  this.info()
+  this.next('00.00% Uploading to bucket: ' + bucket)
+  // this.info()
   let params = {
     localDir: "./dist/",
     deleteRemoved: true,
@@ -182,28 +182,29 @@ exports.uploadToBucket = (bucket, complete) => {
     console.log('unable to sync:', error.stack)
   })
 
-  let bar = false
+  // let bar = false
   uploader.on('progress', () => {
 
     if (!isNaN(uploader.progressAmount / uploader.progressTotal)) {
 
-      let done = (uploader.progressAmount / uploader.progressTotal).toFixed(2)
+      let done = (uploader.progressAmount / uploader.progressTotal * 100).toFixed(2)
+      spinner.text = done + '% Uploading to bucket: ' + bucket
 
+      /*
       if (bar === false) {
-
         bar = new Progress({
           schema: '[:bar.gradient(blue, green)] :percent.cyan :elapseds.blue :etas.green',
           total: 100,
         })
       }
-
       bar.update(done)
+      */
     }
 
   })
 
   uploader.on('end', () => {
-    bar.clear()
+    // bar.clear()
     complete()
   })
 
