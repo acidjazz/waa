@@ -32,7 +32,7 @@
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",
-    "staging": "npm run generate;s3cmd sync dist/ s3://waa.256.io/ --config=/Users/k/.s3/.s3cfg; s3cmd setacl --config=/Users/k/.s3/.s3cfg s3://waa.256.io/ --acl-public --recursive",
+    "staging": "npm run generate;operations/staging.js",
     "rprod": "npm run generate;s3cmd sync dist/ s3://weareapartments.org/; s3cmd setacl s3://weareapartments.org/ --acl-public --recursive"
   },
   "devDependencies": {

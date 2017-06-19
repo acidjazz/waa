@@ -6,26 +6,43 @@
       .copy Supply isn't meeting demand.
       .copy Unless we act now, America's affordability crisis will worsen.
     .legend
-      .stat
+      .stat.stat_pop(:class="{ active: (this.active === 'pop') }")
         .color.color_grey
         .copy Population<br /> Growth
         .value 9.79%
         i.fa.fa-long-arrow-up(aria-hidden=true)
-      .stat
+      .stat.stat_rent(:class="{ active: (this.active === 'rent') }")
         .color.color_red
         .copy Growth in Rentership Rate
         .value 20.4%
         i.fa.fa-long-arrow-up(aria-hidden=true)
-      .stat
+      .stat.stat_hh(:class="{ active: (this.active === 'hh') }")
         .color.color_darkgrey
         .copy Apartment Household Growth
         .value 12.79%
         i.fa.fa-long-arrow-up(aria-hidden=true)
     .values
-      .value 32k+
-      .value 4.5M+
-      .value 9k+
+      .value(v-on:mouseover="highlight('pop')") 32k+
+      .value(v-on:mouseover="highlight('rent')") 4.5M+
+      .value(v-on:mouseover="highlight('hh')") 9k+
 </template>
+<script>
+export default {
+  methods: {
+    highlight (stat) {
+      this.active = stat
+      let ti = setTimeout(() => {
+        this.active = false
+      }, 2000)
+    }
+  },
+  data () {
+    return {
+      active: false,
+    }
+  }
+}
+</script>
 <style lang="stylus">
 json('../assets/colors.json')
 json('../assets/fonts.json')
@@ -38,7 +55,7 @@ json('../assets/fonts.json')
     width inherit
     height inherit
     background-image url('/gradientChart.png')
-    background-position cover
+    background-size cover
   > .data
     position absolute
     width inherit
@@ -61,6 +78,12 @@ json('../assets/fonts.json')
         float left
         width 120px
         margin 0 30px 0 0
+        padding 10px
+        border-radius 3px
+        transition background-color 2s ease 0s 
+        &.active
+          background-color lightlime
+          transition background-color 0.2s ease 0s 
         &:nth-child(1) > .copy
           color grey
         &:nth-child(3) > .copy
@@ -92,9 +115,11 @@ json('../assets/fonts.json')
       position absolute
       top 50%
       right 30px
-      margin-top -75px
+      margin-top -160px
+      > .value
+        cursor pointer
       > .value:nth-child(2)
-        margin 120px 0
+        margin 140px 0
         color white
-
+@import '../assets/stylus/gradientchart-mobile.styl'
 </style>
