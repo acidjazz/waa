@@ -111,7 +111,7 @@
   .datapage_print
     .source Learn More @ https://weareapartments.org{{ path }}
     .section.section_demand(v-if="this.choice().type !== 'district'")
-      p {{ this.choice().value }}
+      p {{ this.choice().copy }}
       Demand(:type="this.choice().type",:value="this.choice().value")
     .section.section_district_name(v-if="this.choice().type === 'district'")
       .copy {{ this.choice().value }}
