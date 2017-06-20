@@ -46,7 +46,7 @@ exports.config = (cfg) => {
     this.error('You need to specify a CloudFront Id for production; cloudfront { staging: \'E3EOPOZJSPE\' }')
   }
 
-  bucket = this.cfg.bucket.prefix + revision
+  bucket = null
   domain = bucket + '.s3-website-us-east-1.amazonaws.com'
 
   AWS.config.credentials = new AWS.SharedIniFileCredentials({profile: this.cfg.aws.profile})
@@ -77,6 +77,8 @@ exports.next = (next) => {
 }
 
 exports.deploy = (environment) => {
+
+  bucket = this.cfg.bucket.prefix + revision + '-' + environment
 
   if (['staging', 'production'].indexOf(environment) === -1) {
     this.error('Invalid environment passed: ' + environment)

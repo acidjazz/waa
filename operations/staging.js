@@ -4,7 +4,7 @@ let ae = require('./aeonian.js').config({
   },
   bucket: {
     localDir: './dist/',
-    prefix: 'weareapartments-'
+    prefix: 'waa-'
   },
   cloudfront: {
     staging: 'E3V9YZZ4WARWYS',
