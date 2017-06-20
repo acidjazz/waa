@@ -200,7 +200,7 @@ exports.uploadToBucket = (bucket, complete) => {
 }
 
 exports.makeBucketWebsite = (bucket, complete) => {
-  this.next('Making bucket a website: ' + bucket)
+  this.next('Websiteing bucket: ' + bucket)
 
   s3.putBucketWebsite({
     Bucket: bucket,
@@ -231,10 +231,8 @@ exports.updateCloudFrontOrigin = (id, domain, environment, complete) => {
     if (error) {
       this.error('cf.getDistributionConfig Error ' +  error)
     } else {
-
       if (updated === false) {
         updated = true
-
         this.succeed()
         let updateParams = data
         updateParams.Id = id
@@ -245,7 +243,6 @@ exports.updateCloudFrontOrigin = (id, domain, environment, complete) => {
         let current = domain.replace('s3-website-us-east-1.amazonaws.com', '')
 
         updateParams.Origins.Items[0].DomainName = domain
-
         cloudfront.updateDistribution(updateParams, (terror, tdata) => {
           this.next('Updating ' + environment + ' CloudFront Origin with domain: ' + domain)
           if (terror) {
@@ -266,9 +263,7 @@ exports.updateCloudFrontOrigin = (id, domain, environment, complete) => {
           }
         })
       }
-
     }
-
   })
 }
 
