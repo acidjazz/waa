@@ -225,42 +225,51 @@ exports.makeBucketWebsite = (bucket, complete) => {
 
 exports.updateCloudFrontOrigin = (id, domain, environment, complete) => {
 
+  let updated = false
+
   this.next('Getting ' + environment + ' CloudFront Config with id: ' + id)
   cloudfront.getDistributionConfig({Id: id}, (error, data) => {
     if (error) {
       this.error('cf.getDistributionConfig Error ' +  error)
     } else {
 
-      this.succeed()
-      let updateParams = data
-      updateParams.Id = id
-      updateParams.IfMatch = updateParams.ETag
-      delete updateParams.ETag
+      if (updated === false) {
+        updated = true
 
-      let previous = updateParams.Origins.Items[0].DomainName.replace('.s3-website-us-east-1.amazonaws.com', '')
-      let current = domain.replace('s3-website-us-east-1.amazonaws.com', '')
+        this.succeed()
+        let updateParams = data
+        updateParams.Id = id
+        updateParams.IfMatch = updateParams.ETag
+        delete updateParams.ETag
 
-      updateParams.Origins.Items[0].DomainName = domain
+        let previous = updateParams.Origins.Items[0].DomainName.replace('.s3-website-us-east-1.amazonaws.com', '')
+        let current = domain.replace('s3-website-us-east-1.amazonaws.com', '')
 
-      cloudfront.updateDistribution(updateParams, (terror, tdata) => {
-        this.next('Updating ' + environment + ' CloudFront Origin with domain: ' + domain)
-        if (terror) {
-          this.error('cf.updateDistribution Error' +  terror)
-        } else {
-          this.succeed()
-          if (current !== previous) {
-            this.next('Destroying previous bucket: ' + previous)
-            this.destroyBucket(previous, () => {
-              this.succeed()
-            })
+        updateParams.Origins.Items[0].DomainName = domain
+
+        cloudfront.updateDistribution(updateParams, (terror, tdata) => {
+          this.next('Updating ' + environment + ' CloudFront Origin with domain: ' + domain)
+          if (terror) {
+            this.error('cf.updateDistribution Error' +  terror)
           } else {
-            this.next('Previous bucket was the same, leaving it alone')
             this.succeed()
-            complete()
+            if (current !== previous) {
+              this.next('Destroying previous bucket: ' + previous)
+              this.destroyBucket(previous, () => {
+                this.succeed()
+                complete()
+              })
+            } else {
+              this.next('Previous bucket was the same, leaving it alone')
+              this.succeed()
+              complete()
+            }
           }
-        }
-      })
+        })
+      }
+
     }
+
   })
 }
 
