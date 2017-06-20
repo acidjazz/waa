@@ -10,16 +10,19 @@
       .copy The country needs 4.6 million new apartments by 2030.
       .button.is-centered
         router-link(to="/data") LEARN MORE:
-  //.border.big
-  //GradientChart
+  .border.big
+  GradientChart
+  .border.big
+  FAQ
   Bottom
 </template>
 
 <script>
 import Top from '~/components/Top.vue'
 import GradientChart from '~/components/GradientChart.vue'
+import FAQ from '~/components/FAQ.vue'
 import Bottom from '~/components/Bottom.vue'
-export default { components: { Top, GradientChart, Bottom } }
+export default { components: { Top, GradientChart, FAQ, Bottom } }
 </script>
 
 <style lang="stylus">

@@ -78,6 +78,8 @@ let sheets = [
 
   'Metro Age of Occupied Stock',
 
+  'FAQ',
+
 ]
 
 for (let index in excel) {
@@ -136,6 +138,7 @@ for (let index in excel) {
     case 'US Population (Landing)':
     case 'Metro Restriction Index':
     case 'US Housing Costs':
+    case 'FAQ':
       data.data = {}
       for (let value in sheet.data) {
         if (sheet.data[value].length > 0) {
