@@ -62,8 +62,7 @@ json('../assets/fonts.json')
               color green
             > .copy
               color grey
-
-
+@import '../assets/stylus/faq-mobile.styl'
 </style>
 
 <script>
