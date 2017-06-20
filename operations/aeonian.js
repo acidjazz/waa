@@ -83,6 +83,10 @@ exports.deploy = (environment) => {
     return false
   }
 
+  this.invalidate(environment, this.cfg.cloudfront[environment], () => {
+    console.log('worrddd')
+  })
+
   this.listBuckets((buckets) => {
     if (buckets.indexOf(bucket) !== -1) {
       this.next('Bucket exists, removing')
@@ -102,9 +106,11 @@ exports.process = (bucket, domain, environment) => {
     this.uploadToBucket(bucket, () => {
       this.makeBucketWebsite(bucket, () => {
         this.updateCloudFrontOrigin(this.cfg.cloudfront[environment], domain, environment, () => {
-          this.next('All operations complete')
-          this.succeed()
-          process.exit()
+          this.invalidate(environment, this.cfg.cloudfront[environment], () => {
+            this.next('All operations complete')
+            this.succeed()
+            process.exit()
+          })
         })
       })
     })
@@ -258,3 +264,24 @@ exports.updateCloudFrontOrigin = (id, domain, environment, complete) => {
   })
 }
 
+exports.invalidate = (environment, Id, complete) => {
+  this.next('Creating Invalidation for ' + environment + ' (Id: ' + Id + ')')
+  let params = {
+    DistributionId: Id,
+    InvalidationBatch: {
+      CallerReference: new Date().valueOf().toString(),
+      Paths: {
+        Quantity: 1,
+        Items: ['/*']
+      }
+    }
+  }
+  cloudfront.createInvalidation(params, (error, data) => {
+    if (error) {
+      this.error('cloudfront.createInvalidation() Error: ' + error)
+    } else {
+      this.succeed()
+      complete()
+    }
+  })
+}
