@@ -11,7 +11,7 @@
           | state
           .chevron.chevron_states(:class="{ on: modals.state, off: !modals.state }")
             .inner
-        a.option(:class="{active: (this.choice().type === 'metro'), enabled: (this.metros.length > 0)}",@click="modal('metro')")
+        a.option.enabled(:class="{active: (this.choice().type === 'metro')}",@click="modal('metro')")
           | metro
           .chevron.chevron_metros(:class="{ on: modals.metro, off: !modals.metro }")
             .inner
@@ -83,19 +83,24 @@ export default {
     populate () {
       this.metros = []
       this.districts = []
-      if (this.choice().type === 'state' || this.choice().type === 'district' || this.choice().type === 'metro') {
-        for (let item of Filters.data) {
-          if (item.State === this.choice().state) {
-            if (item.Metro !== undefined) {
-              this.metros = item.Metro.split(',')
-            }
+      for (let item of Filters.data) {
 
-            for (let i = 1; i <= item.District; i++) {
-              this.districts.push(this.choice().state + " " + ordinal(i))
-            }
+        if (item.Metro !== undefined) {
+          for (let metro of item.Metro.split(',')) {
+            this.metros.push(metro.trim())
+          }
+        }
+
+        if (item.State === this.choice().state) {
+          for (let i = 1; i <= item.District; i++) {
+            this.districts.push(this.choice().state + " " + ordinal(i))
           }
         }
       }
+      this.metros.sort((a, b) => {
+        if (a < b) return -1
+        if (a > b) return 1
+      })
     }
   },
   mounted () {
@@ -196,8 +201,8 @@ json('../assets/colors.json')
         display none
       
       &.modal_metros
-        width 300px
-        margin-left -50px
+        width 600px
+        margin-left -250px
       &.modal_districts
         width 600px
         margin-left -250px
