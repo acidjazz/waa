@@ -47,7 +47,7 @@ exports.config = (cfg) => {
   }
 
   bucket = null
-  domain = bucket + '.s3-website-us-east-1.amazonaws.com'
+  domain = null
 
   AWS.config.credentials = new AWS.SharedIniFileCredentials({profile: this.cfg.aws.profile})
   s3 = new AWS.S3()
@@ -79,15 +79,12 @@ exports.next = (next) => {
 exports.deploy = (environment) => {
 
   bucket = this.cfg.bucket.prefix + revision + '-' + environment
+  domain = bucket + '.s3-website-us-east-1.amazonaws.com'
 
   if (['staging', 'production'].indexOf(environment) === -1) {
     this.error('Invalid environment passed: ' + environment)
     return false
   }
-
-  this.invalidate(environment, this.cfg.cloudfront[environment], () => {
-    console.log('worrddd')
-  })
 
   this.listBuckets((buckets) => {
     if (buckets.indexOf(bucket) !== -1) {
