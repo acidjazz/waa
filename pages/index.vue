@@ -37,7 +37,7 @@ json('../assets/fonts.json')
   > .hero
     color white
     height 100vh
-    width 100vw
+    width 100%
     text-align center
     overflow hidden
     position relative
