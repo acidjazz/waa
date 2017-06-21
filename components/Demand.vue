@@ -1,6 +1,6 @@
 <template lang="pug">
 p New research shows that demand for apartments is on the rise.  Whether it's young professionals, couples, families or empty nesters, 
-  b(v-if="type === 'national'") the country will add 
+  span(v-if="type === 'national'") the country will see a demand for an additional 
     span {{ households }} 
     | new apartment households 
     span by 2030

@@ -11,6 +11,9 @@
       .button.is-centered
         router-link(to="/data") LEARN MORE:
   .border.big
+  .demand
+    p The 2030 Demand
+    Demand(type='national')
   GradientChart
   .border.big
   FAQ
@@ -19,10 +22,11 @@
 
 <script>
 import Top from '~/components/Top.vue'
+import Demand from '~/components/Demand.vue'
 import GradientChart from '~/components/GradientChart.vue'
 import FAQ from '~/components/FAQ.vue'
 import Bottom from '~/components/Bottom.vue'
-export default { components: { Top, GradientChart, FAQ, Bottom } }
+export default { components: { Top, Demand, GradientChart, FAQ, Bottom } }
 </script>
 
 <style lang="stylus">
@@ -75,7 +79,19 @@ json('../assets/fonts.json')
           background-color white
           color darkblue
           font c1sb
-
+  .demand
+    text-align center
+    width 540px
+    margin auto
+    padding 60px 0
+    > p:first-child
+      font h2
+    > p:last-child
+      color grey
+      > span > span
+        font-weight bold
+        color black
+    border-bottom 2px solid lightgrey
 @media all and (min-width: 1px) and (max-width: 1000px)
   .page.home
     > .hero
@@ -83,5 +99,8 @@ json('../assets/fonts.json')
         > .copy:nth-child(2)
           font h1
           width auto
+    > .demand
+      width auto
+      padding 60px 10px
 </style>
 

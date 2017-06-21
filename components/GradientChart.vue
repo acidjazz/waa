@@ -6,25 +6,19 @@
       .copy Supply isn't meeting demand.
       .copy Unless we act now, America's affordability crisis will worsen.
     .legend
-      .stat.stat_pop(:class="{ active: (this.active === 'pop') }")
-        .color.color_grey
-        .copy Population<br /> Growth
-        .value 9.79%
-        i.fa.fa-long-arrow-up(aria-hidden=true)
-      .stat.stat_rent(:class="{ active: (this.active === 'rent') }")
-        .color.color_red
-        .copy Growth in Rentership Rate
-        .value 20.4%
-        i.fa.fa-long-arrow-up(aria-hidden=true)
       .stat.stat_hh(:class="{ active: (this.active === 'hh') }")
         .color.color_darkgrey
         .copy Apartment Household Growth
-        .value 12.79%
+        .value 4.6M
+        i.fa.fa-long-arrow-up(aria-hidden=true)
+      .stat.stat_rent(:class="{ active: (this.active === 'rent') }")
+        .color.color_red
+        .copy Population Growth 
+        .value 31.8M
         i.fa.fa-long-arrow-up(aria-hidden=true)
     .values
-      .value(v-on:mouseover="highlight('pop')") 32k+
-      .value(v-on:mouseover="highlight('rent')") 4.5M+
-      .value(v-on:mouseover="highlight('hh')") 9k+
+      .value(v-on:mouseover="highlight('hh')") 20.4%
+      .value(v-on:mouseover="highlight('pop')") 9.79%
 </template>
 <script>
 export default {
@@ -84,12 +78,11 @@ json('../assets/fonts.json')
         &.active
           background-color lightlime
           transition background-color 0.2s ease 0s 
-        &:nth-child(1) > .copy
-          color grey
-        &:nth-child(3) > .copy
+        &:nth-child(2) > .copy
           color grey
         &:last-child
           margin 0
+          width 100px
         > .copy
           font c1s
           padding 10px 0
@@ -114,8 +107,8 @@ json('../assets/fonts.json')
     > .values
       position absolute
       top 50%
-      right 30px
-      margin-top -160px
+      right 60px
+      margin-top -90px
       > .value
         cursor pointer
       > .value:nth-child(2)

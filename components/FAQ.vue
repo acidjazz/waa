@@ -2,7 +2,7 @@
 <template lang="pug">
 #FAQ
   .inner
-    .title Frequently Asked Questions
+    .title Why Should I Care?
     .qas
       .qa(v-for="answer,question of FAQ")
         .inner
