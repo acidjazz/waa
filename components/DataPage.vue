@@ -100,8 +100,8 @@
         .area.right
           .icon.icon-bars
           .copy 
-            span About the data 
-            | Read about the methodology behind all of the data. 
+            span Read 
+            | about the methodology behind all of the data. 
           router-link(to='/about').button learn more
         .clear
 

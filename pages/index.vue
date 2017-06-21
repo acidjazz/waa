@@ -9,7 +9,7 @@
       .copy welcome to we are apartments.
       .copy The country needs 4.6 million new apartments by 2030.
       .button.is-centered
-        router-link(to="/data") LEARN MORE:
+        router-link(to="/data") LEARN MORE
   .border.big
   .demand
     p The 2030 Demand

@@ -3,11 +3,11 @@
   .chart
   .data
     .copys
-      .copy Supply isn't meeting demand.
-      .copy Unless we act now, America's affordability crisis will worsen.
+      .copy Demand Is Rising
+      .copy Population growth, immigration and changing lifestyle preferences mean more people will be living in apartments in the future. The challenge, however, is building the number of apartment homes to meet that growing demand.
     .legend
       .stat.stat_hh(:class="{ active: (this.active === 'hh') }")
-        .color.color_darkgrey
+        .color.color_grey
         .copy Apartment Household Growth
         .value 4.6M
         i.fa.fa-long-arrow-up(aria-hidden=true)
@@ -18,7 +18,7 @@
         i.fa.fa-long-arrow-up(aria-hidden=true)
     .values
       .value(v-on:mouseover="highlight('hh')") 20.4%
-      .value(v-on:mouseover="highlight('pop')") 9.79%
+      .value(v-on:mouseover="highlight('rent')") 9.79%
 </template>
 <script>
 export default {
@@ -43,8 +43,10 @@ json('../assets/fonts.json')
 #GradientChart
   width 1200px
   height 563px
-  margin 60px auto
+  margin 60px auto 120px auto
+  position relative
   > .chart
+    top 60px
     position absolute
     width inherit
     height inherit
@@ -56,7 +58,7 @@ json('../assets/fonts.json')
     height inherit
     > .copys
       float left
-      width 300px
+      margin 0 0 0 90px
       > .copy:nth-child(1)
         font h1
         line-height 30px
@@ -64,7 +66,8 @@ json('../assets/fonts.json')
       > .copy:nth-child(2)
         font c1s
         color grey
-        width 200px
+        width 400px
+        line-height 30px
     > .legend
       float right
       margin 0 90px 0 0
@@ -91,13 +94,11 @@ json('../assets/fonts.json')
           height 10px
           border-radius 50%
           &.color_grey
-            background-color grey
+            background-color lightgrey
           &.color_red
             background-color red
-          &.color_darkgrey
-            background-color darkgrey
         > .value
-          font c1
+          font c4
         > .value
           float left
           padding 0 10px 0 0
@@ -108,9 +109,10 @@ json('../assets/fonts.json')
       position absolute
       top 50%
       right 60px
-      margin-top -90px
+      margin-top -40px
       > .value
         cursor pointer
+        font c4
       > .value:nth-child(2)
         margin 140px 0
         color white
