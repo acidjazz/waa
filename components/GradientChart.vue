@@ -17,7 +17,7 @@
         .value 31.8M
         i.fa.fa-long-arrow-up(aria-hidden=true)
     .values
-      .value(v-on:mouseover="highlight('hh')") 20.4%
+      .value(v-on:mouseover="highlight('hh')") 20.04%
       .value(v-on:mouseover="highlight('rent')") 9.79%
 </template>
 <script>

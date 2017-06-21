@@ -46,7 +46,7 @@ json('../assets/fonts.json')
           padding 30px
           > .question, > .answer
             > .letter
-              font c3
+              font c3b
               float left
             > .copy
               margin 0 0 0 30px
@@ -55,7 +55,7 @@ json('../assets/fonts.json')
             > .letter
               color red
             > .copy
-              font c3
+              font c3b
               letter-spacing -1px
           > .answer
             > .letter
