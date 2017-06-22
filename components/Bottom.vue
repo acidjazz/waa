@@ -1,6 +1,5 @@
 <template lang="pug">
 #Bottom
-  .border.big
   //.upper
     .section.navigation
       .link: router-link(to="/data") apartment data
@@ -15,8 +14,6 @@
             i.fa.fa-envelope(area-hidden=true)
         .clear
     .clear
-  .clear
-  .border.big
   .lower
     .inner
       .section.title
