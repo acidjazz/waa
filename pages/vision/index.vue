@@ -45,6 +45,22 @@
         .copy The Stakes are High
         .copy Keeping up with the demand for millions of apartments will mean public-private partnerships at all levels of government. If we don't start today, our nation's housing affordability crisis will only worsen.
     .border.small
+    .section.section_chart.section_chart_buildmore
+      .inner
+        .copy_legend
+          .copy We Need to Build More
+          .copy The country will need to build an average of 324,000 new apartment homes each year to keep up with demand. The industry averaged just 225,000 completions from 2011-2016.
+          .legend
+            .row
+              .color.color_purple
+              .copy number of new apartment households per year
+            .row
+              .color.color_yellow
+              .copy number of apartments built per year
+        .chart_area
+          // BuildMore
+        .clear
+    .border.small
     .section.section_chart.section_chart_metros
       .inner
         .copy_legend
