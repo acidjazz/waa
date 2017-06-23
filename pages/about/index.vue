@@ -11,7 +11,7 @@
           .copy Our Initiative
           .copy Growing apartment demand
           .copy Delayed marriages, an aging population and immigration are increasing a pressing need for new apartments, to the tune of 4.6 million by 2030. See how we can meet this demand.
-          .cta our vision
+          a.cta(href="Vision2030.pdf") our vision
 
       
       //.copy In communities across the country, apartments work – helping people live in a home that’s right for them. 
