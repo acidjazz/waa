@@ -1,2 +1,158 @@
-.page.page_vision
-  background-color white
+json('../../assets/colors.json')
+json('../../assets/fonts.json')
+
+.page.page_vision > .page_content
+  padding 120px 0 60px 0
+  > .section
+    &.section_top
+      > .inner
+        width 700px
+        margin auto
+        position relative
+        padding 60px 0
+        > .copy
+          font h2b
+          line-height 50px
+        > .highlight
+          width 202px
+          height 20px
+          background-image url(/vision-highlight.png)
+          background-size cover
+          animation scaleIn 1s ease 0s both
+          position absolute
+          top 110px
+          right 0
+        > .copys
+          color grey
+          line-height 36px
+
+
+    &.section_together
+      > .inner
+        width 700px
+        margin auto
+        padding 60px 0
+        > .copy:nth-child(1)
+          font h2
+          text-align center
+          padding 0 0 30px 0
+        > .copy:nth-child(2)
+          color grey
+          text-align center
+          width 480px
+          margin auto
+        > .blocks
+          padding 60px 0
+          column-count 2
+          column-gap 60px
+          > .block
+            height 200px
+            display table
+            > .icon
+              float left
+              padding 10px
+              margin 10px 0 0 0
+              background-color lightgrey
+              border-radiheartus 3px
+              &.icon-heart > .inner
+                width 32px
+                height 24px
+                background-image url(/icon-heart.png)
+              &.icon-comment > .inner
+                width 32px
+                height 25px
+                background-image url(/icon-comment.png)
+              &.icon-network > .inner
+                width 31px
+                height 32px
+                background-image url(/icon-network.png)
+              &.icon-shake > .inner
+                width 32px
+                height 25px
+                background-image url(/icon-shake.png)
+            > .copy
+              margin 0 0 0 70px
+            > .copy:nth-child(2)
+              color purple
+              text-transform upppercase
+              text-transform uppercase
+              padding 0 0 10px 0
+              font c1b
+            > .copy:nth-child(3)
+              color grey
+
+    &.section_download
+      background-color blue
+      color white
+      padding 60px 0
+      > .inner
+        width 900px
+        margin auto
+        > .copy
+          float left
+          font h3
+          width 600px
+          line-height 30px
+        > .cta
+          font c1sb
+          float right
+          padding 15px 30px
+          border 1px solid white
+          border-radius 3px
+          text-transform uppercase
+          text-decoration none
+          color white
+          transition background-color 0.2s ease 0s
+          transition color 0.2s ease 0s
+          &:hover
+            background-color white
+            color blue
+    &.section_stakes
+      padding 60px 0
+      > .inner
+        width 700px
+        margin auto
+        text-align center
+        > .copy:nth-child(1)
+          font h2b
+          padding 0 0 30px 0
+        > .copy:nth-child(2)
+          color grey
+          width 500px
+          margin auto
+    &.section_chart
+      padding 60px 0
+      > .inner
+        margin auto
+        width 1100px
+        > .copy_legend
+          float left
+          width 300px
+          > .copy:nth-child(1)
+            font h2
+          > .copy:nth-child(2)
+            color grey
+            padding 20px 0
+          > .legend
+            > .row
+              margin 0 0 10px 0
+              > .color
+                float left
+                width 10px
+                height 10px
+                border-radius 50%
+                margin 5px 0 0 0
+                &.color_grey
+                  background-color grey
+                &.color_darkblue
+                  background-color darkblue
+              > .copy
+                margin 0 0 0 20px
+                font c1sb
+                text-transform uppercase
+        > .chart_area
+          float right
+          margin 0 0 0 30px
+          width 770px
+          height 350px
+
