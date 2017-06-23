@@ -57,6 +57,7 @@ export default {
       sortable.sort((a, b) => {
         return a[1] - b[1]
       })
+      sortable.reverse()
       for (let key in sortable) {
         sorted[sortable[key][0]] = object[sortable[key][0]]
       }

@@ -58,7 +58,7 @@
               .color.color_yellow
               .copy number of apartments built per year
         .chart_area
-          // BuildMore
+          BuildMoreChart
         .clear
     .border.small
     .section.section_chart.section_chart_metros
@@ -83,7 +83,8 @@
 </style>
 <script>
 import Top from '~/components/Top.vue'
+import BuildMoreChart from '~/components/BuildMoreChart.vue'
 import MetroChart from '~/components/MetroChart.vue'
 import Bottom from '~/components/Bottom.vue'
-export default { components: { Top, MetroChart, Bottom } }
+export default { components: { Top, BuildMoreChart, MetroChart, Bottom } }
 </script>
