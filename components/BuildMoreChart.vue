@@ -93,6 +93,11 @@ let numeral = require('numeral')
 export default {
 
   methods: {
+
+    rand (min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min
+    },
+
     draw () {
 
       let Chart = require('chart.js')
@@ -100,11 +105,22 @@ export default {
       let data = []
       let datasets = []
       let labels = []
+      let yellow = []
 
       for (let key in houseHolds.data) {
         if (key >= 2017) {
           labels.push(key)
           data.push(houseHolds.data[key])
+        }
+      }
+
+      let j = 1
+      for (let i = 0; i !== 14; i++) {
+        j += (i * this.range) / 100
+        if (i % 2) {
+          yellow.push(Math.round(j) + (this.rand(j - 1, j + 1) / 20))
+        } else {
+          yellow.push(Math.round(j) - (this.rand(j - 1, j + 1) / 20))
         }
       }
 
@@ -118,6 +134,17 @@ export default {
         borderColor: colors.purple,
         borderWidth: 10,
         fill: false,
+        yAxisID: 'a',
+      }, {
+        data: yellow,
+        pointBackgorundColor: colors.yellow,
+        pointBorderWidth: 0,
+        pointRadius: 1,
+        pointBorderColor: colors.yellow,
+        borderColor: colors.yellow,
+        borderWidth: 5,
+        fill: false,
+        yAxisID: 'b',
       }]
 
       let tooltips = {
@@ -152,6 +179,7 @@ export default {
             }
           }],
           yAxes: [{
+            id: 'a',
             position: 'right',
             ticks: {
               callback: function (label, index, labels) {
@@ -159,6 +187,15 @@ export default {
               },
               maxTicksLimit: 5,
               fontSize: 12,
+            }
+          }, {
+            id: 'b',
+            display: false,
+            startAtZero: true,
+            ticks: {
+              beginAtZero: true,
+              min: -2,
+              max: 100,
             }
           }]
         }
@@ -169,6 +206,7 @@ export default {
       if (this.myChart !== null) {
         this.myChart.data.datasets = datasets
         this.myChart.data.labels = labels
+        this.myChart.options.animation = false
         this.myChart.update()
       }  else {
         this.myChart = new Chart(ctx, {
@@ -181,6 +219,12 @@ export default {
         })
       }
     },
+  },
+
+  watch: {
+    'range' () {
+      this.draw()
+    }
   },
 
   mounted () {
