@@ -1,9 +1,9 @@
 <template lang="pug">
 #MetroChart
   .control
-    .copy Flip between the easiest and hardest cities to add new apartments >
-    .button.button_percent(:class="{ active: flip === 'costs' }",@click="flip = 'costs'") % OF
-    .button.button_ease(:class="{ active: flip === 'interest'  }",@click="flip = 'interest'") EASE
+    .copy Sort between the hardest cities to build and affordability measures
+    .button.button_percent(:class="{ active: flip === 'costs' }",@click="flip = 'costs'") INCOME
+    .button.button_ease(:class="{ active: flip === 'interest'  }",@click="flip = 'interest'") INDEX
     .clear
   .chart
     canvas(id="MetroChart-chart",:width="width",:height="height")
@@ -115,6 +115,7 @@ export default {
         displayColors: false,
         bodyFontFamily: 'Maven Pro',
         bodyFontSize: 16,
+        titleFontSize: 16,
         backgroundColor: colors.lightgrey,
         titleFontColor: colors.black,
         bodyFontColor: colors.black,
@@ -161,11 +162,10 @@ export default {
             ticks: {
               // display: false,
               maxRotation: 0,
-              padding: 20,
             },
             gridLines: {
               display: false,
-              // tickMarkLength: 20,
+              tickMarkLength: 30,
             }
           }]
         },
@@ -199,7 +199,7 @@ export default {
       offset: 0,
       myChart: null,
       width: 770,
-      height: 320,
+      height: 380,
     }
   }
 }
@@ -215,30 +215,31 @@ json('../assets/fonts.json')
   width 100%
   height 100%
   > .control
-    width 620px
+    width 630px
     margin auto
     > .copy
       color grey
       float left
-      padding 6px 0 0 0
+      padding 6px 0 10px 0
     > .button
       float right
       cursor pointer
       padding 3px 15px
       border 1px solid transparent
       border-radius 3px
-      transition background-color 0.2s ease 0s
+      transition background-color 0.2s ease 0s, border 0.2s ease 0.1s, color 0.2s ease 0s
       &:hover:not(.active)
-        background-color lightgrey
+        color blue
+        border 1px solid rgba(lightblue, 0.6)
       &.active
-        border 1px solid lightgrey
+        border 1px solid lightblue
         color blue
       &:nth-child(2)
         margin 0 0 0 10px
   > nav
     position absolute
     width 100%
-    bottom -25px
+    bottom -10px
     left -5px
     z-index 10
     > div
@@ -250,10 +251,14 @@ json('../assets/fonts.json')
       border 1px solid lightblue
       background-color white
       transition background-color 0.2s ease 0s
-      &:hover
-        background-color lightgrey
+      > i
+        transition transform 0.4s ease 0s 
       &.prev
         float left
+        &:hover > i
+          transform translate(-2px, 0)
       &.next
         float right
+        &:hover > i
+          transform translate(2px, 0)
 </style>
