@@ -28,7 +28,6 @@ export default {
     }
   },
   methods: {
-
     alterOffset (dir) {
 
       if (dir < 1) {
@@ -151,7 +150,7 @@ export default {
             id: 'b',
             position: 'left',
             ticks: {
-              display: false
+              // display: false
             },
             gridLines: {
               display: false,
@@ -239,7 +238,7 @@ json('../assets/fonts.json')
   > nav
     position absolute
     width 100%
-    bottom -15px
+    bottom -25px
     left -5px
     z-index 10
     > div

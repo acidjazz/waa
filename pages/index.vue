@@ -9,7 +9,9 @@
       .copy welcome to we are apartments.
       .copy The country needs 4.6 million new apartments by 2030. How many are needed near you?
       .button.is-centered
-        router-link(to="/data") LEARN MORE
+        router-link(to="/vision") our vision
+      .button.is-centered
+        router-link(to="/data") the data
   .border.big
   .demand
     p The 2030 Demand
@@ -76,6 +78,20 @@ json('../assets/fonts.json')
       > .button
         animation fadeIn 0.2s linear 0.2s both
         > a
+          text-transform uppercase
+          padding 15px 40px
+          transition background-color 0.5s ease 0s, transform 0.2s ease 0s
+          &:hover
+            transform scale(1.05)
+        &:nth-child(3) > a
+          color white
+          font c1sb
+          margin 0 20px 0 0
+          background-color rgba(cyan, 0.2) 
+          border 1px solid rgba(cyan, 0.6)
+          &:hover
+            background-color rgba(cyan, 1) 
+        &:nth-child(4) > a
           background-color white
           color darkblue
           font c1sb
