@@ -16,7 +16,6 @@
     "Dallas Fort Worth": 0.48300677,
     "Denver": 0.49061765,
     "Detroit": 0.50210917,
-    "Honolulu": 0.53229982,
     "Houston": 0.56271869,
     "Indianapolis": 0.49706597,
     "Kansas City": 0.48256942,
@@ -48,8 +47,8 @@
     "San Francisco": 0.49007919,
     "San Jose": 0.50293404,
     "Seattle": 0.46434541,
-    "Sioux Falls": 0.23940923,
     "Tampa": 0.46778354,
+    "Honolulu": 0.53229982,
     "Washington D.C.": 0.48255508
   },
   "labels": [

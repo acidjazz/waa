@@ -8,12 +8,12 @@
         .highlight
         .copys
           p But getting there won't be easy. It is time to take action across the country, in ways that are tailored to the needs of each community. The apartment industry stands ready to work with urban, suburban and rural communities in every region to meet the housing demand of Americans across all income levels.
-          p Policymakers at all levels of government must recognize that addressing local housing needs requires a partnership between government and the private sector. The federal government can ensure sufficient funding of housing programs, enact a pro-housing tax policy, reform regulations that unnecessarily increase housing costs. 
+          p Policymakers at all levels of government must recognize that addressing local housing needs requires a partnership between government and the private sector. The federal government can ensure sufficient funding of housing programs, enact a pro-housing tax policy, and reform regulations that unnecessarily increase housing costs. 
     .border.small
     .section.section_together
       .inner
-        .copy We Can Do This Together
-        .copy State and local governments have a tool box of approaches they can take to address the apartment shortage and help reduce the cost of housing. They can: 
+        .copy We Can Do This
+        .copy State and local governments have a toolbox of approaches they can take to address the apartment shortage and help reduce the cost of housing. They can: 
         .blocks
           .block
             .icon.icon-heart
@@ -34,7 +34,7 @@
             .icon.icon-shake
               .inner
             .copy partnerships
-            .copy Increase public-private partnerships 
+            .copy Increase public-private partnerships to produce apartments that households can afford. 
     .section.section_download
       .inner
         .copy Read our Vision for 2030 on how public-private partnerships can help us solve the country's housing affordability challenge.
@@ -67,12 +67,12 @@
     .section.section_chart.section_chart_metros
       .inner
         .copy_legend
-          .copy Hardest and Easiest Metros
-          .copy When regulations or lack of available land make it harder to build apartments, costs go up for everyone. The Barriers to New Apartments Index shows the hardest and easiest cities to add the needed supply.
+          .copy Barriers to Apartments Mean Higher Rents
+          .copy When regulations or lack of available land make it harder to build apartments, costs go up for everyone. The Barriers to Apartments Index shows the hardest and easiest cities to add the needed supply.
           .legend
             .row
               .color.color_grey
-              .copy barriers to new apartments index
+              .copy barriers to apartments construction index
             .row
               .color.color_darkblue
               .copy % of apartment households paying over 30% of their income on rent

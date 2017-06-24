@@ -70,7 +70,10 @@ json('../assets/fonts.json')
         border-radius 50%
         background-color transparent
         margin-top -5px
-        box-shadow 0 2px 3px rgba(17, 17, 17, 0.1)
+        box-shadow 0 2px 3px rgba(17, 17, 17, 0.2)
+        transition all 0.4s ease 0s
+        &:hover
+          box-shadow 0 2px 3px rgba(17, 17, 17, 0.8)
         
         
       > input[type=range]::-webkit-slider-runnable-track
@@ -94,10 +97,6 @@ export default {
 
   methods: {
 
-    rand (min, max) {
-      return Math.floor(Math.random() * (max - min + 1)) + min
-    },
-
     draw () {
 
       let Chart = require('chart.js')
@@ -117,11 +116,7 @@ export default {
       let j = 1
       for (let i = 0; i !== 14; i++) {
         j += (i * this.range) / 100
-        if (i % 2) {
-          yellow.push(Math.round(j) + (this.rand(j - 1, j + 1) / 20))
-        } else {
-          yellow.push(Math.round(j) - (this.rand(j - 1, j + 1) / 20))
-        }
+        yellow.push(Math.round(j))
       }
 
       datasets = [{
@@ -151,6 +146,7 @@ export default {
         displayColors: false,
         bodyFontFamily: 'Maven Pro',
         bodyFontSize: 16,
+        titleFontSize: 16,
         backgroundColor: colors.lightpurple,
         titleFontColor: colors.purple,
         bodyFontColor: colors.purple,
