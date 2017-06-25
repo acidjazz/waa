@@ -91,12 +91,11 @@
         .chart_area
           DualLineChart
         .clear
-    .border.small
-
   Bottom
 </template>
 <style lang="stylus">
 @import '../../assets/stylus/vision.styl'
+@import '../../assets/stylus/vision-mobile.styl'
 </style>
 <script>
 import Top from '~/components/Top.vue'

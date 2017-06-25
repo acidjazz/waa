@@ -13,7 +13,7 @@
     .value 4.6 Million
     .copy Apartment Hones Needed
   .chart
-    canvas(id="BuildMoreChart-chart",:width="width",:height="height")
+    canvas(id="BuildMoreChart-chart")
 </template>
 
 <style lang="stylus">
@@ -87,8 +87,7 @@ json('../assets/fonts.json')
       > input[type=range]:focus::-webkit-slider-runnable-track
         background rgba(blue, 1)
 
-      
-
+@import '../assets/stylus/BuildMoreChart-mobile.styl'
 </style>
 
 <script>
