@@ -2,13 +2,13 @@
 #BuildMoreChart
   .controls
     .tip
-      .copy(v-if="range <= 25") Lowest level of multifamily completions on record (1993). Coincided with xx.
-      .copy(v-if="range >= 25 && range <= 50") Lowest level of completions since 1993 (2011), as the impacts of the 2008 Recession were felt.
-      .copy(v-if="range >= 50 && range <= 75") 2016 Completions
-      .copy(v-if="range >= 75") Peak of multifamily development in 1973, as Baby Boomers becoming adults and xx
+      .copy(v-if="range <= 25") Lowest level of multifamily completions on record (1993). At this rate <span>{{ needed }}</span> is needed.
+      .copy(v-if="range >= 25 && range <= 50") Lowest level of completions since 1993 (2011). At this rate <span>{{ needed }}</span> is needed.
+      .copy(v-if="range >= 50 && range <= 75") 2016 Completions. At this rate <span>{{ needed }}</span> is needed.
+      .copy(v-if="range >= 75") Peak of multifamily development in 1973, as Baby Boomers becoming adults. At this rate <span>{{ needed }}</span> is needed.
     .control
       input(type="range",v-model="range")
-    .copy ^ Adjust how histocal construction rates meet future apartment demands
+    .copy ^ Adjust how construction rates meet future apartment demand
   .copys
     .value 4.6 Million
     .copy Apartment Hones Needed
@@ -42,7 +42,9 @@ json('../assets/fonts.json')
       margin 0 0 10px 0
       height 52px
       > .copy
-        animation inFromLeft 0.5s ease 0s both
+        animation inFromLeft 0.1s ease 0s both
+        > span
+          animation fadeIn 0.1s ease 0s both
     > .copy
       color grey
       width 500px
@@ -91,7 +93,6 @@ json('../assets/fonts.json')
 
 <script>
 import colors from '~/assets/colors.json'
-import houseHolds from '~/store/US Apt HHs (Landing).json'
 let numeral = require('numeral')
 export default {
 
@@ -106,10 +107,14 @@ export default {
       let labels = []
       let yellow = []
 
-      for (let key in houseHolds.data) {
+      if (this.json === null) {
+        this.json = require('../store/US Building 2.json').data
+      }
+
+      for (let key in this.json) {
         if (key >= 2017) {
           labels.push(key)
-          data.push(houseHolds.data[key])
+          data.push(this.json[key][1])
         }
       }
 
@@ -118,6 +123,8 @@ export default {
         j += (i * this.range) / 100
         yellow.push(Math.round(j))
       }
+
+      this.needed = numeral((this.range * 5000000 / 100) + 328500).format('$0.0a')
 
       datasets = [{
         data: data,
@@ -228,10 +235,12 @@ export default {
   },
   data () {
     return {
+      json: null,
       width: 770,
       height: 320,
       myChart: null,
       range: 0,
+      needed: "$328.5k",
     }
   }
 }
