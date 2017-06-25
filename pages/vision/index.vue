@@ -45,7 +45,6 @@
         .copy The Stakes are High
         .copy Keeping up with the demand for millions of apartments will mean public-private partnerships at all levels of government. If we don't start today, our nation's housing affordability crisis will only worsen.
     .border.small
-    .clear
     .section.section_chart.section_chart_buildmore
       .inner
         .copy_legend
@@ -61,9 +60,7 @@
         .chart_area
           BuildMoreChart
         .clear
-    .clear
     .border.small
-    .clear
     .section.section_chart.section_chart_metros
       .inner
         .copy_legend
@@ -75,10 +72,27 @@
               .copy barriers to apartments construction index
             .row
               .color.color_darkblue
-              .copy % of apartment households paying over 30% of their income on rent
+              .copy % of households paying over 35% on rent
         .chart_area
           MetroChart
         .clear
+    .section.section_chart.section_chart_incomeafford
+      .inner
+        .copy_legend
+          .copy Income and Affordability
+          .copy Affordability is a growing problem and housing costs continue to climb while incomes haven't kept up
+          .legend
+            .row
+              .color.color_green
+              .copy income
+            .row
+              .color.color_yellow
+              .copy affordability
+        .chart_area
+          DualLineChart
+        .clear
+    .border.small
+
   Bottom
 </template>
 <style lang="stylus">
@@ -88,6 +102,7 @@
 import Top from '~/components/Top.vue'
 import BuildMoreChart from '~/components/BuildMoreChart.vue'
 import MetroChart from '~/components/MetroChart.vue'
+import DualLineChart from '~/components/DualLineChart.vue'
 import Bottom from '~/components/Bottom.vue'
-export default { components: { Top, BuildMoreChart, MetroChart, Bottom } }
+export default { components: { Top, BuildMoreChart, MetroChart, DualLineChart, Bottom } }
 </script>
