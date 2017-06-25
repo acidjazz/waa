@@ -2,14 +2,15 @@ json('../../assets/colors.json')
 json('../../assets/fonts.json')
 
 .page.page_vision > .page_content
-  padding 60px 0 60px 0
+  padding 60px 0
   > .section
+    > .inner
+      padding 60px 0
+      margin auto
     &.section_top
       > .inner
         width 700px
-        margin auto
         position relative
-        padding 60px 0
         > .copy
           font h2b
           line-height 50px
@@ -30,8 +31,6 @@ json('../../assets/fonts.json')
     &.section_together
       > .inner
         width 700px
-        margin auto
-        padding 60px 0
         > .copy:nth-child(1)
           font h2
           text-align center
@@ -84,10 +83,8 @@ json('../../assets/fonts.json')
     &.section_download
       background-color blue
       color white
-      padding 60px 0
       > .inner
         width 900px
-        margin auto
         > .copy
           float left
           font h3
@@ -108,10 +105,8 @@ json('../../assets/fonts.json')
             background-color white
             color blue
     &.section_stakes
-      padding 60px 0
       > .inner
         width 700px
-        margin auto
         text-align center
         > .copy:nth-child(1)
           font h2b
@@ -121,12 +116,16 @@ json('../../assets/fonts.json')
           width 500px
           margin auto
     &.section_chart
-      padding 120px 0
       overflow hidden
       &.section_chart_incomeafford
-        height 300px
+        height 470px
         > .inner > .copy_legend > .copy:nth-child(2)
           padding 50px 0
+      &.section_chart_buildmore
+        > .inner > .copy_legend > .copy:nth-child(2)
+          padding 30px 0 80px 0
+      &.section_chart_metros
+        height 560px
       > .inner
         margin auto
         width 1100px

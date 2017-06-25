@@ -261,4 +261,6 @@ json('../assets/fonts.json')
         float right
         &:hover > i
           transform translate(2px, 0)
+
+@import '../assets/stylus/MetroChart-mobile.styl'
 </style>

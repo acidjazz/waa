@@ -52,6 +52,7 @@ json('../assets/fonts.json')
           > .value
             float right
             font c3
+@import '../assets/stylus/DualLineChart-mobile.styl'
 </style>
 
 <script>
