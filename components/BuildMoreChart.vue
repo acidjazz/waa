@@ -44,7 +44,7 @@ json('../assets/fonts.json')
       > .copy
         animation inFromLeft 0.1s ease 0s both
         > span
-          animation fadeIn 0.1s ease 0s both
+          animation fadein 0.1s ease 0s both
     > .copy
       color grey
       width 500px
