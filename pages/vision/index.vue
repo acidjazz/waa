@@ -75,7 +75,7 @@
               .copy % of households paying over 35% on rent
         .chart_area
           MetroChart
-        .clear
+    .border.small
     .section.section_chart.section_chart_incomeafford
       .inner
         .copy_legend

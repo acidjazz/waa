@@ -5,18 +5,20 @@
       .data
         .copy income<br /> growth
         .spike
-          i.fa.fa-long-arrow-up(aria-hidden=true)
+          i.fa.fa-long-arrow-up(aria-hidden=true,v-if="spike.income.replace('%', '') > 0")
+          i.fa.fa-long-arrow-down(aria-hidden=true,v-if="spike.income.replace('%', '') < 0")
           .value {{ spike.income }}
       .chart
-        canvas(id="ChartIncome",:width="width", :height="height")
+        canvas(id="Chart-income",:width="width", :height="height")
     .block
       .data
         .copy rent burdened<br /> apartment households
         .spike
-          i.fa.fa-long-arrow-up(aria-hidden=true)
+          i.fa.fa-long-arrow-up(aria-hidden=true,v-if="spike.affordability.replace('%', '') > 0")
+          i.fa.fa-long-arrow-down(aria-hidden=true,v-if="spike.affordability.replace('%', '') < 0")
           .value {{ spike.affordability }}
       .chart
-        canvas(id="ChartAffordability",:width="width", :height="height")
+        canvas(id="Chart-affordability",:width="width", :height="height")
 
 </template>
 
@@ -29,7 +31,7 @@ json('../assets/fonts.json')
       float left
       width calc(50% - 24px)
       border 1px solid lightgrey
-      border-radius 3px
+      border-radius 6px
       &:first-child
         margin-right 20px
       > .data
@@ -42,8 +44,11 @@ json('../assets/fonts.json')
           float right
           > i
             float left
-            color green
             padding 2px 5px 0 0
+            &.fa-long-arrow-up
+              color lime
+            &.fa-long-arrow-down
+              color tomato
           > .value
             float right
             font c3
@@ -59,8 +64,6 @@ import json from '~/store/US Affordability (Landing).json'
 import colors from '~/assets/colors.json'
 export default {
   mixins: [ chartmixin ],
-  props: ['width', 'height'],
-
   methods: {
     compile () {
       let data = {
@@ -78,15 +81,55 @@ export default {
       this.spike.income = numeral((data.datas[1][data.datas[1].length - 1] - data.datas[1][0]) / data.datas[1][0]).format('0%')
 
       this.draw('income', data.labels, data.datas[0])
+      this.draw('affordability', data.labels, data.datas[1])
 
     },
 
     draw (type, labels, data) {
 
       if (this.charts[type] !== null) {
-        this.charts[type].datasets.data = data
+        this.charts[type].datasets[0].data = data
         this.charts[type].update()
+        return true
       }
+      let datasets = []
+      datasets[0] = this.chartDataset()
+      datasets[0].data = data
+
+      let options = this.chartOptions()
+      datasets[0].pointRadius = 0
+      datasets[0].lineTension = 0
+
+      options.scales.yAxes[0].gridLines.color = colors.white
+      options.scales.yAxes[0].gridLines.display = false
+      options.scales.yAxes[0].position = 'right'
+      options.scales.yAxes[0].ticks.fontColor = colors.grey
+      options.scales.xAxes[0].gridLines.display = false
+      options.scales.xAxes[0].ticks.fontColor = colors.grey
+
+      options.layout.padding = {
+        top: 10,
+        left: 10,
+        right: 10,
+        bottom: 30,
+      }
+
+      if (type === 'income') {
+        datasets[0].borderColor = colors.lime
+        datasets[0].fill = false
+      } else {
+        datasets[0].borderColor = colors.yellow
+        datasets[0].fill = false
+      }
+
+      this.charts[type] = new this.Chart('Chart-' + type, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: datasets,
+        },
+        options: options,
+      })
 
     },
   },
@@ -98,9 +141,11 @@ export default {
         affordability: null,
       },
       spike: {
-        affordability: 0,
-        income: 0,
-      }
+        affordability: '0',
+        income: '0',
+      },
+      width: '432',
+      height: '340',
     }
   },
 
