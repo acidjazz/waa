@@ -11,7 +11,7 @@
           .copy Our Initiative
           .copy Growing apartment demand
           .copy Delayed marriages, an aging population and immigration are increasing a pressing need for new apartments, to the tune of 4.6 million by 2030. See how we can meet this demand.
-          a.cta(href="Vision2030.pdf") our vision
+          router-link.cta(to="/vision") our vision
 
       
       //.copy In communities across the country, apartments work – helping people live in a home that’s right for them. 
@@ -74,7 +74,7 @@
           .inner
             .copy The Report
             .copy NMHC and NAA partnered with Hoyt Advisory Services to identify the demand for apartments through 2030. Download their analysis of the apartment industry.
-            .cta download
+            a.cta(href="/NMHC-NAA-US-Apartment-Demand-in-2030.pdf") download
 
         .block.right
           .inner
