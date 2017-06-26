@@ -45,7 +45,7 @@
         .copy The Stakes are High
         .copy Keeping up with the demand for millions of apartments will mean public-private partnerships at all levels of government. If we don't start today, our nation's housing affordability crisis will only worsen.
     .border.small
-    .section.section_chart.section_chart_buildmore
+    //.section.section_chart.section_chart_buildmore
       .inner
         .copy_legend
           .copy We Need to Build More
@@ -60,8 +60,8 @@
         .chart_area
           BuildMoreChart
         .clear
-    .border.small
-    .section.section_chart.section_chart_metros
+    //.border.small
+    //.section.section_chart.section_chart_metros
       .inner
         .copy_legend
           .copy Barriers to Apartments Mean Higher Rents
@@ -75,8 +75,8 @@
               .copy % of households paying over 35% on rent
         .chart_area
           MetroChart
-    .border.small
-    .section.section_chart.section_chart_incomeafford
+    //.border.small
+    //.section.section_chart.section_chart_incomeafford
       .inner
         .copy_legend
           .copy Income and Affordability
