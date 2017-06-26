@@ -494,7 +494,7 @@ json('../assets/fonts.json')
         margin 50px 0 0 0
         > .copy
           font c1ssb
-          width 240px
+          width 280px
           text-transform uppercase
         > .HeatChart
           margin 5px 0 0 0
@@ -502,10 +502,11 @@ json('../assets/fonts.json')
             margin-top -55px
             width 160px
         > .tip
-          font c1s
+          font c1ss
           color grey
           text-align center
-          width 200px
+          width 160px
+          margin 0 0 0 20px
       > .right
         float right
         border none
@@ -522,6 +523,7 @@ json('../assets/fonts.json')
         > .copy:nth-child(1)
           font c1
           float left
+          margin 20px 0 0 0
           width 177px
         > .copy:nth-child(2)
           font c1s
