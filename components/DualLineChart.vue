@@ -3,7 +3,7 @@
   .charts
     .block
       .data
-        .copy income<br /> growth
+        .copy rent burdened<br /> apartment households
         .spike
           i.fa.fa-long-arrow-up(aria-hidden=true,v-if="spike.income.replace('%', '') > 0")
           i.fa.fa-long-arrow-down(aria-hidden=true,v-if="spike.income.replace('%', '') < 0")
@@ -12,7 +12,7 @@
         canvas(id="Chart-income",:width="width", :height="height")
     .block
       .data
-        .copy rent burdened<br /> apartment households
+        .copy income<br /> growth
         .spike
           i.fa.fa-long-arrow-up(aria-hidden=true,v-if="spike.affordability.replace('%', '') > 0")
           i.fa.fa-long-arrow-down(aria-hidden=true,v-if="spike.affordability.replace('%', '') < 0")
@@ -74,12 +74,12 @@ export default {
 
       for (let key in json.data) {
         data.labels.push(key)
-        data.datas[0].push(json.data[key][0])
         data.datas[1].push(json.data[key][1])
+        data.datas[0].push(json.data[key][0])
       }
 
-      this.spike.affordability = numeral((data.datas[0][data.datas[0].length - 1] - data.datas[0][0]) / data.datas[0][0]).format('0%')
-      this.spike.income = numeral((data.datas[1][data.datas[1].length - 1] - data.datas[1][0]) / data.datas[1][0]).format('0%')
+      this.spike.income = numeral((data.datas[0][data.datas[0].length - 1] - data.datas[0][0]) / data.datas[0][0]).format('0%')
+      this.spike.affordability = numeral((data.datas[1][data.datas[1].length - 1] - data.datas[1][0]) / data.datas[1][0]).format('0%')
 
       this.draw('income', data.labels, data.datas[0])
       this.draw('affordability', data.labels, data.datas[1])

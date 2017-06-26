@@ -70,7 +70,7 @@
         .copy barriers to apartments construction
         HeatChart(:metro="this.choice().value")
         .tip Index based on local regulations and available land
-        .title Rep Tape Rating
+        .title Red Tape Rating
         .copy Over the last three decades, regulatory barriers to apartment construction have increased significantly, most notably at the local level.
       .chart
         MultiLineChart(:animation="true",:type="this.choice().type",:value="this.choice().value",:state="this.choice().state",data='aptsneeded',id='aptsneeded',theme="red",width=830,height=300)

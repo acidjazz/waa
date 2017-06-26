@@ -120,8 +120,9 @@ export default {
       let j = 1
       for (let i = 0; i !== 14; i++) {
         j += (i * this.range) / 100
-        yellow.push(Math.round(j))
+        yellow.push(Math.round(j) + 10)
       }
+      console.log(yellow)
 
       this.needed = numeral((this.range * 5000000 / 100) + 328500).format('0.0a')
 

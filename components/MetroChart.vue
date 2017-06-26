@@ -140,8 +140,8 @@ export default {
             id: 'a',
             position: 'right',
             ticks: {
-              beginAtZero: true,
-              max: 1.0,
+              max: 0.55,
+              min: 0.30,
               maxTicksLimit: 5,
               userCallback: (label, index, labels) => {
                 return numeral(label).format('0%')
@@ -151,7 +151,8 @@ export default {
             id: 'b',
             position: 'left',
             ticks: {
-              // display: false
+              max: 20,
+              min: -5.9,
             },
             gridLines: {
               display: false,
@@ -240,7 +241,8 @@ json('../assets/fonts.json')
     position absolute
     width 100%
     bottom -10px
-    left -5px
+    left -15px
+    right 0
     z-index 10
     > div
       text-align center
