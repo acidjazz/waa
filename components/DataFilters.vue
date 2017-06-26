@@ -227,7 +227,6 @@ json('../assets/colors.json')
     clear both
     padding 60px 0
     border-top 2px solid lightgrey
-    height 100px
     > .inner
       width 680px
       margin auto
