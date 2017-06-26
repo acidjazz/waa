@@ -22,6 +22,8 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
     "vue-clickaway": "^2.1.0",
+    "vue-in-viewport-directive": "^1.1.4",
+    "vue-in-viewport-mixin": "^1.0.3",
     "vue-style-loader": "^3.0.1",
     "xls": "^0.5.1",
     "yesno": "^0.0.1"

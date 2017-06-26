@@ -67,9 +67,9 @@
           .dot
             .value
             .copy needed rate text
-      // .left.left_inyourcity(v-if="this.choice().type === 'metro'")
-        // .copy barriers to new apartments index
-        // HeatChart(:metro="this.choice().value")
+      .left.left_inyourcity(v-if="this.choice().type === 'metro'")
+        .copy barriers to new apartments index
+        HeatChart(:metro="this.choice().value")
       .chart
         MultiLineChart(:animation="true",:type="this.choice().type",:value="this.choice().value",:state="this.choice().state",data='aptsneeded',id='aptsneeded',theme="red",width=830,height=300)
       .clear
@@ -160,7 +160,8 @@
       .left(v-if="this.choice().type !== 'metro'")
         // CircleChart(id="renters_print",width="225",height="225",value="70")
       .left(v-else)
-        //HeatChart(:metro="this.choice().value")
+        .copy barriers to new apartments index
+        HeatChart(:metro="this.choice().value")
       .right
         MultiLineChart(:animation="false",:type="this.choice().type",:value="this.choice().value",:state="this.choice().state",data='aptsneeded',id='aptsneeded_print',theme="red",width=510,height=225)
       .clear
@@ -485,9 +486,15 @@ json('../assets/fonts.json')
         border none
         width 0px
         height 225px
+        margin 50px 0 0 0
+        > .copy
+          font c1ssb
+          width 300px
+          text-transform uppercase
         > .HeatChart
           > .legend
             margin-top -30px
+            width 160px
       > .right
         float right
         border none
@@ -499,16 +506,16 @@ json('../assets/fonts.json')
         width 255px
         display none
       > .copyRight
-        //float right
-        padding-top 20px
-        width 200px
-        margin -230px 0 0 0
       > .copys
         float left
         > .copy:nth-child(1)
           font c1
+          float left
+          width 177px
         > .copy:nth-child(2)
           font c1s
+          float right
+          width 565px
           padding 5px 0 0 0
           color grey
           margin 0 5px 0 0
@@ -601,22 +608,15 @@ json('../assets/fonts.json')
       > .copyLeft
         float left
         width 300px
-      > .copyRight
-        // float right
-        // width 800px
-        //float right
-        padding-top 20px
-        width 300px
-        margin -330px 0 0 40px
       > .copys
         > .copy:nth-child(1)
           font h1
-          padding 0 0 10px 0
+          float left
         > .copy:nth-child(2)
+          float right
+          width 800px
           font c1
-          padding 5px 0 60px 0
           color grey
-          margin 0 5px 0 0
 
       > .left
         float left
@@ -676,7 +676,7 @@ json('../assets/fonts.json')
       > .chart
         float right
         width 800px
-        margin 0  0 30px
+        margin 0 0 30px
     > .section_links
       > .inner
         padding 60px 0
