@@ -64,12 +64,12 @@
     .section.section_chart.section_chart_metros
       .inner
         .copy_legend
-          .copy Barriers to Apartment Mean Higher Rents
+          .copy Barriers to Apartments Mean Higher Rents
           .copy When regulations or lack of available land make it harder to build apartments, costs go up for everyone. The Barriers to Apartment Construction Index shows the hardest and easiest cities to add the needed supply.
           .legend
             .row
               .color.color_grey
-              .copy barriers to apartments construction index
+              .copy barriers to apartment construction index
             .row
               .color.color_darkblue
               .copy % of households paying over 35% on rent
@@ -80,7 +80,7 @@
       .inner
         .copy_legend
           .copy Income and Affordability
-          .copy Affordability is a growing problem and housing costs continue to climb while incomes haven't kept up
+          .copy Housing affordability is a growing problem. Housing costs continue to clime while incomes haven't kept up.
           .legend
             .row
               .color.color_green
