@@ -16,7 +16,7 @@
 
 <script>
 import colors from '~/assets/colors.json'
-import housingCosts from '~/store/Metro Housing Costs.json'
+import housingCosts from '~/store/Metro Burden.json'
 import restrictIndex from '~/store/Metro Restriction Index.json'
 let numeral = require('numeral')
 export default {
@@ -195,7 +195,7 @@ export default {
   },
   data () {
     return {
-      flip: 'costs',
+      flip: 'interest',
       offset: 0,
       myChart: null,
       width: 770,

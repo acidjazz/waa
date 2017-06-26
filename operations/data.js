@@ -83,6 +83,8 @@ let sheets = [
 
   'FAQ',
 
+  'Metro Burden',
+
 ]
 
 for (let index in excel) {
@@ -143,6 +145,7 @@ for (let index in excel) {
     case 'US Housing Costs':
     case 'Metro Housing Costs':
     case 'FAQ':
+    case 'Metro Burden':
       data.data = {}
       for (let value in sheet.data) {
         if (sheet.data[value].length > 0) {
