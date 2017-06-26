@@ -5,7 +5,6 @@
     .clear
     DataFilters(:state="state",:metro="metro",:district="district")
     DataSummary(:state="state",:metro="metro",:district="district")
-    .border.big
     .section.section_demand(v-if="this.choice().type !== 'district'")
       p The Demand
       Demand(:type="this.choice().type",:value="this.choice().value")
@@ -702,7 +701,7 @@ json('../assets/fonts.json')
         margin 0 0 30px
     > .section_links
       > .inner
-        padding 60px 0
+        padding 90px 0
         width 831px
         margin auto
         text-align center

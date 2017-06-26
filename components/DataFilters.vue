@@ -189,6 +189,7 @@ json('../assets/colors.json')
       left 50%
       margin-left -300px
       width 600px
+      padding 10px
       max-height 280px
       overflow scroll
       background-color lightwhite
@@ -226,9 +227,8 @@ json('../assets/colors.json')
     clear both
     padding 60px 0
     border-top 2px solid lightgrey
-    height 100px
     > .inner
-      width 792px
+      width 680px
       margin auto
       text-transform uppercase
       font-size 14px
