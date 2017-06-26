@@ -40,7 +40,7 @@
         .copy Read our Vision for 2030 on how public-private partnerships can help us solve the country's housing affordability challenge.
         a.cta(href="/Vision2030.pdf") download
         .clear
-    .section.section_stakes
+    //.section.section_stakes
       .inner
         .copy The Stakes are High
         .copy Keeping up with the demand for millions of apartments will mean public-private partnerships at all levels of government. If we don't start today, our nation's housing affordability crisis will only worsen.
