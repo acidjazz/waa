@@ -103,7 +103,8 @@ json('../assets/fonts.json')
         line-height 70px
   > .legend
     width 200px
-    margin auto
+    margin -50px auto 0 auto
+
     > .copy:first-child
       float left
     > .copy:nth-child(2)
