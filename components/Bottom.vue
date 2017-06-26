@@ -1,6 +1,7 @@
 <template lang="pug">
 #Bottom
-  //.upper
+  .border.big
+  .upper
     .section.navigation
       .link: router-link(to="/data") apartment data
       .link: router-link(to="/calculator") apartment calculator
@@ -8,10 +9,18 @@
     .section.signup
       .inner
         .copy Subscribe to the newsletter and we will keep you up to date.
+
         .input
-          input(type="text",placeholder="E-mail")
-          a.send(href="/")
-            i.fa.fa-envelope(area-hidden=true)
+          form(
+            action="//weareapartments.us16.list-manage.com/subscribe/post?u=b5b3c7cd44e8ec9c9b1c2e7c4&amp;id=5cb9d4e7ac",
+            method="post",
+            id="mc-embedded-subscribe-form",
+            name="mc-embedded-subscribe-form",
+            target="_blank"
+            )
+            input#mce-EMAIL(type="email",placeholder="E-mail",name="EMAIL")
+            a.send(href="/",onclick="document.forms['mc-embedded-subscribe-form'].submit(); return false;")
+              i.fa.fa-envelope(area-hidden=true)
         .clear
     .clear
   .lower
@@ -70,17 +79,20 @@ json('../assets/fonts.json')
           border-radius 3px
           padding 0 10px
           margin 0 0 0 30px
-          > input
-            border none
-            outline none
-            padding 5px
-            width 170px
-            font c1
-            &::placeholder
+          > form
+            padding 0
+            margin 0
+            > input
+              border none
+              outline none
+              padding 5px
+              width 170px
+              font c1
+              &::placeholder
+                color lightblue
+            > a > i
               color lightblue
-          > a > i
-            color lightblue
-            padding 10px 0 0 0
+              padding 10px 0 0 0
 
   > .lower
     background-color darkblue
