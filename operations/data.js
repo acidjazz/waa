@@ -43,6 +43,7 @@ let sheets = [
   'State New Apt HHs Per Year',
   'State Rentership Rate',
   'State HH Growth',
+  'State Renter Households',
 
   // Metro Page - Apt Household Growth, rentership grwoth, population growth
   'Metro New Apt HHs Per Year',
@@ -190,6 +191,7 @@ for (let index in excel) {
     case 'Metro Apt Residents':
     case 'Metro Age of Occupied Stock':
     case 'State HH Growth':
+    case 'State Renter Households':
 
       data.data = {}
       for (let value in sheet.data) {

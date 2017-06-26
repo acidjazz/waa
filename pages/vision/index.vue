@@ -64,8 +64,8 @@
     .section.section_chart.section_chart_metros
       .inner
         .copy_legend
-          .copy Barriers to Apartments Mean Higher Rents
-          .copy When regulations or lack of available land make it harder to build apartments, costs go up for everyone. The Barriers to Apartments Index shows the hardest and easiest cities to add the needed supply.
+          .copy Barriers to Apartment Mean Higher Rents
+          .copy When regulations or lack of available land make it harder to build apartments, costs go up for everyone. The Barriers to Apartment Construction Index shows the hardest and easiest cities to add the needed supply.
           .legend
             .row
               .color.color_grey

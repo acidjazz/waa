@@ -557,7 +557,7 @@ json('../assets/fonts.json')
         font h1
       > p:nth-child(2)
         color grey
-        max-width 500px
+        max-width 540px
         margin auto
         > b
           color black
