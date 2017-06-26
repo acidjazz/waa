@@ -34,12 +34,12 @@ json('../assets/colors.json')
 <script>
 
 import colors from '~/assets/colors.json'
+import chartmixin from '~plugins/chart-mixin.js'
 let numeral = require('numeral')
 
 export default {
-
+  mixins: [ chartmixin ],
   props: ['id', 'data', 'choice', 'theme', 'width', 'height', 'animation'],
-
   methods: {
 
     clean () {
@@ -76,9 +76,9 @@ export default {
           break
 
         case this.choice.type === 'state' && this.data === 'rentgrowth':
-          json = require('../store/State Rentership Rate.json')
+          json = require('../store/State Renter Households.json')
           data.labels = [2016, 2030]
-          data.datas = json.data[this.choice.value].slice(0, 2)
+          data.datas = [json.data[this.choice.value][1], json.data[this.choice.value][3]]
           break
 
         case this.choice.type === 'state' && this.data === 'popgrowth':
@@ -148,7 +148,6 @@ export default {
       Chart.defaults.global.elements.rectangle.borderColor = solid
       Chart.defaults.global.elements.line.borderColor = colors.red
       Chart.defaults.global.hover.animationDuration = 200
-
       Chart.defaults.global.elements.rectangle.borderColor = solid
 
       if (this.myChart !== undefined) {
@@ -167,63 +166,55 @@ export default {
         this.myChart.update()
 
       } else {
-        let options = {
-          showAllTooltips: false,
-          tooltips: {
-            displayColors: false,
-            backgroundColor: colors.white,
-            bodyFontFamily: 'Maven Pro',
-            bodyFontSize: 16,
-            titleFontSize: 0,
-            titleSpacing: 0,
-            titleMarginBottom: -6,
-            bodyFontColor: solid,
-            yPadding: 10,
-            borderColor: solid,
-            borderWidth: 1,
-            callbacks: {
-              label: function (item, data) {
-                if (Number(item.yLabel) < 1 && Number(item.yLabel) > 0) {
-                  return numeral(item.yLabel).format('0.00%')
-                }
-                return numeral(item.yLabel).format('0.00a')
-              }
+        let options = this.chartOptions()
+        options.tooltips.backgroundColor = light
+        options.tooltips.titleFontSize = 0
+        options.tooltips.titleSpacing = 0
+        options.tooltips.titleMarginBottom = -6
+        options.tooltips.bodyFontColor = solid
+        options.tooltips.yPadding = 10
+        options.tooltips.borderColor = solid
+        options.tooltips.callbacks = {
+          label: function (item, data) {
+            if (Number(item.yLabel) < 1 && Number(item.yLabel) > 0) {
+              return numeral(item.yLabel).format('0.00%')
             }
-          },
-          layout: {
-            padding: {
-              top: this.id.indexOf('print') !== -1 ? 50 : 70
-            }
-          },
-          scales: {
-            yAxes: [{
-              position: 'right',
-              gridLines: {
-                color: solid,
-                display: false,
-                zeroLineColor: solid,
-              },
-              ticks: {
-                fontSize: 12,
-                fontColor: colors.grey,
-                maxTicksLimit: 6,
-                callback: function (label, index, labels) {
-                  if (label.toString().indexOf('.') !== -1) {
-                    return numeral(label).format('0%')
-                  }
-                  return numeral(label).format('0a')
-                }
-              }
-            }],
-            xAxes: [{
-              gridLines: { color: solid, zeroLineColor: solid, display: false },
-              ticks: {
-                fontColor: solid,
-                color: solid,
-                maxRotation: 0,
-              }
-            }]
+            return numeral(item.yLabel).format('0.00a')
           }
+        }
+        options.layout = {
+          padding: {
+            top: this.id.indexOf('print') !== -1 ? 50 : 70
+          }
+        }
+        options.scales = {
+          yAxes: [{
+            position: 'right',
+            gridLines: {
+              color: solid,
+              display: false,
+              zeroLineColor: solid,
+            },
+            ticks: {
+              fontSize: 12,
+              fontColor: colors.grey,
+              maxTicksLimit: 6,
+              callback: function (label, index, labels) {
+                if (label.toString().indexOf('.') !== -1) {
+                  return numeral(label).format('0%')
+                }
+                return numeral(label).format('0a')
+              }
+            }
+          }],
+          xAxes: [{
+            gridLines: { color: solid, zeroLineColor: solid, display: false },
+            ticks: {
+              fontColor: solid,
+              color: solid,
+              maxRotation: 0,
+            }
+          }]
         }
 
         if (this.animation === false) {
@@ -240,52 +231,6 @@ export default {
           backgroundColor: light,
           fill: true
         }]
-
-        Chart.pluginService.register({
-          beforeRender: function (chart) {
-            if (chart.config.options.showAllTooltips) {
-              // create an array of tooltips
-              // we can't use the chart tooltip because there is only one tooltip per chart
-              chart.pluginTooltips = []
-              chart.config.data.datasets.forEach(function (dataset, i) {
-                chart.getDatasetMeta(i).data.forEach(function (sector, j) {
-                  chart.pluginTooltips.push(new Chart.Tooltip({
-                    _chart: chart.chart,
-                    _chartInstance: chart,
-                    _data: chart.data,
-                    _options: chart.options.tooltips,
-                    _active: [sector]
-                  }, chart))
-                })
-              })
-
-              // turn off normal tooltips
-              chart.options.tooltips.enabled = false
-            }
-          },
-          afterDraw: function (chart, easing) {
-            if (chart.config.options.showAllTooltips) {
-              // we don't want the permanent tooltips to animate, so don't do anything till the animation runs atleast once
-              if (!chart.allTooltipsOnce) {
-                if (easing !== 1) {
-                  return
-                }
-                chart.allTooltipsOnce = true
-              }
-
-              // turn on tooltips
-              chart.options.tooltips.enabled = true
-              Chart.helpers.each(chart.pluginTooltips, function (tooltip) {
-                tooltip.initialize()
-                tooltip.update()
-                // we don't actually need this since we are not animating tooltips
-                tooltip.pivot()
-                tooltip.transition(easing).draw()
-              })
-              chart.options.tooltips.enabled = false
-            }
-          }
-        })
 
         this.myChart = new Chart(ctx, {
           type: 'line',

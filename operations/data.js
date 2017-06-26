@@ -43,6 +43,7 @@ let sheets = [
   'State New Apt HHs Per Year',
   'State Rentership Rate',
   'State HH Growth',
+  'State Renter Households',
 
   // Metro Page - Apt Household Growth, rentership grwoth, population growth
   'Metro New Apt HHs Per Year',
@@ -77,6 +78,8 @@ let sheets = [
   'Metro Building Current',
 
   'Metro Age of Occupied Stock',
+
+  'Metro Housing Costs',
 
   'FAQ',
 
@@ -138,6 +141,7 @@ for (let index in excel) {
     case 'US Population (Landing)':
     case 'Metro Restriction Index':
     case 'US Housing Costs':
+    case 'Metro Housing Costs':
     case 'FAQ':
       data.data = {}
       for (let value in sheet.data) {
@@ -187,6 +191,7 @@ for (let index in excel) {
     case 'Metro Apt Residents':
     case 'Metro Age of Occupied Stock':
     case 'State HH Growth':
+    case 'State Renter Households':
 
       data.data = {}
       for (let value in sheet.data) {

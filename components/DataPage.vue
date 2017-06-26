@@ -67,15 +67,19 @@
           .dot
             .value
             .copy needed rate text
-      // .left.left_inyourcity(v-if="this.choice().type === 'metro'")
-        // .copy barriers to new apartments index
-        // HeatChart(:metro="this.choice().value")
+      .left.left_inyourcity(v-if="this.choice().type === 'metro'")
+        .copy barriers to apartments construction
+        HeatChart(:metro="this.choice().value")
+        .tip Index based on local regulations and available land
+        .title Rep Tape Rating
+        .copy Over the last three decades, regulatory barriers to apartment construction have increased significantly, most notably at the local level.
       .chart
         MultiLineChart(:animation="true",:type="this.choice().type",:value="this.choice().value",:state="this.choice().state",data='aptsneeded',id='aptsneeded',theme="red",width=830,height=300)
       .clear
       .copys.copyLeft(v-if="this.choice().type === 'district'")
         .copy Red Tape Rating
         .copy Over the last three decades, regulatory barriers to apartment construction have increased significantly, most notably at the local level
+      .clear
       .copys.copyRight(v-if="this.choice().type === 'district' || this.choice().type === 'metro'")
         .copy We Need to Build More
         .copy Apartment demand is growing and the industry needs to keep up. However, producing enough new apartments to meet demand requires new development approaches, more incentives and fewer restrictions.
@@ -88,7 +92,7 @@
     //SingleItem(v-if="this.choice().type === 'national'")
     //.border.big(v-if="this.choice().type === 'national'")
     //DualItems(v-if="this.choice().type === 'metro'")
-    .border.big(v-if="this.choice().type === 'metro'")
+    // .border.big(v-if="this.choice().type === 'metro'")
     .section.section_links
       .inner
         .area.left
@@ -160,7 +164,9 @@
       .left(v-if="this.choice().type !== 'metro'")
         // CircleChart(id="renters_print",width="225",height="225",value="70")
       .left(v-else)
-        //HeatChart(:metro="this.choice().value")
+        .copy barriers to apartments construction
+        HeatChart(:metro="this.choice().value")
+        .tip Index based on local regulations and available land
       .right
         MultiLineChart(:animation="false",:type="this.choice().type",:value="this.choice().value",:state="this.choice().state",data='aptsneeded',id='aptsneeded_print',theme="red",width=510,height=225)
       .clear
@@ -485,9 +491,22 @@ json('../assets/fonts.json')
         border none
         width 0px
         height 225px
+        margin 50px 0 0 0
+        > .copy
+          font c1ssb
+          width 280px
+          text-transform uppercase
         > .HeatChart
+          margin 5px 0 0 0
           > .legend
-            margin-top -30px
+            margin-top -55px
+            width 160px
+        > .tip
+          font c1ss
+          color grey
+          text-align center
+          width 160px
+          margin 0 0 0 20px
       > .right
         float right
         border none
@@ -499,16 +518,17 @@ json('../assets/fonts.json')
         width 255px
         display none
       > .copyRight
-        //float right
-        padding-top 20px
-        width 200px
-        margin -230px 0 0 0
       > .copys
         float left
         > .copy:nth-child(1)
           font c1
+          float left
+          margin 20px 0 0 0
+          width 177px
         > .copy:nth-child(2)
           font c1s
+          float right
+          width 565px
           padding 5px 0 0 0
           color grey
           margin 0 5px 0 0
@@ -537,7 +557,7 @@ json('../assets/fonts.json')
         font h1
       > p:nth-child(2)
         color grey
-        max-width 500px
+        max-width 540px
         margin auto
         > b
           color black
@@ -601,26 +621,20 @@ json('../assets/fonts.json')
       > .copyLeft
         float left
         width 300px
-      > .copyRight
-        // float right
-        // width 800px
-        //float right
-        padding-top 20px
-        width 300px
-        margin -330px 0 0 40px
       > .copys
+        width 800px
+        margin -30px 20px 120px 0
+        float right
         > .copy:nth-child(1)
-          font h1
-          padding 0 0 10px 0
+          font c3b
+          padding 0 0 5px 0
         > .copy:nth-child(2)
           font c1
-          padding 5px 0 60px 0
           color grey
-          margin 0 5px 0 0
 
       > .left
         float left
-        width 300px
+        width 340px
         &.left_buildmore
           > .copy:first-child
             font h2
@@ -645,7 +659,7 @@ json('../assets/fonts.json')
           > .legend > .dot:first-child > .value
             background-color rgba(red, 0.5)
         &.left_inyourcity
-          height 340px
+          height 300px
           border 1px solid lightgrey
           border-radius 3px
           > .copy:first-child
@@ -653,8 +667,17 @@ json('../assets/fonts.json')
             font c1sb
             text-transform uppercase
             padding 25px 0 0 25px
-          > .copy:last-child
+          > .tip
+            color grey
+            width 250px
+            margin -10px auto 0 auto
             text-align center
+            font c1s
+          > .title
+            margin 40px 0 0 0
+            padding 0 0 5px 0
+            font c3b
+          > .copy:last-child
             color grey
       > .mbottom
         width 1200px
@@ -676,7 +699,7 @@ json('../assets/fonts.json')
       > .chart
         float right
         width 800px
-        margin 0  0 30px
+        margin 0 0 30px
     > .section_links
       > .inner
         padding 60px 0

@@ -1,54 +1,57 @@
 @media all and (min-width: 1px) and (max-width: 1000px)
   .page.page_init > .page_content
-    padding 30px 0
+    padding 0
     > .section
-      width auto
-      padding 20px
       &.section_top
-        padding-top 90px
-        > .copy:nth-child(1)
-          font h1
-          width auto
-          padding 20px
-          line-height 30px
-        > .logos
-          width auto
-          padding 30px 0
-          > a > img:first-child
-            padding-bottom 30px
-      &.section_weare
-        > .copys
-          width auto
-          padding 20px
-          > .copy:nth-child(1)
-            font h2
-            text-align center
-            line-height 40px
-      &.section_data
-        width auto
-        > .copys, > .charts
-          float none
-        > .copys
-          width auto
-          padding 0 20px 20px 20px
-        > .charts
-          width 90vw
-          height 90vw
-          margin 0 20px
-          > .inner
-            width inherit
-            height inherit
-
+        height auto
+        min-height 100vh
+        overflow hidden
+        > .inner
+          > .paper
+            width 311px
+            height 393px
+            background-size contain
+            margin 0 0 0 -182px
+            display none
+          > .vase
+            right -100px
+            margin-top -100px
+            display none
+          > .copys
+            margin 60px 0 0 0
+            position absolute
+            width 100%
+            height auto
+            height auto
+            max-width 300px
+            > .cta
+              margin 20px 0 0 0
+            top 20px
+            left 20px
       &.section_about
-        > .copy:nth-child(2)
+        margin 30px auto
+        width auto
+        > .logos
+          padding 30px 0
           width auto
-          font h1
-          padding-top 30px
+          > a
+            display block
+        > .copy:nth-child(3)
+          line-height 30px
+          width auto
+          font h3
+          padding 0 20px 30px 20px
+      &.section_about, &.section_sources > .inner
         > .copys
+          column-count 1
+          column-gap 0px
           > .block
-            float none
-            width auto
             padding 20px
-            > .copy
-              padding 0
-
+      &.section_sources
+         > .inner
+           width auto
+      &.section_report
+        > .inner
+          width auto
+          column-count 1
+          column-span 0
