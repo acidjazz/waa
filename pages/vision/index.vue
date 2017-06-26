@@ -68,10 +68,10 @@
           .copy When regulations or lack of available land make it harder to build apartments, costs go up for everyone. The Barriers to Apartment Construction Index shows the hardest and easiest cities to add the needed supply.
           .legend
             .row
-              .color.color_grey
+              .color.color_tomato
               .copy barriers to apartment construction index
             .row
-              .color.color_darkblue
+              .color.color_grey
               .copy % of households paying over 35% on rent
         .chart_area
           MetroChart
