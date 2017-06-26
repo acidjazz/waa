@@ -5,7 +5,6 @@
     .clear
     DataFilters(:state="state",:metro="metro",:district="district")
     DataSummary(:state="state",:metro="metro",:district="district")
-    .border.big
     .section.section_demand(v-if="this.choice().type !== 'district'")
       p The Demand
       Demand(:type="this.choice().type",:value="this.choice().value")
