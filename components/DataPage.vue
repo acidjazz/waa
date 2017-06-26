@@ -702,7 +702,7 @@ json('../assets/fonts.json')
         margin 0 0 30px
     > .section_links
       > .inner
-        padding 60px 0
+        padding 90px 0
         width 831px
         margin auto
         text-align center
