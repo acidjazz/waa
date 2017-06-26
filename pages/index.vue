@@ -115,6 +115,15 @@ json('../assets/fonts.json')
         > .copy:nth-child(2)
           font h1
           width auto
+        > .button
+          margin auto
+          &:nth-child(3)
+            margin-right 10px
+          &:nth-child(4)
+            margin-left 10px
+          > a
+            margin 0 !important
+            padding 10px 20px
     > .demand
       width auto
       padding 60px 10px

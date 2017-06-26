@@ -2,10 +2,10 @@
 #BuildMoreChart
   .controls
     .tip
-      .copy(v-if="range <= 25") Lowest level of multifamily completions on record (1993). At this rate <span>{{ needed }}</span> is needed.
-      .copy(v-if="range >= 25 && range <= 50") Lowest level of completions since 1993 (2011). At this rate <span>{{ needed }}</span> is needed.
-      .copy(v-if="range >= 50 && range <= 75") 2016 Completions. At this rate <span>{{ needed }}</span> is needed.
-      .copy(v-if="range >= 75") Peak of multifamily development in 1973, as Baby Boomers becoming adults. At this rate <span>{{ needed }}</span> is needed.
+      .copy(v-if="range <= 25") Lowest level of multifamily completions on record (1993). At this rate <span>{{ needed }}</span> are built.
+      .copy(v-if="range >= 25 && range <= 50") Lowest level of completions since 1993 (2011). At this rate <span>{{ needed }}</span> are built.
+      .copy(v-if="range >= 50 && range <= 75") 2016 Completions. At this rate <span>{{ needed }}</span> are built.
+      .copy(v-if="range >= 75") Peak of multifamily development in 1973, as Baby Boomers becoming adults. At this rate <span>{{ needed }}</span> are built.
     .control
       input(type="range",v-model="range")
     .copy ^ Adjust how construction rates meet future apartment demand
@@ -123,7 +123,7 @@ export default {
         yellow.push(Math.round(j))
       }
 
-      this.needed = numeral((this.range * 5000000 / 100) + 328500).format('$0.0a')
+      this.needed = numeral((this.range * 5000000 / 100) + 328500).format('0.0a')
 
       datasets = [{
         data: data,
