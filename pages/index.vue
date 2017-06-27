@@ -18,8 +18,8 @@
     Demand(type='national')
   GradientChart
   .border.big
-  //MetroStack
-  //.border.big
+  MetroStack
+  .border.big
   FAQ
   Bottom
 </template>
