@@ -25,6 +25,19 @@ export default {
       }
       return sorted
     },
+
+    line (start, end, steps) {
+
+      let data = []
+      let distance = end - start
+      let gap = distance / steps
+      for (let i = 1; i <= steps; i++)  {
+        data.push(start + (gap * i))
+      }
+
+      return data
+
+    },
     draw () {
 
       let Chart = require('chart.js')
@@ -34,12 +47,15 @@ export default {
       let costs = []
       let interest = []
       let combined = {}
+      let names = {}
 
       for (let key in housingCosts.data) {
         combined[key] = {
           costs: housingCosts.data[key],
           interest: restrictIndex.data[key],
         }
+
+        names[restrictIndex.data[key]] = key
       }
 
       combined = this.sort(combined, 'costs')
@@ -49,6 +65,8 @@ export default {
         costs.push(combined[key].costs)
         interest.push(combined[key].interest)
       }
+
+      costs = this.line(costs[0], costs[costs.length - 1], costs.length)
 
       datasets = [{
         type: 'bubble',
@@ -70,13 +88,13 @@ export default {
         displayColors: false,
         bodyFontFamily: 'Maven Pro',
         bodyFontSize: 16,
-        titleFontSize: 16,
+        titleFontSize: 0,
+        titleMarginBottom: -6,
         backgroundColor: colors.lightgrey,
         titleFontColor: colors.black,
         bodyFontColor: colors.black,
         borderColor: colors.blue,
         borderWidth: 1,
-        titleMarginBottom: 6,
         yPadding: 10,
         xPadding: 10,
         callbacks: {
@@ -84,7 +102,7 @@ export default {
             if (item.datasetIndex === 1) {
               return numeral(item.yLabel).format('0.00%')
             }
-            return numeral(item.yLabel).format('0.00a')
+            return names[item.yLabel]
           }
         }
       }
