@@ -19,8 +19,6 @@
   GradientChart
   .border.big
   MetroStack
-  .border.big
-  FAQ
   Bottom
 </template>
 
@@ -28,10 +26,9 @@
 import Top from '~/components/Top.vue'
 import Demand from '~/components/Demand.vue'
 import GradientChart from '~/components/GradientChart.vue'
-import FAQ from '~/components/FAQ.vue'
 import MetroStack from '~/components/MetroStack.vue'
 import Bottom from '~/components/Bottom.vue'
-export default { components: { Top, Demand, GradientChart, MetroStack, FAQ, Bottom } }
+export default { components: { Top, Demand, GradientChart, MetroStack, Bottom } }
 </script>
 
 <style lang="stylus">

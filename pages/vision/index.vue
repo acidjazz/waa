@@ -91,6 +91,8 @@
         .chart_area
           DualLineChart
         .clear
+  .border.big
+  FAQ
   .sources Source: 
     b Hoyt Advisory Services; NMHC/NAA; U.S. Census Bureau.; Axiometrics, a RealPage Company
   Bottom
@@ -105,6 +107,7 @@ import BuildMoreChart from '~/components/BuildMoreChart.vue'
 import MetroChart from '~/components/MetroChart.vue'
 import BarrierChart from '~/components/BarrierChart.vue'
 import DualLineChart from '~/components/DualLineChart.vue'
+import FAQ from '~/components/FAQ.vue'
 import Bottom from '~/components/Bottom.vue'
-export default { components: { Top, BuildMoreChart, BarrierChart, DualLineChart, Bottom } }
+export default { components: { Top, BuildMoreChart, BarrierChart, DualLineChart, FAQ, Bottom } }
 </script>
