@@ -1,50 +1,15 @@
 <template lang="pug">
-#MetroChart
-  .control
-    .copy Sort between the hardest cities to build and affordability measures
-    .button.button_percent(:class="{ active: flip === 'costs' }",@click="flip = 'costs'") INCOME
-    .button.button_ease(:class="{ active: flip === 'interest'  }",@click="flip = 'interest'") INDEX
-    .clear
+#BarrierChart
   .chart
-    canvas(id="MetroChart-chart",:width="width",:height="height")
-  nav
-    .prev(@click="alterOffset(-1)")
-      i.fa.fa-chevron-left
-    .next(@click="alterOffset(1)")
-      i.fa.fa-chevron-right
+    canvas(id="BarrierChart-chart",:width="width",:height="height")
 </template>
-
 <script>
 import colors from '~/assets/colors.json'
 import housingCosts from '~/store/Metro Burden.json'
 import restrictIndex from '~/store/Metro Restriction Index.json'
 let numeral = require('numeral')
 export default {
-  watch: {
-    'flip' () {
-      this.offset = 0
-      this.draw()
-    }
-  },
   methods: {
-    alterOffset (dir) {
-
-      if (dir < 1) {
-        if (this.offset > 0) {
-          this.offset = this.offset - 1
-        } else {
-          this.offset = 41
-        }
-      } else {
-        if (this.offset < 41) {
-          this.offset = this.offset + 1
-        } else {
-          this.offset = 0
-        }
-      }
-      this.draw()
-    },
-
     sort (object, skey) {
 
       let sorted = {}
@@ -55,28 +20,20 @@ export default {
       sortable.sort((a, b) => {
         return a[1] - b[1]
       })
-      sortable.reverse()
       for (let key in sortable) {
         sorted[sortable[key][0]] = object[sortable[key][0]]
       }
-
       return sorted
-
     },
-
     draw () {
 
       let Chart = require('chart.js')
-      let ctx = 'MetroChart-chart'
+      let ctx = 'BarrierChart-chart'
       let datasets = []
       let labels = []
       let costs = []
       let interest = []
       let combined = {}
-
-      let start = 1 + this.offset
-      let end = 20 + this.offset
-      let i = 0
 
       for (let key in housingCosts.data) {
         combined[key] = {
@@ -85,15 +42,12 @@ export default {
         }
       }
 
-      combined = this.sort(combined, this.flip)
+      combined = this.sort(combined, 'costs')
 
-      // pull out our paginated version
       for (let key in combined) {
-        if (++i >= start && i <= end) {
-          labels.push(key)
-          costs.push(combined[key].costs)
-          interest.push(combined[key].interest)
-        }
+        labels.push(numeral(combined[key].costs).format('0%'))
+        costs.push(combined[key].costs)
+        interest.push(combined[key].interest)
       }
 
       datasets = [{
@@ -101,13 +55,15 @@ export default {
         data: interest,
         backgroundColor: colors.tomato,
         borderColor: colors.tomato,
-        borderWidth: 10,
+        borderWidth: 6,
         yAxisID: 'b',
       }, {
         data: costs,
-        backgroundColor: colors.lightgrey,
+        borderColor: colors.blue,
+        backgroundColor: colors.blue,
         hoverBackgroundColor: colors.lightblue,
         yAxisID: 'a',
+        fill: false,
       }]
 
       let tooltips = {
@@ -118,7 +74,7 @@ export default {
         backgroundColor: colors.lightgrey,
         titleFontColor: colors.black,
         bodyFontColor: colors.black,
-        borderColor: colors.lightgrey,
+        borderColor: colors.blue,
         borderWidth: 1,
         titleMarginBottom: 6,
         yPadding: 10,
@@ -137,6 +93,7 @@ export default {
         scales: {
           yAxes: [{
             id: 'a',
+            display: false,
             position: 'right',
             ticks: {
               max: 0.55,
@@ -148,10 +105,10 @@ export default {
             },
           }, {
             id: 'b',
-            position: 'left',
+            position: 'right',
             ticks: {
               max: 20,
-              min: -5.9,
+              min: -10.0,
             },
             gridLines: {
               display: false,
@@ -162,6 +119,7 @@ export default {
             ticks: {
               // display: false,
               maxRotation: 0,
+              maxTicksLimit: 7,
             },
             gridLines: {
               display: false,
@@ -180,7 +138,7 @@ export default {
         this.myChart.update()
       }  else {
         this.myChart = new Chart(ctx, {
-          type: 'bar',
+          type: 'line',
           data: {
             labels: labels,
             datasets: datasets,
@@ -195,73 +153,11 @@ export default {
   },
   data () {
     return {
-      flip: 'interest',
       offset: 0,
       myChart: null,
       width: 770,
-      height: 380,
+      height: 460,
     }
   }
 }
-
 </script>
-
-<style lang="stylus">
-json('../assets/colors.json')
-json('../assets/fonts.json')
-
-#MetroChart
-  position relative
-  width 100%
-  height 100%
-  > .control
-    width 630px
-    margin auto
-    > .copy
-      color grey
-      float left
-      padding 6px 0 10px 0
-    > .button
-      float right
-      cursor pointer
-      padding 3px 15px
-      border 1px solid transparent
-      border-radius 3px
-      transition background-color 0.2s ease 0s, border 0.2s ease 0.1s, color 0.2s ease 0s
-      &:hover:not(.active)
-        color blue
-        border 1px solid rgba(lightblue, 0.6)
-      &.active
-        border 1px solid lightblue
-        color blue
-      &:nth-child(2)
-        margin 0 0 0 10px
-  > nav
-    position absolute
-    width 100%
-    bottom -10px
-    left -15px
-    right 0
-    z-index 10
-    > div
-      text-align center
-      padding 5px 10px
-      color blue
-      cursor pointer
-      border-radius 3px
-      border 1px solid lightblue
-      background-color white
-      transition background-color 0.2s ease 0s
-      > i
-        transition transform 0.4s ease 0s 
-      &.prev
-        float left
-        &:hover > i
-          transform translate(-2px, 0)
-      &.next
-        float right
-        &:hover > i
-          transform translate(2px, 0)
-
-@import '../assets/stylus/MetroChart-mobile.styl'
-</style>

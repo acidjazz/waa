@@ -71,10 +71,10 @@
               .color.color_tomato
               .copy barriers to apartment construction index
             .row
-              .color.color_grey
+              .color.color_blue
               .copy % of households paying over 35% on rent
         .chart_area
-          MetroChart
+          BarrierChart
     .border.small
     .section.section_chart.section_chart_incomeafford
       .inner
@@ -103,7 +103,8 @@
 import Top from '~/components/Top.vue'
 import BuildMoreChart from '~/components/BuildMoreChart.vue'
 import MetroChart from '~/components/MetroChart.vue'
+import BarrierChart from '~/components/BarrierChart.vue'
 import DualLineChart from '~/components/DualLineChart.vue'
 import Bottom from '~/components/Bottom.vue'
-export default { components: { Top, BuildMoreChart, MetroChart, DualLineChart, Bottom } }
+export default { components: { Top, BuildMoreChart, BarrierChart, DualLineChart, Bottom } }
 </script>
