@@ -76,7 +76,7 @@ export default {
       let combined = {}
 
       let start = 1 + this.offset
-      let end = 10 + this.offset
+      let end = 20 + this.offset
       let i = 0
 
       for (let key in housingCosts.data) {

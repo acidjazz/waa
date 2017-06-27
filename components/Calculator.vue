@@ -289,17 +289,24 @@ export default {
     },
 
     populate () {
+
       for (let key in Filters.data) {
         if (Filters.data[key].State !== undefined) {
           this.states.push(Filters.data[key].State.trim())
         }
+        /*
         if (Filters.data[key].Metro !== undefined) {
           for (let metro of Filters.data[key].Metro.split(',')) {
             this.metros.push(metro.trim())
           }
         }
+        */
       }
-      this.metros = Array.from(new Set(this.metros))
+      // this.metros = Array.from(new Set(this.metros))
+      let values = Object.keys(json.impact.metro.operation)
+      values.shift()
+      values.pop()
+      this.metros = values
     },
 
     reset () {

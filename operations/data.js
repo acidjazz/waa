@@ -81,6 +81,8 @@ let sheets = [
 
   'Metro Housing Costs',
 
+  'Metro Renter HHs',
+
   'FAQ',
 
   'Metro Burden',
@@ -195,6 +197,7 @@ for (let index in excel) {
     case 'Metro Age of Occupied Stock':
     case 'State HH Growth':
     case 'State Renter Households':
+    case 'Metro Renter HHs':
 
       data.data = {}
       for (let value in sheet.data) {

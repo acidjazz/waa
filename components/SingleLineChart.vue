@@ -94,8 +94,13 @@ export default {
           break
 
         case this.choice.type === 'metro' && this.data === 'rentgrowth':
-          json = require('../store/Metro Rentership Rate.json')
-          data = {'labels': [2016, 2030], 'datas': json.data[this.choice.value].slice(0, 2)}
+          // json = require('../store/Metro Rentership Rate.json')
+          // data = {'labels': [2016, 2030], 'datas': json.data[this.choice.value].slice(0, 2)}
+          json = require('../store/Metro Renter HHs.json')
+          data = {
+            labels: [2016, 2030],
+            datas: [json.data[this.choice.value][1], json.data[this.choice.value][3]]
+          }
           break
 
         case this.choice.type === 'metro' && this.data === 'popgrowth':
