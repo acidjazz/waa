@@ -1,8 +1,11 @@
-
+machine:
+  tiemzone:
+    America/Los_Angeles
+  node:
+    version: 6.11.0
 test:
   override:
     - npm test
-
 deployment:
   staging: 
     branch: development
