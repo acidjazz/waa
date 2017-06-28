@@ -14,7 +14,7 @@ module.exports = {
     }
   },
   watch: {
-    '$route' () {
+    '$route': function () {
       this.populate()
     }
   },
