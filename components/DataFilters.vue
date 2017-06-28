@@ -181,11 +181,12 @@ json('../assets/colors.json')
       > .modal
         top 76px
   position relative
-  margin 120px 0 0 0
+  margin 150px 0 0 0
   > .modals
     > .modal
       position absolute
-      top 126px
+      top 174px
+      // top 126px
       left 50%
       margin-left -300px
       width 600px
@@ -228,7 +229,7 @@ json('../assets/colors.json')
     padding 60px 0
     border-top 2px solid lightgrey
     > .inner
-      width 680px
+      width 684px
       margin auto
       text-transform uppercase
       font-size 14px

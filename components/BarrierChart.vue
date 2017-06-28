@@ -90,10 +90,10 @@ export default {
         bodyFontSize: 16,
         titleFontSize: 0,
         titleMarginBottom: -6,
-        backgroundColor: colors.lightred,
-        titleFontColor: colors.tomato,
-        bodyFontColor: colors.tomato,
-        borderColor: colors.tomato,
+        backgroundColor: colors.lightgrey,
+        titleFontColor: colors.darkblue,
+        bodyFontColor: colors.darkblue,
+        borderColor: colors.darkblue,
         borderWidth: 1,
         yPadding: 10,
         xPadding: 10,
@@ -173,7 +173,7 @@ export default {
     return {
       offset: 0,
       myChart: null,
-      width: 770,
+      width: 740,
       height: 460,
     }
   }

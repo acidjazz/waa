@@ -40,6 +40,12 @@ json('../assets/fonts.json')
         &:nth-child(even)
           border-left 1px solid lightgrey
           margin-left -1px
+        &:nth-child(1), &:nth-child(2)
+          height 320px
+        &:nth-child(3), &:nth-child(4)
+          height 240px 
+        &:nth-child(5), &:nth-child(6)
+          height 300px 
         &:nth-last-child(-n+3)
           border-bottom none
         > .inner

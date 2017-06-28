@@ -1,6 +1,10 @@
 <template lang="pug">
 #DataSummary(:class="{ filtersSticky: filtersSticky }")
   .inner
+    .breadcrumb(v-if="choice().type == 'national'") national data
+    .breadcrumb(v-if="choice().type == 'state'") state data
+    .breadcrumb(v-if="choice().type == 'metro'") metro data
+    .breadcrumb(v-if="choice().type == 'district'") district data
     .copy {{ selection }}
     .copy Apartments and their residents contribute more than $3.5 billion to the economy every day.
     .copy_print Market Snapshot
@@ -125,10 +129,14 @@ json('../assets/fonts.json')
     margin 340px 0 0 0
   > .inner
     background linear-gradient(-67deg, rgba(#0099ff, 0.7), rgba(#00cccc, 0.7))
-    background-size 150% 150%
-    animation gradients 30s ease infinite
+    background-size 200% 200%
+    animation gradients 3s ease infinite
     padding 60px 0
-    > .copy:first-child
+    > .breadcrumb
+      font c1sb
+      text-transform uppercase
+      padding 0 0 20px 0
+    > .copy:nth-child(2)
       font-size 30px
       animation fadeIn 0.2s ease-in-out 0s both
       z-index 1

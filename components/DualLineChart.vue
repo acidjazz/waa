@@ -105,8 +105,10 @@ export default {
       options.scales.yAxes[0].gridLines.display = false
       options.scales.yAxes[0].position = 'right'
       options.scales.yAxes[0].ticks.fontColor = colors.grey
+      options.scales.yAxes[0].ticks.fontSize = 14
       options.scales.xAxes[0].gridLines.display = false
       options.scales.xAxes[0].ticks.fontColor = colors.grey
+      options.scales.xAxes[0].ticks.fontSize = 14
 
       options.layout.padding = {
         top: 10,

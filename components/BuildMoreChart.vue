@@ -235,7 +235,7 @@ export default {
   data () {
     return {
       json: null,
-      width: 770,
+      width: 740,
       height: 320,
       myChart: null,
       range: 0,

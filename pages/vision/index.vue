@@ -9,7 +9,7 @@
         .copys
           p But getting there won't be easy. It is time to take action across the country, in ways that are tailored to the needs of each community. The apartment industry stands ready to work with urban, suburban and rural communities in every region to meet the housing demand of Americans across all income levels.
           p Policymakers at all levels of government must recognize that addressing local housing needs requires a partnership between government and the private sector. The federal government can ensure sufficient funding of housing programs, enact a pro-housing tax policy, and reform regulations that unnecessarily increase housing costs. 
-    .border.small
+    .border.small.margined
     .section.section_together
       .inner
         .copy We Can Do This
@@ -44,7 +44,7 @@
       .inner
         .copy The Stakes are High
         .copy Keeping up with the demand for millions of apartments will mean public-private partnerships at all levels of government. If we don't start today, our nation's housing affordability crisis will only worsen.
-    .border.small
+    .border.small.margined
     .section.section_chart.section_chart_buildmore
       .inner
         .copy_legend
@@ -60,7 +60,7 @@
         .chart_area
           BuildMoreChart
         .clear
-    .border.small
+    .border.small.margined
     .section.section_chart.section_chart_metros
       .inner
         .copy_legend
@@ -75,7 +75,7 @@
               .copy % of households paying over 35% on rent
         .chart_area
           BarrierChart
-    .border.small
+    .border.small.margined
     .section.section_chart.section_chart_incomeafford
       .inner
         .copy_legend
