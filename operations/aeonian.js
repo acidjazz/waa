@@ -174,6 +174,7 @@ exports.uploadToBucket = (bucket, complete) => {
   })
 
   uploader.on('end', () => {
+    this.succeed()
     complete()
   })
 
