@@ -29,6 +29,7 @@
     "yesno": "^0.0.1"
   },
   "scripts": {
+    "test": "ava",
     "dev": "nuxt",
     "dev-kevin": "HOST=192.168.1.230 nuxt",
     "build": "nuxt build",
@@ -39,13 +40,20 @@
     "staging": "npm run generate;node operations/staging.js",
     "production": "npm run generate;node operations/production.js"
   },
+  "ava": {
+    "require": [
+      "babel-register"
+    ]
+  },
   "devDependencies": {
+    "ava": "^0.19.1",
     "babel-eslint": "^7.1.1",
     "eslint": "^3.15.0",
     "eslint-config-standard": "^6.2.1",
     "eslint-loader": "^1.6.1",
     "eslint-plugin-html": "^2.0.0",
     "eslint-plugin-promise": "^3.4.1",
-    "eslint-plugin-standard": "^2.0.1"
+    "eslint-plugin-standard": "^2.0.1",
+    "jsdom": "^11.0.0"
   }
 }

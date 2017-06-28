@@ -1,0 +1,12 @@
+
+test:
+  override:
+    - npm test
+
+deployment:
+  staging: 
+    branch: development
+    commands:
+      npm run staging
+
+
