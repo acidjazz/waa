@@ -1,7 +1,4 @@
 module.exports = {
-  aws: {
-    profile: 'waa'
-  },
   bucket: {
     localDir: './dist/',
     prefix: 'waa-'

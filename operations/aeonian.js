@@ -1,7 +1,4 @@
 let cfg = {
-  aws: {
-    profile: 'default'
-  },
   bucket: {
     localDir: './dist/',
     prefix: null
@@ -40,7 +37,6 @@ exports.config = (cfg) => {
   bucket = null
   domain = null
 
-  AWS.config.credentials = new AWS.SharedIniFileCredentials({profile: this.cfg.aws.profile})
   s3 = new AWS.S3()
   cloudfront = new AWS.CloudFront()
   client = require('@faceleg/s3').createClient({ s3Client: new AWS.S3() })
