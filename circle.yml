@@ -1,17 +1,24 @@
+
 machine:
+  environment:
+    PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
   tiemzone:
     America/Los_Angeles
   node:
     version: 7.1.0
-  npm:
-    version: 3.10.9
+
+dependencies:
+  override:
+    - yarn
+
 test:
   override:
-    - npm test
+    - yarn test
+
 deployment:
   staging: 
     branch: development
     commands:
-      - npm run staging
+      - yarn staging
 
 

@@ -64,9 +64,7 @@ module.exports = {
   modules: [
     '@nuxtjs/font-awesome',
   ],
-  plugins: [
-    {src: '~plugins/ga.js', ssr: false},
-    {src: '~plugins/filter-mixin.js', ssr: false}],
+  plugins: [{src: '~plugins/ga.js', ssr: false}],
   router: {
     scrollBehavior: function (to, from, savedPosition) {
       if (to.name.indexOf('data') !== -1 && from.name.indexOf('data') !== -1) {
