@@ -20,5 +20,7 @@ deployment:
     branch: development
     commands:
       - yarn staging
-
-
+  production: 
+    branch: development
+    commands:
+      - yarn production
