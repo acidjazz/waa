@@ -19,6 +19,8 @@
   GradientChart
   .border.big
   MetroStack
+  .sources Source: 
+    b Hoyt Advisory Services; NMHC/NAA; U.S. Census Bureau.; Axiometrics, a RealPage Company
   Bottom
 </template>
 
@@ -35,6 +37,14 @@ export default { components: { Top, Demand, GradientChart, MetroStack, Bottom } 
 @import '../assets/stylus/mixins'
 json('../assets/colors.json')
 json('../assets/fonts.json')
+
+.sources
+  font c1s
+  padding 0 0 20px 0
+  width 1200px
+  margin auto
+  color grey
+
 .page.home
   > .hero
     color white
