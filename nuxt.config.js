@@ -68,7 +68,6 @@ module.exports = {
   router: {
     scrollBehavior: function (to, from, savedPosition) {
       if (to.name.indexOf('data') !== -1 && from.name.indexOf('data') !== -1) {
-        console.log('data to data, returning false')
         return false
       }
       return savedPosition

@@ -1,6 +1,7 @@
 import Vuex from 'vuex'
 
-const store = () => new Vuex.Store({
+// v1.0 version const store = () => new Vuex.Store({
+const store = new Vuex.Store({
   state: {
     sticky: false,
     counter: 0,
