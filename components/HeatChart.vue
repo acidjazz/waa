@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import index from '../store/Metro Restriction Index.json'
+import index from '../static/Metro Restriction Index.json'
 export default {
   props: ['metro'],
   methods: {

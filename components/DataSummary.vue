@@ -28,60 +28,78 @@
 
 import filtermixin from '~plugins/filter-mixin.js'
 
-import residentsUS from '../store/US Apt Residents.json'
-import residentsState from '../store/State Apt Residents.json'
-import residentsMetro from '../store/Metro Apt Residents.json'
-import residentsDistrict from '../store/District Apt Residents.json'
+const residentsUS = '/US Apt Residents.json'
+const residentsState = '/State Apt Residents.json'
+const residentsMetro = '/Metro Apt Residents.json'
+const residentsDistrict = '/District Apt Residents.json'
 
-import homesUS from '../store/US Apts.json'
-import homesState from '../store/State Apartments.json'
-import homesMetro from '../store/Metro Occupied Apartments.json'
-import homesDistrict from '../store/District Occupied Apts.json'
+const homesUS = '/US Apts.json'
+const homesState = '/State Apartments.json'
+const homesMetro = '/Metro Occupied Apartments.json'
+const homesDistrict = '/District Occupied Apts.json'
 
-import contribUS from '../store/US Economic Contribution.json'
-import contribState from '../store/State Economic Contribution.json'
-import contribMetro from '../store/Metro Economic Contribution.json'
-import contribDistrict from '../store/District Economic Contribution.json'
+const contribUS = '/US Economic Contribution.json'
+const contribState = '/State Economic Contribution.json'
+const contribMetro = '/Metro Economic Contribution.json'
+const contribDistrict = '/District Economic Contribution.json'
 
-import jobsUS from '../store/US Jobs.json'
-import jobsState from '../store/State Jobs.json'
-import jobsMetro from '../store/Metro Jobs.json'
-import jobsDistrict from '../store/District Total Jobs.json'
+const jobsUS = '/US Jobs.json'
+const jobsState = '/State Jobs.json'
+const jobsMetro = '/Metro Jobs.json'
+const jobsDistrict = '/District Total Jobs.json'
 
 export default {
   mixins: [ filtermixin ],
 
   methods: {
 
+    json (sheets, result) {
+      let gets = []
+      for (let key in sheets) {
+        gets.push(window.axios.get(sheets[key]))
+      }
+      window.axios.all(gets).then(response => {
+        result(response)
+      })
+    },
+
     value (text) {
-      return text
+      return Number(text.toString().replace(/\$,k,b,m,\./, ''))
     },
     populate () {
       const numeral = window.numeral
       switch (this.choice().type) {
         case 'national':
-          this.residents = numeral(residentsUS.data['Total U.S.']).format('0.0a')
-          this.homes = numeral(homesUS.data['Total U.S.']).format('0.0a')
-          this.contrib = numeral(contribUS.data['Total U.S.']).format('0.0a')
-          this.jobs = numeral(jobsUS.data['Total U.S.']).format('0.0a')
+          this.json([residentsUS, homesUS, contribUS, jobsUS], (result) => {
+            this.residents = numeral(result[0].data.data['Total U.S.']).format('0.0a')
+            this.homes = numeral(result[1].data.data['Total U.S.']).format('0.0a')
+            this.contrib = numeral(result[2].data.data['Total U.S.']).format('0.0a')
+            this.jobs = numeral(result[3].data.data['Total U.S.']).format('0.0a')
+          })
           break
         case 'state':
-          this.residents = numeral(residentsState.data[this.choice().value]).format('0.0a')
-          this.homes = numeral(homesState.data[this.choice().value]).format('0.0a')
-          this.contrib = numeral(contribState.data[this.choice().value]).format('0.0a')
-          this.jobs = numeral(jobsState.data[this.choice().value]).format('0.0a')
+          this.json([residentsState, homesState, contribState, jobsState], (result) => {
+            this.residents = numeral(result[0].data.data[this.choice().value]).format('0.0a')
+            this.homes = numeral(result[1].data.data[this.choice().value]).format('0.0a')
+            this.contrib = numeral(result[2].data.data[this.choice().value]).format('0.0a')
+            this.jobs = numeral(result[3].data.data[this.choice().value]).format('0.0a')
+          })
           break
         case 'district':
-          this.residents = numeral(residentsDistrict.data[this.choice().value][0]).format('0.0a')
-          this.homes = numeral(homesDistrict.data[this.choice().value]).format('0.0a')
-          this.contrib = numeral(contribDistrict.data[this.choice().value]).format('0.0a')
-          this.jobs = numeral(jobsDistrict.data[this.choice().value]).format('0.0a')
+          this.json([residentsDistrict, homesDistrict, contribDistrict, jobsDistrict], (result) => {
+            this.residents = numeral(result[0].data.data[this.choice().value][0]).format('0.0a')
+            this.homes = numeral(result[1].data.data[this.choice().value]).format('0.0a')
+            this.contrib = numeral(result[2].data.data[this.choice().value]).format('0.0a')
+            this.jobs = numeral(result[3].data.data[this.choice().value]).format('0.0a')
+          })
           break
         case 'metro':
-          this.residents = numeral(residentsMetro.data[this.choice().value][0]).format('0.0a')
-          this.homes = numeral(homesMetro.data[this.choice().value]).format('0.0a')
-          this.contrib = numeral(contribMetro.data[this.choice().value]).format('0.0a')
-          this.jobs = numeral(jobsMetro.data[this.choice().value]).format('0.0a')
+          this.json([residentsMetro, homesMetro, contribMetro, jobsMetro], (result) => {
+            this.residents = numeral(result[0].data.data[this.choice().value][0]).format('0.0a')
+            this.homes = numeral(result[1].data.data[this.choice().value]).format('0.0a')
+            this.contrib = numeral(result[2].data.data[this.choice().value]).format('0.0a')
+            this.jobs = numeral(result[3].data.data[this.choice().value]).format('0.0a')
+          })
           break
       }
     }

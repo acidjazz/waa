@@ -58,7 +58,7 @@ json('../assets/fonts.json')
 <script>
 
 import chartmixin from '~plugins/chart-mixin.js'
-import json from '~/store/US Affordability (Landing).json'
+import json from '~/static/US Affordability (Landing).json'
 import colors from '~/assets/colors.json'
 
 export default {

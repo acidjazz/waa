@@ -11,6 +11,12 @@ export default {
   props: [ 'choice' ],
 
   methods: {
+    json (sheet, result) {
+      window.axios.get('/' + sheet)
+      .then(response => {
+        result(response)
+      })
+    },
     populate () {
       const numeral = window.numeral
 
@@ -19,18 +25,21 @@ export default {
       switch (this.choice.type) {
         case 'national':
         case 'state':
-          json = require('../store/US Building 2.json').data
-          this.homes = numeral(json[2017][1]).format('0,0a')
-          this.completions = numeral(json[2017][3]).format('0,0a')
-          this.type = 'country'
+          this.json('US Building 2.json', (result) => {
+            this.homes = numeral(result.data.data[2017][1]).format('0,0a')
+            this.completions = numeral(result.data.data[2017][3]).format('0,0a')
+            this.type = 'country'
+          })
           break
         case 'disabled-was-state':
-          json = require('../store/State Building Needed.json')
-          this.homes = numeral(json.data[2017][json.labels.indexOf(this.choice.value)]).format('0,0a')
-          json = require('../store/State Building Current.json')
-          this.completions = numeral(json.data[2017][json.labels.indexOf(this.choice.value)]).format('0,0a')
-          this.type = 'state'
-          this.wording = 'permits'
+          this.json('State Building Needed.json', (result) => {
+            this.homes = numeral(result.data.data[2017][result.data.labels.indexOf(this.choice.value)]).format('0,0a')
+          })
+          this.json('State Building Current.json', (result) => {
+            this.completions = numeral(result.data.data[2017][result.data.labels.indexOf(this.choice.value)]).format('0,0a')
+            this.type = 'state'
+            this.wording = 'permits'
+          })
           break
       }
     },

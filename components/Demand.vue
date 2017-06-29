@@ -31,18 +31,18 @@ export default {
       switch (true) {
 
         case (this.type === 'national'):
-          json = require('../store/US Units Needed.json').data
+          json = require('../static/US Units Needed.json').data
           this.households = numeral(json['Total U.S.'][0]).format('0.0a')
           break
 
         case (this.type === 'state'):
-          json = require('../store/State New Apt HHs Per Year.json')
+          json = require('../static/State New Apt HHs Per Year.json')
           index = json.labels.indexOf(this.value)
           this.households = numeral(json.data[""][index]).format('0,0a')
           break
 
         case (this.type === 'metro'):
-          json = require('../store/Metros Units Needed.json')
+          json = require('../static/Metros Units Needed.json')
           this.households = numeral(json.data[this.value][0]).format('0,0a')
           break
       }

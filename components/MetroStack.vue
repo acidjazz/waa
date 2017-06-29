@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import restrictIndex from '~/store/Metro Restriction Index.json'
+import restrictIndex from '~/static/Metro Restriction Index.json'
 export default {
   methods: {
     sort (object) {

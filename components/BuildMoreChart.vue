@@ -107,7 +107,7 @@ export default {
       let yellow = []
 
       if (this.json === null) {
-        this.json = require('../store/US Building 2.json').data
+        this.json = require('../static/US Building 2.json').data
       }
 
       for (let key in this.json) {

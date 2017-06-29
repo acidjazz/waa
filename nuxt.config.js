@@ -44,6 +44,7 @@ module.exports = {
       // { src: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css' }
       { src: "//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js" },
       { src: "//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js" },
+      { src: "//cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js" },
     ],
 
     link: [
@@ -108,7 +109,7 @@ module.exports = {
     }
   },
 
-  // generate: {
-  //  routes: routes
-  // }
+  generate: {
+    routes: routes
+  }
 }

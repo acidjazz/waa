@@ -174,21 +174,21 @@ const json = {
   },
 }
 
-import Filters from '~/store/Filters.json'
+import Filters from '~/static/Filters.json'
 
 import { mixin as clickaway } from 'vue-clickaway'
 
-json.homes.national  = require('../store/US Apts.json').data['Total U.S.']
-json.homes.state  = require('../store/State Apartments.json').data
-json.homes.metro  = require('../store/Metro Occupied Apartments.json').data
+json.homes.national  = require('../static/US Apts.json').data['Total U.S.']
+json.homes.state  = require('../static/State Apartments.json').data
+json.homes.metro  = require('../static/Metro Occupied Apartments.json').data
 
-json.impact.state.operation = require('~/store/Operation Impacts.json').data
-json.impact.state.construction = require('~/store/Construction Impacts.json').data
-json.impact.state.spending = require('~/store/Spending Impacts.json').data
+json.impact.state.operation = require('~/static/Operation Impacts.json').data
+json.impact.state.construction = require('~/static/Construction Impacts.json').data
+json.impact.state.spending = require('~/static/Spending Impacts.json').data
 
-json.impact.metro.operation = require('~/store/Operation Impacts (metro).json').data
-json.impact.metro.construction = require('~/store/Construction Impacts (metro).json').data
-json.impact.metro.spending = require('~/store/Spending Impacts (metro).json').data
+json.impact.metro.operation = require('~/static/Operation Impacts (metro).json').data
+json.impact.metro.construction = require('~/static/Construction Impacts (metro).json').data
+json.impact.metro.spending = require('~/static/Spending Impacts (metro).json').data
 
 export default {
 

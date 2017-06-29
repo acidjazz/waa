@@ -36,7 +36,7 @@
 
 <script>
 import filtermixin from '~plugins/filter-mixin.js'
-import datas from '../store/district economic impact.json'
+import datas from '../static/district economic impact.json'
 export default {
   props: ['district'],
   mixins: [ filtermixin ],

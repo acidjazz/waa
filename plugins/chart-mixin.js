@@ -1,6 +1,5 @@
 module.exports = {
   methods: {
-
     chartYAxes () {
       return {
         position: 'left',

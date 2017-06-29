@@ -16,8 +16,8 @@
 
 <script>
 import colors from '~/assets/colors.json'
-import housingCosts from '~/store/Metro Burden.json'
-import restrictIndex from '~/store/Metro Restriction Index.json'
+import housingCosts from '~/static/Metro Burden.json'
+import restrictIndex from '~/static/Metro Restriction Index.json'
 export default {
   watch: {
     'flip' () {

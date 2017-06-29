@@ -30,7 +30,14 @@ export default {
       return !isNaN(parseFloat(n)) && isFinite(n)
     },
 
-    populate () {
+    json (sheet, result) {
+      window.axios.get('/' + sheet)
+      .then(response => {
+        result(response)
+      })
+    },
+
+    populate (callback) {
 
       const numeral = window.numeral
       let data = {labels: [], datas: [[], []]}
@@ -41,62 +48,55 @@ export default {
 
         case this.type === 'national' && this.data === 'aptsneeded':
         case this.type === 'state' && this.data === 'aptsneeded':
-          let json = require('../store/US Building 2.json')
-          for (let key in json.data) {
-            if (key !== "") {
-              data.labels.push(key)
+          this.json('US Building 2.json', (result) => {
+            for (let key in result.data.data) {
+              if (key !== "") {
+                data.labels.push(key)
+              }
+              if (this.isNumeric(result.data.data[key][1])) {
+                data.datas[1].push(result.data.data[key][1])
+              }
+              if (this.isNumeric(result.data.data[key][3])) {
+                data.datas[0].push(result.data.data[key][3])
+              }
             }
-            if (this.isNumeric(json.data[key][1])) {
-              data.datas[1].push(json.data[key][1])
-            }
-            if (this.isNumeric(json.data[key][3])) {
-              data.datas[0].push(json.data[key][3])
-            }
-          }
-          this.$store.state.homesNeeded = numeral(data.datas[1][data.datas[1].length - 1]).format('0,0')
-          break
-
-        case this.type === 'WAS_STATE_DISABLED_FOR_NOW' && this.data === 'aptsneeded':
-          data = {labels: [], datas: [[], []]}
-          jsonc = require('../store/State Building Current.json')
-          jsonn = require('../store/State Building Needed.json')
-          let state = jsonc.labels.indexOf(this.state)
-          for (let key in jsonc.data) {
-            if (key !== "") {
-              data.labels.push(key)
-            }
-            if (this.isNumeric(jsonc.data[key][state])) {
-              data.datas[0].push(jsonc.data[key][state])
-            }
-            if (this.isNumeric(jsonn.data[key][state])) {
-              data.datas[1].push(jsonn.data[key][state])
-            }
-          }
-          this.$store.state.homesNeeded = numeral(data.datas[1][data.datas[1].length - 1]).format('0,0')
+            this.$store.state.homesNeeded = numeral(data.datas[1][data.datas[1].length - 1]).format('0,0')
+            callback(data)
+          })
           break
 
         case this.type === 'metro' && this.data === 'aptsneeded':
           data = {labels: [], datas: [[], []]}
-          jsonc = require('../store/Metro Building Current.json')
-          jsonn = require('../store/Metro Building Needed.json')
-          let metro = jsonc.labels.indexOf(this.value)
-          for (let key in jsonc.data) {
-            if (key !== "") {
-              data.labels.push(key)
-            }
-            if (this.isNumeric(jsonc.data[key][metro])) {
-              data.datas[0].push(jsonc.data[key][metro])
-            }
-            if (this.isNumeric(jsonn.data[key][metro])) {
-              data.datas[1].push(jsonn.data[key][metro])
-            }
-          }
-          this.$store.state.homesNeeded = numeral(data.datas[1][data.datas[1].length - 1]).format('0,0')
+
+          this.json('Metro Building Current.json', (resultc) => {
+            this.json('Metro Building Needed.json', (resultn) => {
+              let metro = resultc.data.labels.indexOf(this.value)
+              for (let key in resultc.data.data) {
+                if (key !== "") {
+                  data.labels.push(key)
+                }
+                if (this.isNumeric(resultc.data.data[key][metro])) {
+                  data.datas[0].push(resultc.data.data[key][metro])
+                }
+                if (this.isNumeric(resultn.data.data[key][metro])) {
+                  data.datas[1].push(resultn.data.data[key][metro])
+                }
+              }
+              this.$store.state.homesNeeded = numeral(data.datas[1][data.datas[1].length - 1]).format('0,0')
+              callback(data)
+            })
+          })
           break
 
       }
 
+    },
+
+    draw (data, jsonc, jsonn) {
+
+      const numeral = window.numeral
       const Chart = window.Chart
+
       let ctx = 'chart-' + this.id
 
       let solid = colors.cyan
@@ -280,11 +280,15 @@ export default {
   },
   watch: {
     '$route' () {
-      this.populate()
+      this.populate((data) => {
+        this.draw(data)
+      })
     }
   },
   mounted () {
-    this.populate()
+    this.populate((data) => {
+      this.draw(data)
+    })
   }
 }
 </script>
