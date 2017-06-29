@@ -1,4 +1,3 @@
-let numeral = require('numeral')
 module.exports = {
   methods: {
 
@@ -12,9 +11,9 @@ module.exports = {
           maxTicksLimit: 6,
           callback: function (label, index, labels) {
             if (label.toString().indexOf('.') !== -1) {
-              return numeral(label).format('0%')
+              return window.numeral(label).format('0%')
             }
-            return numeral(label).format('0a')
+            return window.numeral(label).format('0a')
           }
         }
       }
