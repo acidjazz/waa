@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import Filters from '../store/Filters.json'
+import Filters from '../static/Filters.json'
 import { mixin as clickaway } from 'vue-clickaway'
 import filtermixin from '~plugins/filter-mixin.js'
 import ordinal from 'ordinal'

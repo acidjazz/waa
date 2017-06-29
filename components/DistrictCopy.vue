@@ -36,8 +36,7 @@
 
 <script>
 import filtermixin from '~plugins/filter-mixin.js'
-let numeral = require('numeral')
-import datas from '../store/district economic impact.json'
+import datas from '../static/district economic impact.json'
 export default {
   props: ['district'],
   mixins: [ filtermixin ],
@@ -51,6 +50,7 @@ export default {
   },
   methods: {
     populate () {
+      const numeral = window.numeral
       let data = datas.data[this.choice().value]
       this.operations.impact = numeral(data[0]).format('$0.00a')
       this.operations.jobs = numeral(data[1]).format('0,0')

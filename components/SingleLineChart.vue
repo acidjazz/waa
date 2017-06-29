@@ -35,7 +35,6 @@ json('../assets/colors.json')
 
 import colors from '~/assets/colors.json'
 import chartmixin from '~plugins/chart-mixin.js'
-let numeral = require('numeral')
 
 export default {
   mixins: [ chartmixin ],
@@ -48,75 +47,111 @@ export default {
         selection[i].remove()
       }
     },
-    populate () {
+
+    json (sheet, result) {
+      window.axios.get('/' + sheet)
+      .then(response => {
+        result(response)
+      })
+    },
+
+    populate (complete) {
 
       // this.clean()
 
       let data = {labels: [], datas: []}
       let json = {}
       let spike = false
+      const numeral = window.numeral
 
       switch (true) {
 
         case this.choice.type === 'national' && this.data === 'apthhgrowth':
-          data = this.toCurrent(require('../store/US Apt HHs (Landing).json').data)
+          this.json('US Apt HHs (Landing).json', (result) => {
+            data = this.toCurrent(result.data.data)
+            complete(data, spike)
+          })
           break
 
         case this.choice.type === 'national' && this.data === 'rentgrowth':
-          data = this.toCurrent(require('../store/US Rentership Rate (Landing).json').data)
+          this.json('US Rentership Rate (Landing).json', (result) => {
+            data = this.toCurrent(result.data.data)
+            complete(data, spike)
+          })
           break
 
         case this.choice.type === 'national' && this.data === 'popgrowth':
-          data = this.toCurrent(require('../store/US Population (Landing).json').data)
+          this.json('US Population (Landing).json', (result) => {
+            data = this.toCurrent(result.data.data)
+            complete(data, spike)
+          })
           break
 
         case this.choice.type === 'state' && this.data === 'apthhgrowth':
-          json = require('../store/State New Apt HHs Per Year.json')
-          data = this.toCurrent(json.data, json.labels.indexOf(this.choice.value))
+          this.json('State New Apt HHs Per Year.json', (result) => {
+            data = this.toCurrent(result.data.data, result.data.labels.indexOf(this.choice.value))
+            complete(data, spike)
+          })
           break
 
         case this.choice.type === 'state' && this.data === 'rentgrowth':
-          json = require('../store/State Renter Households.json')
-          data.labels = [2016, 2030]
-          data.datas = [json.data[this.choice.value][1], json.data[this.choice.value][3]]
+          this.json('State Renter Households.json', (result) => {
+            data.labels = [2016, 2030]
+            data.datas = [result.data.data[this.choice.value][1], result.data.data[this.choice.value][3]]
+            complete(data, spike)
+          })
           break
 
         case this.choice.type === 'state' && this.data === 'popgrowth':
-          json = require('../store/State HH Growth.json').data[this.choice.value]
-          data.labels = [2016, 2030]
-          data.datas = [json[2], json[3]]
-          spike = numeral(json[4]).format('0.00%').replace(/%/, '')
+          this.json('State HH Growth.json', (result) => {
+            data.labels = [2016, 2030]
+            data.datas = [result.data.data[this.choice.value][2], result.data.data[this.choice.value][3]]
+            spike = numeral(result.data.data[4]).format('0.00%').replace(/%/, '')
+            complete(data, spike)
+          })
           break
 
         case this.choice.type === 'metro' && this.data === 'apthhgrowth':
-          json = require('../store/Metro New Apt HHs Per Year.json')
-          data = this.toCurrent(json.data, json.labels.indexOf(this.choice.value))
+          this.json('Metro New Apt HHs Per Year.json', (result) => {
+            data = this.toCurrent(result.data.data, result.data.labels.indexOf(this.choice.value))
+            complete(data, spike)
+          })
           break
 
         case this.choice.type === 'metro' && this.data === 'rentgrowth':
-          // json = require('../store/Metro Rentership Rate.json')
-          // data = {'labels': [2016, 2030], 'datas': json.data[this.choice.value].slice(0, 2)}
-          json = require('../store/Metro Renter HHs.json')
-          data = {
-            labels: [2016, 2030],
-            datas: [json.data[this.choice.value][1], json.data[this.choice.value][3]]
-          }
+          this.json('Metro Renter HHs.json', (result) => {
+            data = {
+              labels: [2016, 2030],
+              datas: [result.data.data[this.choice.value][1], result.data.data[this.choice.value][3]]
+            }
+            complete(data, spike)
+          })
           break
 
         case this.choice.type === 'metro' && this.data === 'popgrowth':
-          json = require('../store/Metro Pop Growth.json')
-          data = this.toCurrent(json.data, json.labels.indexOf(this.choice.value))
+          this.json('Metro Pop Growth.json', (result) => {
+            data = this.toCurrent(result.data.data, result.data.labels.indexOf(this.choice.value))
+            complete(data, spike)
+          })
           break
 
         case this.data === 'inyourstate':
-          json = require('../store/State New Apt HHs Per Year.json')
-          data = this.toCurrent(json.data, json.labels.indexOf(this.choice.state))
+          this.json('State New Apt HHs Per Year.json', (result) => {
+            data = this.toCurrent(result.data.data, result.data.labels.indexOf(this.choice.state))
+            complete(data, spike)
+          })
           break
 
         default:
           break
 
       }
+
+    },
+
+    draw (data, spike) {
+
+      const numeral = window.numeral
 
       if (spike === false) {
         spike = numeral(
@@ -126,7 +161,7 @@ export default {
 
       this.spike = isNaN(spike) ? 100 : spike
 
-      let Chart = require('chart.js')
+      const Chart = window.Chart
       let ctx = 'chart-' + this.id
 
       let solid = colors.cyan
@@ -276,11 +311,15 @@ export default {
   },
 
   mounted () {
-    this.populate()
+    this.populate((data, spike) => {
+      this.draw(data, spike)
+    })
   },
   watch: {
     '$route' () {
-      this.populate()
+      this.populate((data, spike) => {
+        this.draw(data, spike)
+      })
     }
   },
   data () {

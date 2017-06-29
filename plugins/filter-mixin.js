@@ -48,7 +48,7 @@ module.exports = {
       }
       if (this.metro !== 'None') {
 
-        var Filters =  require('../store/Filters.json')
+        var Filters =  require('../static/Filters.json')
         let state = false
 
         for (let key in Filters.data) {

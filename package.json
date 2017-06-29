@@ -21,6 +21,7 @@
     "pug": "^2.0.0-rc.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
+    "tap-xunit": "^1.7.0",
     "vue-clickaway": "^2.1.0",
     "vue-in-viewport-directive": "^1.1.4",
     "vue-in-viewport-mixin": "^1.0.3",

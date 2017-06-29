@@ -72,7 +72,7 @@ json('../assets/fonts.json')
 </style>
 
 <script>
-import copy from '../store/FAQ.json'
+import copy from '../static/FAQ.json'
 export default {
   data () {
     return {

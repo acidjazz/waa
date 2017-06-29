@@ -86,7 +86,6 @@
     .clear
     .border.big
     //.border.big
-    // MultipleItems(:choice="this.choice()",v-if="(this.choice().type !== 'district')")
     // .border.big(v-if="(this.choice().type !== 'district')")
     //SingleItem(v-if="this.choice().type === 'national'")
     //.border.big(v-if="this.choice().type === 'national'")
@@ -190,19 +189,15 @@ import filtermixin from '~plugins/filter-mixin.js'
 
 import Top from '~/components/Top.vue'
 import Bottom from '~/components/Bottom.vue'
-import SingleLineChart from '~/components/SingleLineChart.vue'
-import MultiLineChart from '~/components/MultiLineChart.vue'
 import DataFilters from '~/components/DataFilters.vue'
 import DataSummary from '~/components/DataSummary.vue'
 import DistrictCopy from '~/components/DistrictCopy.vue'
 import DistrictTrio from '~/components/DistrictTrio.vue'
+import SingleLineChart from '~/components/SingleLineChart.vue'
+import MultiLineChart from '~/components/MultiLineChart.vue'
 import Demand from '~/components/Demand.vue'
 import BuildMore from '~/components/BuildMore.vue'
-import MultipleItems from '~/components/MultipleItems.vue'
-import DualItems from '~/components/DualItems.vue'
-import SingleItem from '~/components/SingleItem.vue'
 
-import CircleChart from '~/components/CircleChart.vue'
 import HeatChart from '~/components/HeatChart.vue'
 
 export default {
@@ -218,10 +213,6 @@ export default {
     MultiLineChart,
     Demand,
     BuildMore,
-    MultipleItems,
-    DualItems,
-    SingleItem,
-    CircleChart,
     HeatChart,
   },
 

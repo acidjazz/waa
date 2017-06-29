@@ -5,9 +5,6 @@
 
 <script>
 import DataPage from '~/components/DataPage.vue'
-export default {
-  components: { DataPage },
-  scrollToTop: false,
-}
+export default { components: { DataPage }, }
 
 </script>

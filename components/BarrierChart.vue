@@ -5,9 +5,8 @@
 </template>
 <script>
 import colors from '~/assets/colors.json'
-import housingCosts from '~/store/Metro Burden.json'
-import restrictIndex from '~/store/Metro Restriction Index.json'
-let numeral = require('numeral')
+import housingCosts from '~/static/Metro Burden.json'
+import restrictIndex from '~/static/Metro Restriction Index.json'
 export default {
   methods: {
     sort (object, skey) {
@@ -39,8 +38,8 @@ export default {
 
     },
     draw () {
-
-      let Chart = require('chart.js')
+      const numeral = window.numeral
+      const Chart = window.Chart
       let ctx = 'BarrierChart-chart'
       let datasets = []
       let labels = []
