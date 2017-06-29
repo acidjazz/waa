@@ -5,7 +5,7 @@ let config = {
   image: '/share.jpg',
   keywords: 'affordable, data, apartments, census, calculator'
 }
-let routes = require('./store/routes.json')
+let routes = require('./static/routes.json')
 
 module.exports = {
   /*

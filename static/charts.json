@@ -1,0 +1,292 @@
+[
+  {
+    "sheet": "Filters",
+    "data": [
+      {
+        "State": "Alaska",
+        "Abbeviation": "AK",
+        "District": 1
+      },
+      {
+        "State": "Alabama",
+        "Abbeviation": "AL",
+        "Metro": "Birmingham",
+        "District": 7
+      },
+      {
+        "State": "Arkansas",
+        "Abbeviation": "AR",
+        "District": 4
+      },
+      {
+        "State": "Arizona",
+        "Abbeviation": "AZ",
+        "Metro": "Phoenix",
+        "District": 9
+      },
+      {
+        "State": "California",
+        "Abbeviation": "CA",
+        "Metro": "Los Angeles, Riverside, San Diego, San Francisco",
+        "District": 53
+      },
+      {
+        "State": "Colorado",
+        "Abbeviation": "CO",
+        "Metro": "Denver",
+        "District": 7
+      },
+      {
+        "State": "Connecticut",
+        "Abbeviation": "CT",
+        "District": 5
+      },
+      {
+        "State": "Delaware",
+        "Abbeviation": "DE",
+        "Metro": "Philadelphia",
+        "District": 1
+      },
+      {
+        "State": "Florida",
+        "Abbeviation": "FL",
+        "Metro": "Miami, Orlando, Tampa",
+        "District": 27
+      },
+      {
+        "State": "Georgia",
+        "Abbeviation": "GA",
+        "Metro": "Atlanta",
+        "District": 14
+      },
+      {
+        "State": "Hawaii",
+        "Abbeviation": "HI",
+        "District": 2
+      },
+      {
+        "State": "Iowa",
+        "Abbeviation": "IA",
+        "District": 4
+      },
+      {
+        "State": "Idaho",
+        "Abbeviation": "ID",
+        "District": 2
+      },
+      {
+        "State": "Illinois",
+        "Abbeviation": "IL",
+        "Metro": "Chicago, St. Louis",
+        "District": 18
+      },
+      {
+        "State": "Indiana",
+        "Abbeviation": "IN",
+        "Metro": "Indianapolis",
+        "District": 9
+      },
+      {
+        "State": "Kansas",
+        "Abbeviation": "KS",
+        "District": 4
+      },
+      {
+        "State": "Kentucky",
+        "Abbeviation": "KY",
+        "Metro": "Louisville",
+        "District": 6
+      },
+      {
+        "State": "Louisiana",
+        "Abbeviation": "LA",
+        "Metro": "New Orleans",
+        "District": 6
+      },
+      {
+        "State": "Maine",
+        "Abbeviation": "MA",
+        "District": 9
+      },
+      {
+        "State": "Maryland",
+        "Abbeviation": "MD",
+        "Metro": "Balitmore",
+        "District": 8
+      },
+      {
+        "State": "Massachusetts",
+        "Abbeviation": "ME",
+        "Metro": "Boston",
+        "District": 2
+      },
+      {
+        "State": "Michigan",
+        "Abbeviation": "MI",
+        "Metro": "Detroit",
+        "District": 14
+      },
+      {
+        "State": "Minnesota",
+        "Abbeviation": "MN",
+        "Metro": "Minneapolis",
+        "District": 8
+      },
+      {
+        "State": "Missouri",
+        "Abbeviation": "MO",
+        "Metro": "St. Louis",
+        "District": 8
+      },
+      {
+        "State": "MIssissippi",
+        "Abbeviation": "MS",
+        "District": 4
+      },
+      {
+        "State": "Montana",
+        "Abbeviation": "MT",
+        "District": 1
+      },
+      {
+        "State": "North Carolina",
+        "Abbeviation": "NC",
+        "Metro": "Charlotte",
+        "District": 13
+      },
+      {
+        "State": "Nevada",
+        "Abbeviation": "ND",
+        "Metro": "Las Vegas",
+        "District": 1
+      },
+      {
+        "State": "Nebraska",
+        "Abbeviation": "NE",
+        "District": 3
+      },
+      {
+        "State": "New Hampshire",
+        "Abbeviation": "NH",
+        "District": 2
+      },
+      {
+        "State": "New Jersey",
+        "Abbeviation": "NJ",
+        "District": 12
+      },
+      {
+        "State": "New Mexico",
+        "Abbeviation": "NM",
+        "Metro": "Albuquerque",
+        "District": 3
+      },
+      {
+        "State": "Nevada",
+        "Abbeviation": "NV",
+        "District": 4
+      },
+      {
+        "State": "New York",
+        "Abbeviation": "NY",
+        "Metro": "New York City",
+        "District": 27
+      },
+      {
+        "State": "Ohio",
+        "Abbeviation": "OH",
+        "Metro": "Cincinnati, Colombus",
+        "District": 16
+      },
+      {
+        "State": "Oklahoma",
+        "Abbeviation": "OK",
+        "District": 5
+      },
+      {
+        "State": "Oregon",
+        "Abbeviation": "OR",
+        "Metro": "Portland",
+        "District": 5
+      },
+      {
+        "State": "Pennsylvania",
+        "Abbeviation": "PA",
+        "Metro": "Philadelphia, Pittsburgh",
+        "District": 18
+      },
+      {
+        "State": "Rhode Island",
+        "Abbeviation": "RI",
+        "District": 2
+      },
+      {
+        "State": "South Carolina",
+        "Abbeviation": "SC",
+        "Metro": "Charleston",
+        "District": 7
+      },
+      {
+        "State": "South Dakota",
+        "Abbeviation": "SD",
+        "Metro": "Sioux Falls",
+        "District": 1
+      },
+      {
+        "State": "Tennessee",
+        "Abbeviation": "TN",
+        "Metro": "Nashville",
+        "District": 9
+      },
+      {
+        "State": "Texas",
+        "Abbeviation": "TX",
+        "Metro": "Austin, Dalls, Houston, San Antonio",
+        "District": 36
+      },
+      {
+        "State": "Utah",
+        "Abbeviation": "UT",
+        "Metro": "Salt Lake City",
+        "District": 4
+      },
+      {
+        "State": "Virginia",
+        "Abbeviation": "VA",
+        "Metro": "Richmond, Washington DC",
+        "District": 11
+      },
+      {
+        "State": "Vermont",
+        "Abbeviation": "VT",
+        "District": 1
+      },
+      {
+        "State": "Washington",
+        "Abbeviation": "WA",
+        "Metro": "Seattle",
+        "District": 10
+      },
+      {
+        "State": "Wisconsin",
+        "Abbeviation": "WI",
+        "District": 8
+      },
+      {
+        "State": "West Virginia",
+        "Abbeviation": "WV",
+        "District": 3
+      },
+      {
+        "State": "Wyoming",
+        "Abbeviation": "WY",
+        "District": 1
+      }
+    ],
+    "labels": [
+      "Abbreviation",
+      "Metro",
+      "District"
+    ]
+  }
+]

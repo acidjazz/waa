@@ -1,0 +1,13 @@
+{
+  "sheet": "US Jobs",
+  "data": {
+    "Total U.S.": 12295689.1065
+  },
+  "labels": [
+    "total jobs",
+    null,
+    null,
+    null,
+    "Time Period: 2013  (but don't highlight this)"
+  ]
+}
