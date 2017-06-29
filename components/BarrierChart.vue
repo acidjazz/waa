@@ -113,8 +113,8 @@ export default {
             display: false,
             position: 'right',
             ticks: {
-              max: 0.55,
-              min: 0.30,
+              max: 0.59,
+              min: 0.25,
               maxTicksLimit: 5,
               userCallback: (label, index, labels) => {
                 return numeral(label).format('0%')
@@ -124,7 +124,7 @@ export default {
             id: 'b',
             position: 'right',
             ticks: {
-              max: 20,
+              max: 25,
               min: -10.0,
             },
             gridLines: {
