@@ -12,7 +12,6 @@
         router-link(to="/vision") our vision
       .button.is-centered
         router-link(to="/data") the data
-  .border.big
   .demand
     p The 2030 Demand
     Demand(type='national')

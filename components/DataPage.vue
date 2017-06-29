@@ -49,11 +49,9 @@
             b(v-if="this.choice().type === 'metro'") {{ this.choice().copy }}
         .part.part_numbers
           .graph
-            i.fa.fa-2x.fa-bar-chart
           .copy Avg Annual Construction Rate (2011-2016)
         .part.part_numbers
           .graph
-            i.fa.fa-2x.fa-bar-chart
           .copy New Apartments Needed
       .left.left_buildmore(v-if="this.choice().type !== 'metro'")
         .copy We need to build more
@@ -153,11 +151,9 @@
             b(v-if="this.choice().type === 'metro'") {{ this.choice().copy }}
         .part.part_numbers
           .graph
-            i.fa.fa-2x.fa-bar-chart
           .copy Avg Annual Construction Rate (2011-2016)
         .part.part_numbers
           .graph
-            i.fa.fa-2x.fa-bar-chart
           .copy New Apartments Needed
       .left(v-if="this.choice().type !== 'metro'")
         // CircleChart(id="renters_print",width="225",height="225",value="70")
@@ -323,7 +319,9 @@ json('../assets/fonts.json')
         background none
         background-color white
         padding 10px 0
-        > .copy:first-child, > .copy:nth-child(2)
+        > .breadcrumb
+          display none
+        > .copy:nth-child(2), > .copy:nth-child(3)
           display none
         > .copy_print
           display block
@@ -464,8 +462,10 @@ json('../assets/fonts.json')
             > .graph
               float left
               margin 10px 10px 0 0
-              > i
-                color rgba(red, 0.5)
+              background-color rgba(red, 0.5)
+              width 20px
+              height 20px
+              border-radius 50%
             > .copy
               margin 5px 0 0 40px
               color grey
@@ -474,8 +474,8 @@ json('../assets/fonts.json')
               line-height 20px
             > .value
               margin 0 0 0 20px
-            &:nth-child(2) > .graph > i
-              color rgba(red, 1)
+            &:nth-child(2) > .graph 
+              background-color rgba(red, 1)
       > .left
         float left
         border none
@@ -593,21 +593,28 @@ json('../assets/fonts.json')
               color grey
               display inline
           &.part_numbers
+            width 200px
             > .graph
               float left
               margin 10px 10px 0 0
-              > i
-                color rgba(red, 0.5)
+              background-color rgba(red, 0.5)
+              width 20px
+              height 20px
+              border-radius 50%
             > .copy
               margin 5px 0 0 40px
               color grey
               line-height 10px
-              width 184px
+              width 144px
               line-height 20px
             > .value
               margin 0 0 0 20px
-            &:nth-child(2) > .graph > i
-              color rgba(red, 1)
+            &:nth-child(2)
+              margin 0 140px 0 0
+            &:nth-child(2) > .graph
+              background-color rgba(red, 1)
+            &:nth-child(2) > .copy
+              width 184px
       > .copyLeft
         float left
         width 300px
