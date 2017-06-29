@@ -15,7 +15,6 @@
 
 <script>
 import restrictIndex from '~/store/Metro Restriction Index.json'
-import numeral from 'numeral'
 export default {
   methods: {
     sort (object) {
@@ -35,7 +34,7 @@ export default {
     populate () {
       let sorted = this.sort(restrictIndex.data)
       for (let key in sorted) {
-        this.metros[key] = numeral(sorted[key]).format('0.0a')
+        this.metros[key] = sorted[key].toFixed(2)
       }
     }
   },

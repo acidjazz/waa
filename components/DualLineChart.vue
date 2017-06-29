@@ -57,16 +57,16 @@ json('../assets/fonts.json')
 
 <script>
 
-import numeral from 'numeral'
-
 import chartmixin from '~plugins/chart-mixin.js'
-
 import json from '~/store/US Affordability (Landing).json'
 import colors from '~/assets/colors.json'
+
 export default {
   mixins: [ chartmixin ],
   methods: {
     compile () {
+
+      const numeral = window.numeral
       let data = {
         labels: [],
         datas: [[], []]

@@ -14,7 +14,6 @@ json('../assets/colors.json')
 
 <script>
 import colors from '~/assets/colors.json'
-import numeral from 'numeral'
 export default {
 
   props: ['id', 'data', 'type', 'state', 'value', 'theme', 'width', 'height', 'animation'],
@@ -33,6 +32,7 @@ export default {
 
     populate () {
 
+      const numeral = window.numeral
       let data = {labels: [], datas: [[], []]}
       let jsonc = {}
       let jsonn = {}

@@ -19,17 +19,14 @@ p New research shows that demand for apartments is on the rise.  Whether it's yo
 </template>
 
 <script>
-
-import numeral from 'numeral'
 export default {
-
   props: [ 'type', 'value' ],
-
   methods: {
     populate () {
 
       let json = {}
       let index = false
+      const numeral = window.numeral
 
       switch (true) {
 
