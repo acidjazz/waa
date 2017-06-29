@@ -9,8 +9,6 @@ const ora = require('ora')
 const spinner = ora('Loading aeonian').start()
 const AWS = require('aws-sdk')
 
-const Progress = require('ascii-progress')
-
 var s3 = null
 var cloudfront = null
 var client = null
