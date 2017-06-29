@@ -48,17 +48,16 @@ import jobsState from '../store/State Jobs.json'
 import jobsMetro from '../store/Metro Jobs.json'
 import jobsDistrict from '../store/District Total Jobs.json'
 
-let numeral = require('numeral')
-
 export default {
   mixins: [ filtermixin ],
 
   methods: {
 
     value (text) {
-      return numeral(text).value()
+      return text
     },
     populate () {
+      const numeral = window.numeral
       switch (this.choice().type) {
         case 'national':
           this.residents = numeral(residentsUS.data['Total U.S.']).format('0.0a')
@@ -87,7 +86,7 @@ export default {
       }
     }
   },
-  created () {
+  mounted () {
     this.populate()
   },
   watch: {

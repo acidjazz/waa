@@ -14,7 +14,7 @@
 
 <script>
 import index from '../store/Metro Restriction Index.json'
-let numeral = require('numeral')
+import numeral from 'numeral'
 export default {
   props: ['metro'],
   methods: {

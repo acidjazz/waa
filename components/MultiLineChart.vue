@@ -14,7 +14,7 @@ json('../assets/colors.json')
 
 <script>
 import colors from '~/assets/colors.json'
-let numeral = require('numeral')
+import numeral from 'numeral'
 export default {
 
   props: ['id', 'data', 'type', 'state', 'value', 'theme', 'width', 'height', 'animation'],
@@ -96,7 +96,7 @@ export default {
 
       }
 
-      let Chart = require('chart.js')
+      const Chart = window.Chart
       let ctx = 'chart-' + this.id
 
       let solid = colors.cyan

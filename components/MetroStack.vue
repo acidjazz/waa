@@ -15,7 +15,7 @@
 
 <script>
 import restrictIndex from '~/store/Metro Restriction Index.json'
-let numeral = require('numeral')
+import numeral from 'numeral'
 export default {
   methods: {
     sort (object) {

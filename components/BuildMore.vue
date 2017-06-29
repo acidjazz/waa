@@ -7,12 +7,12 @@
 </template>
 
 <script>
-let numeral = require('numeral')
 export default {
   props: [ 'choice' ],
 
   methods: {
     populate () {
+      const numeral = window.numeral
 
       let json = {}
 

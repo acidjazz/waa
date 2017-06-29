@@ -57,7 +57,7 @@ json('../assets/fonts.json')
 
 <script>
 
-let numeral = require('numeral')
+import numeral from 'numeral'
 
 import chartmixin from '~plugins/chart-mixin.js'
 
@@ -124,8 +124,9 @@ export default {
         datasets[0].borderColor = colors.yellow
         datasets[0].fill = false
       }
+      const Chart = window.Chart
 
-      this.charts[type] = new this.Chart('Chart-' + type, {
+      this.charts[type] = new Chart('Chart-' + type, {
         type: 'line',
         data: {
           labels: labels,
@@ -138,7 +139,6 @@ export default {
   },
   data () {
     return {
-      Chart: process.BROWSER_BUILD ? require('chart.js') : null,
       charts: {
         income: null,
         affordability: null,

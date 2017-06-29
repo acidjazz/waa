@@ -12,7 +12,7 @@ export default {
     return {}
   },
   mounted () {
-    let Chart = require('chart.js')
+    const Chart = window.Chart
     let ctx = 'chart-' + this.id
 
     let solid = colors.lime

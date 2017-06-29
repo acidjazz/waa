@@ -36,7 +36,7 @@
 
 <script>
 import filtermixin from '~plugins/filter-mixin.js'
-let numeral = require('numeral')
+import numeral from 'numeral'
 import datas from '../store/district economic impact.json'
 export default {
   props: ['district'],

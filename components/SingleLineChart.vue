@@ -35,7 +35,6 @@ json('../assets/colors.json')
 
 import colors from '~/assets/colors.json'
 import chartmixin from '~plugins/chart-mixin.js'
-let numeral = require('numeral')
 
 export default {
   mixins: [ chartmixin ],
@@ -49,6 +48,7 @@ export default {
       }
     },
     populate () {
+      const numeral = window.numeral
 
       // this.clean()
 
@@ -126,7 +126,7 @@ export default {
 
       this.spike = isNaN(spike) ? 100 : spike
 
-      let Chart = require('chart.js')
+      const Chart = window.Chart
       let ctx = 'chart-' + this.id
 
       let solid = colors.cyan

@@ -190,8 +190,6 @@ json.impact.metro.operation = require('~/store/Operation Impacts (metro).json').
 json.impact.metro.construction = require('~/store/Construction Impacts (metro).json').data
 json.impact.metro.spending = require('~/store/Spending Impacts (metro).json').data
 
-let numeral = require('numeral')
-
 export default {
 
   mixins: [ clickaway ],
@@ -351,6 +349,8 @@ export default {
     },
 
     calculate () {
+
+      const numeral = window.numeral
 
       let value = this.value.trim()
       let by = this.by

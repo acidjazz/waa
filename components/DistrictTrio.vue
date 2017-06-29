@@ -36,7 +36,6 @@ import SingleLineChart from '~components/SingleLineChart.vue'
 export default {
   props: [ 'choice', 'type' ],
   components: { CircleChart, PercChart, SingleLineChart },
-  mounted () { }
 }
 </script>
 

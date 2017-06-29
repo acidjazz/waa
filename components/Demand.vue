@@ -20,7 +20,7 @@ p New research shows that demand for apartments is on the rise.  Whether it's yo
 
 <script>
 
-let numeral = require('numeral')
+import numeral from 'numeral'
 export default {
 
   props: [ 'type', 'value' ],

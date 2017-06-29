@@ -92,14 +92,14 @@ json('../assets/fonts.json')
 
 <script>
 import colors from '~/assets/colors.json'
-let numeral = require('numeral')
 export default {
 
   methods: {
 
     draw () {
 
-      let Chart = require('chart.js')
+      const Chart = window.Chart
+      const numeral = window.numeral
       let ctx = 'BuildMoreChart-chart'
       let data = []
       let datasets = []
