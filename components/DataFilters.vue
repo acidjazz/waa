@@ -185,8 +185,7 @@ json('../assets/colors.json')
   > .modals
     > .modal
       position absolute
-      top 174px
-      // top 126px
+      top 126px
       left 50%
       margin-left -300px
       width 600px

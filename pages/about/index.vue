@@ -73,14 +73,13 @@
         .block.left
           .inner
             .copy The Report
-            .copy NMHC and NAA partnered with Hoyt Advisory Services to identify the demand for apartments through 2030. Download their analysis of the apartment industry.
+            .copy NMHC and NAA partnered with Hoyt Advisory Services to identify the demand for apartments through 2030. Download their analysis of the apartment market.
             a.cta(href="/NMHC-NAA-US-Apartment-Demand-in-2030.pdf") download
 
         .block.right
           .inner
-            .copy A vision for 2030
-            .copy Meeting the country's demand for apartments will take courageous steps at the federal, state and local levels. 
-            .cta Learn more
+            .copy The Data
+            .copy A combination of original research, private data providers and public data sources make up the thousands of visualizations on the site.
 
             
   Bottom

@@ -52,6 +52,9 @@ json('../../assets/fonts.json')
             text-transform uppercase
             font c1sb
             float left
+            transition background-color 0.5s ease 0s, transform 0.2s ease 0s
+            &:hover
+              transform scale(1.05)
     &.section_about
       margin 60px auto
       width 900px
@@ -142,9 +145,6 @@ json('../../assets/fonts.json')
           &:nth-child(2)
             background-color royalpurple
             border-radius 3px
-            > .inner > .cta
-              padding 15px 40px 15px 0
-              text-decoration underline
           &:nth-child(1)
             > .inner > .cta
               background-color blue
@@ -154,6 +154,11 @@ json('../../assets/fonts.json')
               float left
               text-transform uppercase
               font c1b
+              text-decoration none
+              transition text-decoration 0.5s ease 0s, transform 0.2s ease 0s
+              &:hover
+                transform scale(1.05)
+                text-decoration underline
           > .inner
             > .copy:nth-child(1)
               font h1
