@@ -53,7 +53,7 @@ export default {
 json('../assets/colors.json')
 json('../assets/fonts.json')
 #MetroStack
-  padding 60px 0
+  padding 90px 0
   > .inner
     > .title
       font h1

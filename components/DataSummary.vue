@@ -3,8 +3,8 @@
   .inner
     .breadcrumb(v-if="choice().type == 'national'") national data
     .breadcrumb(v-if="choice().type == 'state'") state data
-    .breadcrumb(v-if="choice().type == 'metro'") metro data
-    .breadcrumb(v-if="choice().type == 'district'") district data
+    .breadcrumb(v-if="choice().type == 'metro'") {{ choice().state }}
+    .breadcrumb(v-if="choice().type == 'district'") {{ choice().state }}
     .copy {{ selection }}
     .copy Apartments and their residents contribute more than $3.5 billion to the economy every day.
     .copy_print Market Snapshot
