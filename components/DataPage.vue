@@ -44,9 +44,9 @@
       .top
         .part.part_homes
           .value {{ $store.state.homesNeeded }} 
-          .copy Apartment <br />Homes Needed in 
-            b(v-if="this.choice().type !== 'metro'") the Country
-            b(v-if="this.choice().type === 'metro'") {{ this.choice().copy }}
+          .copy Apartment Homes Needed in 
+            span(v-if="this.choice().type !== 'metro'") the Country
+            span(v-if="this.choice().type === 'metro'") {{ this.choice().copy }}
         .part.part_numbers
           .graph
           .copy Avg Annual Construction Rate (2011-2016)
@@ -146,7 +146,7 @@
       .top
         .part.part_homes
           .value {{ $store.state.homesNeeded }} 
-          .copy Apartment <br />Homes Needed in 
+          .copy Apartment Homes Needed in 
             b(v-if="this.choice().type !== 'metro'") the Country
             b(v-if="this.choice().type === 'metro'") {{ this.choice().copy }}
         .part.part_numbers
@@ -582,13 +582,16 @@ json('../assets/fonts.json')
       > .top
         > .part
           float right
-          width 260px
+          width 220px
+          line-height 22px
+          font c1s
           &.part_homes
             text-align left
-            line-height 20px
             padding 5px 0 0 0
             > .value
               display inline
+              font c1b
+              line-height 22px
             > .copy
               color grey
               display inline
@@ -598,19 +601,17 @@ json('../assets/fonts.json')
               float left
               margin 10px 10px 0 0
               background-color rgba(red, 0.5)
-              width 20px
-              height 20px
+              width 15px
+              height 15px
               border-radius 50%
             > .copy
-              margin 5px 0 0 40px
+              margin 5px 0 0 30px
               color grey
-              line-height 10px
               width 144px
-              line-height 20px
             > .value
               margin 0 0 0 20px
             &:nth-child(2)
-              margin 0 140px 0 0
+              margin 0 180px 0 0
             &:nth-child(2) > .graph
               background-color rgba(red, 1)
             &:nth-child(2) > .copy
