@@ -541,8 +541,8 @@ json('../assets/fonts.json')
       width 1200px
       margin auto
       > .pdf
-        top 30px
-        right 60px
+        top 85px
+        right 90px
       > p:first-child
         font h1
       > p:nth-child(2)
