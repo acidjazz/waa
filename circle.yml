@@ -17,7 +17,7 @@ test:
     - mkdir -p $CIRCLE_TEST_REPORTS/reports
     - nyc ava --tap | tap-xunit > $CIRCLE_TEST_REPORTS/reports/ava.xml
   post:
-    - bash <(curl -s https://codecov.io/bash)
+    - yarn coverage
 
 deployment:
   staging: 

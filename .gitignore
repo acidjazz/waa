@@ -1,5 +1,7 @@
 # dependencies
 node_modules
+coverage.lcov
+.nyc_output
 
 # logs
 npm-debug.log

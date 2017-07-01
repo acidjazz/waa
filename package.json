@@ -5,7 +5,8 @@
   "author": "kevin olson <acidjazz@gmail.com>",
   "private": true,
   "scripts": {
-    "test": "ava",
+    "test": "nyc ava",
+     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "dev": "nuxt",
     "dev-kevin": "HOST=192.168.1.230 nuxt",
     "build": "nuxt build",
@@ -37,8 +38,8 @@
   "devDependencies": {
     "aeonian": "1.0.8",
     "ava": "0.20.0",
-    "nyc": "^11.0.3",
     "babel-eslint": "^7.1.1",
+    "codecov": "^2.2.0",
     "eslint": "^3.15.0",
     "eslint-config-standard": "^6.2.1",
     "eslint-loader": "^1.6.1",
@@ -46,6 +47,7 @@
     "eslint-plugin-promise": "^3.4.1",
     "eslint-plugin-standard": "^2.0.1",
     "jsdom": "^11.0.0",
+    "nyc": "^11.0.3",
     "tap-xunit": "^1.7.0"
   }
 }
