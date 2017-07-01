@@ -63,7 +63,7 @@ export default {
         return true
       }
       if (visible) {
-        setTimeout(() => { this.populate() }, 400)
+        setTimeout(() => { this.populate() }, 600)
       } else {
         this.zeros()
       }
