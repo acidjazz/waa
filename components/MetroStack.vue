@@ -1,10 +1,10 @@
 <template lang="pug">
 doctype
-#MetroStack(v-in-viewport)
+#MetroStack
   .inner
-    .title Stacking up the Metros
-    .copy Based on specific factors like local regulations and available land to develop, the Barriers to Apartment Construction Index ranks 50 metro areas on how hard it is to add new apartments. See how your city stacks up. 
-    .metros
+    .title(v-in-viewport) Stacking up the Metros
+    .copy(v-in-viewport) Based on specific factors like local regulations and available land to develop, the Barriers to Apartment Construction Index ranks 50 metro areas on how hard it is to add new apartments. See how your city stacks up. 
+    .metros(v-in-viewport)
       .copy Barriers to Apartment Construction Index
       .list
         .metro(v-for="value, key in metros")
@@ -84,44 +84,43 @@ json('../assets/colors.json')
 json('../assets/fonts.json')
 #MetroStack
   padding 90px 0
-  &.below-viewport
-    > .inner > .title, > .inner > .copy, > .inner > .metros
-      opacity 0
-      transform translate(0, 50px)
-  &.above-viewport
-    > .inner > .title, > .inner > .copy, > .inner > .metros
-      opacity 0
-      transform translate(0, -50px)
-  &.in-viewport
-    > .inner > .title, > .inner > .copy, > .inner > .metros
-      opacity 1
-      transform translate(0, 0)
-    > .inner > .title
-      transition opacity 1s ease 0s, transform 1s ease 0s
-    > .inner > .copy
-      transition opacity 1s ease 0.1s, transform 1s ease 0.1s
-    > .inner > .metros
-      transition opacity 1s ease 0.2s, transform 1s ease 0.2s
-
   > .inner
     > .title
       font h1
       text-align center
       padding 0 0 30px 0
-      opacity 0
+      &.below-viewport
+        opacity 0
+        transform translate(0, 20px)
+      &.in-viewport
+        opacity 1
+        transform translate(0, 0)
+        transition opacity 1s ease-in-out 0s, transform 1s ease-in-out 0s
     > .copy
       text-align center
       color grey
       width 560px
       margin auto
       padding 0 0 60px 0
-      opacity 0
+      &.below-viewport
+        opacity 0
+        transform translate(0, 20px)
+      &.in-viewport
+        opacity 1
+        transform translate(0, 0)
+        transition opacity 1s ease-in-out 0.1s, transform 1s ease-in-out 0.1s
     > .metros
       width 900px
       margin auto
       border-top 1px solid lightgrey
       padding-top 60px
-      opacity 0
+      &.below-viewport
+        opacity 0
+        transform translate(0, 20px)
+      &.in-viewport
+        opacity 1
+        transform translate(0, 0)
+        transition opacity 1s ease-in-out 0s, transform 1s ease-in-out 0s
       > .copy
         font c1b
         text-transform uppercase

@@ -1,16 +1,17 @@
 <template lang="pug">
+doctype
 .page.home 
   Top(type="dark")
-  .hero
+  .hero(v-in-viewport)
     video(playsinline,autoplay,muted,loop)
       source(src="/condos.mp4",type="video/mp4")
     .outer
     .inner
-      .copy welcome to we are apartments.
-      .copy The country needs 4.6 million new apartments by 2030. How many are needed near you?
-      .button.is-centered
+      .copy(v-in-viewport) welcome to we are apartments.
+      .copy(v-in-viewport) The country needs 4.6 million new apartments by 2030. How many are needed near you?
+      .button.is-centered(v-in-viewport)
         router-link(to="/vision") our vision
-      .button.is-centered
+      .button.is-centered(v-in-viewport)
         router-link(to="/data") the data
   .demand
     p The 2030 Demand
@@ -29,7 +30,11 @@ import Demand from '~/components/Demand.vue'
 import GradientChart from '~/components/GradientChart.vue'
 import MetroStack from '~/components/MetroStack.vue'
 import Bottom from '~/components/Bottom.vue'
-export default { components: { Top, Demand, GradientChart, MetroStack, Bottom } }
+import inViewportDirective from 'vue-in-viewport-directive'
+export default {
+  directives: { 'in-viewport': inViewportDirective },
+  components: { Top, Demand, GradientChart, MetroStack, Bottom }
+}
 </script>
 
 <style lang="stylus">
@@ -77,15 +82,25 @@ json('../assets/fonts.json')
 
       > .copy:first-child
         text-transform uppercase
-        animation fadeIn 0.2s linear 0s both
+        opacity 0
+        transform translate(0, -20px)
+        &.in-viewport
+          opacity 1
+          transform translate(0, 0)
+          transition opacity 1s ease 0.1s, transform 1s ease 0.1s
+
       > .copy:nth-child(2)
-        animation fadeIn 0.2s linear 0.1s both
         font h2
         width 800px
         margin 60px auto
         line-height 50px
+        opacity 0
+        transform translate(0, -20px)
+        &.in-viewport
+          opacity 1
+          transform translate(0, 0)
+          transition opacity 1s ease 0.2s, transform 1s ease 0.2s
       > .button
-        animation fadeIn 0.2s linear 0.2s both
         > a
           text-transform uppercase
           padding 15px 40px
@@ -104,6 +119,20 @@ json('../assets/fonts.json')
           background-color white
           color darkblue
           font c1sb
+      > .button:nth-child(3)
+        opacity 0
+        transform translate(-20px, 0)
+        &.in-viewport
+          opacity 1
+          transform translate(0, 0)
+          transition opacity 1s ease 0.3s, transform 1s ease 0.3s
+      > .button:nth-child(4)
+          opacity 0
+          transform translate(20px, 0)
+          &.in-viewport
+            opacity 1
+            transform translate(0, 0)
+            transition opacity 1s ease 0.4s, transform 1s ease 0.4s
   .demand
     text-align center
     width 540px
