@@ -9,10 +9,10 @@
     .copy Apartments and their residents contribute more than $3.5 billion to the economy every day.
     .copy_print Market Snapshot
     .stats
-      .stat
+      .stat(v-if="residents !== 0")
         .value {{ residents }}
         .copy Apartment Residents
-      .stat
+      .sta(v-if="homes !== 0")t
         .value {{ homes }}
         .copy Apartment Homes
       .stat(v-if="value(contrib) !== 0")
