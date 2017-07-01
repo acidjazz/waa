@@ -32,7 +32,6 @@ json('../assets/colors.json')
 </style>
 
 <script>
-
 import colors from '~/assets/colors.json'
 import chartmixin from '~plugins/chart-mixin.js'
 
@@ -50,9 +49,9 @@ export default {
 
     json (sheet, result) {
       window.axios.get('/' + sheet)
-      .then(response => {
-        result(response)
-      })
+        .then(response => {
+          result(response)
+        })
     },
 
     populate (complete) {

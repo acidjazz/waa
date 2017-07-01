@@ -152,6 +152,8 @@ json('../assets/fonts.json')
 </style>
 
 <script>
+import Filters from '~/static/Filters.json'
+import { mixin as clickaway } from 'vue-clickaway'
 
 const json = {
   homes: {
@@ -173,10 +175,6 @@ const json = {
     }
   },
 }
-
-import Filters from '~/static/Filters.json'
-
-import { mixin as clickaway } from 'vue-clickaway'
 
 json.homes.national  = require('../static/US Apts.json').data['Total U.S.']
 json.homes.state  = require('../static/State Apartments.json').data
