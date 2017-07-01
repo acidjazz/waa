@@ -127,43 +127,5 @@ json('../../assets/fonts.json')
         background-image url(/about-flow.png)
         background-repeat no-repeat
         background-size cover
-    &.section_report
-      background-color purple
-      > .inner
-        width 900px
-        margin auto
-        padding 60px 0
-        color white
-        column-count 2
-        column-span 2
-        column-gap 0
-        > .block
-          padding 60px
-          break-inside avoid-column
-          page-break-inside avoid
-          display table
-          &:nth-child(2)
-            background-color royalpurple
-            border-radius 3px
-          &:nth-child(1)
-            > .inner > .cta
-              background-color blue
-              color white
-              padding 15px 40px
-              border-radius 3px
-              float left
-              text-transform uppercase
-              font c1b
-              text-decoration none
-              transition text-decoration 0.5s ease 0s, transform 0.2s ease 0s
-              &:hover
-                transform scale(1.05)
-                text-decoration underline
-          > .inner
-            > .copy:nth-child(1)
-              font h1
-            > .copy:nth-child(2)
-              padding 30px 0 60px 0
-              width 300px
 
 @import '~assets/stylus/about-mobile.styl'

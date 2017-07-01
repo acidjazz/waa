@@ -67,21 +67,7 @@
             .circle
             .copy U.S. Census Bureau, New Residential Construction
       .flow
-    .section.section_report
-      .inner
-
-        .block.left
-          .inner
-            .copy The Report
-            .copy NMHC and NAA partnered with Hoyt Advisory Services to identify the demand for apartments through 2030. Download their analysis of the apartment market.
-            a.cta(href="/NMHC-NAA-US-Apartment-Demand-in-2030.pdf") download
-
-        .block.right
-          .inner
-            .copy The Data
-            .copy A combination of original research, private data providers and public data sources make up the thousands of visualizations on the site.
-
-            
+    Downloads
   Bottom
 </template>
 <style lang="stylus">
@@ -89,6 +75,7 @@
 </style>
 <script>
 import Top from '~/components/Top.vue'
+import Downloads from '~/components/Downloads.vue'
 import Bottom from '~/components/Bottom.vue'
-export default { components: { Top, Bottom } }
+export default { components: { Top, Downloads, Bottom } }
 </script>
