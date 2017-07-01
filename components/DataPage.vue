@@ -82,6 +82,8 @@
         .copy Apartment demand is growing and the industry needs to keep up. However, producing enough new apartments to meet demand requires new development approaches, more incentives and fewer restrictions.
 
     .clear
+    .sources Source: 
+      b Hoyt Advisory Services; NMHC/NAA; U.S. Census Bureau.; Axiometrics, a RealPage Company
     .border.big
     //.border.big
     // .border.big(v-if="(this.choice().type !== 'district')")
@@ -89,7 +91,8 @@
     //.border.big(v-if="this.choice().type === 'national'")
     //DualItems(v-if="this.choice().type === 'metro'")
     // .border.big(v-if="this.choice().type === 'metro'")
-    .section.section_links
+    Downloads
+    //.section.section_links
       .inner
         .area.left
           .icon.icon-file
@@ -105,8 +108,6 @@
           router-link(to='/about').button learn more
         .clear
 
-    .sources Source: 
-      b Hoyt Advisory Services; NMHC/NAA; U.S. Census Bureau.; Axiometrics, a RealPage Company
     Bottom
   .datapage_print
     .source Learn More @ https://weareapartments.org{{ path }}
@@ -193,8 +194,8 @@ import SingleLineChart from '~/components/SingleLineChart.vue'
 import MultiLineChart from '~/components/MultiLineChart.vue'
 import Demand from '~/components/Demand.vue'
 import BuildMore from '~/components/BuildMore.vue'
-
 import HeatChart from '~/components/HeatChart.vue'
+import Downloads from '~/components/Downloads.vue'
 
 export default {
   mixins: [ filtermixin ],
@@ -210,6 +211,7 @@ export default {
     Demand,
     BuildMore,
     HeatChart,
+    Downloads,
   },
 
   methods: {

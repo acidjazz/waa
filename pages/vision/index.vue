@@ -45,7 +45,7 @@
         .copy The Stakes are High
         .copy Keeping up with the demand for millions of apartments will mean public-private partnerships at all levels of government. If we don't start today, our nation's housing affordability crisis will only worsen.
     .border.small.margined
-    .section.section_chart.section_chart_buildmore
+    // .section.section_chart.section_chart_buildmore
       .inner
         .copy_legend
           .copy We Need to Build More
