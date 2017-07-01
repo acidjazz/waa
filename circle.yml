@@ -17,14 +17,14 @@ test:
     - mkdir -p $CIRCLE_TEST_REPORTS/reports
     - nyc ava --tap | tap-xunit > $CIRCLE_TEST_REPORTS/reports/ava.xml
   post:
-    - yarn coverage
+    - yarn run coverage
 
 deployment:
   staging: 
     branch: development
     commands:
-      - yarn staging
+      - yarn run staging
   production: 
     branch: master
     commands:
-      - yarn production
+      - yarn run production
