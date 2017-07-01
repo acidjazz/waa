@@ -4,49 +4,50 @@
   "description": "We Are Apartments",
   "author": "kevin olson <acidjazz@gmail.com>",
   "private": true,
-  "dependencies": {
-    "@nuxtjs/font-awesome": "^1.0.0",
-    "aeonian": "^1.0.7",
-    "chart.js": "^2.5.0",
-    "node-xlsx": "^0.7.4",
-    "nuxt": "^1.0.0-alpha.4",
-    "ordinal": "^1.0.2",
-    "pug": "^2.0.0-rc.1",
-    "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.1",
-    "tap-xunit": "^1.7.0",
-    "vue-clickaway": "^2.1.0",
-    "vue-in-viewport-directive": "^1.1.4",
-    "vue-in-viewport-mixin": "^1.0.3",
-    "vue-style-loader": "^3.0.1",
-    "xls": "^0.5.1"
-  },
   "scripts": {
-    "test": "ava",
+    "test": "nyc ava",
+     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "dev": "nuxt",
     "dev-kevin": "HOST=192.168.1.230 nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint",
-    "staging": "npm run generate;node operations/staging.js",
-    "production": "npm run generate;node operations/production.js"
+    "precommit": "yarn lint",
+    "staging": "yarn generate;node operations/staging.js",
+    "production": "yarn generate;node operations/production.js"
   },
   "ava": {
     "require": [
       "babel-register"
     ]
   },
+  "dependencies": {
+    "node-xlsx": "^0.7.4",
+    "nuxt": "^1.0.0-alpha.4",
+    "ordinal": "^1.0.2",
+    "pug": "^2.0.0-rc.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1",
+    "vue-clickaway": "^2.1.0",
+    "vue-in-viewport-directive": "^1.1.4",
+    "vue-in-viewport-mixin": "^1.0.3",
+    "vue-style-loader": "^3.0.1",
+    "xls": "^0.5.1"
+  },
   "devDependencies": {
-    "ava": "^0.19.1",
+    "aeonian": "1.0.8",
+    "ava": "0.20.0",
     "babel-eslint": "^7.1.1",
+    "codecov": "^2.2.0",
     "eslint": "^3.15.0",
     "eslint-config-standard": "^6.2.1",
     "eslint-loader": "^1.6.1",
     "eslint-plugin-html": "^2.0.0",
     "eslint-plugin-promise": "^3.4.1",
     "eslint-plugin-standard": "^2.0.1",
-    "jsdom": "^11.0.0"
+    "jsdom": "^11.0.0",
+    "nyc": "^11.0.3",
+    "tap-xunit": "^1.7.0"
   }
 }
