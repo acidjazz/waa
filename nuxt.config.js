@@ -40,8 +40,6 @@ module.exports = {
     ],
 
     script: [
-      // { src: 'https://use.fontawesome.com/957c0a03b0.js' }
-      // { src: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css' }
       { src: "//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js" },
       { src: "//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js" },
       { src: "//cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js" },
@@ -66,17 +64,8 @@ module.exports = {
   /*
   ** Build configuration
   */
-  css: [
-    { src: '~assets/stylus/main.styl', lang: 'stylus' },
-    // 'font-awesome/css/font-awesome.css',
-  ],
-  modules: [
-    // '@nuxtjs/font-awesome',
-  ],
-  plugins: [
-    {src: '~plugins/ga.js', ssr: false},
-    // {src: 'chart.js/dist/Chart.min.js', ssr: false},
-  ],
+  css: [{ src: '~assets/stylus/main.styl', lang: 'stylus' }],
+  plugins: [{src: '~plugins/ga.js', ssr: false}],
   router: {
     scrollBehavior: function (to, from, savedPosition) {
       if (to.name.indexOf('data') !== -1 && from.name.indexOf('data') !== -1) {
@@ -86,14 +75,6 @@ module.exports = {
     }
   },
   build: {
-
-    /*
-     * various plugins like jQuery
-     */
-    // vendor: ['font-awesome/css/font-awesome.css'],
-    // vendor: ['jQuery', 'chart.js'],
-    // vendor: ['chart.js/chart.min.js'],
-    // plugins: [ { src: '~/plugins/chart.js', ssr: false } ],
     /*
     ** Run ESLINT on save
     */
@@ -108,8 +89,5 @@ module.exports = {
       }
     }
   },
-
-  generate: {
-    routes: routes
-  }
+  generate: { routes: routes }
 }
