@@ -32,9 +32,9 @@ export default {
 
     json (sheet, result) {
       window.axios.get('/' + sheet)
-      .then(response => {
-        result(response)
-      })
+        .then(response => {
+          result(response)
+        })
     },
 
     populate (callback) {
