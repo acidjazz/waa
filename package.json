@@ -14,6 +14,7 @@
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "yarn lint",
+    "development": "yarn generate;node operations/development.js",
     "staging": "yarn generate;node operations/staging.js",
     "production": "yarn generate;node operations/production.js"
   },
