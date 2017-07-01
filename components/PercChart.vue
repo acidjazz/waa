@@ -27,7 +27,6 @@
 </template>
 
 <script>
-
 import ddata from '../static/District Age of Occupied Stock'
 import udata from '../static/US Age of Stock'
 import mdata from '../static/Metro Age of Occupied Stock'

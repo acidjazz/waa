@@ -176,7 +176,6 @@ const json = {
   },
 }
 
-
 json.homes.national  = require('../static/US Apts.json').data['Total U.S.']
 json.homes.state  = require('../static/State Apartments.json').data
 json.homes.metro  = require('../static/Metro Occupied Apartments.json').data

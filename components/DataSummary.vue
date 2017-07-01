@@ -25,7 +25,6 @@
 </template>
 
 <script>
-
 import filtermixin from '~plugins/filter-mixin.js'
 
 const residentsUS = '/US Apt Residents.json'
@@ -132,7 +131,6 @@ export default {
     }
   }
 }
-
 </script>
 
 <style lang="stylus">

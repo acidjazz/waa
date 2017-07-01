@@ -1,5 +1,6 @@
 <template lang="pug">
-#GradientChart
+doctype
+#GradientChart(v-in-viewport)
   .chart
   .data
     .copys
@@ -21,7 +22,9 @@
       .value(v-on:mouseover="highlight('rent')") 9.79%
 </template>
 <script>
+import inViewportDirective from 'vue-in-viewport-directive'
 export default {
+  directives: { 'in-viewport': inViewportDirective },
   methods: {
     highlight (stat) {
       this.active = stat
@@ -45,6 +48,54 @@ json('../assets/fonts.json')
   height 563px
   margin 60px auto 120px auto
   position relative
+  &.below-viewport > .data 
+    > .copys > .copy,
+    > .legend > .stat > .color,
+    > .legend > .stat > .copy,
+    > .legend > .stat > .value,
+    > .legend > .stat > i
+      opacity 0
+      transform translate(0, 50px)
+    > .values > .value
+      opacity 0
+      transform translate(50px, 0)
+  &.above-viewport > .data
+    > .copys > .copy,
+    > .legend > .stat > .color,
+    > .legend > .stat > .copy,
+    > .legend > .stat > .value,
+    > .legend > .stat > i
+      opacity 0
+      transform translate(0, -50px)
+    > .values > .value
+      opacity 0
+      transform translate(50px, 0)
+  &.in-viewport > .data
+    > .copys > .copy,
+    > .legend > .stat > .color,
+    > .legend > .stat > .copy,
+    > .legend > .stat > .value,
+    > .legend > .stat > i,
+    > .values > .value
+      opacity 1
+      transform translate(0, 0)
+    > .copys > .copy:nth-child(1)
+      transition opacity 1s ease 0s, transform 1s ease 0s
+    > .copys > .copy:nth-child(2)
+      transition opacity 1s ease 0s, transform 1s ease 0.1s
+    > .legend > .stat > .color
+      transition opacity 1s ease 0s, transform 1s ease 0s
+    > .legend > .stat > .copy
+      transition opacity 1s ease 0s, transform 1s ease 0.1s
+    > .legend > .stat > .value
+      transition opacity 1s ease 0s, transform 1s ease 0.2s
+    > .legend > .stat > i
+      transition opacity 1s ease 0s, transform 1s ease 0.3s
+    > .values > .value:nth-child(1)
+      transition opacity 1s ease 0s, transform 1s ease 0s
+    > .values > .value:nth-child(2)
+      transition opacity 1s ease 0s, transform 1s ease 0.1s
+
   > .chart
     top 60px
     position absolute

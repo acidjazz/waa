@@ -32,7 +32,6 @@ json('../assets/colors.json')
 </style>
 
 <script>
-
 import colors from '~/assets/colors.json'
 import chartmixin from '~plugins/chart-mixin.js'
 
