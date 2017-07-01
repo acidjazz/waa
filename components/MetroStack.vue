@@ -8,8 +8,7 @@ doctype
       .copy Barriers to Apartment Construction Index
       .list
         .metro(v-for="value, key in metros")
-          i-count-up.value(:start=0,:end="metros[key]", :class="{ value_red: value > 5.0, value_orange: value < 5.0 && value > 1.6, value_green: value <= 1.6 }")
-          // .value(v-else,v-text="value",:class="{ value_red: value > 5.0, value_orange: value < 5.0 && value > 1.6, value_green: value <= 1.6 }") 
+          i-count-up.value(:start=0,:end="metros[key]", :class="{ value_grey: loading === true, value_red: value > 5.0, value_orange: value < 5.0 && value > 1.6, value_green: value <= 1.6 }")
           router-link.name(:to="'/data/metro/' + key.trim().toLowerCase().replace(/ /g, '-')") {{ key }}
 </template>
 
@@ -38,12 +37,14 @@ export default {
       return sorted
     },
     populate () {
+      this.loading = false
       let sorted = this.sort(restrictIndex.data)
       for (let key in sorted) {
         this.metros[key] = Number(sorted[key].toFixed(2))
       }
     },
     zeros () {
+      this.loading = true
       let sorted = this.sort(restrictIndex.data)
       for (let key in sorted) {
         this.metros[key] = 0
@@ -63,7 +64,9 @@ export default {
         return true
       }
       if (visible) {
-        setTimeout(() => { this.populate() }, 600)
+        setTimeout(() => {
+          this.populate()
+        }, 1000)
       } else {
         this.zeros()
       }
@@ -73,6 +76,7 @@ export default {
     return {
       metros: this.sort(restrictIndex.data),
       end: 0,
+      loading: true,
       browser: process.BROWSER_BUILD,
     }
   }
@@ -134,12 +138,15 @@ json('../assets/fonts.json')
             float left
             width 50px
             font c1b
+            transition color 1s linear 0s
             &.value_red
               color red
             &.value_orange
               color orange
             &.value_green
               color green
+            &.value_grey
+              color grey !important
           > .name
             color black
             text-decoration none
