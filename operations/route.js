@@ -4,7 +4,7 @@ let fs = require('fs')
 
 let ordinal = require('ordinal')
 
-let Filters = require('../store/Filters.json')
+let Filters = require('../static/Filters.json')
 
 let items = {}
 let metros = []
@@ -33,4 +33,4 @@ for (let state in items) {
   }
 }
 
-fs.writeFileSync('./store/routes.json', JSON.stringify(routes, null, 2))
+fs.writeFileSync('./static/routes.json', JSON.stringify(routes, null, 2))

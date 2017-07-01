@@ -92,14 +92,14 @@ json('../assets/fonts.json')
 
 <script>
 import colors from '~/assets/colors.json'
-let numeral = require('numeral')
 export default {
 
   methods: {
 
     draw () {
 
-      let Chart = require('chart.js')
+      const Chart = window.Chart
+      const numeral = window.numeral
       let ctx = 'BuildMoreChart-chart'
       let data = []
       let datasets = []
@@ -107,7 +107,7 @@ export default {
       let yellow = []
 
       if (this.json === null) {
-        this.json = require('../store/US Building 2.json').data
+        this.json = require('../static/US Building 2.json').data
       }
 
       for (let key in this.json) {
@@ -122,7 +122,6 @@ export default {
         j += (i * this.range) / 100
         yellow.push(Math.round(j) + 10)
       }
-      console.log(yellow)
 
       this.needed = numeral((this.range * 5000000 / 100) + 328500).format('0.0a')
 
@@ -236,7 +235,7 @@ export default {
   data () {
     return {
       json: null,
-      width: 770,
+      width: 740,
       height: 320,
       myChart: null,
       range: 0,

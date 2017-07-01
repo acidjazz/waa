@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import Filters from '../store/Filters.json'
+import Filters from '../static/Filters.json'
 import { mixin as clickaway } from 'vue-clickaway'
 import filtermixin from '~plugins/filter-mixin.js'
 import ordinal from 'ordinal'
@@ -181,7 +181,7 @@ json('../assets/colors.json')
       > .modal
         top 76px
   position relative
-  margin 120px 0 0 0
+  margin 150px 0 0 0
   > .modals
     > .modal
       position absolute
@@ -228,7 +228,7 @@ json('../assets/colors.json')
     padding 60px 0
     border-top 2px solid lightgrey
     > .inner
-      width 680px
+      width 684px
       margin auto
       text-transform uppercase
       font-size 14px

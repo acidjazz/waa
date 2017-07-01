@@ -13,13 +13,12 @@
 </template>
 
 <script>
-import index from '../store/Metro Restriction Index.json'
-let numeral = require('numeral')
+import index from '../static/Metro Restriction Index.json'
 export default {
   props: ['metro'],
   methods: {
     alterCarat (value) {
-      this.value = numeral(value).format('0.0')
+      this.value = window.numeral(value).format('0.0')
       for (let carat of this.carat) {
         let perc = (value - -5.9) / (19.9 - -5.9)
         carat.style.transform = 'rotate(' + Math.round((perc * 100) * 240 / 100 - 30) + 'deg)'

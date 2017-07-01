@@ -9,7 +9,7 @@
         .copys
           p But getting there won't be easy. It is time to take action across the country, in ways that are tailored to the needs of each community. The apartment industry stands ready to work with urban, suburban and rural communities in every region to meet the housing demand of Americans across all income levels.
           p Policymakers at all levels of government must recognize that addressing local housing needs requires a partnership between government and the private sector. The federal government can ensure sufficient funding of housing programs, enact a pro-housing tax policy, and reform regulations that unnecessarily increase housing costs. 
-    .border.small
+    .border.small.margined
     .section.section_together
       .inner
         .copy We Can Do This
@@ -40,12 +40,12 @@
         .copy Read our Vision for 2030 on how public-private partnerships can help us solve the country's housing affordability challenge.
         a.cta(href="/Vision2030.pdf") download
         .clear
-    //.section.section_stakes
+    .section.section_stakes
       .inner
         .copy The Stakes are High
         .copy Keeping up with the demand for millions of apartments will mean public-private partnerships at all levels of government. If we don't start today, our nation's housing affordability crisis will only worsen.
-    //.border.small
-    //.section.section_chart.section_chart_buildmore
+    .border.small.margined
+    // .section.section_chart.section_chart_buildmore
       .inner
         .copy_legend
           .copy We Need to Build More
@@ -60,8 +60,8 @@
         .chart_area
           BuildMoreChart
         .clear
-    //.border.small
-    //.section.section_chart.section_chart_metros
+    .border.small.margined
+    .section.section_chart.section_chart_metros
       .inner
         .copy_legend
           .copy Barriers to Apartments Mean Higher Rents
@@ -71,12 +71,12 @@
               .color.color_tomato
               .copy barriers to apartment construction index
             .row
-              .color.color_grey
+              .color.color_blue
               .copy % of households paying over 35% on rent
         .chart_area
-          MetroChart
-    //.border.small
-    //.section.section_chart.section_chart_incomeafford
+          BarrierChart
+    .border.small.margined
+    .section.section_chart.section_chart_incomeafford
       .inner
         .copy_legend
           .copy Income and Affordability
@@ -91,7 +91,9 @@
         .chart_area
           DualLineChart
         .clear
-  //.sources Source: 
+  .border.big
+  FAQ
+  .sources Source: 
     b Hoyt Advisory Services; NMHC/NAA; U.S. Census Bureau.; Axiometrics, a RealPage Company
   Bottom
 </template>
@@ -103,7 +105,9 @@
 import Top from '~/components/Top.vue'
 import BuildMoreChart from '~/components/BuildMoreChart.vue'
 import MetroChart from '~/components/MetroChart.vue'
+import BarrierChart from '~/components/BarrierChart.vue'
 import DualLineChart from '~/components/DualLineChart.vue'
+import FAQ from '~/components/FAQ.vue'
 import Bottom from '~/components/Bottom.vue'
-export default { components: { Top, BuildMoreChart, MetroChart, DualLineChart, Bottom } }
+export default { components: { Top, BuildMoreChart, BarrierChart, DualLineChart, FAQ, Bottom } }
 </script>

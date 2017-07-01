@@ -44,16 +44,14 @@
       .top
         .part.part_homes
           .value {{ $store.state.homesNeeded }} 
-          .copy Apartment <br />Homes Needed in 
-            b(v-if="this.choice().type !== 'metro'") the Country
-            b(v-if="this.choice().type === 'metro'") {{ this.choice().copy }}
+          .copy Apartment Homes Needed in 
+            span(v-if="this.choice().type !== 'metro'") the Country
+            span(v-if="this.choice().type === 'metro'") {{ this.choice().copy }}
         .part.part_numbers
           .graph
-            i.fa.fa-2x.fa-bar-chart
           .copy Avg Annual Construction Rate (2011-2016)
         .part.part_numbers
           .graph
-            i.fa.fa-2x.fa-bar-chart
           .copy New Apartments Needed
       .left.left_buildmore(v-if="this.choice().type !== 'metro'")
         .copy We need to build more
@@ -84,15 +82,17 @@
         .copy Apartment demand is growing and the industry needs to keep up. However, producing enough new apartments to meet demand requires new development approaches, more incentives and fewer restrictions.
 
     .clear
+    .sources Source: 
+      b Hoyt Advisory Services; NMHC/NAA; U.S. Census Bureau.; Axiometrics, a RealPage Company
     .border.big
     //.border.big
-    // MultipleItems(:choice="this.choice()",v-if="(this.choice().type !== 'district')")
     // .border.big(v-if="(this.choice().type !== 'district')")
     //SingleItem(v-if="this.choice().type === 'national'")
     //.border.big(v-if="this.choice().type === 'national'")
     //DualItems(v-if="this.choice().type === 'metro'")
     // .border.big(v-if="this.choice().type === 'metro'")
-    .section.section_links
+    Downloads
+    //.section.section_links
       .inner
         .area.left
           .icon.icon-file
@@ -108,8 +108,6 @@
           router-link(to='/about').button learn more
         .clear
 
-    .sources Source: 
-      b Hoyt Advisory Services; NMHC/NAA; U.S. Census Bureau.; Axiometrics, a RealPage Company
     Bottom
   .datapage_print
     .source Learn More @ https://weareapartments.org{{ path }}
@@ -149,16 +147,14 @@
       .top
         .part.part_homes
           .value {{ $store.state.homesNeeded }} 
-          .copy Apartment <br />Homes Needed in 
+          .copy Apartment Homes Needed in 
             b(v-if="this.choice().type !== 'metro'") the Country
             b(v-if="this.choice().type === 'metro'") {{ this.choice().copy }}
         .part.part_numbers
           .graph
-            i.fa.fa-2x.fa-bar-chart
           .copy Avg Annual Construction Rate (2011-2016)
         .part.part_numbers
           .graph
-            i.fa.fa-2x.fa-bar-chart
           .copy New Apartments Needed
       .left(v-if="this.choice().type !== 'metro'")
         // CircleChart(id="renters_print",width="225",height="225",value="70")
@@ -190,20 +186,16 @@ import filtermixin from '~plugins/filter-mixin.js'
 
 import Top from '~/components/Top.vue'
 import Bottom from '~/components/Bottom.vue'
-import SingleLineChart from '~/components/SingleLineChart.vue'
-import MultiLineChart from '~/components/MultiLineChart.vue'
 import DataFilters from '~/components/DataFilters.vue'
 import DataSummary from '~/components/DataSummary.vue'
 import DistrictCopy from '~/components/DistrictCopy.vue'
 import DistrictTrio from '~/components/DistrictTrio.vue'
+import SingleLineChart from '~/components/SingleLineChart.vue'
+import MultiLineChart from '~/components/MultiLineChart.vue'
 import Demand from '~/components/Demand.vue'
 import BuildMore from '~/components/BuildMore.vue'
-import MultipleItems from '~/components/MultipleItems.vue'
-import DualItems from '~/components/DualItems.vue'
-import SingleItem from '~/components/SingleItem.vue'
-
-import CircleChart from '~/components/CircleChart.vue'
 import HeatChart from '~/components/HeatChart.vue'
+import Downloads from '~/components/Downloads.vue'
 
 export default {
   mixins: [ filtermixin ],
@@ -218,11 +210,8 @@ export default {
     MultiLineChart,
     Demand,
     BuildMore,
-    MultipleItems,
-    DualItems,
-    SingleItem,
-    CircleChart,
     HeatChart,
+    Downloads,
   },
 
   methods: {
@@ -332,7 +321,9 @@ json('../assets/fonts.json')
         background none
         background-color white
         padding 10px 0
-        > .copy:first-child, > .copy:nth-child(2)
+        > .breadcrumb
+          display none
+        > .copy:nth-child(2), > .copy:nth-child(3)
           display none
         > .copy_print
           display block
@@ -473,8 +464,10 @@ json('../assets/fonts.json')
             > .graph
               float left
               margin 10px 10px 0 0
-              > i
-                color rgba(red, 0.5)
+              background-color rgba(red, 0.5)
+              width 20px
+              height 20px
+              border-radius 50%
             > .copy
               margin 5px 0 0 40px
               color grey
@@ -483,8 +476,8 @@ json('../assets/fonts.json')
               line-height 20px
             > .value
               margin 0 0 0 20px
-            &:nth-child(2) > .graph > i
-              color rgba(red, 1)
+            &:nth-child(2) > .graph 
+              background-color rgba(red, 1)
       > .left
         float left
         border none
@@ -550,13 +543,13 @@ json('../assets/fonts.json')
       width 1200px
       margin auto
       > .pdf
-        top 30px
-        right 60px
+        top 85px
+        right 90px
       > p:first-child
         font h1
       > p:nth-child(2)
         color grey
-        max-width 540px
+        max-width 544px
         margin auto
         > b
           color black
@@ -591,32 +584,40 @@ json('../assets/fonts.json')
       > .top
         > .part
           float right
-          width 260px
+          width 220px
+          line-height 22px
+          font c1s
           &.part_homes
             text-align left
-            line-height 20px
             padding 5px 0 0 0
             > .value
               display inline
+              font c1b
+              line-height 22px
             > .copy
               color grey
               display inline
           &.part_numbers
+            width 200px
             > .graph
               float left
               margin 10px 10px 0 0
-              > i
-                color rgba(red, 0.5)
+              background-color rgba(red, 0.5)
+              width 15px
+              height 15px
+              border-radius 50%
             > .copy
-              margin 5px 0 0 40px
+              margin 5px 0 0 30px
               color grey
-              line-height 10px
-              width 184px
-              line-height 20px
+              width 144px
             > .value
               margin 0 0 0 20px
-            &:nth-child(2) > .graph > i
-              color rgba(red, 1)
+            &:nth-child(2)
+              margin 0 180px 0 0
+            &:nth-child(2) > .graph
+              background-color rgba(red, 1)
+            &:nth-child(2) > .copy
+              width 184px
       > .copyLeft
         float left
         width 300px

@@ -12,15 +12,14 @@
         router-link(to="/vision") our vision
       .button.is-centered
         router-link(to="/data") the data
-  .border.big
   .demand
     p The 2030 Demand
     Demand(type='national')
   GradientChart
   .border.big
   MetroStack
-  .border.big
-  FAQ
+  .sources Source: 
+    b Hoyt Advisory Services; NMHC/NAA; U.S. Census Bureau.; Axiometrics, a RealPage Company
   Bottom
 </template>
 
@@ -28,16 +27,23 @@
 import Top from '~/components/Top.vue'
 import Demand from '~/components/Demand.vue'
 import GradientChart from '~/components/GradientChart.vue'
-import FAQ from '~/components/FAQ.vue'
 import MetroStack from '~/components/MetroStack.vue'
 import Bottom from '~/components/Bottom.vue'
-export default { components: { Top, Demand, GradientChart, MetroStack, FAQ, Bottom } }
+export default { components: { Top, Demand, GradientChart, MetroStack, Bottom } }
 </script>
 
 <style lang="stylus">
 @import '../assets/stylus/mixins'
 json('../assets/colors.json')
 json('../assets/fonts.json')
+
+.sources
+  font c1s
+  padding 0 0 20px 0
+  width 1200px
+  margin auto
+  color grey
+
 .page.home
   > .hero
     color white

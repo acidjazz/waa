@@ -16,11 +16,9 @@
 
 <script>
 import colors from '~/assets/colors.json'
-import housingCosts from '~/store/Metro Burden.json'
-import restrictIndex from '~/store/Metro Restriction Index.json'
-let numeral = require('numeral')
+import housingCosts from '~/static/Metro Burden.json'
+import restrictIndex from '~/static/Metro Restriction Index.json'
 export default {
-
   watch: {
     'flip' () {
       this.offset = 0
@@ -67,7 +65,8 @@ export default {
 
     draw () {
 
-      let Chart = require('chart.js')
+      const Chart = window.Chart
+      const numeral = window.numeral
       let ctx = 'MetroChart-chart'
       let datasets = []
       let labels = []

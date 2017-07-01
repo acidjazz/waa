@@ -1,0 +1,29 @@
+
+machine:
+  environment:
+    PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
+  tiemzone:
+    America/Los_Angeles
+  node:
+    version: 7.1.0
+
+dependencies:
+  override:
+    - yarn
+
+test:
+  override:
+    - mkdir -p $CIRCLE_TEST_REPORTS/reports
+    - ava --tap | tap-xunit > $CIRCLE_TEST_REPORTS/reports/ava.xml
+  post:
+    - bash <(curl -s https://codecov.io/bash)
+
+deployment:
+  staging: 
+    branch: development
+    commands:
+      - yarn staging
+  production: 
+    branch: master
+    commands:
+      - yarn production

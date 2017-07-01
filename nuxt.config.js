@@ -5,7 +5,7 @@ let config = {
   image: '/share.jpg',
   keywords: 'affordable, data, apartments, census, calculator'
 }
-let routes = require('./store/routes.json')
+let routes = require('./static/routes.json')
 
 module.exports = {
   /*
@@ -39,8 +39,17 @@ module.exports = {
 
     ],
 
+    script: [
+      // { src: 'https://use.fontawesome.com/957c0a03b0.js' }
+      // { src: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css' }
+      { src: "//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js" },
+      { src: "//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js" },
+      { src: "//cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js" },
+    ],
+
     link: [
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Maven+Pro:100,200,300,400,500|Roboto:100,400,700,900' },
+      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css' },
 
       { rel: 'apple-touch-icon', sizes: '180x180', href: '/icons/apple-touch-icon.png' },
       { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/icons/favicon-32x32.png' },
@@ -59,16 +68,18 @@ module.exports = {
   */
   css: [
     { src: '~assets/stylus/main.styl', lang: 'stylus' },
-    'font-awesome/css/font-awesome.css',
+    // 'font-awesome/css/font-awesome.css',
   ],
   modules: [
-    '@nuxtjs/font-awesome',
+    // '@nuxtjs/font-awesome',
   ],
-  plugins: [{src: '~plugins/ga.js', ssr: false}],
+  plugins: [
+    {src: '~plugins/ga.js', ssr: false},
+    // {src: 'chart.js/dist/Chart.min.js', ssr: false},
+  ],
   router: {
     scrollBehavior: function (to, from, savedPosition) {
       if (to.name.indexOf('data') !== -1 && from.name.indexOf('data') !== -1) {
-        console.log('data to data, returning false')
         return false
       }
       return savedPosition

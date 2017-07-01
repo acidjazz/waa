@@ -30,9 +30,12 @@ json('../assets/fonts.json')
 <script>
 
 import colors from '~/assets/colors.json'
-import data from '~/store/US Housing Costs.json'
-import datab from '~/store/US % Total Pop.json'
-import datad from '~/store/District Apt Residents.json'
+
+const data = 'US Housing Costs.json'
+const datab = 'US % Total Pop.json'
+const datad = 'District Apt Residents.json'
+const datam = 'Mero Apt Residents.json'
+
 export default {
 
   props: ['id', 'width', 'height', 'value', 'district'],
@@ -43,25 +46,46 @@ export default {
     }
   },
   methods: {
-    populate () {
+    json (sheet, result) {
+      window.axios.get('/' + sheet)
+      .then(response => {
+        result(response)
+      })
+    },
+    populate (complete) {
       if (this.value === undefined) {
-        this.perc = Math.round(data.data['Total U.S.'] * 100)
+        this.json(data, (result) => {
+          this.perc = Math.round(result.data.data['Total U.S.'] * 100)
+          complete()
+        })
       } else {
         this.perc = this.value
+        complete()
       }
 
       if (this.id === 'ontherise') {
-        this.perc = Math.round(datab.data['Total U.S.'][0] * 100)
+        this.json(datab, (result) => {
+          this.perc = Math.round(result.data.data['Total U.S.'][0] * 100)
+          complete()
+        })
       }
 
       if (this.id === 'metroresidents') {
-        let json = require('../store/Metro Apt Residents.json')
-        this.perc = Math.round(json.data[this.value][1] * 100)
+        this.json(datam, (result) => {
+          this.perc = Math.round(result.data.data[this.value][1] * 100)
+          complete()
+        })
       }
 
       if (this.district !== undefined) {
-        this.perc = Math.round(datad.data[this.district][1] * 100)
+        this.json(datad, (result) => {
+          this.perc = Math.round(result.data.data[this.district][1] * 100)
+          complete()
+        })
       }
+
+    },
+    draw () {
 
       let canvas = document.getElementById('chart-' + this.id)
       let ctx = canvas.getContext('2d')
@@ -86,11 +110,15 @@ export default {
   },
   watch: {
     '$route' () {
-      this.populate()
+      this.populate(() => {
+        this.draw()
+      })
     }
   },
   mounted () {
-    this.populate()
+    this.populate(() => {
+      this.draw()
+    })
   }
 }
 </script>

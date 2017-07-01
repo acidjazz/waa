@@ -67,22 +67,7 @@
             .circle
             .copy U.S. Census Bureau, New Residential Construction
       .flow
-    .section.section_report
-      .inner
-
-        .block.left
-          .inner
-            .copy The Report
-            .copy NMHC and NAA partnered with Hoyt Advisory Services to identify the demand for apartments through 2030. Download their analysis of the apartment industry.
-            a.cta(href="/NMHC-NAA-US-Apartment-Demand-in-2030.pdf") download
-
-        .block.right
-          .inner
-            .copy A vision for 2030
-            .copy Meeting the country's demand for apartments will take courageous steps at the federal, state and local levels. 
-            .cta Learn more
-
-            
+    Downloads
   Bottom
 </template>
 <style lang="stylus">
@@ -90,6 +75,7 @@
 </style>
 <script>
 import Top from '~/components/Top.vue'
+import Downloads from '~/components/Downloads.vue'
 import Bottom from '~/components/Bottom.vue'
-export default { components: { Top, Bottom } }
+export default { components: { Top, Downloads, Bottom } }
 </script>

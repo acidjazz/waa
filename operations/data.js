@@ -217,6 +217,6 @@ for (let index in excel) {
 
   }
 
-  fs.writeFileSync('./store/' + sheet.name + '.json', JSON.stringify(data, null, 2))
+  fs.writeFileSync('./static/' + sheet.name + '.json', JSON.stringify(data, null, 2))
 }
 

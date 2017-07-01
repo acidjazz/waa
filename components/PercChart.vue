@@ -28,10 +28,9 @@
 
 <script>
 
-import ddata from '../store/District Age of Occupied Stock'
-import udata from '../store/US Age of Stock'
-import mdata from '../store/Metro Age of Occupied Stock'
-let numeral = require('numeral')
+import ddata from '../static/District Age of Occupied Stock'
+import udata from '../static/US Age of Stock'
+import mdata from '../static/Metro Age of Occupied Stock'
 
 export default {
 

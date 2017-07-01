@@ -40,13 +40,13 @@
 </template>
 <script>
 
-import contribUS from '../store/US Economic Contribution.json'
+import contribUS from '../static/US Economic Contribution.json'
 
 import BarChart from '~/components/BarChart.vue'
 import CircleChart from '~/components/CircleChart.vue'
 import PercChart from '~/components/PercChart.vue'
 
-let numeral = require('numeral')
+const numeral = window.numeral
 
 export default {
   props: [ 'choice' ],
