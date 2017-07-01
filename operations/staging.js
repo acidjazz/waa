@@ -1,3 +1,1 @@
-let aeconfig = require('./aeconfig.js')
-let ae = require('aeonian').config(aeconfig)
-ae.deploy('staging')
+require('aeonian').config(require('./aeconfig.js')).deploy('staging')
