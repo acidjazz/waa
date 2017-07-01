@@ -4,8 +4,6 @@ machine:
     PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
   tiemzone:
     America/Los_Angeles
-  node:
-    version: 7.1.0
 
 dependencies:
   override:
