@@ -50,9 +50,9 @@ export default {
 
     json (sheet, result) {
       window.axios.get('/' + sheet)
-      .then(response => {
-        result(response)
-      })
+        .then(response => {
+          result(response)
+        })
     },
 
     populate (complete) {
@@ -106,7 +106,7 @@ export default {
           this.json('State HH Growth.json', (result) => {
             data.labels = [2016, 2030]
             data.datas = [result.data.data[this.choice.value][2], result.data.data[this.choice.value][3]]
-            spike = numeral(result.data.data[4]).format('0.00%').replace(/%/, '')
+            spike = numeral(result.data.data[this.choice.value][4]).format('0.00%').replace(/%/, '')
             complete(data, spike)
           })
           break

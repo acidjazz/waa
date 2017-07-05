@@ -20,8 +20,12 @@ test:
     - yarn run coverage
 
 deployment:
-  staging: 
+  development: 
     branch: development
+    commands:
+      - yarn run development
+  staging: 
+    branch: staging
     commands:
       - yarn run staging
   production: 
