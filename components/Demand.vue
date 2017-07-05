@@ -1,5 +1,6 @@
 <template lang="pug">
-p New research shows that demand for apartments is on the rise.  Whether it's young professionals, couples, families or empty nesters, 
+doctype
+p(v-in-viewport) New research shows that demand for apartments is on the rise.  Whether it's young professionals, couples, families or empty nesters, 
   b(v-if="type === 'national'") the country will see a demand for an additional 
     span {{ households }} 
     | new apartment households 
@@ -19,7 +20,9 @@ p New research shows that demand for apartments is on the rise.  Whether it's yo
 </template>
 
 <script>
+import inViewportDirective from 'vue-in-viewport-directive'
 export default {
+  directives: { 'in-viewport': inViewportDirective },
   props: [ 'type', 'value' ],
   methods: {
     populate () {
