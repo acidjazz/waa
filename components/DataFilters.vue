@@ -58,7 +58,6 @@ export default {
       }
 
     },
-
     checkSticky () {
       if (!process.BROWSER_BUILD) {
         return false
@@ -68,7 +67,6 @@ export default {
       }
       return false
     },
-
     away () {
       for (let modal in this.modals) this.modals[modal] = false
     },

@@ -8,13 +8,15 @@ doctype
     .outer
     .inner
       .copy(v-in-viewport) welcome to we are apartments.
-      .copy(v-in-viewport) The country needs 4.6 million new apartments by 2030. How many are needed near you?
+      .copy(v-in-viewport) The country needs 
+        i-count-up(:start="0",:end="4.6",:decimals="1",:duration="3")
+        | m new apartments by 2030. How many are needed near you?
       .button.is-centered(v-in-viewport)
         router-link(to="/vision") our vision
       .button.is-centered(v-in-viewport)
         router-link(to="/data") the data
   .demand
-    p The 2030 Demand
+    p(v-in-viewport) The 2030 Demand
     Demand(type='national')
   GradientChart
   .border.big
@@ -31,9 +33,17 @@ import GradientChart from '~/components/GradientChart.vue'
 import MetroStack from '~/components/MetroStack.vue'
 import Bottom from '~/components/Bottom.vue'
 import inViewportDirective from 'vue-in-viewport-directive'
+import ICountUp from 'vue-countup-v2'
 export default {
   directives: { 'in-viewport': inViewportDirective },
-  components: { Top, Demand, GradientChart, MetroStack, Bottom }
+  components: { Top, Demand, GradientChart, MetroStack, Bottom, ICountUp },
+  data () {
+    return {
+      options: {
+        decimals: 4
+      }
+    }
+  }
 }
 </script>
 
@@ -140,13 +150,38 @@ json('../assets/fonts.json')
     padding 60px 0
     > p:first-child
       font h2
+      &.above-viewport
+        opacity 0
+        transform translate(0, -20px)
+      &.below-viewport
+        opacity 0
+        transform translate(0, 20px)
+      &.in-viewport
+        opacity 1
+        transform translate(0, 0)
+        transition opacity 1s ease-in-out 0s, transform 1s ease-in-out 0s
     > p:last-child
       color grey
+      &.above-viewport
+        opacity 0
+        transform translate(0, -20px)
+      &.below-viewport
+        opacity 0
+        transform translate(0, 20px)
+      &.in-viewport
+        opacity 1
+        transform translate(0, 0)
+        transition opacity 1s ease-in-out 0.1s, transform 1s ease-in-out 0.1s
+
       > span > span
         font-weight bold
         color black
     border-bottom 2px solid lightgrey
 @media all and (min-width: 1px) and (max-width: 1000px)
+  .sources
+    width auto
+    padding 20px
+    font c1ss
   .page.home
     > .hero
       > .inner

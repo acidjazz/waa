@@ -1,14 +1,16 @@
 #Navigate
-  position absolute
   top 0
   right 0
   overflow hidden
-  z-index 10
+  z-index 20
+  position fixed
+  &.sticky
+    transform translate(10px, -10px)
   > .inner > .cbutton > .icon
     display none
   &.on
-    width 100vw
-    height 100vh
+    width calc(100vw + 10px)
+    height calc(100vh + 10px)
     > .blue
       transform scale(30)
       transition transform 0.5s ease-in-out 0s
@@ -25,7 +27,7 @@
   &.off
     width 100px
     height 100px
-    transition width 0s linear 0.6s, height 0s linear 0.6s
+    transition width 0s linear 0.6s, height 0s linear 0.6s, transform 0.6s ease-in-out 0s
     > .blue
       transform scale(1)
       transition transform 0.3s ease-in-out 0s

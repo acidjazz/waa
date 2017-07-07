@@ -21,7 +21,7 @@ test.before('Initializing Nuxt.js', async t => {
 test('Route / exits and renders HTML', async t => {
   let context = {}
   const { html } = await nuxt.renderRoute('/', context)
-  t.true(html.includes('<div class="copy">The country needs 4.6 million new apartments by 2030. How many are needed near you?</div>'))
+  t.true(html.includes('<div class="copy">welcome to we are apartments.</div>'))
 })
 
 test.after('Closing the server and nuxt.js', t => {
