@@ -343,6 +343,7 @@ json('../assets/fonts.json')
           width 750px
           margin auto
           padding-top 5px
+          height 80px
           > .stat
             padding 10px
             max-width 150px
@@ -700,6 +701,8 @@ json('../assets/fonts.json')
         float right
         width 800px
         margin 0 0 30px
+        > .chartainer > .tooltip
+          top -20px
     > .section_links
       > .inner
         padding 90px 0

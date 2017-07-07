@@ -1,51 +1,56 @@
 <template lang="pug">
+doctype
 .page.page_vision
   Top(type="light")
   .page_content
     .section.section_top
       .inner
-        .copy The country needs at least 4.6 million new apartments by 2030
-        .highlight
+        .copy(v-in-viewport) The country needs at least 4.6 million new apartments by 2030
+        .highlight(v-in-viewport)
         .copys
-          p But getting there won't be easy. It is time to take action across the country, in ways that are tailored to the needs of each community. The apartment industry stands ready to work with urban, suburban and rural communities in every region to meet the housing demand of Americans across all income levels.
-          p Policymakers at all levels of government must recognize that addressing local housing needs requires a partnership between government and the private sector. The federal government can ensure sufficient funding of housing programs, enact a pro-housing tax policy, and reform regulations that unnecessarily increase housing costs. 
+          p(v-in-viewport) But getting there won't be easy. It is time to take action across the country, in ways that are tailored to the needs of each community. The apartment industry stands ready to work with urban, suburban and rural communities in every region to meet the housing demand of Americans across all income levels.
+          p(v-in-viewport) Policymakers at all levels of government must recognize that addressing local housing needs requires a partnership between government and the private sector. The federal government can ensure sufficient funding of housing programs, enact a pro-housing tax policy, and reform regulations that unnecessarily increase housing costs. 
     .border.small.margined
     .section.section_together
       .inner
-        .copy We Can Do This
-        .copy State and local governments have a toolbox of approaches they can take to address the apartment shortage and help reduce the cost of housing. They can: 
+        .copy(v-in-viewport) We Can Do This
+        .copy(v-in-viewport) State and local governments have a toolbox of approaches they can take to address the apartment shortage and help reduce the cost of housing. They can: 
         .blocks
-          .block
+          .block(v-in-viewport='{ bottom: -200 }')
             .icon.icon-heart
               .inner
             .copy adopt
             .copy Adopt local public policies and programs that harness the power of the private sector to make housing affordability more feasible. 
-          .block
+            .clear
+          .block(v-in-viewport='{ bottom: -200 }')
             .icon.icon-comment
               .inner
             .copy collaborate
             .copy Collaborate with business and community leaders to champion apartments. 
-          .block
+            .clear
+          .block(v-in-viewport='{ bottom: -200 }')
             .icon.icon-network
               .inner
             .copy authority
             .copy Leverage state-level authority to overcome obstacles to apartment construction. 
-          .block
+            .clear
+          .block(v-in-viewport='{ bottom: -200 }')
             .icon.icon-shake
               .inner
             .copy partnerships
             .copy Increase public-private partnerships to produce apartments that households can afford. 
+            .clear
     .section.section_download
-      .inner
+      .inner(v-in-viewport)
         .copy Read our Vision for 2030 on how public-private partnerships can help us solve the country's housing affordability challenge.
         a.cta(href="/Vision2030.pdf") download
         .clear
     .section.section_stakes
       .inner
-        .copy The Stakes are High
-        .copy Keeping up with the demand for millions of apartments will mean public-private partnerships at all levels of government. If we don't start today, our nation's housing affordability crisis will only worsen.
+        .copy(v-in-viewport) The Stakes are High
+        .copy(v-in-viewport) Keeping up with the demand for millions of apartments will mean public-private partnerships at all levels of government. If we don't start today, our nation's housing affordability crisis will only worsen.
     .border.small.margined
-    // .section.section_chart.section_chart_buildmore
+    .section.section_chart.section_chart_buildmore
       .inner
         .copy_legend
           .copy We Need to Build More
@@ -109,5 +114,9 @@ import BarrierChart from '~/components/BarrierChart.vue'
 import DualLineChart from '~/components/DualLineChart.vue'
 import FAQ from '~/components/FAQ.vue'
 import Bottom from '~/components/Bottom.vue'
-export default { components: { Top, BuildMoreChart, BarrierChart, DualLineChart, FAQ, Bottom } }
+import inViewportDirective from 'vue-in-viewport-directive'
+export default {
+  directives: { 'in-viewport': inViewportDirective },
+  components: { Top, BuildMoreChart, BarrierChart, DualLineChart, FAQ, Bottom }
+}
 </script>

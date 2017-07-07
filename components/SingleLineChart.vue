@@ -1,12 +1,20 @@
 <template lang="pug">
   .chartainer
+    tooltip
     canvas(:id="'chart-' + id",:width="width",:height="height")
-    .spike(v-if="(spike > 0)")
+    .spike(v-if="(spiked > 0)")
       i.fa.fa-long-arrow-up(aria-hidden=true)
-      .value {{ spike }}%
+      .value
+        i-count-up.span(:start="0",:end="spiked",:decimals="2",v-if="!print()")
+        span(v-else) {{ spiked }}
+        span %
     .spike(v-else)
       i.fa.fa-long-arrow-down(aria-hidden=true)
-      .value {{ spike }}%
+      .value
+        i-count-up.span(:start="0",:end="spiked",:decimals="2",v-if="!print()")
+        span(v-else) {{ spiked }}
+        span %
+
 </template>
 
 <style lang="stylus">
@@ -34,11 +42,19 @@ json('../assets/colors.json')
 <script>
 import colors from '~/assets/colors.json'
 import chartmixin from '~plugins/chart-mixin.js'
+import tooltip from '~components/tooltip.vue'
+import inViewport from 'vue-in-viewport-mixin'
+import ICountUp from 'vue-countup-v2'
 
 export default {
-  mixins: [ chartmixin ],
+  mixins: [ chartmixin, inViewport ],
+  components: { tooltip, ICountUp },
   props: ['id', 'data', 'choice', 'theme', 'width', 'height', 'animation'],
   methods: {
+
+    print () {
+      return this.id.indexOf('print') !== -1
+    },
 
     clean () {
       let selection = this.$el.querySelectorAll('.chartainer > iframe')
@@ -105,7 +121,7 @@ export default {
           this.json('State HH Growth.json', (result) => {
             data.labels = [2016, 2030]
             data.datas = [result.data.data[this.choice.value][2], result.data.data[this.choice.value][3]]
-            spike = numeral(result.data.data[4]).format('0.00%').replace(/%/, '')
+            spike = numeral(result.data.data[this.choice.value][4]).format('0.00%').replace(/%/, '')
             complete(data, spike)
           })
           break
@@ -308,23 +324,36 @@ export default {
     },
 
   },
-
   mounted () {
-    this.populate((data, spike) => {
-      this.draw(data, spike)
-    })
+    if (this.id.indexOf('print') !== -1) {
+      this.populate((data, spike) => {
+        this.draw(data, spike)
+        this.spiked = Number(this.spike)
+      })
+    }
   },
+
   watch: {
+    'inViewport.now' (visible) {
+      if (visible && this.id.indexOf('print') === -1 && this.myChart === undefined) {
+        this.populate((data, spike) => {
+          this.draw(data, spike)
+          this.spiked = Number(this.spike)
+        })
+      }
+    },
     '$route' () {
       this.populate((data, spike) => {
         this.draw(data, spike)
+        this.spiked = Number(this.spike)
       })
     }
   },
   data () {
     return {
       myChart: undefined,
-      spike: 0,
+      spike: '0.00',
+      spiked: 0,
     }
   }
 }

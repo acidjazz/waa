@@ -9,6 +9,7 @@
           i.fa.fa-long-arrow-down(aria-hidden=true,v-if="spike.income.replace('%', '') < 0")
           .value {{ spike.income }}
       .chart
+        tooltip
         canvas(id="Chart-income",:width="width", :height="height")
     .block
       .data
@@ -18,6 +19,7 @@
           i.fa.fa-long-arrow-down(aria-hidden=true,v-if="spike.affordability.replace('%', '') < 0")
           .value {{ spike.affordability }}
       .chart
+        tooltip
         canvas(id="Chart-affordability",:width="width", :height="height")
 
 </template>
@@ -34,6 +36,11 @@ json('../assets/fonts.json')
       border-radius 6px
       &:first-child
         margin-right 20px
+      > .chart
+        position relative
+        > .tooltip
+          top -25px
+          right 1px
       > .data
         padding 20px 10px 0 10px
         > .copy
@@ -60,11 +67,14 @@ json('../assets/fonts.json')
 import chartmixin from '~plugins/chart-mixin.js'
 import json from '~/static/US Affordability (Landing).json'
 import colors from '~/assets/colors.json'
+import tooltip from '~components/tooltip.vue'
+import inViewport from 'vue-in-viewport-mixin'
 
 export default {
-  mixins: [ chartmixin ],
+  mixins: [ chartmixin, inViewport ],
+  components: { tooltip },
   methods: {
-    compile () {
+    render () {
 
       const numeral = window.numeral
       let data = {
@@ -88,11 +98,14 @@ export default {
 
     draw (type, labels, data) {
 
+      /*
       if (this.charts[type] !== null) {
         this.charts[type].datasets[0].data = data
         this.charts[type].update()
         return true
       }
+      */
+
       let datasets = []
       datasets[0] = this.chartDataset()
       datasets[0].data = data
@@ -151,9 +164,12 @@ export default {
       height: '340',
     }
   },
-
-  mounted () {
-    this.compile()
-  }
+  watch: {
+    'inViewport.now' (visible) {
+      if (visible) {
+        this.render()
+      }
+    }
+  },
 }
 </script>
