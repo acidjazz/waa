@@ -16,7 +16,9 @@ json('../assets/colors.json')
 <script>
 import colors from '~/assets/colors.json'
 import tooltip from '~components/tooltip.vue'
+import inViewport from 'vue-in-viewport-mixin'
 export default {
+  mixins: [ inViewport ],
   components: { tooltip },
 
   props: ['id', 'data', 'type', 'state', 'value', 'theme', 'width', 'height', 'animation'],
@@ -281,17 +283,26 @@ export default {
       }
     }
   },
-  watch: {
-    '$route' () {
+  mounted () {
+    if (this.id.indexOf('print') !== -1) {
       this.populate((data) => {
         this.draw(data)
       })
     }
   },
-  mounted () {
-    this.populate((data) => {
-      this.draw(data)
-    })
+  watch: {
+    'inViewport.now' (visible) {
+      if (visible && this.id.indexOf('print') === -1) {
+        this.populate((data) => {
+          this.draw(data)
+        })
+      }
+    },
+    '$route' () {
+      this.populate((data) => {
+        this.draw(data)
+      })
+    }
   }
 }
 </script>
