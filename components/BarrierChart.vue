@@ -1,6 +1,6 @@
 <template lang="pug">
 #BarrierChart
-  tooltip
+  // tooltip(align="left")
   .chart
     canvas(id="BarrierChart-chart",:width="width",:height="height")
 </template>
@@ -12,13 +12,13 @@
 </style>
 <script>
 import colors from '~/assets/colors.json'
-import tooltip from '~components/tooltip.vue'
+// import tooltip from '~components/tooltip.vue'
 import inViewport from 'vue-in-viewport-mixin'
 import housingCosts from '~/static/Metro Burden.json'
 import restrictIndex from '~/static/Metro Restriction Index.json'
 export default {
   mixins: [ inViewport ],
-  components: { tooltip },
+  // components: { tooltip },
   methods: {
     sort (object, skey) {
 

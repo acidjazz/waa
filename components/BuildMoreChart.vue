@@ -1,6 +1,6 @@
 <template lang="pug">
 #BuildMoreChart
-  tooltip
+  // tooltip(align="left")
   .chart
     canvas(id="BuildMoreChart-chart")
 </template>
@@ -17,11 +17,11 @@ json('../assets/fonts.json')
 
 <script>
 import colors from '~/assets/colors.json'
-import tooltip from '~components/tooltip.vue'
+// import tooltip from '~components/tooltip.vue'
 import inViewport from 'vue-in-viewport-mixin'
 export default {
   mixins: [ inViewport ],
-  components: { tooltip },
+  // components: { tooltip },
 
   methods: {
 

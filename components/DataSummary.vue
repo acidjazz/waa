@@ -1,5 +1,9 @@
 <template lang="pug">
 #DataSummary(:class="{ filtersSticky: filtersSticky }")
+  .bars
+    .bar
+    .bar
+    .bar
   .inner
     .breadcrumb(v-if="choice().type == 'national'") national data
     .breadcrumb(v-if="choice().type == 'state'") state data
@@ -122,7 +126,9 @@ export default {
     }
   },
   mounted () {
-    this.populate()
+    setTimeout(() => {
+      this.populate()
+    }, 800)
   },
   watch: {
     '$route' () {
@@ -157,15 +163,32 @@ export default {
 <style lang="stylus">
 json('../assets/colors.json')
 json('../assets/fonts.json')
+@import '../assets/stylus/mixins.styl'
+@import '../assets/stylus/keyframes.styl'
 #DataSummary
-  background url('~static/building.jpg')
+  // background url('~static/building.jpg')
   color white
   text-align center
+  position relative
+  overflow hidden
+  > .bars
+    position absolute
+    fullsize()
+    > .bar
+      background-color white
+      height 33.3333%
+      width 100%
+      &:nth-child(1)
+        animation barToLeft 1s cubic-bezier(.99,.05,.3,.88) 0.4s both
+      &:nth-child(2)
+        animation barToRight 1s cubic-bezier(.99,.05,.3,.88) 0.3s both
+      &:nth-child(3)
+        animation barToLeft 1s cubic-bezier(.99,.05,.3,.88) 0.4s both
   &.filtersSticky
     margin 340px 0 0 0
   > .inner
-    background linear-gradient(-67deg, rgba(#0099ff, 0.7), rgba(#00cccc, 0.7))
-    background-size 200% 200%
+    background linear-gradient(-67deg, rgba(#0099ff, 1), rgba(#00cccc, 1))
+    background-size 130% 130%
     animation gradients 3s ease infinite
     padding 60px 0
     > .breadcrumb
