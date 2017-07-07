@@ -1,13 +1,24 @@
 <template lang="pug">
 #BarrierChart
+  tooltip
   .chart
     canvas(id="BarrierChart-chart",:width="width",:height="height")
 </template>
+<style lang="stylus">
+#BarrierChart
+  position relative
+  > .tooltip
+    top -30px
+</style>
 <script>
 import colors from '~/assets/colors.json'
+import tooltip from '~components/tooltip.vue'
+import inViewport from 'vue-in-viewport-mixin'
 import housingCosts from '~/static/Metro Burden.json'
 import restrictIndex from '~/static/Metro Restriction Index.json'
 export default {
+  mixins: [ inViewport ],
+  components: { tooltip },
   methods: {
     sort (object, skey) {
 
@@ -165,8 +176,12 @@ export default {
       }
     }
   },
-  mounted () {
-    this.draw()
+  watch: {
+    'inViewport.now' (visible) {
+      if (visible) {
+        this.draw()
+      }
+    }
   },
   data () {
     return {

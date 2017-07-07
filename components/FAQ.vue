@@ -1,10 +1,11 @@
-
 <template lang="pug">
+doctype
 #FAQ
   .inner
-    .title Why Should I Care?
+    .title(v-in-viewport) Why Should I Care?
+
     .qas
-      .qa(v-for="answer,question of FAQ")
+      .qa(v-for="answer,question of FAQ",v-in-viewport)
         .inner
           .question
             .letter Q
@@ -18,6 +19,7 @@
 <style lang="stylus">
 json('../assets/colors.json')
 json('../assets/fonts.json')
+@import '../assets/stylus/mixins.styl'
 #FAQ
   > .inner
     width 1200px
@@ -27,6 +29,7 @@ json('../assets/fonts.json')
       font h2
       text-align center
       padding 0 0 60px 0
+      inViewport(0)
     > .qas
       > .qa
         float left
@@ -37,9 +40,11 @@ json('../assets/fonts.json')
         &:nth-child(odd)
           clear both
           border-right 1px solid lightgrey
+          inViewport(0.1)
         &:nth-child(even)
           border-left 1px solid lightgrey
           margin-left -1px
+          inViewport(0.2)
         &:nth-child(1), &:nth-child(2)
           height 320px
         &:nth-child(3), &:nth-child(4)
@@ -72,8 +77,10 @@ json('../assets/fonts.json')
 </style>
 
 <script>
+import inViewportDirective from 'vue-in-viewport-directive'
 import copy from '../static/FAQ.json'
 export default {
+  directives: { 'in-viewport': inViewportDirective },
   data () {
     return {
       FAQ: copy.data

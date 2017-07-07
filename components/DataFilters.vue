@@ -136,30 +136,6 @@ export default {
 @import '../assets/stylus/mixins.styl'
 json('../assets/colors.json')
 
-.chevron
-  position absolute
-  left 50%
-  top 50px
-  margin-left -13px
-  bottom -12px
-  width 0
-  height 0
-  border-left 13px solid transparent
-  border-right 13px solid transparent
-  border-bottom 13px solid lightblue
-  z-index 20
-  animation inFromBottom 0.2s ease 0.1s both
-  onoff()
-  > .inner
-    position relative
-    top 1px
-    left -13px
-    width 0
-    height 0
-    border-left 13px solid transparent
-    border-right 13px solid transparent
-    border-bottom 13px solid lightwhite
-
 #Filters
   &.sticky
     position fixed
