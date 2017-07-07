@@ -1,5 +1,5 @@
 <template lang="pug">
-nav#Navigate(:class="{ on: isOpen, off: !isOpen }")
+nav#Navigate(:class="{ on: isOpen, off: !isOpen, sticky: stuck}")
   .blue
   .inner
     .cbutton(@click="isOpen = !isOpen")
@@ -20,8 +20,34 @@ nav#Navigate(:class="{ on: isOpen, off: !isOpen }")
 
 <script>
 export default {
+
+  methods: {
+    handleScroll () {
+      if (!process.BROWSER_BUILD) {
+        this.stuck = false
+        return false
+      }
+      if (window.scrollY >= 100 && window.innerWidth >= 1000) {
+        this.stuck = true
+        return true
+      }
+      this.stuck = false
+      return true
+    },
+  },
   data () {
-    return { isOpen: false }
+    return { isOpen: false, stuck: false }
+  },
+  mounted () {
+    if (process.BROWSER_BUILD) {
+      window.addEventListener('scroll', this.handleScroll)
+      this.handleScroll()
+    }
+  },
+  destroyed () {
+    if (process.BROWSER_BUILD) {
+      window.removeEventListener('scroll', this.handleScroll)
+    }
   }
 }
 </script>

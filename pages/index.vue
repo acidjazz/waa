@@ -8,7 +8,9 @@ doctype
     .outer
     .inner
       .copy(v-in-viewport) welcome to we are apartments.
-      .copy(v-in-viewport) The country needs {{ apartments }} million new apartments by 2030. How many are needed near you?
+      .copy(v-in-viewport) The country needs 
+        i-count-up(:start="0",:end="4.6",:decimals="1",:duration="3")
+        | m new apartments by 2030. How many are needed near you?
       .button.is-centered(v-in-viewport)
         router-link(to="/vision") our vision
       .button.is-centered(v-in-viewport)
@@ -31,12 +33,15 @@ import GradientChart from '~/components/GradientChart.vue'
 import MetroStack from '~/components/MetroStack.vue'
 import Bottom from '~/components/Bottom.vue'
 import inViewportDirective from 'vue-in-viewport-directive'
+import ICountUp from 'vue-countup-v2'
 export default {
   directives: { 'in-viewport': inViewportDirective },
-  components: { Top, Demand, GradientChart, MetroStack, Bottom },
+  components: { Top, Demand, GradientChart, MetroStack, Bottom, ICountUp },
   data () {
     return {
-      apartments: '0.0m'
+      options: {
+        decimals: 4
+      }
     }
   }
 }

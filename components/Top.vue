@@ -26,9 +26,10 @@ json('../assets/fonts.json')
 json('../assets/colors.json')
 
 #Top
-  z-index 10
+  z-index 12
   position absolute
   width 100%
+  overflow hidden
 #Top > .title, #Navigate > .inner > .content > .title
   float left
   font h1
