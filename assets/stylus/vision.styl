@@ -1,5 +1,6 @@
 json('../../assets/colors.json')
 json('../../assets/fonts.json')
+@import '../../assets/stylus/mixins.styl'
 
 .sources
   font c1s
@@ -21,18 +22,28 @@ json('../../assets/fonts.json')
         > .copy
           font h2b
           line-height 50px
+          inViewport(0.0)
         > .highlight
           width 202px
           height 20px
           background-image url(/vision-highlight.png)
           background-size cover
-          animation scaleIn 1s ease 0s both
           position absolute
           top 110px
           right 0
+          transform scale(1.05)
+          opacity 0
+          &.in-viewport
+            transition transform 1s ease-in-out 1s, opacity 0.8s ease-in-out 0.8s
+            transform scale(1)
+            opacity 1
         > .copys
           color grey
           line-height 36px
+          > p:nth-child(1)
+            inViewport(0.1)
+          > p:nth-child(2)
+            inViewport(0.2)
 
 
     &.section_together
@@ -42,11 +53,13 @@ json('../../assets/fonts.json')
           font h2
           text-align center
           padding 0 0 30px 0
+          inViewport(0)
         > .copy:nth-child(2)
           color grey
           text-align center
           width 480px
           margin auto
+          inViewport(0.1)
         > .blocks
           padding 60px 0
           column-count 2
@@ -54,6 +67,7 @@ json('../../assets/fonts.json')
           > .block
             height 200px
             display table
+            inViewport(0)
             > .icon
               float left
               padding 10px
@@ -92,6 +106,7 @@ json('../../assets/fonts.json')
       color white
       > .inner
         width 900px
+        inViewport(0)
         > .copy
           float left
           font h3
@@ -118,10 +133,12 @@ json('../../assets/fonts.json')
         > .copy:nth-child(1)
           font h2b
           padding 0 0 30px 0
+          inViewport(0)
         > .copy:nth-child(2)
           color grey
           width 500px
           margin auto
+          inViewport(0.1)
     &.section_chart
       overflow hidden
       &.section_chart_incomeafford
@@ -130,7 +147,7 @@ json('../../assets/fonts.json')
           padding 50px 0
       &.section_chart_buildmore
         > .inner > .copy_legend > .copy:nth-child(2)
-          padding 30px 0 80px 0
+          padding 30px 0 40px 0
       &.section_chart_metros
         height 560px
       > .inner

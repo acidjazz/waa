@@ -9,24 +9,33 @@
     .copy Apartments and their residents contribute more than $3.5 billion to the economy every day.
     .copy_print Market Snapshot
     .stats
-      .stat(v-if="residents !== 0")
-        .value {{ residents }}
+      .stat(v-if="residents.value !== 0")
+        .value
+          i-count-up.number(:start="0",:end="residents.value",:decimals="1",:duration="2")
+          span {{ residents.a }}
         .copy Apartment Residents
-      .stat(v-if="homes !== 0")
-        .value {{ homes }}
+      .stat(v-if="homes.value !== 0")
+        .value
+          i-count-up.number(:start="0",:end="homes.value",:decimals="1",:duration="2")
+          span {{ homes.a }}
         .copy Apartment Homes
-      .stat(v-if="value(contrib) !== 0")
-        .value ${{ contrib }}
+      .stat(v-if="contrib.value !== 0")
+        .value
+          span $
+          i-count-up.number(:start="0",:end="contrib.value",:decimals="1",:duration="2")
+          span {{ contrib.a }}
         .copy Economic Contribution
-      .stat(v-if="value(contrib) !== 0")
-        .value {{ jobs }}
+      .stat(v-if="contrib.value !== 0")
+        .value
+          i-count-up.number(:start="0",:end="jobs.value",:decimals="1",:duration="2")
+          span {{ jobs.a }}
         .copy Total Jobs Supported
         .clear
 </template>
 
 <script>
-
 import filtermixin from '~plugins/filter-mixin.js'
+import ICountUp from 'vue-countup-v2'
 
 const residentsUS = '/US Apt Residents.json'
 const residentsState = '/State Apt Residents.json'
@@ -50,6 +59,7 @@ const jobsDistrict = '/District Total Jobs.json'
 
 export default {
   mixins: [ filtermixin ],
+  components: { ICountUp },
 
   methods: {
 
@@ -62,7 +72,14 @@ export default {
         result(response)
       })
     },
-
+    parse (integer, format) {
+      const numeral = window.numeral
+      let number = numeral(integer).format(format)
+      return {
+        value: Number(number.slice(0, -1)),
+        a: number[number.length - 1],
+      }
+    },
     value (text) {
       return Number(text.toString().replace(/\$,k,b,m,\./, ''))
     },
@@ -71,34 +88,34 @@ export default {
       switch (this.choice().type) {
         case 'national':
           this.json([residentsUS, homesUS, contribUS, jobsUS], (result) => {
-            this.residents = numeral(result[0].data.data['Total U.S.']).format('0.0a')
-            this.homes = numeral(result[1].data.data['Total U.S.']).format('0.0a')
-            this.contrib = numeral(result[2].data.data['Total U.S.']).format('0.0a')
-            this.jobs = numeral(result[3].data.data['Total U.S.']).format('0.0a')
+            this.residents = this.parse(result[0].data.data['Total U.S.'], '0.0a')
+            this.homes = this.parse(result[1].data.data['Total U.S.'], '0.0a')
+            this.contrib = this.parse(result[2].data.data['Total U.S.'], '0.0a')
+            this.jobs = this.parse(result[3].data.data['Total U.S.'], '0.0a')
           })
           break
         case 'state':
           this.json([residentsState, homesState, contribState, jobsState], (result) => {
-            this.residents = numeral(result[0].data.data[this.choice().value]).format('0.0a')
-            this.homes = numeral(result[1].data.data[this.choice().value]).format('0.0a')
-            this.contrib = numeral(result[2].data.data[this.choice().value]).format('0.0a')
-            this.jobs = numeral(result[3].data.data[this.choice().value]).format('0.0a')
+            this.residents = this.parse(result[0].data.data[this.choice().value], '0.0a')
+            this.homes = this.parse(result[1].data.data[this.choice().value], '0.0a')
+            this.contrib = this.parse(result[2].data.data[this.choice().value], '0.0a')
+            this.jobs = this.parse(result[3].data.data[this.choice().value], '0.0a')
           })
           break
         case 'district':
           this.json([residentsDistrict, homesDistrict, contribDistrict, jobsDistrict], (result) => {
-            this.residents = numeral(result[0].data.data[this.choice().value][0]).format('0.0a')
-            this.homes = numeral(result[1].data.data[this.choice().value]).format('0.0a')
-            this.contrib = numeral(result[2].data.data[this.choice().value]).format('0.0a')
-            this.jobs = numeral(result[3].data.data[this.choice().value]).format('0.0a')
+            this.residents = this.parse(result[0].data.data[this.choice().value][0], '0.0a')
+            this.homes = this.parse(result[1].data.data[this.choice().value], '0.0a')
+            this.contrib = this.parse(result[2].data.data[this.choice().value], '0.0a')
+            this.jobs = this.parse(result[3].data.data[this.choice().value], '0.0a')
           })
           break
         case 'metro':
           this.json([residentsMetro, homesMetro, contribMetro, jobsMetro], (result) => {
-            this.residents = numeral(result[0].data.data[this.choice().value][0]).format('0.0a')
-            this.homes = numeral(result[1].data.data[this.choice().value]).format('0.0a')
-            this.contrib = numeral(result[2].data.data[this.choice().value]).format('0.0a')
-            this.jobs = numeral(result[3].data.data[this.choice().value]).format('0.0a')
+            this.residents = this.parse(result[0].data.data[this.choice().value][0], '0.0a')
+            this.homes = this.parse(result[1].data.data[this.choice().value], '0.0a')
+            this.contrib = this.parse(result[2].data.data[this.choice().value], '0.0a')
+            this.jobs = this.parse(result[3].data.data[this.choice().value], '0.0a')
           })
           break
       }
@@ -124,15 +141,17 @@ export default {
 
   data () {
     return {
+
       filtersSticky: this.$store.state.sticky,
-      residents: 0,
-      homes: 0,
-      contrib: 0,
-      jobs: 0,
+
+      residents: { value: 0, a: null },
+      homes: { value: 0, a: null },
+      contrib: { value: 0, a: null },
+      jobs: { value: 0, a: null },
+
     }
   }
 }
-
 </script>
 
 <style lang="stylus">
