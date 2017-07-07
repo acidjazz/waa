@@ -3,16 +3,26 @@
   .inner
     .button(@click="toggle()")
       .icon: i.fa.fa-lg.fa-question
-    .tip(:class="{on: on, off: !on }",v-on-clickaway="away")
+    .tip(:class="{on: on, off: !on, center: align === 'center', left: align === 'left' }",v-on-clickaway="away")
       .chevron
       .inner
-        .title this graph
-        .copy text here to filter data.
+        .title {{ copys[copy].title }}
+        .copy {{ copys[copy].copy }}
 </template>
 
 <script>
 import { mixin as clickaway } from 'vue-clickaway'
 export default {
+  props:  {
+    copy: {
+      type: String,
+      default: 'a',
+    },
+    align: {
+      type: String,
+      default: 'center',
+    },
+  },
   mixins: [ clickaway ],
   methods: {
     away ()  {
@@ -26,7 +36,13 @@ export default {
   },
   data () {
     return {
-      on: false
+      on: false,
+      copys: {
+        a: {
+          title: 'Chart Info',
+          copy: 'Percent Change, 2016-2030',
+        }
+      }
     }
   }
 }
@@ -60,6 +76,9 @@ json('../assets/fonts.json')
       width 180px
       left -78px
       animation shrinkIn 0.2s ease-in-out 0s
+      &.left
+        > .inner
+          margin-left -70px
       onoff()
       > .chevron
         top 0px

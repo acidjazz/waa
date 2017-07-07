@@ -69,9 +69,9 @@ module.exports = {
   router: {
     scrollBehavior: function (to, from, savedPosition) {
       if (to.name.indexOf('data') !== -1 && from.name.indexOf('data') !== -1) {
-        return false
+        return savedPosition
       }
-      return savedPosition
+      return { x: 0, y: 0 }
     }
   },
   build: {

@@ -53,9 +53,9 @@ doctype
     .section.section_chart.section_chart_buildmore
       .inner
         .copy_legend
-          .copy We Need to Build More
-          .copy The country will need to build an average of 324,000 new apartment homes each year to keep up with demand. The industry averaged just 225,000 completions from 2011-2016.
-          .legend
+          .copy(v-in-viewport) We Need to Build More
+          .copy(v-in-viewport) The country will need to build an average of 324,000 new apartment homes each year to keep up with demand. The industry averaged just 225,000 completions from 2011-2016.
+          .legend(v-in-viewport)
             .row
               .color.color_purple
               .copy number of new apartment households per year
@@ -69,9 +69,9 @@ doctype
     .section.section_chart.section_chart_metros
       .inner
         .copy_legend
-          .copy Barriers to Apartments Mean Higher Rents
-          .copy When regulations or lack of available land make it harder to build apartments, costs go up for everyone. The Barriers to Apartment Construction Index shows the hardest and easiest cities to add the needed supply.
-          .legend
+          .copy(v-in-viewport) Barriers to Apartments Mean Higher Rents
+          .copy(v-in-viewport) When regulations or lack of available land make it harder to build apartments, costs go up for everyone. The Barriers to Apartment Construction Index shows the hardest and easiest cities to add the needed supply.
+          .legend(v-in-viewport)
             .row
               .color.color_tomato
               .copy barriers to apartment construction index
@@ -84,9 +84,9 @@ doctype
     .section.section_chart.section_chart_incomeafford
       .inner
         .copy_legend
-          .copy Income and Affordability
-          .copy Housing affordability is a growing problem. Housing costs continue to clime while incomes haven't kept up.
-          .legend
+          .copy(v-in-viewport) Income and Affordability
+          .copy(v-in-viewport) Housing affordability is a growing problem. Housing costs continue to clime while incomes haven't kept up.
+          .legend(v-in-viewport)
             .row
               .color.color_green
               .copy affordability
