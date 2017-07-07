@@ -1,5 +1,6 @@
 <template lang="pug">
   .chartainer
+    tooltip
     canvas(:id="'chart-' + id",:width="width",:height="height")
 </template>
 
@@ -14,7 +15,9 @@ json('../assets/colors.json')
 
 <script>
 import colors from '~/assets/colors.json'
+import tooltip from '~components/tooltip.vue'
 export default {
+  components: { tooltip },
 
   props: ['id', 'data', 'type', 'state', 'value', 'theme', 'width', 'height', 'animation'],
 

@@ -700,6 +700,8 @@ json('../assets/fonts.json')
         float right
         width 800px
         margin 0 0 30px
+        > .chartainer > .tooltip
+          top -20px
     > .section_links
       > .inner
         padding 90px 0

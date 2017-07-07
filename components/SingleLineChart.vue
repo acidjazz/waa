@@ -1,5 +1,6 @@
 <template lang="pug">
   .chartainer
+    tooltip
     canvas(:id="'chart-' + id",:width="width",:height="height")
     .spike(v-if="(spike > 0)")
       i.fa.fa-long-arrow-up(aria-hidden=true)
@@ -34,9 +35,11 @@ json('../assets/colors.json')
 <script>
 import colors from '~/assets/colors.json'
 import chartmixin from '~plugins/chart-mixin.js'
+import tooltip from '~components/tooltip.vue'
 
 export default {
   mixins: [ chartmixin ],
+  components: { tooltip },
   props: ['id', 'data', 'choice', 'theme', 'width', 'height', 'animation'],
   methods: {
 
