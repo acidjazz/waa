@@ -5,7 +5,7 @@ doctype
     .title(v-in-viewport) Why Should I Care?
 
     .qas
-      .qa(v-for="answer,question of FAQ",v-in-viewport)
+      .qa(v-for="answer,question of FAQ",v-in-viewport='{ bottom: -200 }')
         .inner
           .question
             .letter Q
