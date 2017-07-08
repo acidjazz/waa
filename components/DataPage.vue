@@ -552,7 +552,7 @@ json('../assets/fonts.json')
         color grey
         max-width 544px
         margin auto
-        > b
+        > span
           color black
           > span
             color red

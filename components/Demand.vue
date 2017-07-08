@@ -1,19 +1,19 @@
 <template lang="pug">
 doctype
 p(v-in-viewport) New research shows that demand for apartments is on the rise.  Whether it's young professionals, couples, families or empty nesters, 
-  b(v-if="type === 'national'") the country will see a demand for an additional 
+  span(v-if="type === 'national'") the country will see a demand for an additional 
     span {{ households }} 
     | new apartment households 
     span by 2030
-  b(v-if="type === 'state'") the state will add 
+  span(v-if="type === 'state'") the state will add 
     span {{ households }} 
     | new apartment households 
     span by 2030
-  b(v-if="type === 'metro'") the metro will add 
+  span(v-if="type === 'metro'") the metro will add 
     span {{ households }} 
     | new apartment households 
     span by 2030
-  b(v-if="type === 'district'") the district will add 
+  span(v-if="type === 'district'") the district will add 
     span {{ households }} 
     | new apartment households 
     span by 2030
