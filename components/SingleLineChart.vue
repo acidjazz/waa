@@ -1,6 +1,7 @@
 <template lang="pug">
   .chartainer
-    tooltip
+    tooltip(v-if="data === 'popgrowth' || data === 'inyourstate'",align="left")
+    tooltip(v-else)
     canvas(:id="'chart-' + id",:width="width",:height="height")
     .spike(v-if="(spiked > 0)")
       i.fa.fa-long-arrow-up(aria-hidden=true)

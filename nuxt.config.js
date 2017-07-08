@@ -27,15 +27,17 @@ module.exports = {
       // facebook
       { property: 'og:type', content: 'website' },
       { property: 'og:url', content: config.url },
-      { property: 'og:title', content: config.title },
       { property: 'og:image', content: config.url + config.image },
-      { property: 'og:description', content: config.description },
+
+      { hid: 'og:title', property: 'og:title', content: config.title },
+      { hid: 'og:description', property: 'og:description', content: config.description },
 
       // twitter
       { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:title', content: config.title },
-      { name: 'twitter:description', content: config.description },
-      { name: 'twitter:image', content: config.url + config.image }
+      { name: 'twitter:image', content: config.url + config.image },
+
+      { hid: 'twitter:title', name: 'twitter:title', content: config.title },
+      { hid: 'twitter:description', name: 'twitter:description', content: config.description },
 
     ],
 
@@ -69,9 +71,9 @@ module.exports = {
   router: {
     scrollBehavior: function (to, from, savedPosition) {
       if (to.name.indexOf('data') !== -1 && from.name.indexOf('data') !== -1) {
-        return false
+        return savedPosition
       }
-      return savedPosition
+      return { x: 0, y: 0 }
     }
   },
   build: {

@@ -1,5 +1,9 @@
 <template lang="pug">
 #DataSummary(:class="{ filtersSticky: filtersSticky }")
+  .bars
+    .bar
+    .bar
+    .bar
   .inner
     .breadcrumb(v-if="choice().type == 'national'") national data
     .breadcrumb(v-if="choice().type == 'state'") state data
@@ -122,7 +126,9 @@ export default {
     }
   },
   mounted () {
-    this.populate()
+    setTimeout(() => {
+      this.populate()
+    }, 900)
   },
   watch: {
     '$route' () {
@@ -157,25 +163,47 @@ export default {
 <style lang="stylus">
 json('../assets/colors.json')
 json('../assets/fonts.json')
+@import '../assets/stylus/mixins.styl'
+@import '../assets/stylus/keyframes.styl'
 #DataSummary
-  background url('~static/building.jpg')
+  // background url('~static/building.jpg')
   color white
   text-align center
+  position relative
+  overflow hidden
+  > .bars
+    position absolute
+    fullsize()
+    > .bar
+      background-color white
+      height 33.3333%
+      width 100%
+      &:nth-child(1)
+        animation barToLeft 1s cubic-bezier(.99,.05,.3,.88) 0.3s both
+      &:nth-child(2)
+        animation barToRight 1s cubic-bezier(.99,.05,.3,.88) 0.3s both
+      &:nth-child(3)
+        animation barToLeft 1s cubic-bezier(.99,.05,.3,.88) 0.3s both
   &.filtersSticky
     margin 340px 0 0 0
   > .inner
-    background linear-gradient(-67deg, rgba(#0099ff, 0.7), rgba(#00cccc, 0.7))
-    background-size 200% 200%
+    background linear-gradient(-67deg, rgba(#0099ff, 1), rgba(#00cccc, 1))
+    background-size 130% 130%
     animation gradients 3s ease infinite
-    padding 60px 0
+    padding 90px 0
     > .breadcrumb
       font c1sb
       text-transform uppercase
       padding 0 0 20px 0
+      animation inFromTop 0.6s ease-in-out 0.8s both
+    > .copy:nth-child(1)
+      animation inFromTop 0.6s ease-in-out 0.85s both
     > .copy:nth-child(2)
+      animation inFromTop 0.6s ease-in-out 0.9s both
       font-size 30px
-      animation fadeIn 0.2s ease-in-out 0s both
       z-index 1
+    > .copy:nth-child(3)
+      animation inFromTop 0.6s ease-in-out 0.95s both
     > .copy
       padding 0 0 30px 0
     > .copy_print
@@ -189,6 +217,14 @@ json('../assets/fonts.json')
         vertical-align top
         display inline-block
         border-right 1px solid white
+        &:nth-child(1)
+          animation inFromTop 0.6s ease-in-out 0s both
+        &:nth-child(2)
+          animation inFromTop 0.6s ease-in-out 0.05s both
+        &:nth-child(3)
+          animation inFromTop 0.6s ease-in-out 0.1s both
+        &:nth-child(4)
+          animation inFromTop 0.6s ease-in-out 0.15s both
         &:last-child
           border-right none
         > .value

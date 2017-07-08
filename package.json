@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "node-xlsx": "^0.7.4",
+    "numeraljs": "^1.5.6",
     "nuxt": "^1.0.0-alpha.4",
     "ordinal": "^1.0.2",
     "pug": "^2.0.0-rc.2",

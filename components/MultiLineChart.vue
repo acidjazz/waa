@@ -1,6 +1,6 @@
 <template lang="pug">
   .chartainer
-    tooltip
+    tooltip(align="left")
     canvas(:id="'chart-' + id",:width="width",:height="height")
 </template>
 
