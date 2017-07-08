@@ -128,7 +128,7 @@ export default {
   mounted () {
     setTimeout(() => {
       this.populate()
-    }, 1100)
+    }, 900)
   },
   watch: {
     '$route' () {
@@ -179,11 +179,11 @@ json('../assets/fonts.json')
       height 33.3333%
       width 100%
       &:nth-child(1)
-        animation barToLeft 1s cubic-bezier(.99,.05,.3,.88) 0.4s both
+        animation barToLeft 1s cubic-bezier(.99,.05,.3,.88) 0.3s both
       &:nth-child(2)
         animation barToRight 1s cubic-bezier(.99,.05,.3,.88) 0.3s both
       &:nth-child(3)
-        animation barToLeft 1s cubic-bezier(.99,.05,.3,.88) 0.4s both
+        animation barToLeft 1s cubic-bezier(.99,.05,.3,.88) 0.3s both
   &.filtersSticky
     margin 340px 0 0 0
   > .inner
@@ -195,15 +195,15 @@ json('../assets/fonts.json')
       font c1sb
       text-transform uppercase
       padding 0 0 20px 0
-      animation inFromTop 0.6s ease-in-out 1.0s both
+      animation inFromTop 0.6s ease-in-out 0.8s both
     > .copy:nth-child(1)
-      animation inFromTop 0.6s ease-in-out 1.05s both
+      animation inFromTop 0.6s ease-in-out 0.85s both
     > .copy:nth-child(2)
-      animation inFromTop 0.6s ease-in-out 1.1s both
+      animation inFromTop 0.6s ease-in-out 0.9s both
       font-size 30px
       z-index 1
     > .copy:nth-child(3)
-      animation inFromTop 0.6s ease-in-out 1.15s both
+      animation inFromTop 0.6s ease-in-out 0.95s both
     > .copy
       padding 0 0 30px 0
     > .copy_print

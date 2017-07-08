@@ -28,5 +28,7 @@
   "white": "#ffffff",
   "lightwhite": "#fafbfd",
   "offwhite": "#f4f7f9",
-  "black": "#000000"
+  "black": "#000000",
+  "tacao": "#F5B581",
+  "light-crimson": "#EB6A98"
 }
