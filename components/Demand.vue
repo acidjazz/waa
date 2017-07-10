@@ -63,23 +63,22 @@ export default {
   },
   data () {
     this.populate()
-    console.log(this.type)
     if (this.type === 'state') {
       return {
-        title: this.value + '- Learn about the demand for apartments in your area',
+        title: this.value + ' - Learn about the demand for apartments in your area',
         description: 'The state of ' + this.value + ' will see a demand for an additional ' + this.households + ' new apartment households by 2030',
         households: 0
       }
     }
     if (this.type === 'metro') {
       return {
-        title: this.value + '- Learn about the demand for apartments in your area',
+        title: this.value + ' - Learn about the demand for apartments in your area',
         description: this.value + ' will see a demand for an additional ' + this.households + ' new apartment households by 2030',
         households: 0
       }
     }
     return {
-      title: 'National - Learn about the demand for apartments in your area',
+      title: 'Learn about the demand for apartments in your area',
       description: 'This country will see a demand for an additional ' + this.households + ' new apartment households by 2030',
       households: 0
     }
@@ -89,6 +88,7 @@ export default {
       title: this.title,
       meta: [
         { hid: 'description', name: 'description', content: this.description },
+        { hid: 'og:url', property: 'og:url', content: this.$route.path },
         { hid: 'og:title', property: 'og:title', content: this.title },
         { hid: 'og:description', property: 'og:description', content: this.description },
         { hid: 'twitter:title', name: 'twitter:title', content: this.title },

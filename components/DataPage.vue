@@ -8,16 +8,10 @@
     .section.section_demand(v-if="this.choice().type !== 'district'")
       p The Demand
       Demand(:type="this.choice().type",:value="this.choice().value")
-      a.pdf(:href="'http://pdf.weareapartments.org?url=' + $route.path")
-        .fa.fa-2x.fa-file-pdf-o
-        .copy Create PDF
-
+      Share
     .section.section_district(v-if="this.choice().type === 'district'")
       DistrictCopy(:district="this.choice().value")
-      a.pdf(:href="'http://pdf.weareapartments.org?url=' + $route.path")
-        .fa.fa-2x.fa-file-pdf-o
-        .copy Create PDF
-
+      Share
     .section.section_trio(v-if="this.choice().type === 'district'")
       DistrictTrio(type="web",:choice="this.choice()")
 
@@ -193,6 +187,7 @@ import DistrictTrio from '~/components/DistrictTrio.vue'
 import SingleLineChart from '~/components/SingleLineChart.vue'
 import MultiLineChart from '~/components/MultiLineChart.vue'
 import Demand from '~/components/Demand.vue'
+import Share from '~/components/Share.vue'
 import BuildMore from '~/components/BuildMore.vue'
 import HeatChart from '~/components/HeatChart.vue'
 import Downloads from '~/components/Downloads.vue'
@@ -209,6 +204,7 @@ export default {
     SingleLineChart,
     MultiLineChart,
     Demand,
+    Share,
     BuildMore,
     HeatChart,
     Downloads,
@@ -543,7 +539,7 @@ json('../assets/fonts.json')
       position relative
       width 1200px
       margin auto
-      > .pdf
+      > #Share
         top 85px
         right 90px
       > p:first-child
@@ -560,7 +556,7 @@ json('../assets/fonts.json')
       width 1200px
       margin auto
       position relative
-      > .pdf
+      > #Share
         top 30px
         right 60px
     > .section_charts

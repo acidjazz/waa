@@ -25,9 +25,9 @@ module.exports = {
       { 'http-equiv': 'Content-Type', content: 'text/html; charset: UTF-8' },
 
       // facebook
-      { property: 'og:type', content: 'website' },
-      { property: 'og:url', content: config.url },
-      { property: 'og:image', content: config.url + config.image },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      { hid: 'og:url', property: 'og:url', content: config.url },
+      { hid: 'og:image', property: 'og:image', content: config.url + config.image },
 
       { hid: 'og:title', property: 'og:title', content: config.title },
       { hid: 'og:description', property: 'og:description', content: config.description },
