@@ -63,7 +63,6 @@ export default {
   },
   data () {
     this.populate()
-    console.log(this.type)
     if (this.type === 'state') {
       return {
         title: this.value + '- Learn about the demand for apartments in your area',
