@@ -20,6 +20,17 @@ doctype
     Demand(type='national')
   GradientChart
   .border.big
+  .to_initiative
+    .inner
+      .section.section_left
+        .title(v-in-viewport) Our Initiative
+        .subtitle(v-in-viewport) growing apartment demand
+        .copy(v-in-viewport) Delayed marriages, an aging population and immigration are increasing a pressing need for new apartments, to the tune of 4.6 million by 2030.
+        router-link.cta(to="/about",v-in-viewport) learn more
+      .section.section_right
+        .image
+      .clear
+  .border.big
   MetroStack
   .sources Source: 
     b Hoyt Advisory Services; NMHC/NAA; U.S. Census Bureau.; Axiometrics, a RealPage Company
@@ -60,6 +71,45 @@ json('../assets/fonts.json')
   color grey
 
 .page.home
+  > .to_initiative
+    padding 90px 0
+    > .inner
+      width 1100px
+      margin auto
+      > .section.section_left
+        float left
+        width 300px
+        margin 120px 0 0 0
+        > .title
+          font h2
+          width 100px
+          line-height 60px
+          inViewport(0.1)
+        > .subtitle
+          font c1b
+          text-transform uppercase
+          padding 20px 0
+          inViewport(0.2)
+        > .copy
+          color grey
+          inViewport(0.3)
+        > .cta
+          display inline-block
+          inViewport(0.4)
+          background-color blue
+          color white
+          border-radius 3px
+          padding 10px 40px
+          text-decoration none
+          text-transform uppercase
+          font c1sb
+          margin 90px 0 0 0
+      > .section.section_right
+        float right
+        > .image
+          background url(/initiative.png)
+          width 707px
+          height 709px
   > .hero
     color white
     height 100vh
@@ -183,6 +233,19 @@ json('../assets/fonts.json')
     padding 20px
     font c1ss
   .page.home
+    > .to_initiative
+      padding 30px 0
+      > .inner
+        width auto
+        padding 20px
+        > .section.section_left
+          float none
+          width auto
+          margin auto
+          > .cta
+            margin 30px 0
+        > .section.section_right
+          display none
     > .hero
       > .inner
         > .copy:nth-child(2)
