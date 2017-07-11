@@ -87,7 +87,9 @@ export default {
 
         if (item.Metro !== undefined) {
           for (let metro of item.Metro.split(',')) {
-            this.metros.push(metro.trim())
+            if (this.metros.indexOf(metro.trim()) === -1) {
+              this.metros.push(metro.trim())
+            }
           }
         }
 
