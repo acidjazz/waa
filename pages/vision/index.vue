@@ -13,28 +13,28 @@
     .section.section_together
       .inner
         .copy We Can Do This
-        .copy State and local governments have a toolbox of approaches they can take to address the apartment shortage and help reduce the cost of housing. They can: 
+        .copy State and local governments have a toolbox of approaches they can take to address the apartment shortage and help reduce the cost of housing. Working together, we can help them:
         .blocks
           .block
             .icon.icon-heart
               .inner
             .copy adopt
-            .copy Adopt local public policies and programs that harness the power of the private sector to make housing affordability more feasible. 
+            .copy Adopt local public policies and programs that harness the power of the private sector to make housing affordability more feasible.
           .block
             .icon.icon-comment
               .inner
             .copy collaborate
-            .copy Collaborate with business and community leaders to champion apartments. 
+            .copy Collaborate with business and community leaders to champion apartments.
           .block
             .icon.icon-network
               .inner
-            .copy authority
-            .copy Leverage state-level authority to overcome obstacles to apartment construction. 
+            .copy leverage
+            .copy Leverage state-level authority to overcome obstacles to apartment construction.
           .block
             .icon.icon-shake
               .inner
-            .copy partnerships
-            .copy Increase public-private partnerships to produce apartments that households can afford. 
+            .copy partner
+            .copy Increase public-private partnerships to produce apartments that households can afford.
     .section.section_download
       .inner
         .copy Read our Vision for 2030 on how public-private partnerships can help us solve the country's housing affordability challenge.
