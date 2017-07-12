@@ -14,7 +14,7 @@ doctype
     .section.section_together
       .inner
         .copy(v-in-viewport) We Can Do This
-        .copy(v-in-viewport) State and local governments have a toolbox of approaches they can take to address the apartment shortage and help reduce the cost of housing. They can: 
+        .copy(v-in-viewport) State and local governments have a toolbox of approaches they can take to address the apartment shortage and help reduce the cost of housing. Working together, we can help them:
         .blocks
           .block(v-in-viewport='{ bottom: -200 }')
             .icon.icon-heart
@@ -26,19 +26,19 @@ doctype
             .icon.icon-comment
               .inner
             .copy collaborate
-            .copy Collaborate with business and community leaders to champion apartments. 
+            .copy Collaborate with business and community leaders to champion apartments.
             .clear
           .block(v-in-viewport='{ bottom: -200 }')
             .icon.icon-network
               .inner
-            .copy authority
-            .copy Leverage state-level authority to overcome obstacles to apartment construction. 
+            .copy leverage
+            .copy Leverage state-level authority to overcome obstacles to apartment construction.
             .clear
           .block(v-in-viewport='{ bottom: -200 }')
             .icon.icon-shake
               .inner
-            .copy partnerships
-            .copy Increase public-private partnerships to produce apartments that households can afford. 
+            .copy partner
+            .copy Increase public-private partnerships to produce apartments that households can afford.
             .clear
     .section.section_download
       .inner(v-in-viewport)

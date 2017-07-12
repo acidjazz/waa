@@ -22,6 +22,13 @@ export default {
       type: String,
       default: 'center',
     },
+    start: {
+      default: false,
+    },
+    timeout: {
+      type: Number,
+      default: 30,
+    },
   },
   mixins: [ clickaway ],
   methods: {
@@ -34,6 +41,16 @@ export default {
       }, 20)
     },
   },
+  mounted () {
+
+    const Cookies = window.Cookies
+
+    if (this.start !== false && Cookies.get('tooltipStart') === undefined) {
+      this.on = true
+      Cookies.set('tooltipStart', true, { expires: new Date(new Date().getTime() + 15 * 60 * 1000) })
+    }
+
+  },
   data () {
     return {
       on: false,
@@ -41,6 +58,10 @@ export default {
         a: {
           title: 'Chart Info',
           copy: 'Percent Change, 2016-2030',
+        },
+        b: {
+          title: 'Filters',
+          copy: 'Apartment industry data for different geographies.',
         }
       }
     }
@@ -80,6 +101,7 @@ json('../assets/fonts.json')
         > .inner
           margin-left -70px
       onoff()
+      z-index 30
       > .chevron
         top 0px
         border-bottom 13px solid purple

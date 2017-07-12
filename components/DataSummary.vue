@@ -147,15 +147,36 @@ export default {
 
   data () {
     return {
-
       filtersSticky: this.$store.state.sticky,
-
       residents: { value: 0, a: null },
       homes: { value: 0, a: null },
       contrib: { value: 0, a: null },
       jobs: { value: 0, a: null },
 
     }
+  },
+  head () {
+    const numeral = require('numeraljs')
+    if (this.choice().type === 'district') {
+      let jobsDistrict = require('../static/District Total Jobs.json')
+      let contribDistrict = require('../static/District Economic Contribution.json')
+      let jobs = numeral(jobsDistrict.data[this.choice().value]).format('0.0a')
+      let contrib = numeral(contribDistrict.data[this.choice().value]).format('$0.0a')
+      let title = this.choice().value + ' - Learn about the impact of the apartment industry in your community'
+      let description = 'Apartments and their residents in the ' + this.choice().value + ' add ' + jobs + ' jobs and ' + contrib + ' to the local economy '
+      return {
+        title: title,
+        meta: [
+          { hid: 'description', name: 'description', content: description },
+          { hid: 'og:url', property: 'og:url', content: this.$route.path },
+          { hid: 'og:title', property: 'og:title', content: title },
+          { hid: 'og:description', property: 'og:description', content: description },
+          { hid: 'twitter:title', name: 'twitter:title', content: title },
+          { hid: 'twitter:description', name: 'twitter:description', content: description },
+        ]
+      }
+    }
+    return {}
   }
 }
 </script>
