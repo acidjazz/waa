@@ -112,6 +112,7 @@ json('../assets/fonts.json')
         line-height 15px
     > .modal
       position absolute
+      animation scaleIn 0.2s ease 0s both
       top 40px
       onoff()
       > .chevron

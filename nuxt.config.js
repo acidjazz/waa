@@ -45,6 +45,7 @@ module.exports = {
       { src: "//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js" },
       { src: "//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js" },
       { src: "//cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js" },
+      { src: "//cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.4/js.cookie.min.js" },
     ],
 
     link: [
