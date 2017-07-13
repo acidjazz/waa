@@ -43,13 +43,15 @@ module.exports = {
 
     script: [
       { src: "//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.js" },
-      { src: "/outdated.js" },
+      { innerHTML: "function addLoadEvent(func) { var oldonload = window.onload; if (typeof window.onload != 'function') { window.onload = func; } else { window.onload = function() { if (oldonload) { oldonload(); } func(); } } } addLoadEvent(function(){ outdatedBrowser({ bgColor: '#f25648', color: '#ffffff', lowerThan: 'filter', languagePath: 'your_path/outdatedbrowser/lang/en.html' }) });" },
+      // { innerHTML: "alert('hi');" },
 
       { src: "//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js" },
       { src: "//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js" },
       { src: "//cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js" },
       { src: "//cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.4/js.cookie.min.js" },
     ],
+    __dangerouslyDisableSanitizers: ['script'],
 
     link: [
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Maven+Pro:100,200,300,400,500|Roboto:100,400,700,900' },
@@ -72,7 +74,10 @@ module.exports = {
   ** Build configuration
   */
   css: [{ src: '~assets/stylus/main.styl', lang: 'stylus' }],
-  plugins: [{src: '~plugins/ga.js', ssr: false}],
+  plugins: [
+    {src: '~plugins/ga.js', ssr: false},
+    // {src: '~plugins/outdated.js', ssr: false},
+  ],
   router: {
     scrollBehavior: function (to, from, savedPosition) {
       if (to.name.indexOf('data') !== -1 && from.name.indexOf('data') !== -1) {
