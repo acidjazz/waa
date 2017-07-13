@@ -43,7 +43,7 @@ module.exports = {
 
     script: [
       { src: "//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.js" },
-      { innerHTML: "function addLoadEvent(func) { var oldonload = window.onload; if (typeof window.onload != 'function') { window.onload = func; } else { window.onload = function() { if (oldonload) { oldonload(); } func(); } } } addLoadEvent(function(){ outdatedBrowser({ bgColor: '#f25648', color: '#ffffff', lowerThan: 'filter', languagePath: '/en.html' }) });" },
+      { innerHTML: "function addLoadEvent(func) { var oldonload = window.onload; if (typeof window.onload != 'function') { window.onload = func; } else { window.onload = function() { if (oldonload) { oldonload(); } func(); } } } addLoadEvent(function(){ console.log('test one two'); outdatedBrowser({ bgColor: '#f25648', color: '#ffffff', lowerThan: 'filter', languagePath: '/en.html' }) });" },
       // { innerHTML: "alert('hi');" },
 
       { src: "//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js" },
