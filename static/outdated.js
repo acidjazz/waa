@@ -15,7 +15,7 @@ addLoadEvent(function(){
     outdatedBrowser({
         bgColor: '#f25648',
         color: '#ffffff',
-        lowerThan: 'transform',
+        lowerThan: 'filter',
         languagePath: 'your_path/outdatedbrowser/lang/en.html'
     })
 });
