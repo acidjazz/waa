@@ -33,7 +33,7 @@ doctype
   .border.big
   MetroStack
   .sources Source: 
-    b Hoyt Advisory Services; NMHC/NAA; U.S. Census Bureau.; Axiometrics, a RealPage Company
+    span Hoyt Advisory Services; NMHC/NAA; U.S. Census Bureau.; Axiometrics, a RealPage Company
   Bottom
 </template>
 
