@@ -78,6 +78,7 @@
     .clear
     .sources Source: 
       b Hoyt Advisory Services; NMHC/NAA; U.S. Census Bureau.; Axiometrics, a RealPage Company
+    Compare
     .border.big
     //.border.big
     // .border.big(v-if="(this.choice().type !== 'district')")
@@ -191,6 +192,7 @@ import Share from '~/components/Share.vue'
 import BuildMore from '~/components/BuildMore.vue'
 import HeatChart from '~/components/HeatChart.vue'
 import Downloads from '~/components/Downloads.vue'
+import Compare from '~/components/Compare.vue'
 
 export default {
   mixins: [ filtermixin ],
@@ -208,6 +210,7 @@ export default {
     BuildMore,
     HeatChart,
     Downloads,
+    Compare,
   },
 
   methods: {
@@ -365,7 +368,8 @@ json('../assets/fonts.json')
         color grey
         max-width 490px
         margin auto
-        > b
+        font c1s
+        > span
           color black
           > span
             color red
@@ -429,6 +433,8 @@ json('../assets/fonts.json')
         float left
         width 33%
         margin-right 0px
+        > .chartainer > .tooltip
+          display none
         &:nth-child(3)
           margin-right 0px
         > .copys
@@ -443,6 +449,7 @@ json('../assets/fonts.json')
     > .section_chart
       width 750px
       margin auto
+      margin-top 20px
       > .top
         background-color green
         > .part
@@ -460,10 +467,10 @@ json('../assets/fonts.json')
           &.part_numbers
             > .graph
               float left
-              margin 10px 10px 0 0
+              margin 10px 0 0 0
               background-color rgba(red, 0.5)
-              width 20px
-              height 20px
+              width 10px
+              height 10px
               border-radius 50%
             > .copy
               margin 5px 0 0 40px

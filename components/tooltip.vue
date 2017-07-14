@@ -3,7 +3,7 @@
   .inner
     .button(@click="toggle()")
       .icon: i.fa.fa-lg.fa-question
-    .tip(:class="{on: on, off: !on, center: align === 'center', left: align === 'left' }",v-on-clickaway="away")
+    .tip(@click="toggle()",:class="{on: on, off: !on, center: align === 'center', left: align === 'left' }",v-on-clickaway="away")
       .chevron
       .inner
         .title {{ copys[copy].title }}
@@ -36,8 +36,9 @@ export default {
       this.on = false
     },
     toggle () {
+      let before = this.on
       setTimeout(() => {
-        this.on = !this.on
+        this.on = !before
       }, 20)
     },
   },

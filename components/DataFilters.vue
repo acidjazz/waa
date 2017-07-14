@@ -224,7 +224,7 @@ json('../assets/colors.json')
         > .tooltip
           top 9px
           right auto
-          left -24px
+          left -30px
       > .options
         float left
         > a.option
