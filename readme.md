@@ -10,7 +10,7 @@
 [![CircleCI](https://img.shields.io/circleci/project/github/acidjazz/waa.svg)](https://circleci.com/gh/acidajzz/waa/)
 [![Coverage Status](https://coveralls.io/repos/github/acidjazz/waa/badge.svg?branch=coverage)](https://coveralls.io/github/acidjazz/waa?branch=staging)
 [![Dependency Status](https://gemnasium.com/badges/github.com/acidjazz/waa.svg)](https://gemnasium.com/github.com/acidjazz/waa)
-[![Aeonian status](https://img.shields.io/badge/%C3%A6onian-deployed-green.svg)
+[![Aeonian status](https://img.shields.io/badge/%C3%A6onian-deployed-green.svg)](https://github.com/acidjazz/aeonian)
 
 ## Build Setup
 ``` bash
