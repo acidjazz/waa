@@ -12,12 +12,18 @@
 [![Aeonian status](https://img.shields.io/badge/%C3%A6onian-deployed-green.svg)](https://github.com/acidjazz/aeonian)
 
 ## Build Setup
-### install dependencies
+### Install dependencies
 ```bash
 yarn install
 ```
-### serve with hot reload at localhost:3000
+### Serve with hot reload at http://localhost:3000
 ```bash
 yarn dev
 ```
+
+## Deployment
+* All deployment is setup using the git-flow workflow with [Aeonian](https://github.com/acidjazz/aeonian)
+ * development merges deploy to http://development.weareapartments.org/
+ * staging merges deploy to http://staging.weareapartments.org/
+ * production merges deploy to http://weareapartments.org/
 
