@@ -28,12 +28,15 @@ doctype
         .copy(v-in-viewport) Delayed marriages, an aging population and immigration are increasing a pressing need for new apartments, to the tune of 4.6 million by 2030.
         router-link.cta(to="/about",v-in-viewport) learn more
       .section.section_right
-        .image
+        .images
+          .building(v-in-viewport)
+          .frame(v-in-viewport)
+            .building(v-in-viewport)
       .clear
   .border.big
   MetroStack
   .sources Source: 
-    b Hoyt Advisory Services; NMHC/NAA; U.S. Census Bureau.; Axiometrics, a RealPage Company
+    span Hoyt Advisory Services; NMHC/NAA; U.S. Census Bureau.; Axiometrics, a RealPage Company
   Bottom
 </template>
 
@@ -106,10 +109,33 @@ json('../assets/fonts.json')
           margin 90px 0 0 0
       > .section.section_right
         float right
-        > .image
-          background url(/initiative.png)
-          width 707px
-          height 709px
+        > .images
+          position relative
+          > .building
+            background url(/building2.png)
+            width 674px
+            height 417px
+            inViewport(0.1)
+          > .frame
+            width 300px
+            height 293px
+            background-color white
+            padding 20px 0 0 20px
+            margin -100px 0 0 80px
+            inViewport(0.3)
+            > .building
+              background url(/building1.png)
+              width 300px
+              height 293px
+              margin 20px 0 0 20px
+              transition opacity 1s ease-in-out 0.5s, transform 1s ease-in-out 0.5s
+              &.in-viewport
+                opacity 1
+                transform translate(0, 0)
+              &.above-viewport, &.below-viewport
+                opacity 0
+                transform translate(-40px, -40px)
+
   > .hero
     color white
     height 100vh

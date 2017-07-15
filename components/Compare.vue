@@ -1,5 +1,6 @@
+
 <template lang="pug">
-  .container
-    nuxt
+#Compare
+
 </template>
 
