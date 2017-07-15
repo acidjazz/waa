@@ -20,10 +20,11 @@ git clone git@github.com:acidjazz/waa.git
 ```bash
 yarn install
 ```
-* Your dev environment is now served with [HMR](https://webpack.github.io/docs/hot-module-replacement.html) at http://localhost:3000
+* Serve your dev environment with [HMR](https://webpack.github.io/docs/hot-module-replacement.html) at http://localhost:3000
 ```bash
 yarn dev
 ```
+> To serve to other machines via your IP address run `yarn dev-public`
 
 ## Deployment
 * All deployment is setup using the [git-flow](http://nvie.com/posts/a-successful-git-branching-model/) workflow with [aeonian](https://github.com/acidjazz/aeonian)

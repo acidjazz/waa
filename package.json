@@ -8,7 +8,7 @@
     "test": "nyc ava",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "dev": "nuxt",
-    "dev-kevin": "HOST=192.168.1.230 nuxt",
+    "dev-public": "HOST=0.0.0.0 nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
