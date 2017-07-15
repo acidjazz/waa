@@ -12,11 +12,15 @@
 [![Aeonian status](https://img.shields.io/badge/%C3%A6onian-deployed-green.svg)](https://github.com/acidjazz/aeonian)
 
 ## Build Setup
-### Install dependencies
+* Clone this repository 
+```bash
+git clone git@github.com:acidjazz/waa.git
+```
+* Install dependencies
 ```bash
 yarn install
 ```
-### Serve with hot reload at http://localhost:3000
+* Serve with hot reload at http://localhost:3000
 ```bash
 yarn dev
 ```
