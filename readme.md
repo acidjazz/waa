@@ -9,7 +9,7 @@
 [![CircleCI](https://img.shields.io/circleci/project/github/acidjazz/waa.svg)](https://circleci.com/gh/acidajzz/waa/)
 [![Coverage Status](https://coveralls.io/repos/github/acidjazz/waa/badge.svg?branch=development)](https://coveralls.io/github/acidjazz/waa?branch=staging)
 [![Dependency Status](https://gemnasium.com/badges/github.com/acidjazz/waa.svg)](https://gemnasium.com/github.com/acidjazz/waa)
-[![Aeonian status](https://img.shields.io/badge/%C3%A6onian-deployed-green.svg)](https://github.com/acidjazz/aeonian)
+[![aeonian status](https://img.shields.io/badge/%C3%A6onian-deployed-green.svg)](https://github.com/acidjazz/aeonian)
 
 ## Build Setup
 * Clone this repository 
@@ -26,7 +26,7 @@ yarn dev
 ```
 
 ## Deployment
-* All deployment is setup using the [git-flow](http://nvie.com/posts/a-successful-git-branching-model/) workflow with [Aeonian](https://github.com/acidjazz/aeonian)
+* All deployment is setup using the [git-flow](http://nvie.com/posts/a-successful-git-branching-model/) workflow with [aeonian](https://github.com/acidjazz/aeonian)
  * Branch [development](https://github.com/acidjazz/waa/tree/development) merges deploy to http://development.weareapartments.org/
  * Branch [staging](https://github.com/acidjazz/waa/tree/staging) merges deploy to http://staging.weareapartments.org/
  * Branch [master](https://github.com/acidjazz/waa/tree/master) merges deploy to http://weareapartments.org/
