@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "test": "nyc ava",
-    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && coveralls",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "dev": "nuxt",
     "dev-kevin": "HOST=192.168.1.230 nuxt",
     "build": "nuxt build",
