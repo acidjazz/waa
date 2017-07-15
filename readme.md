@@ -26,7 +26,7 @@ yarn dev
 ```
 
 ## Deployment
-* All deployment is setup using the git-flow workflow with [Aeonian](https://github.com/acidjazz/aeonian)
+* All deployment is setup using the [git-flow](http://nvie.com/posts/a-successful-git-branching-model/) workflow with [Aeonian](https://github.com/acidjazz/aeonian)
  * development merges deploy to http://development.weareapartments.org/
  * staging merges deploy to http://staging.weareapartments.org/
  * production merges deploy to http://weareapartments.org/
