@@ -65,11 +65,21 @@
 
       .data
         .inner
-          .copy Economic Impact of {{ number }} New Apartment Homes
+          .copy(v-if="type === 'existing'") Economic Impact of {{ number }} Existing Apartment Homes
+          .copy(v-else) Economic Impact of {{ number }} New Apartment Homes
+
+          .copy.copy_header Total Impact 
+          .copy.copy_body The combined direct and indirect contribution of apartment construction, operations and resident spending to the state economy.
+
+          .stat.colored.blue
+            .copy Total Economic Impact
+            .value {{ data.total.impact }}
+            .clear
+
           .copy.copy_header Managing Apartments
           .copy.copy_body Apartment homes are economic engines, driving dollars and jobs that strengthen local communities.
 
-          .stat
+          //.stat
             .copy Total Apartment Homes
             .value {{ data.homes }}
             .clear
@@ -123,13 +133,6 @@
             .value  {{ data.spending.jobs }}
             .clear
 
-          .copy.copy_header Total Impact 
-          .copy.copy_body The combined direct and indirect contribution of apartment construction, operations and resident spending to the state economy.
-
-          .stat.colored.blue
-            .copy Total Economic Impact
-            .value {{ data.total.impact }}
-            .clear
 
           .copy.copy_header Total Jobs 
           .copy.copy_body The total number of direct and indirect jobs supported by apartment construction, operations and resident spending within the state economy.
@@ -368,12 +371,14 @@ export default {
           break
       }
 
+      console.log(this.by)
       if (this.by === 'national') {
         by = 'state'
         value = 'USA Total'
         this.data.homes = numeral(json.homes['national']).format('0,0')
       } else {
         this.data.homes = numeral(json.homes[by][value]).format('0,0')
+        console.log(this.data.homes)
       }
 
       this.data.construction.dollars = numeral(
