@@ -25,9 +25,9 @@ export default {
       switch (this.choice.type) {
         case 'national':
         case 'state':
-          this.json('US Building 2.json', (result) => {
-            this.homes = numeral(result.data.data[2017][1]).format('0,0a')
-            this.completions = numeral(result.data.data[2017][3]).format('0,0a')
+          this.json('US Building.json', (result) => {
+            this.homes = numeral(result.data.data['Total U.S.'][1]).format('0,0a')
+            this.completions = numeral(result.data.data['Total U.S.'][0]).format('0,0a')
             this.type = 'country'
           })
           break

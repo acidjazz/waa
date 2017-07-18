@@ -55,6 +55,7 @@ let sheets = [
 
   // build more - all pages
   'US Building 2',
+  'US Building',
   'State Building Current',
   'State Building Needed',
 
@@ -184,6 +185,7 @@ for (let index in excel) {
     case 'Metro Rentership Rate':
     case 'Metro Pop Growth':
     case 'US Building 2':
+    case 'US Building':
     case 'State Building Current':
     case 'State Building Needed':
     case 'US Age of Stock':
