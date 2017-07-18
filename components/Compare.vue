@@ -5,28 +5,158 @@ doctype
     .title(v-in-viewport) Compare Your City
     hr(v-in-viewport)
     .copy(v-in-viewport) Enter two cities names in order to compare them
-    .inputs
-      input(placeholder="City One",v-in-viewport)
-      .suggest.off
+    .inputs(v-in-viewport)
+      input(
+        placeholder="City One",
+        v-model="city.one.value",
+        @keydown.down="key('down', 'one')",
+        @keydown.up="key('up', 'one')",
+        @keydown.enter="key('enter', 'one')",
+        :class="{ matching: this.city.one.matching }"
+      )
+      .suggest(:class="{ off: suggest.one.matches.length < 1, on: suggest.one.matches.length > 0 }")
         ul
-          li San Francisco
-          li San Francisco
-          li San Francisco
-      span(v-in-viewport) vs.
-      input(placeholder="City Two",v-in-viewport)
-      .suggest.off
+          li(v-for="city, index in suggest.one.matches",:class="{ selected: suggest.one.selected === index}") {{ city }}
+      span vs.
+      input(
+        placeholder="City Two",
+        v-model="city.two.value"
+        @keydown.down="key('down', 'two')",
+        @keydown.up="key('up', 'two')",
+        @keydown.enter="key('enter', 'two')",
+        :class="{ matching: this.city.two.matching }"
+      )
+      .suggest(:class="{ off: suggest.two.matches.length < 1, on: suggest.two.matches.length > 0 }")
         ul
-          li San Francisco
-          li San Francisco
-          li San Francisco
+          li(v-for="city, index in suggest.two.matches",:class="{ selected: suggest.two.selected === index}") {{ city }}
 
-    span.cta(v-in-viewport) compare
+    .cta(v-in-viewport)
+      input(
+      type="submit",
+      value="compare",
+      :class="{ active: this.city.one.matching === true && this.city.two.matching === true }",
+      @click="compare()",
+      @keydown.enter="compare()"
+    )
 </template>
 
 <script>
+import Filters from '../static/Filters.json'
 import inViewportDirective from 'vue-in-viewport-directive'
 export default {
   directives: { 'in-viewport': inViewportDirective },
+  methods: {
+    parseMetros () {
+      for (let item of Filters.data) {
+        if (item.Metro !== undefined) {
+          for (let metro of item.Metro.split(',')) {
+            if (this.metros.indexOf(metro.trim()) === -1) {
+              this.metros.push(metro.trim())
+            }
+          }
+        }
+      }
+    },
+
+    key (dir, input) {
+      switch (dir) {
+        case 'down' :
+          if (this.suggest[input].selected === (this.suggest[input].matches.length - 1)) {
+            this.suggest[input].selected = 0
+          } else {
+            this.suggest[input].selected++
+          }
+          break
+        case 'up' :
+          if (this.suggest[input].selected  === 0) {
+            this.suggest[input].selected = (this.suggest[input].matches.length - 1)
+          } else {
+            this.suggest[input].selected--
+          }
+          break
+        case 'enter' :
+          this.city[input].value = this.suggest[input].matches[this.suggest[input].selected]
+          break
+      }
+      return true
+    },
+
+    update (input) {
+
+      this.suggest[input].matches = []
+      this.city[input].matching = false
+
+      if (this.city[input].value.length < 1) {
+        return true
+      }
+
+      console.log(input, this.metros.indexOf(this.city[input].value))
+      if (this.metros.indexOf(this.city[input].value) > 0) {
+        this.city[input].matching = true
+        return true
+      }
+
+      let matches = this.metros.map((metro) => {
+        if (metro.toUpperCase().indexOf(this.city[input].value.toUpperCase()) === 0) {
+          this.suggest[input].matches.push(metro)
+        }
+      })
+
+      this.suggest[input].selected = 0
+
+    },
+
+    compare () {
+
+      if (this.city.one.matching && this.city.two.matching) {
+        console.log('/compare#one=' + this.city.one.value + '&two=' + this.city.two.value)
+        this.$router.push('/compare#one=' + this.city.one.value + '&two=' + this.city.two.value)
+      }
+
+      return true
+
+    },
+  },
+
+  created () {
+    this.parseMetros()
+  },
+
+  watch: {
+    'city.one.value' () {
+      this.update('one')
+    },
+    'city.two.value' () {
+      this.update('two')
+    },
+  },
+
+  data () {
+    return {
+      metros: [],
+      city: {
+        one: {
+          value: null,
+          matching: false,
+        },
+        two: {
+          value: null,
+          matching: false,
+        }
+      },
+      suggest: {
+        one: {
+          matches: [],
+          selected: 0,
+        },
+        two:  {
+          matches: [],
+          selected: 0,
+        },
+      },
+    }
+  }
+
 }
 </script>
 
@@ -74,6 +204,8 @@ delay = 0.8
       position relative
       width 505px
       margin auto
+      inViewport(delay + 0.20)
+      z-index 2
       > .suggest
         background-color white
         top 46px
@@ -83,7 +215,6 @@ delay = 0.8
         border-right 1px solid lightgrey
         border-bottom 1px solid lightgrey
         border-radius 0 0 3px 3px
-        z-index 10
         onoff()
         &:nth-child(1)
           left: 0
@@ -98,6 +229,9 @@ delay = 0.8
             border-bottom 1px solid lightgrey
             text-align left
             padding 10px
+            &.selected
+              background-color royalpurple
+              color white
             &:last-child
               border-bottom 1px solid transaprent
             &:hover
@@ -105,29 +239,36 @@ delay = 0.8
       > span
         display inline-block
         padding 0 20px
-        inViewport(delay + 0.25)
       > input
         width 200px
         font c1
         padding 10px
         border 1px solid lightgrey
         border-radius 3px
-        &:nth-child(1)
-          inViewport(delay + 0.2)
-        &:nth-child(4)
-          inViewport(delay + 0.3)
+        outline none
+        transition border-color 0.3s ease-in-out 0s
+        &:focus
+          border 1px solid blue
+        &.matching
+          border 1px solid green
     > .cta
-      z-index 1
-      cursor pointer
-      display inline-block
-      background-color blue
-      color white
-      font c1sb
-      text-transform uppercase
-      margin 60px 0
-      padding 20px 60px
-      border-radius 3px
-      inViewport(delay + 0.4)
+      inViewport(delay + 0.25)
+      > input
+        cursor pointer
+        background-color lightgrey
+        color black
+        font c1sb
+        text-transform uppercase
+        margin 60px 0
+        padding 15px 50px
+        border-radius 3px
+        border none
+        transition color 0.5s ease 0s, background-color 0.5s ease 0s
+        &.active
+          color white
+          background-color blue
+          opacity 1
+          transform translate(0, 0)
 
 
 </style>
