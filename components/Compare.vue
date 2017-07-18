@@ -16,7 +16,11 @@ doctype
       )
       .suggest(:class="{ off: suggest.one.matches.length < 1, on: suggest.one.matches.length > 0 }")
         ul
-          li(v-for="city, index in suggest.one.matches",:class="{ selected: suggest.one.selected === index}") {{ city }}
+          li(
+            v-for="city, index in suggest.one.matches",
+            :class="{ selected: suggest.one.selected === index}",
+            @click="choose('one', city)",
+          ) {{ city }}
       span vs.
       input(
         placeholder="City Two",
@@ -76,6 +80,10 @@ export default {
       return true
     },
 
+    choose (input, value) {
+      this.city[input].value = value
+    },
+
     update (input) {
 
       this.suggest[input].matches = []
@@ -85,7 +93,6 @@ export default {
         return true
       }
 
-      console.log(input, this.metros.indexOf(this.city[input].value))
       if (this.metros.indexOf(this.city[input].value) > 0) {
         this.city[input].matching = true
         return true
@@ -220,16 +227,17 @@ delay = 0.8
           padding 0
           list-style-type none
           > li
+            cursor pointer
             border-bottom 1px solid lightgrey
             text-align left
             padding 10px
-            &.selected
-              background-color royalpurple
-              color white
             &:last-child
               border-bottom 1px solid transaprent
             &:hover
-              background-color lightgrey
+              background-color rgba(royalpurple, 0.5)
+            &.selected
+              background-color royalpurple
+              color white
       > span
         display inline-block
         padding 0 20px
