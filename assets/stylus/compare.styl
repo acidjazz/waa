@@ -1,0 +1,89 @@
+json('../../assets/colors.json')
+json('../../assets/fonts.json')
+@import '../../assets/stylus/mixins.styl'
+
+.page.page_compare
+  > .inner
+    height calc(100vh - 400px)
+  > .fade
+    background-color rgba(black, 0.8)
+    position absolute
+    fullsize()
+    z-index 12
+  > .modal
+    background-color white
+    border-radius 6px
+    min-height 600px
+    margin auto
+    z-index 14
+    position absolute
+    top 50%
+    left 50%
+    width 900px
+    height 600px
+    margin-left -450px
+    margin-top -360px
+    padding 60px 0
+    height 200px
+    > .close
+      cursor pointer
+      display block
+      position absolute
+      top -20px
+      right -20px
+      background-color blue
+      color white
+      border-radius 50%
+      width 60px
+      height 60px
+      line-height 70px
+      text-align center
+    > .copy:nth-child(2)
+      font c1sb
+      color grey
+      text-transform uppercase
+      text-align center
+      padding 0 0 10px 0
+    > .copy:nth-child(3)
+      text-align center
+      font h2
+    > .border
+      margin 30px 0 60px 0
+    > table
+      width 600px
+      margin auto
+      cellspacing 0
+      cellpadding 0
+      > thead > tr > th
+        text-transform uppercase
+        font c1
+        padding 10px
+      > tbody
+        > tr
+          > td
+            border-left 1px solid grey
+            border-top 1px solid grey
+            padding 10px
+            &:nth-child(n+2),
+            &:nth-child(n+3)
+              text-align center
+              color grey
+              transition color 1s ease-in-out 0s
+              &.green
+                color green
+              &.tomato
+                color tomato
+            &:nth-child(n+3)
+              border-right 1px solid grey
+
+          &:first-child > td:nth-child(1)
+            border-radius 3px 0 0 0
+          &:first-child > td:nth-child(3)
+            border-radius 0 3px 0 0
+          &:last-child > td
+            border-bottom 1px solid grey
+          &:last-child > td:first-child
+            border-radius 0 0 0 3px
+          &:last-child > td:last-child
+            border-radius 0 0 3px 0
+

@@ -43,21 +43,16 @@ doctype
 <script>
 import Filters from '../static/Filters.json'
 import inViewportDirective from 'vue-in-viewport-directive'
+let metros = require('~/static/Operation Impacts (metro).json').data
 export default {
   directives: { 'in-viewport': inViewportDirective },
   methods: {
-    parseMetros () {
-      for (let item of Filters.data) {
-        if (item.Metro !== undefined) {
-          for (let metro of item.Metro.split(',')) {
-            if (this.metros.indexOf(metro.trim()) === -1) {
-              this.metros.push(metro.trim())
-            }
-          }
-        }
-      }
+    populate () {
+      let values = Object.keys(metros)
+      values.shift()
+      values.pop()
+      this.metros = values
     },
-
     key (dir, input) {
       switch (dir) {
         case 'down' :
@@ -109,8 +104,7 @@ export default {
     compare () {
 
       if (this.city.one.matching && this.city.two.matching) {
-        console.log('/compare#one=' + this.city.one.value + '&two=' + this.city.two.value)
-        this.$router.push('/compare#one=' + this.city.one.value + '&two=' + this.city.two.value)
+        this.$router.push('/compare#' + this.city.one.value + ',' + this.city.two.value)
       }
 
       return true
@@ -119,7 +113,7 @@ export default {
   },
 
   created () {
-    this.parseMetros()
+    this.populate()
   },
 
   watch: {
