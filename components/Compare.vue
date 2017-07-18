@@ -32,7 +32,11 @@ doctype
       )
       .suggest(:class="{ off: suggest.two.matches.length < 1, on: suggest.two.matches.length > 0 }")
         ul
-          li(v-for="city, index in suggest.two.matches",:class="{ selected: suggest.two.selected === index}") {{ city }}
+          li(
+            v-for="city, index in suggest.two.matches",
+            :class="{ selected: suggest.two.selected === index}",
+            @click="choose('two', city)",
+          ) {{ city }}
 
     .cta(v-in-viewport)
       input(
