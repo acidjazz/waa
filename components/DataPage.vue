@@ -343,6 +343,7 @@ json('../assets/fonts.json')
           width 750px
           margin auto
           padding-top 5px
+          height 110px
           > .stat
             padding 10px
             max-width 150px
