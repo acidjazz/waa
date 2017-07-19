@@ -78,8 +78,8 @@
     .clear
     .sources Source: 
       span Hoyt Advisory Services; NMHC/NAA; U.S. Census Bureau.; Axiometrics, a RealPage Company
+    MetroDemand
     Compare
-    .border.big
     //.border.big
     // .border.big(v-if="(this.choice().type !== 'district')")
     //SingleItem(v-if="this.choice().type === 'national'")
@@ -193,6 +193,7 @@ import BuildMore from '~/components/BuildMore.vue'
 import HeatChart from '~/components/HeatChart.vue'
 import Downloads from '~/components/Downloads.vue'
 import Compare from '~/components/Compare.vue'
+import MetroDemand from '~/components/MetroDemand.vue'
 
 export default {
   mixins: [ filtermixin ],
@@ -211,6 +212,7 @@ export default {
     HeatChart,
     Downloads,
     Compare,
+    MetroDemand,
   },
 
   methods: {
