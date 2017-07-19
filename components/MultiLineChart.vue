@@ -104,8 +104,8 @@ export default {
 
       let ctx = 'chart-' + this.id
 
-      let solid = colors.cyan
-      let light = colors.lightcyan
+      let solid = colors.aqua
+      let light = colors.lightaqua
 
       if (this.theme === 'lime') {
         solid = colors.lime
