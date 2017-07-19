@@ -1,14 +1,97 @@
 <template lang="pug">
 doctype
 #Compare
+  .fade(:class="{ on: calculated, off: !calculated }")
+  .outer
+    .modal(:class="{ on: calculated, off: !calculated }")
+      .close(to="/data",@click="reset()")
+        .fa.fa-times.fa-2x
+      .copy we are apartments
+      .copy Your City Comparison
+      .border.small
+
+      table(cellspacing=0,cellpadding=0)
+        thead
+          tr
+            th
+            th {{ city.one.name }}
+            th {{ city.two.name }}
+        tbody
+          tr
+            td Total Apartment Homes
+            td(:class="{ green: compare('one', 'homes'), tomato: !compare('one', 'homes') }")
+              i.fa.fa-checkmark
+              i-count-up(:end="city.one.homes.formatted",:decimals="1")
+              span {{ city.one.homes.multiplier }}
+            td(:class="{ green: compare('two', 'homes'), tomato: !compare('two', 'homes') }")
+              i-count-up(:end="city.two.homes.formatted",:decimals="1")
+              span {{ city.two.homes.multiplier }}
+          tr
+            td Operation Dollars Spent
+            td(:class="{ green: compare('one', 'operation'), tomato: !compare('one', 'operation') }")
+              span $
+              i-count-up(:end="city.one.operation.formatted",:decimals="1")
+              span {{ city.one.operation.multiplier }}
+            td(:class="{ green: compare('two', 'operation'), tomato: !compare('two', 'operation') }")
+              span $
+              i-count-up(:end="city.two.operation.formatted",:decimals="1")
+              span {{ city.two.operation.multiplier }}
+          tr
+            td Direct On-Site Jobs
+            td(:class="{ green: compare('one', 'jobs'), tomato: !compare('one', 'jobs') }")
+              i-count-up(:end="city.one.jobs.formatted",:decimals="1")
+              span {{ city.one.jobs.multiplier }}
+            td(:class="{ green: compare('two', 'jobs'), tomato: !compare('two', 'jobs') }")
+              i-count-up(:end="city.two.jobs.formatted",:decimals="1")
+              span {{ city.two.jobs.multiplier }}
+          tr
+            td Total Economic Contribution
+            td(:class="{ green: compare('one', 'contrib'), tomato: !compare('one', 'contrib') }")
+              span $
+              i-count-up(:end="city.one.contrib.formatted",:decimals="1")
+              span {{ city.one.contrib.multiplier }}
+            td(:class="{ green: compare('two', 'contrib'), tomato: !compare('two', 'contrib') }")
+              span $
+              i-count-up(:end="city.two.contrib.formatted",:decimals="1")
+              span {{ city.two.contrib.multiplier }}
+          tr
+            td Total Jobs Supported
+            td(:class="{ green: compare('one', 'supported'), tomato: !compare('one', 'supported') }")
+              i-count-up(:end="city.one.supported.formatted",:decimals="1")
+              span {{ city.one.supported.multiplier }}
+            td(:class="{ green: compare('two', 'supported'), tomato: !compare('two', 'supported') }")
+              i-count-up(:end="city.two.supported.formatted",:decimals="1")
+              span {{ city.two.supported.multiplier }}
+          tr
+            td Construction Dollars Spent
+            td(:class="{ green: compare('one', 'spent'), tomato: !compare('one', 'spent') }")
+              span $
+              i-count-up(:end="city.one.spent.formatted",:decimals="1")
+              span {{ city.one.spent.multiplier }}
+            td(:class="{ green: compare('two', 'spent'), tomato: !compare('two', 'spent') }")
+              span $
+              i-count-up(:end="city.two.spent.formatted",:decimals="1")
+              span {{ city.two.spent.multiplier }}
+          tr
+            td Spending Power
+            td(:class="{ green: compare('one', 'power'), tomato: !compare('one', 'power') }")
+              span $
+              i-count-up(:end="city.one.power.formatted",:decimals="1")
+              span {{ city.one.power.multiplier }}
+            td(:class="{ green: compare('two', 'power'), tomato: !compare('two', 'power') }")
+              span $
+              i-count-up(:end="city.two.power.formatted",:decimals="1")
+              span {{ city.two.power.multiplier }}
+
   .inner(v-in-viewport)
+
     .title(v-in-viewport) Compare Your City
     hr(v-in-viewport)
     .copy(v-in-viewport) Enter two cities names in order to compare them
     .inputs(v-in-viewport)
       input(
         placeholder="City One",
-        v-model="city.one.value",
+        v-model="city.one.name",
         @keydown.down="key('down', 'one')",
         @keydown.up="key('up', 'one')",
         @keydown.enter="key('enter', 'one')",
@@ -24,7 +107,7 @@ doctype
       span vs.
       input(
         placeholder="City Two",
-        v-model="city.two.value"
+        v-model="city.two.name"
         @keydown.down="key('down', 'two')",
         @keydown.up="key('up', 'two')",
         @keydown.enter="key('enter', 'two')",
@@ -43,24 +126,108 @@ doctype
       type="submit",
       value="compare",
       :class="{ active: this.city.one.matching === true && this.city.two.matching === true }",
-      @click="compare()",
-      @keydown.enter="compare()"
+      @click="calculate()",
+      @keydown.enter="calculate()"
     )
 </template>
-
 <script>
 import Filters from '../static/Filters.json'
 import inViewportDirective from 'vue-in-viewport-directive'
+import ICountUp from 'vue-countup-v2'
 let metros = require('~/static/Operation Impacts (metro).json').data
+
+const json = {
+  homes: {},
+  operation: {},
+  construction: {},
+  spending: {},
+}
+
+json.homes = require('~/static/Metro Occupied Apartments.json').data
+json.operation = require('~/static/Operation Impacts (metro).json').data
+json.construction = require('~/static/Construction Impacts (metro).json').data
+json.spending = require('~/static/Spending Impacts (metro).json').data
+
 export default {
   directives: { 'in-viewport': inViewportDirective },
+  components: { ICountUp },
   methods: {
+
+    reset () {
+
+      let defaults = { value: 0, formatted: 0, multiplier: null }
+
+      for (let city of ['one', 'two']) {
+        for (let index in this.city[city]) {
+          if (index === 'name' || index === 'matching') { continue }
+          this.city[city][index].value = 0
+          this.city[city][index].formatted = 0
+          this.city[city][index].multiplier = null
+        }
+      }
+
+      this.calculated = false
+
+    },
+
+    compare (city, type) {
+
+      if (city === 'one') {
+        return this.city.one[type].value > this.city.two[type].value
+      }
+
+      return this.city.two[type].value > this.city.one[type].value
+
+    },
+
+    calculate () {
+
+      if (!this.city.one.matching || !this.city.two.matching) {
+        return true
+      }
+
+      this.city.one.homes.value = json.homes[this.city.one.name]
+      this.city.two.homes.value = json.homes[this.city.two.name]
+
+      this.city.one.operation.value = json.operation[this.city.one.name][0]
+      this.city.two.operation.value = json.operation[this.city.two.name][0]
+
+      this.city.one.jobs.value = json.spending[this.city.one.name][2]
+      this.city.two.jobs.value = json.spending[this.city.two.name][2]
+
+      this.city.one.contrib.value = json.construction[this.city.one.name][2]
+      this.city.two.contrib.value = json.construction[this.city.two.name][2]
+
+      this.city.one.supported.value = json.spending[this.city.one.name][4]
+      this.city.two.supported.value = json.spending[this.city.two.name][4]
+
+      this.city.one.spent.value = json.construction[this.city.one.name][1]
+      this.city.two.spent.value = json.construction[this.city.two.name][1]
+
+      this.city.one.power.value = json.spending[this.city.one.name][1]
+      this.city.two.power.value = json.spending[this.city.two.name][1]
+
+      const numeral = window.numeral
+
+      for (let city of ['one', 'two']) {
+        for (let index in this.city[city]) {
+          if (index === 'name' || index === 'matching') { continue }
+          this.city[city][index].formatted = Number.parseFloat(numeral(this.city[city][index].value).format('0.0a').slice(0, -1))
+          this.city[city][index].multiplier = numeral(this.city[city][index].value).format('0.0a').slice(-1)
+        }
+      }
+
+      this.calculated = true
+
+    },
+
     populate () {
       let values = Object.keys(metros)
       values.shift()
       values.pop()
       this.metros = values
     },
+
     key (dir, input) {
       switch (dir) {
         case 'down' :
@@ -78,14 +245,14 @@ export default {
           }
           break
         case 'enter' :
-          this.city[input].value = this.suggest[input].matches[this.suggest[input].selected]
+          this.city[input].name = this.suggest[input].matches[this.suggest[input].selected]
           break
       }
       return true
     },
 
-    choose (input, value) {
-      this.city[input].value = value
+    choose (input, name) {
+      this.city[input].name = name
     },
 
     update (input) {
@@ -93,17 +260,17 @@ export default {
       this.suggest[input].matches = []
       this.city[input].matching = false
 
-      if (this.city[input].value.length < 1) {
+      if (this.city[input].name.length < 1) {
         return true
       }
 
-      if (this.metros.indexOf(this.city[input].value) > 0) {
+      if (this.metros.indexOf(this.city[input].name) > -1) {
         this.city[input].matching = true
         return true
       }
 
       let matches = this.metros.map((metro) => {
-        if (metro.toUpperCase().indexOf(this.city[input].value.toUpperCase()) === 0) {
+        if (metro.toUpperCase().indexOf(this.city[input].name.toUpperCase()) === 0) {
           this.suggest[input].matches.push(metro)
         }
       })
@@ -112,15 +279,6 @@ export default {
 
     },
 
-    compare () {
-
-      if (this.city.one.matching && this.city.two.matching) {
-        this.$router.push('/compare#' + this.city.one.value + ',' + this.city.two.value)
-      }
-
-      return true
-
-    },
   },
 
   created () {
@@ -128,25 +286,40 @@ export default {
   },
 
   watch: {
-    'city.one.value' () {
+    'city.one.name' () {
       this.update('one')
     },
-    'city.two.value' () {
+    'city.two.name' () {
       this.update('two')
     },
   },
 
   data () {
     return {
+      calculated: false,
       metros: [],
       city: {
         one: {
-          value: null,
+          name: null,
           matching: false,
+          homes: { value: 0, formatted: 0, multiplier: null },
+          operation: { value: 0, formatted: 0, multiplier: null },
+          jobs: { value: 0, formatted: 0, multiplier: null },
+          contrib: { value: 0, formatted: 0, multiplier: null },
+          supported: { value: 0, formatted: 0, multiplier: null },
+          spent: { value: 0, formatted: 0, multiplier: null },
+          power: { value: 0, formatted: 0, multiplier: null },
         },
         two: {
-          value: null,
+          name: null,
           matching: false,
+          homes: { value: 0, formatted: 0, multiplier: null },
+          operation: { value: 0, formatted: 0, multiplier: null },
+          jobs: { value: 0, formatted: 0, multiplier: null },
+          contrib: { value: 0, formatted: 0, multiplier: null },
+          supported: { value: 0, formatted: 0, multiplier: null },
+          spent: { value: 0, formatted: 0, multiplier: null },
+          power: { value: 0, formatted: 0, multiplier: null },
         }
       },
       suggest: {
@@ -169,112 +342,5 @@ export default {
 @import '../assets/stylus/mixins'
 json('../assets/colors.json')
 json('../assets/fonts.json')
-
-delay = 0.8
-
-#Compare
-  background-color purple
-  padding 60px 0
-  > .inner
-    width 900px
-    margin auto
-    background-color white
-    border-radius 12px
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-    text-align center
-    &.in-viewport
-      opacity 1
-      transform scale(1)
-      transition opacity 1s ease-in-out 0s, transform 1s ease-in-out 0s
-      transition-timing-function  cubic-bezier(.87,-.41,.19,1.44)
-    &.above-viewport, &.below-viewport
-      opacity 0
-      transform scale(0.95)
-    > .title
-      font h2
-      text-align center
-      padding 60px 0
-      inViewport(delay + 0.05)
-    > hr
-      display block
-      color lightgrey
-      border-top 1px solid lightgrey
-      border-bottom 1px solid lightgrey
-      inViewport(delay + 0.1)
-    > .copy
-      color grey
-      padding 30px 0
-      inViewport(delay + 0.15)
-    > .inputs
-      position relative
-      width 505px
-      margin auto
-      inViewport(delay + 0.20)
-      z-index 2
-      > .suggest
-        background-color white
-        top 46px
-        width 220px
-        position absolute
-        border-left 1px solid lightgrey
-        border-right 1px solid lightgrey
-        border-bottom 1px solid lightgrey
-        border-radius 0 0 3px 3px
-        onoff()
-        &:nth-child(1)
-          left: 0
-        &:nth-child(5)
-          right: 0
-          
-        > ul
-          margin 0
-          padding 0
-          list-style-type none
-          > li
-            cursor pointer
-            border-bottom 1px solid lightgrey
-            text-align left
-            padding 10px
-            &:last-child
-              border-bottom 1px solid transaprent
-            &:hover
-              background-color rgba(royalpurple, 0.5)
-            &.selected
-              background-color royalpurple
-              color white
-      > span
-        display inline-block
-        padding 0 20px
-      > input
-        width 200px
-        font c1
-        padding 10px
-        border 1px solid lightgrey
-        border-radius 3px
-        outline none
-        transition border-color 0.3s ease-in-out 0s
-        &:focus
-          border 1px solid blue
-        &.matching
-          border 1px solid green
-    > .cta
-      inViewport(delay + 0.25)
-      > input
-        cursor pointer
-        background-color lightgrey
-        color black
-        font c1sb
-        text-transform uppercase
-        margin 60px 0
-        padding 15px 50px
-        border-radius 3px
-        border none
-        transition color 0.5s ease 0s, background-color 0.5s ease 0s
-        &.active
-          color white
-          background-color blue
-          opacity 1
-          transform translate(0, 0)
-
-
+@import '../../assets/stylus/compare.styl'
 </style>

@@ -122,44 +122,6 @@ export default {
     }
   },
 
-  mounted () {
-    const numeral = window.numeral
-    let params = this.$route.hash.substr(1).split(',')
-
-    this.city.one.name = params[0]
-    this.city.two.name = params[1]
-
-    this.city.one.homes.value = json.homes[params[0]]
-    this.city.two.homes.value = json.homes[params[1]]
-
-    this.city.one.operation.value = json.operation[this.city.one.name][0]
-    this.city.two.operation.value = json.operation[this.city.two.name][0]
-
-    this.city.one.jobs.value = json.spending[this.city.one.name][2]
-    this.city.two.jobs.value = json.spending[this.city.two.name][2]
-
-    this.city.one.contrib.value = json.construction[this.city.one.name][2]
-    this.city.two.contrib.value = json.construction[this.city.two.name][2]
-
-    this.city.one.supported.value = json.spending[this.city.one.name][4]
-    this.city.two.supported.value = json.spending[this.city.two.name][4]
-
-    this.city.one.spent.value = json.construction[this.city.one.name][1]
-    this.city.two.spent.value = json.construction[this.city.two.name][1]
-
-    this.city.one.power.value = json.spending[this.city.one.name][1]
-    this.city.two.power.value = json.spending[this.city.two.name][1]
-
-    for (let city of ['one', 'two']) {
-      for (let index in this.city[city]) {
-        if (index === 'name') { continue }
-        this.city[city][index].formatted = Number.parseFloat(numeral(this.city[city][index].value).format('0.0a').slice(0, -1))
-        this.city[city][index].multiplier = numeral(this.city[city][index].value).format('0.0a').slice(-1)
-      }
-    }
-
-  },
-
   data () {
 
     return {

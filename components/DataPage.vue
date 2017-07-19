@@ -79,7 +79,6 @@
     .sources Source: 
       span Hoyt Advisory Services; NMHC/NAA; U.S. Census Bureau.; Axiometrics, a RealPage Company
     Compare
-    .border.big
     //.border.big
     // .border.big(v-if="(this.choice().type !== 'district')")
     //SingleItem(v-if="this.choice().type === 'national'")
