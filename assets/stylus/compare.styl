@@ -1,6 +1,7 @@
 json('../../assets/colors.json')
 json('../../assets/fonts.json')
 @import '../../assets/stylus/mixins.styl'
+@import '../../assets/stylus/keyframes.styl'
 
 delay = 0.8
 
@@ -148,6 +149,10 @@ delay = 0.8
         height 60px
         line-height 70px
         text-align center
+        transition transform 0.5s ease 0s
+        transform scale(1)
+        &:hover
+          transform scale(1.05)
       > .copy:nth-child(2)
         font c1sb
         color grey
@@ -186,11 +191,14 @@ delay = 0.8
               &:nth-child(n+3)
                 text-align center
                 color grey
-                transition color 1s ease-in-out 0s
-                &.green
+                .fa
                   color green
-                &.tomato
-                  color tomato
+                  display none
+                  animation scaleIn 1s ease-in-out 0.8s both
+                  float left
+                  margin 5px 0 0 0
+                &.higher > .fa
+                  display block
               &:nth-child(n+3)
                 border-right 1px solid grey
 
