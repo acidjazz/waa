@@ -27,7 +27,7 @@
           .copy Growth in Rentership
           .copy An aging population, immigration and fewer home purchases are increasing the need for apartments. 
       .chart
-        SingleLineChart(data='popgrowth',id='popgrowth',:choice="this.choice()",:animation="true",theme="cyan",width=380,height=300)
+        SingleLineChart(data='popgrowth',id='popgrowth',:choice="this.choice()",:animation="true",theme="aqua",width=380,height=300)
         .copys
           .copy(v-if="this.choice().type === 'state'") Household Growth
           .copy(v-else) Population Growth
@@ -75,9 +75,8 @@
         .copy We Need to Build More
         .copy Apartment demand is growing and the industry needs to keep up. However, producing enough new apartments to meet demand requires new development approaches, more incentives and fewer restrictions.
 
-    .clear
-    .sources Source: 
-      span Hoyt Advisory Services; NMHC/NAA; U.S. Census Bureau.; Axiometrics, a RealPage Company
+    .border.big
+    .border.big
     MetroDemand
     Compare
     //.border.big
@@ -86,6 +85,9 @@
     //.border.big(v-if="this.choice().type === 'national'")
     //DualItems(v-if="this.choice().type === 'metro'")
     // .border.big(v-if="this.choice().type === 'metro'")
+    .clear
+    .sources Source: 
+      span Hoyt Advisory Services; NMHC/NAA; U.S. Census Bureau.; Axiometrics, a RealPage Company
     Downloads
     //.section.section_links
       .inner
@@ -131,7 +133,7 @@
           .copy Growth in Rentership
           .copy An aging population, immigration and fewer ..
       .chart
-        SingleLineChart(data='popgrowth',id='popgrowth_print',:choice="this.choice()",:animation="false",theme="cyan",width=400,height=300)
+        SingleLineChart(data='popgrowth',id='popgrowth_print',:choice="this.choice()",:animation="false",theme="aqua",width=400,height=300)
         .copys
           .copy(v-if="this.choice().type === 'state'") Household Growth
           .copy(v-else) Population Growth
