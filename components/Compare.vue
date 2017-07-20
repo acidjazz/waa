@@ -96,8 +96,7 @@ doctype
               i-count-up(:end="city.two.power.formatted",:decimals="1")
               span {{ city.two.power.multiplier }}
 
-  .inner(v-in-viewport)
-
+  .inner
     .title(v-in-viewport) Compare Your City
     hr(v-in-viewport)
     .copy(v-in-viewport) Enter two cities names in order to compare them
@@ -258,7 +257,9 @@ export default {
           }
           break
         case 'enter' :
-          this.city[input].name = this.suggest[input].matches[this.suggest[input].selected]
+          if (this.suggest[input].matches.length > 0) {
+            this.city[input].name = this.suggest[input].matches[this.suggest[input].selected]
+          }
           break
       }
       return true

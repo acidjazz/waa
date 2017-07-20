@@ -310,8 +310,6 @@ json('../assets/fonts.json')
               font c1
               color grey
 
-
-
   .datapage_print
     overflow hidden
     height 1px

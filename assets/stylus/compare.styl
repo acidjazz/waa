@@ -3,27 +3,16 @@ json('../../assets/fonts.json')
 @import '../../assets/stylus/mixins.styl'
 @import '../../assets/stylus/keyframes.styl'
 
-delay = 0.8
+delay = 0.0
 
 #Compare
   background-color lightgrey
   padding 90px 0
   margin 0 0 60px 0
   > .inner
-    width 900px
+    width 675px
     margin auto
-    background-color white
-    border-radius 12px
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
     text-align center
-    &.in-viewport
-      opacity 1
-      transform scale(1)
-      transition opacity 1s ease-in-out 0s, transform 1s ease-in-out 0s
-      transition-timing-function  cubic-bezier(.87,-.41,.19,1.44)
-    &.above-viewport, &.below-viewport
-      opacity 0
-      transform scale(0.95)
     > .title
       font h2
       text-align center
@@ -31,10 +20,20 @@ delay = 0.8
       inViewport(delay + 0.05)
     > hr
       display block
-      color lightgrey
-      border-top 1px solid lightgrey
-      border-bottom 1px solid lightgrey
-      inViewport(delay + 0.1)
+      border-top 1px solid blue
+      border-bottom 1px solid blue
+      transition width 1s ease-in-out 0.1s
+      width 200px
+      opacity 0
+      &.above-viewport
+        width 200px
+        opacity 0
+      &.below-viewport
+        width 200px
+        opacity 0
+      &.in-viewport
+        width 675px
+        opacity 1
     > .copy
       color grey
       padding 30px 0
@@ -95,7 +94,7 @@ delay = 0.8
       inViewport(delay + 0.25)
       > input
         cursor pointer
-        background-color lightgrey
+        background-color white
         color black
         font c1sb
         text-transform uppercase
@@ -122,18 +121,16 @@ delay = 0.8
     > .modal
       background-color white
       border-radius 6px
-      min-height 600px
       margin auto
       position fixed
       z-index 14
       top 50%
       left 50%
       width 900px
-      height 600px
+      height 560px
       margin-left -450px
-      margin-top -300px
+      margin-top -320px
       padding 60px 0
-      height 200px
       animation scaleIn 0.4s ease-in-out 0s both
       onoff()
       > .close
