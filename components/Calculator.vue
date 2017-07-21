@@ -65,11 +65,21 @@
 
       .data
         .inner
-          .copy Economic Impact of {{ number }} New Apartment Homes
+          .copy(v-if="type === 'existing'") Economic Impact of {{ number }} Existing Apartment Homes
+          .copy(v-else) Economic Impact of {{ number }} New Apartment Homes
+
+          .copy.copy_header Total Impact 
+          .copy.copy_body The combined direct and indirect contribution of apartment construction, operations and resident spending to the state economy.
+
+          .stat.colored.blue
+            .copy Total Economic Impact
+            .value {{ data.total.impact }}
+            .clear
+
           .copy.copy_header Managing Apartments
           .copy.copy_body Apartment homes are economic engines, driving dollars and jobs that strengthen local communities.
 
-          .stat
+          //.stat
             .copy Total Apartment Homes
             .value {{ data.homes }}
             .clear
@@ -121,14 +131,6 @@
           .stat
             .copy Total Jobs Supported
             .value  {{ data.spending.jobs }}
-            .clear
-
-          .copy.copy_header Total Impact 
-          .copy.copy_body The combined direct and indirect contribution of apartment construction, operations and resident spending to the state economy.
-
-          .stat.colored.blue
-            .copy Total Economic Impact
-            .value {{ data.total.impact }}
             .clear
 
           .copy.copy_header Total Jobs 

@@ -1,3 +1,4 @@
+
 <template lang="pug">
 doctype
 #MetroDemand
@@ -13,9 +14,11 @@ doctype
 </template>
 
 <style lang="stylus">
+
 json('../assets/colors.json')
 json('../assets/fonts.json')
 @import '../assets/stylus/mixins.styl'
+
 #MetroDemand
   padding 90px 0
   width 900px
@@ -68,7 +71,35 @@ export default {
 
   methods: {
 
+    json (sheet, result) {
+      window.axios.get('/' + sheet)
+        .then(response => {
+          result(response)
+        })
+    },
+
+    populate (result) {
+
+      this.json('Metro Building Current.json', (current) => {
+        this.json('Metro Building Needed.json', (needed) => {
+          result(current.data, needed.data)
+        })
+      })
+
+    },
+
     draw () {
+
+      let labels = ['New York City', 'Dallas Fort Worth', 'Miami', 'Atlanta', 'Los Angeles', 'Phoenix', 'Orlando', 'Washington D.C.', 'Austin']
+      let shorts = ['NYC', 'Dallas', 'Miami', 'Atlanta', 'LA', 'Phoenix', 'Orlando', 'D.C.', 'Austin']
+      let current = []
+      let needed = []
+
+      for (let label of labels) {
+        let index = this.current.labels.indexOf(label)
+        current.push(this.current.data[2017][index])
+        needed.push(this.needed.data[2017][index])
+      }
 
       const numeral = window.numeral
       const Chart = window.Chart
@@ -76,14 +107,12 @@ export default {
       let ctx = 'chartMetroDemand'
 
       let datasets = [{
-        data: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+        data: current,
         backgroundColor: colors.aqua,
       }, {
-        data: [2, 3, 4, 5, 6, 7, 8, 9, 10],
+        data: needed,
         backgroundColor: colors.lightgrey,
       }]
-
-      let labels = ['NYC', 'DALLAS', 'MIAMI', 'ATLANTA', 'LA', 'PHOENIX', 'ORLANDO', 'WASHINGTON', 'AUSTIN']
 
       if (this.myChart !== undefined) {
         this.myChart.data.datasets = datasets
@@ -94,7 +123,7 @@ export default {
         this.myChart = new Chart(ctx, {
           type: 'bar',
           data: {
-            labels: ['NYC', 'DALLAS', 'MIAMI', 'ATLANTA', 'LA', 'PHOENIX', 'ORLANDO', 'WASHINGTON', 'AUSTIN'],
+            labels: shorts,
             datasets: datasets
           },
           options: {
@@ -105,14 +134,22 @@ export default {
               displayColors: false,
               bodyFontFamily: 'Maven Pro',
               bodyFontSize: 14,
-              titleFontColor: colors.aqua,
+              titleFontColor: colors.grey,
               titleFontSize: 14,
               borderWidth: 2,
               color: colors.aqua,
               fontColor: colors.aqua,
               borderColor: colors.lightgrey,
               backgroundColor: colors.white,
-              bodyFontColor: colors.aqua
+              bodyFontColor: colors.grey,
+              callbacks: {
+                label: function (item, data) {
+                  if (Number(item.yLabel) < 1 && Number(item.yLabel) > 0) {
+                    return numeral(item.yLabel).format('0.00%')
+                  }
+                  return numeral(item.yLabel).format('0.00a')
+                }
+              }
             },
             scales: {
               xAxes: [{
@@ -123,7 +160,7 @@ export default {
                   maxRotation: 0,
                   color:  colors.grey,
                   fontColor: colors.grey,
-                  fontSize: 14,
+                  fontSize: 12,
                 },
               }],
               yAxes: [{
@@ -131,7 +168,13 @@ export default {
                 ticks: {
                   color:  colors.grey,
                   fontColor: colors.grey,
-                  fontSize: 14,
+                  fontSize: 12,
+                  callback: function (label, index, labels) {
+                    if (label.toString().indexOf('.') !== -1) {
+                      return numeral(label).format('0%')
+                    }
+                    return numeral(label).format('0a')
+                  }
                 },
               }]
             }
@@ -145,7 +188,15 @@ export default {
   watch: {
     'inViewport.now' (visible) {
       if (visible) {
-        this.draw()
+        if (this.current === undefined) {
+          this.populate((current, needed) => {
+            this.current = current
+            this.needed = needed
+            this.draw()
+          })
+        } else {
+          this.draw()
+        }
       }
     }
   },
@@ -153,6 +204,8 @@ export default {
   data () {
     return {
       myChart: undefined,
+      current: undefined,
+      needed: undefined,
     }
   },
 

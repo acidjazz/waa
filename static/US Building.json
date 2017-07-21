@@ -1,0 +1,20 @@
+{
+  "sheet": "US Building",
+  "data": {
+    "Total U.S.": [
+      225000,
+      328455.6731834904,
+      20378207
+    ],
+    "": [
+      "Source: Axiometrics",
+      "Source: Hoyt Advisory Services",
+      "Source: NMHC tabulations of 2015 American Community Survey microdata."
+    ]
+  },
+  "labels": [
+    "2011-2016 New Supply Average (Units)",
+    "units needed per year",
+    "Apartment units"
+  ]
+}

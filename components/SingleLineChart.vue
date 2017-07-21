@@ -121,7 +121,7 @@ export default {
         case this.choice.type === 'state' && this.data === 'popgrowth':
           this.json('State HH Growth.json', (result) => {
             data.labels = [2016, 2030]
-            data.datas = [result.data.data[this.choice.value][2], result.data.data[this.choice.value][3]]
+            data.datas = [result.data.data[this.choice.value][1], result.data.data[this.choice.value][3]]
             spike = numeral(result.data.data[this.choice.value][4]).format('0.00%').replace(/%/, '')
             complete(data, spike)
           })
