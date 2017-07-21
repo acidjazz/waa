@@ -389,7 +389,11 @@ json('../assets/fonts.json')
     > .section_trio
       > .district_charts
         padding 10px 0
+        > .dchart
+          overflow hidden
         > .dchart > .inner
+          > .chartainer
+            width 244px
           > .circle-chart
             > .value
               margin-top -25px
