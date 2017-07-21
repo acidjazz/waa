@@ -170,9 +170,10 @@ export default {
       const numeral = window.numeral
 
       if (spike === false) {
-        spike = numeral(
-          (data.datas[data.datas.length - 1] - data.datas[0]) / data.datas[0]
-        ).format('0.00%').replace(/%/, '')
+        let a = data.datas[data.datas.length - 1]
+        let b = data.datas[0]
+        spike = numeral((a - b) / b).format('0.00%').replace(/%/, '')
+        // console.log(this.data, a, b, (a - b) / b, numeral((a - b) / b).format('0.00%'), spike)
       }
 
       this.spike = isNaN(spike) ? 100 : spike
