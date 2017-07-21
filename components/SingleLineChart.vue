@@ -106,7 +106,6 @@ export default {
         case this.choice.type === 'state' && this.data === 'apthhgrowth':
           this.json('State New Apt HHs Per Year.json', (result) => {
             data = this.toCurrent(result.data.data, result.data.labels.indexOf(this.choice.value))
-            console.log(data)
             complete(data, spike)
           })
           break
