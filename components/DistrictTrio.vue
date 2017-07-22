@@ -21,7 +21,15 @@
   .dchart
     .inner
       .title in your state
-      SingleLineChart(type='line',data='inyourstate',:id="'inyourstate_' + this.type",:animation="(this.type === 'web')",:choice="this.choice",theme="lime",:width="(this.type === 'print') ? 200 : 300",:height="(this.type === 'print') ? 200 : 300")
+      SingleLineChart(
+        type='line',
+        data='inyourstate',
+        :id="'inyourstate_' + this.type",
+        :animation="(this.type === 'web')",
+        :choice="this.choice",theme="lime",
+        :width="(this.type === 'print') ? 200 : 300",
+        :height="(this.type === 'print') ? 200 : 300"
+      )
     .copys
       .copy We Need to Build More
       .copy Apartment demand is growing and the industry needs to keep up.  However, producing enough new apartments to meet demand requires new development approaches, more incentives and fewer restrictions.
