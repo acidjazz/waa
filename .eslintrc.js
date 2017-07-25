@@ -17,7 +17,7 @@ module.exports = {
     'comma-dangle': 0,
     'padded-blocks': 0,
     'no-multi-spaces': 0,
-    'no-multiple-empty-lines': ['error',{ "max": 2, "maxEOF": 2, "maxBOF": 2, }],
+    'no-multiple-empty-lines': ['error', { "max": 2, "maxEOF": 2, "maxBOF": 2, }],
     'key-spacing': 0
   },
   globals: {}
