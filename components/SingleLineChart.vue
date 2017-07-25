@@ -240,12 +240,7 @@ export default {
               fontSize: 12,
               fontColor: colors.grey,
               maxTicksLimit: 6,
-              callback: function (label, index, labels) {
-                if (label.toString().indexOf('.') !== -1) {
-                  return numeral(label).format('0%')
-                }
-                return numeral(label).format('0a')
-              }
+              callback: this.ticksCallback
             }
           }],
           xAxes: [{
