@@ -274,7 +274,6 @@ export default {
 
     hash () {
 
-
       if (this.$route.hash !== '') {
         let params = this.$route.hash.split('-')
         this.by = params[1]
@@ -515,6 +514,8 @@ export default {
   },
   head () {
 
+    this.hash()
+
     if (this.$route.name === 'calculated') {
 
       let title = 'Economic Impact of ' + this.number + ' New Apartment Homes'
@@ -522,7 +523,11 @@ export default {
         title = 'Economic Impact of ' + this.number + ' Existing Apartment Homes'
       }
 
+
       let description = 'The total economic impact of ' + this.number + ' apartment homes in ' + this.title + ' is '  + this.data.total.impact
+
+      title = 'Economic Impact of Apartment Homes'
+      description = 'The combined direct and indirect contribution of apartment construction, operations and resident spending to the state economy.'
 
       return {
         title: title,
