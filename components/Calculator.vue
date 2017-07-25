@@ -516,6 +516,8 @@ export default {
 
       }
 
+    } else {
+      return {}
     }
 
   },
