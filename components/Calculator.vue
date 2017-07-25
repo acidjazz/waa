@@ -54,7 +54,8 @@
   .calculated(:class="{ on: $route.name === 'calculated', off: $route.name !== 'calculated'}",v-on-clickaway="away")
     .inner
       .source Source: https://weareapartments.org/ {{ $route.path }}
-      a.pdf(:href="'http://pdf.weareapartments.org?url=/calculated'+hashv.replace(/#/, 'hash')")
+      Share
+      //a.pdf(:href="'http://pdf.weareapartments.org?url=/calculated'+hashv.replace(/#/, 'hash')")
         .fa.fa-2x.fa-file-pdf-o
         .copy Create PDF
       router-link.close(:to="'/calculator' + $route.hash")
@@ -154,6 +155,7 @@ json('../assets/fonts.json')
 </style>
 
 <script>
+import Share from '~/components/Share.vue'
 import Filters from '~/static/Filters.json'
 import { mixin as clickaway } from 'vue-clickaway'
 
@@ -193,6 +195,8 @@ json.impact.metro.spending = require('~/static/Spending Impacts (metro).json').d
 export default {
 
   mixins: [ clickaway ],
+
+  components: { Share },
 
   watch: {
     number (n) {
@@ -488,6 +492,33 @@ export default {
   mounted () {
     this.decide()
   },
+  head () {
+
+    if (this.$route.name === 'calculated') {
+
+      let title = 'Economic Impact of ' + this.number + ' New Apartment Homes'
+      if (this.type === 'existing') {
+        title = 'Economic Impact of ' + this.number + ' Existing Apartment Homes'
+      }
+
+      let description = 'The total economic impact of ' + this.number + ' apartment homes in ' + this.title + ' is '  + this.data.total.impact
+
+      return {
+        title: title,
+        meta: [
+          { hid: 'description', name: 'description', content: description },
+          { hid: 'og:url', property: 'og:url', content: this.$route.path },
+          { hid: 'og:title', property: 'og:title', content: title },
+          { hid: 'og:description', property: 'og:description', content: description },
+          { hid: 'twitter:title', name: 'twitter:title', content: title },
+          { hid: 'twitter:description', name: 'twitter:description', content: description },
+        ]
+
+      }
+
+    }
+
+  },
   data () {
     return {
       hashv: this.$route.hash,
@@ -539,5 +570,5 @@ export default {
     }
   }
 }
-</script>
 
+</script>

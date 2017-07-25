@@ -15,7 +15,7 @@
           i.fa.fa-fw.fa-facebook(@click="share('facebook')")
         .share.share_twitter
           i.fa.fa-fw.fa-twitter(@click="share('twitter')")
-  a.action.pdf(:href="'http://pdf.weareapartments.org?url=' + $route.path")
+  a.action.pdf(:href="'http://pdf.weareapartments.org?url=' + $route.path + $route.hash")
     .button
       i.fa.fa-fw.fa-lg.fa-file-pdf-o
       .copy Create PDF
