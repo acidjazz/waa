@@ -15,7 +15,11 @@
           i.fa.fa-fw.fa-facebook(@click="share('facebook')")
         .share.share_twitter
           i.fa.fa-fw.fa-twitter(@click="share('twitter')")
-  a.action.pdf(:href="'http://pdf.weareapartments.org?url=' + $route.path + $route.hash")
+  a.action.pdf(v-if="query === true",:href="'http://pdf.weareapartments.org?url=' + $route.path + '?' + parsed")
+    .button
+      i.fa.fa-fw.fa-lg.fa-file-pdf-o
+      .copy Create PDF
+  a.action.pdf(v-else,:href="'http://pdf.weareapartments.org?url=' + $route.path")
     .button
       i.fa.fa-fw.fa-lg.fa-file-pdf-o
       .copy Create PDF
@@ -24,6 +28,13 @@
 <script>
 import { mixin as clickaway } from 'vue-clickaway'
 export default {
+
+  props: {
+    query: {
+      type: Boolean,
+      default: false,
+    }
+  },
   mixins: [ clickaway ],
   methods: {
     modal (modal, toggle) {
@@ -37,13 +48,18 @@ export default {
     },
     share (type) {
 
+      let href = location.href
+      if (this.query) {
+        href = href.replace('#', '?')
+      }
+
       if (type === 'facebook') {
-        this.popup('https://www.facebook.com/sharer/sharer.php?u=' + location.href,
+        this.popup('https://www.facebook.com/sharer/sharer.php?u=' + href,
           'Share on Facebook', 626, 438)
         return true
       }
       if (type === 'twitter') {
-        this.popup('https://twitter.com/intent/tweet?url=' + encodeURIComponent(location.href),
+        this.popup('https://twitter.com/intent/tweet?url=' + encodeURIComponent(href),
           'Share on Twitter', 626, 438)
         return true
       }
@@ -69,6 +85,7 @@ export default {
 
   data () {
     return {
+      parsed: Object.keys(this.$route.query)[0],
       modals: {
         shares: false
       }

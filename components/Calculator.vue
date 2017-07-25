@@ -54,7 +54,7 @@
   .calculated(:class="{ on: $route.name === 'calculated', off: $route.name !== 'calculated'}",v-on-clickaway="away")
     .inner
       .source Source: https://weareapartments.org/ {{ $route.path }}
-      Share
+      Share(query=true)
       //a.pdf(:href="'http://pdf.weareapartments.org?url=/calculated'+hashv.replace(/#/, 'hash')")
         .fa.fa-2x.fa-file-pdf-o
         .copy Create PDF
@@ -274,6 +274,7 @@ export default {
 
     hash () {
 
+
       if (this.$route.hash !== '') {
         let params = this.$route.hash.split('-')
         this.by = params[1]
@@ -287,7 +288,27 @@ export default {
           this.metro = params[3]
         }
         this.hashv = this.$route.hash
+
+        return true
       }
+
+      let query = Object.keys(this.$route.query)[0]
+
+      if (query !== undefined) {
+        let params = query.split('-')
+        this.by = params[1]
+        this.value = params[3]
+        this.number = params[5]
+        this.type = params[7]
+        if (this.by === 'state') {
+          this.state = params[3]
+        }
+        if (this.by === 'metro') {
+          this.metro = params[3]
+        }
+        this.hashv = this.$route.hash
+      }
+
     },
 
     populate () {
