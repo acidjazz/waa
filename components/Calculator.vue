@@ -518,16 +518,8 @@ export default {
 
     if (this.$route.name === 'calculated') {
 
-      let title = 'Economic Impact of ' + this.number + ' New Apartment Homes'
-      if (this.type === 'existing') {
-        title = 'Economic Impact of ' + this.number + ' Existing Apartment Homes'
-      }
-
-
-      let description = 'The total economic impact of ' + this.number + ' apartment homes in ' + this.title + ' is '  + this.data.total.impact
-
-      title = 'Economic Impact of Apartment Homes'
-      description = 'The combined direct and indirect contribution of apartment construction, operations and resident spending to the state economy.'
+      let title = 'We are apartments:  Learn about the demand for apartments in your area'
+      let description = 'Calculate the economic impact of new or existing apartment homes in your area'
 
       return {
         title: title,

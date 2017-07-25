@@ -1,5 +1,15 @@
 module.exports = {
   methods: {
+    ticksCallback (label, index, labels) {
+      if (label.toString().indexOf('.') !== -1) {
+        return window.numeral(label).format('0%')
+      }
+      if (window.numeral(label).format('0a').length > 2) {
+        return window.numeral(label).format('0a')
+      } else {
+        return window.numeral(label).format('0.0a')
+      }
+    },
     chartYAxes () {
       return {
         position: 'left',
