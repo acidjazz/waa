@@ -7,7 +7,7 @@ doctype
       source(src="/condos.mp4",type="video/mp4")
     .outer
     .inner
-      .copy(v-in-viewport) welcome to we are apartments.
+      .copy(v-in-viewport) welcome to we are apartments joe.
       .copy(v-in-viewport) The country needs 
         i-count-up(:start="0",:end="4.6",:decimals="1",:duration="3")
         | m new apartments by 2030. How many are needed near you?
