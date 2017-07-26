@@ -357,4 +357,7 @@ export default {
 json('../assets/colors.json')
 json('../assets/fonts.json')
 @import '../../assets/stylus/compare.styl'
+@media all and (min-width: 1px) and (max-width: 1000px)
+  #Compare
+    display none
 </style>
