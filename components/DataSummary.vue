@@ -131,9 +131,11 @@ export default {
     }
   },
   mounted () {
-    setTimeout(() => {
+    if (this.type === 'web') {
+      setTimeout(this.populate, 900)
+    } else {
       this.populate()
-    }, 900)
+    }
   },
   watch: {
     '$route' () {
