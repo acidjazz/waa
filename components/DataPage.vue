@@ -8,16 +8,10 @@
     .section.section_demand(v-if="this.choice().type !== 'district'")
       p The Demand
       Demand(:type="this.choice().type",:value="this.choice().value")
-      a.pdf(:href="'http://pdf.weareapartments.org?url=' + $route.path")
-        .fa.fa-2x.fa-file-pdf-o
-        .copy Create PDF
-
+      Share
     .section.section_district(v-if="this.choice().type === 'district'")
       DistrictCopy(:district="this.choice().value")
-      a.pdf(:href="'http://pdf.weareapartments.org?url=' + $route.path")
-        .fa.fa-2x.fa-file-pdf-o
-        .copy Create PDF
-
+      Share
     .section.section_trio(v-if="this.choice().type === 'district'")
       DistrictTrio(type="web",:choice="this.choice()")
 
@@ -33,7 +27,7 @@
           .copy Growth in Rentership
           .copy An aging population, immigration and fewer home purchases are increasing the need for apartments. 
       .chart
-        SingleLineChart(data='popgrowth',id='popgrowth',:choice="this.choice()",:animation="true",theme="cyan",width=380,height=300)
+        SingleLineChart(data='popgrowth',id='popgrowth',:choice="this.choice()",:animation="true",theme="aqua",width=380,height=300)
         .copys
           .copy(v-if="this.choice().type === 'state'") Household Growth
           .copy(v-else) Population Growth
@@ -81,16 +75,19 @@
         .copy We Need to Build More
         .copy Apartment demand is growing and the industry needs to keep up. However, producing enough new apartments to meet demand requires new development approaches, more incentives and fewer restrictions.
 
-    .clear
-    .sources Source: 
-      b Hoyt Advisory Services; NMHC/NAA; U.S. Census Bureau.; Axiometrics, a RealPage Company
     .border.big
+    .border.big
+    MetroDemand
+    Compare
     //.border.big
     // .border.big(v-if="(this.choice().type !== 'district')")
     //SingleItem(v-if="this.choice().type === 'national'")
     //.border.big(v-if="this.choice().type === 'national'")
     //DualItems(v-if="this.choice().type === 'metro'")
     // .border.big(v-if="this.choice().type === 'metro'")
+    .clear
+    .sources Source: 
+      span Hoyt Advisory Services; NMHC/NAA; U.S. Census Bureau.; Axiometrics, a RealPage Company
     Downloads
     //.section.section_links
       .inner
@@ -136,7 +133,7 @@
           .copy Growth in Rentership
           .copy An aging population, immigration and fewer ..
       .chart
-        SingleLineChart(data='popgrowth',id='popgrowth_print',:choice="this.choice()",:animation="false",theme="cyan",width=400,height=300)
+        SingleLineChart(data='popgrowth',id='popgrowth_print',:choice="this.choice()",:animation="false",theme="aqua",width=400,height=300)
         .copys
           .copy(v-if="this.choice().type === 'state'") Household Growth
           .copy(v-else) Population Growth
@@ -193,9 +190,12 @@ import DistrictTrio from '~/components/DistrictTrio.vue'
 import SingleLineChart from '~/components/SingleLineChart.vue'
 import MultiLineChart from '~/components/MultiLineChart.vue'
 import Demand from '~/components/Demand.vue'
+import Share from '~/components/Share.vue'
 import BuildMore from '~/components/BuildMore.vue'
 import HeatChart from '~/components/HeatChart.vue'
 import Downloads from '~/components/Downloads.vue'
+import Compare from '~/components/Compare.vue'
+import MetroDemand from '~/components/MetroDemand.vue'
 
 export default {
   mixins: [ filtermixin ],
@@ -209,9 +209,12 @@ export default {
     SingleLineChart,
     MultiLineChart,
     Demand,
+    Share,
     BuildMore,
     HeatChart,
     Downloads,
+    Compare,
+    MetroDemand,
   },
 
   methods: {
@@ -307,8 +310,6 @@ json('../assets/fonts.json')
               font c1
               color grey
 
-
-
   .datapage_print
     overflow hidden
     height 1px
@@ -343,7 +344,7 @@ json('../assets/fonts.json')
           width 750px
           margin auto
           padding-top 5px
-          height 110px
+          height 80px
           > .stat
             padding 10px
             max-width 150px
@@ -369,7 +370,8 @@ json('../assets/fonts.json')
         color grey
         max-width 490px
         margin auto
-        > b
+        font c1s
+        > span
           color black
           > span
             color red
@@ -437,6 +439,8 @@ json('../assets/fonts.json')
         float left
         width 33%
         margin-right 0px
+        > .chartainer > .tooltip
+          display none
         &:nth-child(3)
           margin-right 0px
         > .copys
@@ -451,6 +455,7 @@ json('../assets/fonts.json')
     > .section_chart
       width 750px
       margin auto
+      margin-top 20px
       > .top
         background-color green
         > .part
@@ -468,10 +473,10 @@ json('../assets/fonts.json')
           &.part_numbers
             > .graph
               float left
-              margin 10px 10px 0 0
+              margin 10px 0 0 0
               background-color rgba(red, 0.5)
-              width 20px
-              height 20px
+              width 10px
+              height 10px
               border-radius 50%
             > .copy
               margin 5px 0 0 40px
@@ -547,7 +552,7 @@ json('../assets/fonts.json')
       position relative
       width 1200px
       margin auto
-      > .pdf
+      > #Share
         top 85px
         right 90px
       > p:first-child
@@ -556,7 +561,7 @@ json('../assets/fonts.json')
         color grey
         max-width 544px
         margin auto
-        > b
+        > span
           color black
           > span
             color red
@@ -564,7 +569,7 @@ json('../assets/fonts.json')
       width 1200px
       margin auto
       position relative
-      > .pdf
+      > #Share
         top 30px
         right 60px
     > .section_charts
@@ -705,6 +710,8 @@ json('../assets/fonts.json')
         float right
         width 800px
         margin 0 0 30px
+        > .chartainer > .tooltip
+          top -20px
     > .section_links
       > .inner
         padding 90px 0

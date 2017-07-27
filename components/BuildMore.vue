@@ -26,7 +26,6 @@ export default {
         case 'national':
         case 'state':
           this.json('US Building.json', (result) => {
-            console.log(result.data.data)
             this.homes = numeral(result.data.data['Total U.S.'][1]).format('0,0a')
             this.completions = numeral(result.data.data['Total U.S.'][0]).format('0,0a')
             this.type = 'country'

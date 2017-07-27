@@ -27,14 +27,19 @@
 </template>
 
 <script>
-
 import ddata from '../static/District Age of Occupied Stock'
 import udata from '../static/US Age of Stock'
 import mdata from '../static/Metro Age of Occupied Stock'
 
+import inViewport from 'vue-in-viewport-mixin'
+import ICountUp from 'vue-countup-v2'
+
 export default {
 
   props: ['district', 'metro', 'animation'],
+
+  mixins: [ inViewport ],
+  components: { ICountUp },
 
   methods: {
     add (a, b) {
@@ -108,11 +113,18 @@ export default {
   watch: {
     '$route' () {
       this.populate()
-    }
+    },
+    'inViewport.now' (visible) {
+      if (visible) {
+        this.populate()
+      }
+    },
   },
 
   mounted () {
-    this.populate()
+    if (this.animation === false) {
+      this.populate()
+    }
   },
 
   data () {

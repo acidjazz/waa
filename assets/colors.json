@@ -10,8 +10,8 @@
 
   "tomato": "#FF6344",
 
-  "cyan": "#47e3ff",
-  "lightcyan": "#e4fbff",
+  "aqua": "#00E6FF",
+  "lightaqua": "#e4fbff",
 
   "lime": "#a6e50f",
   "lightlime": "#f2fbdb",
@@ -28,5 +28,7 @@
   "white": "#ffffff",
   "lightwhite": "#fafbfd",
   "offwhite": "#f4f7f9",
-  "black": "#000000"
+  "black": "#000000",
+  "tacao": "#F5B581",
+  "light-crimson": "#EB6A98"
 }

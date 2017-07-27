@@ -2,3 +2,4 @@
   .container
     nuxt
 </template>
+

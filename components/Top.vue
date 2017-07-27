@@ -26,7 +26,7 @@ json('../assets/fonts.json')
 json('../assets/colors.json')
 
 #Top
-  z-index 10
+  z-index 12
   position absolute
   width 100%
 #Top > .title, #Navigate > .inner > .content > .title

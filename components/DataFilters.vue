@@ -1,10 +1,13 @@
 <template lang="pug">
+doctype
 #Filters(:class="{ sticky: $store.state.sticky }")
   .filters.closed(:class="{ open: !closed , closed: closed }")
     .inner
       .drawer(@click="closed = !closed")
         i.fa.fa-arrow-circle-down.fa-2x
-      .copy filter apartment data by:
+      .copy
+        tooltip(start=true,copy='b')
+        | filter apartment data by:
       .options
         router-link.option.enabled(to="/data/",:class="{active: (choice().value === 'National')}") National
         a.option.enabled(:class="{active: (this.state !== 'National')}",@click="modal('state')")
@@ -43,9 +46,11 @@
 import Filters from '../static/Filters.json'
 import { mixin as clickaway } from 'vue-clickaway'
 import filtermixin from '~plugins/filter-mixin.js'
+import tooltip from '~components/tooltip.vue'
 import ordinal from 'ordinal'
 export default {
   mixins: [ clickaway, filtermixin ],
+  components: { tooltip },
   methods: {
     handleScroll () {
 
@@ -58,7 +63,6 @@ export default {
       }
 
     },
-
     checkSticky () {
       if (!process.BROWSER_BUILD) {
         return false
@@ -68,7 +72,6 @@ export default {
       }
       return false
     },
-
     away () {
       for (let modal in this.modals) this.modals[modal] = false
     },
@@ -139,30 +142,6 @@ export default {
 <style lang="stylus">
 @import '../assets/stylus/mixins.styl'
 json('../assets/colors.json')
-
-.chevron
-  position absolute
-  left 50%
-  top 50px
-  margin-left -13px
-  bottom -12px
-  width 0
-  height 0
-  border-left 13px solid transparent
-  border-right 13px solid transparent
-  border-bottom 13px solid lightblue
-  z-index 20
-  animation inFromBottom 0.2s ease 0.1s both
-  onoff()
-  > .inner
-    position relative
-    top 1px
-    left -13px
-    width 0
-    height 0
-    border-left 13px solid transparent
-    border-right 13px solid transparent
-    border-bottom 13px solid lightwhite
 
 #Filters
   &.sticky
@@ -241,6 +220,11 @@ json('../assets/colors.json')
         float left
         display inline-block
         padding 11px 0
+        position relative
+        > .tooltip
+          top 9px
+          right auto
+          left -30px
       > .options
         float left
         > a.option

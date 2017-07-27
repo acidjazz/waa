@@ -29,7 +29,7 @@
         :choice="this.choice",
         theme="lime",
         :width="(this.type === 'print') ? 200 : 300",
-        :height="(this.type === 'print') ? 200 : 300",
+        :height="(this.type === 'print') ? 200 : 300"
       )
     .copys
       .copy We Need to Build More

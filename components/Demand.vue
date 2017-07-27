@@ -1,32 +1,36 @@
 <template lang="pug">
-p New research shows that demand for apartments is on the rise.  Whether it's young professionals, couples, families or empty nesters, 
-  b(v-if="type === 'national'") the country will see a demand for an additional 
+doctype
+p(v-in-viewport) New research shows that demand for apartments is on the rise.  Whether it's young professionals, couples, families or empty nesters, 
+  span(v-if="type === 'national'") the country will see a demand for an additional 
     span {{ households }} 
     | new apartment households 
     span by 2030
-  b(v-if="type === 'state'") the state will add 
+  span(v-if="type === 'state'") this state will add 
     span {{ households }} 
     | new apartment households 
     span by 2030
-  b(v-if="type === 'metro'") the metro will add 
+  span(v-if="type === 'metro'") this metro will add 
     span {{ households }} 
     | new apartment households 
     span by 2030
-  b(v-if="type === 'district'") the district will add 
+  span(v-if="type === 'district'") this district will add 
     span {{ households }} 
     | new apartment households 
     span by 2030
 </template>
 
 <script>
+import inViewportDirective from 'vue-in-viewport-directive'
+import numeral from 'numeraljs'
 export default {
+  directives: { 'in-viewport': inViewportDirective },
   props: [ 'type', 'value' ],
   methods: {
     populate () {
 
       let json = {}
       let index = false
-      const numeral = window.numeral
+      // const numeral = window.numeral
 
       switch (true) {
 
@@ -58,10 +62,40 @@ export default {
     }
   },
   data () {
+    this.populate()
+    if (this.type === 'state') {
+      return {
+        title: this.value + ' - Learn about the demand for apartments in your area',
+        description: 'The state of ' + this.value + ' will see a demand for an additional ' + this.households + ' new apartment households by 2030',
+        households: 0
+      }
+    }
+    if (this.type === 'metro') {
+      return {
+        title: this.value + ' - Learn about the demand for apartments in your area',
+        description: this.value + ' will see a demand for an additional ' + this.households + ' new apartment households by 2030',
+        households: 0
+      }
+    }
     return {
+      title: 'Learn about the demand for apartments in your area',
+      description: 'This country will see a demand for an additional ' + this.households + ' new apartment households by 2030',
       households: 0
     }
-  }
+  },
+  head () {
+    return {
+      title: this.title,
+      meta: [
+        { hid: 'description', name: 'description', content: this.description },
+        { hid: 'og:url', property: 'og:url', content: this.$route.path },
+        { hid: 'og:title', property: 'og:title', content: this.title },
+        { hid: 'og:description', property: 'og:description', content: this.description },
+        { hid: 'twitter:title', name: 'twitter:title', content: this.title },
+        { hid: 'twitter:description', name: 'twitter:description', content: this.description },
+      ]
+    }
+  },
 }
 
 </script>

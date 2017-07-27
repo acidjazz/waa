@@ -1,4 +1,3 @@
-
 fullsize()
   top 0
   left 0
@@ -10,3 +9,43 @@ onoff()
     display block
   &.off
     display none
+
+inViewport(delay)
+  opacity 0
+  transform translate(0, -20px)
+  transition opacity 1s ease-in-out unit(delay, 's'), transform 1s ease-in-out unit(delay, 's')
+  &.in-viewport
+    opacity 1
+    transform translate(0, 0)
+  &.above-viewport
+    opacity 0
+    transform translate(0, -20px)
+  &.below-viewport
+    opacity 0
+    transform translate(0, 20px)
+
+inViewportSide(delay)
+  opacity 0
+  transform translate(0, 0)
+  transition opacity 1s ease-in-out unit(delay, 's'), transform 1s ease-in-out unit(delay, 's')
+  &.in-viewport
+    opacity 1
+    transform translate(0, 0)
+  &.above-viewport
+    opacity 0
+    transform translate(-10px, 0)
+  &.below-viewport
+    opacity 0
+    transform translate(10px, 0)
+
+
+
+absMiddle(width, height)
+  position absolute
+  top 50%
+  left 50%
+  width unit(width, px)
+  //height unit(height, px)
+  margin-top unit(-(height/2), px)
+  margin-left unit(-(width/2), px)
+

@@ -1,11 +1,12 @@
 <template lang="pug">
+doctype
 #GradientChart
   .chart
   .data
-    .copys
+    .copys(v-in-viewport)
       .copy Demand Is Rising
       .copy Population growth, immigration and changing lifestyle preferences mean more people will be living in apartments in the future. The challenge, however, is building the number of apartment homes to meet that growing demand.
-    .legend
+    .legend(v-in-viewport)
       .stat.stat_hh(:class="{ active: (this.active === 'hh') }")
         .color.color_grey
         .copy Apartment Household Growth
@@ -16,12 +17,14 @@
         .copy Population Growth 
         .value 31.8M
         i.fa.fa-long-arrow-up(aria-hidden=true)
-    .values
+    .values(v-in-viewport)
       .value(v-on:mouseover="highlight('hh')") 20.04%
       .value(v-on:mouseover="highlight('rent')") 9.79%
 </template>
 <script>
+import inViewportDirective from 'vue-in-viewport-directive'
 export default {
+  directives: { 'in-viewport': inViewportDirective },
   methods: {
     highlight (stat) {
       this.active = stat
@@ -59,6 +62,21 @@ json('../assets/fonts.json')
     > .copys
       float left
       margin 0 0 0 90px
+
+      &.below-viewport > .copy
+        opacity 0
+        transform translate(0, 20px)
+      &.above-viewport > .copy
+        opacity 0
+        transform translate(0, -20px)
+      &.in-viewport
+        opacity 1
+        transform translate(0, 0)
+      &.in-viewport > .copy:nth-child(1)
+        transition opacity 1s ease 0s, transform 1s ease 0s
+      &.in-viewport > .copy:nth-child(2)
+        transition opacity 1s ease 0.1s, transform 1s ease 0.1s
+
       > .copy:nth-child(1)
         font h1
         line-height 30px
@@ -68,9 +86,30 @@ json('../assets/fonts.json')
         color grey
         width 400px
         line-height 30px
+
     > .legend
       float right
       margin 0 90px 0 0
+      &.below-viewport > .stat
+        > .color, > .copy, > .value, > i
+          opacity 0
+          transform translate(0, 20px)
+      &.above-viewport > .stat
+        > .color, > .copy, > .value, > i
+          opacity 0
+          transform translate(0, -20px)
+      &.in-viewport > .stat
+        > .color, > .copy, > .value, > i
+          opacity 1
+          transform translate(0, 0)
+        > .color
+          transition opacity 1s ease 0s, transform 1s ease 0s
+        > .copy
+          transition opacity 1s ease 0.1s, transform 1s ease 0.1s
+        > .value
+          transition opacity 1s ease 0.3s, transform 1s ease 0.2s
+        > i
+          transition opacity 1s ease 0.2s, transform 1s ease 0.3s
       > .stat
         float left
         width 120px
@@ -110,9 +149,19 @@ json('../assets/fonts.json')
       top 50%
       right 60px
       margin-top -40px
+      &.in-viewport
+        > .value
+          opacity 1
+          transform translate(0, 0)
+        > .value:nth-child(1)
+          transition opacity 1s ease 0s, transform 1s ease 0s
+        > .value:nth-child(2)
+          transition opacity 1s ease 0.1s, transform 1s ease 0.1s
       > .value
         cursor pointer
         font c4
+        opacity 0
+        transform translate(20px, 0)
       > .value:nth-child(2)
         margin 140px 0
         color white

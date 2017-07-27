@@ -1,17 +1,6 @@
 <template lang="pug">
 #BuildMoreChart
-  .controls
-    .tip
-      .copy(v-if="range <= 25") Lowest level of multifamily completions on record (1993). At this rate <span>{{ needed }}</span> are built.
-      .copy(v-if="range >= 25 && range <= 50") Lowest level of completions since 1993 (2011). At this rate <span>{{ needed }}</span> are built.
-      .copy(v-if="range >= 50 && range <= 75") 2016 Completions. At this rate <span>{{ needed }}</span> are built.
-      .copy(v-if="range >= 75") Peak of multifamily development in 1973, as Baby Boomers becoming adults. At this rate <span>{{ needed }}</span> are built.
-    .control
-      input(type="range",v-model="range")
-    .copy ^ Adjust how construction rates meet future apartment demand
-  .copys
-    .value 4.6 Million
-    .copy Apartment Hones Needed
+  // tooltip(align="left")
   .chart
     canvas(id="BuildMoreChart-chart")
 </template>
@@ -19,80 +8,20 @@
 <style lang="stylus">
 json('../assets/colors.json')
 json('../assets/fonts.json')
-
 #BuildMoreChart
-  > .copys
-    float right
-    text-align right
-    > .value
-      font h1
-    > .copy
-      color grey
-
-  > .controls
-    float left
-    width 540px
-    > .tip
-      overflow hidden
-      border 1px solid lightblue
-      background-color lightgrey
-      color grey
-      padding 5px 10px
-      border-radius 3px
-      margin 0 0 10px 0
-      height 52px
-      > .copy
-        animation inFromLeft 0.1s ease 0s both
-        > span
-          animation fadein 0.1s ease 0s both
-    > .copy
-      color grey
-      width 500px
-      font c1s
-      padding 10px 0 0 0
-    > .control
-      width 400px
-      > input[type=range]
-        -webkit-appearance none
-        width 100%
-        background transparent
-      > input[type=range]:focus
-        outline: none
-      > input[type=range]::-ms-track
-        width 100%
-        cursor pointer
-        background transparent
-        border-color transparent
-        color transparent
-      > input[type=range]::-webkit-slider-thumb
-        -webkit-appearance none
-        border 5px solid white
-        width 20px
-        height 20px
-        border-radius 50%
-        background-color transparent
-        margin-top -5px
-        box-shadow 0 2px 3px rgba(17, 17, 17, 0.2)
-        transition all 0.4s ease 0s
-        &:hover
-          box-shadow 0 2px 3px rgba(17, 17, 17, 0.8)
-        
-        
-      > input[type=range]::-webkit-slider-runnable-track
-        cursor pointer
-        background rgba(blue, 0.9)
-        transition background 0.2s ease 0s
-        height 10px
-        border-radius 5px
-      > input[type=range]:focus::-webkit-slider-runnable-track
-        background rgba(blue, 1)
-
+  position relative
+  > .tooltip
+    top -30px
 @import '../assets/stylus/BuildMoreChart-mobile.styl'
 </style>
 
 <script>
 import colors from '~/assets/colors.json'
+// import tooltip from '~components/tooltip.vue'
+import inViewport from 'vue-in-viewport-mixin'
 export default {
+  mixins: [ inViewport ],
+  // components: { tooltip },
 
   methods: {
 
@@ -129,11 +58,11 @@ export default {
         data: data,
         pointBackgroundColor: colors.lightpurple,
         pointHoverBackgroundColor: colors.purple,
-        pointBorderWidth: 10,
-        pointRadius: 3,
+        pointBorderWidth: 6,
+        pointRadius: 0,
         pointBorderColor: colors.purple,
         borderColor: colors.purple,
-        borderWidth: 10,
+        borderWidth: 5,
         fill: false,
         yAxisID: 'a',
       }, {
@@ -208,7 +137,6 @@ export default {
       if (this.myChart !== null) {
         this.myChart.data.datasets = datasets
         this.myChart.data.labels = labels
-        this.myChart.options.animation = false
         this.myChart.update()
       }  else {
         this.myChart = new Chart(ctx, {
@@ -222,23 +150,20 @@ export default {
       }
     },
   },
-
   watch: {
-    'range' () {
-      this.draw()
+    'inViewport.now' (visible) {
+      if (visible) {
+        this.draw()
+      }
     }
-  },
-
-  mounted () {
-    this.draw()
   },
   data () {
     return {
       json: null,
       width: 740,
-      height: 320,
+      height: 360,
       myChart: null,
-      range: 0,
+      range: 70,
       needed: "$328.5k",
     }
   }

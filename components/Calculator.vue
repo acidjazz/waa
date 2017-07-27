@@ -54,9 +54,7 @@
   .calculated(:class="{ on: $route.name === 'calculated', off: $route.name !== 'calculated'}",v-on-clickaway="away")
     .inner
       .source Source: https://weareapartments.org/ {{ $route.path }}
-      a.pdf(:href="'http://pdf.weareapartments.org?url=/calculated'+hashv.replace(/#/, 'hash')")
-        .fa.fa-2x.fa-file-pdf-o
-        .copy Create PDF
+      Share(query=true)
       router-link.close(:to="'/calculator' + $route.hash")
         .fa.fa-times.fa-2x
 
@@ -74,6 +72,14 @@
           .stat.colored.blue
             .copy Total Economic Impact
             .value {{ data.total.impact }}
+            .clear
+
+          .copy.copy_header Total Jobs 
+          .copy.copy_body The total number of direct and indirect jobs supported by apartment construction, operations and resident spending within the state economy.
+
+          .stat.colored.blue
+            .copy Total Jobs Supported
+            .value {{ data.total.jobs }}
             .clear
 
           .copy.copy_header Managing Apartments
@@ -133,15 +139,6 @@
             .value  {{ data.spending.jobs }}
             .clear
 
-
-          .copy.copy_header Total Jobs 
-          .copy.copy_body The total number of direct and indirect jobs supported by apartment construction, operations and resident spending within the state economy.
-
-          .stat.colored.blue
-            .copy Total Jobs Supported
-            .value {{ data.total.jobs }}
-            .clear
-
           .logos
              img(src="/logo-nmhc.png")
              img(src="/logo-naa.png")
@@ -155,6 +152,7 @@ json('../assets/fonts.json')
 </style>
 
 <script>
+import Share from '~/components/Share.vue'
 import Filters from '~/static/Filters.json'
 import { mixin as clickaway } from 'vue-clickaway'
 
@@ -179,7 +177,6 @@ const json = {
   },
 }
 
-
 json.homes.national  = require('../static/US Apts.json').data['Total U.S.']
 json.homes.state  = require('../static/State Apartments.json').data
 json.homes.metro  = require('../static/Metro Occupied Apartments.json').data
@@ -195,6 +192,8 @@ json.impact.metro.spending = require('~/static/Spending Impacts (metro).json').d
 export default {
 
   mixins: [ clickaway ],
+
+  components: { Share },
 
   watch: {
     number (n) {
@@ -285,7 +284,27 @@ export default {
           this.metro = params[3]
         }
         this.hashv = this.$route.hash
+
+        return true
       }
+
+      let query = Object.keys(this.$route.query)[0]
+
+      if (query !== undefined) {
+        let params = query.split('-')
+        this.by = params[1]
+        this.value = params[3]
+        this.number = params[5]
+        this.type = params[7]
+        if (this.by === 'state') {
+          this.state = params[3]
+        }
+        if (this.by === 'metro') {
+          this.metro = params[3]
+        }
+        this.hashv = this.$route.hash
+      }
+
     },
 
     populate () {
@@ -492,6 +511,33 @@ export default {
   mounted () {
     this.decide()
   },
+  head () {
+
+    this.hash()
+
+    if (this.$route.name === 'calculated') {
+
+      let title = 'We are apartments:  Learn about the demand for apartments in your area'
+      let description = 'Calculate the economic impact of new or existing apartment homes in your area'
+
+      return {
+        title: title,
+        meta: [
+          { hid: 'description', name: 'description', content: description },
+          { hid: 'og:url', property: 'og:url', content: this.$route.path },
+          { hid: 'og:title', property: 'og:title', content: title },
+          { hid: 'og:description', property: 'og:description', content: description },
+          { hid: 'twitter:title', name: 'twitter:title', content: title },
+          { hid: 'twitter:description', name: 'twitter:description', content: description },
+        ]
+
+      }
+
+    } else {
+      return {}
+    }
+
+  },
   data () {
     return {
       hashv: this.$route.hash,
@@ -543,5 +589,5 @@ export default {
     }
   }
 }
-</script>
 
+</script>

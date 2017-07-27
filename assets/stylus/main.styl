@@ -27,18 +27,6 @@ body
 .page_content
   clear both
   padding-top 60px
-
-.pdf
-  position absolute
-  cursor pointer
-  color blue
-  user-select none
-  > .fa, > .copy
-    float left
-  > .copy
-    color black
-    padding 5px 0 0 10px
-
 .button
   display inline-block
   font-size 12px
@@ -67,3 +55,29 @@ body
   opacity: 0
 */
 // @media all and (min-width: 1px) and (max-width: 1000px)
+
+.chevron
+  position absolute
+  left 50%
+  top 50px
+  margin-left -13px
+  bottom -12px
+  width 0
+  height 0
+  border-left 13px solid transparent
+  border-right 13px solid transparent
+  border-bottom 13px solid lightblue
+  z-index 20
+  animation inFromBottom 0.2s ease 0.1s both
+  onoff()
+  > .inner
+    position relative
+    top 1px
+    left -13px
+    width 0
+    height 0
+    border-left 13px solid transparent
+    border-right 13px solid transparent
+    border-bottom 13px solid lightwhite
+
+

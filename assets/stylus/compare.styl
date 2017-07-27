@@ -1,0 +1,212 @@
+json('../../assets/colors.json')
+json('../../assets/fonts.json')
+@import '../../assets/stylus/mixins.styl'
+@import '../../assets/stylus/keyframes.styl'
+
+delay = 0.0
+
+#Compare
+  background-color lightgrey
+  padding 90px 0
+  margin 0 0 60px 0
+  > .inner
+    width 675px
+    margin auto
+    text-align center
+    > .title
+      font h2
+      text-align center
+      padding 60px 0
+      inViewport(delay + 0.05)
+    > hr
+      display block
+      border-top 1px solid blue
+      border-bottom 1px solid blue
+      transition width 1s ease-in-out 0.1s
+      width 200px
+      opacity 0
+      &.above-viewport
+        width 200px
+        opacity 0
+      &.below-viewport
+        width 200px
+        opacity 0
+      &.in-viewport
+        width 675px
+        opacity 1
+    > .copy
+      color grey
+      padding 30px 0
+      inViewport(delay + 0.15)
+    > .inputs
+      position relative
+      width 505px
+      margin auto
+      inViewport(delay + 0.20)
+      z-index 2
+      > .suggest
+        background-color white
+        top 46px
+        width 220px
+        position absolute
+        border-left 1px solid lightblue
+        border-right 1px solid lightblue
+        border-bottom 1px solid lightblue
+        border-radius 0 0 3px 3px
+        onoff()
+        &:nth-child(1)
+          left: 0
+        &:nth-child(5)
+          right: 0
+          
+        > ul
+          margin 0
+          padding 0
+          list-style-type none
+          > li
+            cursor pointer
+            border-bottom 1px solid lightblue
+            text-align left
+            padding 10px
+            &:last-child
+              border-bottom 1px solid transaprent
+            &:hover
+              background-color rgba(blue, 0.5)
+            &.selected
+              background-color blue
+              color white
+      > span
+        display inline-block
+        padding 0 20px
+      > input
+        width 200px
+        font c1
+        padding 10px
+        border 1px solid lightblue
+        border-radius 3px
+        outline none
+        transition border-color 0.3s ease-in-out 0s
+        &:focus
+          border 1px solid blue
+        &.matching
+          border 1px solid green
+    > .cta
+      inViewport(delay + 0.25)
+      > input
+        cursor pointer
+        background-color white
+        color black
+        font c1sb
+        text-transform uppercase
+        margin 60px 0
+        padding 15px 50px
+        border-radius 3px
+        border none
+        transition color 0.5s ease 0s, background-color 0.5s ease 0s
+        &.active
+          color white
+          background-color blue
+          opacity 1
+          transform translate(0, 0)
+
+  > .fade
+    background-color rgba(black, 0.8)
+    position fixed
+    fullsize()
+    z-index 12
+    onoff()
+
+  > .outer
+    position relative
+    > .modal
+      background-color white
+      border-radius 6px
+      margin auto
+      position fixed
+      z-index 14
+      top 50%
+      left 50%
+      width 900px
+      height 560px
+      margin-left -450px
+      margin-top -320px
+      padding 60px 0
+      animation scaleIn 0.4s ease-in-out 0s both
+      onoff()
+      > .close
+        cursor pointer
+        display block
+        position absolute
+        top -20px
+        right -20px
+        background-color blue
+        color white
+        border-radius 50%
+        width 60px
+        height 60px
+        line-height 70px
+        text-align center
+        transition transform 0.5s ease 0s
+        transform scale(1)
+        &:hover
+          transform scale(1.05)
+      > .copy:nth-child(2)
+        font c1sb
+        color grey
+        text-transform uppercase
+        text-align center
+        padding 0 0 10px 0
+        animation inFromTop 0.6s ease-in-out 0.05s both
+      > .copy:nth-child(3)
+        text-align center
+        animation inFromTop 0.6s ease-in-out 0.1s both
+        font h2
+      > .border
+        margin 30px 0 60px 0
+        animation inFromTop 0.6s ease-in-out 0.15s both
+      > table
+        width 600px
+        margin auto
+        cellspacing 0
+        cellpadding 0
+        tr
+          animation inFromTop 0.6s ease-in-out 0.2s both
+          for i in 1..7
+            &:nth-child({i})
+              animation-delay unit((0.05*i) + 0.2, 's')
+        > thead > tr > th
+          text-transform uppercase
+          font c1
+          padding 10px
+        > tbody
+          > tr
+            > td
+              border-left 1px solid grey
+              border-top 1px solid grey
+              padding 10px
+              &:nth-child(n+2),
+              &:nth-child(n+3)
+                text-align center
+                color grey
+                .fa
+                  color green
+                  display none
+                  animation scaleIn 1s ease-in-out 0.8s both
+                  float left
+                  margin 5px 0 0 0
+                &.higher > .fa
+                  display block
+              &:nth-child(n+3)
+                border-right 1px solid grey
+
+            &:first-child > td:nth-child(1)
+              border-radius 3px 0 0 0
+            &:first-child > td:nth-child(3)
+              border-radius 0 3px 0 0
+            &:last-child > td
+              border-bottom 1px solid grey
+            &:last-child > td:first-child
+              border-radius 0 0 0 3px
+            &:last-child > td:last-child
+              border-radius 0 0 3px 0
+

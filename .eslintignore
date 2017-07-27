@@ -1,2 +1,3 @@
 plugins/ga.js
+plugins/outdated.js
 dist/raw.js

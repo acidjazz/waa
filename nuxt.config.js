@@ -25,29 +25,38 @@ module.exports = {
       { 'http-equiv': 'Content-Type', content: 'text/html; charset: UTF-8' },
 
       // facebook
-      { property: 'og:type', content: 'website' },
-      { property: 'og:url', content: config.url },
-      { property: 'og:title', content: config.title },
-      { property: 'og:image', content: config.url + config.image },
-      { property: 'og:description', content: config.description },
+      { hid: 'og:type', property: 'og:type', content: 'website' },
+      { hid: 'og:url', property: 'og:url', content: config.url },
+      { hid: 'og:image', property: 'og:image', content: config.url + config.image },
+
+      { hid: 'og:title', property: 'og:title', content: config.title },
+      { hid: 'og:description', property: 'og:description', content: config.description },
 
       // twitter
       { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:title', content: config.title },
-      { name: 'twitter:description', content: config.description },
-      { name: 'twitter:image', content: config.url + config.image }
+      { name: 'twitter:image', content: config.url + config.image },
+
+      { hid: 'twitter:title', name: 'twitter:title', content: config.title },
+      { hid: 'twitter:description', name: 'twitter:description', content: config.description },
 
     ],
 
     script: [
+      { src: "//cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.js" },
+      // { innerHTML: "function addLoadEvent(func) { var oldonload = window.onload; if (typeof window.onload != 'function') { window.onload = func; } else { window.onload = function() { if (oldonload) { oldonload(); } func(); } } } addLoadEvent(function(){ console.log('test one two'); outdatedBrowser({ bgColor: '#f25648', color: '#ffffff', lowerThan: 'filter', languagePath: '/en.html' }) });" },
+      // { innerHTML: "alert('hi');" },
+
       { src: "//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js" },
       { src: "//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js" },
       { src: "//cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js" },
+      { src: "//cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.4/js.cookie.min.js" },
     ],
+    __dangerouslyDisableSanitizers: ['script'],
 
     link: [
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Maven+Pro:100,200,300,400,500|Roboto:100,400,700,900' },
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css' },
+      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css' },
 
       { rel: 'apple-touch-icon', sizes: '180x180', href: '/icons/apple-touch-icon.png' },
       { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/icons/favicon-32x32.png' },
@@ -65,13 +74,16 @@ module.exports = {
   ** Build configuration
   */
   css: [{ src: '~assets/stylus/main.styl', lang: 'stylus' }],
-  plugins: [{src: '~plugins/ga.js', ssr: false}],
+  plugins: [
+    {src: '~plugins/ga.js', ssr: false},
+    // {src: '~plugins/outdated.js', ssr: false},
+  ],
   router: {
     scrollBehavior: function (to, from, savedPosition) {
       if (to.name.indexOf('data') !== -1 && from.name.indexOf('data') !== -1) {
-        return false
+        return savedPosition
       }
-      return savedPosition
+      return { x: 0, y: 0 }
     }
   },
   build: {
