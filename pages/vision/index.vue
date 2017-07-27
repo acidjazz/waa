@@ -12,6 +12,7 @@ doctype
           p(v-in-viewport) Policymakers at all levels of government must recognize that addressing local housing needs requires a partnership between government and the private sector. The federal government can ensure sufficient funding of housing programs, enact a pro-housing tax policy, and reform regulations that unnecessarily increase housing costs. 
     .border.small.margined
     .section.section_together
+      .inner
         .copy(v-in-viewport) We Can Do This
         .copy(v-in-viewport) State and local governments have a toolbox of approaches they can take to address the apartment shortage and help reduce the cost of housing. Working together, we can help them:
         .blocks
