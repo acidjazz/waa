@@ -322,7 +322,7 @@ export default {
 
   },
   mounted () {
-    if (this.id.indexOf('print') !== -1) {
+    if (this.print()) {
       this.populate((data, spike) => {
         this.draw(data, spike)
         this.spiked = Number(this.spike)
@@ -332,7 +332,7 @@ export default {
 
   watch: {
     'inViewport.now' (visible) {
-      if (visible && this.id.indexOf('print') === -1 && this.myChart === undefined) {
+      if (visible && !this.print() && this.myChart === undefined) {
         this.populate((data, spike) => {
           this.draw(data, spike)
           this.spiked = Number(this.spike)
