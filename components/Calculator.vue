@@ -55,9 +55,6 @@
     .inner
       .source Source: https://weareapartments.org/ {{ $route.path }}
       Share(query=true)
-      //a.pdf(:href="'http://pdf.weareapartments.org?url=/calculated'+hashv.replace(/#/, 'hash')")
-        .fa.fa-2x.fa-file-pdf-o
-        .copy Create PDF
       router-link.close(:to="'/calculator' + $route.hash")
         .fa.fa-times.fa-2x
 
@@ -75,6 +72,14 @@
           .stat.colored.blue
             .copy Total Economic Impact
             .value {{ data.total.impact }}
+            .clear
+
+          .copy.copy_header Total Jobs 
+          .copy.copy_body The total number of direct and indirect jobs supported by apartment construction, operations and resident spending within the state economy.
+
+          .stat.colored.blue
+            .copy Total Jobs Supported
+            .value {{ data.total.jobs }}
             .clear
 
           .copy.copy_header Managing Apartments
@@ -132,14 +137,6 @@
           .stat
             .copy Total Jobs Supported
             .value  {{ data.spending.jobs }}
-            .clear
-
-          .copy.copy_header Total Jobs 
-          .copy.copy_body The total number of direct and indirect jobs supported by apartment construction, operations and resident spending within the state economy.
-
-          .stat.colored.blue
-            .copy Total Jobs Supported
-            .value {{ data.total.jobs }}
             .clear
 
           .logos
