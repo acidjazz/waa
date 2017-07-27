@@ -355,6 +355,7 @@ json('../assets/fonts.json')
             > .value
               padding 0 0 10px 0
               color purple
+              animation none !important
             > .copy
               font c1s
     > .source
