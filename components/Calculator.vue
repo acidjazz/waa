@@ -390,12 +390,14 @@ export default {
           break
       }
 
+      console.log(this.by)
       if (this.by === 'national') {
         by = 'state'
         value = 'USA Total'
         this.data.homes = numeral(json.homes['national']).format('0,0')
       } else {
         this.data.homes = numeral(json.homes[by][value]).format('0,0')
+        console.log(this.data.homes)
       }
 
       this.data.construction.dollars = numeral(

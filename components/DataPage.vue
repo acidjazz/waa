@@ -537,7 +537,7 @@ json('../assets/fonts.json')
     > .logos
       width 750px
       height 30px
-      margin 40px auto 0 auto
+      margin 20px auto 0 auto
       text-align right
       > img
         height 50px
@@ -755,6 +755,8 @@ json('../assets/fonts.json')
             color black
 
 @media print
+  #Filters
+    display none !important
   .datapage_web
     display none
   .datapage_print
