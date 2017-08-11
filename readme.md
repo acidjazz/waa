@@ -16,7 +16,7 @@
 ## Development
 
 master | staging | development
---- | ---
+--- | --- | ---
 [![CircleCI](https://circleci.com/gh/acidjazz/waa/tree/master.svg?style=svg)](https://circleci.com/gh/acidjazz/waa/tree/master) | [![CircleCI](https://circleci.com/gh/acidjazz/waa/tree/staging.svg?style=svg)](https://circleci.com/gh/acidjazz/waa/tree/staging) | [![CircleCI](https://circleci.com/gh/acidjazz/waa/tree/development.svg?style=svg)](https://circleci.com/gh/acidjazz/waa/tree/development)
 
 
