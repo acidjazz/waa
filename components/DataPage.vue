@@ -4,7 +4,7 @@
     Top(type="light")
     .clear
     DataFilters(:state="state",:metro="metro",:district="district")
-    DataSummary(:state="state",:metro="metro",:district="district")
+    DataSummary(:state="state",:metro="metro",:district="district",type="web")
     .section.section_demand(v-if="this.choice().type !== 'district'")
       p The Demand
       Demand(:type="this.choice().type",:value="this.choice().value")
@@ -114,7 +114,7 @@
     .section.section_district_name(v-if="this.choice().type === 'district'")
       .copy {{ this.choice().value }}
       .copy Apartments and their residents contribute more than $3.5 billion to the economy every day.
-    DataSummary(:state="state",:metro="metro",:district="district",v-if="this.choice().type === 'district'")
+    DataSummary(:state="state",:metro="metro",:district="district",v-if="this.choice().type === 'district'",type="print")
     .section.section_district(v-if="this.choice().type === 'district'")
       DistrictCopy(:district="this.choice().value")
 
@@ -170,7 +170,7 @@
         .copy We Need to Build More
         .copy Apartment demand is growing and the industry needs to keep up. However, producing enough new apartments to meet demand requires new development approaches, more incentives and fewer restrictions
     .clear
-    DataSummary(:state="state",:metro="metro",:district="district",v-if="this.choice().type !== 'district'")
+    DataSummary(:state="state",:metro="metro",:district="district",v-if="this.choice().type !== 'district'",type="print")
     .logos
        img(src="/logo-nmhc.png")
        img(src="/logo-naa.png")
@@ -349,11 +349,13 @@ json('../assets/fonts.json')
             padding 10px
             max-width 150px
             height 60px
+            animation none !important
             &:first-child, &:nth-child(2), &:nth-child(3)
               border-right 1px solid lightblue
             > .value
               padding 0 0 10px 0
               color purple
+              animation none !important
             > .copy
               font c1s
     > .source

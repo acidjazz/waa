@@ -29,7 +29,6 @@ doctype
             .copy Collaborate with business and community leaders to champion apartments.
             .clear
           .block(v-in-viewport='{ bottom: -200 }')
-          .block
             .icon.icon-network
               .inner
             .copy leverage

@@ -15,23 +15,27 @@
     .stats
       .stat(v-if="residents.value !== 0")
         .value
-          i-count-up.number(:start="0",:end="residents.value",:decimals="1",:duration="2")
+          i-count-up.number(:start="0",:end="residents.value",:decimals="1",:duration="2",v-if="type === 'web'")
+          span.number(v-else) {{ residents.value }}
           span {{ residents.a }}
         .copy Apartment Residents
       .stat(v-if="homes.value !== 0")
         .value
-          i-count-up.number(:start="0",:end="homes.value",:decimals="1",:duration="2")
+          i-count-up.number(:start="0",:end="homes.value",:decimals="1",:duration="2",v-if="type === 'web'")
+          span.number(v-else) {{ homes.value }}
           span {{ homes.a }}
         .copy Apartment Homes
       .stat(v-if="contrib.value !== 0")
         .value
           span $
-          i-count-up.number(:start="0",:end="contrib.value",:decimals="1",:duration="2")
+          i-count-up.number(:start="0",:end="contrib.value",:decimals="1",:duration="2",v-if="type === 'web'")
+          span.number(v-else) {{ contrib.value }}
           span {{ contrib.a }}
         .copy Economic Contribution
       .stat(v-if="contrib.value !== 0")
         .value
-          i-count-up.number(:start="0",:end="jobs.value",:decimals="1",:duration="2")
+          i-count-up.number(:start="0",:end="jobs.value",:decimals="1",:duration="2",v-if="type === 'web'")
+          span.number(v-else) {{ jobs.value }}
           span {{ jobs.a }}
         .copy Total Jobs Supported
         .clear
@@ -64,6 +68,7 @@ const jobsDistrict = '/District Total Jobs.json'
 export default {
   mixins: [ filtermixin ],
   components: { ICountUp },
+  props: ['type'],
 
   methods: {
 
@@ -126,9 +131,11 @@ export default {
     }
   },
   mounted () {
-    setTimeout(() => {
+    if (this.type === 'web') {
+      setTimeout(this.populate, 900)
+    } else {
       this.populate()
-    }, 900)
+    }
   },
   watch: {
     '$route' () {
@@ -152,7 +159,6 @@ export default {
       homes: { value: 0, a: null },
       contrib: { value: 0, a: null },
       jobs: { value: 0, a: null },
-
     }
   },
   head () {
