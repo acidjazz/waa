@@ -11,16 +11,11 @@
 [![Dependency Status](https://gemnasium.com/badges/github.com/acidjazz/waa.svg)](https://gemnasium.com/github.com/acidjazz/waa)
 [![aeonian status](https://img.shields.io/badge/%C3%A6onian-deployed-green.svg)](https://github.com/acidjazz/aeonian)
 
-## Deployment
+## Branch Status
 
 master | staging | development
 --- | --- | ---
 [![CircleCI](https://circleci.com/gh/acidjazz/waa/tree/master.svg?style=shield)](https://circleci.com/gh/acidjazz/waa/tree/master) | [![CircleCI](https://circleci.com/gh/acidjazz/waa/tree/staging.svg?style=shield)](https://circleci.com/gh/acidjazz/waa/tree/staging) | [![CircleCI](https://circleci.com/gh/acidjazz/waa/tree/development.svg?style=shield)](https://circleci.com/gh/acidjazz/waa/tree/development)
-
-* Continuous Deployment is setup using the [git-flow](http://nvie.com/posts/a-successful-git-branching-model/) workflow with [aeonian](https://github.com/acidjazz/aeonian) via [Circle-CI](https://circleci.com/gh/acidjazz/waa)
- * Branch [development](https://github.com/acidjazz/waa/tree/development) merges deploy to http://development.weareapartments.org/
- * Branch [staging](https://github.com/acidjazz/waa/tree/staging) merges deploy to http://staging.weareapartments.org/
- * Branch [master](https://github.com/acidjazz/waa/tree/master) merges deploy to http://weareapartments.org/
 
 ## Local Build Setup
 * Clone this repository 
@@ -36,5 +31,15 @@ yarn install
 yarn dev
 ```
 > To serve to other machines via your IP address run `yarn dev-public`
+## Deployment
+
+master | staging | development
+--- | --- | ---
+[![CircleCI](https://circleci.com/gh/acidjazz/waa/tree/master.svg?style=shield)](https://circleci.com/gh/acidjazz/waa/tree/master) | [![CircleCI](https://circleci.com/gh/acidjazz/waa/tree/staging.svg?style=shield)](https://circleci.com/gh/acidjazz/waa/tree/staging) | [![CircleCI](https://circleci.com/gh/acidjazz/waa/tree/development.svg?style=shield)](https://circleci.com/gh/acidjazz/waa/tree/development)
+
+* Continuous Deployment is setup using the [git-flow](http://nvie.com/posts/a-successful-git-branching-model/) workflow with [aeonian](https://github.com/acidjazz/aeonian) via [Circle-CI](https://circleci.com/gh/acidjazz/waa)
+ * Branch [development](https://github.com/acidjazz/waa/tree/development) merges deploy to http://development.weareapartments.org/
+ * Branch [staging](https://github.com/acidjazz/waa/tree/staging) merges deploy to http://staging.weareapartments.org/
+ * Branch [master](https://github.com/acidjazz/waa/tree/master) merges deploy to http://weareapartments.org/
 
 
