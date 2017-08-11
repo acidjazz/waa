@@ -11,6 +11,16 @@
 [![Dependency Status](https://gemnasium.com/badges/github.com/acidjazz/waa.svg)](https://gemnasium.com/github.com/acidjazz/waa)
 [![aeonian status](https://img.shields.io/badge/%C3%A6onian-deployed-green.svg)](https://github.com/acidjazz/aeonian)
 
+
+
+## Development
+
+master | staging | development
+--- | ---
+[![CircleCI](https://circleci.com/gh/acidjazz/waa/tree/master.svg?style=svg)](https://circleci.com/gh/acidjazz/waa/tree/master) | [![CircleCI](https://circleci.com/gh/acidjazz/waa/tree/staging.svg?style=svg)](https://circleci.com/gh/acidjazz/waa/tree/staging) | [![CircleCI](https://circleci.com/gh/acidjazz/waa/tree/development.svg?style=svg)](https://circleci.com/gh/acidjazz/waa/tree/development)
+
+
+
 ## Build Setup
 * Clone this repository 
 ```bash

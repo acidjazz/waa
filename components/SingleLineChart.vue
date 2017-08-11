@@ -5,7 +5,9 @@
     canvas(:id="'chart-' + id",:width="width",:height="height")
     .spike(v-if="(spiked > 0)")
       i.fa.fa-long-arrow-up(aria-hidden=true)
-      .value
+      .value(v-if="cspike !== false")
+        span {{ cspike }}
+      .value(v-else)
         i-count-up.span(:start="0",:end="spiked",:decimals="2",v-if="!print()")
         span(v-else) {{ spiked }}
         span %
@@ -136,6 +138,7 @@ export default {
 
         case this.choice.type === 'metro' && this.data === 'rentgrowth':
           this.json('Metro Renter HHs.json', (result) => {
+            this.cspike = numeral(result.data.data[this.choice.value][3] - result.data.data[this.choice.value][1]).format('0,0a')
             data = {
               labels: [2016, 2030],
               datas: [result.data.data[this.choice.value][1], result.data.data[this.choice.value][3]]
@@ -350,6 +353,7 @@ export default {
     return {
       myChart: undefined,
       spike: '0.00',
+      cspike: false,
       spiked: 0,
     }
   }
