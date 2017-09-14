@@ -6,9 +6,12 @@
     DataFilters(:state="state",:metro="metro",:district="district")
     DataSummary(:state="state",:metro="metro",:district="district",type="web")
     .section.section_demand(v-if="this.choice().type !== 'district'")
-      p The Demand
-      Demand(:type="this.choice().type",:value="this.choice().value")
-      Share
+      .inner
+        p The Demand
+        Demand(:type="this.choice().type",:value="this.choice().value")
+        Share
+        .pointer
+    .clear
     .section.section_district(v-if="this.choice().type === 'district'")
       DistrictCopy(:district="this.choice().value")
       Share
@@ -16,18 +19,48 @@
       DistrictTrio(type="web",:choice="this.choice()")
 
     .section.section_charts(v-if="this.choice().type !== 'district'")
+
       .chart
-        SingleLineChart(data='apthhgrowth',id='apthhgrowth',:choice="this.choice()",:animation="true",theme="orange",width=380,height=300)
+        SingleLineChart(
+          data='apthhgrowth',
+          id='apthhgrowth',
+          :choice="this.choice()",
+          :animation="true",
+          theme="orange",
+          title="Apartmends Needed",
+          description="Forecasted by the year 2030",
+          tagline="Text Needed",
+          width=380,height=140)
         .copys
           .copy Apartment Household Growth
           .copy Population growth and a higher propensity to rent will create a need for more apartments by 2030. 
+
       .chart
-        SingleLineChart(data='rentgrowth',id='rentgrowth',:choice="this.choice()",:animation="true",theme="lime",width=380,height=300)
+        SingleLineChart(
+          data='rentgrowth',
+        id='rentgrowth',
+        :choice="this.choice()",
+        :animation="true",
+        theme="lime",
+        title="Rentership",
+        description="Forecasted by the year 2030",
+        tagline="Text Needed",
+        width=380,height=140)
         .copys
           .copy Growth in Rentership
           .copy An aging population, immigration and fewer home purchases are increasing the need for apartments. 
+
       .chart
-        SingleLineChart(data='popgrowth',id='popgrowth',:choice="this.choice()",:animation="true",theme="aqua",width=380,height=300)
+        SingleLineChart(
+          data='popgrowth',
+          id='popgrowth',
+          :choice="this.choice()",
+          :animation="true",
+          theme="aqua",
+          title="Households",
+          description="Forecasted by the year 2030",
+          tagline="Text Needed",
+          width=380,height=140)
         .copys
           .copy(v-if="this.choice().type === 'state'") Household Growth
           .copy(v-else) Population Growth
@@ -35,37 +68,21 @@
       .clear
 
     .section.section_chart(v-if="this.choice().type !== 'district'")
-      .top
-        .part.part_homes
-          .value {{ $store.state.homesNeeded }} 
-          .copy Apartment Homes Needed in 
-            span(v-if="this.choice().type !== 'metro'") the Country
-            span(v-if="this.choice().type === 'metro'") {{ this.choice().copy }}
-        .part.part_numbers
-          .graph
-          .copy Avg Annual Construction Rate (2011-2016)
-        .part.part_numbers
-          .graph
-          .copy New Apartments Needed
-      .left.left_buildmore(v-if="this.choice().type !== 'metro'")
-        .copy We need to build more
-        BuildMore(:choice="this.choice()")
-        //.legend
-          .dot
-            .value
-            .copy current rate text
-          .clear
-          .dot
-            .value
-            .copy needed rate text
-      .left.left_inyourcity(v-if="this.choice().type === 'metro'")
+      .chart
+        MultiLineChart(
+          :animation="true",
+          :type="this.choice().type",
+          :value="this.choice().value",
+          :state="this.choice().state",
+          data='aptsneeded',
+          id='aptsneeded',
+          width=830,height=300)
+      .right.left_inyourcity(v-if="this.choice().type === 'metro'")
         .copy barriers to apartments construction
         HeatChart(:metro="this.choice().value")
         .tip Index based on local regulations and available land
         .title Red Tape Rating
         .copy Over the last three decades, regulatory barriers to apartment construction have increased significantly, most notably at the local level.
-      .chart
-        MultiLineChart(:animation="true",:type="this.choice().type",:value="this.choice().value",:state="this.choice().state",data='aptsneeded',id='aptsneeded',theme="red",width=830,height=300)
       .clear
       .copys.copyLeft(v-if="this.choice().type === 'district'")
         .copy Red Tape Rating
@@ -544,29 +561,40 @@ json('../assets/fonts.json')
       > img
         height 50px
 
-
   .datapage_web
     visibility visible
     // display none
     > .section_demand
-      padding 60px 0
-      text-align center
-      position relative
       width 1200px
       margin auto
-      > #Share
-        top 85px
-        right 90px
-      > p:first-child
-        font h1
-      > p:nth-child(2)
-        color grey
-        max-width 544px
-        margin auto
-        > span
-          color black
+      > .inner
+        padding 30px
+        background-color lightwhite
+        border-radius 6px
+        float left
+        position relative
+        margin 60px 0 90px 60px
+        > .pointer
+          position absolute
+          width 3px
+          height 60px
+          background-color black
+          left 100px
+          bottom -40px
+        > #Share
+          top 40px
+          right 140px
+        > p:first-child
+          font h2
+          margin 0 0 20px 0
+        > p:nth-child(2)
+          color grey
+          max-width 615px
+          margin auto
           > span
-            color red
+            color black
+            > span
+              color red
     > .section_district
       width 1200px
       margin auto
@@ -593,127 +621,9 @@ json('../assets/fonts.json')
     > .section_chart
       margin 90px auto 30px auto
       width 1200px
-      > .top
-        > .part
-          float right
-          width 220px
-          line-height 22px
-          font c1s
-          &.part_homes
-            text-align left
-            padding 5px 0 0 0
-            > .value
-              display inline
-              font c1b
-              line-height 22px
-            > .copy
-              color grey
-              display inline
-          &.part_numbers
-            width 200px
-            > .graph
-              float left
-              margin 10px 10px 0 0
-              background-color rgba(red, 0.5)
-              width 15px
-              height 15px
-              border-radius 50%
-            > .copy
-              margin 5px 0 0 30px
-              color grey
-              width 144px
-            > .value
-              margin 0 0 0 20px
-            &:nth-child(2)
-              margin 0 180px 0 0
-            &:nth-child(2) > .graph
-              background-color rgba(red, 1)
-            &:nth-child(2) > .copy
-              width 184px
-      > .copyLeft
-        float left
-        width 300px
-      > .copys
-        width 800px
-        margin -30px 20px 120px 0
-        float right
-        > .copy:nth-child(1)
-          font c3b
-          padding 0 0 5px 0
-        > .copy:nth-child(2)
-          font c1
-          color grey
-
-      > .left
-        float left
-        width 340px
-        &.left_buildmore
-          > .copy:first-child
-            font h2
-          > .copy:nth-child(2)
-            color grey
-            padding 30px 0 0 0
-          > .legend
-            padding 30px 0 0 0
-            font c1s
-            > .dot
-              > .value
-                float left
-                width 10px
-                height 10px
-                border-radius 50%
-                background-color red
-                margin 5px 0 0 0
-              > .copy
-                float left
-                text-transform uppercase
-                margin 0 0 0 10px
-          > .legend > .dot:first-child > .value
-            background-color rgba(red, 0.5)
-        &.left_inyourcity
-          height 300px
-          border 1px solid lightgrey
-          border-radius 3px
-          > .copy:first-child
-            color darkblue
-            font c1sb
-            text-transform uppercase
-            padding 25px 0 0 25px
-          > .tip
-            color grey
-            width 250px
-            margin -10px auto 0 auto
-            text-align center
-            font c1s
-          > .title
-            margin 40px 0 0 0
-            padding 0 0 5px 0
-            font c3b
-          > .copy:last-child
-            color grey
-      > .mbottom
-        width 1200px
-        padding 0 0 30px 0
-        > .copys.copyLeft
-          float left
-          width 300px
-        > .copys.copyRight
-          float right
-          width 830px
-          margin 0 0 0 30px
-        > .copys
-          > .copy:first-child
-            font h3
-            padding 0 0 10px 0
-          > .copy:nth-child(2)
-            color grey
-
       > .chart
-        float right
-        width 800px
-        margin 0 0 30px
-        > .chartainer > .tooltip
-          top -20px
+        float left
+
     > .section_links
       > .inner
         padding 90px 0

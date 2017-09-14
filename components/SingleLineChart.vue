@@ -2,44 +2,48 @@
   .chartainer
     tooltip(v-if="data === 'popgrowth' || data === 'inyourstate'",align="left")
     tooltip(v-else)
-    canvas(:id="'chart-' + id",:width="width",:height="height")
+    .title {{ title }}
+    .description {{ description }}
     .spike(v-if="(spiked > 0)")
-      i.fa.fa-long-arrow-up(aria-hidden=true)
       .value(v-if="cspike !== false")
         span {{ cspike }}
       .value(v-else)
         i-count-up.span(:start="0",:end="spiked",:decimals="2",v-if="!print()")
         span(v-else) {{ spiked }}
-        span %
+        span % 
+        span Increase
     .spike(v-else)
-      i.fa.fa-long-arrow-down(aria-hidden=true)
       .value
         i-count-up.span(:start="0",:end="spiked",:decimals="2",v-if="!print()")
         span(v-else) {{ spiked }}
-        span %
+        span % 
+        span Decrease
+    .tagline {{ tagline }}
+    canvas(:id="'chart-' + id",:width="width",:height="height")
 
 </template>
 
 <style lang="stylus">
 json('../assets/colors.json')
+json('../assets/fonts.json')
 .chartainer
+  border 1px solid lightgrey
+  border-radius 3px
+  padding 20px
   position relative
+  > .title
+    font h1
+  > .description
+    color grey
   > canvas
     width inherit
     height inherit
   > .spike
-    position absolute
-    top 30px
-    right 50px
-    > .fa
-      float left
-      padding 5px 10px 0 0
-      &.fa-long-arrow-down
-        color red
-      &.fa-long-arrow-up
-        color green
+    padding 10px 0 0 0
     > .value
-      float left
+      font h2
+  > .tagline
+    color grey
 </style>
 
 <script>
@@ -52,7 +56,7 @@ import ICountUp from 'vue-countup-v2'
 export default {
   mixins: [ chartmixin, inViewport ],
   components: { tooltip, ICountUp },
-  props: ['id', 'data', 'choice', 'theme', 'width', 'height', 'animation'],
+  props: ['id', 'data', 'choice', 'theme', 'width', 'height', 'animation', 'title', 'description', 'tagline'],
   methods: {
 
     print () {
@@ -213,10 +217,11 @@ export default {
       if (this.myChart !== undefined) {
 
         this.myChart.data.datasets = [{
+          lineTension: 0,
           data: data.datas,
           pointBackgroundColor: colors.white,
           pointBorderWidth: 4,
-          pointRadius: 5,
+          pointRadius: 4,
           pointBorderColor: solid,
           borderColor: solid,
           backgroundColor: light,
@@ -227,13 +232,13 @@ export default {
 
       } else {
         let options = this.chartOptions()
-        options.tooltips.backgroundColor = light
+        options.tooltips.backgroundColor = colors.black
         options.tooltips.titleFontSize = 0
         options.tooltips.titleSpacing = 0
         options.tooltips.titleMarginBottom = -6
-        options.tooltips.bodyFontColor = solid
+        options.tooltips.bodyFontColor = colors.white
         options.tooltips.yPadding = 10
-        options.tooltips.borderColor = solid
+        options.tooltips.borderColor = colors.black
         options.tooltips.callbacks = {
           label: function (item, data) {
             if (Number(item.yLabel) < 1 && Number(item.yLabel) > 0) {
@@ -244,11 +249,12 @@ export default {
         }
         options.layout = {
           padding: {
-            top: this.id.indexOf('print') !== -1 ? 50 : 70
+            top: this.id.indexOf('print') !== -1 ? 0 : 0
           }
         }
         options.scales = {
           yAxes: [{
+            display: false,
             position: 'right',
             gridLines: {
               color: solid,
@@ -263,6 +269,7 @@ export default {
             }
           }],
           xAxes: [{
+            display: false,
             gridLines: { color: solid, zeroLineColor: solid, display: false },
             ticks: {
               fontColor: solid,
@@ -278,13 +285,14 @@ export default {
 
         let datasets = [{
           data: data.datas,
-          pointBackgroundColor: colors.white,
-          pointBorderWidth: this.id.indexOf('print') !== -1 ? 2 : 4,
-          pointRadius: this.id.indexOf('print') !== -1 ? 2 : 5,
-          pointBorderColor: solid,
+          pointBackgroundColor: 'transparent',
+          pointBorderWidth: 0,
+          pointRadius: 8,
+          pointHoverRadius: 8,
+          pointBorderColor: 'transparent',
           borderColor: solid,
           backgroundColor: light,
-          fill: true
+          fill: false
         }]
 
         this.myChart = new Chart(ctx, {

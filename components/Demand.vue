@@ -1,22 +1,20 @@
+
 <template lang="pug">
 doctype
-p(v-in-viewport) New research shows that demand for apartments is on the rise.  Whether it's young professionals, couples, families or empty nesters, 
-  span(v-if="type === 'national'") the country will see a demand for an additional 
+p(v-in-viewport)  Between now and 2030, 
+  span(v-if="type === 'national'") the country will need to build over 
     span {{ households }} 
-    | new apartment households 
-    span by 2030
+    | new apartment homes each year to meet demand 
   span(v-if="type === 'state'") this state will add 
     span {{ households }} 
-    | new apartment households 
-    span by 2030
+    | new apartment homes each year to meet demand 
   span(v-if="type === 'metro'") this metro will add 
     span {{ households }} 
-    | new apartment households 
-    span by 2030
+    | new apartment homes each year to meet demand 
   span(v-if="type === 'district'") this district will add 
     span {{ households }} 
-    | new apartment households 
-    span by 2030
+    | new apartment homes each year to meet demand 
+  | However, new housing approaches are needed as only an average of 225,000 apartment homes were buitl each year between 2011 - 2016.
 </template>
 
 <script>

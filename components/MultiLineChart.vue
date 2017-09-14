@@ -1,4 +1,18 @@
 <template lang="pug">
+#HousingGap
+  .title The Apartment Housing Gap
+  .legend
+    .item
+      .dot.dot_blue
+      .copy New Apartments Needed
+    .item
+      .dot.dot_purple
+      .copy Annual Construction Rate
+  .stat
+    .value {{ $store.state.homesNeeded }} 
+    .copy Apartment Homes Needed in 
+      span(v-if="type !== 'metro'") the Country
+      span(v-if="type === 'metro'") {{ this.choice().copy }}
   .chartainer
     tooltip(align="left")
     canvas(:id="'chart-' + id",:width="width",:height="height")
@@ -20,8 +34,7 @@ import inViewport from 'vue-in-viewport-mixin'
 export default {
   mixins: [ inViewport ],
   components: { tooltip },
-
-  props: ['id', 'data', 'type', 'state', 'value', 'theme', 'width', 'height', 'animation'],
+  props: ['id', 'data', 'type', 'state', 'value', 'width', 'height', 'animation'],
 
   data () {
     return {
@@ -107,50 +120,39 @@ export default {
       let solid = colors.aqua
       let light = colors.lightaqua
 
-      if (this.theme === 'lime') {
-        solid = colors.lime
-        light = colors.lightlime
-      }
-
-      if (this.theme === 'orange') {
-        solid = colors.orange
-        light = colors.lightorange
-      }
-
-      if (this.theme === 'red') {
-        solid = colors.red
-        light = colors.lightred
-      }
-
       Chart.defaults.global.defaultFontSize = 16
       Chart.defaults.global.legend.display = false
       Chart.defaults.global.showLines = false
-      Chart.defaults.global.elements.rectangle.borderColor = solid
-      Chart.defaults.global.elements.line.borderColor = colors.red
+      Chart.defaults.global.elements.rectangle.borderColor = colors.purple
+      Chart.defaults.global.elements.line.borderColor = colors.purple
       Chart.defaults.global.hover.animationDuration = 0
 
-      Chart.defaults.global.elements.rectangle.borderColor = solid
+      Chart.defaults.global.elements.rectangle.borderColor = colors.purple
 
       let dataset = [{
         data: data.datas[0],
-        pointBackgroundColor: colors.white,
-        pointHoverBackgroundColor: solid,
-        pointBorderWidth: 4,
-        pointRadius: 5,
-        pointBorderColor: solid,
-        borderColor: solid,
+        lineTension: 0,
+        pointBackgroundColor: 'transparent',
+        pointHoverBackgroundColor: 'transparent',
+        pointBorderWidth: 0,
+        pointRadius: 8,
+        pointHoverRadius: 8,
+        pointBorderColor: 'transparent',
+        borderColor: colors.purple,
         fill: false
       }, {
         data: data.datas[1],
-        pointBackgroundColor: colors.white,
-        pointHoverBackgroundColor: solid,
+        lineTension: 0,
+        pointBackgroundColor: 'transparent',
+        pointHoverBackgroundColor: 'transparent',
         pointBorderWidth: 0,
-        pointRadius: 0,
-        pointBorderColor: colors.white,
+        pointRadius: 8,
+        pointHoverRadius: 8,
+        pointBorderColor: 'transparent',
 
-        borderColor: light,
-        backgroundColor: light,
-        fill: true
+        borderColor: colors.blue,
+        backgroundColor: colors.blue,
+        fill: false
       }]
 
       if (this.myChart !== undefined) {
@@ -164,22 +166,24 @@ export default {
           showAllTooltips: false,
           tooltips: {
             displayColors: false,
-            backgroundColor: colors.white,
+            backgroundColor: colors.black,
             bodyFontFamily: 'Maven Pro',
-            bodyFontSize: 12,
+            bodyFontSize: 16,
+            bodySpacing: 12,
             titleFontSize: 0,
             titleSpacing: 0,
             titleMarginBottom: -6,
-            bodyFontColor: solid,
-            yPadding: 10,
-            borderColor: colors.red,
+            bodyFontColor: colors.white,
+            yPadding: 20,
+            xPadding: 20,
+            borderColor: colors.black,
             borderWidth: 1,
             callbacks: {
               label: function (item, data) {
                 if (Number(item.yLabel) < 1 && Number(item.yLabel) > 0) {
                   return numeral(item.yLabel).format('0.00%')
                 }
-                return numeral(item.yLabel).format('0.00a')
+                return ["Potential Excess of \r\n", numeral(item.yLabel).format('0,0') + " units"]
               }
             }
           },
@@ -188,11 +192,11 @@ export default {
           scales: {
             yAxes: [{
               gridLines: {
-                color: solid,
+                color: colors.lightgrey,
                 display: false,
-                zeroLineColor: solid,
+                zeroLineColor: colors.lightgrey,
               },
-              position: 'right',
+              position: 'left',
               ticks: {
                 display: true,
                 position: 'right',
@@ -206,9 +210,9 @@ export default {
             }],
             xAxes: [{
               gridLines: {
-                color: solid,
+                color: colors.lightgrey,
                 display: false,
-                zeroLineColor: solid,
+                zeroLineColor: colors.lightgrey,
               },
               ticks: {
                 fontSize: 12,
@@ -224,53 +228,6 @@ export default {
         if (this.animation === false) {
           options.animation = false
         }
-
-        Chart.pluginService.register({
-          beforeRender: function (chart) {
-            if (chart.config.options.showAllTooltips) {
-              // create an array of tooltips
-              // we can't use the chart tooltip because there is only one tooltip per chart
-              chart.pluginTooltips = []
-              chart.config.data.datasets.forEach(function (dataset, i) {
-                chart.getDatasetMeta(i).data.forEach(function (sector, j) {
-                  chart.pluginTooltips.push(new Chart.Tooltip({
-                    _chart: chart.chart,
-                    _chartInstance: chart,
-                    _data: chart.data,
-                    _options: chart.options.tooltips,
-                    _active: [sector]
-                  }, chart))
-                })
-              })
-
-              // turn off normal tooltips
-              chart.options.tooltips.enabled = false
-            }
-          },
-          afterDraw: function (chart, easing) {
-            if (chart.config.options.showAllTooltips) {
-              // we don't want the permanent tooltips to animate, so don't do anything till the animation runs atleast once
-              if (!chart.allTooltipsOnce) {
-                if (easing !== 1) {
-                  return
-                }
-                chart.allTooltipsOnce = true
-              }
-
-              // turn on tooltips
-              chart.options.tooltips.enabled = true
-              Chart.helpers.each(chart.pluginTooltips, function (tooltip) {
-                tooltip.initialize()
-                tooltip.update()
-                // we don't actually need this since we are not animating tooltips
-                tooltip.pivot()
-                tooltip.transition(easing).draw()
-              })
-              chart.options.tooltips.enabled = false
-            }
-          }
-        })
-
         this.myChart = new Chart(ctx, {
           type: 'line',
           data: {

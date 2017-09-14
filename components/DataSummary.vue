@@ -148,6 +148,9 @@ export default {
 
   computed: {
     selection () {
+      if (this.choice().copy === 'National') {
+        return 'United States'
+      }
       return this.choice().copy
     }
   },
@@ -231,6 +234,8 @@ json('../assets/fonts.json')
       z-index 1
     > .copy:nth-child(3)
       animation inFromTop 0.6s ease-in-out 0.95s both
+      width 400px
+      margin auto
     > .copy
       padding 0 0 30px 0
     > .copy_print
@@ -243,7 +248,7 @@ json('../assets/fonts.json')
         max-width 170px
         vertical-align top
         display inline-block
-        border-right 1px solid white
+        border-right 1px solid rgba(white, 0.3)
         &:nth-child(1)
           animation inFromTop 0.6s ease-in-out 0s both
         &:nth-child(2)

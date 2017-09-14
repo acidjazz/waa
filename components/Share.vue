@@ -2,7 +2,7 @@
 #Share
   a.action.share
     .button(@click="modal('shares')")
-      i.fa.fa-fw.fa-share
+      i.fa.fa-fw.fa-share-alt
       .copy Share
     .modal.modal_shares(
       :class="{ on: modals.shares, off: !modals.shares }",
@@ -17,12 +17,12 @@
           i.fa.fa-fw.fa-twitter(@click="share('twitter')")
   a.action.pdf(v-if="query === true",:href="'http://pdf.weareapartments.org?url=' + encodeURIComponent('/calculated/' + parsed)")
     .button
-      i.fa.fa-fw.fa-lg.fa-file-pdf-o
-      .copy Create PDF
+      i.fa.fa-fw.fa-lg.fa-file
+      .copy PDF Snapshot
   a.action.pdf(v-else,:href="'http://pdf.weareapartments.org?url=' + $route.path")
     .button
-      i.fa.fa-fw.fa-lg.fa-file-pdf-o
-      .copy Create PDF
+      i.fa.fa-fw.fa-lg.fa-file
+      .copy PDF Snapshot
 </template>
 
 <script>
@@ -117,7 +117,7 @@ json('../assets/fonts.json')
           color white
       &:nth-child(1)
         margin 0 10px 0 0
-      > .fa
+      > .fa-file
         color blue
       > .fa, > .copy
         transition color 0.2s ease 0.02s
