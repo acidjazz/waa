@@ -88,7 +88,7 @@
       .clear
     .border.big
     .border.big
-    MetroDemand
+    MetroStack
     Compare
     //.border.big
     // .border.big(v-if="(this.choice().type !== 'district')")
@@ -207,7 +207,7 @@ import BuildMore from '~/components/BuildMore.vue'
 import HeatChart from '~/components/HeatChart.vue'
 import Downloads from '~/components/Downloads.vue'
 import Compare from '~/components/Compare.vue'
-import MetroDemand from '~/components/MetroDemand.vue'
+import MetroStack from '~/components/MetroStack.vue'
 
 export default {
   mixins: [ filtermixin ],
@@ -227,7 +227,7 @@ export default {
     HeatChart,
     Downloads,
     Compare,
-    MetroDemand,
+    MetroStack,
   },
 
   methods: {

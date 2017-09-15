@@ -33,8 +33,6 @@ doctype
           .frame(v-in-viewport)
             .building(v-in-viewport)
       .clear
-  .border.big
-  MetroStack
   .sources Source: 
     span Hoyt Advisory Services; NMHC/NAA; U.S. Census Bureau.; Axiometrics, a RealPage Company
   Bottom
@@ -44,13 +42,12 @@ doctype
 import Top from '~/components/Top.vue'
 import Demand from '~/components/Demand.vue'
 import GradientChart from '~/components/GradientChart.vue'
-import MetroStack from '~/components/MetroStack.vue'
 import Bottom from '~/components/Bottom.vue'
 import inViewportDirective from 'vue-in-viewport-directive'
 import ICountUp from 'vue-countup-v2'
 export default {
   directives: { 'in-viewport': inViewportDirective },
-  components: { Top, Demand, GradientChart, MetroStack, Bottom, ICountUp },
+  components: { Top, Demand, GradientChart, Bottom, ICountUp },
   data () {
     return {
       options: {
