@@ -28,7 +28,7 @@ json('../assets/fonts.json')
   padding 20px
   position relative
   > .title
-    font h1
+    font h3
     padding 0 0 20px 0
     float left
   > .legend

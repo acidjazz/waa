@@ -55,7 +55,7 @@ json('../assets/fonts.json')
   border-radius 6px
   width 310px
   > .title
-    font h1
+    font h3
     padding 20px
     border-bottom 1px solid lightgrey
   > .body

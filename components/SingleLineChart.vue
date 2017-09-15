@@ -32,7 +32,7 @@ json('../assets/fonts.json')
   padding 20px
   position relative
   > .title
-    font h1
+    font h3
   > .description
     color grey
   > canvas
@@ -41,7 +41,7 @@ json('../assets/fonts.json')
   > .spike
     padding 10px 0 0 0
     > .value
-      font h2
+      font h1
   > .tagline
     color grey
 </style>
