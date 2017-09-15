@@ -23,7 +23,7 @@
 
 </template>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 json('../assets/colors.json')
 json('../assets/fonts.json')
 .chartainer

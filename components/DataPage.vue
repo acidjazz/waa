@@ -68,7 +68,7 @@
       .clear
 
     .section.section_chart(v-if="this.choice().type !== 'district'")
-      .chart
+      .chart.left
         MultiLineChart(
           :animation="true",
           :type="this.choice().type",
@@ -76,22 +76,16 @@
           :state="this.choice().state",
           data='aptsneeded',
           id='aptsneeded',
-          width=830,height=300)
+          width=830,height=396)
       .right.left_inyourcity(v-if="this.choice().type === 'metro'")
         .copy barriers to apartments construction
         HeatChart(:metro="this.choice().value")
         .tip Index based on local regulations and available land
         .title Red Tape Rating
         .copy Over the last three decades, regulatory barriers to apartment construction have increased significantly, most notably at the local level.
+      .right(v-if="this.choice().type === 'national'")
+        NationalStats
       .clear
-      .copys.copyLeft(v-if="this.choice().type === 'district'")
-        .copy Red Tape Rating
-        .copy Over the last three decades, regulatory barriers to apartment construction have increased significantly, most notably at the local level
-      .clear
-      .copys.copyRight(v-if="this.choice().type === 'district' || this.choice().type === 'metro'")
-        .copy We Need to Build More
-        .copy Apartment demand is growing and the industry needs to keep up. However, producing enough new apartments to meet demand requires new development approaches, more incentives and fewer restrictions.
-
     .border.big
     .border.big
     MetroDemand
@@ -206,6 +200,7 @@ import DistrictCopy from '~/components/DistrictCopy.vue'
 import DistrictTrio from '~/components/DistrictTrio.vue'
 import SingleLineChart from '~/components/SingleLineChart.vue'
 import MultiLineChart from '~/components/MultiLineChart.vue'
+import NationalStats from '~/components/NationalStats.vue'
 import Demand from '~/components/Demand.vue'
 import Share from '~/components/Share.vue'
 import BuildMore from '~/components/BuildMore.vue'
@@ -225,6 +220,7 @@ export default {
     DistrictTrio,
     SingleLineChart,
     MultiLineChart,
+    NationalStats,
     Demand,
     Share,
     BuildMore,

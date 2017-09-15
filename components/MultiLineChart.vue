@@ -1,6 +1,8 @@
 <template lang="pug">
 #HousingGap
+  tooltip(align="right")
   .title The Apartment Housing Gap
+  .clear
   .legend
     .item
       .dot.dot_blue
@@ -9,22 +11,54 @@
       .dot.dot_purple
       .copy Annual Construction Rate
   .stat
-    .value {{ $store.state.homesNeeded }} 
-    .copy Apartment Homes Needed in 
+    strong {{ $store.state.homesNeeded }} 
+    span Apartment Homes Needed in 
       span(v-if="type !== 'metro'") the Country
       span(v-if="type === 'metro'") {{ this.choice().copy }}
   .chartainer
-    tooltip(align="left")
     canvas(:id="'chart-' + id",:width="width",:height="height")
 </template>
 
 <style lang="stylus">
 json('../assets/colors.json')
-.chartainer
+json('../assets/fonts.json')
+#HousingGap
+  border 1px solid lightgrey
+  border-radius 6px
+  padding 20px
   position relative
-  > canvas
-    width inherit
-    height inherit
+  > .title
+    font h1
+    padding 0 0 20px 0
+    float left
+  > .legend
+    > .item
+      > .dot
+        float left
+        width 14px
+        height 14px
+        border-radius 7px
+        margin 0 10px 0 0
+        &.dot_blue
+          background-color blue
+        &.dot_purple
+          background-color royalpurple
+      > .copy
+        float left
+        color grey
+        line-height 14px
+        margin 0 10px 0 0
+  > .stat
+    line-height 14px
+    float right
+    > span
+      color grey
+      font-size 14px
+  > .chartainer
+    position relative
+    > canvas
+      width inherit
+      height inherit
 </style>
 
 <script>
