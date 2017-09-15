@@ -75,9 +75,9 @@
         .copy We Need to Build More
         .copy Apartment demand is growing and the industry needs to keep up. However, producing enough new apartments to meet demand requires new development approaches, more incentives and fewer restrictions.
 
-    .border.big
-    .border.big
-    MetroDemand
+    //.border.big
+    //.border.big
+    //MetroDemand
     Compare
     //.border.big
     // .border.big(v-if="(this.choice().type !== 'district')")
