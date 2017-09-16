@@ -33,8 +33,10 @@ json('../assets/fonts.json')
   position relative
   > .title
     font h3
+    color casal
   > .description
     color grey
+    font c1s
   > canvas
     width inherit
     height inherit
@@ -42,8 +44,10 @@ json('../assets/fonts.json')
     padding 10px 0 0 0
     > .value
       font h1
+      color casal
   > .tagline
     color grey
+    font c1s
 </style>
 
 <script>

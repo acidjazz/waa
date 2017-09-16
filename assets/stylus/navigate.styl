@@ -5,7 +5,7 @@
   z-index 20
   position fixed
   &.sticky
-    transform translate(10px, -10px)
+    transform translate(20px, -20px)
   > .inner > .cbutton > .icon
     display none
   &.on
@@ -15,8 +15,9 @@
       transform scale(30)
       transition transform 0.5s ease-in-out 0s
     > .inner > .cbutton
+      transition background 0.5s ease-in-out 0s, color 0.5s ease-in-out 0s
       background-color white
-      color darkblue
+      color casal
       > .copy.copy_menu
         display none
       > .icon.icon_menu
@@ -25,15 +26,22 @@
       opacity 1
       transition opacity 0.1s ease-in-out 0.3s
   &.off
-    width 100px
-    height 100px
+    width 140px
+    height 140px
     transition width 0s linear 0.6s, height 0s linear 0.6s, transform 1s cubic-bezier(.87,-0.41,.19,1.44) 0s
     > .blue
       transform scale(1)
       transition transform 0.3s ease-in-out 0s
     > .inner > .cbutton
-      background-color rgba(darkblue)
+      transition background 0.5s ease-in-out 0s, color 0.5s ease-in-out 0s
       color white
+      background repeating-linear-gradient(
+        -45deg,
+        casal,
+        casal 4px,
+        bigstone 4px,
+        bigstone 8px
+      )
       > .copy.copy_close
         display none
       > .icon.icon_close
@@ -44,13 +52,11 @@
 
   > .blue
     position absolute
-    background-color darkblue
-    width 100px
-    height 100px
-    top 0
-    right 0
-    top 0px
-    right 0px
+    background-color bigstone
+    width 140px
+    height 140px
+    top -10px
+    right -10px
     border-radius 50%
   > .inner
     position absolute
@@ -59,14 +65,14 @@
     width 100vw
     height 100vh
     > .cbutton
-      width 100px
-      height 100px
+      width 140px
+      height 140px
       position absolute
       cursor pointer
-      top 0
-      right 0
+      top -10px
+      right -10px
       text-align center
-      line-height 100px
+      line-height 140px
       border-radius 50%
       transition background-color 0.2s ease-in-out 0.2s
       user-select none

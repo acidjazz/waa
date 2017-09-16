@@ -230,7 +230,7 @@ json('../assets/fonts.json')
       animation inFromTop 0.6s ease-in-out 0.85s both
     > .copy:nth-child(2)
       animation inFromTop 0.6s ease-in-out 0.9s both
-      font-size 30px
+      font h2
       z-index 1
     > .copy:nth-child(3)
       animation inFromTop 0.6s ease-in-out 0.95s both
