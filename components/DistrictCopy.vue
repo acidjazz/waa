@@ -2,7 +2,7 @@
 .DistrictCopy
   .inner
     .copy did you know?
-    .copy Just 100 apartments in your district creates a powerful economic benefit.
+    .copy Just 100 apartments in your district create a powerful economic benefit.
   .pointers
     .pointer
       .icon.icon-residents

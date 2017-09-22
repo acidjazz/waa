@@ -5,15 +5,15 @@ p(v-in-viewport) New research shows that demand for apartments is on the rise.  
     span {{ households }} 
     | new apartment households 
     span by 2030
-  span(v-if="type === 'state'") this state will add 
+  span(v-if="type === 'state'") this state will need to add
     span {{ households }} 
     | new apartment households 
     span by 2030
-  span(v-if="type === 'metro'") this metro will add 
+  span(v-if="type === 'metro'") this metro will need to add
     span {{ households }} 
     | new apartment households 
     span by 2030
-  span(v-if="type === 'district'") this district will add 
+  span(v-if="type === 'district'") this district will need to add
     span {{ households }} 
     | new apartment households 
     span by 2030

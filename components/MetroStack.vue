@@ -3,7 +3,7 @@ doctype
 #MetroStack
   .inner
     .title(v-in-viewport) Stacking up the Metros
-    .copy(v-in-viewport) Based on specific factors like local regulations and available land to develop, the Barriers to Apartment Construction Index ranks 50 metro areas on how hard it is to add new apartments. See how your city stacks up. 
+    .copy(v-in-viewport) Based on specific factors like local regulations and available land to develop, the Barriers to Apartment Construction Index ranks 50 metro areas on how hard it is to add new apartments. See how your city stacks up.  Barriers to Apartment Construction Index is a HAS composite of methodology using the Wharton Residential Land Use Restrictions Index overall and the portion of it based on only the developable land sub-index. This index ranges from 19.5 (Honolulu, most difficult to build) to –6.0 (New Orleans, easiest to build) with a Metro average of 2.0.
     .metros(v-in-viewport)
       .copy Barriers to Apartment Construction Index
       .list
