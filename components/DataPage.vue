@@ -21,7 +21,7 @@
         .copys
           .copy Apartment Household Growth
           .copy Population growth and a higher propensity to rent will create a need for more apartments by 2030. 
-      .chart
+      //.chart
         SingleLineChart(data='rentgrowth',id='rentgrowth',:choice="this.choice()",:animation="true",theme="lime",width=380,height=300)
         .copys
           .copy Growth in Rentership
@@ -62,13 +62,13 @@
         .copy barriers to apartments construction
         HeatChart(:metro="this.choice().value")
         .tip Index based on local regulations and available land
-        .title Barriers to to New Apartments
+        .title Barriers to New Apartments
         .copy Over the last three decades, regulatory barriers to apartment construction have increased significantly, most notably at the local level.
       .chart
         MultiLineChart(:animation="true",:type="this.choice().type",:value="this.choice().value",:state="this.choice().state",data='aptsneeded',id='aptsneeded',theme="red",width=830,height=300)
       .clear
       .copys.copyLeft(v-if="this.choice().type === 'district'")
-        .title Barriers to to New Apartments
+        .title Barriers to New Apartments
         .copy Over the last three decades, regulatory barriers to apartment construction have increased significantly, most notably at the local level
       .clear
       .copys.copyRight(v-if="this.choice().type === 'district' || this.choice().type === 'metro'")
@@ -128,7 +128,7 @@
         .copys
           .copy Apartment Household Growth
           .copy Population growth and a higher propensity to rent will create a ..
-      .chart
+      //.chart
         SingleLineChart(data='rentgrowth',id='rentgrowth_print',:choice="this.choice()",:animation="false",theme="lime",width=400,height=300)
         .copys
           .copy Growth in Rentership
@@ -436,15 +436,15 @@ json('../assets/fonts.json')
            
 
     > .section_charts
-      width 750px
+      width 640px
       margin auto
       > .chart
         float left
-        width 33%
-        margin-right 0px
+        width 45%
+        margin-right 60px
         > .chartainer > .tooltip
           display none
-        &:nth-child(3)
+        &:nth-child(2)
           margin-right 0px
         > .copys
           margin 0px 5px 0 5px
@@ -576,13 +576,13 @@ json('../assets/fonts.json')
         top 30px
         right 60px
     > .section_charts
-      width 1200px
+      width 880px
       margin auto
       > .chart
         float left
         width 380px
-        margin-right 30px
-        &:nth-child(3)
+        margin-right 120px
+        &:nth-child(2)
           margin-right 0px
         > .copys
           margin 20px 0 0 0
