@@ -18,7 +18,7 @@
       .copy The Operation
       .copy of those
         b 100 apartments 
-        | anually generates an extra 
+        | annually generates an extra 
         b {{ operations.impact }}  
         | in economic contribution and supports  
         b {{ operations.jobs }} jobs.
