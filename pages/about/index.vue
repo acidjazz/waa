@@ -4,18 +4,17 @@ doctype
   Top(type="dark")
   .page_content
     .section.section_top
-
       .inner
-        .paper(v-in-viewport)
-        .vase(v-in-viewport)
+
         .copys
-          .copy(v-in-viewport) Our Initiative
-          .copy(v-in-viewport) Growing apartment demand
-          .copy(v-in-viewport) Delayed marriages, an aging population and immigration are increasing a pressing need for new apartments, to the tune of 4.6 million by 2030. See how we can meet this demand.
-          router-link.cta(to="/vision",v-in-viewport) our vision
+          .copy growing apartment demand
+          .copy Delayed marriages, an aging population and immigration are increasing a pressing need for new apartments, to the tune of 4.6 million by 2030.
+          .copy See how we can meet this demand.
+
+          .button.is-centered(v-in-viewport)
+            router-link(to="/vision") our vision
 
       
-      //.copy In communities across the country, apartments work – helping people live in a home that’s right for them. 
     .section.section_about
       .copy(v-in-viewport) about the research
       .logos(v-in-viewport)

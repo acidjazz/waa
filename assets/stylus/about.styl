@@ -8,70 +8,43 @@ json('../../assets/fonts.json')
     &.section_top
       height 100vh
       width 100%
-      background linear-gradient(100deg, #a2cdcf, #6991a9)
       position relative
+      mix-blend-mode multiply
+      background-image linear-gradient(157deg, #f6b57c, #ec6999 83%)
       > .inner
-        > .vase
-          position absolute
-          top 50%
-          right 0
-          margin-top -304px
-          width 310px
-          height 609px
-          background-image url(/about-vase.png)
-          transform translate(20px, 0)
-          transition opacity 1s ease-in-out 0s, transform 1s ease-in-out 0s
-          opacity 0
-          &.in-viewport
-            transform translate(0, 0)
-            opacity 1
-        > .paper
-          position absolute
-          width 623px
-          height 786px
-          top 50%
-          left 50%
-          margin-top -393px
-          margin-left -211px
-          background-image url(/about-paper.png)
-          transform scale(0.9)
-          transition opacity 1s ease-in-out 0.2s, transform 1s ease-in-out 0.2s
-          opacity 0
-          &.in-viewport
-            transform scale(1)
-            opacity 1
+        width 100%
+        height 100%
         > .copys
+          color white
+          width 800px
+          text-align center
           position absolute
-          width 260px
-          height 396px
           top 50%
           left 50%
-          margin-top -196px
-          margin-left -430px
+          margin-top -148px
+          margin-left -400px
           > .copy:nth-child(1)
-            font h2
-            width 200px
-            inViewport(0.1)
+            text-transform uppercase
+            font c1
+            padding 0 0 40px 0
           > .copy:nth-child(2)
-            font c1sb
-            text-transform uppercase
-            padding 20px 0
-            inViewport(0.2)
+            font h2
+            padding 0 0 40px 0
           > .copy:nth-child(3)
-            inViewport(0.3)
-          > .cta
-            margin 60px 0 0 0
-            padding 10px 20px
-            background-color white
-            color blue
-            text-decoration none
-            border-radius 3px
-            text-transform uppercase
+            padding 0 0 40px 0
+          > .button
             font c1sb
-            float left
-            inViewport(0.5)
-            &:hover
-              transform scale(1.05)
+            text-transform uppercase
+            > a
+              background-color rgba(white, 0.1)
+              border 1px solid rgba(white, 0.6)
+              &:hover
+                color black
+                background-color rgba(white, 1) 
+              transition background-color 0.5s ease 0s, transform 0.2s ease 0s
+              &:hover
+                transform scale(1.05)
+
     &.section_about
       margin 60px auto
       width 900px
