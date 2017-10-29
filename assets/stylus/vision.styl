@@ -10,122 +10,146 @@ json('../../assets/fonts.json')
   color grey
 
 .page.page_vision > .page_content
-  padding 60px 0
+  padding 0 0 60px 0
   > .section
     > .inner
       padding 60px 0
       margin auto
     &.section_top
+      position relative
+      width 100%
+      height 100vh
+      background-image url(/vision-banner.jpg)
+      > .outer
+        background-image linear-gradient(157deg, rgba(purple, 0.8), rgba(blue, 0.8) 83%)
+        position absolute
+        width 100%
+        height 100vh
       > .inner
-        width 700px
-        position relative
+        position absolute
+        width 760px
+        height 280px
+        margin-top -140px
+        margin-left -380px
+        top 50%
+        left 50%
+        text-align center
+        color white
+        > .title
+          font c1
+          inViewport(0.1)
         > .copy
           font h2b
           line-height 50px
-          inViewport(0.0)
-        > .highlight
-          width 202px
-          height 20px
-          background-image url(/vision-highlight.png)
-          background-size cover
-          position absolute
-          top 110px
-          right 0
-          transform scale(1.05)
-          opacity 0
-          &.in-viewport
-            transition transform 1s ease-in-out 1s, opacity 0.8s ease-in-out 0.8s
-            transform scale(1)
-            opacity 1
-        > .copys
-          color grey
-          line-height 36px
-          > p:nth-child(1)
-            inViewport(0.1)
-          > p:nth-child(2)
-            inViewport(0.2)
+          inViewport(0.2)
+        > .cta
+          display inline-block
+          margin-top 40px
+          border 1px solid white
+          border-radius 3px
+          color white
+          text-decoration none
+          padding 10px 40px
+          inViewport(0.3)
+          background-color rgba(white, 0.1)
 
 
     &.section_together
       > .inner
-        width 700px
-        > .copy:nth-child(1)
-          font h2
-          text-align center
-          padding 0 0 30px 0
-          inViewport(0)
-        > .copy:nth-child(2)
-          color grey
-          text-align center
-          width 480px
-          margin auto
-          inViewport(0.1)
-        > .blocks
-          padding 60px 0
-          column-count 2
-          column-gap 60px
-          > .block
-            height 200px
-            display table
-            inViewport(0)
-            > .icon
-              float left
-              padding 10px
-              margin 10px 0 0 0
-              background-color lightgrey
-              border-radiheartus 3px
-              &.icon-heart > .inner
-                width 32px
-                height 24px
-                background-image url(/icon-heart.png)
-              &.icon-comment > .inner
-                width 32px
-                height 25px
-                background-image url(/icon-comment.png)
-              &.icon-network > .inner
-                width 31px
-                height 32px
-                background-image url(/icon-network.png)
-              &.icon-shake > .inner
-                width 32px
-                height 25px
-                background-image url(/icon-shake.png)
-            > .copy
-              margin 0 0 0 70px
-            > .copy:nth-child(2)
-              color purple
-              text-transform upppercase
-              text-transform uppercase
-              padding 0 0 10px 0
-              font c1b
-            > .copy:nth-child(3)
-              color grey
-
-    &.section_download
-      background-color blue
-      color white
-      > .inner
         width 900px
-        inViewport(0)
-        > .copy
-          float left
-          font h3
+        margin auto
+
+        > .top-block
+          background-color lightgrey
+          padding 60px 30px
           width 600px
-          line-height 30px
-        > .cta
-          font c1sb
-          float right
-          padding 15px 30px
-          border 1px solid white
+          position relative
+          inViewport(0)
+          > #Share
+            margin 0 0 0 260px
+          > .title
+            font h6
+          > .copy
+            font c1
+            color grey
+            padding 20px 0
+          > .line
+            position absolute
+            background-color black
+            width 4px
+            height 80px
+            bottom -40px
+            left 60px
+
+        > .image-text-block-1
+          padding 90px 0
+          > .image
+            float left
+            width 660px
+            inViewport(0)
+            > img
+              width inherit
+          > .text
+            float right
+            inViewport(0.1)
+            width 180px
+            margin-left 60px
+            > .title
+              font h6
+              margin 90px 0 30px 0
+            > .copy
+              color grey
+              font c1
+
+        > .image-text-block-2
+          padding 90px 0
+          > .image
+            inViewport(0.1)
+            float right
+            width 360px
+            > img
+              width inherit
+          > .text
+            inViewport(0)
+            float left
+            width 220px
+            margin-left 160px
+            > .title
+              font h6
+              margin 60px 0 30px 0
+            > .copy
+              color grey
+              font c1
+
+        > .bottom-block
+          inViewport(0)
+          padding 60px 90px
+          width 600px
+          background-image linear-gradient(157deg, #f6b57c, #ec6999 83%)
           border-radius 3px
-          text-transform uppercase
-          text-decoration none
-          color white
-          transition background-color 0.2s ease 0s
-          transition color 0.2s ease 0s
-          &:hover
+          margin auto
+          position relative
+          > .copy
+            float left
+            width 400px
+            color white
+          > a.cta
+            float right
+            padding 10px 30px
             background-color white
-            color blue
+            border-radius 3px
+            text-decoration none
+            color black
+            font c1b
+            margin-top 30px
+          > .line
+            position absolute
+            background-color black
+            width 4px
+            height 80px
+            top -40px
+            right 180px
+
     &.section_stakes
       > .inner
         width 700px

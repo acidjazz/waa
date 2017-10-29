@@ -35,6 +35,7 @@ doctype
       .clear
   .sources Source: 
     span Hoyt Advisory Services; NMHC/NAA; U.S. Census Bureau.; Axiometrics, a RealPage Company
+  Downloads
   Bottom
 </template>
 
@@ -45,9 +46,10 @@ import GradientChart from '~/components/GradientChart.vue'
 import Bottom from '~/components/Bottom.vue'
 import inViewportDirective from 'vue-in-viewport-directive'
 import ICountUp from 'vue-countup-v2'
+import Downloads from '~/components/Downloads.vue'
 export default {
   directives: { 'in-viewport': inViewportDirective },
-  components: { Top, Demand, GradientChart, Bottom, ICountUp },
+  components: { Top, Demand, GradientChart, Bottom, ICountUp, Downloads },
   data () {
     return {
       options: {

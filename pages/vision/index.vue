@@ -1,50 +1,45 @@
 <template lang="pug">
 doctype
 .page.page_vision
-  Top(type="light")
+  Top(type="dark")
   .page_content
     .section.section_top
+      .outer
       .inner
-        .copy(v-in-viewport) The country needs at least 4.6 million new apartments by 2030
-        .highlight(v-in-viewport)
-        .copys
-          p(v-in-viewport) But getting there won't be easy. It is time to take action across the country, in ways that are tailored to the needs of each community. The apartment industry stands ready to work with urban, suburban and rural communities in every region to meet the housing demand of Americans across all income levels.
-          p(v-in-viewport) Policymakers at all levels of government must recognize that addressing local housing needs requires a partnership between government and the private sector. The federal government can ensure sufficient funding of housing programs, enact a pro-housing tax policy, and reform regulations that unnecessarily increase housing costs. 
+        .title(v-in-viewport) GROWING APARTMENT DEMAND
+        .copy(v-in-viewport) The apartment industry stands ready to work with urban, suburban and rural communities in every region to meet the housing demand of Americans across all income levels
+        a.button.cta(v-in-viewport,href="/Vision2030.pdf") DOWNLOAD PDF
     .border.small.margined
     .section.section_together
       .inner
-        .copy(v-in-viewport) We Can Do This
-        .copy(v-in-viewport) State and local governments have a toolbox of approaches they can take to address the apartment shortage and help reduce the cost of housing. Working together, we can help them:
-        .blocks
-          .block(v-in-viewport='{ bottom: -200 }')
-            .icon.icon-heart
-              .inner
-            .copy adopt
-            .copy Adopt local public policies and programs that harness the power of the private sector to make housing affordability more feasible. 
-            .clear
-          .block(v-in-viewport='{ bottom: -200 }')
-            .icon.icon-comment
-              .inner
-            .copy collaborate
-            .copy Collaborate with business and community leaders to champion apartments.
-            .clear
-          .block(v-in-viewport='{ bottom: -200 }')
-            .icon.icon-network
-              .inner
-            .copy leverage
-            .copy Leverage state-level authority to overcome obstacles to apartment construction.
-            .clear
-          .block(v-in-viewport='{ bottom: -200 }')
-            .icon.icon-shake
-              .inner
-            .copy partner
-            .copy Increase public-private partnerships to produce apartments that households can afford.
-            .clear
-    .section.section_download
-      .inner(v-in-viewport)
-        .copy Read our Vision for 2030 on how public-private partnerships can help us solve the country's housing affordability challenge.
-        a.cta(href="/Vision2030.pdf") download
-        .clear
+        .top-block(v-in-viewport)
+          Share(:pdf="false")
+          .title(v-in-viewport) We Can Do This
+          .copy(v-in-viewport) State and local governments have a toolbox of approaches they can take to address the apartment shortage and help reduce the cost of housing. Working together, we can help them:
+          .line
+
+        .image-text-block-1
+          .image(v-in-viewport)
+            img(src="/vision-pic1.jpg")
+          .text(v-in-viewport)
+            .title Authority & Partnerships
+            .copy Leverage state-level authority to overcome obstacles to apartment construction and increase public-private partnerships to produce apartments that households can afford
+          .clear
+
+        .image-text-block-2
+          .image(v-in-viewport)
+            img(src="/vision-pic2.jpg")
+          .text(v-in-viewport)
+            .title Policy & Collaboration
+            .copy Adopt locla public policies and programs that harness the power of the private sector to make housing affordability more feasible.  Collaborate with business and community leaders to champion apartments.
+          .clear
+
+        .bottom-block(v-in-viewport)
+          .copy Read our Vision for 2030 on how public-private partnerships can help us solve the country's housing affordability challenge.
+          a.cta(href="/Vision2030.pdf") DOWNLOAD PDF
+          .clear
+          .line
+
     .section.section_stakes
       .inner
         .copy(v-in-viewport) The Stakes are High
@@ -113,10 +108,11 @@ import MetroChart from '~/components/MetroChart.vue'
 import BarrierChart from '~/components/BarrierChart.vue'
 import DualLineChart from '~/components/DualLineChart.vue'
 import FAQ from '~/components/FAQ.vue'
+import Share from '~/components/Share.vue'
 import Bottom from '~/components/Bottom.vue'
 import inViewportDirective from 'vue-in-viewport-directive'
 export default {
   directives: { 'in-viewport': inViewportDirective },
-  components: { Top, BuildMoreChart, BarrierChart, DualLineChart, FAQ, Bottom }
+  components: { Top, BuildMoreChart, BarrierChart, DualLineChart, FAQ, Share, Bottom }
 }
 </script>
