@@ -39,3 +39,4 @@ Continuous Deployment is setup using the [git-flow](http://nvie.com/posts/a-succ
 * Branch [master](https://github.com/acidjazz/waa/tree/master) merges deploy to http://weareapartments.org/
 
 
+
