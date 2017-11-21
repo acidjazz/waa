@@ -1,9 +1,11 @@
 <template lang="pug">
 .page.page_data
-  DataPage
+  Soon(v-if="$route.params.metro === 'greensboro'")
+  DataPage(v-else)
 </template>
 
 <script>
 import DataPage from '~/components/DataPage.vue'
-export default { components: { DataPage } }
+import Soon from '~/components/Soon.vue'
+export default { components: { DataPage, Soon } }
 </script>
