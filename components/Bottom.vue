@@ -1,7 +1,7 @@
 <template lang="pug">
 #Bottom
-  .border.big
-  .upper
+  .border.big(v-if="upper")
+  .upper(v-if="upper")
     .section.navigation
       .link: router-link(to="/data") apartment data
       .link: router-link(to="/calculator") apartment calculator
@@ -23,7 +23,7 @@
               i.fa.fa-envelope(area-hidden=true)
         .clear
     .clear
-  .lower
+  .lower(:class="{dark: dark}")
     .inner
       .section.title
         router-link.copy(to="/") We Are Apartments
@@ -33,6 +33,23 @@
         a.logo.logo-naa(href="https://www.naahq.org/",target="_new")
       .clear
 </template>
+
+<script>
+export default {
+  props: {
+    upper: {
+      type: Boolean,
+      required: false,
+      default: true,
+    },
+    dark: {
+      type: Boolean,
+      required: false,
+      default: false,
+    }
+  }
+}
+</script>
 
 <style lang="stylus">
 
@@ -97,6 +114,8 @@ json('../assets/fonts.json')
   > .lower
     background-color darkblue
     padding 60px 0
+    &.dark
+      background-color black
     > .inner
       width 1200px
       margin auto

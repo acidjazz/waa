@@ -1,33 +1,30 @@
 <template lang="pug">
 .calculator
   .header
-    .icon
-      .inner
     .copy
-      p Calculate
-      p The economic contribution of an apartment community in your state or metro area
+      p Calculator
+      p Calculate the economic contribution of an apartment community in your state or metro area below.
   .params
     .param
       .label: .copy type
       .options
         .option(@click="type = 'existing'",:class="{ selected: (type === 'existing')}")
-          .checkbox: .fa.fa-check
+          .checkbox: .fa.fa-check.fa-2x
           .copy Existing Apartment Community
         .option(@click="type = 'new'",:class="{ selected: (type === 'new')}")
-          .checkbox: .fa.fa-check
+          .checkbox: .fa.fa-check.fa-2x
           .copy Potential New Development
     .param
-      .label: .copy number
+      .label: .copy number of homes
       .options
         .input
           input(type="number",placeholder="How many apartment homes?",v-model="number",:class="{ error: errors.number, success: errors.success.number }")
     .param
-      .label: .copy calculate
+      .label: .copy calculate by
       .options(:class="{ error: errors.calculate, success: errors.success.calculate }")
-        .copy Calculate By:
         .pulldowns
           .pulldown(:class="{ selected: (by === 'metro') }")
-            .checkbox: .fa.fa-check
+            .checkbox: .fa.fa-check.fa-2x
             .pullarea
               .select.select_metro
                 select(v-model="metro",@change="change('metro', $event.target.value)")
@@ -36,7 +33,7 @@
               .pull: .fa.fa-chevron-down
 
           .pulldown(:class="{ selected: (by === 'state') }")
-            .checkbox: .fa.fa-check
+            .checkbox: .fa.fa-check.fa-2x
             .pullarea
               .select.select_state
                 select(v-model="state",@change="change('state', $event.target.value)")
@@ -44,7 +41,7 @@
                   option(v-for="option in states",:value="option",:selected="option === state") {{ option }}
               .pull: .fa.fa-chevron-down
           .pulldown(:class="{ selected: (by === 'national') }",@click="change('national')")
-            .checkbox: .fa.fa-check
+            .checkbox: .fa.fa-check.fa-2x
             .pullarea
               .copy National
 
