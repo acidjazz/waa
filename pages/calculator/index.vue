@@ -1,11 +1,11 @@
 <template lang="pug">
 .page.page_calc
-  Top(type="light")
+  Top(type="dark")
   .clear
   .page_content
     .inner 
       Calculator
-  Bottom
+  Bottom(:upper="false",:dark="true")
 </template>
 
 <script>
