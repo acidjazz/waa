@@ -97,7 +97,7 @@ doctype
               span {{ city.two.power.multiplier }}
 
   .inner
-    .title(v-in-viewport) Compare Your City
+    .title(v-in-viewport) Compare Your Metro
     hr(v-in-viewport)
     .copy(v-in-viewport) Enter two cities names in order to compare them
     .inputs(v-in-viewport)

@@ -12,6 +12,15 @@
         .clear
         .progress
           .inner
+
+    .stats
+      .stat.is-red
+        .title STAT
+        .value +50%
+        .clear
+        .progress
+          .inner
+
     .stats
       .stat.is-blue
         .title STAT
@@ -85,6 +94,13 @@ json('../assets/fonts.json')
             background-color lightpurple
             > .inner
               background-color royalpurple
+        &.is-red
+          > .value
+            color lightred
+          > .progress
+            background-color lightred
+            > .inner
+              background-color red
         &.is-blue
           > .value
             color sail
