@@ -13,8 +13,8 @@
   .stat
     strong {{ $store.state.homesNeeded }} 
     span Apartment Homes Needed in 
-      span(v-if="type !== 'metro'") the Country
-      span(v-if="type === 'metro'") {{ this.choice().copy }}
+      span(v-if="choice && choice.type !== 'metro'") the Country
+      span(v-if="choice && choice.type === 'metro'") {{ this.choice.copy }}
   .chartainer
     canvas(:id="'chart-' + id",:width="width",:height="height")
 </template>
@@ -68,7 +68,7 @@ import inViewport from 'vue-in-viewport-mixin'
 export default {
   mixins: [ inViewport ],
   components: { tooltip },
-  props: ['id', 'data', 'type', 'state', 'value', 'width', 'height', 'animation'],
+  props: ['id', 'data', 'choice', 'width', 'height', 'animation'],
 
   data () {
     return {
@@ -98,8 +98,8 @@ export default {
 
       switch (true) {
 
-        case this.type === 'national' && this.data === 'aptsneeded':
-        case this.type === 'state' && this.data === 'aptsneeded':
+        case this.choice && this.choice.type === 'national' && this.data === 'aptsneeded':
+        case this.choice && this.choice.type === 'state' && this.data === 'aptsneeded':
           this.json('US Building 2.json', (result) => {
             for (let key in result.data.data) {
               if (key !== "") {
@@ -117,12 +117,12 @@ export default {
           })
           break
 
-        case this.type === 'metro' && this.data === 'aptsneeded':
+        case this.choice && this.choice.type === 'metro' && this.data === 'aptsneeded':
           data = {labels: [], datas: [[], []]}
 
           this.json('Metro Building Current.json', (resultc) => {
             this.json('Metro Building Needed.json', (resultn) => {
-              let metro = resultc.data.labels.indexOf(this.value)
+              let metro = resultc.data.labels.indexOf(this.choice.value)
               for (let key in resultc.data.data) {
                 if (key !== "") {
                   data.labels.push(key)

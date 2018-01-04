@@ -1,42 +1,41 @@
 <template lang="pug">
 #NationalStats
-  .title National Stats
+  .title {{ choice.value }} Stats
 
   .body
     .copy Intro text
 
     .stats
       .stat.is-royalpurple
-        .title STAT
-        .value +50%
+        .title Before 1959
+        .value {{ stat.a }}%
         .clear
         .progress
-          .inner
+          .inner(:style="`width: ${stat.a}%`")
 
     .stats
       .stat.is-red
-        .title STAT
-        .value +50%
+        .title 1960-1979
+        .value {{ stat.b }}%
         .clear
         .progress
-          .inner
+          .inner(:style="`width: ${stat.b}%`")
 
     .stats
       .stat.is-blue
-        .title STAT
-        .value +50%
+        .title 1980-1999
+        .value {{ stat.c }}%
         .clear
         .progress
-          .inner
+          .inner(:style="`width: ${stat.c}%`")
 
     .stats
       .stat.is-yellow
-        .title STAT
-        .value +50%
+        .title 2000 or Later
+        .value {{ stat.d }}%
         .clear
         .progress
-          .inner
-
+          .inner(:style="`width: ${stat.d}%`")
 
     .numbers
       .number
@@ -54,6 +53,66 @@
       .clear
 
 </template>
+
+<script>
+
+import udata from '../static/US Age of Stock'
+import sdata from '../static/State Age of Stock'
+import mdata from '../static/Metro Age of Occupied Stock'
+
+export default {
+
+  props: {
+    choice: {
+      type: Object,
+      required: true,
+    }
+  },
+
+  mounted () {
+
+  },
+
+  computed: {
+
+    stat: function () {
+
+      var data = udata.data['Total U.S.']
+
+      if (this.choice.type === 'state') {
+        data = sdata.data[this.choice.value]
+      }
+
+      if (this.choice.type === 'metro') {
+        data = mdata.data[this.choice.value]
+      }
+
+      let total = data[0] + data[1] + data[2] + data[3]
+
+      console.log(this.choice)
+      console.log(data[0])
+
+      return {
+        a: Math.round(data[0] * 100 / total),
+        b: Math.round(data[1] * 100 / total),
+        c: Math.round(data[2] * 100 / total),
+        d: Math.round(data[3] * 100 / total),
+      }
+
+    }
+
+  },
+
+  data () {
+    return {
+
+    }
+
+  }
+
+}
+
+</script>
 
 <style lang="stylus">
 json('../assets/colors.json')
@@ -110,7 +169,7 @@ json('../assets/fonts.json')
               background-color cerulean
         &.is-yellow
           > .value
-            color lemonChiffon
+            color black
           > .progress
             background-color lemonChiffon
             > .inner
@@ -127,7 +186,8 @@ json('../assets/fonts.json')
           border-radius 6px
           > .inner
             background-color red
-            width 50%
+            width 0%
             height 100%
             border-radius 6px 
+            transition width 1s linear 0s
 </style>

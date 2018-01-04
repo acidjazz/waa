@@ -65,6 +65,7 @@ let sheets = [
   // yera apt built perc chart
   'District Age of Occupied Stock',
 
+  'State Age of Stock',
   'US Age of Stock',
   'US Housing Costs',
 
@@ -200,6 +201,7 @@ for (let index in excel) {
     case 'State HH Growth':
     case 'State Renter Households':
     case 'Metro Renter HHs':
+    case 'State Age of Stock':
 
       data.data = {}
       for (let value in sheet.data) {

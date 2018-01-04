@@ -71,20 +71,18 @@
       .chart.left
         MultiLineChart(
           :animation="true",
-          :type="this.choice().type",
-          :value="this.choice().value",
-          :state="this.choice().state",
+          :choice="this.choice()",
           data='aptsneeded',
           id='aptsneeded',
           width=830,height=396)
-      .right.left_inyourcity(v-if="this.choice().type === 'metro'")
+      //.right.left_inyourcity(v-if="this.choice().type === 'metro'")
         .copy barriers to apartments construction
         HeatChart(:metro="this.choice().value")
         .tip Index based on local regulations and available land
         .title Red Tape Rating
         .copy Over the last three decades, regulatory barriers to apartment construction have increased significantly, most notably at the local level.
-      .right(v-if="this.choice().type === 'national'")
-        NationalStats
+      .right
+        NationalStats(:choice="this.choice()")
       .clear
     .border.big
     .border.big
@@ -166,7 +164,7 @@
           .copy New Apartments Needed
       .left(v-if="this.choice().type !== 'metro'")
         // CircleChart(id="renters_print",width="225",height="225",value="70")
-      .left(v-else)
+      //.left(v-else)
         .copy barriers to apartments construction
         HeatChart(:metro="this.choice().value")
         .tip Index based on local regulations and available land
