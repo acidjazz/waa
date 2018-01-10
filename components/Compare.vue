@@ -97,50 +97,53 @@ doctype
               span {{ city.two.power.multiplier }}
 
   .inner
-    .title(v-in-viewport) Compare Your Metro
-    hr(v-in-viewport)
-    .copy(v-in-viewport) Enter two cities names in order to compare them
-    .inputs(v-in-viewport)
-      input(
-        placeholder="City One",
-        v-model="city.one.name",
-        @keydown.down="key('down', 'one')",
-        @keydown.up="key('up', 'one')",
-        @keydown.enter="key('enter', 'one')",
-        :class="{ matching: this.city.one.matching }"
-      )
-      .suggest(:class="{ off: suggest.one.matches.length < 1, on: suggest.one.matches.length > 0 }")
-        ul
-          li(
-            v-for="city, index in suggest.one.matches",
-            :class="{ selected: suggest.one.selected === index}",
-            @click="choose('one', city)",
-          ) {{ city }}
-      span vs.
-      input(
-        placeholder="City Two",
-        v-model="city.two.name"
-        @keydown.down="key('down', 'two')",
-        @keydown.up="key('up', 'two')",
-        @keydown.enter="key('enter', 'two')",
-        :class="{ matching: this.city.two.matching }"
-      )
-      .suggest(:class="{ off: suggest.two.matches.length < 1, on: suggest.two.matches.length > 0 }")
-        ul
-          li(
-            v-for="city, index in suggest.two.matches",
-            :class="{ selected: suggest.two.selected === index}",
-            @click="choose('two', city)",
-          ) {{ city }}
+    .section.section_right
+    .section.section_left
 
-    .cta(v-in-viewport)
-      input(
-      type="submit",
-      value="compare",
-      :class="{ active: this.city.one.matching === true && this.city.two.matching === true }",
-      @click="calculate()",
-      @keydown.enter="calculate()"
-    )
+      .title(v-in-viewport) Compare Your City
+      .copy(v-in-viewport) Enter two cities names in order to compare them
+      .inputs(v-in-viewport)
+        input(
+          placeholder="City One",
+          v-model="city.one.name",
+          @keydown.down="key('down', 'one')",
+          @keydown.up="key('up', 'one')",
+          @keydown.enter="key('enter', 'one')",
+          :class="{ matching: this.city.one.matching }"
+        )
+        .suggest(:class="{ off: suggest.one.matches.length < 1, on: suggest.one.matches.length > 0 }")
+          ul
+            li(
+              v-for="city, index in suggest.one.matches",
+              :class="{ selected: suggest.one.selected === index}",
+              @click="choose('one', city)",
+            ) {{ city }}
+        input(
+          placeholder="City Two",
+          v-model="city.two.name"
+          @keydown.down="key('down', 'two')",
+          @keydown.up="key('up', 'two')",
+          @keydown.enter="key('enter', 'two')",
+          :class="{ matching: this.city.two.matching }"
+        )
+        .suggest(:class="{ off: suggest.two.matches.length < 1, on: suggest.two.matches.length > 0 }")
+          ul
+            li(
+              v-for="city, index in suggest.two.matches",
+              :class="{ selected: suggest.two.selected === index}",
+              @click="choose('two', city)",
+            ) {{ city }}
+
+      .cta(v-in-viewport)
+        input(
+        type="submit",
+        value="compare",
+        :class="{ active: this.city.one.matching === true && this.city.two.matching === true }",
+        @click="calculate()",
+        @keydown.enter="calculate()"
+      )
+
+    .clear
 </template>
 <script>
 import Filters from '../static/Filters.json'

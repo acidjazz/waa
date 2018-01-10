@@ -69,10 +69,6 @@ export default {
     }
   },
 
-  mounted () {
-
-  },
-
   computed: {
 
     stat: function () {
@@ -88,9 +84,6 @@ export default {
       }
 
       let total = data[0] + data[1] + data[2] + data[3]
-
-      console.log(this.choice)
-      console.log(data[0])
 
       return {
         a: Math.round(data[0] * 100 / total),

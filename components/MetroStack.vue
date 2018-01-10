@@ -4,6 +4,7 @@ doctype
   .inner
     .title(v-in-viewport) Stacking up the Metros
     .copy(v-in-viewport) Based on specific factors like local regulations and available land to develop, the Barriers to Apartment Construction Index ranks 50 metro areas on how hard it is to add new apartments. See how your city stacks up. 
+    VertBorder
     .metros(v-in-viewport)
       .copy Barriers to Apartment Construction Index
       .list
@@ -17,8 +18,9 @@ import restrictIndex from '~/static/Metro Restriction Index.json'
 import ICountUp from 'vue-countup-v2'
 import inViewportDirective from 'vue-in-viewport-directive'
 import inViewport from 'vue-in-viewport-mixin'
+import VertBorder from '~/components/VertBorder'
 export default {
-  components: { ICountUp },
+  components: { ICountUp, VertBorder },
   directives: { 'in-viewport': inViewportDirective },
   mixins: [ inViewport ],
   methods: {
@@ -116,7 +118,6 @@ json('../assets/fonts.json')
     > .metros
       width 900px
       margin auto
-      border-top 1px solid lightgrey
       padding-top 60px
       &.below-viewport
         opacity 0

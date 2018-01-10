@@ -84,10 +84,9 @@
       .right
         NationalStats(:choice="this.choice()")
       .clear
-    .border.big
-    .border.big
-    MetroStack
     Compare
+    MetroStack
+    QuoteBar
     //.border.big
     // .border.big(v-if="(this.choice().type !== 'district')")
     //SingleItem(v-if="this.choice().type === 'national'")
@@ -206,6 +205,7 @@ import HeatChart from '~/components/HeatChart.vue'
 import Downloads from '~/components/Downloads.vue'
 import Compare from '~/components/Compare.vue'
 import MetroStack from '~/components/MetroStack.vue'
+import QuoteBar from '~/components/QuoteBar.vue'
 
 export default {
   mixins: [ filtermixin ],
@@ -226,6 +226,7 @@ export default {
     Downloads,
     Compare,
     MetroStack,
+    QuoteBar,
   },
 
   methods: {
