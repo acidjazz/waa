@@ -84,6 +84,7 @@
       .right
         NationalStats(:choice="this.choice()")
       .clear
+    CustomPDF(:choice="this.choice()")
     Compare
     MetroStack
     QuoteBar
@@ -206,6 +207,7 @@ import Downloads from '~/components/Downloads.vue'
 import Compare from '~/components/Compare.vue'
 import MetroStack from '~/components/MetroStack.vue'
 import QuoteBar from '~/components/QuoteBar.vue'
+import CustomPDF from '~/components/CustomPDF.vue'
 
 export default {
   mixins: [ filtermixin ],
@@ -226,6 +228,7 @@ export default {
     Downloads,
     Compare,
     MetroStack,
+    CustomPDF,
     QuoteBar,
   },
 

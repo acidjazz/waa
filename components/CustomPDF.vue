@@ -1,0 +1,67 @@
+<template lang="pug">
+doctype
+#CustomPDF
+  .box
+    .line
+    .copy Lorem Ipsum dolor sit amet, consetur, sed diam nonumy eirmod tempor invidunt ut
+    .button(@click="calculate()") CUSTOMIZE PDF
+    .clear
+</template>
+
+<script>
+export default {
+  props: {
+    choice: {
+      type: Object,
+      required: true,
+    }
+  },
+  methods: {
+    calculate () {
+      this.$router.push(`/calculated/#by-${this.choice.type}-value-${this.choice.value}-number-1-type-new`)
+
+    },
+  },
+
+}
+</script>
+
+<style lang="stylus">
+json('../assets/colors.json')
+json('../assets/fonts.json')
+@import '../assets/stylus/mixins.styl'
+
+#CustomPDF
+  padding 60px 0 
+  > .box
+    margin auto
+    width 520px
+    color white
+    background-color robins-egg
+    padding 60px
+    border-radius 3px
+    position relative
+    > .line
+      position absolute
+      width 3px
+      height 60px
+      background-color black
+      top -30px
+      right 160px
+
+    > .copy
+      float left
+      width 300px
+    > .button
+      cursor pointer
+      float right
+      margin 10px 40px 0 0
+      background-color white
+      padding 6px 10px
+      border-radius 3px
+      color black
+      font c1sb
+
+</style>
+
+
