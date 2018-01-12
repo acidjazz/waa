@@ -3,7 +3,7 @@ doctype
 #QuoteBar
   .body
     .shadow
-    .quote
+    .quote(:class="{oranges: theme === 'oranges', blues: theme === 'blues'}")
       .copy(v-in-viewport) Apartments and their residents contribute more than $3.5 billion to the economy every day.
       .author(v-in-viewport) Steve Fegun | Laika Founder
 </template>
@@ -25,8 +25,10 @@ json('../assets/fonts.json')
       width 100%
       height 100%
     > .quote
-      background-image linear-gradient(162deg, tacao, violet-red)
-      //background-image linear-gradient(182deg, #e441e4, #0054d8)
+      &.oranges
+        background-image linear-gradient(162deg, tacao, violet-red)
+      &.blues
+        background-image linear-gradient(162deg, purple, blue)
       color white
       text-align center
       > .copy
@@ -52,6 +54,13 @@ json('../assets/fonts.json')
 <script>
 import inViewportDirective from 'vue-in-viewport-directive'
 export default {
+  props: {
+    theme: {
+      type: String,
+      default: 'oranges',
+      required: false,
+    }
+  },
   directives: { 'in-viewport': inViewportDirective },
 }
 </script>

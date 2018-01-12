@@ -21,6 +21,7 @@ doctype
        a(href="http://www.nmhc.org/",target="_new"): img(src="/logo-nmhc.png")
        a(href="https://www.naahq.org/",target="_new"): img(src="/logo-naa.png")
       .copy(v-in-viewport) We partnered with top researchers to estimate the demand for apartments in the future.
+      VertBorder
       .copys
         .block.block-image(v-in-viewport)
           img(src="/about/child.jpg")
@@ -41,7 +42,7 @@ doctype
       .inner
         .homes(v-in-viewport)
           img(src="/about/homes.png")
-        .border.white
+        VertBorder
         .title(v-in-viewport) We are proud to have worked with the following sources
         .copys
           .block(v-in-viewport)
@@ -65,6 +66,7 @@ doctype
           .block(v-in-viewport)
             .square
             .copy U.S. Census Bureau, New Residential Construction
+      QuoteBar(theme="blues")
       .flow
     Downloads
   Bottom
@@ -76,9 +78,11 @@ doctype
 import Top from '~/components/Top.vue'
 import Downloads from '~/components/Downloads.vue'
 import Bottom from '~/components/Bottom.vue'
+import VertBorder from '~/components/VertBorder.vue'
+import QuoteBar from '~/components/QuoteBar.vue'
 import inViewportDirective from 'vue-in-viewport-directive'
 export default {
   directives: { 'in-viewport': inViewportDirective },
-  components: { Top, Downloads, Bottom },
+  components: { Top, Downloads, Bottom, VertBorder, QuoteBar },
 }
 </script>
