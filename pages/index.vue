@@ -33,8 +33,6 @@ doctype
           .frame(v-in-viewport)
             .building(v-in-viewport)
       .clear
-  .sources Source: 
-    span Hoyt Advisory Services; NMHC/NAA; U.S. Census Bureau.; Axiometrics, a RealPage Company
   Downloads
   Bottom
 </template>
@@ -64,13 +62,6 @@ export default {
 @import '../assets/stylus/mixins'
 json('../assets/colors.json')
 json('../assets/fonts.json')
-
-.sources
-  font c1s
-  padding 0 0 20px 0
-  width 1200px
-  margin auto
-  color grey
 
 .page.home
   > .to_initiative

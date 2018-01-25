@@ -1,6 +1,7 @@
 <template lang="pug">
 doctype
 #Downloads
+  .blackline
   .inner
     .block.left
       .inner
@@ -27,10 +28,19 @@ json('../assets/fonts.json')
 @import '../assets/stylus/mixins.styl'
 #Downloads
   background-color purple
+  position relative
+  > .blackline
+    position absolute
+    width 3px
+    height 60px
+    background-color black
+    top -30px
+    left 50%
+
   > .inner
     width 900px
     margin auto
-    padding 60px 0
+    padding 90px 0
     color white
     column-count 2
     column-span 2

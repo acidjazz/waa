@@ -137,7 +137,7 @@ json('../assets/fonts.json')
           color grey
 
     > .stats
-      padding 20px 0
+      padding 11px 0
       > .stat
         &.is-royalpurple
           > .value

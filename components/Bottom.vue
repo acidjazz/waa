@@ -1,6 +1,5 @@
 <template lang="pug">
 #Bottom
-  .border.big(v-if="upper")
   .upper(v-if="upper")
     .section.navigation
       .link: router-link(to="/data") apartment data
@@ -23,6 +22,9 @@
               i.fa.fa-envelope(area-hidden=true)
         .clear
     .clear
+  .sources
+    .inner Source: 
+      span Hoyt Advisory Services; NMHC/NAA; U.S. Census Bureau.; Axiometrics, a RealPage Company
   .lower(:class="{dark: dark}")
     .inner
       .section.title
@@ -55,6 +57,16 @@ export default {
 
 json('../assets/colors.json')
 json('../assets/fonts.json')
+
+.sources
+  font c1s
+  padding 20px
+  margin auto
+  color grey
+  background-color lightgrey
+  .inner
+    max-width 1200px
+    margin auto
 
 #Bottom
   > .upper
@@ -112,7 +124,7 @@ json('../assets/fonts.json')
               padding 10px 0 0 0
 
   > .lower
-    background-color darkblue
+    background-color darkgray
     padding 60px 0
     &.dark
       background-color black

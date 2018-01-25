@@ -1,6 +1,6 @@
 <template lang="pug">
 #HousingGap
-  tooltip(align="right")
+  // tooltip(align="right")
   .title The Apartment Housing Gap
   .clear
   .legend

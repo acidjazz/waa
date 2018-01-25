@@ -6,7 +6,7 @@ doctype
       .drawer(@click="closed = !closed")
         i.fa.fa-arrow-circle-down.fa-2x
       .copy(@click="closed = !closed")
-        tooltip(start=true,copy='b')
+        // tooltip(start=true,copy='b')
         | filter apartment data by:
       .options
         router-link.option.enabled(to="/data/",:class="{active: (choice().value === 'National')}") National

@@ -95,8 +95,6 @@
     //DualItems(v-if="this.choice().type === 'metro'")
     // .border.big(v-if="this.choice().type === 'metro'")
     .clear
-    .sources Source: 
-      span Hoyt Advisory Services; NMHC/NAA; U.S. Census Bureau.; Axiometrics, a RealPage Company
     Downloads
     //.section.section_links
       .inner

@@ -1,7 +1,7 @@
 <template lang="pug">
   .chartainer
-    tooltip(v-if="data === 'popgrowth' || data === 'inyourstate'",align="left")
-    tooltip(v-else)
+    //tooltip(v-if="data === 'popgrowth' || data === 'inyourstate'",align="left")
+    //tooltip(v-else)
     .title {{ title }}
     .description {{ description }}
     .spike(v-if="(spiked > 0)")
