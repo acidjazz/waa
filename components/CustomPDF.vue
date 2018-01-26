@@ -62,6 +62,20 @@ json('../assets/fonts.json')
       color black
       font c1sb
 
+@media all and (min-width: 1px) and (max-width: 1000px)
+  #CustomPDF
+    > .box
+      width auto
+      margin 0 20px
+      text-align center
+      > .copy
+        float none
+        width auto
+      > .button
+        float none
+        margin 20px 0 0 0
+
+
 </style>
 
 

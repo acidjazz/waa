@@ -49,6 +49,17 @@ json('../assets/fonts.json')
       left -40px
       width 100%
       height 100%
+@media all and (min-width: 1px) and (max-width: 1000px)
+  #QuoteBar
+    padding 60px 20px
+    > .body
+      width auto
+      margin auto
+      height 300px
+      > .shadow
+        top 10px
+        left -10px
+
 </style>
 
 <script>
