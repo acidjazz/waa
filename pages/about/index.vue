@@ -67,7 +67,7 @@ doctype
             .square
             .copy U.S. Census Bureau, New Residential Construction
       QuoteBar(theme="blues")
-      .flow
+      //.flow
     Downloads
   Bottom
 </template>

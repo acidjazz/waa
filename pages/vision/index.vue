@@ -93,8 +93,6 @@ doctype
         .clear
   .border.big
   FAQ
-  .sources Source: 
-    span Hoyt Advisory Services; NMHC/NAA; U.S. Census Bureau.; Axiometrics, a RealPage Company
   Bottom
 </template>
 <style lang="stylus">
