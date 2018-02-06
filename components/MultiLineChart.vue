@@ -27,6 +27,7 @@ json('../assets/fonts.json')
   border-radius 6px
   padding 20px
   position relative
+  height 460px
   > .title
     font h3
     padding 0 0 20px 0
@@ -59,6 +60,9 @@ json('../assets/fonts.json')
     > canvas
       width inherit
       height inherit
+@media all and (min-width: 1px) and (max-width: 1000px)
+  #HousingGap
+    height auto
 </style>
 
 <script>
@@ -252,7 +256,7 @@ export default {
                 fontSize: 12,
                 fontColor: colors.grey,
                 color: solid,
-                maxTicksLimit: 10,
+                maxTicksLimit: 6,
                 maxRotation: 0,
               }
             }]

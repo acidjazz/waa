@@ -115,9 +115,10 @@ json('../assets/fonts.json')
   border 1px solid lightgrey
   border-radius 6px
   width 310px
+  height 500px
   > .title
     font h3
-    padding 20px
+    padding 16px
     border-bottom 1px solid lightgrey
   > .body
     padding 20px
@@ -187,4 +188,5 @@ json('../assets/fonts.json')
   #NationalStats
     float none
     margin auto
+    height auto
 </style>

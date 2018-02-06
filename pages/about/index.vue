@@ -15,6 +15,7 @@ doctype
           .button.is-centered(v-in-viewport)
             router-link(to="/vision") our vision
       
+    DiagSection
     .section.section_about
       .copy(v-in-viewport) about the research
       .logos(v-in-viewport)
@@ -80,9 +81,10 @@ import Downloads from '~/components/Downloads.vue'
 import Bottom from '~/components/Bottom.vue'
 import VertBorder from '~/components/VertBorder.vue'
 import QuoteBar from '~/components/QuoteBar.vue'
+import DiagSection from '~/components/DiagSection.vue'
 import inViewportDirective from 'vue-in-viewport-directive'
 export default {
   directives: { 'in-viewport': inViewportDirective },
-  components: { Top, Downloads, Bottom, VertBorder, QuoteBar },
+  components: { Top, Downloads, Bottom, VertBorder, QuoteBar, DiagSection },
 }
 </script>

@@ -5,6 +5,7 @@
     .clear
     DataFilters(:state="state",:metro="metro",:district="district")
     DataSummary(:state="state",:metro="metro",:district="district",type="web")
+    DiagSection
     .section.section_demand(v-if="this.choice().type !== 'district'")
       .inner
         p The Demand
@@ -206,6 +207,7 @@ import Compare from '~/components/Compare.vue'
 import MetroStack from '~/components/MetroStack.vue'
 import QuoteBar from '~/components/QuoteBar.vue'
 import CustomPDF from '~/components/CustomPDF.vue'
+import DiagSection from '~/components/DiagSection.vue'
 
 export default {
   mixins: [ filtermixin ],
@@ -228,6 +230,7 @@ export default {
     MetroStack,
     CustomPDF,
     QuoteBar,
+    DiagSection,
   },
 
   methods: {
