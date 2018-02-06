@@ -5,7 +5,7 @@
   .page_content
     .inner 
       Calculator
-  Bottom(:upper="false",:dark="true")
+  Bottom
 </template>
 
 <script>
