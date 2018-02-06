@@ -149,34 +149,14 @@
     .clear
 
     .section.section_chart(v-if="this.choice().type !== 'district'")
-      .top
-        .part.part_homes
-          .value {{ $store.state.homesNeeded }} 
-          .copy Apartment Homes Needed in 
-            b(v-if="this.choice().type !== 'metro'") the Country
-            b(v-if="this.choice().type === 'metro'") {{ this.choice().copy }}
-        .part.part_numbers
-          .graph
-          .copy Avg Annual Construction Rate (2011-2016)
-        .part.part_numbers
-          .graph
-          .copy New Apartments Needed
-      .left(v-if="this.choice().type !== 'metro'")
-        // CircleChart(id="renters_print",width="225",height="225",value="70")
-      //.left(v-else)
-        .copy barriers to apartments construction
-        HeatChart(:metro="this.choice().value")
-        .tip Index based on local regulations and available land
-      .right
-        MultiLineChart(:animation="false",:type="this.choice().type",:value="this.choice().value",:state="this.choice().state",data='aptsneeded',id='aptsneeded_print',theme="red",width=510,height=225)
+      .left
+        MultiLineChart(
+          :animation="false",
+          :choice="this.choice()",
+          data='aptsneeded',
+          id='aptsneeded_print',
+          theme="red",width=510,height=135)
       .clear
-
-      //.copys.copyLeft
-        .copy Renting on the Rise
-        .copy Many people in your district call apartments home. They  ..
-      .copys.copyRight
-        .copy We Need to Build More
-        .copy Apartment demand is growing and the industry needs to keep up. However, producing enough new apartments to meet demand requires new development approaches, more incentives and fewer restrictions
     .clear
     DataSummary(:state="state",:metro="metro",:district="district",v-if="this.choice().type !== 'district'",type="print")
     .logos
@@ -507,9 +487,8 @@ json('../assets/fonts.json')
             &:nth-child(2) > .graph 
               background-color rgba(red, 1)
       > .left
-        float left
+        float none
         border none
-        width 0px
         height 225px
         margin 50px 0 0 0
         > .copy
@@ -528,6 +507,7 @@ json('../assets/fonts.json')
           width 160px
           margin 0 0 0 20px
       > .right
+        display none
         float right
         border none
         margin 10px auto

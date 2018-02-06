@@ -63,6 +63,12 @@ json('../assets/fonts.json')
 @media all and (min-width: 1px) and (max-width: 1000px)
   #HousingGap
     height auto
+@media print 
+  #HousingGap
+    .stat
+      position absolute
+      top 30px
+      right 10px
 </style>
 
 <script>
