@@ -758,6 +758,8 @@ json('../assets/fonts.json')
             color black
 
 @media print
+  .tooltip
+    display none !important
   #Filters
     display none !important
   .datapage_web
