@@ -91,7 +91,7 @@ doctype
         .chart_area
           DualLineChart
         .clear
-  .border.big
+  DiagSection
   FAQ
   Bottom
 </template>
