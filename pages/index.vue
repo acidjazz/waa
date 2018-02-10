@@ -19,6 +19,7 @@ doctype
   .demand
     p(v-in-viewport) The 2030 Demand
     Demand(type='national')
+  VertBorder
   GradientChart
   .border.big
   .to_initiative
@@ -47,9 +48,10 @@ import inViewportDirective from 'vue-in-viewport-directive'
 import ICountUp from 'vue-countup-v2'
 import Downloads from '~/components/Downloads.vue'
 import DiagSection from '~/components/DiagSection.vue'
+import VertBorder from '~/components/VertBorder.vue'
 export default {
   directives: { 'in-viewport': inViewportDirective },
-  components: { Top, Demand, GradientChart, Bottom, ICountUp, Downloads, DiagSection },
+  components: { Top, Demand, GradientChart, Bottom, ICountUp, Downloads, DiagSection, VertBorder },
   data () {
     return {
       options: {
