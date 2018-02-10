@@ -98,6 +98,7 @@ doctype
 
   .inner
     .section.section_right
+      img(src="/data.png")
     .section.section_left
 
       .title(v-in-viewport) Compare Your City
