@@ -20,7 +20,7 @@ doctype
 
         .image-text-block-1
           .image(v-in-viewport)
-            img(src="/vision-pic1.jpg")
+            img(src="/vision/1.png")
           .text(v-in-viewport)
             .title Authority & Partnerships
             .copy Leverage state-level authority to overcome obstacles to apartment construction and increase public-private partnerships to produce apartments that households can afford
@@ -28,7 +28,7 @@ doctype
 
         .image-text-block-2
           .image(v-in-viewport)
-            img(src="/vision-pic2.jpg")
+            img(src="/vision/2.png")
           .text(v-in-viewport)
             .title Policy & Collaboration
             .copy Adopt locla public policies and programs that harness the power of the private sector to make housing affordability more feasible.  Collaborate with business and community leaders to champion apartments.
