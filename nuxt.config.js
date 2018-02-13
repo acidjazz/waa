@@ -54,7 +54,8 @@ module.exports = {
     __dangerouslyDisableSanitizers: ['script'],
 
     link: [
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Maven+Pro:100,200,300,400,500|Roboto:100,400,700,900' },
+      // { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Maven+Pro:100,200,300,400,500|Roboto:100,400,700,900' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Rubik:100,200,300,400,500,700,900' },
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css' },
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css' },
 

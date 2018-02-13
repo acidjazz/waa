@@ -78,7 +78,7 @@ json('../assets/fonts.json')
       width calc(50% - 1px)
       text-align center
       > .link
-        margin 5px 0 0 0 
+        margin 15px 0 0 0 
         width 33.3333%
         display inline-block
         text-transform uppercase
@@ -86,7 +86,7 @@ json('../assets/fonts.json')
           text-decoration none
           border-radiux 3px
           color darkblue
-          font c1sb
+          font c1ssb
           padding 10px
           &:hover
             background-color lightgrey
