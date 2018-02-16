@@ -75,7 +75,7 @@
           :choice="this.choice()",
           data='aptsneeded',
           id='aptsneeded',
-          width=830,height=396)
+          width=820,height=396)
       //.right.left_inyourcity(v-if="this.choice().type === 'metro'")
         .copy barriers to apartments construction
         HeatChart(:metro="this.choice().value")

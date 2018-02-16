@@ -49,12 +49,16 @@ json('../assets/fonts.json')
         color grey
         line-height 14px
         margin 0 10px 0 0
+        font-size 14px
   > .stat
     line-height 14px
     float right
     > span
       color grey
       font-size 14px
+    > strong
+      font-size 14px
+      margin-right 3px
   > .chartainer
     position relative
     > canvas

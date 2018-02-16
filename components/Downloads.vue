@@ -12,8 +12,8 @@ doctype
       .inner
         .copy A vision for 2030
         .copy Meeting the country's demand for apartments will take courageous steps at the federal, state and local levels. 
-        router-link(to='/about',v-if="$route.name !== 'about'").cta learn more
-        a.cta(href="/Vision2030.pdf",v-if="$route.name === 'about'") Download
+        //router-link(to='/about',v-if="$route.name !== 'about'").cta learn more
+        a.cta(href="/Vision2030.pdf") Download
 </template>
 <script>
 import inViewportDirective from 'vue-in-viewport-directive'

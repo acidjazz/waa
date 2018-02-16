@@ -93,6 +93,7 @@ doctype
         .clear
   DiagSection
   FAQ
+  Downloads
   Bottom
 </template>
 <style lang="stylus">
@@ -110,8 +111,9 @@ import Share from '~/components/Share.vue'
 import Bottom from '~/components/Bottom.vue'
 import inViewportDirective from 'vue-in-viewport-directive'
 import DiagSection from '~/components/DiagSection.vue'
+import Downloads from '~/components/Downloads.vue'
 export default {
   directives: { 'in-viewport': inViewportDirective },
-  components: { Top, BuildMoreChart, BarrierChart, DualLineChart, FAQ, Share, Bottom, DiagSection }
+  components: { Top, BuildMoreChart, BarrierChart, DualLineChart, FAQ, Share, Bottom, DiagSection, Downloads }
 }
 </script>
