@@ -10,7 +10,7 @@
       .inner
         p The Demand
         Demand(:type="this.choice().type",:value="this.choice().value")
-        Share
+        Share(:pdf="false")
         .pointer
     .clear
     .section.section_district(v-if="this.choice().type === 'district'")
@@ -562,7 +562,7 @@ json('../assets/fonts.json')
           bottom -40px
         > #Share
           top 40px
-          right 140px
+          right 40px
         > p:first-child
           font h2
           margin 0 0 20px 0

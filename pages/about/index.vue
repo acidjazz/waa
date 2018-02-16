@@ -14,7 +14,7 @@ doctype
 
           .button.is-centered(v-in-viewport)
             router-link(to="/vision") our vision
-      
+    ScrollDown    
     DiagSection
     .section.section_about
       .copy(v-in-viewport) about the research
@@ -84,8 +84,9 @@ import VertBorder from '~/components/VertBorder.vue'
 import QuoteBar from '~/components/QuoteBar.vue'
 import DiagSection from '~/components/DiagSection.vue'
 import inViewportDirective from 'vue-in-viewport-directive'
+import ScrollDown from '~/components/ScrollDown.vue'
 export default {
   directives: { 'in-viewport': inViewportDirective },
-  components: { Top, Downloads, Bottom, VertBorder, QuoteBar, DiagSection },
+  components: { Top, Downloads, Bottom, VertBorder, QuoteBar, DiagSection, ScrollDown },
 }
 </script>

@@ -9,6 +9,7 @@ doctype
         .title(v-in-viewport) GROWING APARTMENT DEMAND
         .copy(v-in-viewport) The apartment industry stands ready to work with urban, suburban and rural communities in every region to meet the housing demand of Americans across all income levels
         a.button.cta(v-in-viewport,href="/Vision2030.pdf") DOWNLOAD PDF
+    ScrollDown
     DiagSection
     .section.section_together
       .inner
@@ -111,9 +112,10 @@ import Share from '~/components/Share.vue'
 import Bottom from '~/components/Bottom.vue'
 import inViewportDirective from 'vue-in-viewport-directive'
 import DiagSection from '~/components/DiagSection.vue'
+import ScrollDown from '~/components/ScrollDown.vue'
 import Downloads from '~/components/Downloads.vue'
 export default {
   directives: { 'in-viewport': inViewportDirective },
-  components: { Top, BuildMoreChart, BarrierChart, DualLineChart, FAQ, Share, Bottom, DiagSection, Downloads }
+  components: { Top, BuildMoreChart, BarrierChart, DualLineChart, FAQ, Share, Bottom, DiagSection, Downloads, ScrollDown }
 }
 </script>

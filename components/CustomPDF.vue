@@ -3,8 +3,8 @@ doctype
 #CustomPDF
   .box
     .line
-    .copy Lorem Ipsum dolor sit amet, consetur, sed diam nonumy eirmod tempor invidunt ut
-    .button(@click="calculate()") CUSTOMIZE PDF
+    .copy Create a 8.5x11 PDF of this data that you can print
+    .button(@click="calculate()") PDF SNAPSHOT
     .clear
 </template>
 
@@ -51,7 +51,7 @@ json('../assets/fonts.json')
 
     > .copy
       float left
-      width 300px
+      width 240px
     > .button
       cursor pointer
       float right

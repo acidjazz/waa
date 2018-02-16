@@ -15,6 +15,7 @@ doctype
         router-link(to="/vision") our vision
       .button.is-centered(v-in-viewport)
         router-link(to="/data") the data
+  ScrollDown
   DiagSection
   .demand
     p(v-in-viewport) The 2030 Demand
@@ -49,9 +50,10 @@ import ICountUp from 'vue-countup-v2'
 import Downloads from '~/components/Downloads.vue'
 import DiagSection from '~/components/DiagSection.vue'
 import VertBorder from '~/components/VertBorder.vue'
+import ScrollDown from '~/components/ScrollDown.vue'
 export default {
   directives: { 'in-viewport': inViewportDirective },
-  components: { Top, Demand, GradientChart, Bottom, ICountUp, Downloads, DiagSection, VertBorder },
+  components: { Top, Demand, GradientChart, Bottom, ICountUp, Downloads, DiagSection, VertBorder, ScrollDown },
   data () {
     return {
       options: {
