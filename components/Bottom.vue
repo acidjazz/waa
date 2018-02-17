@@ -24,7 +24,18 @@
     .clear
   .sources
     .inner Source: 
-      span Hoyt Advisory Services; NMHC/NAA; U.S. Census Bureau.; Axiometrics, a RealPage Company
+      span 
+        a(href="http://hoytgroup.org/hoyt-advisory-services/",target="_new") Hoyt Advisory Services
+        span ;&nbsp; 
+        a(href="http://www.nmhc.org/",target="_new") NMHC
+        span /
+        a(href="http://www.naahq.org",target="_new") NAA
+        span ;&nbsp;
+        a(href="https://www.census.gov/",target="_new") U.S. Census Bureau
+        span ;&nbsp;
+        a(href="https://www.axiometrics.com/",target="_new") Axiometrics
+        span ,&nbsp;a 
+        a(href="https://www.realpage.com/",target="_new") RealPage Company
   .lower(:class="{dark: dark}")
     .inner
       .section.title
@@ -64,6 +75,11 @@ json('../assets/fonts.json')
   margin auto
   color grey
   background-color lightgrey
+  a
+    color grey
+    text-decoration none
+    &:hover
+      text-decoration underline
   .inner
     max-width 1200px
     margin auto
@@ -78,7 +94,7 @@ json('../assets/fonts.json')
       width calc(50% - 1px)
       text-align center
       > .link
-        margin 15px 0 0 0 
+        margin 5px 0 0 0 
         width 33.3333%
         display inline-block
         text-transform uppercase
@@ -88,6 +104,7 @@ json('../assets/fonts.json')
           color darkblue
           font c1ssb
           padding 10px
+          transition background 0.2s ease
           &:hover
             background-color lightgrey
     > .section.signup
@@ -98,7 +115,7 @@ json('../assets/fonts.json')
         padding 0 20px
         > .copy
           color lightblue
-          width 200px
+          width 220px
           float left
           font c1s
         > .input
