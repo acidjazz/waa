@@ -1,5 +1,5 @@
 <template lang="pug">
-//.scrolldown(:class="{visible: visible}")
+.scrolldown(:class="{visible: visible}")
   .scrolldown-chevron
   .scrolldown-chevron
   .scrolldown-chevron
