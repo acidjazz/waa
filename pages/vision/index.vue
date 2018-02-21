@@ -45,7 +45,7 @@ doctype
       .inner
         .copy(v-in-viewport) The Stakes are High
         .copy(v-in-viewport) Keeping up with the demand for millions of apartments will mean public-private partnerships at all levels of government. If we don't start today, our nation's housing affordability crisis will only worsen.
-    .border.small.margined
+    VertBorder
     .section.section_chart.section_chart_buildmore
       .inner
         .copy_legend
@@ -114,8 +114,9 @@ import inViewportDirective from 'vue-in-viewport-directive'
 import DiagSection from '~/components/DiagSection.vue'
 import ScrollDown from '~/components/ScrollDown.vue'
 import Downloads from '~/components/Downloads.vue'
+import VertBorder from '~/components/VertBorder.vue'
 export default {
   directives: { 'in-viewport': inViewportDirective },
-  components: { Top, BuildMoreChart, BarrierChart, DualLineChart, FAQ, Share, Bottom, DiagSection, Downloads, ScrollDown }
+  components: { Top, BuildMoreChart, BarrierChart, DualLineChart, FAQ, Share, Bottom, DiagSection, Downloads, ScrollDown, VertBorder }
 }
 </script>

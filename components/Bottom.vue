@@ -92,12 +92,12 @@ json('../assets/fonts.json')
     margin auto
     > .section.navigation
       float left
-      width calc(50% - 1px)
+      width calc(50% - 8px)
       text-align center
       display flex
+      margin 0 7px 0 0
       flex-direction row
       > .link
-        margin 5px 0 0 0 
         text-transform uppercase
         flex-grow 1
         > a
