@@ -1,10 +1,5 @@
 <template lang="pug">
 .scroll-down(:class="{visible: visible}")
-
-//.scrolldown(:class="{visible: visible}")
-  .scrolldown-chevron
-  .scrolldown-chevron
-  .scrolldown-chevron
 </template>
 
 <script>
@@ -46,19 +41,23 @@ json('../assets/colors.json')
 json('../assets/fonts.json')
 
 .scroll-down
-  display block
   position absolute
   bottom 30px
   left 50%
   text-align center
   font-size 20px
-  z-index 10
+  z-index 20
   width 13px
   height 13px
-  border-bottom 2px solid white
-  border-right 2px solid white
+  border-bottom 2px solid transparent
+  border-right 2px solid transparent
   transform translate(-50%, 0%) rotate(45deg)
   animation scrolldown 4s ease-in-out infinite
+  transition border 0.5s ease
+  opacity 0
+  &.visible
+    border-bottom 2px solid white
+    border-right 2px solid white
 
 @keyframes scrolldown
   0%
