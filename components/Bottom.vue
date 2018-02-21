@@ -5,6 +5,7 @@
       .link: router-link(to="/data") apartment data
       .link: router-link(to="/calculator") apartment calculator
       .link: router-link(to="/about") the initiative
+      .link: router-link(to="/vision") our vision
     .section.signup
       .inner
         .copy Subscribe to the newsletter and we will keep you up to date.
@@ -93,17 +94,19 @@ json('../assets/fonts.json')
       float left
       width calc(50% - 1px)
       text-align center
+      display flex
+      flex-direction row
       > .link
         margin 5px 0 0 0 
-        width 33.3333%
-        display inline-block
         text-transform uppercase
+        flex-grow 1
         > a
+          display block
           text-decoration none
           border-radiux 3px
           color darkblue
           font c1ssb
-          padding 10px
+          padding 10px 0px
           transition background 0.2s ease
           &:hover
             background-color lightgrey

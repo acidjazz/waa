@@ -84,5 +84,7 @@ json('../assets/fonts.json')
       width auto
       column-count 1
       column-span 0
+      > .block
+        margin auto
 
 </style>
