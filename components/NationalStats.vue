@@ -1,6 +1,6 @@
 <template lang="pug">
 #NationalStats
-  .title {{ choice.value }} Stats
+  .title {{ choice.value }} Apartment Stats
 
   .body
     .copy {{ tabs[tab] }}
