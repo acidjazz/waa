@@ -56,9 +56,21 @@
 
 <script>
 
-import udata from '../static/US Age of Stock'
-import sdata from '../static/State Age of Stock'
-import mdata from '../static/Metro Age of Occupied Stock'
+// age of stock
+import uAdata from '../static/US Age of Stock'
+import sAdata from '../static/State Age of Stock'
+import mAdata from '../static/Metro Age of Occupied Stock'
+
+// persons
+import uPdata from '../static/US Population (Landing)'
+// import sPdata from '../static/US Population (Landing)'
+// import mPdata from '../static/US Population (Landing)'
+
+// US Persons in HouseHold
+// US Household Type
+// different intro text for each
+
+// elipsis subnav - Age of Stock | Persons in Household | Household Type
 
 export default {
 
@@ -73,14 +85,14 @@ export default {
 
     stat: function () {
 
-      var data = udata.data['Total U.S.']
+      var data = uAdata.data['Total U.S.']
 
       if (this.choice.type === 'state') {
-        data = sdata.data[this.choice.value]
+        data = sAdata.data[this.choice.value]
       }
 
       if (this.choice.type === 'metro') {
-        data = mdata.data[this.choice.value]
+        data = mAdata.data[this.choice.value]
       }
 
       let total = data[0] + data[1] + data[2] + data[3]
