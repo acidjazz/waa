@@ -3,11 +3,14 @@
   .title {{ choice.value }} Stats
 
   .body
-    .copy Intro text
+    .copy {{ tabs[tab] }}
+    .tab-circles
+      .tab-circle(v-for="value,key in tabs",:class="{active: key === tab}",@click="tab = key")
+    .clear
 
     .stats
       .stat.is-royalpurple
-        .title Before 1959
+        .title {{ labels[tab][0] }}
         .value {{ stat.a }}%
         .clear
         .progress
@@ -15,7 +18,7 @@
 
     .stats
       .stat.is-red
-        .title 1960-1979
+        .title {{ labels[tab][1] }}
         .value {{ stat.b }}%
         .clear
         .progress
@@ -23,7 +26,7 @@
 
     .stats
       .stat.is-blue
-        .title 1980-1999
+        .title {{ labels[tab][2] }}
         .value {{ stat.c }}%
         .clear
         .progress
@@ -31,7 +34,7 @@
 
     .stats
       .stat.is-yellow
-        .title 2000 or Later
+        .title {{ labels[tab][3] }}
         .value {{ stat.d }}%
         .clear
         .progress
@@ -55,22 +58,40 @@
 </template>
 
 <script>
-
 // age of stock
 import uAdata from '../static/US Age of Stock'
 import sAdata from '../static/State Age of Stock'
 import mAdata from '../static/Metro Age of Occupied Stock'
 
 // persons
-import uPdata from '../static/US Population (Landing)'
-// import sPdata from '../static/US Population (Landing)'
-// import mPdata from '../static/US Population (Landing)'
+import uPdata from '../static/US Persons in Household'
+import sPdata from '../static/State Persons in Household'
+import mPdata from '../static/Metro Persons in Household'
 
-// US Persons in HouseHold
-// US Household Type
-// different intro text for each
+// type
+import uTdata from '../static/US Household Type'
+import sTdata from '../static/State Household Type'
+import mTdata from '../static/Metro Household Type'
 
 // elipsis subnav - Age of Stock | Persons in Household | Household Type
+
+var datas = {
+  national: {
+    'stock': uAdata,
+    'persons': uPdata,
+    'type': uTdata,
+  },
+  state: {
+    'stock': sAdata,
+    'persons': sPdata,
+    'type': sTdata,
+  },
+  metro: {
+    'stock': mAdata,
+    'persons': mPdata,
+    'type': mTdata,
+  },
+}
 
 export default {
 
@@ -85,15 +106,20 @@ export default {
 
     stat: function () {
 
-      var data = uAdata.data['Total U.S.']
+      var data = datas[this.choice.type][this.tab]
+
+      if (this.choice.type === 'national') {
+        data = data.data['Total U.S.']
+      }
 
       if (this.choice.type === 'state') {
-        data = sAdata.data[this.choice.value]
+        data = data.data[this.choice.state]
       }
 
       if (this.choice.type === 'metro') {
-        data = mAdata.data[this.choice.value]
+        data = data.data[this.choice.value]
       }
+
 
       let total = data[0] + data[1] + data[2] + data[3]
 
@@ -109,11 +135,38 @@ export default {
   },
 
   data () {
-    return {
 
+    return {
+      tab: 'stock',
+      tabs: {
+        'type': 'Household Type',
+        'persons': 'Persons in Household',
+        'stock': 'Age of Stock',
+      },
+
+      labels: {
+        stock: [
+          'Before 1959',
+          '1960-1979',
+          '1980-1999',
+          '2000 or Later',
+        ],
+        persons: [
+          '1',
+          '2',
+          '3',
+          '4+',
+        ],
+        type: [
+          'Single Living Alone',
+          'Married with Children',
+          'Married without Children',
+          'Single Parent',
+        ],
+      },
     }
 
-  }
+  },
 
 }
 
@@ -136,6 +189,22 @@ json('../assets/fonts.json')
     padding 20px
     > .copy
       color grey
+      float left
+    > .tab-circles
+      float right
+      > .tab-circle
+        cursor pointer
+        width 10px
+        height 10px
+        float right
+        border 2px solid grey
+        margin 0 0 0 10px
+        border-radius 50%
+        &:hover:not(.active)
+          background-color rgba(blue, 0.5)
+        &.active
+          background-color blue
+          border 2px solid blue
 
     > .numbers
       padding-top 20px

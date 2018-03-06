@@ -1,0 +1,25 @@
+{
+  "sheet": "US Household Type",
+  "data": {
+    "Total U.S.": [
+      9225584,
+      2149076,
+      3072671,
+      2096417,
+      1093863,
+      1223251,
+      null,
+      "Source: NMHC tabulations of 2016 American Community Survey microdata."
+    ]
+  },
+  "labels": [
+    "Single Living Alone",
+    "Married or Partners w/ Children",
+    "Married or Partners without Children",
+    "Single Parent",
+    "Roommate",
+    "Other",
+    null,
+    "Time Period: 2016"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "sheet": "US Persons in Household",
+  "data": {
+    "Total U.S.": [
+      9195316,
+      5222602,
+      2211924,
+      2228887,
+      null,
+      "Source: 2016 American Community Survey 1-Year Estimates."
+    ]
+  },
+  "labels": [
+    1,
+    2,
+    3,
+    "4+",
+    null,
+    "Time Period: 2016"
+  ]
+}
