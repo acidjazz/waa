@@ -18,7 +18,7 @@
         span(v-else) {{ spiked }}
         span % 
         span Decrease
-    .tagline {{ tagline }}
+    .tagline
     canvas(:id="'chart-' + id",:width="width",:height="height")
 
 </template>
