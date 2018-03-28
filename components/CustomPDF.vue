@@ -4,7 +4,8 @@ doctype
   .box
     .line
     .copy Create a 8.5x11 PDF of this data that you can print
-    .button(@click="calculate()") PDF SNAPSHOT
+    // .button(@click="calculate()") PDF SNAPSHOT
+    a.button(:href="basePDF + $route.path") PDF SNAPSHOT
     .clear
 </template>
 
@@ -22,7 +23,11 @@ export default {
 
     },
   },
-
+  data () {
+    return {
+      basePDF: 'https://url-to-pdf-api.herokuapp.com/api/render?emulateScreenMedia=false&url=https://weareapartments.org',
+    }
+  },
 }
 </script>
 
