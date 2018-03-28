@@ -85,7 +85,7 @@ export default {
 
   data () {
     return {
-      basePDF: 'https://url-to-pdf-api.herokuapp.com/api/render?emulateScreenMedia=false&url=https://weareapartments.org',
+      basePDF: 'http://pdf.weareapartments.org/api/render?emulateScreenMedia=false&url=https://weareapartments.org',
       parsed: this.$route.hash.replace('#', '?'),
       modals: {
         shares: false
