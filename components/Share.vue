@@ -15,11 +15,7 @@
           i.fa.fa-fw.fa-facebook(@click="share('facebook')")
         .share.share_twitter
           i.fa.fa-fw.fa-twitter(@click="share('twitter')")
-  a.action.pdf(v-if="query === true && pdf != false", :href="basePDF + $route.path")
-    .button
-      i.fa.fa-fw.fa-lg.fa-file
-      .copy PDF Snapshot
-  //a.action.pdf(v-if="query === true && pdf != false",:href="basePDF + encodeURIComponent('/calculated/' + parsed)")
+  a.action.pdf(v-if="query === true && pdf != false",:href="basePDF + encodeURIComponent('/calculated/' + parsed)")
     .button
       i.fa.fa-fw.fa-lg.fa-file
       .copy PDF Snapshot
