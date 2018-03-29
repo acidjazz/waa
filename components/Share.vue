@@ -89,7 +89,7 @@ export default {
 
   data () {
     return {
-      basePDF: 'https://pdf.weareapartments.org/api/render?emulateScreenMedia=false&url=https://weareapartments.org',
+      basePDF: 'https://pdf2.weareapartments.org/api/render?emulateScreenMedia=false&url=https://weareapartments.org',
       parsed: this.$route.hash.replace('#', '?'),
       modals: {
         shares: false
