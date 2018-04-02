@@ -2,15 +2,15 @@
 doctype
 #Downloads
   .inner
-    .block.left(v-in-viewport)
+    .block.left
       .inner
-        .copy(v-in-viewport) The Report
-        .copy(v-in-viewport) NMHC and NAA partnered with Hoyt Advisory Services to identify the demand for apartments through 2030. Download their analysis of the apartment industry.
+        .copy The Report
+        .copy NMHC and NAA partnered with Hoyt Advisory Services to identify the demand for apartments through 2030. Download their analysis of the apartment industry.
         a.cta(href="/NMHC-NAA-US-Apartment-Demand-in-2030.pdf",v-in-viewport) download
-    .block.right(v-in-viewport)
+    .block.right
       .inner
-        .copy(v-in-viewport) A vision for 2030
-        .copy(v-in-viewport) Meeting the country's demand for apartments will take courageous steps at the federal, state and local levels. 
+        .copy A vision for 2030
+        .copy Meeting the country's demand for apartments will take courageous steps at the federal, state and local levels. 
         router-link(to='/about',v-if="$route.name !== 'about'",v-in-viewport).cta learn more
         a.cta(href="/Vision2030.pdf",v-if="$route.name === 'about'",v-in-viewport) Download
 </template>
@@ -40,23 +40,11 @@ json('../assets/fonts.json')
       break-inside avoid-column
       page-break-inside avoid
       display table
-      > .inner
-        > :nth-child(1)
-          inViewport(0)
-        > :nth-child(2)
-          inViewport(0.1)
-        > :nth-child(3)
-          inViewport(0.2)
-          display block
-        > :nth-child(4)
-          inViewport(0.3)
       &:nth-child(2)
         background-color royalpurple
         border-radius 3px
         transition opacity 1s ease-in-out 0s, transform 1s ease-in-out 0s
         transform scale(1.1)
-        &.in-viewport
-          transform scale(1)
         > .inner
           > .copy:nth-child(2)
             padding 60px 0
