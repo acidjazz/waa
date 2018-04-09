@@ -14,12 +14,6 @@ doctype
         router-link(to='/about',v-if="$route.name !== 'about'",v-in-viewport).cta learn more
         a.cta(href="/Vision2030.pdf",v-if="$route.name === 'about'",v-in-viewport) Download
 </template>
-<script>
-import inViewportDirective from 'vue-in-viewport-directive'
-export default {
-  directives: { 'in-viewport': inViewportDirective },
-}
-</script>
 
 <style lang="stylus">
 json('../assets/colors.json')
@@ -43,20 +37,16 @@ json('../assets/fonts.json')
       &:nth-child(2)
         background-color royalpurple
         border-radius 3px
-        transition opacity 1s ease-in-out 0s, transform 1s ease-in-out 0s
-        transform scale(1.1)
         > .inner
           > .copy:nth-child(2)
             padding 60px 0
           > .cta
+            z-index 100
             color white
             text-transform uppercase
       &:nth-child(1)
-        transition opacity 1s ease-in-out 0s, transform 1s ease-in-out 0s
-        transform scale(0.9)
-        &.in-viewport
-          transform scale(1)
         > .inner > .cta
+          z-index 100
           background-color blue
           color white
           padding 15px 40px
@@ -65,9 +55,6 @@ json('../assets/fonts.json')
           text-transform uppercase
           font c1b
           text-decoration none
-          &:hover
-            transform scale(1.05)
-            text-decoration underline
       > .inner
         > .copy:nth-child(1)
           font h1
