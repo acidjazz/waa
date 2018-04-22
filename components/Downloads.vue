@@ -15,13 +15,6 @@ doctype
         //router-link(to='/about',v-if="$route.name !== 'about'").cta learn more
         a.cta(href="/Vision2030.pdf") Download
 </template>
-<script>
-import inViewportDirective from 'vue-in-viewport-directive'
-export default {
-  directives: { 'in-viewport': inViewportDirective },
-}
-</script>
-
 <style lang="stylus">
 json('../assets/colors.json')
 json('../assets/fonts.json')
@@ -70,7 +63,6 @@ json('../assets/fonts.json')
           font c1b
           text-decoration none
           &:hover
-            transform scale(1.05)
             text-decoration underline
       > .inner
         > .copy:nth-child(1)
@@ -86,5 +78,6 @@ json('../assets/fonts.json')
       column-span 0
       > .block
         margin auto
+
 
 </style>

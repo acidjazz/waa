@@ -42,16 +42,12 @@
 
     .numbers
       .number
-        .label Spending Power
-        .value $405,970,000,000
-        .clear
-      .number
         .label Jobs Supported
-        .value 3,571,319
+        .value  {{ jobs | numeral }}
         .clear
       .number
-        .label Contribution
-        .value $1,028,930,000,000
+        .label Economic Contribution
+        .value {{ contrib | numeral }}
         .clear
       .clear
 
@@ -72,6 +68,16 @@ import mPdata from '../static/Metro Persons in Household'
 import uTdata from '../static/US Household Type'
 import sTdata from '../static/State Household Type'
 import mTdata from '../static/Metro Household Type'
+
+import contribUS from '../static/US Economic Contribution.json'
+import contribState from '../static/State Economic Contribution.json'
+import contribMetro from '../static/Metro Economic Contribution.json'
+import contribDistrict from '../static/District Economic Contribution.json'
+
+import jobsUS from '../static/US Jobs.json'
+import jobsState from '../static/State Jobs.json'
+import jobsMetro from '../static/Metro Jobs.json'
+import jobsDistrict from '../static/District Total Jobs.json'
 
 // elipsis subnav - Age of Stock | Persons in Household | Household Type
 
@@ -102,6 +108,16 @@ export default {
     }
   },
 
+  filters: {
+    numeral (value) {
+      if (process.browser) {
+        return window.numeral(value).format('0.0a')
+      }
+
+      return value
+    },
+  },
+
   computed: {
 
     stat: function () {
@@ -110,14 +126,20 @@ export default {
 
       if (this.choice.type === 'national') {
         data = data.data['Total U.S.']
+        this.contrib = contribUS.data['Total U.S.']
+        this.jobs = jobsUS.data['Total U.S.']
       }
 
       if (this.choice.type === 'state') {
         data = data.data[this.choice.state]
+        this.contrib = contribState.data[this.choice.value]
+        this.jobs = jobsState.data[this.choice.value]
       }
 
       if (this.choice.type === 'metro') {
         data = data.data[this.choice.value]
+        this.contrib = contribMetro.data[this.choice.value]
+        this.jobs = jobsMetro.data[this.choice.value]
       }
 
 
@@ -137,6 +159,8 @@ export default {
   data () {
 
     return {
+      contrib: '...',
+      jobs: '...',
       tab: 'stock',
       tabs: {
         'type': 'Household Type',
