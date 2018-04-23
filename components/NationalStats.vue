@@ -47,7 +47,7 @@
         .clear
       .number
         .label Economic Contribution
-        .value {{ contrib | numeral }}
+        .value ${{ contrib | numeral }}
         .clear
       .clear
 
