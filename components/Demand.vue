@@ -3,19 +3,19 @@ doctype
 p(v-in-viewport) New research shows that demand for apartments is on the rise.  Whether it's young professionals, couples, families or empty nesters, 
   span(v-if="type === 'national'") the country will see a demand for an additional 
     span {{ households }} 
-    | new apartment households 
+    | new apartment homes 
     span by 2030
   span(v-if="type === 'state'") this state will need to add 
     span {{ households }} 
-    | new apartment households 
+    | new apartment homes 
     span by 2030
   span(v-if="type === 'metro'") this metro will need to add 
     span {{ households }} 
-    | new apartment households 
+    | new apartment homes 
     span by 2030
   span(v-if="type === 'district'") this district will need to add 
     span {{ households }} 
-    | new apartment households 
+    | new apartment homes 
     span by 2030
 </template>
 
@@ -66,20 +66,20 @@ export default {
     if (this.type === 'state') {
       return {
         title: this.value + ' - Learn about the demand for apartments in your area',
-        description: 'The state of ' + this.value + ' will see a demand for an additional ' + this.households + ' new apartment households by 2030',
+        description: 'The state of ' + this.value + ' will see a demand for an additional ' + this.households + ' new apartment homes by 2030',
         households: 0
       }
     }
     if (this.type === 'metro') {
       return {
         title: this.value + ' - Learn about the demand for apartments in your area',
-        description: this.value + ' will see a demand for an additional ' + this.households + ' new apartment households by 2030',
+        description: this.value + ' will see a demand for an additional ' + this.households + ' new apartment homes by 2030',
         households: 0
       }
     }
     return {
       title: 'Learn about the demand for apartments in your area',
-      description: 'This country will see a demand for an additional ' + this.households + ' new apartment households by 2030',
+      description: 'This country will see a demand for an additional ' + this.households + ' new apartment homes by 2030',
       households: 0
     }
   },
