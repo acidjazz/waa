@@ -3,7 +3,7 @@
   .charts
     .block
       .data
-        .copy rent burdened<br /> apartment households
+        .copy rent burdened<br /> apartment homes
         .spike
           i.fa.fa-long-arrow-up(aria-hidden=true,v-if="spike.income.replace('%', '') > 0")
           i.fa.fa-long-arrow-down(aria-hidden=true,v-if="spike.income.replace('%', '') < 0")
