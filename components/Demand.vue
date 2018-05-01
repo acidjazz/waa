@@ -64,20 +64,20 @@ export default {
     if (this.type === 'state') {
       return {
         title: this.value + ' - Learn about the demand for apartments in your area',
-        description: 'The state of ' + this.value + ' will see a demand for an additional ' + this.households + ' new apartment households by 2030',
+        description: 'The state of ' + this.value + ' will see a demand for an additional ' + this.households + ' new apartment homes by 2030',
         households: 0
       }
     }
     if (this.type === 'metro') {
       return {
         title: this.value + ' - Learn about the demand for apartments in your area',
-        description: this.value + ' will see a demand for an additional ' + this.households + ' new apartment households by 2030',
+        description: this.value + ' will see a demand for an additional ' + this.households + ' new apartment homes by 2030',
         households: 0
       }
     }
     return {
       title: 'Learn about the demand for apartments in your area',
-      description: 'This country will see a demand for an additional ' + this.households + ' new apartment households by 2030',
+      description: 'This country will see a demand for an additional ' + this.households + ' new apartment homes by 2030',
       households: 0
     }
   },
