@@ -3,7 +3,7 @@ doctype
 #MetroStack
   .inner
     .title(v-in-viewport) Stacking up the Metros
-    .copy(v-in-viewport) Based on specific factors like local regulations and available land to develop, the Barriers to Apartment Construction Index ranks 50 metro areas on how hard it is to add new apartments. See how your city stacks up. 
+    .copy(v-in-viewport) Based on specific factors like local regulations and available land to develop, the Barriers to Apartment Construction Index ranks 50 metro areas on how hard it is to build new apartments. See how your city stacks up. 
     VertBorder
     .metros(v-in-viewport)
       .copy Barriers to Apartment Construction Index

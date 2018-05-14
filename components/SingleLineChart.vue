@@ -1,5 +1,5 @@
 <template lang="pug">
-  .chartainer
+.chartainer(:class="{'no-border': data === 'inyourstate'}")
     //tooltip(v-if="data === 'popgrowth' || data === 'inyourstate'",align="left")
     //tooltip(v-else)
     .title {{ title }}
@@ -31,6 +31,8 @@ json('../assets/fonts.json')
   border-radius 3px
   padding 20px
   position relative
+  &.no-border
+    border 0px solid transparent
   > .title
     font h3
     color casal

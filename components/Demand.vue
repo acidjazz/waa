@@ -2,19 +2,23 @@
 <template lang="pug">
 doctype
 p(v-in-viewport)  Between now and 2030, 
+
   span(v-if="type === 'national'") the country will need to build over 
     span {{ households }} 
-    | new apartment homes each year to meet demand 
-  span(v-if="type === 'state'") this state will add 
+    | new apartment homes each year to meet demand. 
+  span(v-else) {{ value }} will add 
+    span {{ households }} 
+    | new apartment homes each year to meet demand. 
+  //span(v-if="type === 'state'") this state will add 
     span {{ households }} 
     | new apartment homes each year to meet demand 
-  span(v-if="type === 'metro'") this metro will add 
+  //span(v-if="type === 'metro'") this metro will add 
     span {{ households }} 
     | new apartment homes each year to meet demand 
-  span(v-if="type === 'district'") this district will add 
+  //span(v-if="type === 'district'") this district will add 
     span {{ households }} 
     | new apartment homes each year to meet demand 
-  | However, new housing approaches are needed as only an average of 225,000 apartment homes were buitl each year between 2011 - 2016.
+  | However, new housing approaches are needed as only an average of {{ needed }} apartment homes were built each year between 2011 - 2016.
 </template>
 
 <script>
@@ -35,17 +39,20 @@ export default {
         case (this.type === 'national'):
           json = require('../static/US Units Needed.json').data
           this.households = numeral(json['Total U.S.'][0]).format('0.0a')
+          this.needed = numeral(json['Total U.S.'][1]).format('0%')
           break
 
         case (this.type === 'state'):
           json = require('../static/State New Apt HHs Per Year.json')
           index = json.labels.indexOf(this.value)
           this.households = numeral(json.data[""][index]).format('0,0a')
+          this.needed = numeral(json.data["Needed per Year"][index]).format('0,0a')
           break
 
         case (this.type === 'metro'):
           json = require('../static/Metros Units Needed.json')
           this.households = numeral(json.data[this.value][0]).format('0,0a')
+          this.needed = numeral(json.data[this.value][1]).format('0%')
           break
       }
 
@@ -65,20 +72,23 @@ export default {
       return {
         title: this.value + ' - Learn about the demand for apartments in your area',
         description: 'The state of ' + this.value + ' will see a demand for an additional ' + this.households + ' new apartment homes by 2030',
-        households: 0
+        households: 0,
+        needed: 0,
       }
     }
     if (this.type === 'metro') {
       return {
         title: this.value + ' - Learn about the demand for apartments in your area',
         description: this.value + ' will see a demand for an additional ' + this.households + ' new apartment homes by 2030',
-        households: 0
+        households: 0,
+        needed: 0,
       }
     }
     return {
       title: 'Learn about the demand for apartments in your area',
       description: 'This country will see a demand for an additional ' + this.households + ' new apartment homes by 2030',
-      households: 0
+      households: 0,
+      needed: 0,
     }
   },
   head () {

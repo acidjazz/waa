@@ -28,7 +28,7 @@
           :choice="this.choice()",
           :animation="true",
           theme="orange",
-          title="Apartmends Needed",
+          title="Apartments Needed",
           description="Forecasted by the year 2030",
           tagline="Text Needed",
           width=380,height=140)

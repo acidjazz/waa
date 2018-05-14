@@ -7,20 +7,16 @@
     .pointer
       .icon.icon-residents
       .copy The Residents
-      .copy Who live in those 
+      .copy who live in those 
         b 100 apartments 
-        | annually generate an additional 
-        b {{ residents.impact }} 
-        | for the local economy and support 
+        | annually generate the local economy and support 
         b {{ residents.jobs }} jobs.
     .pointer
       .icon.icon-operation
-      .copy The Operation
-      .copy of those
+      .copy The Operation 
+      .copy of those 
         b 100 apartments 
-        | anually generates an extra 
-        b {{ operations.impact }}  
-        | in economic contribution and supports  
+        | annually generates economic contribution and supports  
         b {{ operations.jobs }} jobs.
     .pointer
       .icon.icon-graph
