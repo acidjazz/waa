@@ -20,7 +20,7 @@
       
   .dchart
     .inner
-      .title in your state
+      .title needed in your state
       SingleLineChart(
         type='line',
         data='inyourstate',
