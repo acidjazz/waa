@@ -40,7 +40,7 @@
         .progress
           .inner(:style="`width: ${stat.d}%`")
 
-    .numbers
+    //.numbers
       .number
         .label Jobs Supported
         .value  {{ jobs | numeral }}
@@ -245,6 +245,8 @@ json('../assets/fonts.json')
     > .stats
       padding 11px 0
       > .stat
+        padding-top 20px
+        padding-bottom 20px
         &.is-royalpurple
           > .value
             color lightpurple
@@ -268,7 +270,7 @@ json('../assets/fonts.json')
               background-color cerulean
         &.is-yellow
           > .value
-            color black
+            color grey
           > .progress
             background-color lemonChiffon
             > .inner

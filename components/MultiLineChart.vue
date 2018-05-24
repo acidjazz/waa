@@ -231,7 +231,8 @@ export default {
                 if (Number(item.yLabel) < 1 && Number(item.yLabel) > 0) {
                   return numeral(item.yLabel).format('0.00%')
                 }
-                return ["Potential Excess of \r\n", numeral(item.yLabel).format('0,0') + " units"]
+                return [numeral(item.yLabel).format('0,0') + " units"]
+                // return ["Potential Excess of \r\n", numeral(item.yLabel).format('0,0') + " units"]
               }
             }
           },
@@ -266,7 +267,7 @@ export default {
                 fontSize: 12,
                 fontColor: colors.grey,
                 color: solid,
-                maxTicksLimit: 6,
+                maxTicksLimit: 8,
                 maxRotation: 0,
               }
             }]
