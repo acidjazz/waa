@@ -1,9 +1,10 @@
 
+// Between now and 2030, [geography name] will need to build [number] new apartment homes each year to meet demand. However, producing enough new apartments to meet demand requires new development approaches, more incentives and fewer restrictions
 <template lang="pug">
 doctype
 p(v-in-viewport)  Between now and 2030, 
 
-  span(v-if="type === 'national'") the country will need to build over 
+  span(v-if="type === 'national'") the country will need to build 
     span {{ households }} 
     | new apartment homes each year to meet demand. 
   span(v-else) {{ value }} will add 
@@ -18,7 +19,8 @@ p(v-in-viewport)  Between now and 2030,
   //span(v-if="type === 'district'") this district will add 
     span {{ households }} 
     | new apartment homes each year to meet demand 
-  | However, new housing approaches are needed as only an average of {{ needed }} apartment homes were built each year between 2011 - 2016.
+    //| However, new housing approaches are needed as only an average of {{ needed }} apartment homes were built each year between 2011 - 2016.
+  | However, producing enough new apartments to meet demand requires new development approaches, more incentives and fewer restrictions
 </template>
 
 <script>
