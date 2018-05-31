@@ -7,7 +7,7 @@ p(v-in-viewport)  Between now and 2030,
   span(v-if="type === 'national'") the country will need to build 
     span {{ households }} 
     | new apartment homes each year to meet demand. 
-  span(v-else) {{ value }} will add 
+  span(v-else) {{ value }} will need to build 
     span {{ households }} 
     | new apartment homes each year to meet demand. 
   //span(v-if="type === 'state'") this state will add 

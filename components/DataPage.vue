@@ -76,7 +76,7 @@
           data='aptsneeded',
           id='aptsneeded',
           width=820,height=396)
-      //.right.left_inyourcity(v-if="this.choice().type === 'metro'")
+      // .right.left_inyourcity(v-if="this.choice().type === 'metro'")
         .copy barriers to apartments construction
         HeatChart(:metro="this.choice().value")
         .tip Index based on local regulations and available land
