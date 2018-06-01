@@ -175,7 +175,7 @@ export default {
     return {
       contrib: '...',
       jobs: '...',
-      tab: 'type',
+      tab: 'stock',
       tabs: {
         'type': 'Household Type',
         'persons': 'Persons in Household',
