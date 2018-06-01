@@ -50,7 +50,7 @@ doctype
       .inner
         .copy_legend
           .copy(v-in-viewport) We Need to Build More
-          .copy(v-in-viewport) The country will need to build an average of 324,000 new apartment homes each year to keep up with demand. The industry averaged just 225,000 completions from 2011-2016.
+          .copy(v-in-viewport) The country will need to build an average of 324,000 new apartment homes each year to keep up with demand. The industry averaged just 225,000 completions from 2011-2017.
           .legend(v-in-viewport)
             .row
               .color.color_purple

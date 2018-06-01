@@ -126,6 +126,7 @@ export default {
 
       if (this.choice.type === 'national') {
         data = data.data['Total U.S.']
+        console.log(data)
         this.contrib = contribUS.data['Total U.S.']
         this.jobs = jobsUS.data['Total U.S.']
       }
@@ -142,6 +143,9 @@ export default {
         this.jobs = jobsMetro.data[this.choice.value]
       }
 
+      if (this.tab === 'type') {
+        data[3] = data[3] + data[4] + data[5]
+      }
 
       let total = data[0] + data[1] + data[2] + data[3]
 
@@ -161,7 +165,7 @@ export default {
     return {
       contrib: '...',
       jobs: '...',
-      tab: 'stock',
+      tab: 'type',
       tabs: {
         'type': 'Household Type',
         'persons': 'Persons in Household',
@@ -185,7 +189,7 @@ export default {
           'Single Living Alone',
           'Married with Children',
           'Married without Children',
-          'Single Parent',
+          'Other',
         ],
       },
     }
