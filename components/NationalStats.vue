@@ -126,7 +126,6 @@ export default {
 
       if (this.choice.type === 'national') {
         data = data.data['Total U.S.']
-        console.log(data)
         this.contrib = contribUS.data['Total U.S.']
         this.jobs = jobsUS.data['Total U.S.']
       }
@@ -143,8 +142,19 @@ export default {
         this.jobs = jobsMetro.data[this.choice.value]
       }
 
+      for (let index in data) {
+        console.log(data[index])
+      }
+
       if (this.tab === 'type') {
-        data[3] = data[3] + data[4] + data[5]
+
+        let total = data[0] + data[1] + data[2] + data[3] + data[4] + data[5]
+        return {
+          a: Math.round(data[0] * 100 / total),
+          b: Math.round(data[1] * 100 / total),
+          c: Math.round(data[2] * 100 / total),
+          d: Math.round((data[3] + data[4] + data[5]) * 100 / total),
+        }
       }
 
       let total = data[0] + data[1] + data[2] + data[3]
