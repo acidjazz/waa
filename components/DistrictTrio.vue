@@ -20,7 +20,7 @@
       
   .dchart
     .inner
-      .title needed in your state
+      .title apartments needed in your state
       SingleLineChart(
         type='line',
         data='inyourstate',

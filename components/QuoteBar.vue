@@ -5,7 +5,7 @@ doctype
     .shadow
     .quote(:class="{oranges: theme === 'oranges', blues: theme === 'blues'}")
       .copy(v-in-viewport) Apartments and their residents contribute more than $3.5 billion to the economy every day.
-      .author(v-in-viewport) Steve Fegun | Laika Founder
+      // .author(v-in-viewport) Steve Fegun | Laika Founder
 </template>
 
 <style lang="stylus">
@@ -34,7 +34,7 @@ json('../assets/fonts.json')
       > .copy
         font c3b
         line-height 30px
-        padding 60px 60px 30px 60px
+        padding 90px 60px 30px 60px
         inViewport(0)
       > .author
         padding 0 0 40px 0
