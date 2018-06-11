@@ -96,6 +96,11 @@ let sheets = [
 
   'Metro Burden',
 
+  // new demand tabs
+  'State Building Units',
+  'Metro Supply',
+
+
 ]
 
 for (let index in excel) {
@@ -215,6 +220,8 @@ for (let index in excel) {
     case 'State Age of Stock':
     case 'State Persons in Household':
     case 'State Household Type':
+    case 'State Building Units':
+    case 'Metro Supply':
 
       data.data = {}
       for (let value in sheet.data) {
