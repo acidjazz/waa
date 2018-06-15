@@ -43,12 +43,12 @@
         :choice="this.choice()",
         :animation="true",
         theme="lime",
-        title="Rentership",
+        title="Renter Households",
         description="Forecasted by the year 2030",
         tagline="Text Needed",
         width=380,height=140)
         .copys
-          .copy Growth in Rentership
+          .copy Growth in Renter Households
           .copy An aging population, immigration and fewer home purchases are increasing the need for apartments. 
 
       .chart
@@ -58,7 +58,7 @@
           :choice="this.choice()",
           :animation="true",
           theme="aqua",
-          title="Households",
+          title="Population",
           description="Forecasted by the year 2030",
           tagline="Text Needed",
           width=380,height=140)
