@@ -10,7 +10,13 @@
     .breadcrumb(v-if="choice().type == 'metro'") {{ choice().state }}
     .breadcrumb(v-if="choice().type == 'district'") {{ choice().state }}
     .copy {{ selection }}
-    .copy Apartments and their residents contribute more than $3.5 billion to the economy every day.
+
+    .copy
+      | {{ choice().state }} apartments and their residents contribute more than 
+      strong(v-if="contrib.value !== 0") ${{ daily.value }}{{ daily.a }}&nbsp;
+      strong(v-else) $0.0m
+      | to the economy every day.
+
     .copy_print Market Snapshot
     .stats
       .stat(v-if="residents.value !== 0")
@@ -101,6 +107,7 @@ export default {
             this.homes = this.parse(result[1].data.data['Total U.S.'], '0.0a')
             this.contrib = this.parse(result[2].data.data['Total U.S.'], '0.0a')
             this.jobs = this.parse(result[3].data.data['Total U.S.'], '0.0a')
+            this.daily = this.parse(result[2].data.data['Total U.S.'] / 365, '0.0a')
           })
           break
         case 'state':
@@ -109,6 +116,11 @@ export default {
             this.homes = this.parse(result[1].data.data[this.choice().value], '0.0a')
             this.contrib = this.parse(result[2].data.data[this.choice().value], '0.0a')
             this.jobs = this.parse(result[3].data.data[this.choice().value], '0.0a')
+            this.daily = this.parse(result[2].data.data[this.choice().value] / 365, '0.0a')
+
+            console.log('hi')
+            console.log(result[2].data.data['Total U.S.'])
+
           })
           break
         case 'district':
@@ -117,6 +129,7 @@ export default {
             this.homes = this.parse(result[1].data.data[this.choice().value], '0.0a')
             this.contrib = this.parse(result[2].data.data[this.choice().value], '0.0a')
             this.jobs = this.parse(result[3].data.data[this.choice().value], '0.0a')
+            this.daily = this.parse(result[2].data.data[this.choice().value] / 365, '0.0a')
           })
           break
         case 'metro':
@@ -125,6 +138,7 @@ export default {
             this.homes = this.parse(result[1].data.data[this.choice().value], '0.0a')
             this.contrib = this.parse(result[2].data.data[this.choice().value], '0.0a')
             this.jobs = this.parse(result[3].data.data[this.choice().value], '0.0a')
+            this.daily = this.parse(result[2].data.data[this.choice().value] / 365, '0.0a')
           })
           break
       }
@@ -162,6 +176,7 @@ export default {
       homes: { value: 0, a: null },
       contrib: { value: 0, a: null },
       jobs: { value: 0, a: null },
+      daily: { value: 0, a: null },
     }
   },
   head () {
