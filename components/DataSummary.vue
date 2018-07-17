@@ -117,10 +117,6 @@ export default {
             this.contrib = this.parse(result[2].data.data[this.choice().value], '0.0a')
             this.jobs = this.parse(result[3].data.data[this.choice().value], '0.0a')
             this.daily = this.parse(result[2].data.data[this.choice().value] / 365, '0.0a')
-
-            console.log('hi')
-            console.log(result[2].data.data['Total U.S.'])
-
           })
           break
         case 'district':

@@ -142,10 +142,6 @@ export default {
         this.jobs = jobsMetro.data[this.choice.value]
       }
 
-      for (let index in data) {
-        console.log(data[index])
-      }
-
       if (this.tab === 'type') {
 
         let total = data[0] + data[1] + data[2] + data[3] + data[4] + data[5]

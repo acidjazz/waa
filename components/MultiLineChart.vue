@@ -1,20 +1,22 @@
 <template lang="pug">
 #HousingGap
   // tooltip(align="right")
-  .title The Apartment Housing Gap
+  .title Apartments Needed 
   .clear
   .legend
     .item
       .dot.dot_blue
       .copy New Apartments Needed
-    .item
+    //.item
       .dot.dot_purple
       .copy Annual Construction Rate
   .stat
     strong {{ $store.state.homesNeeded }} 
+    // strong {{ $homesNeeded }} 
     span Apartment Homes Needed in 
-      span(v-if="choice && choice.type !== 'metro'") the Country
-      span(v-if="choice && choice.type === 'metro'") {{ this.choice.copy }}
+      span(v-if="choice && choice.type === 'national'") the Country
+      span(v-else) {{ this.choice.copy }}
+      span &nbsp;by 2030
   .chartainer
     canvas(:id="'chart-' + id",:width="width",:height="height")
 </template>
@@ -86,6 +88,7 @@ export default {
 
   data () {
     return {
+      homesNeeded: 0,
       myChart: undefined
     }
   },
@@ -113,20 +116,37 @@ export default {
       switch (true) {
 
         case this.choice && this.choice.type === 'national' && this.data === 'aptsneeded':
-        case this.choice && this.choice.type === 'state' && this.data === 'aptsneeded':
           this.json('US Building 2.json', (result) => {
             for (let key in result.data.data) {
-              if (key !== "") {
+              if (key !== "" && !isNaN(key)) {
                 data.labels.push(key)
-              }
-              if (this.isNumeric(result.data.data[key][1])) {
-                data.datas[1].push(result.data.data[key][1])
-              }
-              if (this.isNumeric(result.data.data[key][3])) {
-                data.datas[0].push(result.data.data[key][3])
+                if (this.isNumeric(result.data.data[key][1])) {
+                  data.datas[1].push(result.data.data[key][1])
+                }
+                if (this.isNumeric(result.data.data[key][3])) {
+                  data.datas[0].push(result.data.data[key][3])
+                }
               }
             }
             this.$store.state.homesNeeded = numeral(data.datas[1][data.datas[1].length - 1]).format('0,0')
+            callback(data)
+          })
+          break
+        case this.choice && this.choice.type === 'state' && this.data === 'aptsneeded':
+          this.json('State New Apt HHs Per Year.json', (result) => {
+            let state = result.data.labels.indexOf(this.choice.value)
+            for (let key in result.data.data) {
+              if (key !== "" && !isNaN(key)) {
+                data.labels.push(key)
+                if (this.isNumeric(result.data.data[key][state])) {
+                  data.datas[1].push(result.data.data[key][state])
+                }
+                if (this.isNumeric(result.data.data[key][3])) {
+                  data.datas[0].push(result.data.data[key][3])
+                }
+              }
+            }
+            this.$store.state.homesNeeded = numeral(result.data.data[""][state]).format('0,0')
             callback(data)
           })
           break
@@ -178,17 +198,6 @@ export default {
       Chart.defaults.global.elements.rectangle.borderColor = colors.purple
 
       let dataset = [{
-        data: data.datas[0],
-        lineTension: 0,
-        pointBackgroundColor: 'transparent',
-        pointHoverBackgroundColor: 'transparent',
-        pointBorderWidth: 0,
-        pointRadius: 8,
-        pointHoverRadius: 8,
-        pointBorderColor: 'transparent',
-        borderColor: colors.purple,
-        fill: false
-      }, {
         data: data.datas[1],
         lineTension: 0,
         pointBackgroundColor: 'transparent',
