@@ -2,11 +2,11 @@
 doctype
 #MetroStack
   .inner
-    .title(v-in-viewport) Stacking up the Metros
-    .copy(v-in-viewport) Based on specific factors like local regulations and available land to develop, the Barriers to Apartment Construction Index ranks 50 metro areas on how hard it is to build new apartments. See how your city stacks up. 
+    .title(v-in-viewport) Barriers to Apartment Construction Index
     VertBorder
+    .copy(v-in-viewport) Based on specific factors like local regulations and available land to develop, the Barriers to Apartment Construction Index ranks 50 metro areas on how hard it is to build new apartments. See how your city stacks up. 
     .metros(v-in-viewport)
-      .copy Barriers to Apartment Construction Index
+      .copy Multifamily supply restrictions index
       .list
         .metro(v-for="value, key in metros")
           i-count-up.value(:start=0,:end="metros[key]", :class="{ value_grey: loading === true, value_red: value > 5.0, value_orange: value < 5.0 && value > 1.6, value_green: value <= 1.6 }")
@@ -107,7 +107,7 @@ json('../assets/fonts.json')
       color grey
       width 560px
       margin auto
-      padding 0 0 60px 0
+      padding 60px 0 0 0
       &.below-viewport
         opacity 0
         transform translate(0, 20px)

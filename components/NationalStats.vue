@@ -171,11 +171,11 @@ export default {
     return {
       contrib: '...',
       jobs: '...',
-      tab: 'stock',
+      tab: 'type',
       tabs: {
         'type': 'Household Type',
         'persons': 'Persons in Household',
-        'stock': 'Age of Stock',
+        // 'stock': 'Age of Stock',
       },
 
       labels: {

@@ -7,7 +7,7 @@ doctype
       .close(to="/data",@click="reset()")
         .fa.fa-times.fa-2x
       .copy we are apartments
-      .copy Your City Comparison
+      .copy Your Metro Comparison
       .border.small
 
       table(cellspacing=0,cellpadding=0)
@@ -101,7 +101,7 @@ doctype
       img(src="/data.png")
     .section.section_left
 
-      .title(v-in-viewport) Compare Your City
+      .title(v-in-viewport) Compare Your Metro
       .copy(v-in-viewport) Enter two cities names in order to compare them
       .inputs(v-in-viewport)
         input(
