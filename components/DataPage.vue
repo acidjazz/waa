@@ -26,7 +26,9 @@
           .copy Renting on The Rise
           .copy(v-if="isNational") Many people in the U.S. call apartments home.  They appreciate mortgage-free living, the ability to fllow new work opportunities and amenities that fit their lifestyles.
           .copy(v-if="!isNational") Many people in {{ this.choice().value }} call apartments home.  They appreciate mortgage-free living, the ability to fllow new work opportunities and amenities that fit their lifestyles.
-        .title IN YOUR STATE
+        .title(v-if="isNational") IN THE U.S.
+        .title(v-if="isState") IN YOUR STATE
+        .title(v-if="isMetro") IN YOUR METRO
         CircleChart(
           :width="255",
           :height="255",
