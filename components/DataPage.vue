@@ -22,50 +22,43 @@
     .section.section_charts(v-if="this.choice().type !== 'district'")
 
       .chart
-        SingleLineChart(
-          data='apthhgrowth',
-          id='apthhgrowth',
+        .copys
+          .copy Renting on The Rise
+          .copy(v-if="isNational") Many people in the U.S. call apartments home.  They appreciate mortgage-free living, the ability to fllow new work opportunities and amenities that fit their lifestyles.
+          .copy(v-if="!isNational") Many people in {{ this.choice().value }} call apartments home.  They appreciate mortgage-free living, the ability to fllow new work opportunities and amenities that fit their lifestyles.
+        .title IN YOUR STATE
+        CircleChart(
+          :width="255",
+          :height="255",
+          id="ontherise",
           :choice="this.choice()",
           :animation="true",
-          theme="orange",
-          title="Apartments Needed",
-          description="Forecasted by the year 2030",
-          tagline="Text Needed",
-          width=380,height=140)
-        .copys
-          .copy Apartment Household Growth
-          .copy Population growth and a higher propensity to rent will create a need for more apartments by 2030. 
-
+          title="Renting on The Rise")
+        .copy.has-text-grey.has-text-centered(v-if="isNational") Of U.S. residents call an apartment home
+        .copy.has-text-grey.has-text-centered(v-if="!isNational") Of residents in {{ this.choice().value }} call an apartment home
       .chart
-        SingleLineChart(
-          data='rentgrowth',
-        id='rentgrowth',
-        :choice="this.choice()",
-        :animation="true",
-        theme="lime",
-        title="Renter Households",
-        description="Forecasted by the year 2030",
-        tagline="Text Needed",
-        width=380,height=140)
         .copys
-          .copy Growth in Renter Households
-          .copy An aging population, immigration and fewer home purchases are increasing the need for apartments. 
-
-      .chart
+          .copy(v-if="this.choice().type === 'state'") Household Growth
+          .copy(v-else) Population Growth
+          .copy As our population grows, this puts strain on the existing housing supply. A variety of housing options will be needed to meet diverse needs. 
+        .title POPULATION
         SingleLineChart(
+          :noborder="true",
+          :nopadding="true",
           data='popgrowth',
           id='popgrowth',
           :choice="this.choice()",
           :animation="true",
           theme="aqua",
-          title="Population",
           description="Forecasted by the year 2030",
           tagline="Text Needed",
           width=380,height=140)
+      .chart
         .copys
-          .copy(v-if="this.choice().type === 'state'") Household Growth
-          .copy(v-else) Population Growth
-          .copy As our population grows, this puts strain on the existing housing supply. A variety of housing options will be needed to meet diverse needs. 
+          .copy Supply at Risk
+          .copy The nation's apartment stock is aging.  With resources to support rehabilitation and preservation efforts, the current supply-demand imbalance will worsen, affecting affordability
+        .title AGE OF STOCK
+        NationalStats(:stock="true",:choice="this.choice()")
       .clear
 
     .section.section_chart(v-if="this.choice().type !== 'district'")
@@ -131,12 +124,12 @@
 
     .section.section_charts(v-if="this.choice().type !== 'district'")
       .chart
-        SingleLineChart(data='apthhgrowth',id='ahgrowth_print',:choice="this.choice()",:animation="false",theme="orange",width=400,height=300)
+        //SingleLineChart(data='apthhgrowth',id='ahgrowth_print',:choice="this.choice()",:animation="false",theme="orange",width=400,height=300)
         .copys
           .copy Apartment Household Growth
           .copy Population growth and a higher propensity to rent will create a ..
       .chart
-        SingleLineChart(data='rentgrowth',id='rentgrowth_print',:choice="this.choice()",:animation="false",theme="lime",width=400,height=300)
+        //SingleLineChart(data='rentgrowth',id='rentgrowth_print',:choice="this.choice()",:animation="false",theme="lime",width=400,height=300)
         .copys
           .copy Growth in Rentership
           .copy An aging population, immigration and fewer ..
@@ -176,6 +169,7 @@ import DataSummary from '~/components/DataSummary.vue'
 import DistrictCopy from '~/components/DistrictCopy.vue'
 import DistrictTrio from '~/components/DistrictTrio.vue'
 import SingleLineChart from '~/components/SingleLineChart.vue'
+import CircleChart from '~/components/CircleChart.vue'
 import MultiLineChart from '~/components/MultiLineChart.vue'
 import NationalStats from '~/components/NationalStats.vue'
 import Demand from '~/components/Demand.vue'
@@ -199,6 +193,7 @@ export default {
     DistrictCopy,
     DistrictTrio,
     SingleLineChart,
+    CircleChart,
     MultiLineChart,
     NationalStats,
     Demand,
@@ -239,6 +234,23 @@ export default {
       }
     },
   },
+
+  computed: {
+    isNational () {
+      return this.choice().type === 'national'
+    },
+    isState () {
+      return this.choice().type === 'state'
+    },
+    isMetro () {
+      return this.choice().type === 'metro'
+    },
+    isDistrict () {
+      return this.choice().type === 'district'
+    },
+  },
+
+
   data () {
     return {
       path: false,
@@ -585,6 +597,9 @@ json('../assets/fonts.json')
       width 1200px
       margin auto
       > .chart
+        > .title
+          font c1sb
+          text-decoration uppercase
         float left
         width 380px
         margin-right 30px
@@ -592,6 +607,7 @@ json('../assets/fonts.json')
           margin-right 0px
         > .copys
           margin 20px 0 0 0
+          height 140px
           > .copy:first-child
             font h3
             padding 0 0 10px 0

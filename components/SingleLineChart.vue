@@ -1,5 +1,5 @@
 <template lang="pug">
-.chartainer(:class="{'no-border': data === 'inyourstate'}")
+.chartainer(:class="{'no-border': data === 'inyourstate' || noborder, 'no-padding': nopadding}")
     //tooltip(v-if="data === 'popgrowth' || data === 'inyourstate'",align="left")
     //tooltip(v-else)
     .title {{ title }}
@@ -33,6 +33,8 @@ json('../assets/fonts.json')
   position relative
   &.no-border
     border 0px solid transparent
+  &.no-padding
+    padding 10px 0px 0px 0px
   > .title
     font h3
     color casal
@@ -62,7 +64,7 @@ import ICountUp from 'vue-countup-v2'
 export default {
   mixins: [ chartmixin, inViewport ],
   components: { tooltip, ICountUp },
-  props: ['id', 'data', 'choice', 'theme', 'width', 'height', 'animation', 'title', 'description', 'tagline'],
+  props: ['id', 'data', 'choice', 'theme', 'width', 'height', 'animation', 'title', 'description', 'tagline', 'noborder', 'nopadding'],
   methods: {
 
     print () {

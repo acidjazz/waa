@@ -77,6 +77,8 @@ let sheets = [
   'US Affordability (Landing)',
 
   'US % Total Pop',
+  'State % of Total HHs',
+  'Metro % of Total HHs',
 
   'US Units Needed',
   'Metros Units Needed',
@@ -160,6 +162,8 @@ for (let index in excel) {
     case 'Metro Restriction Index':
     case 'US Housing Costs':
     case 'Metro Housing Costs':
+    case 'State % of Total HHs':
+    case 'Metro % of Total HHs':
     case 'FAQ':
     case 'Metro Burden':
       data.data = {}

@@ -33,12 +33,14 @@ import colors from '~/assets/colors.json'
 
 const data = 'US Housing Costs.json'
 const datab = 'US % Total Pop.json'
+const databs = 'State % of Total HHs.json'
+const databm = 'Metro % of Total HHs.json'
 const datad = 'District Apt Residents.json'
 const datam = 'Mero Apt Residents.json'
 
 export default {
 
-  props: ['id', 'width', 'height', 'value', 'district'],
+  props: ['id', 'width', 'height', 'value', 'district', 'choice'],
 
   data () {
     return {
@@ -47,11 +49,12 @@ export default {
   },
   methods: {
     json (sheet, result) {
-      window.axios.get('/' + sheet)
+      window.axios.get('/' + encodeURIComponent(sheet))
         .then(response => {
           result(response)
         })
     },
+
     populate (complete) {
       if (this.value === undefined) {
         this.json(data, (result) => {
@@ -84,7 +87,22 @@ export default {
         })
       }
 
+      if (this.district === undefined && this.choice.type === 'state') {
+        this.json(databs, (result) => {
+          console.log(result)
+          this.perc = Math.round(result.data.data[this.choice.value] * 100)
+        })
+      }
+
+      if (this.district === undefined && this.choice.type === 'metro') {
+        this.json(databm, (result) => {
+          console.log(result)
+          this.perc = Math.round(result.data.data[this.choice.value] * 100)
+        })
+      }
+
     },
+
     draw () {
 
       let canvas = document.getElementById('chart-' + this.id)

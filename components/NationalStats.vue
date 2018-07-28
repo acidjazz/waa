@@ -1,10 +1,10 @@
 <template lang="pug">
-#NationalStats
-  .title {{ choice.value }} Apartment Stats
+#NationalStats(:class="{'stock': stock}")
+  .title(v-if="!stock") {{ choice.value }} Apartment Stats
 
   .body
-    .copy {{ tabs[tab] }}
-    .tab-circles
+    .copy(v-if="!stock") {{ tabs[tab] }}
+    .tab-circles(v-if="!stock")
       .tab-circle(v-for="value,key in tabs",:class="{active: key === tab}",@click="tab = key")
     .clear
 
@@ -102,6 +102,11 @@ var datas = {
 export default {
 
   props: {
+    stock: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
     choice: {
       type: Object,
       required: true,
@@ -116,6 +121,12 @@ export default {
 
       return value
     },
+  },
+
+  created () {
+    if (this.stock) {
+      this.tab = 'stock'
+    }
   },
 
   computed: {
@@ -215,6 +226,18 @@ json('../assets/fonts.json')
   border-radius 6px
   width 310px
   height 500px
+  &.stock
+    float left
+    width 350px
+    border 0px solid transparent
+    > .title
+      font c1sb
+      border-bottom 0px solid transparent
+      padding 10px 0 0 0
+    > .body
+      padding 0px
+      > .stats
+        padding 0px
   > .title
     font h3
     padding 16px
