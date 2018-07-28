@@ -283,28 +283,28 @@ json('../assets/fonts.json')
         padding-bottom 20px
         &.is-royalpurple
           > .value
-            color lightpurple
+            color royalpurple
           > .progress
             background-color lightpurple
             > .inner
               background-color royalpurple
         &.is-red
           > .value
-            color lightred
+            color red
           > .progress
             background-color lightred
             > .inner
               background-color red
         &.is-blue
           > .value
-            color sail
+            color cerulean
           > .progress
             background-color sail
             > .inner
               background-color cerulean
         &.is-yellow
           > .value
-            color grey
+            color casal
           > .progress
             background-color lemonChiffon
             > .inner

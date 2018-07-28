@@ -9,13 +9,13 @@
         span {{ cspike }}
       .value(v-else)
         i-count-up.span(:start="0",:end="spiked",:decimals="2",v-if="!print()")
-        span(v-else) {{ spiked }}
+        span(v-else) {{ Math.round(spiked) }}
         span % 
         span Increase
     .spike(v-else)
       .value
         i-count-up.span(:start="0",:end="spiked",:decimals="2",v-if="!print()")
-        span(v-else) {{ spiked }}
+        span(v-else) {{ Math.round(spiked) }}
         span % 
         span Decrease
     .tagline

@@ -56,7 +56,7 @@
       .chart
         .copys
           .copy Supply at Risk
-          .copy The nation's apartment stock is aging.  With resources to support rehabilitation and preservation efforts, the current supply-demand imbalance will worsen, affecting affordability
+          .copy The apartment stock is aging. Without resources to support rehabilitation and preservation efforts, the current supply-demand imbalance will worsen, affecting affordability
         .title AGE OF STOCK
         NationalStats(:stock="true",:choice="this.choice()")
       .clear
