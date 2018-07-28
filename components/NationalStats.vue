@@ -230,6 +230,7 @@ json('../assets/fonts.json')
     float left
     width 350px
     border 0px solid transparent
+    height auto
     > .title
       font c1sb
       border-bottom 0px solid transparent

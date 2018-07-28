@@ -607,7 +607,7 @@ json('../assets/fonts.json')
           margin-right 0px
         > .copys
           margin 20px 0 0 0
-          height 140px
+          height 150px
           > .copy:first-child
             font h3
             padding 0 0 10px 0
