@@ -7,7 +7,7 @@
     .item
       .dot.dot_blue
       .copy New Apartments Needed
-    //.item
+    .item(v-if="choice.type !== 'state'")
       .dot.dot_purple
       .copy Annual Construction Rate
   .stat
@@ -133,7 +133,8 @@ export default {
           })
           break
         case this.choice && this.choice.type === 'state' && this.data === 'aptsneeded':
-          this.json('State New Apt HHs Per Year.json', (result) => {
+          // this.json('State New Apt HHs Per Year.json', (result) => {
+          this.json('State Building Needed.json', (result) => {
             let state = result.data.labels.indexOf(this.choice.value)
             for (let key in result.data.data) {
               if (key !== "" && !isNaN(key)) {
@@ -146,9 +147,15 @@ export default {
                 }
               }
             }
-            this.$store.state.homesNeeded = numeral(result.data.data[""][state]).format('0,0')
             callback(data)
+            this.$store.state.homesNeeded = numeral(result.data.data[2030][state]).format('0,0')
           })
+          /*
+          this.json('State New Apt HHs Per Year.json', (result) => {
+            let state = result.data.labels.indexOf(this.choice.value)
+            this.$store.state.homesNeeded = numeral(result.data.data[""][state]).format('0,0')
+          })
+          */
           break
 
         case this.choice && this.choice.type === 'metro' && this.data === 'aptsneeded':
@@ -197,20 +204,51 @@ export default {
 
       Chart.defaults.global.elements.rectangle.borderColor = colors.purple
 
-      let dataset = [{
-        data: data.datas[1],
-        lineTension: 0,
-        pointBackgroundColor: 'transparent',
-        pointHoverBackgroundColor: 'transparent',
-        pointBorderWidth: 0,
-        pointRadius: 8,
-        pointHoverRadius: 8,
-        pointBorderColor: 'transparent',
+      let dataset = []
 
-        borderColor: colors.blue,
-        backgroundColor: colors.blue,
-        fill: false
-      }]
+      if (this.choice.type !== 'state') {
+        dataset = [{
+          data: data.datas[0],
+          lineTension: 0,
+          pointBackgroundColor: 'transparent',
+          pointHoverBackgroundColor: 'transparent',
+          pointBorderWidth: 0,
+          pointRadius: 8,
+          pointHoverRadius: 8,
+          pointBorderColor: 'transparent',
+          borderColor: colors.purple,
+          fill: false
+        }, {
+          data: data.datas[1],
+          lineTension: 0,
+          pointBackgroundColor: 'transparent',
+          pointHoverBackgroundColor: 'transparent',
+          pointBorderWidth: 0,
+          pointRadius: 8,
+          pointHoverRadius: 8,
+          pointBorderColor: 'transparent',
+
+          borderColor: colors.blue,
+          backgroundColor: colors.blue,
+          fill: false
+        }]
+      } else {
+        dataset = [{
+          data: data.datas[1],
+          lineTension: 0,
+          pointBackgroundColor: 'transparent',
+          pointHoverBackgroundColor: 'transparent',
+          pointBorderWidth: 0,
+          pointRadius: 8,
+          pointHoverRadius: 8,
+          pointBorderColor: 'transparent',
+
+          borderColor: colors.blue,
+          backgroundColor: colors.blue,
+          fill: false
+        }]
+      }
+
 
       if (this.myChart !== undefined) {
 

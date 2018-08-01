@@ -89,14 +89,12 @@ export default {
 
       if (this.district === undefined && this.choice.type === 'state') {
         this.json(databs, (result) => {
-          console.log(result)
           this.perc = Math.round(result.data.data[this.choice.value] * 100)
         })
       }
 
       if (this.district === undefined && this.choice.type === 'metro') {
         this.json(databm, (result) => {
-          console.log(result)
           this.perc = Math.round(result.data.data[this.choice.value] * 100)
         })
       }

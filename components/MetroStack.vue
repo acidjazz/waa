@@ -5,8 +5,9 @@ doctype
     .title(v-in-viewport) Barriers to Apartment Construction Index
     VertBorder
     .copy(v-in-viewport) Based on specific factors like local regulations and available land to develop, the Barriers to Apartment Construction Index ranks 50 metro areas on how hard it is to build new apartments. See how your city stacks up. 
+    .copy2(v-in-viewport) Multifamily supply restrictions index
+    HeatChart(v-if="choice.type === 'metro'",:metro="this.choice.value")
     .metros(v-in-viewport)
-      .copy Multifamily supply restrictions index
       .list
         .metro(v-for="value, key in metros")
           i-count-up.value(:start=0,:end="metros[key]", :class="{ value_grey: loading === true, value_red: value > 5.0, value_orange: value < 5.0 && value > 1.6, value_green: value <= 1.6 }")
@@ -19,8 +20,10 @@ import ICountUp from 'vue-countup-v2'
 import inViewportDirective from 'vue-in-viewport-directive'
 import inViewport from 'vue-in-viewport-mixin'
 import VertBorder from '~/components/VertBorder'
+import HeatChart from '~/components/HeatChart'
 export default {
-  components: { ICountUp, VertBorder },
+  props: [ 'choice' ],
+  components: { ICountUp, VertBorder, HeatChart },
   directives: { 'in-viewport': inViewportDirective },
   mixins: [ inViewport ],
   methods: {
@@ -115,6 +118,18 @@ json('../assets/fonts.json')
         opacity 1
         transform translate(0, 0)
         transition opacity 1s ease-in-out 0.1s, transform 1s ease-in-out 0.1s
+    > .copy2
+      font c1b
+      text-transform uppercase
+      text-align center
+      padding 30px 0
+      &.below-viewport
+        opacity 0
+        transform translate(0, 20px)
+      &.in-viewport
+        opacity 1
+        transform translate(0, 0)
+        transition opacity 1s ease-in-out 0.1s, transform 1s ease-in-out 0.1s
     > .metros
       width 900px
       margin auto
@@ -126,11 +141,6 @@ json('../assets/fonts.json')
         opacity 1
         transform translate(0, 0)
         transition opacity 1s ease-in-out 0s, transform 1s ease-in-out 0s
-      > .copy
-        font c1b
-        text-transform uppercase
-        text-align center
-        padding 0 0 30px 0
       > .list
         column-count 4
         column-gap 30px

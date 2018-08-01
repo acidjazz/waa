@@ -58,7 +58,7 @@
       .chart
         .copys
           .copy Supply at Risk
-          .copy The apartment stock is aging. Without resources to support rehabilitation and preservation efforts, the current supply-demand imbalance will worsen, affecting affordability
+          .copy The apartment stock is aging. Without resources to support rehabilitation and preservation efforts, the current supply-demand imbalance will worsen, affecting affordability.
         .title AGE OF STOCK
         NationalStats(:stock="true",:choice="this.choice()")
       .clear
@@ -73,7 +73,6 @@
           width=820,height=396)
       // .right.left_inyourcity(v-if="this.choice().type === 'metro'")
         .copy barriers to apartments construction
-        HeatChart(:metro="this.choice().value")
         .tip Index based on local regulations and available land
         .title Red Tape Rating
         .copy Over the last three decades, regulatory barriers to apartment construction have increased significantly, most notably at the local level.
@@ -82,7 +81,7 @@
       .clear
     CustomPDF(:choice="this.choice()")
     Compare
-    MetroStack
+    MetroStack(:choice="choice()")
     QuoteBar
     //.border.big
     // .border.big(v-if="(this.choice().type !== 'district')")
@@ -177,7 +176,6 @@ import NationalStats from '~/components/NationalStats.vue'
 import Demand from '~/components/Demand.vue'
 import Share from '~/components/Share.vue'
 import BuildMore from '~/components/BuildMore.vue'
-import HeatChart from '~/components/HeatChart.vue'
 import Downloads from '~/components/Downloads.vue'
 import Compare from '~/components/Compare.vue'
 import MetroStack from '~/components/MetroStack.vue'
@@ -201,7 +199,6 @@ export default {
     Demand,
     Share,
     BuildMore,
-    HeatChart,
     Downloads,
     Compare,
     MetroStack,
@@ -509,11 +506,6 @@ json('../assets/fonts.json')
           font c1ssb
           width 280px
           text-transform uppercase
-        > .HeatChart
-          margin 5px 0 0 0
-          > .legend
-            margin-top -55px
-            width 160px
         > .tip
           font c1ss
           color grey
