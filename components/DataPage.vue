@@ -110,49 +110,66 @@
     Bottom
   .datapage_print
     .source Learn More @ https://weareapartments.org{{ path }}
-    .section.section_demand(v-if="this.choice().type !== 'district'")
-      p {{ this.choice().copy }}
-      Demand(:type="this.choice().type",:value="this.choice().value")
-    .section.section_district_name(v-if="this.choice().type === 'district'")
-      .copy {{ this.choice().value }}
-      .copy Apartments and their residents contribute more than $3.5 billion to the economy every day.
-    DataSummary(:state="state",:metro="metro",:district="district",v-if="this.choice().type === 'district'",type="print")
-    .section.section_district(v-if="this.choice().type === 'district'")
-      DistrictCopy(:district="this.choice().value")
-
-    .section.section_trio(v-if="this.choice().type === 'district'")
-      DistrictTrio(type="print",:choice="this.choice()")
-
-    .section.section_charts(v-if="this.choice().type !== 'district'")
-      .chart
-        //SingleLineChart(data='apthhgrowth',id='ahgrowth_print',:choice="this.choice()",:animation="false",theme="orange",width=400,height=300)
-        .copys
-          .copy Apartment Household Growth
-          .copy Population growth and a higher propensity to rent will create a ..
-      .chart
-        //SingleLineChart(data='rentgrowth',id='rentgrowth_print',:choice="this.choice()",:animation="false",theme="lime",width=400,height=300)
-        .copys
-          .copy Growth in Rentership
-          .copy An aging population, immigration and fewer ..
-      .chart
-        SingleLineChart(data='popgrowth',id='popgrowth_print',:choice="this.choice()",:animation="false",theme="aqua",width=400,height=300)
-        .copys
-          .copy(v-if="this.choice().type === 'state'") Household Growth
-          .copy(v-else) Population Growth
-          .copy As our population grows, this puts strain on the existing housing ..
-    .clear
-
+    DataSummary(:state="state",:metro="metro",:district="district",type="print")
     .section.section_chart(v-if="this.choice().type !== 'district'")
-      .left
+      .chart.left
         MultiLineChart(
           :animation="false",
           :choice="this.choice()",
           data='aptsneeded',
           id='aptsneeded_print',
-          theme="red",width=510,height=135)
+          width=550,height=396)
+
+      .right
+        .section_demand
+          p The Demand
+          Demand(:type="this.choice().type",:value="this.choice().value")
+          .pointer
       .clear
-    .clear
-    DataSummary(:state="state",:metro="metro",:district="district",v-if="this.choice().type !== 'district'",type="print")
+
+    .section.section_charts(v-if="this.choice().type !== 'district'")
+      .chart
+        .copys
+          .copy Renting on The Rise
+          .copy(v-if="isNational") Many people in the U.S. call apartments home.  They appreciate mortgage-free living, the ability to fllow new work opportunities and amenities that fit their lifestyles.
+          .copy(v-if="!isNational") Many people in {{ this.choice().value }} call apartments home.  They appreciate mortgage-free living, the ability to fllow new work opportunities and amenities that fit their lifestyles.
+        .title(v-if="isNational") IN THE U.S.
+        .title(v-if="isState") IN YOUR STATE
+        .title(v-if="isMetro") IN YOUR METRO
+        CircleChart(
+          :width="245",
+          :height="245",
+          id="ontherise-print",
+          :choice="this.choice()",
+          :animation="false",
+          title="Renting on The Rise")
+        .copy.has-text-grey.has-text-centered(v-if="isNational") Of U.S. residents call an apartment home
+        .copy.has-text-grey.has-text-centered(v-if="!isNational") Of residents in {{ this.choice().value }} call an apartment home
+      .chart
+        .copys
+          .copy(v-if="this.choice().type === 'state'") Household Growth
+          .copy(v-else) Population Growth
+          .copy As our population grows, this puts strain on the existing housing supply. A variety of housing options will be needed to meet diverse needs. 
+        .title POPULATION
+        SingleLineChart(
+          :noborder="true",
+          :nopadding="true",
+          data='popgrowth',
+          id='popgrowth-print',
+          :choice="this.choice()",
+          :animation="false",
+          theme="aqua",
+          description="Forecasted by the year 2030",
+          tagline="Text Needed",
+          width=380,height=140)
+      .chart
+        .copys
+          .copy Supply at Risk
+          .copy The apartment stock is aging. Without resources to support rehabilitation and preservation efforts, the current supply-demand imbalance will worsen, affecting affordability.
+        .title AGE OF STOCK
+        NationalStats(:stock="true",:choice="this.choice()")
+      .clear
+
     .logos
        img(src="/logo-nmhc.png")
        img(src="/logo-naa.png")
@@ -317,235 +334,6 @@ json('../assets/fonts.json')
               font c1
               color grey
 
-  .datapage_print
-    overflow hidden
-    height 1px
-    > #DataSummary
-      background none
-      color black
-      padding-top 20px
-      > .inner
-        position relative
-        background none
-        background-color white
-        padding 10px 0
-        > .breadcrumb
-          display none
-        > .copy:nth-child(2), > .copy:nth-child(3)
-          display none
-        > .copy_print
-          display block
-          margin 0 
-          background-color white
-          text-transform uppercase
-          padding 0 10px
-          position absolute
-          top 0px
-          left 50%
-          width 200px
-          margin-left -100px
-          font c1sb
-          color darkblue
-        > .stats
-          border-top 1px solid lightblue
-          width 750px
-          margin auto
-          padding-top 5px
-          height 80px
-          > .stat
-            padding 10px
-            max-width 150px
-            height 60px
-            animation none !important
-            &:first-child, &:nth-child(2), &:nth-child(3)
-              border-right 1px solid lightblue
-            > .value
-              padding 0 0 10px 0
-              color purple
-              animation none !important
-            > .copy
-              font c1s
-    > .source
-      text-align right
-      color grey
-      padding 6px
-      font c1s
-    > .section_demand
-      text-align center
-      > p:first-child
-        font h1
-        line-height 2px
-      > p:nth-child(2)
-        color grey
-        max-width 490px
-        margin auto
-        font c1s
-        > span
-          color black
-          > span
-            color red
-
-    > .section_district_name
-      > .copy:nth-child(2)
-        padding 10px 0 !important
-    > .section_district
-      > .DistrictCopy
-        > .inner
-          padding 10px 0
-          > .copy:first-child
-            padding 0 0 10px 0
-        > .pointers
-          width 765px
-
-    > .section_trio
-      > .district_charts
-        padding 10px 0
-        > .dchart
-          overflow hidden
-        > .dchart > .inner
-          > .chartainer
-            width 244px
-          > .circle-chart
-            > .value
-              margin-top -25px
-          > .copy:nth-child(3)
-            display none
-          > .copy:nth-child(4)
-            margin -20px auto 0 auto
-
-
-    > .section_district_name
-      text-align center
-      > .copy:first-child
-        font h1
-      > .copy:nth-child(2)
-        color grey
-        padding 30px 0
-    > .section_trio
-      > .district_charts
-        width 765px
-        > .dchart
-           > .copys
-            display none
-           > .inner
-             margin 3px
-             height 300px
-             > .copy
-               margin -20px auto 0 auto
-               width 90%
-             > #percs
-               > .perc
-                 > .progress
-                   margin 5px 0
-           > .copys
-             margin 0 3px
-           
-
-    > .section_charts
-      width 750px
-      margin auto
-      > .chart
-        float left
-        width 33%
-        margin-right 0px
-        > .chartainer > .tooltip
-          display none
-        &:nth-child(3)
-          margin-right 0px
-        > .copys
-          margin 0px 5px 0 5px
-          > .copy:first-child
-            font c1
-            padding 0 0 10px 0
-          > .copy:nth-child(2)
-            color grey
-            font c1s
-            display none
-    > .section_chart
-      width 750px
-      margin auto
-      margin-top 20px
-      > .top
-        background-color green
-        > .part
-          float right
-          width 250px
-          &.part_homes
-            text-align left
-            line-height 20px
-            padding 5px 0 0 0
-            > .value
-              display inline
-            > .copy
-              color grey
-              display inline
-          &.part_numbers
-            > .graph
-              float left
-              margin 10px 0 0 0
-              background-color rgba(red, 0.5)
-              width 10px
-              height 10px
-              border-radius 50%
-            > .copy
-              margin 5px 0 0 40px
-              color grey
-              line-height 10px
-              width 184px
-              line-height 20px
-            > .value
-              margin 0 0 0 20px
-            &:nth-child(2) > .graph 
-              background-color rgba(red, 1)
-      > .left
-        float none
-        border none
-        height 225px
-        margin 50px 0 0 0
-        > .copy
-          font c1ssb
-          width 280px
-          text-transform uppercase
-        > .tip
-          font c1ss
-          color grey
-          text-align center
-          width 160px
-          margin 0 0 0 20px
-      > .right
-        display none
-        float right
-        border none
-        margin 10px auto
-        width 550px
-        height 225px
-      > .copyLeft
-        float left
-        width 255px
-        display none
-      > .copyRight
-      > .copys
-        float left
-        > .copy:nth-child(1)
-          font c1
-          float left
-          margin 20px 0 0 0
-          width 177px
-        > .copy:nth-child(2)
-          font c1s
-          float right
-          width 565px
-          padding 5px 0 0 0
-          color grey
-          margin 0 5px 0 0
-    > .logos
-      width 750px
-      height 30px
-      margin 20px auto 0 auto
-      text-align right
-      > img
-        height 50px
-
   .datapage_web
     visibility visible
     // display none
@@ -666,5 +454,6 @@ json('../assets/fonts.json')
     height auto !important
 
 @import '../assets/stylus/datapage-mobile.styl'
+@import '../assets/stylus/datapage-print.styl'
 
 </style>

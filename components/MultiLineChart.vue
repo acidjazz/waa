@@ -3,6 +3,12 @@
   // tooltip(align="right")
   .title Apartments Needed 
   .clear
+  .stat
+    strong {{ $store.state.homesNeeded }} 
+    span Apartment Homes Needed in 
+      span(v-if="choice && choice.type === 'national'") the Country
+      span(v-else) {{ this.choice.copy }}
+      span &nbsp;by 2030
   .legend
     .item
       .dot.dot_blue
@@ -10,13 +16,6 @@
     .item(v-if="choice.type !== 'state'")
       .dot.dot_purple
       .copy Annual Construction Rate
-  .stat
-    strong {{ $store.state.homesNeeded }} 
-    // strong {{ $homesNeeded }} 
-    span Apartment Homes Needed in 
-      span(v-if="choice && choice.type === 'national'") the Country
-      span(v-else) {{ this.choice.copy }}
-      span &nbsp;by 2030
   .chartainer
     canvas(:id="'chart-' + id",:width="width",:height="height")
 </template>

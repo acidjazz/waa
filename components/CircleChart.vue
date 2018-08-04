@@ -40,7 +40,7 @@ const datam = 'Mero Apt Residents.json'
 
 export default {
 
-  props: ['id', 'width', 'height', 'value', 'district', 'choice'],
+  props: ['id', 'width', 'height', 'value', 'district', 'choice', 'animation'],
 
   data () {
     return {
