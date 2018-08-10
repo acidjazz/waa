@@ -2,8 +2,8 @@
 doctype
 #MetroStack
   .inner
-    .title(v-in-viewport) Barriers to Apartment Construction Index
     VertBorder
+    .title(v-in-viewport) Barriers to New Apartments
     .copy(v-in-viewport) Based on specific factors like local regulations and available land to develop, the Barriers to Apartment Construction Index ranks 50 metro areas on how hard it is to build new apartments. See how your city stacks up. 
     .copy2(v-in-viewport) Multifamily supply restrictions index
     HeatChart(v-if="choice.type === 'metro'",:metro="this.choice.value")
@@ -97,7 +97,7 @@ json('../assets/fonts.json')
     > .title
       font h1
       text-align center
-      padding 0 0 30px 0
+      padding 30px 0 0 0
       &.below-viewport
         opacity 0
         transform translate(0, 20px)
@@ -110,7 +110,7 @@ json('../assets/fonts.json')
       color grey
       width 560px
       margin auto
-      padding 60px 0 0 0
+      padding 30px 0 0 0
       &.below-viewport
         opacity 0
         transform translate(0, 20px)

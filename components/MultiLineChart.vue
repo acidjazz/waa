@@ -15,7 +15,7 @@
       .copy New Apartments Needed
     .item(v-if="choice.type !== 'state'")
       .dot.dot_purple
-      .copy Annual Construction Rate
+      .copy Annual Construction Rate (2011-2017)
   .chartainer
     canvas(:id="'chart-' + id",:width="width",:height="height")
 </template>
@@ -31,16 +31,16 @@ json('../assets/fonts.json')
   height 460px
   > .title
     font h3
-    padding 0 0 20px 0
     float left
   > .legend
     > .item
+      clear both
       > .dot
         float left
         width 14px
         height 14px
         border-radius 7px
-        margin 0 10px 0 0
+        margin 0 10px 10px 0
         &.dot_blue
           background-color blue
         &.dot_purple
@@ -52,8 +52,8 @@ json('../assets/fonts.json')
         margin 0 10px 0 0
         font-size 14px
   > .stat
-    line-height 14px
     float right
+    line-height 14px
     > span
       color grey
       font-size 14px
@@ -191,6 +191,7 @@ export default {
 
       let ctx = 'chart-' + this.id
 
+      let black = colors.black
       let solid = colors.aqua
       let light = colors.lightaqua
 
@@ -299,7 +300,7 @@ export default {
                   return numeral(label).format('0a')
                 },
                 fontSize: 12,
-                fontColor: colors.grey,
+                fontColor: colors.black,
                 maxTicksLimit: 5,
               }
             }],
@@ -311,9 +312,9 @@ export default {
               },
               ticks: {
                 fontSize: 12,
-                fontColor: colors.grey,
+                fontColor: colors.black,
                 color: solid,
-                maxTicksLimit: 8,
+                maxTicksLimit: 6,
                 maxRotation: 0,
               }
             }]

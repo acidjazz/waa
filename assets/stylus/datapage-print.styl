@@ -7,9 +7,13 @@
     > .bars
       display none !important
     > .inner
-      padding 20px 0
+      padding 10px 0
+      > .breadcrumb
+        padding 0 0 10px 0
       > .copy
-        padding 0 0 10px 0 !important
+        padding 0 0 0px 0 !important
+      > .copy:nth-child(2)
+        font 30px/30px 'Rubik'
       > .stats
         height auto
         > .stat
@@ -27,6 +31,7 @@
       float left
       width 520px
       > #HousingGap
+        height auto
         padding 10px
         border none
         .title
@@ -45,6 +50,7 @@
     width 210px
     border-radius 6px
     padding 10px
+    font-size 12px
     p:nth-child(1)
       font h1
       margin 10px 0
@@ -62,6 +68,8 @@
     display flex
     .chart:nth-child(1)
       border-right 1px solid grey
+      > .copy
+        line-height 16px
     .chart:nth-child(2)
       padding-left 10px
       margin-right 5px
@@ -83,6 +91,11 @@
         text-transform uppercase
       #NationalStats
         width 100%
+        > .body
+          > .stats
+            > .stat
+              padding-top 10px
+              padding-bottom 10px
 
 
   > .logos

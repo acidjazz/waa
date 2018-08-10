@@ -118,7 +118,7 @@
           :choice="this.choice()",
           data='aptsneeded',
           id='aptsneeded_print',
-          width=550,height=396)
+          width=550,height=260)
 
       .right
         .section_demand
@@ -137,8 +137,8 @@
         .title(v-if="isState") IN YOUR STATE
         .title(v-if="isMetro") IN YOUR METRO
         CircleChart(
-          :width="245",
-          :height="245",
+          :width="170",
+          :height="170",
           id="ontherise-print",
           :choice="this.choice()",
           :animation="false",
