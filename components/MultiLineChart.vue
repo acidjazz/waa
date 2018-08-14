@@ -314,8 +314,11 @@ export default {
                 fontSize: 12,
                 fontColor: colors.black,
                 color: solid,
-                maxTicksLimit: 6,
+                maxTicksLimit: 8,
                 maxRotation: 0,
+                callback: function (label, index, labels) {
+                  return `'${label.substr(-2)}`
+                },
               }
             }]
           }

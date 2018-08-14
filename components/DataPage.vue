@@ -71,11 +71,6 @@
           data='aptsneeded',
           id='aptsneeded',
           width=820,height=396)
-      // .right.left_inyourcity(v-if="this.choice().type === 'metro'")
-        .copy barriers to apartments construction
-        .tip Index based on local regulations and available land
-        .title Red Tape Rating
-        .copy Over the last three decades, regulatory barriers to apartment construction have increased significantly, most notably at the local level.
       .right
         NationalStats(:choice="this.choice()")
       .clear
@@ -111,6 +106,8 @@
   .datapage_print
     .source Learn More @ https://weareapartments.org{{ path }}
     DataSummary(:state="state",:metro="metro",:district="district",type="print")
+    .section.section_trio(v-if="this.choice().type === 'district'")
+      DistrictTrio(type="print",:choice="this.choice()")
     .section.section_chart(v-if="this.choice().type !== 'district'")
       .chart.left
         MultiLineChart(
