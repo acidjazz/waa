@@ -118,7 +118,7 @@
           :choice="this.choice()",
           data='aptsneeded',
           id='aptsneeded_print',
-          width=550,height=260)
+          width=550,height=230)
 
       .right
         .section_demand
