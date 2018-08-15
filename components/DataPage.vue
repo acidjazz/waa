@@ -19,7 +19,45 @@
     .section.section_trio(v-if="this.choice().type === 'district'")
       DistrictTrio(type="web",:choice="this.choice()")
 
+    .section.section_chart(v-if="this.choice().type !== 'district'")
+      .chart.left
+        MultiLineChart(
+          :animation="true",
+          :choice="this.choice()",
+          data='aptsneeded',
+          id='aptsneeded',
+          width=820,height=396)
+      .right
+        NationalStats(:choice="this.choice()")
+      .clear
+
     .section.section_charts(v-if="this.choice().type !== 'district'")
+
+      .chart
+        .copys
+          .copy Supply at Risk
+          .copy The apartment stock is aging. Without resources to support rehabilitation and preservation efforts, the current supply-demand imbalance will worsen, affecting affordability.
+        .title AGE OF STOCK
+        NationalStats(:stock="true",:choice="this.choice()")
+ 
+
+      .chart
+        .copys
+          .copy(v-if="this.choice().type === 'state'") Household Growth
+          .copy(v-else) Population Growth
+          .copy As our population grows, this puts strain on the existing housing supply. A variety of housing options will be needed to meet diverse needs. 
+        .title POPULATION
+        SingleLineChart(
+          :noborder="true",
+          :nopadding="true",
+          data='popgrowth',
+          id='popgrowth',
+          :choice="this.choice()",
+          :animation="true",
+          theme="aqua",
+          description="Forecasted by the year 2030",
+          tagline="Text Needed",
+          width=380,height=140)
 
       .chart
         .copys
@@ -38,42 +76,8 @@
           title="Renting on The Rise")
         .copy.has-text-grey.has-text-centered(v-if="isNational") Of U.S. residents call an apartment home
         .copy.has-text-grey.has-text-centered(v-if="!isNational") Of residents in {{ this.choice().value }} call an apartment home
-      .chart
-        .copys
-          .copy(v-if="this.choice().type === 'state'") Household Growth
-          .copy(v-else) Population Growth
-          .copy As our population grows, this puts strain on the existing housing supply. A variety of housing options will be needed to meet diverse needs. 
-        .title POPULATION
-        SingleLineChart(
-          :noborder="true",
-          :nopadding="true",
-          data='popgrowth',
-          id='popgrowth',
-          :choice="this.choice()",
-          :animation="true",
-          theme="aqua",
-          description="Forecasted by the year 2030",
-          tagline="Text Needed",
-          width=380,height=140)
-      .chart
-        .copys
-          .copy Supply at Risk
-          .copy The apartment stock is aging. Without resources to support rehabilitation and preservation efforts, the current supply-demand imbalance will worsen, affecting affordability.
-        .title AGE OF STOCK
-        NationalStats(:stock="true",:choice="this.choice()")
-      .clear
 
-    .section.section_chart(v-if="this.choice().type !== 'district'")
-      .chart.left
-        MultiLineChart(
-          :animation="true",
-          :choice="this.choice()",
-          data='aptsneeded',
-          id='aptsneeded',
-          width=820,height=396)
-      .right
-        NationalStats(:choice="this.choice()")
-      .clear
+    .clear
     CustomPDF(:choice="this.choice()")
     Compare
     MetroStack(:choice="choice()")
@@ -393,7 +397,7 @@ json('../assets/fonts.json')
           > .copy:nth-child(2)
             color grey
     > .section_chart
-      margin 90px auto 30px auto
+      margin 30px auto
       width 1200px
       > .chart
         float left

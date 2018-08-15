@@ -299,7 +299,7 @@ export default {
                 callback: function (label, index, labels) {
                   return numeral(label).format('0a')
                 },
-                fontSize: 12,
+                fontSize: 13,
                 fontColor: colors.black,
                 maxTicksLimit: 5,
               }
@@ -311,7 +311,7 @@ export default {
                 zeroLineColor: colors.lightgrey,
               },
               ticks: {
-                fontSize: 12,
+                fontSize: 13,
                 fontColor: colors.black,
                 color: solid,
                 maxTicksLimit: 8,
