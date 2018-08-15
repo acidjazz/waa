@@ -79,8 +79,8 @@
 
     .clear
     CustomPDF(:choice="this.choice()")
-    Compare
     MetroStack(:choice="choice()")
+    Compare
     QuoteBar
     //.border.big
     // .border.big(v-if="(this.choice().type !== 'district')")
