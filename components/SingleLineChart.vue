@@ -262,27 +262,32 @@ export default {
         }
         options.scales = {
           yAxes: [{
-            display: false,
+            display: true,
             position: 'right',
             gridLines: {
-              color: solid,
+              color: colors.white,
               display: false,
               zeroLineColor: solid,
             },
             ticks: {
-              fontSize: 12,
+              fontSize: 11,
               fontColor: colors.grey,
               maxTicksLimit: 6,
               callback: this.ticksCallback
             }
           }],
           xAxes: [{
-            display: false,
-            gridLines: { color: solid, zeroLineColor: solid, display: false },
+            display: true,
+            gridLines: { color: colors.white, zeroLineColor: solid, display: false },
             ticks: {
-              fontColor: solid,
+              fontSize: 11,
+              fontColor: colors.grey,
               color: solid,
+              maxTicksLimit: 6,
               maxRotation: 0,
+              callback: function (label, index, labels) {
+                return `'${label.substr(-2)}`
+              },
             }
           }]
         }

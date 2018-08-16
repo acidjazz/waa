@@ -57,7 +57,7 @@
           theme="aqua",
           description="Forecasted by the year 2030",
           tagline="Text Needed",
-          width=380,height=140)
+          width=380,height=220)
 
       .chart
         .copys
