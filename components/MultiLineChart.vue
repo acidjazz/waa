@@ -117,7 +117,7 @@ export default {
         case this.choice && this.choice.type === 'national' && this.data === 'aptsneeded':
           this.json('US Building 2.json', (result) => {
             for (let key in result.data.data) {
-              if (key !== "" && !isNaN(key)) {
+              if (key !== "" && !isNaN(key) && key !== 2016) {
                 data.labels.push(key)
                 if (this.isNumeric(result.data.data[key][1])) {
                   data.datas[1].push(result.data.data[key][1])
