@@ -82,12 +82,6 @@
     MetroStack(:choice="choice()")
     Compare
     QuoteBar
-    //.border.big
-    // .border.big(v-if="(this.choice().type !== 'district')")
-    //SingleItem(v-if="this.choice().type === 'national'")
-    //.border.big(v-if="this.choice().type === 'national'")
-    //DualItems(v-if="this.choice().type === 'metro'")
-    // .border.big(v-if="this.choice().type === 'metro'")
     .clear
     Downloads
     //.section.section_links

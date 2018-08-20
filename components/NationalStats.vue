@@ -326,7 +326,8 @@ json('../assets/fonts.json')
             border-radius 6px 
             transition width 1s linear 0s
 @media all and (min-width: 1px) and (max-width: 1000px)
-  #NationalStats
+  #NationalStats,
+  #NationalStats.stock
     float none
     margin auto
     height auto
