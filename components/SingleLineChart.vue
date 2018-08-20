@@ -263,7 +263,7 @@ export default {
         options.scales = {
           yAxes: [{
             display: true,
-            position: 'left',
+            position: 'right',
             gridLines: {
               color: colors.lightgrey,
               display: false,
