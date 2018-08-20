@@ -39,7 +39,7 @@ doctype
           .copy Read our Vision for 2030 on how public-private partnerships can help us solve the country's housing affordability challenge.
           a.cta(href="/Vision2030.pdf") DOWNLOAD PDF
           .clear
-          .line
+          // .line
 
     .section.section_stakes
       .inner

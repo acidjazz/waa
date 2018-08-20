@@ -1,7 +1,7 @@
 <template lang="pug">
 doctype
 #Downloads
-  .blackline
+  //.blackline
   .inner
     .block.left
       .inner

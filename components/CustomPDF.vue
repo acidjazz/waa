@@ -2,7 +2,7 @@
 doctype
 #CustomPDF
   .box
-    .line
+    //.line
     .copy Create a 8.5x11 PDF of this data that you can print
     // .button(@click="calculate()") PDF SNAPSHOT
     a.button(:href="basePDF + $route.path") PDF SNAPSHOT

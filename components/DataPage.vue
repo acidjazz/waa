@@ -11,7 +11,7 @@
         p The Demand
         Demand(:type="this.choice().type",:value="this.choice().value")
         Share(:pdf="false")
-        .pointer
+        // .pointer
     .clear
     .section.section_district(v-if="this.choice().type === 'district'")
       DistrictCopy(:district="this.choice().value")
@@ -125,7 +125,7 @@
         .section_demand
           p The Demand
           Demand(:type="this.choice().type",:value="this.choice().value")
-          .pointer
+          // .pointer
       .clear
 
     .section.section_charts(v-if="this.choice().type !== 'district'")
