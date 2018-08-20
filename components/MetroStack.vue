@@ -131,6 +131,8 @@ json('../assets/fonts.json')
         opacity 1
         transform translate(0, 0)
         transition opacity 1s ease-in-out 0.1s, transform 1s ease-in-out 0.1s
+    > .copy3
+      font h3b
     > .metros
       width 900px
       margin auto

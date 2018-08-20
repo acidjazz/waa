@@ -263,9 +263,9 @@ export default {
         options.scales = {
           yAxes: [{
             display: true,
-            position: 'right',
+            position: 'left',
             gridLines: {
-              color: colors.white,
+              color: colors.lightgrey,
               display: false,
               zeroLineColor: solid,
             },
@@ -278,7 +278,7 @@ export default {
           }],
           xAxes: [{
             display: true,
-            gridLines: { color: colors.white, zeroLineColor: solid, display: false },
+            gridLines: { color: colors.lightgrey, zeroLineColor: solid, display: false },
             ticks: {
               fontSize: 11,
               fontColor: colors.grey,
