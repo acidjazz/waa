@@ -43,7 +43,7 @@
 
       .chart
         .copys
-          .copy(v-if="this.choice().type === 'state'") Household Growth
+          .copy(v-if="this.choice().type === 'state'") Households
           .copy(v-else) Population Growth
           .copy As our population grows, this puts strain on the existing housing supply. A variety of housing options will be needed to meet diverse needs. 
         .title POPULATION
@@ -142,7 +142,7 @@
         .copy.has-text-grey.has-text-centered(v-if="!isNational") Of residents in {{ this.choice().value }} call an apartment home
       .chart
         .copys
-          .copy(v-if="this.choice().type === 'state'") Household Growth
+          .copy(v-if="this.choice().type === 'state'") Households
           .copy(v-else) Population Growth
           .copy As our population grows, this puts strain on the existing housing supply. A variety of housing options will be needed to meet diverse needs. 
         .title POPULATION

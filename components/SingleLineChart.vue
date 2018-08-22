@@ -286,7 +286,10 @@ export default {
               maxTicksLimit: 6,
               maxRotation: 0,
               callback: function (label, index, labels) {
-                return `'${label.substr(-2)}`
+                if (label.length > 2) {
+                  return `'${label.substr(-2)}`
+                }
+                return label
               },
             }
           }]
