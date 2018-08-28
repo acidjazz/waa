@@ -162,6 +162,11 @@ export default {
         case this.choice.type === 'metro' && this.data === 'popgrowth':
           this.json('Metro Pop Growth.json', (result) => {
             data = this.toCurrent(result.data.data, result.data.labels.indexOf(this.choice.value))
+            console.log(data)
+            for (let i in data.datas) {
+              data.datas[i] = data.datas[i] * 1000
+              console.log(data.datas[i])
+            }
             complete(data, spike)
           })
           break
