@@ -6,7 +6,7 @@ doctype
     .title(v-in-viewport) Barriers to New Apartments
     .copy(v-in-viewport) Based on specific factors like local regulations and available land to develop, the Barriers to Apartment Construction Index ranks 50 metro areas on how hard it is to build new apartments. See how your city stacks up. 
     .copy2(v-in-viewport) Multifamily supply restrictions index
-    HeatChart(v-if="choice.type === 'metro'",:metro="this.choice.value")
+    HeatChart(v-if="choice.type === 'metro' && this.choice.value !== 'Ann Arbor'",:metro="this.choice.value")
     .copy3.has-text-centered(v-if="choice.type === 'metro'") {{ choice.value }}
     .metros(v-in-viewport)
       .list
