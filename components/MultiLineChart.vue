@@ -1,11 +1,11 @@
 <template lang="pug">
 #HousingGap
   // tooltip(align="right")
-  .title Apartments Needed 
+  .title Apartments Needed
   .clear
   .stat
-    strong {{ $store.state.homesNeeded }} 
-    span Apartment Homes Needed in 
+    strong {{ $store.state.homesNeeded }}
+    span Apartment Homes Needed in
       span(v-if="choice && choice.type === 'national'") the Country
       span(v-else) {{ this.choice.copy }}
       span &nbsp;by 2030
@@ -68,7 +68,7 @@ json('../assets/fonts.json')
 @media all and (min-width: 1px) and (max-width: 1000px)
   #HousingGap
     height auto
-@media print 
+@media print
   #HousingGap
     .stat
       position absolute
@@ -117,7 +117,7 @@ export default {
         case this.choice && this.choice.type === 'national' && this.data === 'aptsneeded':
           this.json('US Building 2.json', (result) => {
             for (let key in result.data.data) {
-              if (key !== "" && !isNaN(key) && key !== 2016) {
+              if (key !== "" && !isNaN(key) && key !== '2016') {
                 data.labels.push(key)
                 if (this.isNumeric(result.data.data[key][1])) {
                   data.datas[1].push(result.data.data[key][1])
@@ -185,6 +185,8 @@ export default {
     },
 
     draw (data, jsonc, jsonn) {
+
+      console.log(data)
 
       const numeral = window.numeral
       const Chart = window.Chart
@@ -279,12 +281,11 @@ export default {
                   return numeral(item.yLabel).format('0.00%')
                 }
                 return [numeral(item.yLabel).format('0,0') + " units"]
-                // return ["Potential Excess of \r\n", numeral(item.yLabel).format('0,0') + " units"]
               }
             }
           },
           layout: {
-            padding: { left: 0, top: 20, rigth: 0, bottom: 20 } },
+            padding: { left: 0, top: 20, right: 0, bottom: 20 } },
           scales: {
             yAxes: [{
               gridLines: {
