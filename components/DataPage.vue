@@ -39,13 +39,13 @@
           .copy The apartment stock is aging. Without resources to support rehabilitation and preservation efforts, the current supply-demand imbalance will worsen, affecting affordability.
         .title AGE OF STOCK
         NationalStats(:stock="true",:choice="this.choice()")
- 
+
 
       .chart
         .copys
           .copy(v-if="this.choice().type === 'state'") Household Growth
           .copy(v-else) Population Growth
-          .copy As our population grows, this puts strain on the existing housing supply. A variety of housing options will be needed to meet diverse needs. 
+          .copy As our population grows, this puts strain on the existing housing supply. A variety of housing options will be needed to meet diverse needs.
         .title(v-if="this.choice().type === 'state'") HOUSEHOLDS
         .title(v-else) POPULATION
         SingleLineChart(
@@ -89,15 +89,15 @@
       .inner
         .area.left
           .icon.icon-file
-          .copy 
-            span Download 
+          .copy
+            span Download
             | the report on the 2030 demand for apartments.
           a.button(href="/NMHC-NAA-US-Apartment-Demand-in-2030.pdf") download
         .area.right
           .icon.icon-bars
-          .copy 
-            span Read 
-            | about the methodology behind all of the data. 
+          .copy
+            span Read
+            | about the methodology behind all of the data.
           router-link(to='/about').button learn more
         .clear
 
@@ -126,13 +126,17 @@
     .section.section_charts(v-if="this.choice().type !== 'district'")
       .chart
         .copys
-          .copy Renting on The Rise
+          .copy(v-if="isMetro") Barriers to New Apartments
+          .copy(v-else) Renting on The Rise
           .copy(v-if="isNational") Many people in the U.S. call apartments home.  They appreciate mortgage-free living, the ability to fllow new work opportunities and amenities that fit their lifestyles.
-          .copy(v-if="!isNational") Many people in {{ this.choice().value }} call apartments home.  They appreciate mortgage-free living, the ability to fllow new work opportunities and amenities that fit their lifestyles.
+          .copy(v-if="!isNational && !isMetro") Many people in {{ this.choice().value }} call apartments home.  They appreciate mortgage-free living, the ability to fllow new work opportunities and amenities that fit their lifestyles.
+          .copy(v-if="isMetro") Based on specific factors like local regulations and available land to develop, the Barriers to Apartment Construction Index ranks 50 metro areas on how hard it is to build new apartments. See how your city stacks up
         .title(v-if="isNational") IN THE U.S.
         .title(v-if="isState") IN YOUR STATE
-        .title(v-if="isMetro") IN YOUR METRO
+        .title(v-if="isMetro") Multifamily Supply Restrictions Index
+        HeatChart(v-if="isMetro",:metro="this.choice().value")
         CircleChart(
+          v-if="!isMetro"
           :width="170",
           :height="170",
           id="ontherise-print",
@@ -140,12 +144,12 @@
           :animation="false",
           title="Renting on The Rise")
         .copy.has-text-grey.has-text-centered(v-if="isNational") Of U.S. residents call an apartment home
-        .copy.has-text-grey.has-text-centered(v-if="!isNational") Of residents in {{ this.choice().value }} call an apartment home
+        .copy.has-text-grey.has-text-centered(v-if="!isNational && !isMetro") Of residents in {{ this.choice().value }} call an apartment home
       .chart
         .copys
           .copy(v-if="this.choice().type === 'state'") Household Growth
           .copy(v-else) Population Growth
-          .copy As our population grows, this puts strain on the existing housing supply. A variety of housing options will be needed to meet diverse needs. 
+          .copy As our population grows, this puts strain on the existing housing supply. A variety of housing options will be needed to meet diverse needs.
         .title(v-if="this.choice().type === 'state'") HOUSEHOLDS
         .title(v-else) POPULATION
         SingleLineChart(
@@ -176,6 +180,8 @@
 
 <script>
 import filtermixin from '~plugins/filter-mixin.js'
+
+import HeatChart from '~/components/HeatChart'
 
 import Top from '~/components/Top.vue'
 import Bottom from '~/components/Bottom.vue'
@@ -219,6 +225,7 @@ export default {
     CustomPDF,
     QuoteBar,
     DiagSection,
+    HeatChart,
   },
 
   methods: {

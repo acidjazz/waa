@@ -10,13 +10,12 @@
       .value(v-else)
         i-count-up.span(:start="0",:end="spiked",:decimals="0",v-if="!print()")
         span(v-else) {{ Math.round(spiked) }}
-        span % 
-        span Increase
+        span % Increase
     .spike(v-else)
       .value
         i-count-up.span(:start="0",:end="spiked",:decimals="0",v-if="!print()")
         span(v-else) {{ Math.round(spiked) }}
-        span % 
+        span %
         span Decrease
     .tagline
     canvas(:id="'chart-' + id",:width="width",:height="height")
@@ -162,10 +161,8 @@ export default {
         case this.choice.type === 'metro' && this.data === 'popgrowth':
           this.json('Metro Pop Growth.json', (result) => {
             data = this.toCurrent(result.data.data, result.data.labels.indexOf(this.choice.value))
-            console.log(data)
             for (let i in data.datas) {
               data.datas[i] = data.datas[i] * 1000
-              console.log(data.datas[i])
             }
             complete(data, spike)
           })
@@ -193,7 +190,6 @@ export default {
         let a = data.datas[data.datas.length - 1]
         let b = data.datas[0]
         spike = numeral((a - b) / b).format('0.00%').replace(/%/, '')
-        // console.log(this.data, a, b, (a - b) / b, numeral((a - b) / b).format('0.00%'), spike)
       }
 
       this.spike = isNaN(spike) ? 100 : spike

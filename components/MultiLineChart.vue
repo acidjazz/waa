@@ -186,8 +186,6 @@ export default {
 
     draw (data, jsonc, jsonn) {
 
-      console.log(data)
-
       const numeral = window.numeral
       const Chart = window.Chart
 
