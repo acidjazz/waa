@@ -1,25 +1,25 @@
 
 <template lang="pug">
 doctype
-p(v-in-viewport)  Between now and 2030, 
+p(v-in-viewport)  Between now and 2030,
 
-  span(v-if="type === 'national'") the country will need to build 
-    span {{ needed }} 
-    | new apartment homes each year to accomodate household growth and losses to the stock. 
-  span(v-else) {{ value }} will need to build 
-    span {{ needed }} 
-    | new apartment homes each year to accomodate household growth and losses to the stock. 
-  //span(v-if="type === 'state'") this state will add 
-    span {{ needed }} 
-    | new apartment homes each year to meet demand 
-  //span(v-if="type === 'metro'") this metro will add 
-    span {{ needed }} 
-    | new apartment homes each year to meet demand 
-  //span(v-if="type === 'district'") this district will add 
-    span {{ needed }} 
-    | new apartment homes each year to meet demand 
+  span(v-if="type === 'national'") the country will need to build
+    span {{ needed }}
+    | new apartment homes each year to accomodate household growth and losses to the stock.
+  span(v-else) {{ value }} will need to build
+    span {{ needed }}
+    | new apartment homes each year to accomodate household growth and losses to the stock.
+  //span(v-if="type === 'state'") this state will add
+    span {{ needed }}
+    | new apartment homes each year to meet demand
+  //span(v-if="type === 'metro'") this metro will add
+    span {{ needed }}
+    | new apartment homes each year to meet demand
+  //span(v-if="type === 'district'") this district will add
+    span {{ needed }}
+    | new apartment homes each year to meet demand
     //| However, new housing approaches are needed as only an average of {{ needed }} apartment homes were built each year between 2011 - 2016.
-  | However, producing enough new apartments to meet demand may require new development approaches, more incentives and fewer restrictions
+  | However, producing enough new apartments to meet demand may require new development approaches, more incentives and fewer restrictions.
 </template>
 
 <script>
