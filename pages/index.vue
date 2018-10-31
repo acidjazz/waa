@@ -1,6 +1,6 @@
 <template lang="pug">
 doctype
-.page.home 
+.page.home
   Top(type="dark")
   .hero(v-in-viewport)
     video(playsinline,autoplay,muted,loop)
@@ -8,7 +8,7 @@ doctype
     .outer
     .inner
       .copy(v-in-viewport) welcome to we are apartments.
-      .copy(v-in-viewport) The country needs 
+      .copy(v-in-viewport) The country needs&nbsp;
         i-count-up(:start="0",:end="4.6",:decimals="1",:duration="3")
         | m new apartments by 2030. How many are needed near you?
       .button.is-centered(v-in-viewport)
@@ -21,7 +21,8 @@ doctype
     p(v-in-viewport) The 2030 Demand
     Demand(type='national')
   VertBorder
-  GradientChart
+  // GradientChart
+  DemandChart
   .border.big
   .to_initiative
     .inner
@@ -43,7 +44,8 @@ doctype
 <script>
 import Top from '~/components/Top.vue'
 import Demand from '~/components/Demand.vue'
-import GradientChart from '~/components/GradientChart.vue'
+// import GradientChart from '~/components/GradientChart.vue'
+import DemandChart from '~/components/DemandChart.vue'
 import Bottom from '~/components/Bottom.vue'
 import inViewportDirective from 'vue-in-viewport-directive'
 import ICountUp from 'vue-countup-v2'
@@ -53,7 +55,7 @@ import VertBorder from '~/components/VertBorder.vue'
 import ScrollDown from '~/components/ScrollDown.vue'
 export default {
   directives: { 'in-viewport': inViewportDirective },
-  components: { Top, Demand, GradientChart, Bottom, ICountUp, Downloads, DiagSection, VertBorder, ScrollDown },
+  components: { Top, Demand, DemandChart, Bottom, ICountUp, Downloads, DiagSection, VertBorder, ScrollDown },
   data () {
     return {
       options: {
@@ -193,10 +195,10 @@ json('../assets/fonts.json')
           color white
           font c1sb
           margin 0 20px 0 0
-          background-color rgba(cyan, 0.2) 
+          background-color rgba(cyan, 0.2)
           border 1px solid rgba(cyan, 0.6)
           &:hover
-            background-color rgba(cyan, 1) 
+            background-color rgba(cyan, 1)
         &:nth-child(4) > a
           background-color white
           color darkblue

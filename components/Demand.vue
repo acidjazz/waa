@@ -1,14 +1,14 @@
 
 <template lang="pug">
 doctype
-p(v-in-viewport)  Between now and 2030,
+p(v-in-viewport)  Between now and 2030,&nbsp;
 
-  span(v-if="type === 'national'") the country will need to build
-    span {{ needed }}
+  span(v-if="type === 'national'") the country will need to build&nbsp;
+    span {{ needed }}&nbsp;
     | new apartment homes each year to accomodate household growth and losses to the stock.
-  span(v-else) {{ value }} will need to build
+  span(v-else) {{ value }} will need to build&nbsp;
     span {{ needed }}
-    | new apartment homes each year to accomodate household growth and losses to the stock.
+    | &nbsp;new apartment homes each year to accomodate household growth and losses to the stock.
   //span(v-if="type === 'state'") this state will add
     span {{ needed }}
     | new apartment homes each year to meet demand
@@ -19,7 +19,7 @@ p(v-in-viewport)  Between now and 2030,
     span {{ needed }}
     | new apartment homes each year to meet demand
     //| However, new housing approaches are needed as only an average of {{ needed }} apartment homes were built each year between 2011 - 2016.
-  | However, producing enough new apartments to meet demand may require new development approaches, more incentives and fewer restrictions.
+  | &nbsp;However, producing enough new apartments to meet demand may require new development approaches, more incentives and fewer restrictions.
 </template>
 
 <script>
