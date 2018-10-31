@@ -2,16 +2,17 @@
 doctype
 #DemandChart
   .demandchart-copy
-    .title 4.6 Million
-    .copy New apartment homes needed in the U.S. by the year 2030
-    .subtitle Demand Is Rising
-    .copy Population growth, immigration and changing lifestyle preferences mean more people will be living in apartments in the future.  The challenge, however, is building the number of apartment homes to meet that growing demand.
+    .title(v-in-viewport) 4.6 Million
+    .copy(v-in-viewport) New apartment homes needed in the U.S. by the year 2030
+    .subtitle(v-in-viewport) Demand Is Rising
+    .copy(v-in-viewport) Population growth, immigration and changing lifestyle preferences mean more people will be living in apartments in the future.  The challenge, however, is building the number of apartment homes to meet that growing demand.
 
   .demandchart-canvas
     canvas(id="DemandChartCanvas",ref="canvas")
 </template>
 
 <style lang="stylus" scoped>
+@import '../assets/stylus/mixins'
 json('../assets/colors.json')
 json('../assets/fonts.json')
 #DemandChart
@@ -27,11 +28,14 @@ json('../assets/fonts.json')
   .title
     font h2
     padding 0 0 20px 0
+    inViewport(0.1)
   .subtitle
     font h3
     padding 20px 0
+    inViewport(0.2)
   .copy
     color grey
+    inViewport(0.3)
 .demandchart-canvas
   width 700px
 
@@ -50,8 +54,13 @@ json('../assets/fonts.json')
 </style>
 
 <script>
+import inViewportDirective from 'vue-in-viewport-directive'
+import inViewport from 'vue-in-viewport-mixin'
 import colors from '~/assets/colors.json'
 export default {
+  mixins: [ inViewport ],
+
+  directives: { 'in-viewport': inViewportDirective },
 
   methods: {
 
@@ -64,9 +73,7 @@ export default {
 
     makeChart () {
 
-      if (this.chart !== false) {
-        return true
-      }
+      // if (this.chart !== false) { return true }
 
       let ctx = this.$refs.canvas.getContext('2d')
       let gradient = ctx.createLinearGradient(500, 0, 200, 0)
@@ -130,7 +137,16 @@ export default {
   },
 
   mounted () {
-    this.makeChart()
+  },
+  watch: {
+    'inViewport.now' (visible) {
+      if (visible) {
+        this.makeChart()
+      }
+    },
+    '$route' () {
+      this.makeChart()
+    }
   },
 
   data () {
