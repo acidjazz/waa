@@ -120,17 +120,17 @@ json('../assets/fonts.json')
             background-color white
             padding 20px 0 0 20px
             margin -100px 0 0 80px
-            inViewport(0.3)
+            inViewport(0.1)
             > .building
               background url(/building1.png)
               width 300px
               height 293px
               margin 20px 0 0 20px
-              transition opacity 1s ease-in-out 0.5s, transform 1s ease-in-out 0.5s
+              transition opacity 1s ease-in-out 0.3s, transform 1s ease-in-out 0.3s
               &.in-viewport
                 opacity 1
                 transform translate(0, 0)
-              &.above-viewport, &.below-viewport
+              &.above-viewport
                 opacity 0
                 transform translate(-40px, -40px)
 
