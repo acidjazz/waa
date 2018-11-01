@@ -82,6 +82,9 @@ export default {
         if (key !== '2016') {
           result.labels.push(key.toString())
           result.data.push(udata.data[key][1])
+        } else {
+          result.labels.push('2016')
+          result.data.push(0)
         }
       }
 
