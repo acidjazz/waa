@@ -146,7 +146,6 @@ for (let index in excel) {
       break
 
     case 'US Apt Residents':
-    case 'State Apt Residents':
     case 'US Apts':
     case 'State Apartments':
     case 'Metro Occupied Apartments':
@@ -219,6 +218,7 @@ for (let index in excel) {
     case 'Metro Persons in Household':
     case 'Metro Household Type':
     case 'State HH Growth':
+    case 'State Apt Residents':
     case 'State Renter Households':
     case 'Metro Renter HHs':
     case 'State Age of Stock':

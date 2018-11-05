@@ -12,7 +12,7 @@
     .copy {{ selection }}
 
     .copy
-      | {{ choice().state }} apartments and their residents contribute more than 
+      | {{ choice().state }} apartments and their residents contribute more than
       strong(v-if="contrib.value !== 0") ${{ daily.value }}{{ daily.a }}&nbsp;
       strong(v-else) $0.0m
       | to the economy every day.
@@ -112,7 +112,7 @@ export default {
           break
         case 'state':
           this.json([residentsState, homesState, contribState, jobsState], (result) => {
-            this.residents = this.parse(result[0].data.data[this.choice().value], '0.0a')
+            this.residents = this.parse(result[0].data.data[this.choice().value][0], '0.0a')
             this.homes = this.parse(result[1].data.data[this.choice().value], '0.0a')
             this.contrib = this.parse(result[2].data.data[this.choice().value], '0.0a')
             this.jobs = this.parse(result[3].data.data[this.choice().value], '0.0a')
@@ -254,7 +254,7 @@ json('../assets/fonts.json')
     > .stats
       height 160px
       > .stat
-        padding 30px 
+        padding 30px
         height 100px
         max-width 170px
         vertical-align top

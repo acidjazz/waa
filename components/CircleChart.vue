@@ -33,10 +33,10 @@ import colors from '~/assets/colors.json'
 
 const data = 'US Housing Costs.json'
 const datab = 'US % Total Pop.json'
-const databs = 'State % of Total HHs.json'
+const databs = 'State Apt Residents.json'
 const databm = 'Metro % of Total HHs.json'
 const datad = 'District Apt Residents.json'
-const datam = 'Mero Apt Residents.json'
+const datam = 'Metro Apt Residents.json'
 
 export default {
 
@@ -63,15 +63,15 @@ export default {
 
       if (this.district === undefined && this.choice.type === 'state') {
         this.json(databs, (result) => {
-          this.perc = Math.round(result.data.data[this.choice.value] * 100)
+          this.perc = Math.round(result.data.data[this.choice.value][1] * 100)
           complete()
         })
         return
       }
 
       if (this.district === undefined && this.choice.type === 'metro') {
-        this.json(databm, (result) => {
-          this.perc = Math.round(result.data.data[this.choice.value] * 100)
+        this.json(datam, (result) => {
+          this.perc = Math.round(result.data.data[this.choice.value][1] * 100)
           complete()
         })
         return
