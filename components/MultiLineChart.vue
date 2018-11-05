@@ -5,7 +5,7 @@
   .clear
   .stat
     strong {{ $store.state.homesNeeded }}
-    span Apartment Homes Needed in
+    span Apartment Homes Needed in&nbsp;
       span(v-if="choice && choice.type === 'national'") the Country
       span(v-else) {{ this.choice.copy }}
       span &nbsp;by 2030
@@ -133,7 +133,7 @@ export default {
           break
         case this.choice && this.choice.type === 'state' && this.data === 'aptsneeded':
           // this.json('State New Apt HHs Per Year.json', (result) => {
-          this.json('State Building Needed.json', (result) => {
+          this.json('State Building Current.json', (result) => {
             let state = result.data.labels.indexOf(this.choice.value)
             for (let key in result.data.data) {
               if (key !== "" && !isNaN(key)) {
