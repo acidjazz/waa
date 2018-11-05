@@ -228,10 +228,13 @@ export default {
         this.myChart.data.datasets = [{
           lineTension: 0,
           data: data.datas,
-          pointBackgroundColor: colors.white,
-          pointBorderWidth: 4,
-          pointRadius: 4,
-          pointBorderColor: solid,
+
+          pointBackgroundColor: 'transparent',
+          pointBorderWidth: 0,
+          pointRadius: 8,
+          pointHoverRadius: 8,
+          pointBorderColor: 'transparent',
+
           borderColor: solid,
           backgroundColor: light,
           fill: true
@@ -309,7 +312,7 @@ export default {
           pointBorderColor: 'transparent',
           borderColor: solid,
           backgroundColor: light,
-          fill: false
+          fill: true
         }]
 
         this.myChart = new Chart(ctx, {

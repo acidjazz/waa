@@ -19,7 +19,7 @@ json('../assets/fonts.json')
     left 50%
     margin-top -30px
     margin-left -35px
-    font h2b 
+    font h2b
     text-align center
     margin-top -100px 0 45% 0
     > span
@@ -42,11 +42,6 @@ export default {
 
   props: ['id', 'width', 'height', 'value', 'district', 'choice', 'animation'],
 
-  data () {
-    return {
-      perc: 0
-    }
-  },
   methods: {
     json (sheet, result) {
       window.axios.get('/' + encodeURIComponent(sheet))
@@ -66,11 +61,28 @@ export default {
         complete()
       }
 
+      if (this.district === undefined && this.choice.type === 'state') {
+        this.json(databs, (result) => {
+          this.perc = Math.round(result.data.data[this.choice.value] * 100)
+          complete()
+        })
+        return
+      }
+
+      if (this.district === undefined && this.choice.type === 'metro') {
+        this.json(databm, (result) => {
+          this.perc = Math.round(result.data.data[this.choice.value] * 100)
+          complete()
+        })
+        return
+      }
+
       if (this.id === 'ontherise') {
         this.json(datab, (result) => {
           this.perc = Math.round(result.data.data['Total U.S.'][0] * 100)
           complete()
         })
+        return
       }
 
       if (this.id === 'metroresidents') {
@@ -78,24 +90,13 @@ export default {
           this.perc = Math.round(result.data.data[this.value][1] * 100)
           complete()
         })
+        return
       }
 
       if (this.district !== undefined) {
         this.json(datad, (result) => {
           this.perc = Math.round(result.data.data[this.district][1] * 100)
           complete()
-        })
-      }
-
-      if (this.district === undefined && this.choice.type === 'state') {
-        this.json(databs, (result) => {
-          this.perc = Math.round(result.data.data[this.choice.value] * 100)
-        })
-      }
-
-      if (this.district === undefined && this.choice.type === 'metro') {
-        this.json(databm, (result) => {
-          this.perc = Math.round(result.data.data[this.choice.value] * 100)
         })
       }
 
@@ -126,15 +127,17 @@ export default {
   },
   watch: {
     '$route' () {
-      this.populate(() => {
-        this.draw()
-      })
+      this.populate(() => this.draw())
     }
   },
   mounted () {
-    this.populate(() => {
-      this.draw()
-    })
-  }
+    this.populate(() => this.draw())
+  },
+  data () {
+    return {
+      perc: 0,
+    }
+  },
+
 }
 </script>
