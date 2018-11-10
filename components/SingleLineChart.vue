@@ -132,6 +132,7 @@ export default {
           break
 
         case this.choice.type === 'state' && this.data === 'popgrowth':
+          this.chart_type = 'bar'
           this.json('State HH Growth.json', (result) => {
             data.labels = [2016, 2030]
             data.datas = [result.data.data[this.choice.value][1], result.data.data[this.choice.value][3]]
@@ -315,8 +316,12 @@ export default {
           fill: true
         }]
 
+        if (this.chart_type === 'bar') {
+          datasets[0].borderWidth = 1
+        }
+
         this.myChart = new Chart(ctx, {
-          type: 'line',
+          type: this.chart_type,
           data: {
             labels: data.labels,
             datasets:  datasets
@@ -379,6 +384,7 @@ export default {
   },
   data () {
     return {
+      chart_type: 'line',
       myChart: undefined,
       spike: '0.00',
       cspike: false,
