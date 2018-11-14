@@ -275,6 +275,7 @@ export default {
               zeroLineColor: solid,
             },
             ticks: {
+              beginAtZero: true,
               fontSize: 11,
               fontColor: colors.grey,
               maxTicksLimit: 6,
