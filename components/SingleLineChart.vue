@@ -110,8 +110,11 @@ export default {
           break
 
         case this.choice.type === 'national' && this.data === 'popgrowth':
+          this.chart_type = 'bar'
           this.json('US Population (Landing).json', (result) => {
-            data = this.toCurrent(result.data.data)
+            // data = this.toCurrent(result.data.data)
+            data.labels = [2016, 2030]
+            data.datas = [result.data.data[2016], result.data.data[2030]]
             complete(data, spike)
           })
           break
@@ -160,11 +163,14 @@ export default {
           break
 
         case this.choice.type === 'metro' && this.data === 'popgrowth':
+          this.chart_type = 'bar'
           this.json('Metro Pop Growth.json', (result) => {
             data = this.toCurrent(result.data.data, result.data.labels.indexOf(this.choice.value))
             for (let i in data.datas) {
               data.datas[i] = data.datas[i] * 1000
             }
+            data.labels = [2016, 2030]
+            data.datas = [data.datas[0], data.datas[(data.datas.length - 1)]]
             complete(data, spike)
           })
           break
