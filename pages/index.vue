@@ -29,7 +29,7 @@ doctype
       .section.section_left
         .title(v-in-viewport) Our Initiative
         .subtitle(v-in-viewport) growing apartment demand
-        .copy(v-in-viewport) Delayed marriages, an aging population and immigration are increasing a pressing need for new apartments, to the tune of 4.6 million by 2030.
+        .copy(v-in-viewport) Delayed marriages, an aging population and immigration are creating a need for new apartments, to the tune of 4.6 million by 2030.
         router-link.cta(to="/about",v-in-viewport) learn more
       .section.section_right
         .images

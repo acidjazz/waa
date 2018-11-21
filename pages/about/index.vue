@@ -9,12 +9,12 @@ doctype
 
         .copys
           .copy(v-in-viewport) growing apartment demand
-          .copy(v-in-viewport) Delayed marriages, an aging population and immigration are increasing a pressing need for new apartments, to the tune of 4.6 million by 2030.
+          .copy(v-in-viewport) Delayed marriages, an aging population and immigration are creating a need for new apartments, to the tune of 4.6 million by 2030.
           .copy(v-in-viewport) See how we can meet this demand.
 
           .button.is-centered(v-in-viewport)
             router-link(to="/vision") our vision
-    ScrollDown    
+    ScrollDown
     DiagSection
     .section.section_about
       .copy(v-in-viewport) about the research
@@ -34,7 +34,7 @@ doctype
           .copy Descriptive current and historical demographic and housing data (such as the number of apartment residents and the size of the apartment stock) are NMHC tabulations of the most recently available American Community Survey microdata.
         .block(v-in-viewport)
           .title Economic Impact Data
-          .copy Economic impact data (spending, economic contribution, and jobs created) were estimated by Dr. Stephen Fuller of George Mason University’s Center for Regional Analysis for 2013. 
+          .copy Economic impact data (spending, economic contribution, and jobs created) were estimated by Dr. Stephen Fuller of George Mason University’s Center for Regional Analysis for 2013.
         .block(v-in-viewport)
           .title The Team
           .copy Researchers from Hoyt Advisory Services (HAS), comprised of Dr. Jeffrey D. Fisher (Vice President, Hoyt Advisory Services & Professor Emeritus, Indiana University), Dr. Norman G. Miller (Professor of Real Estate, University of San Diego), Paige Mueller (Whitegate Real Estate Advisors), and Michael Dinn (Dinn Focused Marketing).
@@ -49,7 +49,7 @@ doctype
         .copys
           .block(v-in-viewport)
             .square
-            .copy Dr. Stephen Fuller on behalf of NMHC and NAA, “The Trillion Dollar Apartment Industry” 
+            .copy Dr. Stephen Fuller on behalf of NMHC and NAA, “The Trillion Dollar Apartment Industry”
           .block(v-in-viewport)
             .square
             .copy Hoyt Advisory Services, Dinn Focused Marketing, and Whitegate Real Estate Advisors

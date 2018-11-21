@@ -13,7 +13,7 @@
 
     .copy
       | {{ choice().state }} apartments and their residents contribute more than
-      strong(v-if="contrib.value !== 0") ${{ daily.value }}{{ daily.a }}&nbsp;
+      strong(v-if="contrib.value !== 0") &nbsp;${{ daily.value }}{{ daily.a }}&nbsp;
       strong(v-else) $0.0m
       | to the economy every day.
 
