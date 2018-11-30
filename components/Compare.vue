@@ -161,7 +161,7 @@ const json = {
 
 json.homes = require('~/static/Metro Occupied Apartments.json').data
 json.operation = require('~/static/Operation Impacts (metro).json').data
-json.construction = require('~/static/Construction Impacts (metro).json').data
+json.construction = require('~/static/Metro Economic Contribution.json').data
 json.spending = require('~/static/Spending Impacts (metro).json').data
 
 export default {
@@ -211,8 +211,8 @@ export default {
       this.city.one.jobs.value = json.spending[this.city.one.name][2]
       this.city.two.jobs.value = json.spending[this.city.two.name][2]
 
-      this.city.one.contrib.value = json.construction[this.city.one.name][2]
-      this.city.two.contrib.value = json.construction[this.city.two.name][2]
+      this.city.one.contrib.value = json.construction[this.city.one.name]
+      this.city.two.contrib.value = json.construction[this.city.two.name]
 
       this.city.one.supported.value = json.spending[this.city.one.name][4]
       this.city.two.supported.value = json.spending[this.city.two.name][4]

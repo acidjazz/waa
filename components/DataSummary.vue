@@ -11,11 +11,10 @@
     .breadcrumb(v-if="choice().type == 'district'") {{ choice().state }}
     .copy {{ selection }}
 
-    .copy
-      | {{ choice().state }} apartments and their residents contribute more than
-      strong(v-if="contrib.value !== 0") &nbsp;${{ daily.value }}{{ daily.a }}&nbsp;
-      strong(v-else) $0.0m
-      | to the economy every day.
+    .copy(v-if="contrib.value !== 0")
+      | {{ choice().state }} apartments and their residents contribute more than&nbsp;
+      strong &nbsp;${{ daily.value }}{{ daily.a }}&nbsp;
+      | &nbsp;to the economy every day.
 
     .copy_print Market Snapshot
     .stats

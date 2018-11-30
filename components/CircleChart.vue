@@ -110,9 +110,9 @@ export default {
 
       ctx.beginPath()
       ctx.arc(this.width / 2, this.width / 2, this.width / 3, 0, Math.PI * 2)
-      ctx.strokeStyle = colors.grey
-      ctx.lineWidth = 5
-      ctx.setLineDash([10, 10])
+      ctx.strokeStyle = colors.silver
+      ctx.lineWidth = 20
+      // ctx.setLineDash([10, 10])
       ctx.stroke()
 
       let hundo = Math.PI * 2
@@ -120,7 +120,7 @@ export default {
       ctx.beginPath()
       ctx.arc(this.width / 2, this.width / 2, this.width / 3, 4.65, value + 4.65)
       ctx.strokeStyle = colors.orange
-      ctx.lineWidth = 10
+      ctx.lineWidth = 20
       ctx.setLineDash([0, 0])
       ctx.stroke()
     }

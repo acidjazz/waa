@@ -114,7 +114,7 @@ export default {
           this.json('US Population (Landing).json', (result) => {
             // data = this.toCurrent(result.data.data)
             data.labels = [2016, 2030]
-            data.datas = [result.data.data[2016], result.data.data[2030]]
+            data.datas = [result.data.data[2016] * 1000, result.data.data[2030] * 1000]
             complete(data, spike)
           })
           break
