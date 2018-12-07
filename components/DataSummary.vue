@@ -14,7 +14,7 @@
     .copy(v-if="contrib.value !== 0")
       | {{ choice().state }} apartments and their residents contribute more than&nbsp;
       strong &nbsp;${{ daily.value }}{{ daily.a }}&nbsp;
-      | &nbsp;to the economy every day.
+      | &nbsp;to the {{ choice().type }} economy every day.
 
     .copy_print Market Snapshot
     .stats
