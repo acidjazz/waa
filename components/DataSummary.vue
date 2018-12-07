@@ -12,7 +12,10 @@
     .copy {{ selection }}
 
     .copy(v-if="contrib.value !== 0")
-      | {{ choice().state }} apartments and their residents contribute more than&nbsp;
+      | {{ choice().state }}
+      span(v-if="choice().type === 'national'") Apartments
+      span(v-else) &nbsp;apartments
+      span &nbsp;and their residents contribute more than&nbsp;
       strong &nbsp;${{ daily.value }}{{ daily.a }}&nbsp;
       | &nbsp;to the {{ choice().type }} economy every day.
 
