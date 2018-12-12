@@ -4,7 +4,7 @@
     .block
       .data
         .copy rent burdened<br /> apartment homes
-        .spike
+        //.spike
           i.fa.fa-long-arrow-up(aria-hidden=true,v-if="spike.income.replace('%', '') > 0")
           i.fa.fa-long-arrow-down(aria-hidden=true,v-if="spike.income.replace('%', '') < 0")
           .value {{ spike.income }}
@@ -14,7 +14,7 @@
     .block
       .data
         .copy income<br /> growth
-        .spike
+        //.spike
           i.fa.fa-long-arrow-up(aria-hidden=true,v-if="spike.affordability.replace('%', '') > 0")
           i.fa.fa-long-arrow-down(aria-hidden=true,v-if="spike.affordability.replace('%', '') < 0")
           .value {{ spike.affordability }}

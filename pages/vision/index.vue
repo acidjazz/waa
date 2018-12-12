@@ -17,7 +17,7 @@ doctype
           Share(:pdf="false")
           .title(v-in-viewport) We Can Do This
           .copy(v-in-viewport) State and local governments have a toolbox of approaches they can take to address the apartment shortage and help reduce the cost of housing. Working together, we can help them:
-          .line
+          // .line
 
         .image-text-block-1
           .image(v-in-viewport)
@@ -32,7 +32,7 @@ doctype
             img(src="/vision/2.png")
           .text(v-in-viewport)
             .title Policy & Collaboration
-            .copy Adopt locla public policies and programs that harness the power of the private sector to make housing affordability more feasible.  Collaborate with business and community leaders to champion apartments.
+            .copy Adopt local public policies and programs that harness the power of the private sector to make housing affordability more feasible.  Collaborate with business and community leaders to champion apartments.
           .clear
 
         .bottom-block(v-in-viewport)
@@ -63,7 +63,7 @@ doctype
           BuildMoreChart
         .clear
     .border.small.margined
-    .section.section_chart.section_chart_metros
+    //.section.section_chart.section_chart_metros
       .inner
         .copy_legend
           .copy(v-in-viewport) Barriers to Apartments Mean Higher Rents
@@ -82,7 +82,7 @@ doctype
       .inner
         .copy_legend
           .copy(v-in-viewport) Income and Affordability
-          .copy(v-in-viewport) Housing affordability is a growing problem. Housing costs continue to clime while incomes haven't kept up.
+          .copy(v-in-viewport) Housing affordability is a growing problem. Housing costs continue to climb while incomes haven't kept up.
           .legend(v-in-viewport)
             .row
               .color.color_green

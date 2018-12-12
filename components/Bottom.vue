@@ -24,10 +24,10 @@
         .clear
     .clear
   .sources
-    .inner Source: 
-      span 
+    .inner Source:
+      span
         a(href="http://hoytgroup.org/hoyt-advisory-services/",target="_new") Hoyt Advisory Services
-        span ;&nbsp; 
+        span ;&nbsp;
         a(href="http://www.nmhc.org/",target="_new") NMHC
         span /
         a(href="http://www.naahq.org",target="_new") NAA
@@ -35,13 +35,13 @@
         a(href="https://www.census.gov/",target="_new") U.S. Census Bureau
         span ;&nbsp;
         a(href="https://www.axiometrics.com/",target="_new") Axiometrics
-        span ,&nbsp;a 
+        span ,&nbsp;a
         a(href="https://www.realpage.com/",target="_new") RealPage Company
   .lower(:class="{dark: dark}")
     .inner
       .section.title
         router-link.copy(to="/") We Are Apartments
-        .copy In communities across the country, apartments work -- helping people live in a home that’s right for them. 
+        .copy In communities across the country, apartments work - helping people live in a home that’s right for them.
       .section.logos
         a.logo.logo-nmhc(href="http://www.nmhc.org/",target="_new")
         a.logo.logo-naa(href="https://www.naahq.org/",target="_new")
@@ -117,14 +117,14 @@ json('../assets/fonts.json')
       > .inner
         padding 0 20px
         > .copy
-          color lightblue
+          color grey
           width 220px
           float left
           font c1s
         > .input
           float left
           width 200px
-          border 1px solid lightblue
+          border 1px solid grey
           border-radius 3px
           padding 0 10px
           margin 0 0 0 30px

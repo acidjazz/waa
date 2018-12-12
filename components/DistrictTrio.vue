@@ -5,7 +5,7 @@
     .inner
       .title in your district
       CircleChart(:id="'district_' + this.type",:district="this.choice.value",:width="(this.type === 'print') ? 200 : 255",:height="(this.type === 'print') ? 200 : 255",value="80")
-      .copy Of Your Residents
+      .copy &nbsp;
       .copy Of your district residents call an apartment home
     .copys
       .copy Renting on The Rise
@@ -17,10 +17,10 @@
     .copys
       .copy Supply at Risk
       .copy The nation's apartment stock is aging, with about half nationwide being built before 1980. Without resources to support rehabilitation and preservation efforts, the current supply-demand imbalance will worsen, affecting affordability.
-      
+
   .dchart
     .inner
-      .title apartments needed in your state
+      .title apartments needed in your state by 2030
       SingleLineChart(
         type='line',
         data='inyourstate',

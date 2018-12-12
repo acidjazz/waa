@@ -63,8 +63,8 @@
       .chart
         .copys
           .copy Renting on The Rise
-          .copy(v-if="isNational") Many people in the U.S. call apartments home.  They appreciate mortgage-free living, the ability to fllow new work opportunities and amenities that fit their lifestyles.
-          .copy(v-if="!isNational") Many people in {{ this.choice().value }} call apartments home.  They appreciate mortgage-free living, the ability to fllow new work opportunities and amenities that fit their lifestyles.
+          .copy(v-if="isNational") Many people in the U.S. call apartments home.  They appreciate mortgage-free living, the ability to follow new work opportunities and amenities that fit their lifestyles.
+          .copy(v-if="!isNational") Many people in {{ this.choice().value }} call apartments home.  They appreciate mortgage-free living, the ability to follow new work opportunities and amenities that fit their lifestyles.
         .title(v-if="isNational") IN THE U.S.
         .title(v-if="isState") IN YOUR STATE
         .title(v-if="isMetro") IN YOUR METRO
@@ -128,8 +128,8 @@
         .copys
           .copy(v-if="isMetro") Barriers to New Apartments
           .copy(v-else) Renting on The Rise
-          .copy(v-if="isNational") Many people in the U.S. call apartments home.  They appreciate mortgage-free living, the ability to fllow new work opportunities and amenities that fit their lifestyles.
-          .copy(v-if="!isNational && !isMetro") Many people in {{ this.choice().value }} call apartments home.  They appreciate mortgage-free living, the ability to fllow new work opportunities and amenities that fit their lifestyles.
+          .copy(v-if="isNational") Many people in the U.S. call apartments home.  They appreciate mortgage-free living, the ability to follow new work opportunities and amenities that fit their lifestyles.
+          .copy(v-if="!isNational && !isMetro") Many people in {{ this.choice().value }} call apartments home.  They appreciate mortgage-free living, the ability to follow new work opportunities and amenities that fit their lifestyles.
           .copy(v-if="isMetro") Based on specific factors like local regulations and available land to develop, the Barriers to Apartment Construction Index ranks 50 metro areas on how hard it is to build new apartments. See how your city stacks up
         .title(v-if="isNational") IN THE U.S.
         .title(v-if="isState") IN YOUR STATE

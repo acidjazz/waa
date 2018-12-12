@@ -102,7 +102,7 @@ doctype
     .section.section_left
 
       .title(v-in-viewport) Compare Your Metro
-      .copy(v-in-viewport) Enter two cities names in order to compare them
+      .copy(v-in-viewport) Enter two cities to compare them
       .inputs(v-in-viewport)
         input(
           placeholder="City One",

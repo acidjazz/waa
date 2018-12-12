@@ -12,12 +12,13 @@
     .copy {{ selection }}
 
     .copy(v-if="contrib.value !== 0")
-      | {{ choice().state }}
-      span(v-if="choice().type === 'national'") Apartments
-      span(v-else) &nbsp;apartments
-      span &nbsp;and their residents contribute more than&nbsp;
+      span(v-if="choice().type === 'district'") Apartments and their residents in this district&nbsp;
+      span(v-else-if="choice().type === 'national'") Apartments and their residents&nbsp;
+      span(v-else) {{ choice().value }} apartments and their residents&nbsp;
+      span contribute more than&nbsp;
       strong &nbsp;${{ daily.value }}{{ daily.a }}&nbsp;
-      | &nbsp;to the {{ choice().type }} economy every day.
+      span(v-if="choice().type === 'district'") &nbsp;to the state economy every day.
+      span(v-else) &nbsp;to the {{ choice().type }} economy every day.
 
     .copy_print Market Snapshot
     .stats

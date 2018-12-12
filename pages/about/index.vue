@@ -61,7 +61,7 @@ doctype
             .copy 2015 American Community Survey, 1-Year Estimates, US Census Bureau
           .block(v-in-viewport)
             .square
-            .copy Axiometrics, a Realpage Company
+            .copy Axiometrics, a RealPage Company
           .block(v-in-viewport)
             .square
             .copy NMHC tabulations of 2015 American Community Survey microdata, IPUMS

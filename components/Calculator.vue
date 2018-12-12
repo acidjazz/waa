@@ -18,12 +18,17 @@
       .label: .copy number of homes
       .options
         .input
-          input(type="number",placeholder="How many apartment homes?",v-model="number",:class="{ error: errors.number, success: errors.success.number }")
+          input(
+            type="number",
+            min="0",
+            placeholder="How many apartment homes?",
+            v-model="number",
+            :class="{ error: errors.number, success: errors.success.number }")
     .param
       .label: .copy calculate by
       .options(:class="{ error: errors.calculate, success: errors.success.calculate }")
         .pulldowns
-          .pulldown(:class="{ selected: (by === 'metro') }")
+          .pulldown(:class="{ selected: by === 'metro'}")
             .checkbox: .fa.fa-check.fa-2x
             .pullarea
               .select.select_metro
@@ -32,7 +37,7 @@
                   option(v-for="option in metros",:value="option",:selected="(option === metro)") {{ option }}
               .pull: .fa.fa-chevron-down
 
-          .pulldown(:class="{ selected: (by === 'state') }")
+          .pulldown(:class="{ selected: by === 'state'}")
             .checkbox: .fa.fa-check.fa-2x
             .pullarea
               .select.select_state
@@ -40,7 +45,7 @@
                   option(selected,value="State") State
                   option(v-for="option in states",:value="option",:selected="option === state") {{ option }}
               .pull: .fa.fa-chevron-down
-          .pulldown(:class="{ selected: (by === 'national') }",@click="change('national')")
+          .pulldown(:class="{ selected: by === 'national'}",@click="change('national')")
             .checkbox: .fa.fa-check.fa-2x
             .pullarea
               .copy National
@@ -52,7 +57,7 @@
     .inner
       .source Source: https://weareapartments.org/ {{ $route.path }}
       Share(query=true)
-      router-link.close(:to="'/calculator' + $route.hash")
+      router-link.close(to="/calculator")
         .fa.fa-times.fa-2x
 
       .copy {{ subtitle }}
@@ -63,7 +68,7 @@
           .copy(v-if="type === 'existing'") Economic Impact of {{ number }} Existing Apartment Homes
           .copy(v-else) Economic Impact of {{ number }} New Apartment Homes
 
-          .copy.copy_header Total Impact 
+          .copy.copy_header Total Impact
           .copy.copy_body The combined direct and indirect contribution of apartment construction, operations and resident spending to the state economy.
 
           .stat.colored.blue
@@ -71,7 +76,7 @@
             .value {{ data.total.impact }}
             .clear
 
-          .copy.copy_header Total Jobs 
+          .copy.copy_header Total Jobs
           .copy.copy_body The total number of direct and indirect jobs supported by apartment construction, operations and resident spending within the state economy.
 
           .stat.colored.blue
@@ -108,7 +113,7 @@
           .copy.copy_body(v-if="type === 'new'") Apartment construction continues as a bright spot in the economy, helping lead the housing recovery
 
           .stat.colored.yellow(v-if="type === 'new'")
-            .copy Total Economic Contribution 
+            .copy Total Economic Contribution
             .value {{ data.construction.contribution }}
             .clear
           .stat(v-if="type === 'new'")
@@ -117,7 +122,7 @@
             .clear
 
           .copy.copy_header Living in Apartments
-          .copy.copy_body Renting can be a smart choice for w ide range of individuals and faimilies across all income levels.  That's why a diverse array of people call apartments home.
+          .copy.copy_body Renting can be a smart choice for a wide range of individuals and faimilies across all income levels.  That's why a diverse array of people call apartments home.
 
           .stat
             .copy Spending Power
@@ -228,6 +233,8 @@ export default {
     },
 
     change (type, value) {
+
+      console.log('change', type, value)
 
       if (type === 'metro') {
         if (this.metro === 'Metro Area') {
