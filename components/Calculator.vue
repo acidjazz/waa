@@ -69,7 +69,7 @@
           .copy(v-else) Economic Impact of {{ number }} New Apartment Homes
 
           .copy.copy_header Total Impact
-          .copy.copy_body The combined direct and indirect contribution of apartment construction, operations and resident spending to the state economy.
+          .copy.copy_body The combined direct and indirect contribution of apartment construction, operations and resident spending to the {{ by }} economy.
 
           .stat.colored.blue
             .copy Total Economic Impact
@@ -77,7 +77,7 @@
             .clear
 
           .copy.copy_header Total Jobs
-          .copy.copy_body The total number of direct and indirect jobs supported by apartment construction, operations and resident spending within the state economy.
+          .copy.copy_body The total number of direct and indirect jobs supported by apartment construction, operations and resident spending within the {{ by }} economy.
 
           .stat.colored.blue
             .copy Total Jobs Supported
@@ -122,7 +122,7 @@
             .clear
 
           .copy.copy_header Living in Apartments
-          .copy.copy_body Renting can be a smart choice for a wide range of individuals and faimilies across all income levels.  That's why a diverse array of people call apartments home.
+          .copy.copy_body Renting can be a smart choice for a wide range of individuals and families across all income levels.  That's why a diverse array of people call apartments home.
 
           .stat
             .copy Spending Power

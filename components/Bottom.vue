@@ -35,7 +35,7 @@
         a(href="https://www.census.gov/",target="_new") U.S. Census Bureau
         span ;&nbsp;
         a(href="https://www.axiometrics.com/",target="_new") Axiometrics
-        span ,&nbsp;a
+        span ,&nbsp;a&nbsp;
         a(href="https://www.realpage.com/",target="_new") RealPage Company
   .lower(:class="{dark: dark}")
     .inner

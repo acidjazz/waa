@@ -3,7 +3,7 @@
   .charts
     .block
       .data
-        .copy rent burdened<br /> apartment homes
+        .copy Apartment HHs Paying Over<br /> 30% of Income on Housing
         //.spike
           i.fa.fa-long-arrow-up(aria-hidden=true,v-if="spike.income.replace('%', '') > 0")
           i.fa.fa-long-arrow-down(aria-hidden=true,v-if="spike.income.replace('%', '') < 0")
@@ -13,7 +13,7 @@
         canvas(id="Chart-income",:width="width", :height="height")
     .block
       .data
-        .copy income<br /> growth
+        .copy Median Apartment Income<br /> (2015 Dollars)
         //.spike
           i.fa.fa-long-arrow-up(aria-hidden=true,v-if="spike.affordability.replace('%', '') > 0")
           i.fa.fa-long-arrow-down(aria-hidden=true,v-if="spike.affordability.replace('%', '') < 0")
