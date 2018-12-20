@@ -49,7 +49,7 @@ doctype
     .section.section_chart.section_chart_buildmore
       .inner
         .copy_legend
-          .copy(v-in-viewport) We Need to Build More
+          .copy(v-in-viewport) Apartment HHs Paying Over 30% of Income on Housing
           .copy(v-in-viewport) The country will need to build an average of 324,000 new apartment homes each year to keep up with demand. The industry averaged just 242,614 completions from 2011-2017.
           .legend(v-in-viewport)
             .row
@@ -81,7 +81,7 @@ doctype
     .section.section_chart.section_chart_incomeafford
       .inner
         .copy_legend
-          .copy(v-in-viewport) Income and Affordability
+          .copy(v-in-viewport) Median Apartment Income (2015 Dollars)
           .copy(v-in-viewport) Housing affordability is a growing problem. Housing costs continue to climb while incomes haven't kept up.
           .legend(v-in-viewport)
             .row
