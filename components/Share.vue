@@ -89,7 +89,7 @@ export default {
 
   data () {
     return {
-      basePDF: 'https://pdf2.weareapartments.org/api/render?emulateScreenMedia=false&url=https://weareapartments.org',
+      basePDF: 'http://pdf2.weareapartments.org/api/render?emulateScreenMedia=false&url=https://weareapartments.org',
       parsed: this.$route.hash.replace('#', '?'),
       modals: {
         shares: false
@@ -130,7 +130,7 @@ json('../assets/fonts.json')
       > .copy
         font c1
         color black
-        padding-left 5px 
+        padding-left 5px
         line-height 15px
     > .modal
       position absolute

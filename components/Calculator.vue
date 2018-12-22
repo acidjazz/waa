@@ -227,9 +227,7 @@ export default {
   methods: {
 
     away () {
-      if (this.$route.name === 'calculated') {
-        this.$router.push('/calculator' + this.$route.hash)
-      }
+      this.$router.push('/calculator')
     },
 
     change (type, value) {
