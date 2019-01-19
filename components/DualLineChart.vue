@@ -64,9 +64,9 @@ json('../assets/fonts.json')
 
 <script>
 
-import chartmixin from '~plugins/chart-mixin.js'
-import json from '~/static/US Affordability (Landing).json'
-import colors from '~/assets/colors.json'
+import chartmixin from '@/plugins/chart-mixin.js'
+import json from '@/static/US Affordability (Landing).json'
+import colors from '@/assets/colors.json'
 // import tooltip from '~components/tooltip.vue'
 import inViewport from 'vue-in-viewport-mixin'
 

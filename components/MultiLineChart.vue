@@ -77,8 +77,8 @@ json('../assets/fonts.json')
 </style>
 
 <script>
-import colors from '~/assets/colors.json'
-import tooltip from '~components/tooltip.vue'
+import colors from '@/assets/colors.json'
+import tooltip from '@/components/tooltip.vue'
 import inViewport from 'vue-in-viewport-mixin'
 export default {
   mixins: [ inViewport ],

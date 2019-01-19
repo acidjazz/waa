@@ -3,7 +3,7 @@ doctype
 #DemandChart
   .demandchart-copy
     .title(v-in-viewport)
-      i-count-up.number(v-if="count",:start="0",:end="4.6",:decimals="1",:duration="2")
+      i-count-up.number(v-if="count",:startVal="0",:endVal="4.6",:decimals="1",:duration="2")
       | &nbsp;Million
     .copy(v-in-viewport) New apartment homes needed in the U.S. by the year 2030
     .subtitle(v-in-viewport) Demand Is Rising

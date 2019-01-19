@@ -7,35 +7,35 @@
     .pointer
       .icon.icon-residents
       .copy The Residents
-      .copy who live in those 
-        b 100 apartments 
-        | annually generate 
-        b {{ residents.impact }} 
-        | in economic contribution to the state economy and support 
+      .copy who live in those
+        b 100 apartments
+        | annually generate
+        b {{ residents.impact }}
+        | in economic contribution to the state economy and support
         b {{ residents.jobs }} jobs.
     .pointer
       .icon.icon-operation
-      .copy The Operation 
-      .copy of those 
-        b 100 apartments 
-        | annually generates 
-        b {{ operations.impact }} 
-        | in economic contribution to the state economy and supports  
+      .copy The Operation
+      .copy of those
+        b 100 apartments
+        | annually generates
+        b {{ operations.impact }}
+        | in economic contribution to the state economy and supports
         b {{ operations.jobs }} jobs.
     .pointer
       .icon.icon-graph
       .copy The Construction
-      .copy of 
-        b 100 new apartments 
-        | generates 
-        b {{ construction.impact }} 
-        | in economic contribution to the state economy and supports 
+      .copy of
+        b 100 new apartments
+        | generates
+        b {{ construction.impact }}
+        | in economic contribution to the state economy and supports
         b {{ construction.jobs }} jobs.
     .clear
 </template>
 
 <script>
-import filtermixin from '~plugins/filter-mixin.js'
+import filtermixin from '@/plugins/filter-mixin.js'
 import datas from '../static/district economic impact.json'
 export default {
   props: ['district'],

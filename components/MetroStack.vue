@@ -11,7 +11,7 @@ doctype
     .metros(v-in-viewport)
       .list
         .metro(v-for="value, key in metros")
-          i-count-up.value(:start=0,:end="metros[key]", :class="{ value_grey: loading === true, value_red: value > 5.0, value_orange: value < 5.0 && value > 1.6, value_green: value <= 1.6 }")
+          i-count-up.value(:startVal=0,:endVal="metros[key]", :class="{ value_grey: loading === true, value_red: value > 5.0, value_orange: value < 5.0 && value > 1.6, value_green: value <= 1.6 }")
           router-link.name(:to="'/data/metro/' + key.trim().toLowerCase().replace(/ /g, '-')") {{ key }}
 </template>
 

@@ -8,12 +8,12 @@
       .value(v-if="cspike !== false")
         span {{ cspike }}
       .value(v-else)
-        i-count-up.span(:start="0",:end="spiked",:decimals="0",v-if="!print()")
+        i-count-up.span(:startVal="0",:endVal="spiked",:decimals="0",v-if="!print()")
         span(v-else) {{ Math.round(spiked) }}
         span % Increase
     .spike(v-else)
       .value
-        i-count-up.span(:start="0",:end="spiked",:decimals="0",v-if="!print()")
+        i-count-up.span(:startVal="0",:endVal="spiked",:decimals="0",v-if="!print()")
         span(v-else) {{ Math.round(spiked) }}
         span %
         span Decrease
@@ -54,9 +54,9 @@ json('../assets/fonts.json')
 </style>
 
 <script>
-import colors from '~/assets/colors.json'
-import chartmixin from '~plugins/chart-mixin.js'
-import tooltip from '~components/tooltip.vue'
+import colors from '@/assets/colors.json'
+import chartmixin from '@/plugins/chart-mixin.js'
+import tooltip from '@/components/tooltip.vue'
 import inViewport from 'vue-in-viewport-mixin'
 import ICountUp from 'vue-countup-v2'
 

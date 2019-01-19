@@ -12,6 +12,7 @@ module.exports = {
   ** Headers of the page
   */
   wconfig: config,
+  mode: 'spa',
   head: {
     title: config.title,
     meta: [
@@ -74,9 +75,9 @@ module.exports = {
   /*
   ** Build configuration
   */
-  css: [{ src: '~assets/stylus/main.styl', lang: 'stylus' }],
+  css: [{ src: '@/assets/stylus/main.styl', lang: 'stylus' }],
   plugins: [
-    {src: '~plugins/ga.js', ssr: false},
+    {src: '@/plugins/ga.js', ssr: false},
     // {src: '~plugins/outdated.js', ssr: false},
   ],
   router: {
@@ -91,8 +92,8 @@ module.exports = {
     /*
     ** Run ESLINT on save
     */
-    extend (config, ctx) {
-      if (ctx.isClient) {
+    extend(config, ctx) {
+      if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,

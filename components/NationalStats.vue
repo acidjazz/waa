@@ -137,21 +137,17 @@ export default {
 
       if (this.choice.type === 'national') {
         data = data.data['Total U.S.']
-        this.contrib = contribUS.data['Total U.S.']
-        this.jobs = jobsUS.data['Total U.S.']
       }
 
       if (this.choice.type === 'state') {
         data = data.data[this.choice.state]
-        this.contrib = contribState.data[this.choice.value]
-        this.jobs = jobsState.data[this.choice.value]
       }
 
       if (this.choice.type === 'metro') {
         data = data.data[this.choice.value]
-        this.contrib = contribMetro.data[this.choice.value]
-        this.jobs = jobsMetro.data[this.choice.value]
       }
+
+      this.effects()
 
       if (this.tab === 'type') {
 
@@ -211,6 +207,27 @@ export default {
       },
     }
 
+  },
+
+  methods: {
+    effects () {
+      var data = datas[this.choice.type][this.tab]
+
+      if (this.choice.type === 'national') {
+        this.contrib = contribUS.data['Total U.S.']
+        this.jobs = jobsUS.data['Total U.S.']
+      }
+
+      if (this.choice.type === 'state') {
+        this.contrib = contribState.data[this.choice.value]
+        this.jobs = jobsState.data[this.choice.value]
+      }
+
+      if (this.choice.type === 'metro') {
+        this.contrib = contribMetro.data[this.choice.value]
+        this.jobs = jobsMetro.data[this.choice.value]
+      }
+    }
   },
 
 }
@@ -323,7 +340,7 @@ json('../assets/fonts.json')
             background-color red
             width 0%
             height 100%
-            border-radius 6px 
+            border-radius 6px
             transition width 1s linear 0s
 @media all and (min-width: 1px) and (max-width: 1000px)
   #NationalStats,

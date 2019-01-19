@@ -21,79 +21,79 @@ doctype
             td Total Apartment Homes
             td(:class="{ higher: compare('one', 'homes')}")
               .fa.fa-check
-              i-count-up(:end="city.one.homes.formatted",:decimals="1")
+              i-count-up(:endVal="city.one.homes.formatted",:decimals="1")
               span {{ city.one.homes.multiplier }}
             td(:class="{ higher: compare('two', 'homes')}")
               .fa.fa-check
-              i-count-up(:end="city.two.homes.formatted",:decimals="1")
+              i-count-up(:endVal="city.two.homes.formatted",:decimals="1")
               span {{ city.two.homes.multiplier }}
           tr
             td Operation Dollars Spent
             td(:class="{ higher: compare('one', 'operation') }")
               .fa.fa-check
               span $
-              i-count-up(:end="city.one.operation.formatted",:decimals="1")
+              i-count-up(:endVal="city.one.operation.formatted",:decimals="1")
               span {{ city.one.operation.multiplier }}
             td(:class="{ higher: compare('two', 'operation') }")
               .fa.fa-check
               span $
-              i-count-up(:end="city.two.operation.formatted",:decimals="1")
+              i-count-up(:endVal="city.two.operation.formatted",:decimals="1")
               span {{ city.two.operation.multiplier }}
           tr
             td Direct On-Site Jobs
             td(:class="{ higher: compare('one', 'jobs') }")
               .fa.fa-check
-              i-count-up(:end="city.one.jobs.formatted",:decimals="1")
+              i-count-up(:endVal="city.one.jobs.formatted",:decimals="1")
               span {{ city.one.jobs.multiplier }}
             td(:class="{ higher: compare('two', 'jobs') }")
               .fa.fa-check
-              i-count-up(:end="city.two.jobs.formatted",:decimals="1")
+              i-count-up(:endVal="city.two.jobs.formatted",:decimals="1")
               span {{ city.two.jobs.multiplier }}
           tr
             td Total Economic Contribution
             td(:class="{ higher: compare('one', 'contrib') }")
               .fa.fa-check
               span $
-              i-count-up(:end="city.one.contrib.formatted",:decimals="1")
+              i-count-up(:endVal="city.one.contrib.formatted",:decimals="1")
               span {{ city.one.contrib.multiplier }}
             td(:class="{ higher: compare('two', 'contrib') }")
               .fa.fa-check
               span $
-              i-count-up(:end="city.two.contrib.formatted",:decimals="1")
+              i-count-up(:endVal="city.two.contrib.formatted",:decimals="1")
               span {{ city.two.contrib.multiplier }}
           tr
             td Total Jobs Supported
             td(:class="{ higher: compare('one', 'supported') }")
               .fa.fa-check
-              i-count-up(:end="city.one.supported.formatted",:decimals="1")
+              i-count-up(:endVal="city.one.supported.formatted",:decimals="1")
               span {{ city.one.supported.multiplier }}
             td(:class="{ higher: compare('two', 'supported') }")
               .fa.fa-check
-              i-count-up(:end="city.two.supported.formatted",:decimals="1")
+              i-count-up(:endVal="city.two.supported.formatted",:decimals="1")
               span {{ city.two.supported.multiplier }}
           tr
             td Construction Dollars Spent
             td(:class="{ higher: compare('one', 'spent')}")
               .fa.fa-check
               span $
-              i-count-up(:end="city.one.spent.formatted",:decimals="1")
+              i-count-up(:endVal="city.one.spent.formatted",:decimals="1")
               span {{ city.one.spent.multiplier }}
             td(:class="{ higher: compare('two', 'spent')}")
               .fa.fa-check
               span $
-              i-count-up(:end="city.two.spent.formatted",:decimals="1")
+              i-count-up(:endVal="city.two.spent.formatted",:decimals="1")
               span {{ city.two.spent.multiplier }}
           tr
             td Spending Power
             td(:class="{ higher: compare('one', 'power')}")
               .fa.fa-check
               span $
-              i-count-up(:end="city.one.power.formatted",:decimals="1")
+              i-count-up(:endVal="city.one.power.formatted",:decimals="1")
               span {{ city.one.power.multiplier }}
             td(:class="{ higher: compare('two', 'power')}")
               .fa.fa-check
               span $
-              i-count-up(:end="city.two.power.formatted",:decimals="1")
+              i-count-up(:endVal="city.two.power.formatted",:decimals="1")
               span {{ city.two.power.multiplier }}
 
   .inner

@@ -77,7 +77,7 @@ export default {
         return
       }
 
-      if (this.id === 'ontherise') {
+      if (this.id === 'ontherise' || this.id === 'ontherise-print') {
         this.json(datab, (result) => {
           this.perc = Math.round(result.data.data['Total U.S.'][0] * 100)
           complete()
@@ -123,15 +123,19 @@ export default {
       ctx.lineWidth = 20
       ctx.setLineDash([0, 0])
       ctx.stroke()
-    }
+    },
+    populateDraw () {
+      this.populate(() => this.draw())
+    },
+
   },
   watch: {
     '$route' () {
-      this.populate(() => this.draw())
+      this.populateDraw()
     }
   },
   mounted () {
-    this.populate(() => this.draw())
+      this.populateDraw()
   },
   data () {
     return {

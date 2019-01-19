@@ -9,7 +9,7 @@ doctype
         // tooltip(start=true,copy='b')
         | filter apartment data by:
       .options
-        router-link.option.enabled(to="/data/",:class="{active: (choice().value === 'National')}") National
+        nuxt-link.option.enabled(to="/data/",:class="{active: (choice().value === 'National')}") National
         a.option.enabled(:class="{active: (this.state !== 'National')}",@click="modal('state')")
           | state
           .chevron.chevron_states(:class="{ on: modals.state, off: !modals.state }")
@@ -28,25 +28,25 @@ doctype
     .modal.modal_states(:class="{ on: modals.state, off: !modals.state }")
       .close: .fa.fa-times(@click="modal(false)")
       .option(v-for="State in data",:class="{ active: (state === State.State) }")
-        router-link.choice(v-if="State.State == 'District of Columbia'",:to="'/data/state/' + State.State.toLowerCase().replace(/ /g, '-')",@click.native="modal(false)") D.C.
-        router-link.choice(v-else,:to="'/data/state/' + State.State.toLowerCase().replace(/ /g, '-')",@click.native="modal(false)") {{ State.State }}
+        nuxt-link.choice(v-if="State.State == 'District of Columbia'",:to="'/data/state/' + State.State.toLowerCase().replace(/ /g, '-')",@click.native="modal(false)") D.C.
+        nuxt-link.choice(v-else,:to="'/data/state/' + State.State.toLowerCase().replace(/ /g, '-')",@click.native="modal(false)") {{ State.State }}
 
     .modal.modal_metros(:class="{ on: modals.metro, off: !modals.metro }")
       .close: .fa.fa-times(@click="modal(false)")
       .option(v-for="Metro in metros",:class="{ active: (metro === Metro) }")
-        router-link.choice(:to="'/data/metro/' + Metro.trim().toLowerCase().replace(/ /g, '-')",@click.native="modal(false)") {{ Metro }}
+        nuxt-link.choice(:to="'/data/metro/' + Metro.trim().toLowerCase().replace(/ /g, '-')",@click.native="modal(false)") {{ Metro }}
 
     .modal.modal_districts(:class="{ on: modals.district, off: !modals.district }")
       .close: .fa.fa-times(@click="modal(false)")
       .option(v-for="District in districts",:class="{ active: (district === District) }")
-        router-link.choice(:to="'/data/district/' + District.trim().toLowerCase().replace(/ /g, '-')",@click.native="modal(false)") {{ District }}
+        nuxt-link.choice(:to="'/data/district/' + District.trim().toLowerCase().replace(/ /g, '-')",@click.native="modal(false)") {{ District }}
 </template>
 
 <script>
 import Filters from '../static/Filters.json'
 import { mixin as clickaway } from 'vue-clickaway'
-import filtermixin from '~plugins/filter-mixin.js'
-import tooltip from '~components/tooltip.vue'
+import filtermixin from '@/plugins/filter-mixin.js'
+import tooltip from '@/components/tooltip.vue'
 import ordinal from 'ordinal'
 export default {
   mixins: [ clickaway, filtermixin ],
@@ -181,7 +181,7 @@ json('../assets/colors.json')
       z-index 10
       > .close
         display none
-      
+
       &.modal_metros
         width 600px
         margin-left -250px
@@ -243,7 +243,7 @@ json('../assets/colors.json')
             text-decoration underline
           > .copy
             display inline-block
-          &.active, &.router-link-exact-active
+          &.active, &.nuxt-link-exact-active
             color blue
             text-decoration underline
             background-color lightwhite

@@ -39,9 +39,9 @@
 </template>
 
 <script>
-import CircleChart from '~components/CircleChart.vue'
-import PercChart from '~components/PercChart.vue'
-import SingleLineChart from '~components/SingleLineChart.vue'
+import CircleChart from '@/components/CircleChart.vue'
+import PercChart from '@/components/PercChart.vue'
+import SingleLineChart from '@/components/SingleLineChart.vue'
 export default {
   props: [ 'choice', 'type' ],
   components: { CircleChart, PercChart, SingleLineChart },
