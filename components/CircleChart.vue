@@ -17,11 +17,9 @@ json('../assets/fonts.json')
     position absolute
     top 50%
     left 50%
-    margin-top -30px
-    margin-left -35px
+    transform translate(-50%, -50%)
     font h2b
     text-align center
-    margin-top -100px 0 45% 0
     > span
       font h2
 
