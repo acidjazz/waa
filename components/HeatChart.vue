@@ -25,7 +25,7 @@ export default {
       }
     },
     populate () {
-      if (process.BROWSER_BUILD) {
+      if (process.browser) {
         this.carat = this.$el.querySelectorAll('.HeatChart > .circle > .carat')
         this.alterCarat(index.data[this.metro])
       }

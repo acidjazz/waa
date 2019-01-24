@@ -83,7 +83,7 @@ export default {
       metros: this.sort(restrictIndex.data),
       end: 0,
       loading: true,
-      browser: process.BROWSER_BUILD,
+      browser: process.browser,
     }
   }
 }

@@ -64,7 +64,7 @@ export default {
 
     },
     checkSticky () {
-      if (!process.BROWSER_BUILD) {
+      if (!process.browser) {
         return false
       }
       if (window.scrollY >= 240 && window.innerWidth >= 1000) {
@@ -110,14 +110,14 @@ export default {
   },
   mounted () {
     this.populate()
-    if (process.BROWSER_BUILD) {
+    if (process.browser) {
       window.addEventListener('scroll', this.handleScroll)
       this.handleScroll()
     }
 
   },
   destroyed () {
-    if (process.BROWSER_BUILD) {
+    if (process.browser) {
       window.removeEventListener('scroll', this.handleScroll)
     }
   },
