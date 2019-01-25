@@ -9,7 +9,7 @@ doctype
     .inner
       .copy(v-in-viewport) welcome to we are apartments.
       .copy(v-in-viewport) The country needs&nbsp;
-        i-count-up(:start="0",:end="4.6",:decimals="1",:duration="3")
+        i-count-up(:startVal="0",:endVal="4.6",:decimals="1",:duration="3")
         | m new apartments by 2030. How many are needed near you?
       .button.is-centered(v-in-viewport)
         router-link(to="/vision") our vision
