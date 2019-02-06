@@ -60,8 +60,6 @@ json('../assets/fonts.json')
   > .dchart
     float left
     width 33%
-    > .inner > .circle-chart > .value
-      margin-top -40px
     > .inner
       margin 20px
       border 1px solid lightgrey
