@@ -380,7 +380,7 @@ json('../assets/fonts.json')
         top 30px
         right 60px
     > .section_charts
-      width 1200px
+      width 880px
       margin auto
       > .chart
         > .title
@@ -388,8 +388,8 @@ json('../assets/fonts.json')
           text-decoration uppercase
         float left
         width 380px
-        margin-right 30px
-        &:nth-child(3)
+        margin-right 120px
+        &:nth-child(2)
           margin-right 0px
         > .copys
           margin 20px 0 0 0
@@ -448,6 +448,8 @@ json('../assets/fonts.json')
             color black
 
 @media print
+  .tooltip
+    display none !important
   #Filters
     display none !important
   .datapage_web

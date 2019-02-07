@@ -20,6 +20,7 @@
       i.fa.fa-fw.fa-lg.fa-file
       .copy PDF Snapshot
   a.action.pdf(v-else-if="pdf != false",:href="basePDF + $route.path")
+
     .button
       i.fa.fa-fw.fa-lg.fa-file
       .copy PDF Snapshot

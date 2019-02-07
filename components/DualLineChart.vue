@@ -5,6 +5,7 @@
       .data
         .copy Apartment HHs Paying Over<br /> 30% of Income on Housing
         //.spike
+
           i.fa.fa-long-arrow-up(aria-hidden=true,v-if="spike.income.replace('%', '') > 0")
           i.fa.fa-long-arrow-down(aria-hidden=true,v-if="spike.income.replace('%', '') < 0")
           .value {{ spike.income }}

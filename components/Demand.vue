@@ -20,6 +20,7 @@ p(v-in-viewport)  Between now and 2030,&nbsp;
     | new apartment homes each year to meet demand
     //| However, new housing approaches are needed as only an average of {{ needed }} apartment homes were built each year between 2011 - 2016.
   | &nbsp;However, producing enough new apartments to meet demand may require new development approaches, more incentives and fewer restrictions.
+
 </template>
 
 <script>
@@ -75,6 +76,7 @@ export default {
       return {
         title: this.value + ' - Learn about the demand for apartments in your area',
         description: this.value + ' will see a demand for an additional ' + this.households + ' new apartment homes by 2030',
+<<<<<< staging
         households: 0,
         needed: 0,
       }
@@ -84,6 +86,7 @@ export default {
       description: 'This country will see a demand for an additional ' + this.households + ' new apartment homes by 2030',
       households: 0,
       needed: 0,
+
     }
   },
   head () {

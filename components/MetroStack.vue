@@ -8,6 +8,7 @@ doctype
     .copy2(v-in-viewport) Multifamily supply restrictions index
     HeatChart(v-if="choice.type === 'metro' && this.choice.value !== 'Ann Arbor'",:metro="this.choice.value")
     .copy3.has-text-centered(v-if="choice.type === 'metro' && this.choice.value !== 'Ann Arbor'") {{ choice.value }}
+
     .metros(v-in-viewport)
       .list
         .metro(v-for="value, key in metros")
