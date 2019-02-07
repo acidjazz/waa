@@ -14,7 +14,8 @@
     "precommit": "yarn lint",
     "development": "yarn generate;node operations/development.js",
     "staging": "yarn generate;node operations/staging.js",
-    "production": "yarn generate;node operations/production.js"
+    "production": "yarn generate;node operations/production.js",
+    "test": "echo No tests yet"
   },
   "dependencies": {
     "countup.js": "^1.9.3",
