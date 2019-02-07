@@ -5,7 +5,7 @@
     .inner
       .title in your district
       CircleChart(:id="'district_' + this.type",:district="this.choice.value",:width="(this.type === 'print') ? 200 : 255",:height="(this.type === 'print') ? 200 : 255",value="80")
-      .copy &nbsp;
+      .copy Of Your Residents
       .copy Of your district residents call an apartment home
     .copys
       .copy Renting on The Rise
@@ -17,10 +17,10 @@
     .copys
       .copy Supply at Risk
       .copy The nation's apartment stock is aging, with about half nationwide being built before 1980. Without resources to support rehabilitation and preservation efforts, the current supply-demand imbalance will worsen, affecting affordability.
-
+      
   .dchart
     .inner
-      .title apartments needed in your state by 2030
+      .title in your state
       SingleLineChart(
         type='line',
         data='inyourstate',
@@ -39,9 +39,9 @@
 </template>
 
 <script>
-import CircleChart from '@/components/CircleChart.vue'
-import PercChart from '@/components/PercChart.vue'
-import SingleLineChart from '@/components/SingleLineChart.vue'
+import CircleChart from '~components/CircleChart.vue'
+import PercChart from '~components/PercChart.vue'
+import SingleLineChart from '~components/SingleLineChart.vue'
 export default {
   props: [ 'choice', 'type' ],
   components: { CircleChart, PercChart, SingleLineChart },
@@ -60,6 +60,8 @@ json('../assets/fonts.json')
   > .dchart
     float left
     width 33%
+    > .inner > .circle-chart > .value
+      margin-top -40px
     > .inner
       margin 20px
       border 1px solid lightgrey

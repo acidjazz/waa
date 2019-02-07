@@ -32,12 +32,14 @@ import udata from '../static/US Age of Stock'
 import mdata from '../static/Metro Age of Occupied Stock'
 
 import inViewport from 'vue-in-viewport-mixin'
+import ICountUp from 'vue-countup-v2'
 
 export default {
 
   props: ['district', 'metro', 'animation'],
 
   mixins: [ inViewport ],
+  components: { ICountUp },
 
   methods: {
     add (a, b) {

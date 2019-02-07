@@ -1,25 +1,12 @@
 {
-  "yellow": "#ffd012",
-  "green": "#a6e50f",
+  "yellow": "#ffd012", 
+  "green": "#a6e50f", 
   "red": "#ff6d4a",
   "lightred": "#ffd4d7",
-  "purple": "#624096",
+  "purple": "#624096", 
   "lightpurple": "#D1C4E1",
   "royalpurple": "#7C55AE",
   "blue": "#4da1ff",
-  "robins-egg": "#14D3DE",
-
-  "cerulean": "#009BE1",
-  "sail": "#BFE2F6",
-
-  "bigstone": "#35434A",
-  "casal": "#43545C",
-
-  "shark": "#34353D",
-  "bastille": "#2A2B32",
-
-  "goldenFizz": "#FFF240",
-  "lemonChiffon": "#FFFCC8",
 
   "tomato": "#FF6344",
 
@@ -32,7 +19,6 @@
   "orange": "#ffd012",
   "lightorange": "#fff8dc",
 
-  "silver": "#BFBFBF",
   "darkblue": "#2F3E5D",
   "lightblue": "#d0d7dd",
   "lightgrey": "#f4f7f9",
@@ -44,7 +30,5 @@
   "offwhite": "#f4f7f9",
   "black": "#000000",
   "tacao": "#F5B581",
-  "macaroni": "#FEB377",
-  "light-crimson": "#EB6A98",
-  "violet-red": "#FC5E99"
+  "light-crimson": "#EB6A98"
 }

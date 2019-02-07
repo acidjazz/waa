@@ -6,10 +6,10 @@ doctype
       .drawer(@click="closed = !closed")
         i.fa.fa-arrow-circle-down.fa-2x
       .copy(@click="closed = !closed")
-        // tooltip(start=true,copy='b')
+        tooltip(start=true,copy='b')
         | filter apartment data by:
       .options
-        nuxt-link.option.enabled(to="/data/",:class="{active: (choice().value === 'National')}") National
+        router-link.option.enabled(to="/data/",:class="{active: (choice().value === 'National')}") National
         a.option.enabled(:class="{active: (this.state !== 'National')}",@click="modal('state')")
           | state
           .chevron.chevron_states(:class="{ on: modals.state, off: !modals.state }")
@@ -28,25 +28,25 @@ doctype
     .modal.modal_states(:class="{ on: modals.state, off: !modals.state }")
       .close: .fa.fa-times(@click="modal(false)")
       .option(v-for="State in data",:class="{ active: (state === State.State) }")
-        nuxt-link.choice(v-if="State.State == 'District of Columbia'",:to="'/data/state/' + State.State.toLowerCase().replace(/ /g, '-')",@click.native="modal(false)") D.C.
-        nuxt-link.choice(v-else,:to="'/data/state/' + State.State.toLowerCase().replace(/ /g, '-')",@click.native="modal(false)") {{ State.State }}
+        router-link.choice(v-if="State.State == 'District of Columbia'",:to="'/data/state/' + State.State.toLowerCase().replace(/ /g, '-')",@click.native="modal(false)") D.C.
+        router-link.choice(v-else,:to="'/data/state/' + State.State.toLowerCase().replace(/ /g, '-')",@click.native="modal(false)") {{ State.State }}
 
     .modal.modal_metros(:class="{ on: modals.metro, off: !modals.metro }")
       .close: .fa.fa-times(@click="modal(false)")
       .option(v-for="Metro in metros",:class="{ active: (metro === Metro) }")
-        nuxt-link.choice(:to="'/data/metro/' + Metro.trim().toLowerCase().replace(/ /g, '-')",@click.native="modal(false)") {{ Metro }}
+        router-link.choice(:to="'/data/metro/' + Metro.trim().toLowerCase().replace(/ /g, '-')",@click.native="modal(false)") {{ Metro }}
 
     .modal.modal_districts(:class="{ on: modals.district, off: !modals.district }")
       .close: .fa.fa-times(@click="modal(false)")
       .option(v-for="District in districts",:class="{ active: (district === District) }")
-        nuxt-link.choice(:to="'/data/district/' + District.trim().toLowerCase().replace(/ /g, '-')",@click.native="modal(false)") {{ District }}
+        router-link.choice(:to="'/data/district/' + District.trim().toLowerCase().replace(/ /g, '-')",@click.native="modal(false)") {{ District }}
 </template>
 
 <script>
 import Filters from '../static/Filters.json'
 import { mixin as clickaway } from 'vue-clickaway'
-import filtermixin from '@/plugins/filter-mixin.js'
-import tooltip from '@/components/tooltip.vue'
+import filtermixin from '~plugins/filter-mixin.js'
+import tooltip from '~components/tooltip.vue'
 import ordinal from 'ordinal'
 export default {
   mixins: [ clickaway, filtermixin ],
@@ -64,7 +64,7 @@ export default {
 
     },
     checkSticky () {
-      if (!process.browser) {
+      if (!process.BROWSER_BUILD) {
         return false
       }
       if (window.scrollY >= 240 && window.innerWidth >= 1000) {
@@ -110,14 +110,14 @@ export default {
   },
   mounted () {
     this.populate()
-    if (process.browser) {
+    if (process.BROWSER_BUILD) {
       window.addEventListener('scroll', this.handleScroll)
       this.handleScroll()
     }
 
   },
   destroyed () {
-    if (process.browser) {
+    if (process.BROWSER_BUILD) {
       window.removeEventListener('scroll', this.handleScroll)
     }
   },
@@ -181,7 +181,7 @@ json('../assets/colors.json')
       z-index 10
       > .close
         display none
-
+      
       &.modal_metros
         width 600px
         margin-left -250px
@@ -243,7 +243,7 @@ json('../assets/colors.json')
             text-decoration underline
           > .copy
             display inline-block
-          &.active, &.nuxt-link-exact-active
+          &.active, &.router-link-exact-active
             color blue
             text-decoration underline
             background-color lightwhite

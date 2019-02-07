@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   methods: {
     ticksCallback (label, index, labels) {
       if (label.toString().indexOf('.') !== -1) {

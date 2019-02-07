@@ -1,6 +1,6 @@
 <template lang="pug">
 .page.page_calc
-  Top(type="dark")
+  Top(type="light")
   .clear
   .page_content
     .inner 

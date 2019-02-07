@@ -10,41 +10,24 @@
     > .section
       &.section_top
         > .inner
-          width 100%
-          height auto
-          margin auto
-          top 120px
-          left 0
-          > .title
-            margin 0 0 60px 0
           > .copy
-            font c2
+            width 300px
+            line-height 55px
+          > .highlight
+            top 220px
+            left 15px
       &.section_together
         > .inner
-          width auto
-          > .top-block
+          > .copy:nth-child(2)
             width auto
-            > #Share
-              top 20px
-              right 0px
-              width 100px
-          > .image-text-block-1, .image-text-block-2
-            > .image
-              float none
-              width 100%
-            > .text
-              float none
-              width 100%
-              margin auto
-          > .bottom-block
-            width auto
-            padding 40px 20px
-            > .copy
-              width auto
-            > .line
-              right 60px
-              
-
+          > .blocks
+            column-count 1
+            column-gap 0px
+            > .block
+              height auto
+              padding  0 0 30px 0
+              &:last-child
+                padding 0 0 0 0
       &.section_download
         > .inner
           text-align center

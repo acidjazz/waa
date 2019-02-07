@@ -76,8 +76,8 @@ json('../assets/fonts.json')
 @import '../assets/stylus/mixins.styl'
 .tooltip
   position absolute
-  top 10px
-  right 10px
+  top 28px
+  right 0px
   .inner
     position relative
     > .button
@@ -90,6 +90,7 @@ json('../assets/fonts.json')
       &:hover
         border 2px solid blue
       > .icon
+        color blue
         line-height 18px
         text-align center
     > .tip

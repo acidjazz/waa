@@ -5,172 +5,173 @@
     .clear
     DataFilters(:state="state",:metro="metro",:district="district")
     DataSummary(:state="state",:metro="metro",:district="district",type="web")
-    DiagSection
     .section.section_demand(v-if="this.choice().type !== 'district'")
-      .inner
-        p The Demand
-        Demand(:type="this.choice().type",:value="this.choice().value")
-        Share(:pdf="false")
-        // .pointer
-    .clear
+      p The Demand
+      Demand(:type="this.choice().type",:value="this.choice().value")
+      Share
     .section.section_district(v-if="this.choice().type === 'district'")
       DistrictCopy(:district="this.choice().value")
       Share
     .section.section_trio(v-if="this.choice().type === 'district'")
       DistrictTrio(type="web",:choice="this.choice()")
 
-    .section.section_chart(v-if="this.choice().type !== 'district'")
-      .chart.left
-        MultiLineChart(
-          :animation="true",
-          :choice="this.choice()",
-          data='aptsneeded',
-          id='aptsneeded',
-          width=820,height=396)
-      .right
-        NationalStats(:choice="this.choice()")
-      .clear
-
     .section.section_charts(v-if="this.choice().type !== 'district'")
-
       .chart
+        SingleLineChart(data='apthhgrowth',id='apthhgrowth',:choice="this.choice()",:animation="true",theme="orange",width=380,height=300)
         .copys
-          .copy Supply at Risk
-          .copy The apartment stock is aging. Without resources to support rehabilitation and preservation efforts, the current supply-demand imbalance will worsen, affecting affordability.
-        .title AGE OF STOCK
-        NationalStats(:stock="true",:choice="this.choice()")
-
-
+          .copy Apartment Household Growth
+          .copy Population growth and a higher propensity to rent will create a need for more apartments by 2030. 
+      //.chart
+        SingleLineChart(data='rentgrowth',id='rentgrowth',:choice="this.choice()",:animation="true",theme="lime",width=380,height=300)
+        .copys
+          .copy Growth in Rentership
+          .copy An aging population, immigration and fewer home purchases are increasing the need for apartments. 
       .chart
+        SingleLineChart(data='popgrowth',id='popgrowth',:choice="this.choice()",:animation="true",theme="aqua",width=380,height=300)
         .copys
           .copy(v-if="this.choice().type === 'state'") Household Growth
           .copy(v-else) Population Growth
-          .copy As our population grows, this puts strain on the existing housing supply. A variety of housing options will be needed to meet diverse needs.
-        .title(v-if="this.choice().type === 'state'") HOUSEHOLDS
-        .title(v-else) POPULATION
-        SingleLineChart(
-          :noborder="true",
-          :nopadding="true",
-          data='popgrowth',
-          id='popgrowth',
-          :choice="this.choice()",
-          :animation="true",
-          theme="aqua",
-          description="Forecasted by the year 2030",
-          tagline="Text Needed",
-          width=380,height=220)
+          .copy As our population grows, this puts strain on the existing housing supply. A variety of housing options will be needed to meet diverse needs. 
+      .clear
 
+    .section.section_chart(v-if="this.choice().type !== 'district'")
+      .top
+        .part.part_homes
+          .value {{ $store.state.homesNeeded }} 
+          .copy Apartment Homes Needed in 
+            span(v-if="this.choice().type !== 'metro'") the Country
+            span(v-if="this.choice().type === 'metro'") {{ this.choice().copy }}
+        .part.part_numbers
+          .graph
+          .copy Avg Annual Construction Rate (2011-2016)
+        .part.part_numbers
+          .graph
+          .copy New Apartments Needed
+      .left.left_buildmore(v-if="this.choice().type !== 'metro'")
+        .copy We need to build more
+        BuildMore(:choice="this.choice()")
+        //.legend
+          .dot
+            .value
+            .copy current rate text
+          .clear
+          .dot
+            .value
+            .copy needed rate text
+      .left.left_inyourcity(v-if="this.choice().type === 'metro'")
+        .copy barriers to apartments construction
+        HeatChart(:metro="this.choice().value")
+        .tip Index based on local regulations and available land
+        .title Barriers to New Apartments
+        .copy Over the last three decades, regulatory barriers to apartment construction have increased significantly, most notably at the local level.
       .chart
-        .copys
-          .copy Renting on The Rise
-          .copy(v-if="isNational") Many people in the U.S. call apartments home.  They appreciate mortgage-free living, the ability to follow new work opportunities and amenities that fit their lifestyles.
-          .copy(v-if="!isNational") Many people in {{ this.choice().value }} call apartments home.  They appreciate mortgage-free living, the ability to follow new work opportunities and amenities that fit their lifestyles.
-        .title(v-if="isNational") IN THE U.S.
-        .title(v-if="isState") IN YOUR STATE
-        .title(v-if="isMetro") IN YOUR METRO
-        CircleChart(
-          :width="255",
-          :height="255",
-          id="ontherise",
-          :choice="this.choice()",
-          :animation="true",
-          title="Renting on The Rise")
-        .copy.has-text-grey.has-text-centered(v-if="isNational") Of U.S. residents call an apartment home
-        .copy.has-text-grey.has-text-centered(v-if="!isNational") Of residents in {{ this.choice().value }} call an apartment home
+        MultiLineChart(:animation="true",:type="this.choice().type",:value="this.choice().value",:state="this.choice().state",data='aptsneeded',id='aptsneeded',theme="red",width=830,height=300)
+      .clear
+      .copys.copyLeft(v-if="this.choice().type === 'district'")
+        .title Barriers to New Apartments
+        .copy Over the last three decades, regulatory barriers to apartment construction have increased significantly, most notably at the local level
+      .clear
+      .copys.copyRight(v-if="this.choice().type === 'district' || this.choice().type === 'metro'")
+        .copy We Need to Build More
+        .copy Apartment demand is growing and the industry needs to keep up. However, producing enough new apartments to meet demand requires new development approaches, more incentives and fewer restrictions.
 
+    //.border.big
+    //.border.big
+    //MetroDemand
     .clear
-    CustomPDF(:choice="this.choice()")
-    MetroStack(:choice="choice()")
-    Compare
-    QuoteBar
+    Compare(v-if="this.choice().type !== 'state'")
+    //.border.big
+    // .border.big(v-if="(this.choice().type !== 'district')")
+    //SingleItem(v-if="this.choice().type === 'national'")
+    //.border.big(v-if="this.choice().type === 'national'")
+    //DualItems(v-if="this.choice().type === 'metro'")
+    // .border.big(v-if="this.choice().type === 'metro'")
     .clear
+    .sources Source: 
+      span Hoyt Advisory Services; NMHC/NAA; U.S. Census Bureau.; Axiometrics, a RealPage Company
     Downloads
     //.section.section_links
       .inner
         .area.left
           .icon.icon-file
-          .copy
-            span Download
+          .copy 
+            span Download 
             | the report on the 2030 demand for apartments.
           a.button(href="/NMHC-NAA-US-Apartment-Demand-in-2030.pdf") download
         .area.right
           .icon.icon-bars
-          .copy
-            span Read
-            | about the methodology behind all of the data.
+          .copy 
+            span Read 
+            | about the methodology behind all of the data. 
           router-link(to='/about').button learn more
         .clear
 
     Bottom
   .datapage_print
     .source Learn More @ https://weareapartments.org{{ path }}
-    DataSummary(:state="state",:metro="metro",:district="district",type="print")
+    .section.section_demand(v-if="this.choice().type !== 'district'")
+      p {{ this.choice().copy }}
+      Demand(:type="this.choice().type",:value="this.choice().value")
+    .section.section_district_name(v-if="this.choice().type === 'district'")
+      .copy {{ this.choice().value }}
+      .copy Apartments and their residents contribute more than $3.5 billion to the economy every day.
+    DataSummary(:state="state",:metro="metro",:district="district",v-if="this.choice().type === 'district'",type="print")
+    .section.section_district(v-if="this.choice().type === 'district'")
+      DistrictCopy(:district="this.choice().value")
+
     .section.section_trio(v-if="this.choice().type === 'district'")
       DistrictTrio(type="print",:choice="this.choice()")
-    .section.section_chart(v-if="this.choice().type !== 'district'")
-      .chart.left
-        MultiLineChart(
-          :animation="false",
-          :choice="this.choice()",
-          data='aptsneeded',
-          id='aptsneeded_print',
-          width=550,height=230)
-
-      .right
-        .section_demand
-          p The Demand
-          Demand(:type="this.choice().type",:value="this.choice().value")
-          // .pointer
-      .clear
 
     .section.section_charts(v-if="this.choice().type !== 'district'")
       .chart
+        SingleLineChart(data='apthhgrowth',id='ahgrowth_print',:choice="this.choice()",:animation="false",theme="orange",width=400,height=300)
         .copys
-          .copy(v-if="isMetro") Barriers to New Apartments
-          .copy(v-else) Renting on The Rise
-          .copy(v-if="isNational") Many people in the U.S. call apartments home.  They appreciate mortgage-free living, the ability to follow new work opportunities and amenities that fit their lifestyles.
-          .copy(v-if="!isNational && !isMetro") Many people in {{ this.choice().value }} call apartments home.  They appreciate mortgage-free living, the ability to follow new work opportunities and amenities that fit their lifestyles.
-          .copy(v-if="isMetro") Based on specific factors like local regulations and available land to develop, the Barriers to Apartment Construction Index ranks 50 metro areas on how hard it is to build new apartments. See how your city stacks up
-        .title(v-if="isNational") IN THE U.S.
-        .title(v-if="isState") IN YOUR STATE
-        .title(v-if="isMetro") Multifamily Supply Restrictions Index
-        HeatChart(v-if="isMetro",:metro="this.choice().value")
-        CircleChart(
-          v-if="!isMetro"
-          :width="170",
-          :height="170",
-          id="ontherise-print",
-          :choice="this.choice()",
-          :animation="false",
-          title="Renting on The Rise")
-        .copy.has-text-grey.has-text-centered(v-if="isNational") Of U.S. residents call an apartment home
-        .copy.has-text-grey.has-text-centered(v-if="!isNational && !isMetro") Of residents in {{ this.choice().value }} call an apartment home
+          .copy Apartment Household Growth
+          .copy Population growth and a higher propensity to rent will create a ..
+      //.chart
+        SingleLineChart(data='rentgrowth',id='rentgrowth_print',:choice="this.choice()",:animation="false",theme="lime",width=400,height=300)
+        .copys
+          .copy Growth in Rentership
+          .copy An aging population, immigration and fewer ..
       .chart
+        SingleLineChart(data='popgrowth',id='popgrowth_print',:choice="this.choice()",:animation="false",theme="aqua",width=400,height=300)
         .copys
           .copy(v-if="this.choice().type === 'state'") Household Growth
           .copy(v-else) Population Growth
-          .copy As our population grows, this puts strain on the existing housing supply. A variety of housing options will be needed to meet diverse needs.
-        .title(v-if="this.choice().type === 'state'") HOUSEHOLDS
-        .title(v-else) POPULATION
-        SingleLineChart(
-          :noborder="true",
-          :nopadding="true",
-          data='popgrowth',
-          id='popgrowth-print',
-          :choice="this.choice()",
-          :animation="false",
-          theme="aqua",
-          description="Forecasted by the year 2030",
-          tagline="Text Needed",
-          width=380,height=200)
-      .chart
-        .copys
-          .copy Supply at Risk
-          .copy The apartment stock is aging. Without resources to support rehabilitation and preservation efforts, the current supply-demand imbalance will worsen, affecting affordability.
-        .title AGE OF STOCK
-        NationalStats(:stock="true",:choice="this.choice()")
+          .copy As our population grows, this puts strain on the existing housing ..
+    .clear
+
+    .section.section_chart(v-if="this.choice().type !== 'district'")
+      .top
+        .part.part_homes
+          .value {{ $store.state.homesNeeded }} 
+          .copy Apartment Homes Needed in 
+            b(v-if="this.choice().type !== 'metro'") the Country
+            b(v-if="this.choice().type === 'metro'") {{ this.choice().copy }}
+        .part.part_numbers
+          .graph
+          .copy Avg Annual Construction Rate (2011-2016)
+        .part.part_numbers
+          .graph
+          .copy New Apartments Needed
+      .left(v-if="this.choice().type !== 'metro'")
+        // CircleChart(id="renters_print",width="225",height="225",value="70")
+      .left(v-else)
+        .copy barriers to apartments construction
+        HeatChart(:metro="this.choice().value")
+        .tip Index based on local regulations and available land
+      .right
+        MultiLineChart(:animation="false",:type="this.choice().type",:value="this.choice().value",:state="this.choice().state",data='aptsneeded',id='aptsneeded_print',theme="red",width=510,height=225)
       .clear
 
+      //.copys.copyLeft
+        .copy Renting on the Rise
+        .copy Many people in your district call apartments home. They  ..
+      .copys.copyRight
+        .copy We Need to Build More
+        .copy Apartment demand is growing and the industry needs to keep up. However, producing enough new apartments to meet demand requires new development approaches, more incentives and fewer restrictions
+    .clear
+    DataSummary(:state="state",:metro="metro",:district="district",v-if="this.choice().type !== 'district'",type="print")
     .logos
        img(src="/logo-nmhc.png")
        img(src="/logo-naa.png")
@@ -179,29 +180,23 @@
 </template>
 
 <script>
-import filtermixin from '@/plugins/filter-mixin.js'
+import filtermixin from '~plugins/filter-mixin.js'
 
-import HeatChart from '@/components/HeatChart'
-
-import Top from '@/components/Top.vue'
-import Bottom from '@/components/Bottom.vue'
-import DataFilters from '@/components/DataFilters.vue'
-import DataSummary from '@/components/DataSummary.vue'
-import DistrictCopy from '@/components/DistrictCopy.vue'
-import DistrictTrio from '@/components/DistrictTrio.vue'
-import SingleLineChart from '@/components/SingleLineChart.vue'
-import CircleChart from '@/components/CircleChart.vue'
-import MultiLineChart from '@/components/MultiLineChart.vue'
-import NationalStats from '@/components/NationalStats.vue'
-import Demand from '@/components/Demand.vue'
-import Share from '@/components/Share.vue'
-import BuildMore from '@/components/BuildMore.vue'
-import Downloads from '@/components/Downloads.vue'
-import Compare from '@/components/Compare.vue'
-import MetroStack from '@/components/MetroStack.vue'
-import QuoteBar from '@/components/QuoteBar.vue'
-import CustomPDF from '@/components/CustomPDF.vue'
-import DiagSection from '@/components/DiagSection.vue'
+import Top from '~/components/Top.vue'
+import Bottom from '~/components/Bottom.vue'
+import DataFilters from '~/components/DataFilters.vue'
+import DataSummary from '~/components/DataSummary.vue'
+import DistrictCopy from '~/components/DistrictCopy.vue'
+import DistrictTrio from '~/components/DistrictTrio.vue'
+import SingleLineChart from '~/components/SingleLineChart.vue'
+import MultiLineChart from '~/components/MultiLineChart.vue'
+import Demand from '~/components/Demand.vue'
+import Share from '~/components/Share.vue'
+import BuildMore from '~/components/BuildMore.vue'
+import HeatChart from '~/components/HeatChart.vue'
+import Downloads from '~/components/Downloads.vue'
+import Compare from '~/components/Compare.vue'
+import MetroDemand from '~/components/MetroDemand.vue'
 
 export default {
   mixins: [ filtermixin ],
@@ -213,19 +208,14 @@ export default {
     DistrictCopy,
     DistrictTrio,
     SingleLineChart,
-    CircleChart,
     MultiLineChart,
-    NationalStats,
     Demand,
     Share,
     BuildMore,
+    HeatChart,
     Downloads,
     Compare,
-    MetroStack,
-    CustomPDF,
-    QuoteBar,
-    DiagSection,
-    HeatChart,
+    MetroDemand,
   },
 
   methods: {
@@ -254,23 +244,6 @@ export default {
       }
     },
   },
-
-  computed: {
-    isNational () {
-      return this.choice().type === 'national'
-    },
-    isState () {
-      return this.choice().type === 'state'
-    },
-    isMetro () {
-      return this.choice().type === 'metro'
-    },
-    isDistrict () {
-      return this.choice().type === 'district'
-    },
-  },
-
-
   data () {
     return {
       path: false,
@@ -338,40 +311,263 @@ json('../assets/fonts.json')
               font c1
               color grey
 
+  .datapage_print
+    overflow hidden
+    height 1px
+    > #DataSummary
+      background none
+      color black
+      padding-top 20px
+      > .inner
+        position relative
+        background none
+        background-color white
+        padding 10px 0
+        > .breadcrumb
+          display none
+        > .copy:nth-child(2), > .copy:nth-child(3)
+          display none
+        > .copy_print
+          display block
+          margin 0 
+          background-color white
+          text-transform uppercase
+          padding 0 10px
+          position absolute
+          top 0px
+          left 50%
+          width 200px
+          margin-left -100px
+          font c1sb
+          color darkblue
+        > .stats
+          border-top 1px solid lightblue
+          width 750px
+          margin auto
+          padding-top 5px
+          height 80px
+          > .stat
+            padding 10px
+            max-width 150px
+            height 60px
+            animation none !important
+            &:first-child, &:nth-child(2), &:nth-child(3)
+              border-right 1px solid lightblue
+            > .value
+              padding 0 0 10px 0
+              color purple
+              animation none !important
+            > .copy
+              font c1s
+    > .source
+      text-align right
+      color grey
+      padding 6px
+      font c1s
+    > .section_demand
+      text-align center
+      > p:first-child
+        font h1
+        line-height 2px
+      > p:nth-child(2)
+        color grey
+        max-width 490px
+        margin auto
+        font c1s
+        > span
+          color black
+          > span
+            color red
+
+    > .section_district_name
+      > .copy:nth-child(2)
+        padding 10px 0 !important
+    > .section_district
+      > .DistrictCopy
+        > .inner
+          padding 10px 0
+          > .copy:first-child
+            padding 0 0 10px 0
+        > .pointers
+          width 765px
+
+    > .section_trio
+      > .district_charts
+        padding 10px 0
+        > .dchart
+          overflow hidden
+        > .dchart > .inner
+          > .chartainer
+            width 244px
+          > .circle-chart
+            > .value
+              margin-top -25px
+          > .copy:nth-child(3)
+            display none
+          > .copy:nth-child(4)
+            margin -20px auto 0 auto
+
+
+    > .section_district_name
+      text-align center
+      > .copy:first-child
+        font h1
+      > .copy:nth-child(2)
+        color grey
+        padding 30px 0
+    > .section_trio
+      > .district_charts
+        width 765px
+        > .dchart
+           > .copys
+            display none
+           > .inner
+             margin 3px
+             height 300px
+             > .copy
+               margin -20px auto 0 auto
+               width 90%
+             > #percs
+               > .perc
+                 > .progress
+                   margin 5px 0
+           > .copys
+             margin 0 3px
+           
+
+    > .section_charts
+      width 640px
+      margin auto
+      > .chart
+        float left
+        width 45%
+        margin-right 60px
+        > .chartainer > .tooltip
+          display none
+        &:nth-child(2)
+          margin-right 0px
+        > .copys
+          margin 0px 5px 0 5px
+          > .copy:first-child
+            font c1
+            padding 0 0 10px 0
+          > .copy:nth-child(2)
+            color grey
+            font c1s
+            display none
+    > .section_chart
+      width 750px
+      margin auto
+      margin-top 20px
+      > .top
+        background-color green
+        > .part
+          float right
+          width 250px
+          &.part_homes
+            text-align left
+            line-height 20px
+            padding 5px 0 0 0
+            > .value
+              display inline
+            > .copy
+              color grey
+              display inline
+          &.part_numbers
+            > .graph
+              float left
+              margin 10px 0 0 0
+              background-color rgba(red, 0.5)
+              width 10px
+              height 10px
+              border-radius 50%
+            > .copy
+              margin 5px 0 0 40px
+              color grey
+              line-height 10px
+              width 184px
+              line-height 20px
+            > .value
+              margin 0 0 0 20px
+            &:nth-child(2) > .graph 
+              background-color rgba(red, 1)
+      > .left
+        float left
+        border none
+        width 0px
+        height 225px
+        margin 50px 0 0 0
+        > .copy
+          font c1ssb
+          width 280px
+          text-transform uppercase
+        > .HeatChart
+          margin 5px 0 0 0
+          > .legend
+            margin-top -55px
+            width 160px
+        > .tip
+          font c1ss
+          color grey
+          text-align center
+          width 160px
+          margin 0 0 0 20px
+      > .right
+        float right
+        border none
+        margin 10px auto
+        width 550px
+        height 225px
+      > .copyLeft
+        float left
+        width 255px
+        display none
+      > .copyRight
+      > .copys
+        float left
+        > .copy:nth-child(1)
+          font c1
+          float left
+          margin 20px 0 0 0
+          width 177px
+        > .copy:nth-child(2)
+          font c1s
+          float right
+          width 565px
+          padding 5px 0 0 0
+          color grey
+          margin 0 5px 0 0
+    > .logos
+      width 750px
+      height 30px
+      margin 20px auto 0 auto
+      text-align right
+      > img
+        height 50px
+
+
   .datapage_web
     visibility visible
     // display none
     > .section_demand
+      padding 60px 0
+      text-align center
+      position relative
       width 1200px
       margin auto
-      > .inner
-        padding 30px
-        background-color lightwhite
-        border-radius 6px
-        float left
-        position relative
-        margin 60px 0 90px 60px
-        > .pointer
-          position absolute
-          width 3px
-          height 60px
-          background-color black
-          left 100px
-          bottom -40px
-        > #Share
-          top 40px
-          right 40px
-        > p:first-child
-          font h2
-          margin 0 0 20px 0
-        > p:nth-child(2)
-          color grey
-          max-width 615px
-          margin auto
+      > #Share
+        top 85px
+        right 90px
+      > p:first-child
+        font h1
+      > p:nth-child(2)
+        color grey
+        max-width 544px
+        margin auto
+        > span
+          color black
           > span
-            color black
-            > span
-              color red
+            color red
     > .section_district
       width 1200px
       margin auto
@@ -383,9 +579,6 @@ json('../assets/fonts.json')
       width 880px
       margin auto
       > .chart
-        > .title
-          font c1sb
-          text-decoration uppercase
         float left
         width 380px
         margin-right 120px
@@ -393,18 +586,135 @@ json('../assets/fonts.json')
           margin-right 0px
         > .copys
           margin 20px 0 0 0
-          height 180px
           > .copy:first-child
             font h3
             padding 0 0 10px 0
           > .copy:nth-child(2)
             color grey
     > .section_chart
-      margin 30px auto
+      margin 90px auto 30px auto
       width 1200px
-      > .chart
+      > .top
+        > .part
+          float right
+          width 220px
+          line-height 22px
+          font c1s
+          &.part_homes
+            text-align left
+            padding 5px 0 0 0
+            > .value
+              display inline
+              font c1b
+              line-height 22px
+            > .copy
+              color grey
+              display inline
+          &.part_numbers
+            width 200px
+            > .graph
+              float left
+              margin 10px 10px 0 0
+              background-color rgba(red, 0.5)
+              width 15px
+              height 15px
+              border-radius 50%
+            > .copy
+              margin 5px 0 0 30px
+              color grey
+              width 144px
+            > .value
+              margin 0 0 0 20px
+            &:nth-child(2)
+              margin 0 180px 0 0
+            &:nth-child(2) > .graph
+              background-color rgba(red, 1)
+            &:nth-child(2) > .copy
+              width 184px
+      > .copyLeft
         float left
+        width 300px
+      > .copys
+        width 800px
+        margin -30px 20px 120px 0
+        float right
+        > .copy:nth-child(1)
+          font c3b
+          padding 0 0 5px 0
+        > .copy:nth-child(2)
+          font c1
+          color grey
 
+      > .left
+        float left
+        width 340px
+        &.left_buildmore
+          > .copy:first-child
+            font h2
+          > .copy:nth-child(2)
+            color grey
+            padding 30px 0 0 0
+          > .legend
+            padding 30px 0 0 0
+            font c1s
+            > .dot
+              > .value
+                float left
+                width 10px
+                height 10px
+                border-radius 50%
+                background-color red
+                margin 5px 0 0 0
+              > .copy
+                float left
+                text-transform uppercase
+                margin 0 0 0 10px
+          > .legend > .dot:first-child > .value
+            background-color rgba(red, 0.5)
+        &.left_inyourcity
+          height 300px
+          border 1px solid lightgrey
+          border-radius 3px
+          > .copy:first-child
+            color darkblue
+            font c1sb
+            text-transform uppercase
+            padding 25px 0 0 25px
+          > .tip
+            color grey
+            width 250px
+            margin -10px auto 0 auto
+            text-align center
+            font c1s
+          > .title
+            margin 40px 0 0 0
+            padding 0 0 5px 0
+            font c3b
+          > .copy:last-child
+            color grey
+      > .mbottom
+        width 1200px
+        padding 0 0 30px 0
+        > .copys.copyLeft
+          float left
+          width 300px
+        > .copys.copyRight
+          float right
+          width 830px
+          margin 0 0 0 30px
+        > .copys
+          > .copy:first-child
+            font h3
+            padding 0 0 10px 0
+          > .copy:nth-child(2)
+            color grey
+
+      > .chart
+        float right
+        width 800px
+        margin 0 0 30px
+        > .chartainer > .tooltip
+          top -20px
     > .section_links
       > .inner
         padding 90px 0
@@ -460,6 +770,5 @@ json('../assets/fonts.json')
     height auto !important
 
 @import '../assets/stylus/datapage-mobile.styl'
-@import '../assets/stylus/datapage-print.styl'
 
 </style>

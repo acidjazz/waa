@@ -1,69 +1,58 @@
 <template lang="pug">
-.chartainer(:class="{'no-border': data === 'inyourstate' || noborder, 'no-padding': nopadding}")
-    //tooltip(v-if="data === 'popgrowth' || data === 'inyourstate'",align="left")
-    //tooltip(v-else)
-    .title {{ title }}
-    .description {{ description }}
+  .chartainer
+    tooltip(v-if="data === 'popgrowth' || data === 'inyourstate'",align="left")
+    tooltip(v-else)
+    canvas(:id="'chart-' + id",:width="width",:height="height")
     .spike(v-if="(spiked > 0)")
+      i.fa.fa-long-arrow-up(aria-hidden=true)
       .value(v-if="cspike !== false")
         span {{ cspike }}
       .value(v-else)
-        i-count-up.span(:startVal="0",:endVal="spiked",:decimals="0",v-if="!print()")
-        span(v-else) {{ Math.round(spiked) }}
-        span % Increase
-    .spike(v-else)
-      .value
-        i-count-up.span(:startVal="0",:endVal="spiked",:decimals="0",v-if="!print()")
-        span(v-else) {{ Math.round(spiked) }}
+        i-count-up.span(:start="0",:end="spiked",:decimals="2",v-if="!print()")
+        span(v-else) {{ spiked }}
         span %
-        span Decrease
-    .tagline
-    canvas(:id="'chart-' + id",:width="width",:height="height")
+    .spike(v-else)
+      i.fa.fa-long-arrow-down(aria-hidden=true)
+      .value
+        i-count-up.span(:start="0",:end="spiked",:decimals="2",v-if="!print()")
+        span(v-else) {{ spiked }}
+        span %
 
 </template>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 json('../assets/colors.json')
-json('../assets/fonts.json')
 .chartainer
-  border 1px solid lightgrey
-  border-radius 3px
-  padding 20px
   position relative
-  &.no-border
-    border 0px solid transparent
-  &.no-padding
-    padding 10px 0px 0px 0px
-  > .title
-    font h3
-    color casal
-  > .description
-    color grey
-    font c1s
   > canvas
     width inherit
     height inherit
   > .spike
-    padding 10px 0 0 0
+    position absolute
+    top 30px
+    right 50px
+    > .fa
+      float left
+      padding 5px 10px 0 0
+      &.fa-long-arrow-down
+        color red
+      &.fa-long-arrow-up
+        color green
     > .value
-      font h1
-      color casal
-  > .tagline
-    color grey
-    font c1s
+      float left
 </style>
 
 <script>
-import colors from '@/assets/colors.json'
-import chartmixin from '@/plugins/chart-mixin.js'
-import tooltip from '@/components/tooltip.vue'
+import colors from '~/assets/colors.json'
+import chartmixin from '~plugins/chart-mixin.js'
+import tooltip from '~components/tooltip.vue'
 import inViewport from 'vue-in-viewport-mixin'
 import ICountUp from 'vue-countup-v2'
 
 export default {
   mixins: [ chartmixin, inViewport ],
   components: { tooltip, ICountUp },
-  props: ['id', 'data', 'choice', 'theme', 'width', 'height', 'animation', 'title', 'description', 'tagline', 'noborder', 'nopadding'],
+  props: ['id', 'data', 'choice', 'theme', 'width', 'height', 'animation'],
   methods: {
 
     print () {
@@ -110,11 +99,8 @@ export default {
           break
 
         case this.choice.type === 'national' && this.data === 'popgrowth':
-          this.chart_type = 'bar'
           this.json('US Population (Landing).json', (result) => {
-            // data = this.toCurrent(result.data.data)
-            data.labels = [2016, 2030]
-            data.datas = [result.data.data[2016] * 1000, result.data.data[2030] * 1000]
+            data = this.toCurrent(result.data.data)
             complete(data, spike)
           })
           break
@@ -135,7 +121,6 @@ export default {
           break
 
         case this.choice.type === 'state' && this.data === 'popgrowth':
-          this.chart_type = 'bar'
           this.json('State HH Growth.json', (result) => {
             data.labels = [2016, 2030]
             data.datas = [result.data.data[this.choice.value][1], result.data.data[this.choice.value][3]]
@@ -163,14 +148,8 @@ export default {
           break
 
         case this.choice.type === 'metro' && this.data === 'popgrowth':
-          this.chart_type = 'bar'
           this.json('Metro Pop Growth.json', (result) => {
             data = this.toCurrent(result.data.data, result.data.labels.indexOf(this.choice.value))
-            for (let i in data.datas) {
-              data.datas[i] = data.datas[i] * 1000
-            }
-            data.labels = [2016, 2030]
-            data.datas = [data.datas[0], data.datas[(data.datas.length - 1)]]
             complete(data, spike)
           })
           break
@@ -197,6 +176,7 @@ export default {
         let a = data.datas[data.datas.length - 1]
         let b = data.datas[0]
         spike = numeral((a - b) / b).format('0.00%').replace(/%/, '')
+        // console.log(this.data, a, b, (a - b) / b, numeral((a - b) / b).format('0.00%'), spike)
       }
 
       this.spike = isNaN(spike) ? 100 : spike
@@ -233,15 +213,11 @@ export default {
       if (this.myChart !== undefined) {
 
         this.myChart.data.datasets = [{
-          lineTension: 0,
           data: data.datas,
-
-          pointBackgroundColor: 'transparent',
-          pointBorderWidth: 0,
-          pointRadius: 8,
-          pointHoverRadius: 8,
-          pointBorderColor: 'transparent',
-
+          pointBackgroundColor: colors.white,
+          pointBorderWidth: 4,
+          pointRadius: 5,
+          pointBorderColor: solid,
           borderColor: solid,
           backgroundColor: light,
           fill: true
@@ -251,13 +227,13 @@ export default {
 
       } else {
         let options = this.chartOptions()
-        options.tooltips.backgroundColor = colors.black
+        options.tooltips.backgroundColor = light
         options.tooltips.titleFontSize = 0
         options.tooltips.titleSpacing = 0
         options.tooltips.titleMarginBottom = -6
-        options.tooltips.bodyFontColor = colors.white
+        options.tooltips.bodyFontColor = solid
         options.tooltips.yPadding = 10
-        options.tooltips.borderColor = colors.black
+        options.tooltips.borderColor = solid
         options.tooltips.callbacks = {
           label: function (item, data) {
             if (Number(item.yLabel) < 1 && Number(item.yLabel) > 0) {
@@ -268,41 +244,30 @@ export default {
         }
         options.layout = {
           padding: {
-            top: this.id.indexOf('print') !== -1 ? 0 : 0
+            top: this.id.indexOf('print') !== -1 ? 50 : 70
           }
         }
         options.scales = {
           yAxes: [{
-            display: true,
             position: 'right',
             gridLines: {
-              color: colors.lightgrey,
+              color: solid,
               display: false,
               zeroLineColor: solid,
             },
             ticks: {
-              beginAtZero: true,
-              fontSize: 11,
+              fontSize: 12,
               fontColor: colors.grey,
               maxTicksLimit: 6,
               callback: this.ticksCallback
             }
           }],
           xAxes: [{
-            display: true,
-            gridLines: { color: colors.lightgrey, zeroLineColor: solid, display: false },
+            gridLines: { color: solid, zeroLineColor: solid, display: false },
             ticks: {
-              fontSize: 11,
-              fontColor: colors.grey,
+              fontColor: solid,
               color: solid,
-              maxTicksLimit: 6,
               maxRotation: 0,
-              callback: function (label, index, labels) {
-                if (label.length > 2) {
-                  return `'${label.substr(-2)}`
-                }
-                return label
-              },
             }
           }]
         }
@@ -313,22 +278,17 @@ export default {
 
         let datasets = [{
           data: data.datas,
-          pointBackgroundColor: 'transparent',
-          pointBorderWidth: 0,
-          pointRadius: 8,
-          pointHoverRadius: 8,
-          pointBorderColor: 'transparent',
+          pointBackgroundColor: colors.white,
+          pointBorderWidth: this.id.indexOf('print') !== -1 ? 2 : 4,
+          pointRadius: this.id.indexOf('print') !== -1 ? 2 : 5,
+          pointBorderColor: solid,
           borderColor: solid,
           backgroundColor: light,
           fill: true
         }]
 
-        if (this.chart_type === 'bar') {
-          datasets[0].borderWidth = 1
-        }
-
         this.myChart = new Chart(ctx, {
-          type: this.chart_type,
+          type: 'line',
           data: {
             labels: data.labels,
             datasets:  datasets
@@ -391,7 +351,6 @@ export default {
   },
   data () {
     return {
-      chart_type: 'line',
       myChart: undefined,
       spike: '0.00',
       cspike: false,

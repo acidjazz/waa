@@ -14,7 +14,7 @@ nav#Navigate(:class="{ on: isOpen, off: !isOpen, sticky: stuck}")
         .option(@click="isOpen = false"): router-link(to="/calculator") Apartment Calculator
         .option(@click="isOpen = false"): router-link(to="/about") The Initiative
         .option(@click="isOpen = false"): router-link(to="/vision") Our Vision
-      .title
+      .title 
         router-link(to="/") We Are Apartments
 </template>
 
@@ -23,7 +23,7 @@ export default {
 
   methods: {
     handleScroll () {
-      if (!process.browser) {
+      if (!process.BROWSER_BUILD) {
         this.stuck = false
         return false
       }
@@ -39,13 +39,13 @@ export default {
     return { isOpen: false, stuck: false }
   },
   mounted () {
-    if (process.browser) {
+    if (process.BROWSER_BUILD) {
       window.addEventListener('scroll', this.handleScroll)
       this.handleScroll()
     }
   },
   destroyed () {
-    if (process.browser) {
+    if (process.BROWSER_BUILD) {
       window.removeEventListener('scroll', this.handleScroll)
     }
   }

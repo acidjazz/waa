@@ -2,21 +2,26 @@
   "sheet": "US Age of Stock",
   "data": {
     "Total U.S.": [
-      4044993,
-      6041488,
-      6241109,
-      4364527,
+      4116793,
+      6187992,
+      6254066,
+      3819356,
       null,
       null,
       null,
       null,
-      "Time Period: 2017"
+      "Time Period: 2015"
     ],
     "": [
-      0.19548473459723817,
-      0.29197051224869836,
-      0.30161771267773135,
-      0.21092704047633212
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      "Source: NMHC tabulations of 2015 American Community Survey microdata."
     ]
   },
   "labels": [

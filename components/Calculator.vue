@@ -1,35 +1,33 @@
 <template lang="pug">
 .calculator
   .header
+    .icon
+      .inner
     .copy
-      p Calculator
-      p Calculate the economic contribution of an apartment community in your state or metro area below.
+      p Calculate
+      p The economic contribution of an apartment community in your state or metro area
   .params
     .param
       .label: .copy type
       .options
         .option(@click="type = 'existing'",:class="{ selected: (type === 'existing')}")
-          .checkbox: .fa.fa-check.fa-2x
+          .checkbox: .fa.fa-check
           .copy Existing Apartment Community
         .option(@click="type = 'new'",:class="{ selected: (type === 'new')}")
-          .checkbox: .fa.fa-check.fa-2x
+          .checkbox: .fa.fa-check
           .copy Potential New Development
     .param
-      .label: .copy number of homes
+      .label: .copy number
       .options
         .input
-          input(
-            type="number",
-            min="0",
-            placeholder="How many apartment homes?",
-            v-model="number",
-            :class="{ error: errors.number, success: errors.success.number }")
+          input(type="number",placeholder="How many apartment homes?",v-model="number",:class="{ error: errors.number, success: errors.success.number }")
     .param
-      .label: .copy calculate by
+      .label: .copy calculate
       .options(:class="{ error: errors.calculate, success: errors.success.calculate }")
+        .copy Calculate By:
         .pulldowns
-          .pulldown(:class="{ selected: by === 'metro'}")
-            .checkbox: .fa.fa-check.fa-2x
+          .pulldown(:class="{ selected: (by === 'metro') }")
+            .checkbox: .fa.fa-check
             .pullarea
               .select.select_metro
                 select(v-model="metro",@change="change('metro', $event.target.value)")
@@ -37,16 +35,16 @@
                   option(v-for="option in metros",:value="option",:selected="(option === metro)") {{ option }}
               .pull: .fa.fa-chevron-down
 
-          .pulldown(:class="{ selected: by === 'state'}")
-            .checkbox: .fa.fa-check.fa-2x
+          .pulldown(:class="{ selected: (by === 'state') }")
+            .checkbox: .fa.fa-check
             .pullarea
               .select.select_state
                 select(v-model="state",@change="change('state', $event.target.value)")
                   option(selected,value="State") State
                   option(v-for="option in states",:value="option",:selected="option === state") {{ option }}
               .pull: .fa.fa-chevron-down
-          .pulldown(:class="{ selected: by === 'national'}",@click="change('national')")
-            .checkbox: .fa.fa-check.fa-2x
+          .pulldown(:class="{ selected: (by === 'national') }",@click="change('national')")
+            .checkbox: .fa.fa-check
             .pullarea
               .copy National
 
@@ -57,7 +55,7 @@
     .inner
       .source Source: https://weareapartments.org/ {{ $route.path }}
       Share(query=true)
-      router-link.close(to="/calculator")
+      router-link.close(:to="'/calculator' + $route.hash")
         .fa.fa-times.fa-2x
 
       .copy {{ subtitle }}
@@ -68,16 +66,16 @@
           .copy(v-if="type === 'existing'") Economic Impact of {{ number }} Existing Apartment Homes
           .copy(v-else) Economic Impact of {{ number }} New Apartment Homes
 
-          .copy.copy_header Total Impact
-          .copy.copy_body The combined direct and indirect contribution of apartment construction, operations and resident spending to the {{ by }} economy.
+          .copy.copy_header Total Impact 
+          .copy.copy_body The combined direct and indirect contribution of apartment construction, operations and resident spending to the state economy.
 
           .stat.colored.blue
             .copy Total Economic Impact
             .value {{ data.total.impact }}
             .clear
 
-          .copy.copy_header Total Jobs
-          .copy.copy_body The total number of direct and indirect jobs supported by apartment construction, operations and resident spending within the {{ by }} economy.
+          .copy.copy_header Total Jobs 
+          .copy.copy_body The total number of direct and indirect jobs supported by apartment construction, operations and resident spending within the state economy.
 
           .stat.colored.blue
             .copy Total Jobs Supported
@@ -113,7 +111,7 @@
           .copy.copy_body(v-if="type === 'new'") Apartment construction continues as a bright spot in the economy, helping lead the housing recovery
 
           .stat.colored.yellow(v-if="type === 'new'")
-            .copy Total Economic Contribution
+            .copy Total Economic Contribution 
             .value {{ data.construction.contribution }}
             .clear
           .stat(v-if="type === 'new'")
@@ -122,7 +120,7 @@
             .clear
 
           .copy.copy_header Living in Apartments
-          .copy.copy_body Renting can be a smart choice for a wide range of individuals and families across all income levels.  That's why a diverse array of people call apartments home.
+          .copy.copy_body Renting can be a smart choice for w ide range of individuals and faimilies across all income levels.  That's why a diverse array of people call apartments home.
 
           .stat
             .copy Spending Power
@@ -227,12 +225,12 @@ export default {
   methods: {
 
     away () {
-      this.$router.push('/calculator')
+      if (this.$route.name === 'calculated') {
+        this.$router.push('/calculator' + this.$route.hash)
+      }
     },
 
     change (type, value) {
-
-      console.log('change', type, value)
 
       if (type === 'metro') {
         if (this.metro === 'Metro Area') {

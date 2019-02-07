@@ -4,7 +4,7 @@ machine:
   timezone:
     America/Los_Angeles
   node:
-    version: 10.12.0
+    version: 8.1.2
 
 dependencies:
   override:
@@ -12,18 +12,21 @@ dependencies:
 
 test:
   override:
-    - ls
+    - mkdir -p $CIRCLE_TEST_REPORTS/reports
+    - nyc ava --tap | tap-xunit > $CIRCLE_TEST_REPORTS/reports/ava.xml
+  post:
+    - yarn run coverage
 
 deployment:
-  development:
+  development: 
     branch: development
     commands:
       - yarn run development
-  staging:
+  staging: 
     branch: staging
     commands:
       - yarn run staging
-  production:
+  production: 
     branch: master
     commands:
       - yarn run production
