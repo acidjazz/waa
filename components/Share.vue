@@ -2,7 +2,7 @@
 #Share
   a.action.share
     .button(@click="modal('shares')")
-      i.fa.fa-fw.fa-share
+      i.fa.fa-fw.fa-share-alt
       .copy Share
     .modal.modal_shares(
       :class="{ on: modals.shares, off: !modals.shares }",
@@ -15,14 +15,15 @@
           i.fa.fa-fw.fa-facebook(@click="share('facebook')")
         .share.share_twitter
           i.fa.fa-fw.fa-twitter(@click="share('twitter')")
-  a.action.pdf(v-if="query === true",:href="basePDF + encodeURIComponent('/calculated/' + parsed)")
+  a.action.pdf(v-if="query === true && pdf != false",:href="basePDF + encodeURIComponent('/calculated/' + parsed)")
     .button
-      i.fa.fa-fw.fa-lg.fa-file-pdf-o
-      .copy Create PDF
-  a.action.pdf(v-else,:href="basePDF + $route.path")
+      i.fa.fa-fw.fa-lg.fa-file
+      .copy PDF Snapshot
+  a.action.pdf(v-else-if="pdf != false",:href="basePDF + $route.path")
+
     .button
-      i.fa.fa-fw.fa-lg.fa-file-pdf-o
-      .copy Create PDF
+      i.fa.fa-fw.fa-lg.fa-file
+      .copy PDF Snapshot
 </template>
 
 <script>
@@ -33,7 +34,11 @@ export default {
     query: {
       type: Boolean,
       default: false,
-    }
+    },
+    pdf: {
+      type: Boolean,
+      default: true,
+    },
   },
   mixins: [ clickaway ],
   methods: {
@@ -118,7 +123,7 @@ json('../assets/fonts.json')
           color white
       &:nth-child(1)
         margin 0 10px 0 0
-      > .fa
+      > .fa-file
         color blue
       > .fa, > .copy
         transition color 0.2s ease 0.02s
@@ -126,7 +131,7 @@ json('../assets/fonts.json')
       > .copy
         font c1
         color black
-        padding-left 5px 
+        padding-left 5px
         line-height 15px
     > .modal
       position absolute

@@ -17,11 +17,9 @@ json('../assets/fonts.json')
     position absolute
     top 50%
     left 50%
-    margin-top -30px
-    margin-left -35px
-    font h2b 
+    transform translate(-50%, -50%)
+    font h2b
     text-align center
-    margin-top -100px 0 45% 0
     > span
       font h2
 
@@ -33,25 +31,23 @@ import colors from '~/assets/colors.json'
 
 const data = 'US Housing Costs.json'
 const datab = 'US % Total Pop.json'
+const databs = 'State Apt Residents.json'
+const databm = 'Metro % of Total HHs.json'
 const datad = 'District Apt Residents.json'
-const datam = 'Mero Apt Residents.json'
+const datam = 'Metro Apt Residents.json'
 
 export default {
 
-  props: ['id', 'width', 'height', 'value', 'district'],
+  props: ['id', 'width', 'height', 'value', 'district', 'choice', 'animation'],
 
-  data () {
-    return {
-      perc: 0
-    }
-  },
   methods: {
     json (sheet, result) {
-      window.axios.get('/' + sheet)
+      window.axios.get('/' + encodeURIComponent(sheet))
         .then(response => {
           result(response)
         })
     },
+
     populate (complete) {
       if (this.value === undefined) {
         this.json(data, (result) => {
@@ -63,11 +59,28 @@ export default {
         complete()
       }
 
-      if (this.id === 'ontherise') {
+      if (this.district === undefined && this.choice.type === 'state') {
+        this.json(databs, (result) => {
+          this.perc = Math.round(result.data.data[this.choice.value][1] * 100)
+          complete()
+        })
+        return
+      }
+
+      if (this.district === undefined && this.choice.type === 'metro') {
+        this.json(datam, (result) => {
+          this.perc = Math.round(result.data.data[this.choice.value][1] * 100)
+          complete()
+        })
+        return
+      }
+
+      if (this.id === 'ontherise' || this.id === 'ontherise-print') {
         this.json(datab, (result) => {
           this.perc = Math.round(result.data.data['Total U.S.'][0] * 100)
           complete()
         })
+        return
       }
 
       if (this.id === 'metroresidents') {
@@ -75,6 +88,7 @@ export default {
           this.perc = Math.round(result.data.data[this.value][1] * 100)
           complete()
         })
+        return
       }
 
       if (this.district !== undefined) {
@@ -85,6 +99,7 @@ export default {
       }
 
     },
+
     draw () {
 
       let canvas = document.getElementById('chart-' + this.id)
@@ -93,9 +108,9 @@ export default {
 
       ctx.beginPath()
       ctx.arc(this.width / 2, this.width / 2, this.width / 3, 0, Math.PI * 2)
-      ctx.strokeStyle = colors.lightgrey
-      ctx.lineWidth = 5
-      ctx.setLineDash([10, 10])
+      ctx.strokeStyle = colors.silver
+      ctx.lineWidth = 20
+      // ctx.setLineDash([10, 10])
       ctx.stroke()
 
       let hundo = Math.PI * 2
@@ -103,22 +118,28 @@ export default {
       ctx.beginPath()
       ctx.arc(this.width / 2, this.width / 2, this.width / 3, 4.65, value + 4.65)
       ctx.strokeStyle = colors.orange
-      ctx.lineWidth = 10
+      ctx.lineWidth = 20
       ctx.setLineDash([0, 0])
       ctx.stroke()
-    }
+    },
+    populateDraw () {
+      this.populate(() => this.draw())
+    },
+
   },
   watch: {
     '$route' () {
-      this.populate(() => {
-        this.draw()
-      })
+      this.populateDraw()
     }
   },
   mounted () {
-    this.populate(() => {
-      this.draw()
-    })
-  }
+      this.populateDraw()
+  },
+  data () {
+    return {
+      perc: 0,
+    }
+  },
+
 }
 </script>

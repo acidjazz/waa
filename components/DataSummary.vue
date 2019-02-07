@@ -10,31 +10,40 @@
     .breadcrumb(v-if="choice().type == 'metro'") {{ choice().state }}
     .breadcrumb(v-if="choice().type == 'district'") {{ choice().state }}
     .copy {{ selection }}
-    .copy Apartments and their residents contribute more than $3.5 billion to the economy every day.
+
+    .copy(v-if="contrib.value !== 0")
+      span(v-if="choice().type === 'district'") Apartments and their residents in this district&nbsp;
+      span(v-else-if="choice().type === 'national'") Apartments and their residents&nbsp;
+      span(v-else) {{ choice().value }} apartments and their residents&nbsp;
+      span contribute more than&nbsp;
+      strong &nbsp;${{ daily.value }}{{ daily.a }}&nbsp;
+      span(v-if="choice().type === 'district'") &nbsp;to the state economy every day.
+      span(v-else) &nbsp;to the {{ choice().type }} economy every day.
+
     .copy_print Market Snapshot
     .stats
       .stat(v-if="residents.value !== 0")
         .value
-          i-count-up.number(:start="0",:end="residents.value",:decimals="1",:duration="2",v-if="type === 'web'")
+          i-count-up.number(:startVal="0",:endVal="residents.value",:decimals="1",:duration="2",v-if="type === 'web'")
           span.number(v-else) {{ residents.value }}
           span {{ residents.a }}
         .copy Apartment Residents
       .stat(v-if="homes.value !== 0")
         .value
-          i-count-up.number(:start="0",:end="homes.value",:decimals="1",:duration="2",v-if="type === 'web'")
+          i-count-up.number(:startVal="0",:endVal="homes.value",:decimals="1",:duration="2",v-if="type === 'web'")
           span.number(v-else) {{ homes.value }}
           span {{ homes.a }}
         .copy Apartment Homes
       .stat(v-if="contrib.value !== 0")
         .value
           span $
-          i-count-up.number(:start="0",:end="contrib.value",:decimals="1",:duration="2",v-if="type === 'web'")
+          i-count-up.number(:startVal="0",:endVal="contrib.value",:decimals="1",:duration="2",v-if="type === 'web'")
           span.number(v-else) {{ contrib.value }}
           span {{ contrib.a }}
         .copy Economic Contribution
       .stat(v-if="contrib.value !== 0")
         .value
-          i-count-up.number(:start="0",:end="jobs.value",:decimals="1",:duration="2",v-if="type === 'web'")
+          i-count-up.number(:startVal="0",:endVal="jobs.value",:decimals="1",:duration="2",v-if="type === 'web'")
           span.number(v-else) {{ jobs.value }}
           span {{ jobs.a }}
         .copy Total Jobs Supported
@@ -42,7 +51,7 @@
 </template>
 
 <script>
-import filtermixin from '~plugins/filter-mixin.js'
+import filtermixin from '@/plugins/filter-mixin.js'
 import ICountUp from 'vue-countup-v2'
 
 const residentsUS = '/US Apt Residents.json'
@@ -101,14 +110,16 @@ export default {
             this.homes = this.parse(result[1].data.data['Total U.S.'], '0.0a')
             this.contrib = this.parse(result[2].data.data['Total U.S.'], '0.0a')
             this.jobs = this.parse(result[3].data.data['Total U.S.'], '0.0a')
+            this.daily = this.parse(result[2].data.data['Total U.S.'] / 365, '0.0a')
           })
           break
         case 'state':
           this.json([residentsState, homesState, contribState, jobsState], (result) => {
-            this.residents = this.parse(result[0].data.data[this.choice().value], '0.0a')
+            this.residents = this.parse(result[0].data.data[this.choice().value][0], '0.0a')
             this.homes = this.parse(result[1].data.data[this.choice().value], '0.0a')
             this.contrib = this.parse(result[2].data.data[this.choice().value], '0.0a')
             this.jobs = this.parse(result[3].data.data[this.choice().value], '0.0a')
+            this.daily = this.parse(result[2].data.data[this.choice().value] / 365, '0.0a')
           })
           break
         case 'district':
@@ -117,6 +128,7 @@ export default {
             this.homes = this.parse(result[1].data.data[this.choice().value], '0.0a')
             this.contrib = this.parse(result[2].data.data[this.choice().value], '0.0a')
             this.jobs = this.parse(result[3].data.data[this.choice().value], '0.0a')
+            this.daily = this.parse(result[2].data.data[this.choice().value] / 365, '0.0a')
           })
           break
         case 'metro':
@@ -125,6 +137,7 @@ export default {
             this.homes = this.parse(result[1].data.data[this.choice().value], '0.0a')
             this.contrib = this.parse(result[2].data.data[this.choice().value], '0.0a')
             this.jobs = this.parse(result[3].data.data[this.choice().value], '0.0a')
+            this.daily = this.parse(result[2].data.data[this.choice().value] / 365, '0.0a')
           })
           break
       }
@@ -148,6 +161,9 @@ export default {
 
   computed: {
     selection () {
+      if (this.choice().copy === 'National') {
+        return 'United States'
+      }
       return this.choice().copy
     }
   },
@@ -159,6 +175,7 @@ export default {
       homes: { value: 0, a: null },
       contrib: { value: 0, a: null },
       jobs: { value: 0, a: null },
+      daily: { value: 0, a: null },
     }
   },
   head () {
@@ -227,10 +244,12 @@ json('../assets/fonts.json')
       animation inFromTop 0.6s ease-in-out 0.85s both
     > .copy:nth-child(2)
       animation inFromTop 0.6s ease-in-out 0.9s both
-      font-size 30px
+      font h2
       z-index 1
     > .copy:nth-child(3)
       animation inFromTop 0.6s ease-in-out 0.95s both
+      width 400px
+      margin auto
     > .copy
       padding 0 0 30px 0
     > .copy_print
@@ -238,12 +257,12 @@ json('../assets/fonts.json')
     > .stats
       height 160px
       > .stat
-        padding 30px 
+        padding 30px
         height 100px
         max-width 170px
         vertical-align top
         display inline-block
-        border-right 1px solid white
+        border-right 1px solid rgba(white, 0.3)
         &:nth-child(1)
           animation inFromTop 0.6s ease-in-out 0s both
         &:nth-child(2)

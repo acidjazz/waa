@@ -65,12 +65,20 @@ let sheets = [
   // yera apt built perc chart
   'District Age of Occupied Stock',
 
+  'State Age of Stock',
+  'State Persons in Household',
+  'State Household Type',
+
   'US Age of Stock',
+  'US Persons in Household',
+  'US Household Type',
   'US Housing Costs',
 
   'US Affordability (Landing)',
 
   'US % Total Pop',
+  'State % of Total HHs',
+  'Metro % of Total HHs',
 
   'US Units Needed',
   'Metros Units Needed',
@@ -79,6 +87,8 @@ let sheets = [
   'Metro Building Current',
 
   'Metro Age of Occupied Stock',
+  'Metro Persons in Household',
+  'Metro Household Type',
 
   'Metro Housing Costs',
 
@@ -87,6 +97,11 @@ let sheets = [
   'FAQ',
 
   'Metro Burden',
+
+  // new demand tabs
+  'State Building Units',
+  'Metro Supply',
+
 
 ]
 
@@ -131,7 +146,6 @@ for (let index in excel) {
       break
 
     case 'US Apt Residents':
-    case 'State Apt Residents':
     case 'US Apts':
     case 'State Apartments':
     case 'Metro Occupied Apartments':
@@ -147,6 +161,8 @@ for (let index in excel) {
     case 'Metro Restriction Index':
     case 'US Housing Costs':
     case 'Metro Housing Costs':
+    case 'State % of Total HHs':
+    case 'Metro % of Total HHs':
     case 'FAQ':
     case 'Metro Burden':
       data.data = {}
@@ -189,6 +205,8 @@ for (let index in excel) {
     case 'State Building Current':
     case 'State Building Needed':
     case 'US Age of Stock':
+    case 'US Persons in Household':
+    case 'US Household Type':
     case 'US Affordability (Landing)':
     case 'US % Total Pop':
     case 'US Units Needed':
@@ -197,9 +215,17 @@ for (let index in excel) {
     case 'Metro Building Current':
     case 'Metro Apt Residents':
     case 'Metro Age of Occupied Stock':
+    case 'Metro Persons in Household':
+    case 'Metro Household Type':
     case 'State HH Growth':
+    case 'State Apt Residents':
     case 'State Renter Households':
     case 'Metro Renter HHs':
+    case 'State Age of Stock':
+    case 'State Persons in Household':
+    case 'State Household Type':
+    case 'State Building Units':
+    case 'Metro Supply':
 
       data.data = {}
       for (let value in sheet.data) {

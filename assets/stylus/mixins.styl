@@ -11,15 +11,12 @@ onoff()
     display none
 
 inViewport(delay)
-  opacity 0
-  transform translate(0, -20px)
   transition opacity 1s ease-in-out unit(delay, 's'), transform 1s ease-in-out unit(delay, 's')
   &.in-viewport
     opacity 1
     transform translate(0, 0)
   &.above-viewport
-    opacity 0
-    transform translate(0, -20px)
+    opacity 0.5
   &.below-viewport
     opacity 0
     transform translate(0, 20px)

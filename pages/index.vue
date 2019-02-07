@@ -1,6 +1,6 @@
 <template lang="pug">
 doctype
-.page.home 
+.page.home
   Top(type="dark")
   .hero(v-in-viewport)
     video(playsinline,autoplay,muted,loop)
@@ -8,24 +8,28 @@ doctype
     .outer
     .inner
       .copy(v-in-viewport) welcome to we are apartments.
-      .copy(v-in-viewport) The country needs 
-        i-count-up(:start="0",:end="4.6",:decimals="1",:duration="3")
+      .copy(v-in-viewport) The country needs&nbsp;
+        i-count-up(:startVal="0",:endVal="4.6",:decimals="1",:duration="3")
         | m new apartments by 2030. How many are needed near you?
       .button.is-centered(v-in-viewport)
         router-link(to="/vision") our vision
       .button.is-centered(v-in-viewport)
         router-link(to="/data") the data
+  ScrollDown
+  DiagSection
   .demand
     p(v-in-viewport) The 2030 Demand
     Demand(type='national')
-  GradientChart
+  VertBorder
+  // GradientChart
+  DemandChart
   .border.big
   .to_initiative
     .inner
       .section.section_left
         .title(v-in-viewport) Our Initiative
         .subtitle(v-in-viewport) growing apartment demand
-        .copy(v-in-viewport) Delayed marriages, an aging population and immigration are increasing a pressing need for new apartments, to the tune of 4.6 million by 2030.
+        .copy(v-in-viewport) Delayed marriages, an aging population and immigration are creating a need for new apartments, to the tune of 4.6 million by 2030.
         router-link.cta(to="/about",v-in-viewport) learn more
       .section.section_right
         .images
@@ -33,24 +37,25 @@ doctype
           .frame(v-in-viewport)
             .building(v-in-viewport)
       .clear
-  .border.big
-  MetroStack
-  .sources Source: 
-    span Hoyt Advisory Services; NMHC/NAA; U.S. Census Bureau.; Axiometrics, a RealPage Company
+  Downloads
   Bottom
 </template>
 
 <script>
 import Top from '~/components/Top.vue'
 import Demand from '~/components/Demand.vue'
-import GradientChart from '~/components/GradientChart.vue'
-import MetroStack from '~/components/MetroStack.vue'
+// import GradientChart from '~/components/GradientChart.vue'
+import DemandChart from '~/components/DemandChart.vue'
 import Bottom from '~/components/Bottom.vue'
 import inViewportDirective from 'vue-in-viewport-directive'
 import ICountUp from 'vue-countup-v2'
+import Downloads from '~/components/Downloads.vue'
+import DiagSection from '~/components/DiagSection.vue'
+import VertBorder from '~/components/VertBorder.vue'
+import ScrollDown from '~/components/ScrollDown.vue'
 export default {
   directives: { 'in-viewport': inViewportDirective },
-  components: { Top, Demand, GradientChart, MetroStack, Bottom, ICountUp },
+  components: { Top, Demand, DemandChart, Bottom, ICountUp, Downloads, DiagSection, VertBorder, ScrollDown },
   data () {
     return {
       options: {
@@ -65,13 +70,6 @@ export default {
 @import '../assets/stylus/mixins'
 json('../assets/colors.json')
 json('../assets/fonts.json')
-
-.sources
-  font c1s
-  padding 0 0 20px 0
-  width 1200px
-  margin auto
-  color grey
 
 .page.home
   > .to_initiative
@@ -122,17 +120,17 @@ json('../assets/fonts.json')
             background-color white
             padding 20px 0 0 20px
             margin -100px 0 0 80px
-            inViewport(0.3)
+            inViewport(0.1)
             > .building
               background url(/building1.png)
               width 300px
               height 293px
               margin 20px 0 0 20px
-              transition opacity 1s ease-in-out 0.5s, transform 1s ease-in-out 0.5s
+              transition opacity 1s ease-in-out 0.3s, transform 1s ease-in-out 0.3s
               &.in-viewport
                 opacity 1
                 transform translate(0, 0)
-              &.above-viewport, &.below-viewport
+              &.above-viewport
                 opacity 0
                 transform translate(-40px, -40px)
 
@@ -197,10 +195,10 @@ json('../assets/fonts.json')
           color white
           font c1sb
           margin 0 20px 0 0
-          background-color rgba(cyan, 0.2) 
+          background-color rgba(cyan, 0.2)
           border 1px solid rgba(cyan, 0.6)
           &:hover
-            background-color rgba(cyan, 1) 
+            background-color rgba(cyan, 1)
         &:nth-child(4) > a
           background-color white
           color darkblue

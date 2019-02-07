@@ -12,6 +12,7 @@ module.exports = {
   ** Headers of the page
   */
   wconfig: config,
+  mode: 'spa',
   head: {
     title: config.title,
     meta: [
@@ -47,14 +48,15 @@ module.exports = {
       // { innerHTML: "alert('hi');" },
 
       { src: "//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js" },
-      { src: "//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js" },
+      { src: "//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js" },
       { src: "//cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js" },
       { src: "//cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.4/js.cookie.min.js" },
     ],
     __dangerouslyDisableSanitizers: ['script'],
 
     link: [
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Maven+Pro:100,200,300,400,500|Roboto:100,400,700,900' },
+      // { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Maven+Pro:100,200,300,400,500|Roboto:100,400,700,900' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Rubik:100,200,300,400,500,700,900' },
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css' },
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/outdated-browser/1.1.5/outdatedbrowser.min.css' },
 
@@ -73,9 +75,9 @@ module.exports = {
   /*
   ** Build configuration
   */
-  css: [{ src: '~assets/stylus/main.styl', lang: 'stylus' }],
+  css: [{ src: '@/assets/stylus/main.styl', lang: 'stylus' }],
   plugins: [
-    {src: '~plugins/ga.js', ssr: false},
+    {src: '@/plugins/ga.js', ssr: false},
     // {src: '~plugins/outdated.js', ssr: false},
   ],
   router: {
@@ -90,8 +92,8 @@ module.exports = {
     /*
     ** Run ESLINT on save
     */
-    extend (config, ctx) {
-      if (ctx.isClient) {
+    extend(config, ctx) {
+      if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,

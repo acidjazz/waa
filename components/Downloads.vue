@@ -1,18 +1,19 @@
 <template lang="pug">
 doctype
 #Downloads
+  //.blackline
   .inner
     .block.left
       .inner
         .copy The Report
         .copy NMHC and NAA partnered with Hoyt Advisory Services to identify the demand for apartments through 2030. Download their analysis of the apartment industry.
-        a.cta(href="/NMHC-NAA-US-Apartment-Demand-in-2030.pdf",v-in-viewport) download
+        a.cta(href="/NMHC-NAA-US-Apartment-Demand-in-2030.pdf") download
     .block.right
       .inner
         .copy A vision for 2030
         .copy Meeting the country's demand for apartments will take courageous steps at the federal, state and local levels. 
-        router-link(to='/about',v-if="$route.name !== 'about'",v-in-viewport).cta learn more
-        a.cta(href="/Vision2030.pdf",v-if="$route.name === 'about'",v-in-viewport) Download
+        //router-link(to='/about',v-if="$route.name !== 'about'").cta learn more
+        a.cta(href="/Vision2030.pdf") Download
 </template>
 
 <style lang="stylus">
@@ -21,10 +22,19 @@ json('../assets/fonts.json')
 @import '../assets/stylus/mixins.styl'
 #Downloads
   background-color purple
+  position relative
+  > .blackline
+    position absolute
+    width 3px
+    height 60px
+    background-color black
+    top -30px
+    left 50%
+
   > .inner
     width 900px
     margin auto
-    padding 60px 0
+    padding 90px 0
     color white
     column-count 2
     column-span 2
@@ -55,6 +65,9 @@ json('../assets/fonts.json')
           text-transform uppercase
           font c1b
           text-decoration none
+          &:hover
+            text-decoration underline
+
       > .inner
         > .copy:nth-child(1)
           font h1
@@ -67,5 +80,8 @@ json('../assets/fonts.json')
       width auto
       column-count 1
       column-span 0
+      > .block
+        margin auto
+
 
 </style>

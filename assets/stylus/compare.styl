@@ -6,108 +6,103 @@ json('../../assets/fonts.json')
 delay = 0.0
 
 #Compare
-  background-color lightgrey
   padding 90px 0
   margin 0 0 60px 0
   > .inner
-    width 675px
+    width 911px
     margin auto
-    text-align center
-    > .title
-      font h2
-      text-align center
-      padding 60px 0
-      inViewport(delay + 0.05)
-    > hr
-      display block
-      border-top 1px solid blue
-      border-bottom 1px solid blue
-      transition width 1s ease-in-out 0.1s
-      width 200px
-      opacity 0
-      &.above-viewport
+    > .section
+      &.section_right
+        width 581px
+        float right
+        clear both
+        height 500px
+        background-color pink
+      &.section_left
         width 200px
-        opacity 0
-      &.below-viewport
-        width 200px
-        opacity 0
-      &.in-viewport
-        width 675px
-        opacity 1
-    > .copy
-      color grey
-      padding 30px 0
-      inViewport(delay + 0.15)
-    > .inputs
-      position relative
-      width 505px
-      margin auto
-      inViewport(delay + 0.20)
-      z-index 2
-      > .suggest
-        background-color white
-        top 46px
-        width 220px
-        position absolute
-        border-left 1px solid lightblue
-        border-right 1px solid lightblue
-        border-bottom 1px solid lightblue
-        border-radius 0 0 3px 3px
-        onoff()
-        &:nth-child(1)
-          left: 0
-        &:nth-child(5)
-          right: 0
-          
-        > ul
-          margin 0
-          padding 0
-          list-style-type none
-          > li
-            cursor pointer
-            border-bottom 1px solid lightblue
-            text-align left
-            padding 10px
-            &:last-child
-              border-bottom 1px solid transaprent
-            &:hover
-              background-color rgba(blue, 0.5)
-            &.selected
-              background-color blue
-              color white
-      > span
-        display inline-block
-        padding 0 20px
-      > input
-        width 200px
-        font c1
-        padding 10px
-        border 1px solid lightblue
-        border-radius 3px
-        outline none
-        transition border-color 0.3s ease-in-out 0s
-        &:focus
-          border 1px solid blue
-        &.matching
-          border 1px solid green
-    > .cta
-      inViewport(delay + 0.25)
-      > input
-        cursor pointer
-        background-color white
-        color black
-        font c1sb
-        text-transform uppercase
-        margin 60px 0
-        padding 15px 50px
-        border-radius 3px
-        border none
-        transition color 0.5s ease 0s, background-color 0.5s ease 0s
-        &.active
+        float left
+      > .title
+        font h6
+        padding 60px 0 10px 0
+        max-width 150px
+        inViewport(0)
+      > .copy
+        color grey
+        padding 0 0 20px 0
+        font c1s
+        inViewport(delay + 0.15)
+      > .inputs
+        position relative
+        margin auto
+        inViewport(delay + 0.20)
+        z-index 2
+        > .suggest
+          background-color white
+          top 46px
+          &:last-child
+            top: 116px
+          width 220px
+          position absolute
+          border-left 1px solid lightblue
+          border-right 1px solid lightblue
+          border-bottom 1px solid lightblue
+          border-radius 0 0 3px 3px
+          onoff()
+          &:nth-child(1)
+            left: 0
+          &:nth-child(5)
+            right: 0
+            
+          > ul
+            margin 0
+            padding 0
+            list-style-type none
+            > li
+              cursor pointer
+              border-bottom 1px solid lightblue
+              text-align left
+              padding 10px
+              &:last-child
+                border-bottom 1px solid transaprent
+              &:hover
+                background-color rgba(blue, 0.5)
+              &.selected
+                background-color blue
+                color white
+        > span
+          display inline-block
+          padding 0 20px
+        > input
+          width 200px
+          font c1
+          padding 10px
+          border 1px solid lightblue
+          border-radius 3px
+          margin 0 0 20px 0
+          outline none
+          transition border-color 0.3s ease-in-out 0s
+          &:focus
+            border 1px solid blue
+          &.matching
+            border 1px solid green
+      > .cta
+        inViewport(delay + 0.25)
+        > input
+          cursor pointer
+          background-color black
           color white
-          background-color blue
-          opacity 1
-          transform translate(0, 0)
+          font c1sb
+          text-transform uppercase
+          margin 20px 0
+          padding 15px 50px
+          border-radius 3px
+          border none
+          transition color 0.5s ease 0s, background-color 0.5s ease 0s
+          &.active
+            color white
+            background-color blue
+            opacity 1
+            transform translate(0, 0)
 
   > .fade
     background-color rgba(black, 0.8)

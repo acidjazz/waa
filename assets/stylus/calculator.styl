@@ -1,62 +1,45 @@
 .page.page_calc
   > .page_content
-    margin 150px 0 0 0
+    margin 0 0 0 0
     background-color tomato
-    background linear-gradient(-67deg, rgba(#e7266f, 1), rgba(#f59c43, 1))
+    background-image linear-gradient(182deg, #e441e4, #0054d8)
     padding 60px 0
     > .inner
-      background-color white
+      //background-color white
       border-radius 5px
       width 1000px
       margin 0 auto
       padding 60px 0
-
+      margin 150px auto 0 auto
 
 .calculator
-  width 490px
   margin auto
+  width 720px
   > .header
-    border 1px solid lightblue
-    border-radius 3px
-    height 145px
     animation fadeIn 0.5s ease-in-out 0s both
-    > .icon
-      float left
-      background-color lightgrey
-      padding 50px
-      > .inner
-          background-image url('~static/icon-calculator.png')
-          width 32px
-          height 45px
     > .copy
-      margin 0 0 0 130px
-      > p
-        padding 0px 0 0 20px
+      color white
+      text-align center
       > p:nth-child(1)
-        font h3b
-        margin 30px 0 0 0
-        color darkblue
+        font c1
+        text-transform uppercase
       > p:nth-child(2)
-        color grey
-        margin 10px 20px 0 0
+        font h2
   > .params
     margin 30px 0
+    width 490px
+    margin auto
     > .param
       border-bottom 1px solid lightblue
+      &:last-child
+        border-bottom 1px solid transparent
       padding 30px 0
       animation fadeIn 0.5s ease-in-out 0s both
       for i in 1..3
         &:nth-child({i})
           animation-delay unit((0.02*i), 's')
-      &:last-child
-        border-bottom none
-      &:nth-child(1) > .label
-        color blue
-      &:nth-child(2) > .label
-        color red
-      &:nth-child(3) > .label
-        color yellow
       > .label
+        color white
         float left
         font c1ss
         text-transform uppercase
@@ -66,7 +49,7 @@
         > .copy
           padding 5px 20px 0 0
       > .options
-        margin 0 0 0 100px
+        margin 0 0 0 95px
         padding 10px
         border-radius 6px
         border 1px solid transparent
@@ -82,44 +65,45 @@
           transition background-color 0.1s linear 0.1s
           > .copy
             font c3
-            color grey
+            color white
             transition color 0.1s linear 0s
+            line-height 30px
           > .checkbox
             float right
-            width 20px
-            height 20px
-            border 1px solid lightblue
+            width 30px
+            height 30px
+            border 2px solid white
             border-radius 3px
-            line-height 20px
+            line-height 30px
             transition border 0.1s linear 0s
             > .fa
-              margin 0 0 0 2px
-              color green
+              margin 0 0 0 0px
+              color white
               display none
           &.selected
-            background-color lightgrey
-            > .copy
-              color black
             > .checkbox
-              border 1px solid grey
+              border 2px solid black
+              background-color black
               > .fa
                 display inline-block
           &:hover
             > .copy
-              color black
+              color lightpurple
             > .checkbox
-              border 1px solid grey
+              border 1px solid lightpurple
         > .input
           > input
             transition border 0.5s ease-in-out 0s
             border-radius 3px
-            border 1px solid lightblue
+            border 1px solid transparent
+            background-color rgba(white, 0.17)
             font c3
-            width 290px
+            width 337px
             outline none
             padding 15px
+            color white
             &::placeholder
-              color grey
+              color rgba(white, 0.4)
             &.error
               border 1px solid tomato
             &.success
@@ -133,58 +117,52 @@
             &:last-child
               cursor pointer
             &:hover
-              > .checkbox
-                border 1px solid grey
               > .pullarea
-                border 1px solid grey
+                background-color rgba(white, 0.5)
             &.selected
               > .checkbox
-                border 1px solid grey
+                border 2px solid black
+                background-color black
                 > .fa.fa-check
                   display inline-block
-              > .pullarea
-                border 1px solid grey
-                > .select
-                  > select
-                    color black
                 > .pull
-                  border-left 1px solid grey
-                  > .fa
-                    color black
+                  border-left 1px solid rgba(white, 0.5)
             > .checkbox
               float left
-              width 20px
-              height 20px
-              border 1px solid lightblue
+              width 30px
+              height 30px
+              border 2px solid white
               border-radius 3px
-              line-height 20px
-              transition border 0.1s linear 0.05s
-              margin 20px 0 0 0
+              line-height 30px
+              transition border 0.1s ease 0s
+              margin 10px 0 0 0
               > .fa.fa-check
-                color green
-                margin 0 0 0 2px
+                color white
+                margin 0 0 0 0px
                 display none
             > .pullarea
-              border 1px solid lightblue
+              background-color rgba(white, 0.17)
+              transition background-color .2s ease 0s
+              border 1px solid transparent
               border-radius 3px
-              margin 0 0 0 30px
+              margin 0 0 0 50px
               position relative
               > .copy
                 user-select none
-                color grey
+                color white
                 font c3
                 padding 15px
               > .select
                 position relative
                 height 50px
-                width 368px
+                width 327px
                 > select
                   z-index 2
                   position absolute
                   top 0
                   left 0
                   font c3
-                  color grey
+                  color black
                   border none
                   cursor pointer
                   background-color transparent
@@ -193,9 +171,8 @@
                   padding 15px 15px 15px 45px
                   margin 0 0 0 -32px
                   outline none
-                  > option
-                    background-color white
-                    padding 15px
+                > select:not(:hover)
+                  color white
               > .pull
                 z-index 1
                 position absolute
@@ -206,15 +183,15 @@
                 font c3
                 > .fa
                   margin 0 10px 0 0
-                  color grey
+                  color white
   > .cta
     display block
     text-decoration none
     color white
     cursor pointer
-    background-color blue
-    width 200px
-    padding 20px 0
+    background-color rgba(black, 0.37)
+    width 170px
+    padding 14px 0
     border-radius 3px
     text-transform uppercase
     animation fadeIn 0.2s ease-in-out 0.3s both
@@ -341,9 +318,9 @@
             background-color blue
         > .logos
           display none
-          
 
-@media print 
+
+@media print
   .page.page_calc
     font-size 14px
     > .page_content
@@ -391,7 +368,7 @@
         padding 10px 0
         margin 10px 0
       > .data > .inner > .copy_header
-        padding 0 !important 
+        padding 0 !important
       > .data >.inner > .copy_body
         padding 0px
       > .data >.inner > .stat.colored

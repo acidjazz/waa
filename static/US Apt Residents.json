@@ -1,12 +1,12 @@
 {
   "sheet": "US Apt Residents",
   "data": {
-    "Total U.S.": 38791276
+    "Total U.S.": 38673309
   },
   "labels": [
     "apartment residents",
     null,
     null,
-    "Time Period: 2015"
+    "Time Period: 2017"
   ]
 }
