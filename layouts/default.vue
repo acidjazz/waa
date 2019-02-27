@@ -1,5 +1,5 @@
 <template lang="pug">
-  .container
+  .waacontainer
     nuxt
 </template>
 

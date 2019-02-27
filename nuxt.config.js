@@ -80,6 +80,20 @@ module.exports = {
     {src: '@/plugins/ga.js', ssr: false},
     // {src: '~plugins/outdated.js', ssr: false},
   ],
+  modules: [
+    '@nuxtjs/axios',
+    /*
+    ['@nuxtjs/feed', {
+      path: '/blog',
+      cacheTime: 100 * 60 * 15,
+      type: 'atom',
+      async create (feed) {
+        const posts = (axios.get('https://medium.com/feed/@borism')).data
+        console.log(posts)
+      },
+    }],
+    */
+  ],
   router: {
     scrollBehavior: function (to, from, savedPosition) {
       if (to.name.indexOf('data') !== -1 && from.name.indexOf('data') !== -1) {
