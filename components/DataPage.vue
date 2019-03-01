@@ -328,7 +328,7 @@ json('../assets/fonts.json')
               font h3
               padding 0 0 10px 0
             > .copy:nth-child(3)
-              font c1
+              font c1t
               color grey
 
   .datapage_web
