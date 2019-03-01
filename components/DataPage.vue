@@ -252,22 +252,15 @@ export default {
       if (this.choice().type === 'district') {
         this.district = this.choice().value
       }
+
     },
   },
 
   computed: {
-    isNational () {
-      return this.choice().type === 'national'
-    },
-    isState () {
-      return this.choice().type === 'state'
-    },
-    isMetro () {
-      return this.choice().type === 'metro'
-    },
-    isDistrict () {
-      return this.choice().type === 'district'
-    },
+    isNational () { return this.choice().type === 'national' },
+    isState () { return this.choice().type === 'state' },
+    isMetro () { return this.choice().type === 'metro' },
+    isDistrict () { return this.choice().type === 'district' },
   },
 
 

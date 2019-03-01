@@ -49,14 +49,23 @@ export default {
     },
 
     populate (complete) {
+      /*
       if (this.value === undefined) {
         this.json(data, (result) => {
           this.perc = Math.round(result.data.data['Total U.S.'] * 100)
+          console.log('undef', this.perc)
           complete()
         })
       } else {
         this.perc = this.value
+        console.log('value', this.perc)
         complete()
+      }
+      */
+
+      if (this.value !== undefined) {
+        this.perc = this.value
+        return complete()
       }
 
       if (this.district === undefined && this.choice.type === 'state') {
@@ -133,7 +142,7 @@ export default {
     }
   },
   mounted () {
-      this.populateDraw()
+    this.populateDraw()
   },
   data () {
     return {
