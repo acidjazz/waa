@@ -7,29 +7,29 @@
     .pointer
       .icon.icon-residents
       .copy The Residents
-      .copy who live in those
-        b 100 apartments
-        | annually generate
-        b {{ residents.impact }}
-        | in economic contribution to the state economy and support
+      .copy who live in those&nbsp;
+        b 100 apartments&nbsp;
+        | annually generate&nbsp;
+        b {{ residents.impact }}&nbsp;
+        | in economic contribution to the state economy and support&nbsp;
         b {{ residents.jobs }} jobs.
     .pointer
       .icon.icon-operation
       .copy The Operation
-      .copy of those
-        b 100 apartments
-        | annually generates
-        b {{ operations.impact }}
+      .copy of those&nbsp;
+        b 100 apartments&nbsp;
+        | annually generates&nbsp;
+        b {{ operations.impact }}&nbsp;
         | in economic contribution to the state economy and supports
-        b {{ operations.jobs }} jobs.
+        b &nbsp;{{ operations.jobs }} jobs.
     .pointer
       .icon.icon-graph
       .copy The Construction
-      .copy of
+      .copy of&nbsp;
         b 100 new apartments
-        | generates
+        | &nbsp;generates&nbsp;
         b {{ construction.impact }}
-        | in economic contribution to the state economy and supports
+        | &nbsp;in economic contribution to the state economy and supports&nbsp;
         b {{ construction.jobs }} jobs.
     .clear
 </template>
