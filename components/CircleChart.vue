@@ -63,6 +63,13 @@ export default {
       }
       */
 
+      if (this.district !== undefined) {
+        this.json(datad, (result) => {
+          this.perc = Math.round(result.data.data[this.district][1] * 100)
+          complete()
+        })
+      }
+
       if (this.value !== undefined) {
         this.perc = this.value
         return complete()
@@ -98,13 +105,6 @@ export default {
           complete()
         })
         return
-      }
-
-      if (this.district !== undefined) {
-        this.json(datad, (result) => {
-          this.perc = Math.round(result.data.data[this.district][1] * 100)
-          complete()
-        })
       }
 
     },
