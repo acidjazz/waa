@@ -19,7 +19,7 @@
     .button
       i.fa.fa-fw.fa-lg.fa-file
       .copy PDF Snapshot
-  a.action.pdf(v-else-if="pdf != false",:href="basePDF + $route.path")
+  a.action.pdf(v-else-if="pdf != false",:href="`${basePDF}${path}`")
     .button
       i.fa.fa-fw.fa-lg.fa-file
       .copy PDF Snapshot
@@ -40,6 +40,9 @@ export default {
     },
   },
   mixins: [ clickaway ],
+  computed: {
+    path () { return this.$route.path },
+  },
   methods: {
     modal (modal, toggle) {
       let before = this.modals[modal]
