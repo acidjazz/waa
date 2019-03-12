@@ -276,7 +276,7 @@ export default {
       if (this.$route.hash !== '') {
         let params = this.$route.hash.split('-')
         this.by = params[1]
-        this.value = params[3]
+        this.value = params[3].replace(/%20/g, ' ')
         this.number = params[5]
         this.type = params[7]
         if (this.by === 'state') {
