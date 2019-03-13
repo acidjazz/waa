@@ -50,7 +50,7 @@
             .pullarea
               .copy National
 
-  router-link.cta(@click.native="decide()",:to="'/calculated#by-' + by + '-value-' + value + '-number-' + number + '-type-' + type") Calculate
+  router-link.cta(@click.native="decide()",:to="'/calculated#by-' + by + '-value-' + value_c + '-number-' + number + '-type-' + type") Calculate
 
   .fade(:class="{ on: $route.name === 'calculated', off: $route.name !== 'calculated'}")
   .calculated(:class="{ on: $route.name === 'calculated', off: $route.name !== 'calculated'}",v-on-clickaway="away")
@@ -224,6 +224,16 @@ export default {
     }
   },
 
+  computed: {
+    value_c () {
+      if (this.value === null) {
+        return this.value
+      }
+      return this.value.replace(/ /g, '+')
+    }
+  },
+
+
   methods: {
 
     away () {
@@ -231,8 +241,6 @@ export default {
     },
 
     change (type, value) {
-
-      console.log('change', type, value)
 
       if (type === 'metro') {
         if (this.metro === 'Metro Area') {
@@ -276,7 +284,7 @@ export default {
       if (this.$route.hash !== '') {
         let params = this.$route.hash.split('-')
         this.by = params[1]
-        this.value = params[3].replace(/%20/g, ' ')
+        this.value = params[3].replace(/\+/g, ' ')
         this.number = params[5]
         this.type = params[7]
         if (this.by === 'state') {
@@ -295,7 +303,7 @@ export default {
       if (query !== undefined) {
         let params = query.split('-')
         this.by = params[1]
-        this.value = params[3]
+        this.value = params[3].replace(/\+/g, ' ')
         this.number = params[5]
         this.type = params[7]
         if (this.by === 'state') {
@@ -392,14 +400,12 @@ export default {
           break
       }
 
-      console.log(this.by)
       if (this.by === 'national') {
         by = 'state'
         value = 'USA Total'
         this.data.homes = numeral(json.homes['national']).format('0,0')
       } else {
         this.data.homes = numeral(json.homes[by][value]).format('0,0')
-        console.log(this.data.homes)
       }
 
       this.data.construction.dollars = numeral(

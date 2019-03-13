@@ -41,7 +41,7 @@ export default {
   },
   mixins: [ clickaway ],
   computed: {
-    path () { return this.$route.path },
+    path () { return this.$route.path.replace(/ /g, '+') },
   },
   methods: {
     modal (modal, toggle) {
