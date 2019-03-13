@@ -3,7 +3,7 @@
   Top(type="light")
   .clear
   .page_content
-    .inner 
+    .inner
       Calculator
   Bottom
 </template>
