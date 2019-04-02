@@ -899,6 +899,11 @@
     feed "^2.0.2"
     fs-extra "^7.0.1"
 
+"@nuxtjs/google-tag-manager@^2.1.4":
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/google-tag-manager/-/google-tag-manager-2.1.4.tgz#b168cd868e4f61e70af9905cabf1782371ad4956"
+  integrity sha512-g5lYYdvk73W5NMAYvi+n3q3xA49jWMy1aeAPc3FiTfOcgdXA1xoYPiJ7emZB5Nd4FfqIOiJWeHfzHHs/ps/IMQ==
+
 "@nuxtjs/opencollective@^0.2.0":
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/@nuxtjs/opencollective/-/opencollective-0.2.1.tgz#ddf3e6a22990997322bc2b82e2455a7fbffc518d"

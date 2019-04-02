@@ -82,6 +82,7 @@ module.exports = {
   ],
   modules: [
     '@nuxtjs/axios',
+    ['@nuxtjs/google-tag-manager', { id: 'GTM-NP9HJPR' }],
     /*
     ['@nuxtjs/feed', {
       path: '/blog',
