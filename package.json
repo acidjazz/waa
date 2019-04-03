@@ -20,6 +20,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/feed": "^1.1.0",
+    "@nuxtjs/google-tag-manager": "^2.1.4",
     "countup.js": "^1.9.3",
     "coveralls": "^3.0",
     "node-xlsx": "^0.12.0",
