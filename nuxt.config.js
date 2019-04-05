@@ -12,7 +12,7 @@ module.exports = {
   ** Headers of the page
   */
   wconfig: config,
-  mode: 'spa',
+  // mode: 'spa',
   head: {
     title: config.title,
     meta: [
@@ -81,12 +81,8 @@ module.exports = {
   ],
   modules: [
     '@nuxtjs/axios',
-    ['@nuxtjs/google-analytics', {
-      id: 'UA-30941015-2',
-    }],
-    [
-      '@nuxtjs/google-tag-manager', { id: 'GTM-NP9HJPR', pageTracking: true }
-    ],
+    //['@nuxtjs/google-analytics', { id: 'UA-30941015-2', }],
+    ['@nuxtjs/google-tag-manager', { id: 'GTM-NP9HJPR', pageTracking: true }],
     /*
     ['@nuxtjs/feed', {
       path: '/blog',
