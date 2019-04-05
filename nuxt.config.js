@@ -12,7 +12,7 @@ module.exports = {
   ** Headers of the page
   */
   wconfig: config,
-  // mode: 'spa',
+  mode: 'spa',
   head: {
     title: config.title,
     meta: [
