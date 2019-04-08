@@ -1,6 +1,6 @@
 <template lang="pug">
-doctype
-.page.home
+//doctype
+//.page.home
   Top(type="dark")
   .hero(v-in-viewport)
     video(playsinline,autoplay,muted,loop)
@@ -28,6 +28,8 @@ doctype
 </template>
 
 <script>
+export default {}
+/*
 import Top from '@/components/Top.vue'
 import feed from '@/operations/feed.json'
 import ICountUp from 'vue-countup-v2'
@@ -55,6 +57,7 @@ export default {
     }
   },
 }
+*/
 </script>
 
 <style lang="stylus">

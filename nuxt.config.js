@@ -77,16 +77,12 @@ module.exports = {
   */
   css: [{ src: '@/assets/stylus/main.styl', lang: 'stylus' }],
   plugins: [
-    // {src: '~plugins/outdated.js', ssr: false},
+    // {src: '~plugins/ga.js', ssr: false},
   ],
   modules: [
     '@nuxtjs/axios',
-    ['@nuxtjs/google-analytics', {
-      id: 'UA-30941015-2',
-    }],
-    [
-      '@nuxtjs/google-tag-manager', { id: 'GTM-NP9HJPR', pageTracking: true }
-    ],
+    //['@nuxtjs/google-analytics', { id: 'UA-30941015-2', }],
+    ['@nuxtjs/google-tag-manager', { id: 'GTM-NP9HJPR', pageTracking: false }],
     /*
     ['@nuxtjs/feed', {
       path: '/blog',
