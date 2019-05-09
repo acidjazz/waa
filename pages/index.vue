@@ -17,6 +17,7 @@ doctype
         router-link(to="/data") the data
   ScrollDown
   DiagSection
+  LatestStories
   .demand
     p(v-in-viewport) The 2030 Demand
     Demand(type='national')
@@ -43,6 +44,7 @@ doctype
 
 <script>
 import Top from '~/components/Top.vue'
+import LatestStories from '~/components/LatestStories.vue'
 import Demand from '~/components/Demand.vue'
 // import GradientChart from '~/components/GradientChart.vue'
 import DemandChart from '~/components/DemandChart.vue'
@@ -55,7 +57,7 @@ import VertBorder from '~/components/VertBorder.vue'
 import ScrollDown from '~/components/ScrollDown.vue'
 export default {
   directives: { 'in-viewport': inViewportDirective },
-  components: { Top, Demand, DemandChart, Bottom, ICountUp, Downloads, DiagSection, VertBorder, ScrollDown },
+  components: { Top, Demand, LatestStories, DemandChart, Bottom, ICountUp, Downloads, DiagSection, VertBorder, ScrollDown },
   data () {
     return {
       options: {
