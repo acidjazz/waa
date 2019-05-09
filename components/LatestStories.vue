@@ -119,4 +119,12 @@ json('../assets/fonts.json')
         transform translate(0, 0)
         opacity 1
 
+@media all and (min-width: 1px) and (max-width: 1000px)
+  .stories
+    flex-direction column !important
+    .story
+      margin 1em
+      &:last-child
+        margin 1em !important
+
 </style3>
