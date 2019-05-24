@@ -1,5 +1,5 @@
 <template lang="pug">
-header#Top(:class="{ dark: type === 'dark' }")
+header#Top(:class="{ dark: type === 'dark', light: type === 'light' }")
   .title
     router-link(to="/") We Are Apartments
   Navigate
