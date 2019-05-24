@@ -4,7 +4,7 @@
   p(v-else,v-in-viewport) Latest Stories
 
   .stories(v-in-viewport)
-    Story(v-for="item, index in feed.items", :story="item",:key="index")
+    Story(v-for="item, index in stories", :story="item",:key="index")
 </template>
 
 <script>
@@ -18,12 +18,23 @@ export default {
     link: {
       type: Boolean,
       required: true,
-    }
+    },
+    limit: {
+      type: [Boolean, Number],
+      required: true,
+    },
   },
   data () {
     return {
-      feed: feed,
+      feed: feed.payload,
     }
   },
+  computed: {
+    stories () {
+      if (!this.limit) return this.feed.posts
+      return this.feed.posts.slice(this.limit-1)
+    },
+  },
+
 }
 </script>

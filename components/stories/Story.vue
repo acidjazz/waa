@@ -1,11 +1,11 @@
 <template lang="pug">
-a.story(:href="story.link",target="_new")
+a.story(:href="link(story)",target="_new")
   .story_image
-    img(:src="story.thumbnail")
+    img(:src="thumbnail(story)")
   .story_header
     .story_header_label featured
     .story_header_title {{ story.title }}
-    .story_header_description(v-html="strip(story.short)")
+    .story_header_description {{ story.virtuals.subtitle }}
 </template>
 
 <script>
@@ -17,9 +17,14 @@ export default {
     }
   },
   methods: {
-    strip (html) {
-      return html.replace(/<\/?("[^"]*"|'[^']*'|[^>])*(>|$)/g, "");
-    }
+    thumbnail (data) {
+      return `https://cdn-images-1.medium.com/max/1600/${data.virtuals.previewImage.imageId}`
+    },
+    link (story) {
+      console.log(story.slug)
+      return `https://www.medium.com/we-are-apartments/${story.uniqueSlug}`
+
+    },
   },
 }
 </script>

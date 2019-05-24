@@ -33,7 +33,7 @@ export default {
   data () {
     return {
       feed: feed,
-      featured: feed.items[0],
+      featured: feed.payload.posts[0],
     }
   },
 }
