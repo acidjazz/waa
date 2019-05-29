@@ -32,7 +32,7 @@ export default {
   computed: {
     stories () {
       if (!this.limit) return this.feed.posts
-      return this.feed.posts.slice(this.limit-1)
+      return this.feed.posts.slice(0, this.limit)
     },
   },
 
