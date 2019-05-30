@@ -23,6 +23,11 @@ export default {
       type: [Boolean, Number],
       required: true,
     },
+    featured: {
+      type: [Boolean, Object],
+      required: false,
+      default: false,
+    },
   },
   data () {
     return {
@@ -31,6 +36,7 @@ export default {
   },
   computed: {
     stories () {
+      if (this.featured) return this.feed.posts.filter(p => p.id !== this.featured.id)
       if (!this.limit) return this.feed.posts
       return this.feed.posts.slice(0, this.limit)
     },

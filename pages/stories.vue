@@ -11,7 +11,7 @@ doctype
     .stories(v-in-viewport)
       Story.story_featured(:story="featured")
   .section.section-latest-stories
-    LatestStories(:link="false",:limit="false")
+    LatestStories(:link="false",:limit="false",:featured="feed.payload.posts[0]")
   Downloads
   Bottom
 </template>
