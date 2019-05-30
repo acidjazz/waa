@@ -11,6 +11,7 @@ nav#Navigate(:class="{ on: isOpen, off: !isOpen, sticky: stuck}")
       .menu
         .option(@click="isOpen = false"): router-link(to="/") Home
         .option(@click="isOpen = false"): router-link(to="/data") Apartment Data
+        .option(@click="isOpen = false"): router-link(to="/stories") Latest Stories
         .option(@click="isOpen = false"): router-link(to="/calculator") Apartment Calculator
         .option(@click="isOpen = false"): router-link(to="/about") The Initiative
         .option(@click="isOpen = false"): router-link(to="/vision") Our Vision

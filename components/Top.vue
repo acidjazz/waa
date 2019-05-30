@@ -1,5 +1,5 @@
 <template lang="pug">
-header#Top(:class="{ dark: type === 'dark' }")
+header#Top(:class="{ dark: type === 'dark', light: type === 'light' }")
   .title
     router-link(to="/") We Are Apartments
   Navigate
@@ -34,7 +34,7 @@ json('../assets/colors.json')
   font h1
   margin 60px 0 0 60px
   > a
-    color black
+    color white
     text-decoration none
 #Top.dark > .title > a
   color white

@@ -1,0 +1,103 @@
+.latest_stories
+  max-width 1100px
+  margin 60px auto
+  > p, > a
+    text-align center
+    display block
+    color black
+    text-decoration none
+    font h2
+    margin-bottom 30px
+    &.above-viewport
+      opacity 0
+      transform translate(0, -20px)
+    &.below-viewport
+      opacity 0
+      transform translate(0, 20px)
+    &.in-viewport
+      opacity 1
+      transform translate(0, 0)
+      transition opacity 1s ease-in-out 0s, transform 1s ease-in-out 0s
+
+.stories
+  width 100%
+  display flex
+  justify-content left
+  flex-wrap wrap
+  &.above-viewport
+    opacity 0
+    transform translate(0, -20px)
+  &.below-viewport
+    opacity 0
+    transform translate(0, 20px)
+  &.in-viewport
+    opacity 1
+    transform translate(0, 0)
+    transition opacity 1s ease-in-out 0s, transform 1s ease-in-out 0s
+
+.story
+  display block
+  position relative
+  text-decoration none
+  width (33.3333% - 2em)
+  margin-right 1em
+  margin-bottom 1em
+  height 400px
+  &:last-child
+    margin-right 0em
+  .story_image, .story_header
+    transition height .4s ease-in-out
+  .story_image
+    height 400px
+    overflow hidden
+    img
+      object-fit cover
+      object-position 90% 100%
+      width 100%
+      height 100%
+  .story_header
+    position absolute
+    bottom 0px
+    left 0px
+    right 0px
+    color white
+    overflow hidden
+    padding 1em
+    background-color robins-egg
+    height 100px
+    .story_header_label
+      text-transform uppercase
+      font c1ss
+      padding-bottom 1em
+    .story_header_title
+      font c4
+      padding-bottom 1em
+    .story_header_description
+      transition opacity 0.4s ease-in 0.1s, transform 0.4s ease-in 0.1s
+      transform translate(0, 10px)
+      opacity 0
+.story:hover
+  .story_header
+    height 190px
+  .story_header_description
+    transform translate(0, 0)
+    opacity 1
+
+.story.story_featured
+  width 100%
+  .story_header
+    width 50%
+
+@media all and (min-width: 1px) and (max-width: 1000px)
+  .latest_stories
+    > p, > a
+      font h1
+  .stories
+    flex-direction column !important
+    .story
+      width calc(100% - 2em)
+      margin 1em
+      &:last-child
+        margin 1em !important
+
+

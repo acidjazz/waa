@@ -1,169 +1,2019 @@
 {
-   "@version": "2.0",
-   "channel": {
-      "title": "Stories by Boris Müller on Medium",
-      "description": "Stories by Boris Müller on Medium",
-      "link": [
-         "https://medium.com/@borism?source=rss-b53295fb4eb2------2",
-         {
-            "@href": "https://medium.com/feed/@borism",
-            "@rel": "self"
-         },
-         {
-            "@href": "http://medium.superfeedr.com",
-            "@rel": "hub"
-         }
+  "success": true,
+  "url": "https://medium.com/we-are-apartments/latest?format=json",
+  "payload": {
+    "collection": {
+      "id": "4933e15b493e",
+      "name": "We Are Apartments",
+      "slug": "we-are-apartments",
+      "tags": [
+        "CHALLENGES",
+        "SOLUTIONS",
+        "IMPACT",
+        "PEOPLE"
       ],
+      "creatorId": "97d35ca792e3",
+      "description": "In communities across the country, apartments open doors. Read about the challenges, solutions and people working to make apartments available and affordable.",
+      "shortDescription": "In communities across the country, apartments open doors.",
       "image": {
-         "url": "https://cdn-images-1.medium.com/fit/c/150/150/0*tUCiupraMppFMCl_.png",
-         "title": "Stories by Boris Müller on Medium",
-         "link": "https://medium.com/@borism?source=rss-b53295fb4eb2------2"
+        "imageId": "1*kFaVo2Nv3hdO8oX80rlTyg.png",
+        "filter": "",
+        "backgroundSize": "",
+        "originalWidth": 122,
+        "originalHeight": 121,
+        "strategy": "resample",
+        "height": 0,
+        "width": 0
       },
-      "generator": "Medium",
-      "lastBuildDate": "Wed, 27 Feb 2019 21:54:21 GMT",
-      "webMaster": "yourfriends@medium.com",
-      "item": [
-         {
-            "title": "Thanks for the Feedback and the kind offer.",
-            "link": "https://medium.com/@borism/thanks-for-the-feedback-and-the-kind-offer-cbdea1a61dad?source=rss-b53295fb4eb2------2",
-            "guid": {
-               "@isPermaLink": "false",
-               "#text": "https://medium.com/p/cbdea1a61dad"
+      "metadata": {
+        "followerCount": 19,
+        "activeAt": 1558635715745
+      },
+      "virtuals": {
+        "permissions": {
+          "canPublish": false,
+          "canPublishAll": false,
+          "canRepublish": false,
+          "canRemove": false,
+          "canManageAll": false,
+          "canSubmit": false,
+          "canEditPosts": false,
+          "canAddWriters": false,
+          "canViewStats": false,
+          "canSendNewsletter": false,
+          "canViewLockedPosts": false,
+          "canViewCloaked": false,
+          "canEditOwnPosts": false,
+          "canBeAssignedAuthor": false,
+          "canEnrollInHightower": false,
+          "canLockPostsForMediumMembers": false,
+          "canLockOwnPostsForMediumMembers": false
+        },
+        "isSubscribed": true,
+        "isNewsletterSubscribed": true,
+        "isEnrolledInHightower": false,
+        "isEligibleForHightower": false
+      },
+      "logo": {
+        "imageId": "1*NZ2Qi7Rove6gBzRLGFZmvg.jpeg",
+        "filter": "",
+        "backgroundSize": "",
+        "originalWidth": 853,
+        "originalHeight": 151,
+        "strategy": "resample",
+        "height": 0,
+        "width": 0
+      },
+      "collectionMastheadId": "a653990e7628",
+      "sections": [
+        {
+          "type": 2,
+          "collectionHeaderMetadata": {
+            "title": "We Are Apartments",
+            "description": "In communities across the country, apartments open doors. Read about the challenges, solutions and people working to make apartments available and affordable.",
+            "backgroundImage": {
+              "id": "1*uV1D5jzKPtVyqnMy633roA.jpeg",
+              "originalWidth": 3126,
+              "originalHeight": 1564
             },
-            "creator": "Boris Müller",
-            "pubDate": "Thu, 17 Jan 2019 07:55:40 GMT",
-            "updated": "2019-01-17T07:55:40.905Z",
-            "encoded": "<p>Thanks for the Feedback and the kind offer.<\/p><p>I&#39;ll keep it in mind! :)<\/p><img src=\"https://medium.com/_/stat?event=post.clientViewed&referrerSource=full_rss&postId=cbdea1a61dad\" width=\"1\" height=\"1\">"
-         },
-         {
-            "title": "Medium Rare",
-            "link": "https://medium.com/@borism/medium-rare-2ccf64d1ac84?source=rss-b53295fb4eb2------2",
-            "guid": {
-               "@isPermaLink": "false",
-               "#text": "https://medium.com/p/2ccf64d1ac84"
+            "logoImage": {
+
             },
-            "category": [
-               "social-media",
-               "medium",
-               "design",
-               "writing",
-               "ux"
+            "alignment": 1,
+            "layout": 6
+          }
+        },
+        {
+          "type": 1,
+          "postListMetadata": {
+            "source": 1,
+            "layout": 2,
+            "number": 3,
+            "postIds": [
+
+            ]
+          }
+        },
+        {
+          "type": 1,
+          "postListMetadata": {
+            "source": 1,
+            "layout": 4,
+            "number": 3,
+            "postIds": [
+
+            ]
+          }
+        },
+        {
+          "type": 1,
+          "postListMetadata": {
+            "source": 1,
+            "layout": 6,
+            "number": 3,
+            "postIds": [
+
+            ]
+          }
+        }
+      ],
+      "favicon": {
+        "imageId": "",
+        "filter": "",
+        "backgroundSize": "",
+        "originalWidth": 0,
+        "originalHeight": 0,
+        "strategy": "resample",
+        "height": 0,
+        "width": 0
+      },
+      "colorPalette": {
+        "defaultBackgroundSpectrum": {
+          "colorPoints": [
+            {
+              "color": "#FF02B875",
+              "point": 0
+            },
+            {
+              "color": "#FF00AB6B",
+              "point": 0.1
+            },
+            {
+              "color": "#FF1C9963",
+              "point": 0.2
+            },
+            {
+              "color": "#FF092E20",
+              "point": 1
+            }
+          ],
+          "backgroundColor": "#FFFFFFFF"
+        },
+        "highlightSpectrum": {
+          "colorPoints": [
+            {
+              "color": "#FFFFFFFF",
+              "point": 0
+            },
+            {
+              "color": "#FFE9FDF0",
+              "point": 0.1
+            },
+            {
+              "color": "#FFE2FAEE",
+              "point": 0.2
+            },
+            {
+              "color": "#FFADFFCF",
+              "point": 0.6
+            },
+            {
+              "color": "#FF7DFFB3",
+              "point": 1
+            }
+          ],
+          "backgroundColor": "#FFFFFFFF"
+        }
+      },
+      "navItems": [
+        {
+          "type": 1,
+          "title": "Challenges",
+          "tagSlug": "challenges",
+          "url": "https:\/\/medium.com\/we-are-apartments\/tagged\/challenges",
+          "source": "tagSlug"
+        },
+        {
+          "type": 1,
+          "title": "Solutions",
+          "tagSlug": "solutions",
+          "url": "https:\/\/medium.com\/we-are-apartments\/tagged\/solutions",
+          "source": "tagSlug"
+        },
+        {
+          "type": 1,
+          "title": "Impact",
+          "tagSlug": "impact",
+          "url": "https:\/\/medium.com\/we-are-apartments\/tagged\/impact",
+          "source": "tagSlug"
+        },
+        {
+          "type": 1,
+          "title": "People",
+          "tagSlug": "people",
+          "url": "https:\/\/medium.com\/we-are-apartments\/tagged\/people",
+          "source": "tagSlug"
+        }
+      ],
+      "colorBehavior": 1,
+      "instantArticlesState": 0,
+      "acceleratedMobilePagesState": 0,
+      "ampLogo": {
+        "imageId": "",
+        "filter": "",
+        "backgroundSize": "",
+        "originalWidth": 0,
+        "originalHeight": 0,
+        "strategy": "resample",
+        "height": 0,
+        "width": 0
+      },
+      "header": {
+        "title": "We Are Apartments",
+        "description": "In communities across the country, apartments open doors. Read about the challenges, solutions and people working to make apartments available and affordable.",
+        "backgroundImage": {
+          "id": "1*uV1D5jzKPtVyqnMy633roA.jpeg",
+          "originalWidth": 3126,
+          "originalHeight": 1564
+        },
+        "logoImage": {
+
+        },
+        "alignment": 1,
+        "layout": 6
+      },
+      "type": "Collection"
+    },
+    "posts": [
+      {
+        "id": "b213b5243aac",
+        "versionId": "5d38953af815",
+        "creatorId": "97d35ca792e3",
+        "homeCollectionId": "4933e15b493e",
+        "title": "Keeping the Affordable Housing Crisis at Bay in the Bay State",
+        "detectedLanguage": "en",
+        "latestVersion": "5d38953af815",
+        "latestPublishedVersion": "5d38953af815",
+        "hasUnpublishedEdits": false,
+        "latestRev": 60,
+        "createdAt": 1558549120943,
+        "updatedAt": 1558635715748,
+        "acceptedAt": 0,
+        "firstPublishedAt": 1558635102876,
+        "latestPublishedAt": 1558635102876,
+        "vote": false,
+        "experimentalCss": "",
+        "displayAuthor": "",
+        "virtuals": {
+          "statusForCollection": "APPROVED",
+          "allowNotes": true,
+          "previewImage": {
+            "imageId": "1*GUD9bLNCU4KW-MhVLuU08A.jpeg",
+            "filter": "",
+            "backgroundSize": "",
+            "originalWidth": 2501,
+            "originalHeight": 1400,
+            "strategy": "resample",
+            "height": 0,
+            "width": 0
+          },
+          "wordCount": 882,
+          "imageCount": 2,
+          "readingTime": 3.7116352201258,
+          "subtitle": "We talk to Chris Kluchman, director of Massachusetts\u2019 Housing Choice Initiative, about the Commonwealth\u2019s multifaceted approach",
+          "userPostRelation": {
+            "userId": "52f77b00a500",
+            "postId": "b213b5243aac",
+            "readAt": 0,
+            "readLaterAddedAt": 0,
+            "votedAt": 0,
+            "collaboratorAddedAt": 0,
+            "notesAddedAt": 0,
+            "subscribedAt": 0,
+            "lastReadSectionName": "",
+            "lastReadVersionId": "",
+            "lastReadAt": 0,
+            "lastReadParagraphName": "",
+            "lastReadPercentage": 0,
+            "viewedAt": 0,
+            "presentedCountInResponseManagement": 0,
+            "clapCount": 0,
+            "seriesUpdateNotifsOptedInAt": 0,
+            "queuedAt": 0,
+            "seriesFirstViewedAt": 0,
+            "presentedCountInStream": 2,
+            "seriesLastViewedAt": 0,
+            "audioProgressSec": 0
+          },
+          "publishedInCount": 1,
+          "usersBySocialRecommends": [
+
+          ],
+          "noIndex": false,
+          "recommends": 0,
+          "isBookmarked": false,
+          "tags": [
+            {
+              "slug": "housing",
+              "name": "Housing",
+              "postCount": 11914,
+              "metadata": {
+                "postCount": 11914,
+                "coverImage": {
+                  "id": "1*zwZAeBHIwRzEXVxjY5pWjA.jpeg",
+                  "originalWidth": 4427,
+                  "originalHeight": 2745,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "massachusetts",
+              "name": "Massachusetts",
+              "postCount": 984,
+              "metadata": {
+                "postCount": 984,
+                "coverImage": {
+                  "id": "1*pQDpxRpUf094i0QRovv1qw.jpeg",
+                  "originalWidth": 1023,
+                  "originalHeight": 945,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "housing-crisis",
+              "name": "Housing Crisis",
+              "postCount": 456,
+              "metadata": {
+                "postCount": 456,
+                "coverImage": {
+                  "id": "0*NJWfwFuuYV9K-B3I",
+                  "originalWidth": 498,
+                  "originalHeight": 248,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "affordable-housing",
+              "name": "Affordable Housing",
+              "postCount": 1521,
+              "metadata": {
+                "postCount": 1521,
+                "coverImage": {
+                  "id": "1*G4mgTiEwCv47AqGo5Nx1CQ.jpeg",
+                  "originalWidth": 3000,
+                  "originalHeight": 2000
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "challenge",
+              "name": "Challenges",
+              "postCount": 0,
+              "metadata": {
+                "postCount": 0,
+                "coverImage": {
+                  "id": "1*JoEunezTwDM_Ksch9VAwKg.jpeg",
+                  "originalWidth": 4699,
+                  "originalHeight": 3133,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            }
+          ],
+          "socialRecommendsCount": 0,
+          "responsesCreatedCount": 0,
+          "links": {
+            "entries": [
+              {
+                "url": "https:\/\/www.masshousing.com\/portal\/server.pt\/community\/home\/217",
+                "alts": [
+
+                ],
+                "httpStatus": 200
+              }
             ],
-            "creator": "Boris Müller",
-            "pubDate": "Tue, 15 Jan 2019 08:42:30 GMT",
-            "updated": "2019-01-15T08:42:30.446Z",
-            "encoded": "<h4>On being featured by Medium<\/h4><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*aSa3Y-m0BAeyDIiToitfPw.jpeg\" /><figcaption>Calligraphy by <a href=\"http://federflug.com/index_en.html\">Stefanie Weigele<\/a><\/figcaption><\/figure><p>Ok — that was interesting.<\/p><p>On 30 October 2018, <a href=\"https://medium.com/u/504c7870fdb6\">Medium<\/a> featured my essay <a href=\"https://medium.com/s/story/on-the-visual-weariness-of-the-web-8af1c969ce73\">Why Do All Websites Look the Same?<\/a>.<\/p><p>Within 14 days, the posting generated 200,000 views, over 100,000 reads, 30,000 claps and over 100 comments. It sparked a lively debate on Medium itself, on Twitter and on <a href=\"https://news.ycombinator.com/item?id=18414001\">Hacker News<\/a>.<\/p><p>After a couple of days, the whole thing was over — but I would like to reflect on some of the insights I got from the event and want to share my views on Medium as a platform.<\/p><h4>Being Featured by Medium<\/h4><p>It was obviously great to be featured by Medium! I was a bit surprised by the invitation as I have not really written that much. But I had put a lot of effort in all my essays — so it felt nice to be appreciated.<\/p><p>Being featured was pretty straightforward. A bit too straightforward to be honest. The invitation clearly stated that my essay would be tweaked and edited. So I assumed that there would be a lengthy and intensive exchange with an editor and a critical debate on the finer points of my essay. As you can guess — this did not happen. The entire process basically boiled down to “if you want to be featured, click this button”. I agreed, waited a few days — and then the revised text went public. I am fine with most of the edits — but it would have been nice to get a final say or at least a notification from Medium. Neither happened. This is actually my major gripe with the process. Medium could have been a bit more accommodating at that stage.<\/p><p>But as I said: the edits were fine. As I am not a native speaker, I welcomed a critical revision of my text. If you want, you can compare the original version that is <a href=\"https://esono.com/blog/2018/09/on-the-visual-weariness-of-the-web/\">still available on my personal website<\/a> with the one that the Medium editors came up with.<\/p><p>The original title of the essay was “On the visual weariness of the web”. I totally understand that Medium changed it to “Why Do All Websites Look the Same?”. It is less subtle than my original title but it sums up the text in a very uncomplicated manner.<\/p><p>There were a couple of edits that I was not entirely happy with. I am not crazy about the new image as I like the idea of using calligraphy and hand lettering as my key visuals. Furthermore, they deleted the quote from Vilém Flusser which is a real shame. But the rest of the edits are pretty good. They even noted that I misspelled Paula Scher! Kudos for that.<\/p><h4>No Spillover Effects<\/h4><p>The one thing that really struck me was this: there were no spillover effects. Almost nobody read my other essays. And the increase of web traffic to <a href=\"https://esono.com\">esono.com<\/a> or the <a href=\"https://uclab.fh-potsdam.de\">uclab<\/a> — both prominently displayed in my blurb — was almost nil.<\/p><p>In order to illustrate this point, here is a bit of data:<\/p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*gWXVAEQ1tTU2g96CiK2W8A.png\" /><\/figure><p>With 245,000 views and 112,000 reads, “Why do All Websites Look the Same” is clearly my most popular text on Medium. The posting right before that, “Strategies for Design-Science Collaborations”, has 576 views and 178 reads. There is no “K” behind these numbers.<\/p><p>I can understand that the issue of design–science collaborations is probably not a gripping page-turner for a big audience. But the fact that from over 200,000 readers only about 200 bothered to look at my previous posting points to a structural problem at Medium. If just 0.1% of your readers find the way to your next essay, then there is something wrong with the user interface.<\/p><p>The traffic to other websites was also less than minimal. In the first two weeks of November, I had 25 (!) referrals from Medium to esono.com. I understand that platforms want to keep the traffic within their systems. But a referral rate of 0.01% is a bit of a joke.<\/p><p>On the other hand, I had a strong increase of followers both on Medium and on Twitter. On Medium, the numbers went up from 750 to about 3,500. That’s nice — but I find it intriguing, that more than 2,500 readers are betting on my future essays instead of reading existing ones.<\/p><h4>Polemic Rant beats Considerate Discourse<\/h4><p><em>Why Do All Websites Look the Same?<\/em> is certainly not my best essay. I wrote it because I wanted to present the work of my students. The aim of the essay was mainly to provide the readers with a bit of context. I was actually quite surprised that it went through the roof and provoked so much debate.<\/p><p>The essay is a polemic rant against a lack of creativity in web design. It is not very considerate and certainly not too brainy. (At least not after they deleted my Flusser quote.)<\/p><p>Medium is one of the more thoughtful and polite social media platforms. Most of the comments to my essay were critical, but the overall tone was civil and considerate — at least compared to Hacker News and Twitter. A friend of mine recently compared Twitter to drive-by-shootings which feels fairly accurate.<\/p><p>But still — it’s a bit sad that even on Medium, a polemic rant beats considerate discourse. My essays <a href=\"https://medium.com/@borism/design-in-four-revolutions-fb0f01a806d2\">Design in Four Revolutions<\/a> and <a href=\"https://medium.com/@borism/bringing-design-to-science-3fa653f2c149\">Bringing Design to Science<\/a> are much more astute than <em>Why Do All Websites Look the Same<\/em>. I can understand that they are too academic for a wide audience. But it would be nice if there were a space for a more subtle and considerate debate. Not everything has to be loud, dramatic, polarising and provocative. Medium could be a bit more more serious about their mission: “<a href=\"https://medium.com/about\">to bring you the smartest takes on topics that matter<\/a>”. Which brings me to my last section:<\/p><h4>Further Reading on Medium<\/h4><p>While I mostly wanted to talk about the writing experience, I might as well add a few thoughts on the reading and discovery experience at Medium. There are many positive things — but also a couple of negative points that are crucial.<\/p><p>I really like the subscription model. No ads, no “sponsored content”, a transparent business model, readers are customers and not products. My wife would love to have something like this for Instagram. The reading experience is also quite good. Medium obviously cares for typography. The fact that the design team <a href=\"https://medium.design/crafting-link-underlines-on-medium-7c03a9274f9\">found the perfect underline<\/a> is a good example for their attitude. And I really like the way comments are handled on Medium. They are available — but not too prominent.<\/p><p>But I am a bit disappointed on how the content is structured and how new postings and recommendations are handled. I applaud Medium for having an editorial team that finds and promotes quality writing. This is definitely the right approach and emphasises the distinction between a serious publication and a seemingly content-agnostic platform like Facebook. But it does not yet work for me. I still find it really difficult to discover great content on Medium.<\/p><p>For my personal taste, the editorial picks are too much focused on the good old theme of human tragedy and triumph. And the algorithmic recommendations produce a seemingly endless list of life improvements (“Why you should read 10,000 Books per Minute!”), design superficialities (“100 insanely great UX tips!”) and tech clickbait (“An iPhone without 17 lenses is doomed!”). Somehow I feel guilty that “Why Do All Websites Look the Same?” fits nicely into this list.<\/p><p>“Featured Collections” — publications within Medium — are an interesting approach to this problem. But so far I have not found one that I really enjoyed.<\/p><p>Most of my online reading is still based on people and publications I know and trust. On Medium, I have discovered a couple of such reading sources. But the interface quickly drowns them out. I fail to notice great postings from people I follow. And the section “New from your network” does not replace an overview of all recent text from people and publications that I follow.<\/p><p>I have actually started using RSS in order to follow authors and publications on Medium. It’s really easy — in the URL just add “feed” before the username — like<a href=\"https://medium.com/feed/@borism\"> medium.com/feed/@borism<\/a>. I am really grateful that Medium still supports RSS. But it is odd, to say the least, that an RSS reader provides a better user experience for following authors than the Medium app or website.<\/p><p>My impression is that Medium is still unsure about its own profile. Right now, it is quite fuzzy. I know what values and world views the <em>The Economist<\/em> represents. I know what to expect from the <em>New York Times<\/em>. I enjoy reading the thoughts of individuals like <a href=\"http://we-make-money-not-art.com\">Régine Debatty<\/a>, <a href=\"https://daringfireball.net\">John Gruber<\/a>, <a href=\"http://jessicahische.is/thinkingthoughts\">Jessica Hische<\/a> or <a href=\"https://whatever.scalzi.com\">John Scalzi<\/a>. I have not found the same attachment on Medium.<\/p><p>To be clear: I have discovered new and compelling voices on Medium and I am sure I will find more. But they are not making it easy. Just simple stuff like going through my followers and checking out their stories is really difficult.<\/p><p>And the fact that very few of my readers found their way to my other essays is a strong indicator for assuming that Medium is focusing more on diverting readers to other stories than to the ones of the same author. Frankly, I don’t think that is a good strategy.<\/p><h4>Conclusion<\/h4><p>I really like Medium and I wish it well! Right now, it is one of the few decent social media platforms and that is something we should appreciate.<\/p><p>Furthermore, it was a good experience to be featured on Medium! It provided me with a great opportunity to share my ideas and trigger a debate on the web.<\/p><p>The weakness of Medium is its ambivalence towards content. It wants to advance quality writing — but still uses algorithms. It wants to promote writers — but redirects readers. It has editors — but no attitude.<\/p><img src=\"https://medium.com/_/stat?event=post.clientViewed&referrerSource=full_rss&postId=2ccf64d1ac84\" width=\"1\" height=\"1\">"
-         },
-         {
-            "title": "Hi Tim, sorry for the late feedback!",
-            "link": "https://medium.com/@borism/hi-tim-sorry-for-the-late-feedback-51ac8592c16a?source=rss-b53295fb4eb2------2",
-            "guid": {
-               "@isPermaLink": "false",
-               "#text": "https://medium.com/p/51ac8592c16a"
-            },
-            "category": "typography",
-            "creator": "Boris Müller",
-            "pubDate": "Mon, 12 Nov 2018 17:17:25 GMT",
-            "updated": "2018-11-12T17:17:25.743Z",
-            "encoded": "<p>Hi Tim, sorry for the late feedback! One of my <a href=\"https://medium.com/s/story/on-the-visual-weariness-of-the-web-8af1c969ce73\">recent essays on Medium<\/a> went through the roof — so it took some time to get back to you.<\/p><p>The feedback you got on Stack Exchange is really interesting. Comic Sans is actually an good way to talk about design. You can discuss aesthetics, functionalism and taste just by pondering on one font.<\/p><p>Designers are certainly biased when it comes to Comic Sans. In my essay, I tried to create a parallel to actors. But since I know that you are a musician, it would be possible to come up with another analogy: music.<\/p><p>Helvetica is Vivaldi’s Four Seasons<\/p><p>Meta is Mozart<\/p><p>Walbaum is Tchaikovsky<\/p><p>And — well — Comic Sans is the musical “Cats”.<\/p><img src=\"https://medium.com/_/stat?event=post.clientViewed&referrerSource=full_rss&postId=51ac8592c16a\" width=\"1\" height=\"1\">"
-         },
-         {
-            "title": "Balancing Creativity and Usability",
-            "link": "https://medium.com/@borism/balancing-creativity-and-usability-9bb2cd0fe929?source=rss-b53295fb4eb2------2",
-            "guid": {
-               "@isPermaLink": "false",
-               "#text": "https://medium.com/p/9bb2cd0fe929"
-            },
-            "category": [
-               "visual-design",
-               "design",
-               "ux",
-               "web-design"
+            "version": "0.3",
+            "generatedAt": 1558635103649
+          },
+          "isLockedPreviewOnly": false,
+          "metaDescription": "",
+          "totalClapCount": 0,
+          "sectionCount": 1,
+          "readingList": 0,
+          "topics": [
+
+          ]
+        },
+        "coverless": true,
+        "slug": "keeping-the-affordable-housing-crisis-at-bay-in-the-bay-state",
+        "translationSourcePostId": "",
+        "translationSourceCreatorId": "",
+        "isApprovedTranslation": false,
+        "inResponseToPostId": "",
+        "inResponseToRemovedAt": 0,
+        "isTitleSynthesized": false,
+        "allowResponses": true,
+        "importedUrl": "",
+        "importedPublishedAt": 0,
+        "visibility": 0,
+        "uniqueSlug": "keeping-the-affordable-housing-crisis-at-bay-in-the-bay-state-b213b5243aac",
+        "previewContent": {
+          "bodyModel": {
+            "paragraphs": [
+              {
+                "name": "previewImage",
+                "type": 4,
+                "text": "",
+                "layout": 10,
+                "metadata": {
+                  "id": "1*GUD9bLNCU4KW-MhVLuU08A.jpeg",
+                  "originalWidth": 2501,
+                  "originalHeight": 1400,
+                  "isFeatured": true
+                }
+              },
+              {
+                "name": "2c8b",
+                "type": 3,
+                "text": "Keeping the Affordable Housing Crisis at Bay in the Bay State",
+                "markups": [
+                  {
+                    "type": 1,
+                    "start": 0,
+                    "end": 61
+                  }
+                ],
+                "alignment": 1
+              }
             ],
-            "creator": "Boris Müller",
-            "pubDate": "Tue, 06 Nov 2018 20:53:32 GMT",
-            "updated": "2018-11-06T21:04:37.479Z",
-            "encoded": "<h4>A short comment on “Why Do All Websites Look the Same?”<\/h4><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*HkF39FeEmt8a8YrCOEYNjA.png\" /><figcaption><a href=\"https://interface.fh-potsdam.de/future-retro/HN/\">Redesign of Hacker News<\/a> by Fabian Dinklage and Florian Zia<\/figcaption><\/figure><p>Last week, Medium has featured my most recent essay <a href=\"https://medium.com/s/story/on-the-visual-weariness-of-the-web-8af1c969ce73\">Why Do All Websites Look the Same?<\/a> (aka “On the visual weariness of the web”). The essay is currently getting a lot of attention. While I am writing this, it has received over 55.000 views, 27.000 reads, 11.300 claps and 60 comments. I obviously hit a nerve.<\/p><p>So — thanks for all the feedback! It’s great to initiate a lively debate! But it is difficult for me to address each remark individually. The feedback I got is diverse and the comments on Medium and Twitter are quite controversial. Without going into the details, a lot of the discussion boils down to the well-known <em>“creativity against usability”<\/em> argument.<\/p><p>My essay is certainly full of polemics. I criticise a specific trend towards a template-driven web that leaves very little breathing space for innovative and challenging design approaches. <em>I do not criticise usability per se<\/em>. That would be absurd and a complete misinterpretation of my text.<\/p><p>The whole <em>“creativity against usability”<\/em> debate is running for over 100 years now. As I <a href=\"https://medium.com/@borism/design-in-four-revolutions-fb0f01a806d2\">wrote before<\/a>, it is deeply linked to technological developments and industrial revolutions. History has shown that we need both — creativity <em>and<\/em> usability — in order to make real progress in the world of design and technology. And in order to have a balanced relationship between creativity and usability, it seems we have to have this discussion again and again. With my essay, I wanted to tilt the balance towards creativity.<\/p><p>Furthermore, I would like to address a couple of particular arguments from the debate. I wrote the following section as a reply to the first comments. It still stands and I think it is a good addition to the original essay. The reply is a <a href=\"https://medium.com/@borism/hi-guys-thanks-for-you-feedback-here-are-a-couple-of-quick-comments-8308435f2c95\">bit difficult to find<\/a> so I re-publish it here.<\/p><h4>1) Templates should work for the design<\/h4><p>Templates are part of the current web. One polemic essay will not change that.<\/p><p>Templates make sense. They allow for quick publishing and they combine technical reliability with streamlined work flows. They are <em>very<\/em> efficient.<\/p><p>But my impression is that right now, designers tend to limit their creativity so that the design works for the template. And I strongly believe it should be the other way round. Instead of asking how they meet the demands of the template, designers and developers should ask themselves how they can create templates that meet the demands of the design. This is one of the reasons why I believe that designers should be able to code for themselves. If you want to push the boundaries, you have to understand the limitations.<\/p><h4>2) Form — Content<\/h4><p>Please allow me to quote myself:<\/p><blockquote>One of the fundamental principles of design is a deep and meaningful connection between form and content; form should both reflect and shape content.<\/blockquote><p>In other words, you need specific design solutions for a specific design problem. A <em>one size fits all<\/em> approach rarely produces satisfying results. A hospital information system is clearly not an appropriate space for experimental typography. I would not ask David Carson to design books for primary schools.<\/p><p>But there is more to design than hospital typography and school books. There are many applications — especially in culture, music and the arts — where visual design can do more than just ensure readability. This is true for print — and it is also true for the web.<\/p><h4>3) The paperback web<\/h4><p>If we draw an analogy between the world wide web and the world of books, then we are in the <em>paperback-age<\/em> of the web.<\/p><p>Paperbacks are small, inexpensive books for quick consumption. They are held together by glue, use low quality paper, have poor image reproduction and often mediocre typography. But they work well for a mass-market. They are <em>very efficient<\/em>.<\/p><p>There is nothing wrong with paperbacks. In many contexts they make sense and there are even a number of really well-designed paperbacks out there. But the claim that <em>there should only be paperbacks<\/em> is downright silly. There is a space, a market and a need for hardcover novels, photographic travel journals, extravagant exhibition catalogues, lavish cookery books and so on.<\/p><p>Nobody would demand that all books should be paperbacks. But I have the impression that a lot of people regard web pages as “paperbacks” — cheap, pragmatic information machines. This position ignores the fact that the web is an enormous cultural space and that even the most minimal and practical web site is an artefact.<\/p><p>There are many different kinds of books, from pragmatic paperbacks to experimental art books. I would like to see this cultural and visual diversity on the web.<\/p><img src=\"https://medium.com/_/stat?event=post.clientViewed&referrerSource=full_rss&postId=9bb2cd0fe929\" width=\"1\" height=\"1\">"
-         },
-         {
-            "title": "I have just published a short posting where I try to attend to the comments to my essay.",
-            "link": "https://medium.com/@borism/i-have-just-published-a-short-posting-where-i-try-to-attend-to-the-comments-to-my-essay-446f4de011a5?source=rss-b53295fb4eb2------2",
-            "guid": {
-               "@isPermaLink": "false",
-               "#text": "https://medium.com/p/446f4de011a5"
+            "sections": [
+              {
+                "startIndex": 0
+              }
+            ]
+          },
+          "isFullContent": false,
+          "subtitle": "We talk to Chris Kluchman, director of Massachusetts\u2019 Housing Choice Initiative, about the Commonwealth\u2019s multifaceted approach"
+        },
+        "license": 0,
+        "inResponseToMediaResourceId": "",
+        "canonicalUrl": "",
+        "approvedHomeCollectionId": "4933e15b493e",
+        "newsletterId": "",
+        "webCanonicalUrl": "",
+        "mediumUrl": "",
+        "migrationId": "",
+        "notifyFollowers": true,
+        "notifyTwitter": false,
+        "notifyFacebook": false,
+        "responseHiddenOnParentPostAt": 0,
+        "isSeries": false,
+        "isSubscriptionLocked": false,
+        "seriesLastAppendedAt": 0,
+        "audioVersionDurationSec": 0,
+        "sequenceId": "",
+        "isNsfw": false,
+        "isEligibleForRevenue": false,
+        "isBlockedFromHightower": false,
+        "deletedAt": 0,
+        "lockedPostSource": 0,
+        "hightowerMinimumGuaranteeStartsAt": 0,
+        "hightowerMinimumGuaranteeEndsAt": 0,
+        "featureLockRequestAcceptedAt": 0,
+        "mongerRequestType": 1,
+        "layerCake": 0,
+        "socialTitle": "",
+        "socialDek": "",
+        "editorialPreviewTitle": "",
+        "editorialPreviewDek": "",
+        "curationEligibleAt": 0,
+        "type": "Post"
+      },
+      {
+        "id": "27f71c4d90ee",
+        "versionId": "1650a48c0ec6",
+        "creatorId": "97d35ca792e3",
+        "homeCollectionId": "4933e15b493e",
+        "title": "Minneapolis\u2019 New Comprehensive Plan Blazes a Trail Toward More Housing. Will Others Follow?",
+        "detectedLanguage": "en",
+        "latestVersion": "1650a48c0ec6",
+        "latestPublishedVersion": "1650a48c0ec6",
+        "hasUnpublishedEdits": false,
+        "latestRev": 129,
+        "createdAt": 1557870774348,
+        "updatedAt": 1557946672274,
+        "acceptedAt": 0,
+        "firstPublishedAt": 1557939916618,
+        "latestPublishedAt": 1557946671952,
+        "vote": false,
+        "experimentalCss": "",
+        "displayAuthor": "",
+        "virtuals": {
+          "statusForCollection": "APPROVED",
+          "allowNotes": true,
+          "previewImage": {
+            "imageId": "1*iiZYJPKeWBPPL0znLYQG-A.jpeg",
+            "filter": "",
+            "backgroundSize": "",
+            "originalWidth": 2500,
+            "originalHeight": 1400,
+            "strategy": "resample",
+            "height": 0,
+            "width": 0
+          },
+          "wordCount": 820,
+          "imageCount": 2,
+          "readingTime": 3.4776729559748,
+          "subtitle": "Minneapolis 2040 virtually eliminates single family zoning and lays out other bold steps toward more housing options for all",
+          "userPostRelation": {
+            "userId": "52f77b00a500",
+            "postId": "27f71c4d90ee",
+            "readAt": 0,
+            "readLaterAddedAt": 0,
+            "votedAt": 0,
+            "collaboratorAddedAt": 0,
+            "notesAddedAt": 0,
+            "subscribedAt": 0,
+            "lastReadSectionName": "",
+            "lastReadVersionId": "",
+            "lastReadAt": 0,
+            "lastReadParagraphName": "",
+            "lastReadPercentage": 0,
+            "viewedAt": 0,
+            "presentedCountInResponseManagement": 0,
+            "clapCount": 0,
+            "seriesUpdateNotifsOptedInAt": 0,
+            "queuedAt": 0,
+            "seriesFirstViewedAt": 0,
+            "presentedCountInStream": 2,
+            "seriesLastViewedAt": 0,
+            "audioProgressSec": 0
+          },
+          "publishedInCount": 1,
+          "usersBySocialRecommends": [
+
+          ],
+          "noIndex": false,
+          "recommends": 0,
+          "isBookmarked": false,
+          "tags": [
+            {
+              "slug": "solutions",
+              "name": "Solutions",
+              "postCount": 2296,
+              "metadata": {
+                "postCount": 2296,
+                "coverImage": {
+                  "id": "1*XA8XdgWGxWklK-hd9DQYbA.png",
+                  "originalWidth": 3804,
+                  "originalHeight": 2004,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
             },
-            "creator": "Boris Müller",
-            "pubDate": "Thu, 20 Sep 2018 09:15:23 GMT",
-            "updated": "2018-09-20T09:15:23.715Z",
-            "encoded": "<p>I have just published a<a href=\"https://medium.com/@borism/hi-guys-thanks-for-you-feedback-here-are-a-couple-of-quick-comments-8308435f2c95\"> short posting<\/a> where I try to attend to the comments to my essay. In this posting, I also address you question:<\/p><blockquote>… my impression is that right now, designers tend to limit their creativity so that the design works for the template. And I strongly believe it should be the other way round. Instead of asking how they meet the demands of the template, designers and developers should ask themselves how they can create templates that meet the demands of the design.<\/blockquote><img src=\"https://medium.com/_/stat?event=post.clientViewed&referrerSource=full_rss&postId=446f4de011a5\" width=\"1\" height=\"1\">"
-         },
-         {
-            "title": "Thank you Hilla! I have elaborated on a couple of points — see my comment-on-the-comments!",
-            "link": "https://medium.com/@borism/thank-you-hilla-i-have-elaborated-on-a-couple-of-points-see-my-comment-on-the-comments-b5c4269c9521?source=rss-b53295fb4eb2------2",
-            "guid": {
-               "@isPermaLink": "false",
-               "#text": "https://medium.com/p/b5c4269c9521"
+            {
+              "slug": "housing-crisis",
+              "name": "Housing Crisis",
+              "postCount": 456,
+              "metadata": {
+                "postCount": 456,
+                "coverImage": {
+                  "id": "0*NJWfwFuuYV9K-B3I",
+                  "originalWidth": 498,
+                  "originalHeight": 248,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
             },
-            "creator": "Boris Müller",
-            "pubDate": "Thu, 20 Sep 2018 09:11:02 GMT",
-            "updated": "2018-09-20T09:11:02.416Z",
-            "encoded": "<p>Thank you Hilla! I have elaborated on a couple of points — see my<a href=\"https://medium.com/@borism/hi-guys-thanks-for-you-feedback-here-are-a-couple-of-quick-comments-8308435f2c95\"> comment-on-the-comments<\/a>!<\/p><img src=\"https://medium.com/_/stat?event=post.clientViewed&referrerSource=full_rss&postId=b5c4269c9521\" width=\"1\" height=\"1\">"
-         },
-         {
-            "title": "Hi Keith, thanks for your feedback!",
-            "link": "https://medium.com/@borism/hi-keith-thanks-for-your-feedback-a96579c5310f?source=rss-b53295fb4eb2------2",
-            "guid": {
-               "@isPermaLink": "false",
-               "#text": "https://medium.com/p/a96579c5310f"
+            {
+              "slug": "affordable-housing",
+              "name": "Affordable Housing",
+              "postCount": 1521,
+              "metadata": {
+                "postCount": 1521,
+                "coverImage": {
+                  "id": "1*G4mgTiEwCv47AqGo5Nx1CQ.jpeg",
+                  "originalWidth": 3000,
+                  "originalHeight": 2000
+                }
+              },
+              "type": "Tag"
             },
-            "creator": "Boris Müller",
-            "pubDate": "Thu, 20 Sep 2018 09:09:55 GMT",
-            "updated": "2018-09-20T09:09:55.442Z",
-            "encoded": "<p>Hi Keith, thanks for your feedback! I have just <a href=\"https://medium.com/@borism/hi-guys-thanks-for-you-feedback-here-are-a-couple-of-quick-comments-8308435f2c95\">published a posting<\/a> where I also address your comments. As you point out, there is a place for more experimental design sites — and I think we need them for the web to develop. The web is a cultural space and I think a diverse visual design should reflect that.<\/p><img src=\"https://medium.com/_/stat?event=post.clientViewed&referrerSource=full_rss&postId=a96579c5310f\" width=\"1\" height=\"1\">"
-         },
-         {
-            "title": "Hi Geoff, thanks for you feedback!",
-            "link": "https://medium.com/@borism/hi-geoff-thanks-for-you-feedback-2ed1710279ae?source=rss-b53295fb4eb2------2",
-            "guid": {
-               "@isPermaLink": "false",
-               "#text": "https://medium.com/p/2ed1710279ae"
+            {
+              "slug": "minneapolis",
+              "name": "Minneapolis",
+              "postCount": 960,
+              "metadata": {
+                "postCount": 960,
+                "coverImage": {
+                  "id": "1*jFr8pcIR6wkBu5-HgyHGXw.jpeg",
+                  "originalWidth": 1600,
+                  "originalHeight": 900,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
             },
-            "creator": "Boris Müller",
-            "pubDate": "Thu, 20 Sep 2018 09:02:49 GMT",
-            "updated": "2018-09-20T09:02:49.658Z",
-            "encoded": "<p>Hi Geoff, thanks for you feedback! I don’t think that web pages are machines — but if you insist on this term, I would call them “cultural machines”.<\/p><p>I have just <a href=\"https://medium.com/@borism/hi-guys-thanks-for-you-feedback-here-are-a-couple-of-quick-comments-8308435f2c95\">posted a comment<\/a> on all responses to this essay where I also address your thoughts.<\/p><img src=\"https://medium.com/_/stat?event=post.clientViewed&referrerSource=full_rss&postId=2ed1710279ae\" width=\"1\" height=\"1\">"
-         },
-         {
-            "title": "Hi guys, thanks for you feedback! Here are a couple of quick comments:",
-            "link": "https://medium.com/@borism/hi-guys-thanks-for-you-feedback-here-are-a-couple-of-quick-comments-8308435f2c95?source=rss-b53295fb4eb2------2",
-            "guid": {
-               "@isPermaLink": "false",
-               "#text": "https://medium.com/p/8308435f2c95"
-            },
-            "creator": "Boris Müller",
-            "pubDate": "Thu, 20 Sep 2018 08:58:56 GMT",
-            "updated": "2018-09-20T08:58:56.638Z",
-            "encoded": "<p>Hi guys, thanks for you feedback! Here are a couple of quick comments:<\/p><h4>1) Templates should work for the design<\/h4><p>Templates are part of the current web. One grumpy essay will not change that.<\/p><p>Templates make sense. They allow for quick publishing and they combine technical reliability with streamlined work flows. They are <em>very<\/em> efficient.<\/p><p>But my impression is that right now, designers tend to limit their creativity so that the design works for the template. And I strongly believe it should be the other way round. Instead of asking how they meet the demands of the template, designers and developers should ask themselves how they can create templates that meet the demands of the design. This is one of the reasons why I believe that designers should be able to code for themselves. If you want to push the boundaries, you have to understand the limitations.<\/p><h4>2) Form — Content<\/h4><p>Please allow me to quote myself:<\/p><blockquote>One of the fundamental principles of design is to establish a deep and meaningful relationship between form and content. This connection works in both ways. The form both reflects and shapes the content.<\/blockquote><p>In other words, you need specific design solutions for a specific design problem. A <em>one size fits all<\/em> approach rarely produces satisfying results. A hospital information system is clearly not an appropriate space for experimental typography. I would not ask David Carson to design books for primary schools.<\/p><p>But there is more to design than hospital typography and school books. There are many applications — especially in culture, music and the arts — where visual design can do more than just ensure readability. This is true for print — and it is also true for the web.<\/p><h4>3) The paperback web<\/h4><p>If we draw an analogy between the world wide web and the world of books, then we are in the <em>paperback-age<\/em> of the web.<\/p><p>Paperbacks are small, inexpensive books for quick consumption. They are held together by glue, use low quality paper, have bad image reproduction and mediocre typography. But they work well for a mass-market. They are <em>very efficient<\/em>.<\/p><p>There is nothing wrong with paperbacks. In many contexts they make sense and there are even a number of really well-designed paperbacks out there. But the claim that <em>there should only be paperbacks<\/em> is downright silly. There is a space, a market and a need for hardcover novels, photographic travel journals, extravagant exhibition catalogues, lavish cookery books and so on.<\/p><p>So the claim that there should only be paperbacks is silly. But regarding the web, I have the impression that this is exactly how a lot of people view the web. They expect that every web page should be cheap, practical and efficient — damn the context and the visual quality.<\/p><p>There are many different kinds of books, from pragmatic paperbacks to experimental art books. I would like to see this diversity on the web.<\/p><img src=\"https://medium.com/_/stat?event=post.clientViewed&referrerSource=full_rss&postId=8308435f2c95\" width=\"1\" height=\"1\">"
-         },
-         {
-            "title": "Why Do All Websites Look the Same?",
-            "link": "https://medium.com/@borism/on-the-visual-weariness-of-the-web-8af1c969ce73?source=rss-b53295fb4eb2------2",
-            "guid": {
-               "@isPermaLink": "false",
-               "#text": "https://medium.com/p/8af1c969ce73"
-            },
-            "category": [
-               "design",
-               "visual-design",
-               "ux",
-               "typography",
-               "programming"
+            {
+              "slug": "housing",
+              "name": "Housing",
+              "postCount": 11914,
+              "metadata": {
+                "postCount": 11914,
+                "coverImage": {
+                  "id": "1*zwZAeBHIwRzEXVxjY5pWjA.jpeg",
+                  "originalWidth": 4427,
+                  "originalHeight": 2745,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            }
+          ],
+          "socialRecommendsCount": 0,
+          "responsesCreatedCount": 0,
+          "links": {
+            "entries": [
+              {
+                "url": "https:\/\/www.curbed.com\/2019\/1\/9\/18175780\/minneapolis-2040-real-estate-rent-development-zoning",
+                "alts": [
+                  {
+                    "type": 1,
+                    "url": "https:\/\/cdn.ampproject.org\/c\/s\/www.curbed.com\/platform\/amp\/2019\/1\/9\/18175780\/minneapolis-2040-real-estate-rent-development-zoning"
+                  }
+                ],
+                "httpStatus": 200
+              },
+              {
+                "url": "https:\/\/www.nytimes.com\/2018\/12\/13\/us\/minneapolis-single-family-zoning.html",
+                "alts": [
+                  {
+                    "type": 3,
+                    "url": "nytimes:\/\/reader\/id\/100000006254314"
+                  },
+                  {
+                    "type": 2,
+                    "url": "nytimes:\/\/www.nytimes.com\/2018\/12\/13\/us\/minneapolis-single-family-zoning.html"
+                  },
+                  {
+                    "type": 1,
+                    "url": "https:\/\/cdn.ampproject.org\/c\/s\/www.nytimes.com\/2018\/12\/13\/us\/minneapolis-single-family-zoning.amp.html"
+                  }
+                ],
+                "httpStatus": 200
+              },
+              {
+                "url": "https:\/\/www.ryancompanies.com\/",
+                "alts": [
+
+                ],
+                "httpStatus": 200
+              },
+              {
+                "url": "https:\/\/www.census.gov\/housing\/hvs\/data\/ann17ind.html",
+                "alts": [
+
+                ],
+                "httpStatus": 200
+              },
+              {
+                "url": "https:\/\/next50.urban.org\/article\/precise-solutions-precise-damage-interview-minneapolis-mayor-jacob-frey",
+                "alts": [
+
+                ],
+                "httpStatus": 200
+              },
+              {
+                "url": "https:\/\/www.weidner.com\/",
+                "alts": [
+
+                ],
+                "httpStatus": 200
+              },
+              {
+                "url": "https:\/\/minneapolis2040.com\/",
+                "alts": [
+
+                ],
+                "httpStatus": 200
+              },
+              {
+                "url": "https:\/\/minneapolis2040.com\/policies\/access-to-housing\/",
+                "alts": [
+
+                ],
+                "httpStatus": 200
+              },
+              {
+                "url": "https:\/\/minneapolis2040.com\/policies\/housing-displacement\/",
+                "alts": [
+
+                ],
+                "httpStatus": 200
+              },
+              {
+                "url": "https:\/\/minneapolis2040.com\/policies\/innovative-housing-strategies-data-driven-decisions\/",
+                "alts": [
+
+                ],
+                "httpStatus": 200
+              },
+              {
+                "url": "https:\/\/minneapolis2040.com\/policies\/pedestrian-oriented-building-and-site-design\/",
+                "alts": [
+
+                ],
+                "httpStatus": 200
+              },
+              {
+                "url": "https:\/\/minneapolis2040.com\/policies\/mixed-income-housing\/",
+                "alts": [
+
+                ],
+                "httpStatus": 200
+              },
+              {
+                "url": "https:\/\/metrocouncil.org\/",
+                "alts": [
+
+                ],
+                "httpStatus": 200
+              },
+              {
+                "url": "http:\/\/www.startribune.com\/find-out-how-your-block-could-change-in-minneapolis-2040-plan\/489889431\/",
+                "alts": [
+
+                ],
+                "httpStatus": 200
+              },
+              {
+                "url": "https:\/\/metrocouncil.org\/Data-and-Maps\/Publications-And-Resources\/MetroStats\/Land-Use-and-Development\/What-a-Difference-a-Rate-Makes-Population-Growth,.aspx",
+                "alts": [
+
+                ],
+                "httpStatus": 200
+              }
             ],
-            "creator": "Boris Müller",
-            "pubDate": "Sat, 15 Sep 2018 15:02:23 GMT",
-            "updated": "2018-11-07T19:58:50.536Z",
-            "encoded": "<p>Today’s internet is bland. Everything looks the same: generic fonts, no layouts to speak of, interchangeable pages, and an absence of expressive visual language. Even micro-typography is a mess.<\/p><p>Web design today seems to be driven by technical and ideological constraints rather than creativity and ideas. Every page consists of containers in containers in containers; sometimes text, sometimes images. Nothing is truly designed, it’s simply assumed.<\/p><p>Ironically, today’s web technologies have enormous design capabilities. We have the capability to implement almost every conceivable idea and layout. We can create radical, surprising, and evocative websites. We can combine experimental typography with generative images and interactive experiences.<\/p><p>And yet, even websites for designers are based on containers in containers in containers. The most popular portals for creatives on the web — Dribbble and Behance — are so fundamentally boring they’re basically interchangeable. (See lead image.)<\/p><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*wAH1oal4R6EVD12Q3txvFw.jpeg\" /><figcaption>Dribbble versus Behance. Can you spot the difference? Thanks to <a href=\"https://davidrehman.de\">David Rehman<\/a> for pointing this out to me. All screenshots: Boris Müller<\/figcaption><\/figure><p>How did this happen?<\/p><p>There are a few reasons. Technological frameworks like Content Management Systems (CMS) and blogging platforms like WordPress are based on templates. Web pages on these frameworks are not individually crafted but generated on the fly by piecing together various media types like images, headlines, body text, and videos. Templates are not designs. Rather, they are rules for combining related data types. Beyond the template, these platforms typically offer users no way to influence a page’s visual appearance. What you see is what you poured into the template.<\/p><p>In other words, templates are content agnostic. And that is the problem.<\/p><p>One of the fundamental principles of design is a deep and meaningful connection between form and content; form should both reflect and shape content. Separating them breaks this principle and creates generic content containers. In a design sense, templates are meaningless; the form adds nothing to the content.<\/p><blockquote>One of the fundamental principles of design is a deep and meaningful connection between form and content.<\/blockquote><p>There are plenty of other reasons for web design’s lack of creativity. Most of them are economic and pragmatic. For example, it’s time-consuming to design individual pages. Considering the speed of online news and the frequency of new articles, large websites simply do not have the resources to design a page from the ground up. Furthermore, web design is still a matter of technical expertise: HTML, JavaScript, and CSS remain challenging tools for designers. There’s no web design equivalent to the direct and obliging workflows of desktop publishing applications.<\/p><p>I suspect designers’ creative and intellectual laziness is to blame, too. In the age of mobile-first, generic, framework-driven development, nobody seems to bother with the visual and contextual integrity of a web page.<\/p><p>How can we tackle this challenge? What can expressive and avant-garde websites look like today?<\/p><p>Sometimes, if you want to design the future, you have to rediscover the past.<\/p><h3>Retro Web Design<\/h3><p>I designed my first website about 23 years ago at the research and development group at the University of the Arts in Bremen, Germany. Creating web pages was hot at the time. The web was young. Pages sparked my imagination.<\/p><p>In the mid-nineties, we were struggling with the constraints of HTML. We could only use web-safe fonts like Arial, Times, or Verdana. We had to use table layouts, monospaced fonts, or GIFs if we wanted to do anything exciting. HTML was purely content-driven initially, and we had to work against the technology in order to design a page.<\/p><p>At the same time, experimental typography was exploding. From Jan Tschichold’s <em>Die<\/em><em>Neue Typographie<\/em> in the twenties to the computer-driven layouts by April Greiman in the eighties, designers challenged the status quo and tried to find a visual language that represented the ideas and revolutions of their eras. By the mid-nineties, an unusual combination of technological and cultural advancements allowed for a very radical breed of graphic design. You could see it in the work of Irma Boom, David Carson, Paula Scher, Neville Brody, and many others.<\/p><p>Compared to the visual explosion of the graphic design world, however, early web pages were still fairly lame. (The <a href=\"https://www.webdesignmuseum.org/\">Web Design Museum<\/a> documents this very well.)<\/p><p>We wanted to do graphic design in the browser, but nobody knew how — or what mistakes could be made. There were no expectations of how a web page should look. There were no standards. No CMS (almost), no CSS, no JS, no video, no animation.<\/p><blockquote>Now is as good a time as any to challenge the internet’s visual conformity.<\/blockquote><p>Fast forward to 2018, and we can do everything in a browser. From massive-scale layouts to micro-typography, animation, and video. And what do we do with these incredible possibilities? Containers in containers in containers. Gigabytes of visually bland mobile-first pages contaminated with JavaScript. Generic templates that follow the same visual rules. If my younger self could have seen the state of web design 23 years later, he would have been very disappointed.<\/p><p>Web design’s problem is not the limits of technology but the limits of our imagination. We’ve become far too obedient to visual conformity, economic viability, and assumed expectations.<\/p><p>However, every crisis creates an opportunity. Now is as good a time as any to challenge the internet’s visual conformity. Alas, I am too old and too bourgeois to come up with a radical, experimental, and state-of-the-art approach to web design. But I can ask my students to do it.<\/p><p>In 2017, I gave a web design class at the Interface Design Programme in Potsdam, Germany. Each team was asked to come up with a redesign for an existing website. The assignment was very clear: Treat the browser as a blank canvas and create expressive, imaginative visual experiences. Use the technological potential of current web technologies as a channel for your creativity. Do not be constrained by questions of usability, legibility, and flexibility. Have an attitude. Disregard <a href=\"https://translate.google.com/translate?hl=en&amp;sl=de&amp;u=https://de.wikipedia.org/wiki/Erwartungskonformit%25C3%25A4t&amp;prev=search\"><em>Erwartungskonformität<\/em><\/a><em>.<\/em><\/p><p>I was very happy with the outcome of the class. (You can see all the results on this <a href=\"https://interface.fh-potsdam.de/future-retro/\">overview page<\/a>.) Here are four projects that represent different approaches to the challenge.<\/p><h3>1. <a href=\"https://interface.fh-potsdam.de/future-retro/ZKM/ZKM-1000/public/?id=0\">ZKM<\/a> by Frederic Haase and Jonas Köpfer<\/h3><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*tO-Yrr9Y2zSqZ89XbRM-7g.jpeg\" /><figcaption>ZKM’s redesign<\/figcaption><\/figure><p>Frederic and Jonas chose the web site of the <a href=\"https://zkm.de/en\">Zentrum für Kunst und Medien<\/a> (ZKM) as a starting point for their experiments and explorations. A very fitting choice as the ZKM is one of the most prominent exhibition spaces for media art in Germany but ZKM’s website is fairly conventional. It’s functional but it lacks the avant-garde assertion that is conveyed by artwork in the exhibitions.<\/p><p>Frederic and Jonas’s aim was to design a concept, a visual language, and a technical setup for the ZKM site that represents the museum’s progressive approach. At the core of their concept is a generative design engine: Every time a page loads, a new layout is created.<\/p><p><a href=\"https://interface.fh-potsdam.de/future-retro/ZKM/ZKM-1000/public/?id=0\">View the redesign of the ZKM<\/a>.<\/p><h3>2. <a href=\"https://interface.fh-potsdam.de/future-retro/Streemmagazin/\">Streem<\/a> by Daria Thies, Bela Kurek, and Lucas Vogel<\/h3><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*5Qa__PsgkEY6XQOOtI1_IA.jpeg\" /><figcaption>Streem’s redesign<\/figcaption><\/figure><p><a href=\"https://www.streem-magazine.de/\"><em>Streem<\/em><\/a> is an art and street magazine. It is both a stage for upcoming artists and a platform for social issues. <em>Streem <\/em>includes work from illustration, painting, photography, design, writing, and journalism. Daria, Bela, and Lucas combined these different influences and based their designs on a conceptual city structure. For their prototype, they created four different neighborhoods that each represent a section of the magazine. Their approach combines strong illustrative styles with spatial typography in order to create a legible city.<\/p><p><a href=\"https://interface.fh-potsdam.de/future-retro/Streemmagazin/\">View the redesign of <em>Streem<\/em><\/a>.<\/p><h3>3. <a href=\"https://retro-medium.netlify.com/borism\">Medium<\/a> by Amelie Kirchmeyer and Fabian Schultz<\/h3><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*nJm2madTjT_VmJZKwjme1Q.jpeg\" /><figcaption>Medium’s redesign<\/figcaption><\/figure><p>Amelie and Fabian took a very structural approach. Instead of finding an adequate form for a specific story, their aim was to dissolve a web page and break it down to semantic, syntactical, and statistical properties. Their idea was to demonstrate the fluidity and inherent malleability of HTML. They deconstructed <a href=\"https://medium.com/\"><em>Medium<\/em><\/a> posts and created an environment that allows readers to break long blocks of text into experimental typographic space.<\/p><p><a href=\"https://retro-medium.netlify.com/borism\">View the redesign of <em>Medium<\/em><\/a>.<\/p><h3>4. <a href=\"https://interface.fh-potsdam.de/future-retro/HN/\">Hacker News<\/a> by Fabian Dinklage and Florian Zia<\/h3><figure><img alt=\"\" src=\"https://cdn-images-1.medium.com/max/1024/1*Pj-2Fv78wNr8FFQUyKUh5Q.jpeg\" /><figcaption>Hacker News redesign<\/figcaption><\/figure><p>Fabian and Florian turned <a href=\"https://news.ycombinator.com/\"><em>Hacker News<\/em><\/a><em><\/em>into an interactive visualization. The social media site is a news aggregator, focusing on computer science and information technology. Its design is bare-bones but it has complex functionality for voting and discussions. Fabian and Florian have taken the existing structure and turned it into a typographic space of timelines and networks. The visual presentation is based on the sequence and connections of news and comments. They also connected their design to the API of <em>Hacker News<\/em>, so you can actually use it to read the site. <a href=\"https://interface.fh-potsdam.de/future-retro/HN/\">View the redesign of <em>Hacker News<\/em><\/a>.<\/p><p>David Carson once said, “<a href=\"https://www.ted.com/talks/david_carson_on_design\">don’t confuse communication with legibility<\/a>.” We should apply this advice to the current state of web design. Legibility, usability, responsiveness, and especially accessibility are essential qualities of the modern web. But they should not define and limit its visual repertoire. If you equate stereotypes with usability, you have understood neither visual design nor human-centered design.<\/p><p>I, for one, would like to see more radical, generative, evocative, thoughtful, adequate, content-specific, and intelligent web design. I would like to rediscover the web as a space for design experiments. I would like to be surprised more often. I don’t know what the web will look in another 23 years, but I certainly hope it doesn’t look like the web today.<\/p><p><strong>Update:<\/strong> this essay has received a lot of attention and initiated a very lively debate! Thanks for all your feedback — I wrote a short reply to the most frequent points of the debate: “<a href=\"https://medium.com/@borism/balancing-creativity-and-usability-9bb2cd0fe929\">Balancing Creativity and Usability<\/a>”:<\/p><p><a href=\"https://medium.com/@borism/balancing-creativity-and-usability-9bb2cd0fe929\">Balancing Creativity and Usability<\/a><\/p><img src=\"https://medium.com/_/stat?event=post.clientViewed&referrerSource=full_rss&postId=8af1c969ce73\" width=\"1\" height=\"1\">"
-         }
-      ]
-   }
+            "version": "0.3",
+            "generatedAt": 1557946673246
+          },
+          "isLockedPreviewOnly": false,
+          "metaDescription": "",
+          "totalClapCount": 0,
+          "sectionCount": 1,
+          "readingList": 0,
+          "topics": [
+
+          ]
+        },
+        "coverless": true,
+        "slug": "minneapolis-new-comprehensive-plan-blazes-a-trail-toward-more-housing-will-others-follow",
+        "translationSourcePostId": "",
+        "translationSourceCreatorId": "",
+        "isApprovedTranslation": false,
+        "inResponseToPostId": "",
+        "inResponseToRemovedAt": 0,
+        "isTitleSynthesized": false,
+        "allowResponses": true,
+        "importedUrl": "",
+        "importedPublishedAt": 0,
+        "visibility": 0,
+        "uniqueSlug": "minneapolis-new-comprehensive-plan-blazes-a-trail-toward-more-housing-will-others-follow-27f71c4d90ee",
+        "previewContent": {
+          "bodyModel": {
+            "paragraphs": [
+              {
+                "name": "1200",
+                "type": 3,
+                "text": "Minneapolis\u2019 New Comprehensive Plan Blazes a Trail Toward More Housing. Will Others Follow?",
+                "markups": [
+
+                ],
+                "alignment": 1
+              },
+              {
+                "name": "4807",
+                "type": 13,
+                "text": "Minneapolis 2040 virtually eliminates single family zoning and lays out other bold steps",
+                "markups": [
+
+                ],
+                "alignment": 1
+              }
+            ],
+            "sections": [
+              {
+                "startIndex": 0
+              }
+            ]
+          },
+          "isFullContent": false,
+          "subtitle": "Minneapolis 2040 virtually eliminates single family zoning and lays out other bold steps toward more housing options for all"
+        },
+        "license": 0,
+        "inResponseToMediaResourceId": "",
+        "canonicalUrl": "",
+        "approvedHomeCollectionId": "4933e15b493e",
+        "newsletterId": "",
+        "webCanonicalUrl": "",
+        "mediumUrl": "",
+        "migrationId": "",
+        "notifyFollowers": true,
+        "notifyTwitter": false,
+        "notifyFacebook": false,
+        "responseHiddenOnParentPostAt": 0,
+        "isSeries": false,
+        "isSubscriptionLocked": false,
+        "seriesLastAppendedAt": 0,
+        "audioVersionDurationSec": 0,
+        "sequenceId": "",
+        "isNsfw": false,
+        "isEligibleForRevenue": false,
+        "isBlockedFromHightower": false,
+        "deletedAt": 0,
+        "lockedPostSource": 0,
+        "hightowerMinimumGuaranteeStartsAt": 0,
+        "hightowerMinimumGuaranteeEndsAt": 0,
+        "featureLockRequestAcceptedAt": 0,
+        "mongerRequestType": 1,
+        "layerCake": 0,
+        "socialTitle": "",
+        "socialDek": "",
+        "editorialPreviewTitle": "",
+        "editorialPreviewDek": "",
+        "curationEligibleAt": 0,
+        "type": "Post"
+      },
+      {
+        "id": "5e0e4044fa21",
+        "versionId": "52b70bc47b86",
+        "creatorId": "97d35ca792e3",
+        "homeCollectionId": "4933e15b493e",
+        "title": "Boosting Neighborhood Density Moves Seattle Toward Greater Housing Options for All",
+        "detectedLanguage": "en",
+        "latestVersion": "52b70bc47b86",
+        "latestPublishedVersion": "52b70bc47b86",
+        "hasUnpublishedEdits": false,
+        "latestRev": 175,
+        "createdAt": 1556818946771,
+        "updatedAt": 1556919217567,
+        "acceptedAt": 0,
+        "firstPublishedAt": 1556830288052,
+        "latestPublishedAt": 1556919217395,
+        "vote": false,
+        "experimentalCss": "",
+        "displayAuthor": "",
+        "virtuals": {
+          "statusForCollection": "APPROVED",
+          "allowNotes": true,
+          "previewImage": {
+            "imageId": "1*HI1VAGvrGIgij1dVAa-qEg.jpeg",
+            "filter": "",
+            "backgroundSize": "",
+            "originalWidth": 2500,
+            "originalHeight": 1400,
+            "strategy": "resample",
+            "height": 0,
+            "width": 0
+          },
+          "wordCount": 620,
+          "imageCount": 2,
+          "readingTime": 2.7229559748428,
+          "subtitle": "A new policy aims to concentrate growth where there are transit, services and parks",
+          "userPostRelation": {
+            "userId": "52f77b00a500",
+            "postId": "5e0e4044fa21",
+            "readAt": 1557443346365,
+            "readLaterAddedAt": 0,
+            "votedAt": 0,
+            "collaboratorAddedAt": 0,
+            "notesAddedAt": 0,
+            "subscribedAt": 0,
+            "lastReadSectionName": "",
+            "lastReadVersionId": "",
+            "lastReadAt": 0,
+            "lastReadParagraphName": "",
+            "lastReadPercentage": 0,
+            "viewedAt": 1557443346371,
+            "presentedCountInResponseManagement": 0,
+            "clapCount": 0,
+            "seriesUpdateNotifsOptedInAt": 0,
+            "queuedAt": 0,
+            "seriesFirstViewedAt": 0,
+            "presentedCountInStream": 9,
+            "seriesLastViewedAt": 0,
+            "audioProgressSec": 0
+          },
+          "publishedInCount": 1,
+          "usersBySocialRecommends": [
+
+          ],
+          "noIndex": false,
+          "recommends": 1,
+          "isBookmarked": false,
+          "tags": [
+            {
+              "slug": "housing",
+              "name": "Housing",
+              "postCount": 11914,
+              "metadata": {
+                "postCount": 11914,
+                "coverImage": {
+                  "id": "1*zwZAeBHIwRzEXVxjY5pWjA.jpeg",
+                  "originalWidth": 4427,
+                  "originalHeight": 2745,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "solutions",
+              "name": "Solutions",
+              "postCount": 2296,
+              "metadata": {
+                "postCount": 2296,
+                "coverImage": {
+                  "id": "1*XA8XdgWGxWklK-hd9DQYbA.png",
+                  "originalWidth": 3804,
+                  "originalHeight": 2004,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "housing-crisis",
+              "name": "Housing Crisis",
+              "postCount": 456,
+              "metadata": {
+                "postCount": 456,
+                "coverImage": {
+                  "id": "0*NJWfwFuuYV9K-B3I",
+                  "originalWidth": 498,
+                  "originalHeight": 248,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "affordable-housing",
+              "name": "Affordable Housing",
+              "postCount": 1521,
+              "metadata": {
+                "postCount": 1521,
+                "coverImage": {
+                  "id": "1*G4mgTiEwCv47AqGo5Nx1CQ.jpeg",
+                  "originalWidth": 3000,
+                  "originalHeight": 2000
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "seattle",
+              "name": "Seattle",
+              "postCount": 3364,
+              "metadata": {
+                "postCount": 3364,
+                "coverImage": {
+                  "id": "1*rL-qjc49x-rmagzd1EMovg.jpeg",
+                  "originalWidth": 3747,
+                  "originalHeight": 2811,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            }
+          ],
+          "socialRecommendsCount": 0,
+          "responsesCreatedCount": 0,
+          "links": {
+            "entries": [
+              {
+                "url": "https:\/\/www.seattletimes.com\/seattle-news\/homeless\/seattle-mariners-launch-3-million-effort-for-homelessness-prevention-with-evictions-legal-clinic\/",
+                "alts": [
+                  {
+                    "type": 1,
+                    "url": "https:\/\/cdn.ampproject.org\/c\/s\/www.seattletimes.com\/seattle-news\/homeless\/seattle-mariners-launch-3-million-effort-for-homelessness-prevention-with-evictions-legal-clinic\/?amp=1"
+                  }
+                ],
+                "httpStatus": 200
+              },
+              {
+                "url": "https:\/\/durkan.seattle.gov\/2019\/03\/in-a-significant-step-toward-creating-a-more-affordable-seattle-mayor-durkan-signs-mandatory-housing-affordability-into-law\/",
+                "alts": [
+
+                ],
+                "httpStatus": 200
+              },
+              {
+                "url": "https:\/\/www.seattle.gov\/hala\/about\/mandatory-housing-affordability-(mha)",
+                "alts": [
+
+                ],
+                "httpStatus": 200
+              },
+              {
+                "url": "https:\/\/www.seattletimes.com\/seattle-news\/politics\/seattle-upzones-27-neighborhood-hubs-passes-affordable-housing-requirements\/",
+                "alts": [
+                  {
+                    "type": 1,
+                    "url": "https:\/\/cdn.ampproject.org\/c\/s\/www.seattletimes.com\/seattle-news\/politics\/seattle-upzones-27-neighborhood-hubs-passes-affordable-housing-requirements\/?amp=1"
+                  }
+                ],
+                "httpStatus": 200
+              },
+              {
+                "url": "https:\/\/www.seattletimes.com\/seattle-news\/homeless\/microsoft-pledges-500-million-to-help-develop-affordable-housing-in-seattle-and-on-eastside\/",
+                "alts": [
+                  {
+                    "type": 1,
+                    "url": "https:\/\/cdn.ampproject.org\/c\/s\/www.seattletimes.com\/seattle-news\/homeless\/microsoft-pledges-500-million-to-help-develop-affordable-housing-in-seattle-and-on-eastside\/?amp=1"
+                  }
+                ],
+                "httpStatus": 200
+              },
+              {
+                "url": "https:\/\/seattle.curbed.com\/2018\/6\/25\/17501872\/seattle-area-housing-cost-burden",
+                "alts": [
+                  {
+                    "type": 1,
+                    "url": "https:\/\/cdn.ampproject.org\/c\/s\/seattle.curbed.com\/platform\/amp\/2018\/6\/25\/17501872\/seattle-area-housing-cost-burden"
+                  }
+                ],
+                "httpStatus": 200
+              },
+              {
+                "url": "https:\/\/crosscut.com\/2018\/11\/city-says-legal-fight-cost-seattle-717-affordable-homes",
+                "alts": [
+
+                ],
+                "httpStatus": 200
+              },
+              {
+                "url": "https:\/\/komonews.com\/news\/local\/washington-homelessness-result-of-evictions-rent-spikes-uw-study-finds",
+                "alts": [
+
+                ],
+                "httpStatus": 200
+              }
+            ],
+            "version": "0.3",
+            "generatedAt": 1556919217635
+          },
+          "isLockedPreviewOnly": false,
+          "metaDescription": "",
+          "totalClapCount": 1,
+          "sectionCount": 1,
+          "readingList": 0,
+          "topics": [
+
+          ]
+        },
+        "coverless": true,
+        "slug": "boosting-neighborhood-density-moves-seattle-toward-greater-housing-options-for-all",
+        "translationSourcePostId": "",
+        "translationSourceCreatorId": "",
+        "isApprovedTranslation": false,
+        "inResponseToPostId": "",
+        "inResponseToRemovedAt": 0,
+        "isTitleSynthesized": false,
+        "allowResponses": true,
+        "importedUrl": "",
+        "importedPublishedAt": 0,
+        "visibility": 0,
+        "uniqueSlug": "boosting-neighborhood-density-moves-seattle-toward-greater-housing-options-for-all-5e0e4044fa21",
+        "previewContent": {
+          "bodyModel": {
+            "paragraphs": [
+              {
+                "name": "previewImage",
+                "type": 4,
+                "text": "",
+                "layout": 10,
+                "metadata": {
+                  "id": "1*HI1VAGvrGIgij1dVAa-qEg.jpeg",
+                  "originalWidth": 2500,
+                  "originalHeight": 1400,
+                  "isFeatured": true
+                }
+              },
+              {
+                "name": "3f65",
+                "type": 3,
+                "text": "Boosting Neighborhood Density Moves Seattle Toward Greater Housing Options for All",
+                "markups": [
+                  {
+                    "type": 1,
+                    "start": 0,
+                    "end": 82
+                  }
+                ],
+                "alignment": 1
+              }
+            ],
+            "sections": [
+              {
+                "startIndex": 0
+              }
+            ]
+          },
+          "isFullContent": false,
+          "subtitle": "A new policy aims to concentrate growth where there are transit, services and parks"
+        },
+        "license": 0,
+        "inResponseToMediaResourceId": "",
+        "canonicalUrl": "",
+        "approvedHomeCollectionId": "4933e15b493e",
+        "newsletterId": "",
+        "webCanonicalUrl": "",
+        "mediumUrl": "",
+        "migrationId": "",
+        "notifyFollowers": true,
+        "notifyTwitter": false,
+        "notifyFacebook": false,
+        "responseHiddenOnParentPostAt": 0,
+        "isSeries": false,
+        "isSubscriptionLocked": false,
+        "seriesLastAppendedAt": 0,
+        "audioVersionDurationSec": 0,
+        "sequenceId": "",
+        "isNsfw": false,
+        "isEligibleForRevenue": false,
+        "isBlockedFromHightower": false,
+        "deletedAt": 0,
+        "lockedPostSource": 0,
+        "hightowerMinimumGuaranteeStartsAt": 0,
+        "hightowerMinimumGuaranteeEndsAt": 0,
+        "featureLockRequestAcceptedAt": 0,
+        "mongerRequestType": 1,
+        "layerCake": 0,
+        "socialTitle": "",
+        "socialDek": "",
+        "editorialPreviewTitle": "",
+        "editorialPreviewDek": "",
+        "curationEligibleAt": 0,
+        "type": "Post"
+      },
+      {
+        "id": "8deb03b504e2",
+        "versionId": "894e9521afe4",
+        "creatorId": "97d35ca792e3",
+        "homeCollectionId": "4933e15b493e",
+        "title": "It\u2019s Time to Solve the Affordable Housing Crisis",
+        "detectedLanguage": "en",
+        "latestVersion": "894e9521afe4",
+        "latestPublishedVersion": "894e9521afe4",
+        "hasUnpublishedEdits": false,
+        "latestRev": 134,
+        "createdAt": 1556570763457,
+        "updatedAt": 1556635523701,
+        "acceptedAt": 0,
+        "firstPublishedAt": 1556635321961,
+        "latestPublishedAt": 1556635321961,
+        "vote": false,
+        "experimentalCss": "",
+        "displayAuthor": "",
+        "virtuals": {
+          "statusForCollection": "APPROVED",
+          "allowNotes": true,
+          "previewImage": {
+            "imageId": "1*sC-Tqeg4KnKOurKIujCwWA.jpeg",
+            "filter": "",
+            "backgroundSize": "",
+            "originalWidth": 1199,
+            "originalHeight": 627,
+            "strategy": "resample",
+            "height": 0,
+            "width": 0
+          },
+          "wordCount": 957,
+          "imageCount": 1,
+          "readingTime": 3.811320754717,
+          "subtitle": "Together, we can provide a wider, more diverse range of housing options at all price points",
+          "userPostRelation": {
+            "userId": "52f77b00a500",
+            "postId": "8deb03b504e2",
+            "readAt": 0,
+            "readLaterAddedAt": 0,
+            "votedAt": 0,
+            "collaboratorAddedAt": 0,
+            "notesAddedAt": 0,
+            "subscribedAt": 0,
+            "lastReadSectionName": "",
+            "lastReadVersionId": "",
+            "lastReadAt": 0,
+            "lastReadParagraphName": "",
+            "lastReadPercentage": 0,
+            "viewedAt": 1557443346338,
+            "presentedCountInResponseManagement": 0,
+            "clapCount": 0,
+            "seriesUpdateNotifsOptedInAt": 0,
+            "queuedAt": 0,
+            "seriesFirstViewedAt": 0,
+            "presentedCountInStream": 8,
+            "seriesLastViewedAt": 0,
+            "audioProgressSec": 0
+          },
+          "publishedInCount": 1,
+          "usersBySocialRecommends": [
+
+          ],
+          "noIndex": false,
+          "recommends": 3,
+          "isBookmarked": false,
+          "tags": [
+            {
+              "slug": "housing",
+              "name": "Housing",
+              "postCount": 11914,
+              "metadata": {
+                "postCount": 11914,
+                "coverImage": {
+                  "id": "1*zwZAeBHIwRzEXVxjY5pWjA.jpeg",
+                  "originalWidth": 4427,
+                  "originalHeight": 2745,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "solutions",
+              "name": "Solutions",
+              "postCount": 2296,
+              "metadata": {
+                "postCount": 2296,
+                "coverImage": {
+                  "id": "1*XA8XdgWGxWklK-hd9DQYbA.png",
+                  "originalWidth": 3804,
+                  "originalHeight": 2004,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "apartments",
+              "name": "Apartments",
+              "postCount": 3085,
+              "metadata": {
+                "postCount": 3085,
+                "coverImage": {
+                  "id": "1*cZ0xMKZhHTeCqo-zbIrk9g.png",
+                  "originalWidth": 1080,
+                  "originalHeight": 1080,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "affordable-housing",
+              "name": "Affordable Housing",
+              "postCount": 1521,
+              "metadata": {
+                "postCount": 1521,
+                "coverImage": {
+                  "id": "1*G4mgTiEwCv47AqGo5Nx1CQ.jpeg",
+                  "originalWidth": 3000,
+                  "originalHeight": 2000
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "housing-crisis",
+              "name": "Housing Crisis",
+              "postCount": 456,
+              "metadata": {
+                "postCount": 456,
+                "coverImage": {
+                  "id": "0*NJWfwFuuYV9K-B3I",
+                  "originalWidth": 498,
+                  "originalHeight": 248,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            }
+          ],
+          "socialRecommendsCount": 0,
+          "responsesCreatedCount": 0,
+          "links": {
+            "entries": [
+              {
+                "url": "https:\/\/www.nytimes.com\/2018\/12\/13\/us\/minneapolis-single-family-zoning.html",
+                "alts": [
+                  {
+                    "type": 3,
+                    "url": "nytimes:\/\/reader\/id\/100000006254314"
+                  },
+                  {
+                    "type": 2,
+                    "url": "nytimes:\/\/www.nytimes.com\/2018\/12\/13\/us\/minneapolis-single-family-zoning.html"
+                  },
+                  {
+                    "type": 1,
+                    "url": "https:\/\/cdn.ampproject.org\/c\/s\/www.nytimes.com\/2018\/12\/13\/us\/minneapolis-single-family-zoning.amp.html"
+                  }
+                ],
+                "httpStatus": 200
+              },
+              {
+                "url": "https:\/\/www.mass.gov\/service-details\/massachusetts-rental-voucher-program-mrvp",
+                "alts": [
+
+                ],
+                "httpStatus": 200
+              },
+              {
+                "url": "https:\/\/www.mass.gov\/housing-choice-initiative",
+                "alts": [
+
+                ],
+                "httpStatus": 200
+              },
+              {
+                "url": "https:\/\/www.whitehouse.gov\/sites\/whitehouse.gov\/files\/images\/Housing_Development_Toolkit%20f.2.pdf",
+                "alts": [
+
+                ],
+                "httpStatus": 200
+              },
+              {
+                "url": "https:\/\/www.seattletimes.com\/seattle-news\/politics\/seattle-upzones-27-neighborhood-hubs-passes-affordable-housing-requirements\/",
+                "alts": [
+                  {
+                    "type": 1,
+                    "url": "https:\/\/cdn.ampproject.org\/c\/s\/www.seattletimes.com\/seattle-news\/politics\/seattle-upzones-27-neighborhood-hubs-passes-affordable-housing-requirements\/?amp=1"
+                  }
+                ],
+                "httpStatus": 200
+              },
+              {
+                "url": "https:\/\/www.jchs.harvard.edu\/blog\/more-than-a-third-of-american-households-were-cost-burdened-last-year\/",
+                "alts": [
+
+                ],
+                "httpStatus": 200
+              },
+              {
+                "url": "https:\/\/www.rentcafe.com\/blog\/rental-market\/apartment-construction-is-finally-slowing-down-in-2018-after-a-6-year-upward-streak\/",
+                "alts": [
+
+                ],
+                "httpStatus": 200
+              },
+              {
+                "url": "http:\/\/livedenver.org\/",
+                "alts": [
+
+                ],
+                "httpStatus": 200
+              }
+            ],
+            "version": "0.3",
+            "generatedAt": 1556635326414
+          },
+          "isLockedPreviewOnly": false,
+          "metaDescription": "",
+          "totalClapCount": 23,
+          "sectionCount": 1,
+          "readingList": 0,
+          "topics": [
+
+          ]
+        },
+        "coverless": true,
+        "slug": "its-time-to-solve-the-affordable-housing-crisis",
+        "translationSourcePostId": "",
+        "translationSourceCreatorId": "",
+        "isApprovedTranslation": false,
+        "inResponseToPostId": "",
+        "inResponseToRemovedAt": 0,
+        "isTitleSynthesized": false,
+        "allowResponses": true,
+        "importedUrl": "",
+        "importedPublishedAt": 0,
+        "visibility": 0,
+        "uniqueSlug": "its-time-to-solve-the-affordable-housing-crisis-8deb03b504e2",
+        "previewContent": {
+          "bodyModel": {
+            "paragraphs": [
+              {
+                "name": "previewImage",
+                "type": 4,
+                "text": "",
+                "layout": 10,
+                "metadata": {
+                  "id": "1*sC-Tqeg4KnKOurKIujCwWA.jpeg",
+                  "originalWidth": 1199,
+                  "originalHeight": 627,
+                  "isFeatured": true
+                }
+              },
+              {
+                "name": "0201",
+                "type": 3,
+                "text": "It\u2019s Time to Solve the Affordable Housing Crisis",
+                "markups": [
+                  {
+                    "type": 1,
+                    "start": 0,
+                    "end": 48
+                  }
+                ],
+                "alignment": 1
+              },
+              {
+                "name": "21d9",
+                "type": 13,
+                "text": "Together, we can provide a wider, more diverse range\u2026",
+                "markups": [
+                  {
+                    "type": 2,
+                    "start": 13,
+                    "end": 16
+                  }
+                ],
+                "alignment": 1
+              }
+            ],
+            "sections": [
+              {
+                "startIndex": 0
+              }
+            ]
+          },
+          "isFullContent": false,
+          "subtitle": "Together, we can provide a wider, more diverse range of housing options at all price points"
+        },
+        "license": 0,
+        "inResponseToMediaResourceId": "",
+        "canonicalUrl": "",
+        "approvedHomeCollectionId": "4933e15b493e",
+        "newsletterId": "",
+        "webCanonicalUrl": "",
+        "mediumUrl": "",
+        "migrationId": "",
+        "notifyFollowers": true,
+        "notifyTwitter": false,
+        "notifyFacebook": false,
+        "responseHiddenOnParentPostAt": 0,
+        "isSeries": false,
+        "isSubscriptionLocked": false,
+        "seriesLastAppendedAt": 0,
+        "audioVersionDurationSec": 0,
+        "sequenceId": "",
+        "isNsfw": false,
+        "isEligibleForRevenue": false,
+        "isBlockedFromHightower": false,
+        "deletedAt": 0,
+        "lockedPostSource": 0,
+        "hightowerMinimumGuaranteeStartsAt": 0,
+        "hightowerMinimumGuaranteeEndsAt": 0,
+        "featureLockRequestAcceptedAt": 0,
+        "mongerRequestType": 1,
+        "layerCake": 0,
+        "socialTitle": "",
+        "socialDek": "",
+        "editorialPreviewTitle": "",
+        "editorialPreviewDek": "",
+        "curationEligibleAt": 0,
+        "type": "Post"
+      },
+      {
+        "id": "cfd1a69056fb",
+        "versionId": "71f7d1162b63",
+        "creatorId": "97d35ca792e3",
+        "homeCollectionId": "4933e15b493e",
+        "title": "The Future of Housing",
+        "detectedLanguage": "en",
+        "latestVersion": "71f7d1162b63",
+        "latestPublishedVersion": "71f7d1162b63",
+        "hasUnpublishedEdits": false,
+        "latestRev": 103,
+        "createdAt": 1551796110210,
+        "updatedAt": 1551883141299,
+        "acceptedAt": 0,
+        "firstPublishedAt": 1551815458518,
+        "latestPublishedAt": 1551883141299,
+        "vote": false,
+        "experimentalCss": "",
+        "displayAuthor": "",
+        "virtuals": {
+          "statusForCollection": "APPROVED",
+          "allowNotes": true,
+          "previewImage": {
+            "imageId": "1*1mRgpsjV7OC0HXEvOgX0AQ.jpeg",
+            "filter": "",
+            "backgroundSize": "",
+            "originalWidth": 1200,
+            "originalHeight": 628,
+            "strategy": "resample",
+            "height": 0,
+            "width": 0,
+            "focusPercentX": 50,
+            "focusPercentY": 43
+          },
+          "wordCount": 20,
+          "imageCount": 2,
+          "readingTime": 0.45880503144654,
+          "subtitle": "The state of the housing crisis and how policymakers can take steps to help meet demand",
+          "userPostRelation": {
+            "userId": "52f77b00a500",
+            "postId": "cfd1a69056fb",
+            "readAt": 1554402334097,
+            "readLaterAddedAt": 0,
+            "votedAt": 0,
+            "collaboratorAddedAt": 0,
+            "notesAddedAt": 0,
+            "subscribedAt": 0,
+            "lastReadSectionName": "5db1",
+            "lastReadVersionId": "71f7d1162b63",
+            "lastReadAt": 1554402332207,
+            "lastReadParagraphName": "49a1",
+            "lastReadPercentage": 1,
+            "viewedAt": 1557448789478,
+            "presentedCountInResponseManagement": 0,
+            "clapCount": 0,
+            "seriesUpdateNotifsOptedInAt": 0,
+            "queuedAt": 0,
+            "seriesFirstViewedAt": 0,
+            "presentedCountInStream": 8,
+            "seriesLastViewedAt": 0,
+            "audioProgressSec": 0
+          },
+          "publishedInCount": 1,
+          "usersBySocialRecommends": [
+
+          ],
+          "noIndex": false,
+          "recommends": 4,
+          "isBookmarked": false,
+          "tags": [
+            {
+              "slug": "housing",
+              "name": "Housing",
+              "postCount": 11914,
+              "metadata": {
+                "postCount": 11914,
+                "coverImage": {
+                  "id": "1*zwZAeBHIwRzEXVxjY5pWjA.jpeg",
+                  "originalWidth": 4427,
+                  "originalHeight": 2745,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "apartments",
+              "name": "Apartments",
+              "postCount": 3085,
+              "metadata": {
+                "postCount": 3085,
+                "coverImage": {
+                  "id": "1*cZ0xMKZhHTeCqo-zbIrk9g.png",
+                  "originalWidth": 1080,
+                  "originalHeight": 1080,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "policy",
+              "name": "Policy",
+              "postCount": 6674,
+              "metadata": {
+                "postCount": 6674,
+                "coverImage": {
+                  "id": "1*pNeeINtnGBj4ZMH3XFDilg.jpeg",
+                  "originalWidth": 8655,
+                  "originalHeight": 5776,
+                  "isFeatured": true,
+                  "focusPercentX": 40,
+                  "focusPercentY": 70
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "challenge",
+              "name": "Challenges",
+              "postCount": 0,
+              "metadata": {
+                "postCount": 0,
+                "coverImage": {
+                  "id": "1*JoEunezTwDM_Ksch9VAwKg.jpeg",
+                  "originalWidth": 4699,
+                  "originalHeight": 3133,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "solutions",
+              "name": "Solutions",
+              "postCount": 2296,
+              "metadata": {
+                "postCount": 2296,
+                "coverImage": {
+                  "id": "1*XA8XdgWGxWklK-hd9DQYbA.png",
+                  "originalWidth": 3804,
+                  "originalHeight": 2004,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            }
+          ],
+          "socialRecommendsCount": 0,
+          "responsesCreatedCount": 0,
+          "links": {
+            "entries": [
+
+            ],
+            "version": "0.3",
+            "generatedAt": 1551883141580
+          },
+          "isLockedPreviewOnly": false,
+          "metaDescription": "",
+          "totalClapCount": 55,
+          "sectionCount": 1,
+          "readingList": 0,
+          "topics": [
+
+          ]
+        },
+        "coverless": true,
+        "slug": "the-future-of-housing",
+        "translationSourcePostId": "",
+        "translationSourceCreatorId": "",
+        "isApprovedTranslation": false,
+        "inResponseToPostId": "",
+        "inResponseToRemovedAt": 0,
+        "isTitleSynthesized": false,
+        "allowResponses": true,
+        "importedUrl": "",
+        "importedPublishedAt": 0,
+        "visibility": 0,
+        "uniqueSlug": "the-future-of-housing-cfd1a69056fb",
+        "previewContent": {
+          "bodyModel": {
+            "paragraphs": [
+              {
+                "name": "previewImage",
+                "type": 4,
+                "text": "",
+                "layout": 10,
+                "metadata": {
+                  "id": "1*1mRgpsjV7OC0HXEvOgX0AQ.jpeg",
+                  "originalWidth": 1200,
+                  "originalHeight": 628,
+                  "isFeatured": true,
+                  "focusPercentX": 50,
+                  "focusPercentY": 43
+                }
+              },
+              {
+                "name": "3c36",
+                "type": 3,
+                "text": "The Future of Housing",
+                "markups": [
+
+                ],
+                "alignment": 1
+              },
+              {
+                "name": "400c",
+                "type": 13,
+                "text": "The state of the housing crisis and how policymakers can take steps to help meet\u2026",
+                "markups": [
+
+                ],
+                "alignment": 1
+              }
+            ],
+            "sections": [
+              {
+                "startIndex": 0
+              }
+            ]
+          },
+          "isFullContent": false,
+          "subtitle": "The state of the housing crisis and how policymakers can take steps to help meet demand"
+        },
+        "license": 0,
+        "inResponseToMediaResourceId": "",
+        "canonicalUrl": "",
+        "approvedHomeCollectionId": "4933e15b493e",
+        "newsletterId": "",
+        "webCanonicalUrl": "",
+        "mediumUrl": "",
+        "migrationId": "",
+        "notifyFollowers": true,
+        "notifyTwitter": false,
+        "notifyFacebook": false,
+        "responseHiddenOnParentPostAt": 0,
+        "isSeries": false,
+        "isSubscriptionLocked": false,
+        "seriesLastAppendedAt": 0,
+        "audioVersionDurationSec": 0,
+        "sequenceId": "",
+        "isNsfw": false,
+        "isEligibleForRevenue": false,
+        "isBlockedFromHightower": false,
+        "deletedAt": 0,
+        "lockedPostSource": 0,
+        "hightowerMinimumGuaranteeStartsAt": 0,
+        "hightowerMinimumGuaranteeEndsAt": 0,
+        "featureLockRequestAcceptedAt": 0,
+        "mongerRequestType": 1,
+        "layerCake": 0,
+        "socialTitle": "",
+        "socialDek": "",
+        "editorialPreviewTitle": "",
+        "editorialPreviewDek": "",
+        "curationEligibleAt": 0,
+        "type": "Post"
+      }
+    ],
+    "tagName": null,
+    "writerNames": [
+
+    ],
+    "references": {
+      "User": {
+        "97d35ca792e3": {
+          "userId": "97d35ca792e3",
+          "name": "We Are Apartments",
+          "username": "WeAreApartments",
+          "createdAt": 1550608594702,
+          "imageId": "1*kFaVo2Nv3hdO8oX80rlTyg.png",
+          "backgroundImageId": "",
+          "bio": "",
+          "twitterScreenName": "",
+          "facebookAccountId": "",
+          "allowNotes": 1,
+          "mediumMemberAt": 0,
+          "isNsfw": false,
+          "isWriterProgramEnrolled": true,
+          "isQuarantined": false,
+          "type": "User"
+        }
+      },
+      "Collection": {
+        "4933e15b493e": {
+          "id": "4933e15b493e",
+          "name": "We Are Apartments",
+          "slug": "we-are-apartments",
+          "tags": [
+            "CHALLENGES",
+            "SOLUTIONS",
+            "IMPACT",
+            "PEOPLE"
+          ],
+          "creatorId": "97d35ca792e3",
+          "description": "In communities across the country, apartments open doors. Read about the challenges, solutions and people working to make apartments available and affordable.",
+          "shortDescription": "In communities across the country, apartments open doors.",
+          "image": {
+            "imageId": "1*kFaVo2Nv3hdO8oX80rlTyg.png",
+            "filter": "",
+            "backgroundSize": "",
+            "originalWidth": 122,
+            "originalHeight": 121,
+            "strategy": "resample",
+            "height": 0,
+            "width": 0
+          },
+          "metadata": {
+            "followerCount": 19,
+            "activeAt": 1558635715745
+          },
+          "virtuals": {
+            "permissions": {
+              "canPublish": false,
+              "canPublishAll": false,
+              "canRepublish": false,
+              "canRemove": false,
+              "canManageAll": false,
+              "canSubmit": false,
+              "canEditPosts": false,
+              "canAddWriters": false,
+              "canViewStats": false,
+              "canSendNewsletter": false,
+              "canViewLockedPosts": false,
+              "canViewCloaked": false,
+              "canEditOwnPosts": false,
+              "canBeAssignedAuthor": false,
+              "canEnrollInHightower": false,
+              "canLockPostsForMediumMembers": false,
+              "canLockOwnPostsForMediumMembers": false
+            },
+            "isSubscribed": true,
+            "isNewsletterSubscribed": true,
+            "isEnrolledInHightower": false,
+            "isEligibleForHightower": false
+          },
+          "logo": {
+            "imageId": "1*NZ2Qi7Rove6gBzRLGFZmvg.jpeg",
+            "filter": "",
+            "backgroundSize": "",
+            "originalWidth": 853,
+            "originalHeight": 151,
+            "strategy": "resample",
+            "height": 0,
+            "width": 0
+          },
+          "collectionMastheadId": "a653990e7628",
+          "sections": [
+            {
+              "type": 2,
+              "collectionHeaderMetadata": {
+                "title": "We Are Apartments",
+                "description": "In communities across the country, apartments open doors. Read about the challenges, solutions and people working to make apartments available and affordable.",
+                "backgroundImage": {
+                  "id": "1*uV1D5jzKPtVyqnMy633roA.jpeg",
+                  "originalWidth": 3126,
+                  "originalHeight": 1564
+                },
+                "logoImage": {
+
+                },
+                "alignment": 1,
+                "layout": 6
+              }
+            },
+            {
+              "type": 1,
+              "postListMetadata": {
+                "source": 1,
+                "layout": 2,
+                "number": 3,
+                "postIds": [
+
+                ]
+              }
+            },
+            {
+              "type": 1,
+              "postListMetadata": {
+                "source": 1,
+                "layout": 4,
+                "number": 3,
+                "postIds": [
+
+                ]
+              }
+            },
+            {
+              "type": 1,
+              "postListMetadata": {
+                "source": 1,
+                "layout": 6,
+                "number": 3,
+                "postIds": [
+
+                ]
+              }
+            }
+          ],
+          "favicon": {
+            "imageId": "",
+            "filter": "",
+            "backgroundSize": "",
+            "originalWidth": 0,
+            "originalHeight": 0,
+            "strategy": "resample",
+            "height": 0,
+            "width": 0
+          },
+          "colorPalette": {
+            "defaultBackgroundSpectrum": {
+              "colorPoints": [
+                {
+                  "color": "#FF02B875",
+                  "point": 0
+                },
+                {
+                  "color": "#FF00AB6B",
+                  "point": 0.1
+                },
+                {
+                  "color": "#FF1C9963",
+                  "point": 0.2
+                },
+                {
+                  "color": "#FF092E20",
+                  "point": 1
+                }
+              ],
+              "backgroundColor": "#FFFFFFFF"
+            },
+            "highlightSpectrum": {
+              "colorPoints": [
+                {
+                  "color": "#FFFFFFFF",
+                  "point": 0
+                },
+                {
+                  "color": "#FFE9FDF0",
+                  "point": 0.1
+                },
+                {
+                  "color": "#FFE2FAEE",
+                  "point": 0.2
+                },
+                {
+                  "color": "#FFADFFCF",
+                  "point": 0.6
+                },
+                {
+                  "color": "#FF7DFFB3",
+                  "point": 1
+                }
+              ],
+              "backgroundColor": "#FFFFFFFF"
+            }
+          },
+          "navItems": [
+            {
+              "type": 1,
+              "title": "Challenges",
+              "tagSlug": "challenges",
+              "url": "https:\/\/medium.com\/we-are-apartments\/tagged\/challenges",
+              "source": "tagSlug"
+            },
+            {
+              "type": 1,
+              "title": "Solutions",
+              "tagSlug": "solutions",
+              "url": "https:\/\/medium.com\/we-are-apartments\/tagged\/solutions",
+              "source": "tagSlug"
+            },
+            {
+              "type": 1,
+              "title": "Impact",
+              "tagSlug": "impact",
+              "url": "https:\/\/medium.com\/we-are-apartments\/tagged\/impact",
+              "source": "tagSlug"
+            },
+            {
+              "type": 1,
+              "title": "People",
+              "tagSlug": "people",
+              "url": "https:\/\/medium.com\/we-are-apartments\/tagged\/people",
+              "source": "tagSlug"
+            }
+          ],
+          "colorBehavior": 1,
+          "instantArticlesState": 0,
+          "acceleratedMobilePagesState": 0,
+          "ampLogo": {
+            "imageId": "",
+            "filter": "",
+            "backgroundSize": "",
+            "originalWidth": 0,
+            "originalHeight": 0,
+            "strategy": "resample",
+            "height": 0,
+            "width": 0
+          },
+          "header": {
+            "title": "We Are Apartments",
+            "description": "In communities across the country, apartments open doors. Read about the challenges, solutions and people working to make apartments available and affordable.",
+            "backgroundImage": {
+              "id": "1*uV1D5jzKPtVyqnMy633roA.jpeg",
+              "originalWidth": 3126,
+              "originalHeight": 1564
+            },
+            "logoImage": {
+
+            },
+            "alignment": 1,
+            "layout": 6
+          },
+          "type": "Collection"
+        }
+      }
+    },
+    "paging": {
+      "previous": {
+        "limit": 10,
+        "from": "1558635102876"
+      },
+      "next": {
+        "limit": 10,
+        "to": "1551815458518"
+      }
+    }
+  },
+  "v": 3,
+  "b": "37630-65ee9d9"
 }
