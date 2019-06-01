@@ -46,6 +46,13 @@
         a.logo.logo-nmhc(href="http://www.nmhc.org/",target="_new")
         a.logo.logo-naa(href="https://www.naahq.org/",target="_new")
       .clear
+    .social
+      .inner
+        .copy Connect with us
+        a.icon.icon-facebook(href="https://www.facebook.com/WeAreApartments",target="_new")
+          i.mdi.mdi-facebook
+        a.icon.icon-twitter(href="https://twitter.com/weareapartments",target="_new")
+          i.mdi.mdi-twitter
 </template>
 
 <script>
@@ -146,6 +153,22 @@ json('../assets/fonts.json')
   > .lower
     background-color darkgray
     padding 60px 0
+    > .social
+      color white
+      max-width 1200px
+      margin 10px auto
+      > .inner
+        float right
+        > .copy, > .icon
+          display inline-block
+          margin-left 10px
+        > .icon
+          text-align center
+          background-color white
+          width 1.6rem
+          height 1.6rem
+          color darkgray
+          border-radius 50%
     &.dark
       background-color black
     > .inner
