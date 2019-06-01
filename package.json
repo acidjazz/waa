@@ -15,9 +15,11 @@
     "development": "yarn generate;node operations/development.js",
     "staging": "yarn generate;node operations/staging.js",
     "production": "yarn generate;node operations/production.js",
+    "mdi": "cp node_modules/@mdi/font/css/materialdesignicons.min.css static/mdi.css; cp node_modules/@mdi/font/fonts/* static/fonts/.; cp node_modules/@mdi/font/css/materialdesignicons.min.css.map static/.",
     "test": "echo No tests yet"
   },
   "dependencies": {
+    "@mdi/font": "^3.6.95",
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/feed": "^1.1.0",
     "@nuxtjs/google-analytics": "^2.2.0",
@@ -26,7 +28,7 @@
     "coveralls": "^3.0",
     "node-xlsx": "^0.12.0",
     "numeraljs": "^1.5.6",
-    "nuxt": "^2.3",
+    "nuxt": "^2.8",
     "ordinal": "^1.0.2",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
