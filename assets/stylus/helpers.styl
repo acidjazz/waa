@@ -1,0 +1,51 @@
+
+bigstone = #35434A
+bastille = #2A2B32
+shark = #34353D
+
+.bg-bigstone
+  background-color #35434a
+
+.bg-lined
+  @apply bg-bigstone
+  background repeating-linear-gradient(
+    -45deg,
+    shark,
+    shark 4px,
+    bastille 4px,
+    bastille 8px
+  )
+
+.w-fullbleed
+  width calc(100vw + 1rem)
+.h-fullbleed
+  height calc(100vh + 1rem)
+
+.scale-30
+  transform scale(30)
+  transition transform 0.5s ease-in-out 0s
+
+.scale-1
+  transform scale(1)
+  transition transform 0.3s ease-in-out 0s
+
+.tran-size-delay
+  transition width 0s linear 0.6s, height 0s linear 0.6s
+
+.icon-180
+  transform rotate(90deg)
+  &:hover
+    transform rotate(90deg) scale(1.1)
+.icon-0
+  transform rotate(0deg)
+  &:hover
+    transform rotate(0deg) scale(1.1)
+
+.icon-180, .icon-0
+  transition transform 0.3s ease-in-out
+
+.tran-colors
+  transition background 0.5s ease-in-out 0s, color 0.5s ease-in-out 0s
+
+// cubic-bezier(.87,-0.41,.19,1.44)
+
