@@ -62,15 +62,16 @@ export default {
   ** Global CSS
   */
   css: [
+    // '@/static/bulma.css',
     '@/assets/css/tailwind.css',
     '@/assets/stylus/main.styl',
-    '@/static/bulma.css',
     // '@/static/mdi.css',
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '@/plugins/countup.client.js',
   ],
   /*
   ** Nuxt.js modules
@@ -83,6 +84,9 @@ export default {
   ** Build configuration
   */
   build: {
+    transpile: [
+      'countup.js',
+    ],
     extractCSS: true,
     postcss: {
       plugins: [
