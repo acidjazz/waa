@@ -93,3 +93,5 @@ static/bulma.css
 static/mdi.css
 static/materialdesignicons.min.css.map
 static/fonts/material*
+
+data/*

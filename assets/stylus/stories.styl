@@ -1,0 +1,44 @@
+.latest_stories
+  max-width 1100px
+  margin auto
+
+a.story
+  @apply block relative no-underline mr-4 mb-4
+  width (33.3333% - 2em)
+  height 400px
+  &:last-child
+    mr-0
+  &:hover
+    .story_header
+      height 220px
+    .story_header_description
+      transform translate(0, 0)
+      opacity 1
+
+.story.story_featured
+  @apply w-full
+  .story-header
+    width 50%
+
+.story_image, .story_header
+  transition height .3s ease-in
+
+.story_image
+  height 400px
+  @apply overflow-hidden
+  img
+    @apply object-cover w-full h-full
+    object-position 90% 100%
+
+.story_header_title
+  @apply pb-4
+.story_header_description
+  transition opacity 0.3s ease-in .1s, transform 0.3s ease-in 0.1s
+  transform translate(0, 10px)
+  opacity 0
+
+.story_header
+  @apply absolute bottom-0 left-0 right-0 text-white overflow-hidden p-4 bg-robins-egg
+  height 130px
+
+

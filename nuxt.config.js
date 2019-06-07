@@ -72,6 +72,7 @@ export default {
   */
   plugins: [
     '@/plugins/countup.client.js',
+    '@/plugins/viewport.client.js',
   ],
   /*
   ** Nuxt.js modules

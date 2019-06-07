@@ -1,0 +1,24 @@
+.viewport-slide-y
+  opacity 0
+  transform translate(0, -20px)
+  &.in-viewport
+    animation slide-in-top 0.4s ease-in-out 0s both
+  &.below-viewport:not(.in-viewport)
+    animation slide-out-top 0.4s ease-in-out 0s both
+  &.above-viewport:not(.in-viewport)
+    animation slide-out-bottom 0.4s ease-in-out 0s both
+
+.viewport-zoom
+  opacity 0
+  transform scale(0.6)
+  &.in-viewport
+    animation zoom-in 0.4s ease-in-out 0s both
+  &.below-viewport:not(.in-viewport)
+    animation zoom-out 0.4s ease-in-out 0s both
+  &.above-viewport:not(.in-viewport)
+    animation zoom-out 0.4s ease-in-out 0s both
+
+for i in 1..20
+  .viewport-delay-{i}
+    animation-delay unit(0.1 * i, 's') !important
+

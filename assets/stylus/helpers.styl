@@ -4,6 +4,11 @@
 .text-bigstone
   color bigstone
 
+.bg-robins-egg
+  background-color robins-egg
+.text-robins-egg
+  color robins-egg
+
 .bg-mischka
   background-color mischka
 .text-mischka
@@ -52,9 +57,9 @@
 
 .waa-button
   cursor pointer
-  @apply px-6 py-3 bg-white text-black rounded font-bold no-underline uppercase
+  @apply px-6 py-3 bg-white text-black rounded font-bold no-underline uppercase inline-block
   transition background-color 0.5s ease 0s, transform 0.2s ease 0s
-  &:hover
+  &:hover, &:hover.in-viewport
     transform scale(1.05)
 
 .waa-button-cyan

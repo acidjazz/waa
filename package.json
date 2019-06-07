@@ -25,7 +25,8 @@
     "pug-plain-loader": "^1.0.0",
     "stylus": "acidjazz/stylus#dev",
     "stylus-loader": "^3.0.2",
-    "vue-countup-v2": "^3.0.1"
+    "vue-countup-v2": "^3.0.1",
+    "vue-in-viewport-directive": "^2.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^8.6.4",
