@@ -25,7 +25,7 @@ export default {
   },
   data () {
     return {
-      basePDF: 'https://url-to-pdf-api.herokuapp.com/api/render?emulateScreenMedia=false&url=https://weareapartments.org',
+      basePDF: 'https://pdf-api.weareapartments.org/api/render?emulateScreenMedia=false&url=https://weareapartments.org',
     }
   },
 }
@@ -37,7 +37,7 @@ json('../assets/fonts.json')
 @import '../assets/stylus/mixins.styl'
 
 #CustomPDF
-  padding 60px 0 
+  padding 60px 0
   > .box
     margin auto
     width 520px
