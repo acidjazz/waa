@@ -80,14 +80,12 @@ export default {
   modules: [
     ['@nuxtjs/google-tag-manager', { id: 'GTM-NP9HJPR', pageTracking: false }],
     'nuxt-purgecss',
+    ['@nuxtjs/pwa', { manifest: false }],
   ],
   /*
   ** Build configuration
   */
   build: {
-    transpile: [
-      'countup.js',
-    ],
     extractCSS: true,
     postcss: {
       plugins: [

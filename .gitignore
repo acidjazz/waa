@@ -15,6 +15,9 @@ pids
 # vim
 *.swp
 
+# service workers
+*.sw
+
 # osx
 .DS_Store
 

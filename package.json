@@ -15,17 +15,18 @@
   "dependencies": {
     "@mdi/font": "^3.6.95",
     "@nuxtjs/google-tag-manager": "^2.2.0",
+    "@nuxtjs/pwa": "^3.0.0-beta.16",
     "bulma": "^0.7.5",
     "countup.js": "^2.0.4",
     "cross-env": "^5.2.0",
     "node-sass": "^4.12.0",
-    "nuxt": "^2.4.0",
+    "nuxt": "^2.8.1",
     "nuxt-purgecss": "^0.2.1",
     "pug": "^2.0.3",
     "pug-plain-loader": "^1.0.0",
     "stylus": "acidjazz/stylus#dev",
     "stylus-loader": "^3.0.2",
-    "vue-countup-v2": "^3.0.1",
+    "vue-countup-v2": "^4.0.0",
     "vue-in-viewport-directive": "^2.0.0"
   },
   "devDependencies": {

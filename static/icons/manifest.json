@@ -1,5 +1,7 @@
 {
     "name": "We Are Apartments",
+    "lang": "en",
+    "short_name": "waa",
     "icons": [
         {
             "src": "/icons/android-chrome-192x192.png",
