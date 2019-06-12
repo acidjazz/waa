@@ -13,7 +13,7 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "yarn lint",
     "development": "yarn generate;node operations/development.js",
-    "staging": "yarn generate;node operations/staging.js",
+    "staging": "yarn mdi;yarn generate;node operations/staging.js",
     "production": "yarn generate;node operations/production.js",
     "mdi": "cp node_modules/@mdi/font/css/materialdesignicons.min.css static/mdi.css; cp node_modules/@mdi/font/fonts/* static/fonts/.; cp node_modules/@mdi/font/css/materialdesignicons.min.css.map static/.",
     "test": "echo No tests yet"
