@@ -5,7 +5,8 @@ let config = {
   description: 'America needs to build more than 4.6 million new apartments by 2030 through bold, innovative solutions that will help meet America’s housing shortfall.',
   url: 'https://weareapartments.org',
   image: '/share.jpg',
-  keywords: 'affordable, data, apartments, census, calculator'
+  keywords: 'affordable, data, apartments, census, calculator',
+  google_client_id: '207669859559-qjcp4bc61omt9sp2hv9to3gukuqreno6.apps.googleusercontent.com',
 }
 
 export default {
