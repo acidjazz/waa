@@ -8,15 +8,15 @@
     source(src="/condos.mp4",type="video/mp4")
   .home-hero-outer.relative.w-screen.h-screen.bg-tranblue.z-10
     .h-screen.flex.flex-col.justify-center.items-center.m-auto.text-center
-      .text-white.text.mb-10 WELCOME TO WE ARE APARTMENTS.
-      .text-white.text-4xl(v-in-viewport).viewport-slide-y The country needs
+      .text-white.text.mb-10 WE ARE APARTMENTS.
+      .text-white.text-3xl(v-in-vp).vp-y The country needs
         span &nbsp;
         no-ssr
           VueCountUp(:endVal="endVal",:options="options")
-        span m new apartments<br /> by 2030.  How many are needed near you?
-      .buttons.mt-4
-        nuxt-link(to="/vision",v-in-viewport).waa-button.waa-button-cyan.mr-4.viewport-zoom.viewport-delay-6 OUR VISION
-        nuxt-link(to="/data",v-in-viewport).waa-button.viewport-zoom.viewport-delay-7 THE DATA
+        span million new apartments<br /> by 2030.  How many are needed near you?
+      .buttons.mt-10
+        nuxt-link(to="/vision",v-in-vp).waa-button.vp-z.mr-4.vp-d-7 our vision
+        nuxt-link(to="/data",v-in-vp).waa-button.vp-z.vp-d-7 the data
   ScrollDown
 </template>
 

@@ -44,7 +44,7 @@ export default {
     ],
 
     link: [
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Rubik:100,200,300,400,500,700,900' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Oswald&display=swap' },
       { rel: 'stylesheet', href: '/mdi.css' },
 
       { rel: 'apple-touch-icon', sizes: '180x180', href: '/icons/apple-touch-icon.png' },
@@ -63,10 +63,7 @@ export default {
   ** Global CSS
   */
   css: [
-    // '@/static/bulma.css',
-    '@/assets/css/tailwind.css',
     '@/assets/stylus/main.styl',
-    // '@/static/mdi.css',
   ],
   /*
   ** Plugins to load before mounting the App
@@ -80,20 +77,15 @@ export default {
   */
   modules: [
     ['@nuxtjs/google-tag-manager', { id: 'GTM-NP9HJPR', pageTracking: false }],
-    'nuxt-purgecss',
     ['@nuxtjs/pwa', { manifest: false }],
+  ],
+  devModules: [
+    '@nuxtjs/tailwindcss',
   ],
   /*
   ** Build configuration
   */
   build: {
-    extractCSS: true,
-    postcss: {
-      plugins: [
-        require('tailwindcss'),
-        require('autoprefixer'),
-      ],
-    },
     extend(config, ctx) {
     }
   }

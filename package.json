@@ -9,20 +9,18 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "bulma": "node-sass --output-style compressed assets/sass/bulma.sass > static/bulma.css",
     "mdi": "cp node_modules/@mdi/font/css/materialdesignicons.min.css static/mdi.css; cp node_modules/@mdi/font/fonts/* static/fonts/.; cp node_modules/@mdi/font/css/materialdesignicons.min.css.map static/."
   },
   "dependencies": {
     "@mdi/font": "^3.6.95",
     "@nuxtjs/google-tag-manager": "^2.2.0",
     "@nuxtjs/pwa": "^3.0.0-beta.16",
-    "bulma": "^0.7.5",
+    "@nuxtjs/tailwindcss": "^1.1.0",
     "countup.js": "^2.0.4",
     "cross-env": "^5.2.0",
     "googleapis": "^40.0.0",
     "node-sass": "^4.12.0",
     "nuxt": "^2.8.1",
-    "nuxt-purgecss": "^0.2.1",
     "pug": "^2.0.3",
     "pug-plain-loader": "^1.0.0",
     "stylus": "acidjazz/stylus#dev",
@@ -31,8 +29,7 @@
     "vue-in-viewport-directive": "^2.0.0"
   },
   "devDependencies": {
-    "autoprefixer": "^8.6.4",
-    "nodemon": "^1.18.9",
-    "tailwindcss": "^1.0.3"
+    "autoprefixer": "^9.6.0",
+    "nodemon": "^1.18.9"
   }
 }

@@ -1,4 +1,3 @@
-
 .bg-bigstone
   background-color bigstone
 .text-bigstone
@@ -21,8 +20,8 @@
     shark,
     shark 4px,
     bastille 4px,
-    bastille 8px
-  )
+    bastille 8px)
+
 .bg-tranblue
   background linear-gradient(-67deg, rgba(#0099ff, 0.7), rgba(#00cccc, 0.7))
 
@@ -57,24 +56,8 @@
 
 .waa-button
   cursor pointer
-  @apply px-6 py-3 bg-white text-black rounded font-bold no-underline uppercase inline-block
+  @apply px-6 py-3 text-white rounded-full border border-white
   transition background-color 0.5s ease 0s, transform 0.2s ease 0s
   &:hover, &:hover.in-viewport
+    @apply bg-white text-black
     transform scale(1.05)
-
-.waa-button-cyan
-  @apply text-white
-  background-color rgba(cyan, 0.2)
-  border 1px solid rgba(cyan, 0.6)
-  &:hover
-    @apply text-white
-    background-color rgba(cyan, 1)
-
-.waa-button-trans
-  @apply text-white
-  background-color rgba(white, 0.2)
-  border 1px solid rgba(white, 0.6)
-  &:hover
-    @apply text-black
-    background-color rgba(white, 1)
-

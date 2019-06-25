@@ -1,15 +1,15 @@
 <template lang="pug">
 #waa
   .container
-    HeaderTitle
+    HeaderNav
     HeaderMenu
     nuxt
 </template>
 
 <script>
-import HeaderTitle from '@/components/header/HeaderTitle'
+import HeaderNav from '@/components/header/HeaderNav'
 import HeaderMenu from '@/components/header/HeaderMenu'
 export default {
-  components: { HeaderTitle, HeaderMenu },
+  components: { HeaderNav, HeaderMenu },
 }
 </script>

@@ -1,18 +1,18 @@
-.ani-slide-in-left
+.ani-sil
   animation slide-in-left 0.2s ease 0s both
   &.is-closing
     animation-delay 0s !important
     animation slide-out-left 0.2s ease 0s both
 
-.ani-slide-in-right
+.ani-sir
   animation slide-in-right 0.2s ease 0s both
   &.is-closing
     animation-delay 0s !important
     animation slide-out-right 0.2s ease 0s both
 
-.ani-slide-in-top
+.ani-sit
   animation slide-in-top 0.2s ease 0s both
-.ani-slide-in-bottom
+.ani-sib
   animation slide-in-bottom 0.2s ease 0s both
 
 .ani-fade-in
@@ -25,7 +25,7 @@
 .ani-zoom-out
   animation zoom-out 0.6s ease 0s both
 
-.ani-slide-in-left, .ani-slide-in-top, .ani-slide-in-right, .ani-zoom-in, .ani-fade-in, .ani-slide-in-top, .ani-slide-in-bottom
+.ani-sil, .ani-sit, .ani-sir, .ani-zoom-in, .ani-fade-in, .ani-sit, .ani-sib
   for i in 1..20
-    &.ani-delay-{i}
+    &.ani-d-{i}
       animation-delay unit(0.05 * i, 's')

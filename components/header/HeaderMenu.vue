@@ -1,5 +1,5 @@
 <template lang="pug">
-.header-menu(:class="state")
+.header-menu(:class="[state, 'sm:block', 'lg:hidden', 'md:hidden', 'xl:hidden']")
   .header-menu-blue(:class="state")
   .header-menu-inner(:class="state")
     .header-menu-swap(:class="state",@click="swap")
