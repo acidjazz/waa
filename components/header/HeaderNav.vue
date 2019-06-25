@@ -5,16 +5,15 @@
       nuxt-link(to="/").font-os.text-2xl.flex
         .mr-1
           i.mdi.mdi-check-bold.text-flamingo.ani-sir.ani-d-8
-          i.mdi.mdi-check-bold.text-turq.-ml-4.ani-sir.ani-d-9
+          i.mdi.mdi-check-bold.text-scooter.-ml-4.ani-sir.ani-d-9
         .ani-sir.ani-d-10 WE ARE APARTMENTS
       .header-nav-menu.flex.justify-end.ani-sil.ani-d-10
-        nuxt-link(
+        nuxt-link.py-2.px-4.mr-1.rounded-full.hover-tran-bg(
           v-for="item, index in menu",
           :key="index",
           :to="item.to",
-          class="hover:bg-white hover:text-black").py-2.px-4.rounded-full {{ item.name }}
+          class="hover:bg-white hover:text-black") {{ item.name }}
 </template>
-
 
 <script>
 export default {

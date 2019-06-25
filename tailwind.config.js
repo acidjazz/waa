@@ -14,7 +14,7 @@ module.exports = {
       white: '#ffffff',
       black: '#000000',
       flamingo: '#f85a20',
-      turq: '#56d7f7',
+      scooter: '#29d2ec',
     },
   },
   variants: {},

@@ -1,5 +1,5 @@
 <template lang="pug">
-a.story(:href="link(story)",target="_new",v-in-vp,:class="`vp-d-${index}`").vp-y
+a.story(:href="link(story)",target="_new",v-in-vp,:class="`vp-d-${index+2}`").vp-y
   .story_image
     img(:src="thumbnail(story)")
   .story_header

@@ -56,8 +56,11 @@
 
 .waa-button
   cursor pointer
-  @apply px-6 py-3 text-white rounded-full border border-white
-  transition background-color 0.5s ease 0s, transform 0.2s ease 0s
-  &:hover, &:hover.in-viewport
-    @apply bg-white text-black
+  @apply inline-block px-6 py-3 text-white rounded-full border border-white hover-tran-bg
+  &:hover
+    @apply bg-black
     transform scale(1.05)
+
+.hover-tran-bg
+  transition background-color 0.5s ease 0s
+

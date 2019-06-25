@@ -8,6 +8,29 @@
   &.above-viewport:not(.in-viewport)
     animation slide-out-bottom 0.4s ease-in-out 0s both
 
+.vp-r
+  opacity 0
+  transform translate(0, -20px)
+  &.in-viewport
+    animation slide-in-right 0.4s ease-in-out 0s both
+  &.below-viewport:not(.in-viewport)
+    animation slide-out-right 0.4s ease-in-out 0s both
+  &.above-viewport:not(.in-viewport)
+    animation slide-out-right 0.4s ease-in-out 0s both
+
+.vp-r-f
+  opacity 0
+  transform translate(0, -100%)
+  &.in-viewport
+    animation slide-in-right-full 0.4s ease-in-out 0s both
+  &.below-viewport:not(.in-viewport)
+    animation slide-out-right-full 0.4s ease-in-out 0s both
+  &.above-viewport:not(.in-viewport)
+    animation slide-out-right-full 0.4s ease-in-out 0s both
+
+
+
+
 .vp-z
   opacity 0
   transform scale(0.8)

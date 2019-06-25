@@ -1,9 +1,8 @@
 <template lang="pug">
 #waa
-  .container
-    HeaderNav
-    HeaderMenu
-    nuxt
+  HeaderNav
+  HeaderMenu
+  nuxt
 </template>
 
 <script>

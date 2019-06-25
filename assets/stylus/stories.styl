@@ -1,6 +1,3 @@
-.latest_stories
-  max-width 1100px
-  margin auto
 
 a.story
   @apply block relative no-underline mr-4 mb-4
@@ -21,7 +18,7 @@ a.story
     width 50%
 
 .story_image, .story_header
-  transition height .3s ease-in
+  transition height .4s ease-in-out
 
 .story_image
   height 400px
@@ -33,12 +30,12 @@ a.story
 .story_header_title
   @apply pb-4
 .story_header_description
-  transition opacity 0.3s ease-in .1s, transform 0.3s ease-in 0.1s
+  transition opacity .3s linear .1s, transform .4s linear 0s
   transform translate(0, 10px)
   opacity 0
 
 .story_header
-  @apply absolute bottom-0 left-0 right-0 text-white overflow-hidden p-4 bg-robins-egg
+  @apply absolute bottom-0 left-0 right-0 text-white overflow-hidden p-4 bg-scooter
   height 130px
 
 
