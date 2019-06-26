@@ -1,9 +1,8 @@
 <template lang="pug">
 .page.page-home
   HomeHero
-  br
   LatestArticles(:limit="3")
-  br
+  TheDemand
   br
   br
   br
@@ -47,7 +46,8 @@
 <script>
 import HomeHero from '@/components/home/HomeHero'
 import LatestArticles from '@/components/articles/LatestArticles'
+import TheDemand from '@/components/home/TheDemand'
 export default {
-  components: { HomeHero, LatestArticles },
+  components: { HomeHero, LatestArticles, TheDemand },
 }
 </script>

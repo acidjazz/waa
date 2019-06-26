@@ -1,3 +1,4 @@
+require('dotenv').config()
 import pkg from './package'
 
 let config = {
@@ -11,6 +12,7 @@ let config = {
 
 export default {
   mode: 'universal',
+  env: process.env,
   /*
   ** Headers of the page
   */

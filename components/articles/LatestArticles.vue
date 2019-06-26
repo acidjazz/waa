@@ -1,12 +1,12 @@
 <template lang="pug">
-.bg-white.mr-10(v-in-vp).vp-r-f
+.bg-white.my-10.mr-10(v-in-vp).vp-r-f
   .-mr-10.py-20.px-10
     .container.mx-auto
       nuxt-link.block.font-os.ml-3.mb-4(to="/articles") ARTICLES
       .block.text-3xl.ml-3.mb-6 Featured articles on
         span &nbsp;
         a.underline(href="https://medium.com/@WeAreApartments",target="_new") Medium.
-      .articles.flex.items-center.justify-center.flex-wrap.mb-4
+      .articles.flex.items-center.justify-center.flex-wrap.mb-4.mr-10
         MediumArticle(v-for="item, index in articles", :article="item",:key="index",:index="index+1")
 </template>
 
