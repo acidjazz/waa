@@ -28,8 +28,15 @@
   &.above-viewport:not(.in-viewport)
     animation slide-out-right-full 0.4s ease-in-out 0s both
 
-
-
+.vp-l-f
+  opacity 0
+  transform translate(0, -100%)
+  &.in-viewport
+    animation slide-in-left-full 0.4s ease-in-out 0s both
+  &.below-viewport:not(.in-viewport)
+    animation slide-out-left-full 0.4s ease-in-out 0s both
+  &.above-viewport:not(.in-viewport)
+    animation slide-out-left-full 0.4s ease-in-out 0s both
 
 .vp-z
   opacity 0
