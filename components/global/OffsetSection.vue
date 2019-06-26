@@ -1,6 +1,8 @@
+
+
 <template lang="pug">
-.bg-white.my-10(v-in-vp,:class="{'mr-10 vp-r-f': side == 'left', 'ml-10 vp-l-f': side == 'right'}")
-  .py-20.px-10(:class="{'-mr-10': side == 'left', '-ml-10': side == 'right'}")
+.bg-white.my-10(v-in-vp,:class="outer_cls")
+  .py-20.px-10(:class="inner_cls")
     .container.mx-auto
       slot
 </template>
@@ -13,7 +15,11 @@ export default {
       required: false,
       default: 'left',
     }
-  }
+  },
+  computed: {
+    outer_cls () { return side === 'left' ? 'mr-10 vp-r-f' : 'ml-10 vp-l-f' },
+    inner_cls () { return side === 'left' ? '-mr-10' : '-ml-10'},
+  },
 }
 </script>
 
