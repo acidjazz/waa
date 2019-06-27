@@ -15,9 +15,8 @@ OffsetSection(side="right")
 import OffsetSection from '@/components/global/OffsetSection'
 import DemandChart from '@/components/charts/DemandChart'
 import inViewport from 'vue-in-viewport-mixin'
-import sheets from '@/mixins/sheets'
 export default {
-  mixins: [ inViewport, sheets ],
+  mixins: [ inViewport ],
   components: { OffsetSection, DemandChart },
   data () {
     return {

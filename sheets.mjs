@@ -8,20 +8,16 @@
  * Distributed under terms of the APACHE license.
  */
 
-// require('dotenv').config()
-//
-
-import ranges from './ranges.mjs'
-import google from 'googleapis'
 import fs from 'fs'
-import env from 'dotenv'
+import google from 'googleapis'
 
-env.config()
+import pkg from './package.json'
+import ranges from './ranges.mjs'
 
-const gs = google.google.sheets({version: 'v4', auth: process.env.apiKey})
+const gs = google.google.sheets({version: 'v4', auth: pkg.cfg.apiKey})
 
 gs.spreadsheets.values.batchGet({
-  spreadsheetId: process.env.sheetId,
+  spreadsheetId: pkg.cfg.sheetId,
   ranges: Object.values(ranges),
 }, (err, res) => {
   if (err) return console.log(err)

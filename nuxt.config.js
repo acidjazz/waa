@@ -1,27 +1,16 @@
-require('dotenv').config()
 import pkg from './package'
-
-let config = {
-  title: 'We Are Apartments: Learn about the demand for apartments in your area',
-  description: 'America needs to build more than 4.6 million new apartments by 2030 through bold, innovative solutions that will help meet America’s housing shortfall.',
-  url: 'https://weareapartments.org',
-  image: '/share.jpg',
-  keywords: 'affordable, data, apartments, census, calculator',
-  google_client_id: '207669859559-qjcp4bc61omt9sp2hv9to3gukuqreno6.apps.googleusercontent.com',
-}
-
 export default {
   mode: 'universal',
-  env: process.env,
+  cfg: pkg.cfg,
   /*
   ** Headers of the page
   */
   head: {
-    title: config.title,
+    title: pkg.cfg.title,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, minimal-ui' },
-      { hid: 'description', name: 'description', content: config.description },
+      { hid: 'description', name: 'description', content: pkg.cfg.description },
       { name: 'msapplication-config', content: '/icons/browserconfig.xml' },
       { name: 'theme-color', content: '#2f3e5d' },
 
@@ -30,18 +19,18 @@ export default {
 
       // facebook
       { hid: 'og:type', property: 'og:type', content: 'website' },
-      { hid: 'og:url', property: 'og:url', content: config.url },
-      { hid: 'og:image', property: 'og:image', content: config.url + config.image },
+      { hid: 'og:url', property: 'og:url', content: pkg.cfg.url },
+      { hid: 'og:image', property: 'og:image', content: pkg.cfg.url + pkg.cfg.image },
 
-      { hid: 'og:title', property: 'og:title', content: config.title },
-      { hid: 'og:description', property: 'og:description', content: config.description },
+      { hid: 'og:title', property: 'og:title', content: pkg.cfg.title },
+      { hid: 'og:description', property: 'og:description', content: pkg.cfg.description },
 
       // twitter
       { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:image', content: config.url + config.image },
+      { name: 'twitter:image', content: pkg.cfg.url + pkg.cfg.image },
 
-      { hid: 'twitter:title', name: 'twitter:title', content: config.title },
-      { hid: 'twitter:description', name: 'twitter:description', content: config.description },
+      { hid: 'twitter:title', name: 'twitter:title', content: pkg.cfg.title },
+      { hid: 'twitter:description', name: 'twitter:description', content: pkg.cfg.description },
 
     ],
 
@@ -60,7 +49,7 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#4da1ff' },
+  loading: { color: pkg.cfg.colors.scooter },
   /*
   ** Global CSS
   */

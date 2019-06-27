@@ -1,46 +1,41 @@
 
 <script>
 import { Line } from 'vue-chartjs'
+import numeral from 'numeral'
+import sheets from '@/mixins/sheets'
+import pkg from '@/package'
 export default {
   extends: Line,
+  mixins: [ sheets ],
   data () {
     return {
+      range: 'Home-Demand',
       chartdata: {
-        labels: [2002, 2003, 2004, 2005],
+        labels: [],
         datasets: [{
-          label: 'Data',
-          boderColor: 'red',
-          backgroundColor: '#223355',
-          data: [10, 20, 30, 40],
+          pointRadius: 0,
+          data: [],
         }]
       },
       options: {
         legend: { display: false, },
-        layout: { padding: { left: 0, top: 20, right: 0, bottom: 20 }, },
         scales: {
           xAxes: [{
-            gridlines: {
-              color: '#f4f7f9',
-              display: false,
-              zeroLineColor: '#f4f7f9',
-            },
+            gridLines: { display: false, },
             ticks: {
               fontSize: 13,
-              fontColor: '#989898',
-              callback: (label, index, labels) => `${label.toString().substr(-2)}`,
+              fontColor: pkg.cfg.colors.alum,
+              callback: (label, index, labels) => `'${label.toString().substr(-2)}`
             },
           }],
           yAxes: [{
-            gridlines: {
-              color: '#f4f7f9',
-              display: false,
-              zeroLineColor: '#f4f7f9',
-            },
+            gridLines: { display: false, },
             position: 'right',
             ticks: {
               fontSize: 11,
-              fontColor: '#989898',
+              fontColor: pkg.cfg.colors.alum,
               maxTicksLimit: 6,
+              callback: (label, index, labels) => numeral(label).format('0,0a')
             },
           }],
         },
@@ -48,7 +43,17 @@ export default {
     }
   },
   mounted () {
-    setTimeout( () => this.renderChart(this.chartdata, this.options), 600)
+    this.chartdata.labels = this.sheet_labels
+    this.chartdata.datasets[0].data = this.sheet_values
+
+    let gradient = this.$refs.canvas.getContext('2d').createLinearGradient(1000, 0, 300, 0)
+    gradient.addColorStop(0, pkg.cfg.colors.coolblue)
+    gradient.addColorStop(1, pkg.cfg.colors.flamingo)
+
+    this.chartdata.datasets[0].borderColor = gradient
+    this.chartdata.datasets[0].backgroundColor = gradient
+
+    setTimeout( () => this.renderChart(this.chartdata, this.options), 300)
   }
 }
 </script>

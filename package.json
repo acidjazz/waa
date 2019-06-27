@@ -4,6 +4,25 @@
   "description": "We Are Apartments",
   "license": "Apache-1.0",
   "author": "acidjazz",
+  "cfg": {
+    "title": "We Are Apartments: Learn about the demand for apartments in your area",
+    "description": "America needs to build more than 4.6 million new apartments by 2030 through bold, innovative solutions that will help meet America’s housing shortfall.",
+    "url": "https://weareapartments.org",
+    "image": "/share.jpg",
+    "keywords": "affordable, data, apartments, census, calculator",
+    "google_client_id": "207669859559-qjcp4bc61omt9sp2hv9to3gukuqreno6.apps.googleusercontent.com",
+    "apiKey": "AIzaSyBEML4OtSMbBQOcibGgjY5FxNM00azs_0k",
+    "sheetId": "1qBIHotCidfZRqc3p_Izss5r0JocbLc5dot9FVWP3Bew",
+    "colors": {
+      "white": "#ffffff",
+      "black": "#000000",
+      "alum": "#989898",
+      "flamingo": "#f85a20",
+      "scooter": "#29d2ec",
+      "coolblue": "#0199ff",
+      "robinsegg": "#00cccc"
+    }
+  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
@@ -20,9 +39,9 @@
     "chart.js": "^2.8.0",
     "countup.js": "^2.0.4",
     "cross-env": "^5.2.0",
-    "dotenv": "^8.0.0",
     "googleapis": "^40.0.0",
     "node-sass": "^4.12.0",
+    "numeral": "^2.0.6",
     "nuxt": "^2.8.1",
     "pug": "^2.0.3",
     "pug-plain-loader": "^1.0.0",

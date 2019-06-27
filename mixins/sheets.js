@@ -13,9 +13,11 @@ export default {
       sheets: sheets,
     }
   },
-  methods: {
-    getRange(range) {
-      return this.sheets.valueRanges.find(s => s.range.replace(/'/g, '') === this.ranges[range]).values
-    }
-  }
+  computed: {
+    sheet_data () {
+      return this.sheets.valueRanges.find(s => s.range.replace(/'/g, '') === this.ranges[this.range]).values
+    },
+    sheet_labels () { return this.sheet_data.map( (r) => r[0]*1 )},
+    sheet_values () { return this.sheet_data.map( (r) => r[2]*1 )},
+  },
 }

@@ -1,5 +1,3 @@
-
-
 <template lang="pug">
 .bg-white.my-10(v-in-vp,:class="outer_cls")
   .py-20.px-10(:class="inner_cls")
@@ -17,9 +15,8 @@ export default {
     }
   },
   computed: {
-    outer_cls () { return side === 'left' ? 'mr-10 vp-r-f' : 'ml-10 vp-l-f' },
-    inner_cls () { return side === 'left' ? '-mr-10' : '-ml-10'},
+    outer_cls () { return this.side === 'left' ? 'mr-10 vp-r-f' : 'ml-10 vp-l-f' },
+    inner_cls () { return this.side === 'left' ? '-mr-10' : '-ml-10'},
   },
 }
 </script>
-
