@@ -31,6 +31,10 @@ jobs:
           key: v1-dependencies-{{ arch}}-{{ .Branch }}-{{ checksum "package.json" }}
 
       - run:
+          name: Generate our medium feed
+          command: yarn feed
+
+      - run:
           name: Generate sheets
           command: yarn sheets
       - run:
