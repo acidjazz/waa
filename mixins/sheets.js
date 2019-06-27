@@ -19,5 +19,6 @@ export default {
     },
     sheet_labels () { return this.sheet_data.map( (r) => r[0]*1 )},
     sheet_values () { return this.sheet_data.map( (r) => r[2]*1 )},
+    sheet_oned () { return this.sheet_data.map(x => x[0]) },
   },
 }

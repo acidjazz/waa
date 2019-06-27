@@ -3,34 +3,7 @@
   HomeHero
   LatestArticles(:limit="3")
   TheDemand
-  br
-  br
-  br
-  br
-  br
-  br
-  br
-  br
-  br
-  br
-  br
-  br
-  br
-  br
-  br
-  br
-  br
-  br
-  br
-  br
-  br
-  br
-  br
-  br
-  br
-  br
-  br
-  br
+  FactTicker
   br
   br
   br
@@ -47,7 +20,8 @@
 import HomeHero from '@/components/home/HomeHero'
 import LatestArticles from '@/components/articles/LatestArticles'
 import TheDemand from '@/components/home/TheDemand'
+import FactTicker from '@/components/home/FactTicker'
 export default {
-  components: { HomeHero, LatestArticles, TheDemand },
+  components: { HomeHero, LatestArticles, TheDemand, FactTicker },
 }
 </script>

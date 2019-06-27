@@ -7,7 +7,6 @@
 
 export default {
   'Filters': 'Filters!A2:D52',
-  'Vision-FAQ': 'Vision-FAQ!A2:B7',
   'Home-Demand': 'Home-Demand!A3:E16',
+  'Copy-Ticker': 'Copy!A4:A7',
 }
-
