@@ -1,30 +1,33 @@
-
-
 <template lang="pug">
 #FactTicker.py-10
   .mx-auto.max-w-4xl.text-white
-    .timer-bar.relative.w-full.h-1
+    .timer-bar.relative.w-full.h-1(v-in-vp).vp-y
       .absolute.bg-white.h-1.w-full
-        .absolute.bg-coolblue.h-1.left-0(
-          :style="`width: ${width}%`",
-          :class="{'tran-width-1s-l': width > 0}")
+      .absolute.bg-coolblue.h-1.left-0(
+        :style="`width: ${width}%`",
+        :class="{'tran-width-1s-l': width > 0}")
     .nav-buttons.flex.justify-end.text-2xl.mt-6.mr-4
-      .border.border-white.rounded-full.w-10.text-center.mr-4.cursor-pointer(class="hover:border-coolblue")
-        i.mdi.mdi-chevron-left
-      .border.border-white.rounded-full.w-10.text-center(class="hover:border-coolblue")
-        i.mdi.mdi-chevron-right
-    transition(name="fade-in-left")
+      .border.border-white.rounded-full.w-10.text-center.mr-4.cursor-pointer.vp-l(
+        class="hover:border-coolblue",v-in-vp)
+        i.mdi.mdi-chevron-left.cursor-pointer(@click="next")
+      .border.border-white.rounded-full.w-10.text-center.vp-l.vp-d-1(
+        class="hover:border-coolblue",v-in-vp)
+        i.mdi.mdi-chevron-right.cursor-pointer(@click="prev")
+    transition(name="fade-in-right")
       .text-2xl.h-24(
         v-for="fact, index in facts",
         v-if="index === current",
         :key="index",
-        class="w-10/12"): .copy {{ fact }}
+        v-in-vp
+        class="w-10/12")
+          .copy(v-in-vp).vp-y.vp-d-2 {{ fact }}
 </template>
 
 <script>
 import sheets from '@/mixins/sheets'
+import inViewport from 'vue-in-viewport-mixin'
 export default {
-  mixins: [ sheets ],
+  mixins: [ sheets, inViewport ],
   data () {
     return {
       range: 'Copy-Ticker',
@@ -34,15 +37,26 @@ export default {
     }
   },
   computed: { facts () { return this.sheet_oned }, },
-  mounted () { this.interval = setInterval(this.tick, 1000) },
-  beforeDestroyed () { clearInterval(this.interval) },
+  watch: {
+    'inViewport.now' (visible) {
+      if (visible) this.start()
+      if (!visible) this.end()
+    }
+  },
   methods: {
+    start () { this.interval = setInterval(this.tick, 1000) },
+    end () { clearInterval(this.interval) },
     tick () {
-      if (this.width === 100) this.next()
+      if (this.width === 100) this.next(false)
       return this.width = (this.width >= 100) ? 0 : this.width+20
     },
-    next () {
+    next (reset=true) {
+      if (this.reset) this.width = 0
       this.current = this.current === (this.sheet_oned.length-1) ? 0 : this.current+1
+    },
+    prev (reset=true) {
+      if (this.reset) this.width = 0
+      this.current = this.current === 0 ? this.sheet_oned.length-1 : this.current-1
     },
   }
 }
