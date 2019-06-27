@@ -28,11 +28,11 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
+    "feed": "node --experimental-modules ./feed.mjs",
     "sheets": "node --experimental-modules ./sheets.mjs",
     "mdi": "cp node_modules/@mdi/font/css/materialdesignicons.min.css static/mdi.css; cp node_modules/@mdi/font/fonts/* static/fonts/.; cp node_modules/@mdi/font/css/materialdesignicons.min.css.map static/.",
-    "deploy": "yarn sheets; yarn mdi; yarn generate",
-    "staging": "yarn deploy; node ./aeonian.js staging",
-    "production": "yarn deploy; node ./aeonian.js production"
+    "staging": "node ./aeonian.js staging",
+    "production": "node ./aeonian.js production"
   },
   "dependencies": {
     "@mdi/font": "^3.6.95",

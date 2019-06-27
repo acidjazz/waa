@@ -21,5 +21,5 @@ gs.spreadsheets.values.batchGet({
   ranges: Object.values(ranges),
 }, (err, res) => {
   if (err) return console.log(err)
-  fs.writeFileSync('data/sheets.json', JSON.stringify(res.data))
+  fs.writeFileSync('data/sheets.json', JSON.stringify(res.data, null, 2))
 })
