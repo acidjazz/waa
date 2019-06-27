@@ -4,7 +4,7 @@ jobs:
     parallelism: 1
     docker:
       # specify the version you desire here
-      - image: circleci/node:11.12.0-browsers-legacy
+      - image: circleci/node:12.3.1-browsers-legacy
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -31,9 +31,9 @@ jobs:
           key: v1-dependencies-{{ arch}}-{{ .Branch }}-{{ checksum "package.json" }}
 
       # run tests!
-      - run:
-          name: Generate static files
-          command: yarn generate --no-lock --fail-on-page-error
+      #- run:
+      #    name: Generate static files
+      #    command: yarn generate --no-lock --fail-on-page-error
 
       - deploy:
           command: |

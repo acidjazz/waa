@@ -30,7 +30,7 @@
     "generate": "nuxt generate",
     "sheets": "node --experimental-modules ./sheets.mjs",
     "mdi": "cp node_modules/@mdi/font/css/materialdesignicons.min.css static/mdi.css; cp node_modules/@mdi/font/fonts/* static/fonts/.; cp node_modules/@mdi/font/css/materialdesignicons.min.css.map static/.",
-    "deploy": "yarn generate; yarn sheets; yarn mdi",
+    "deploy": "yarn sheets; yarn mdi; yarn generate",
     "staging": "yarn deploy; node ./aeonian.js staging",
     "production": "yarn deploy; node ./aeonian.js production"
   },
