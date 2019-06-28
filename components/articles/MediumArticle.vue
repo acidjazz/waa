@@ -1,6 +1,6 @@
 <template lang="pug">
-.article-outer(class="w-full lg:w-1/3")
-  a.article(:href="link(article)",target="_new",v-in-vp,:class="`vp-d-${index+2}`").vp-y
+.article-outer.w-full.lg_w-1_3
+  a.article(:href="link(article)",target="_new",v-in-vp,:class="`vp-d-${index+2}`").vp-r
     .article_image
       img(:src="thumbnail(article)")
     .article_header

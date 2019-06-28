@@ -1,5 +1,5 @@
 <template lang="pug">
-.header-menu(:class="[state, 'sm:block', 'lg:hidden']")
+.header-menu.lg_hidden(:class="state")
   .header-menu-blue(:class="state")
   .header-menu-inner(:class="state")
     .header-menu-swap(:class="state",@click="swap")
@@ -8,12 +8,12 @@
           i
           i
     .header-menu-content(v-if="is_open")
-        nuxt-link.is-active(to="/") Home
-        nuxt-link(to="/") Apartment Data
-        nuxt-link(to="/") Latest Stories
-        nuxt-link(to="/") Apartment Calculator
-        nuxt-link(to="/") The Initiative
-        nuxt-link(to="/") Our Vision
+        nuxt-link.is-active(to="/") home
+        nuxt-link(to="/") apartment data
+        nuxt-link(to="/") latest news
+        nuxt-link(to="/") apartment calculator
+        nuxt-link(to="/") the initiative
+        nuxt-link(to="/") our vision
 </template>
 
 <script>

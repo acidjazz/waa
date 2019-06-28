@@ -7,20 +7,17 @@
         :style="`width: ${width}%`",
         :class="{'tran-width-1s-l': width > 0}")
     .nav-buttons.flex.justify-end.text-2xl.mt-6.mr-4
-      .border.border-white.rounded-full.w-10.text-center.mr-4.cursor-pointer.vp-l(
-        class="hover:border-coolblue",v-in-vp)
+      .border.border-white.rounded-full.w-10.text-center.mr-4.cursor-pointer.hover_border-coolblue.vp-l(v-in-vp)
         i.mdi.mdi-chevron-left.cursor-pointer(@click="next")
-      .border.border-white.rounded-full.w-10.text-center.vp-l.vp-d-1(
-        class="hover:border-coolblue",v-in-vp)
+      .border.border-white.rounded-full.w-10.text-center.hover_border-coolblue.vp-l.vp-d-1(v-in-vp)
         i.mdi.mdi-chevron-right.cursor-pointer(@click="prev")
-    .copy(v-in-vp).vp-y.vp-d-2
+    .copy(v-in-vp).vp-y.vp-d-2.h-24
       transition(name="fade-in-right")
-        .text-2xl.h-24(
+        .text-2xl.w-full.mt-4.lg_w-10_12.lg_mt-0(
           v-for="fact, index in facts",
           v-if="index === current",
           :key="index",
-          v-in-vp
-          class="w-10/12"): div {{ fact }}
+          v-in-vp): div {{ fact }}
 </template>
 
 <script>

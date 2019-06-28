@@ -6,7 +6,6 @@ OffsetSection
     a.underline(href="https://medium.com/@WeAreApartments",target="_new") Medium.
   .articles.flex.flex-wrap.-mx-2
     MediumArticle(
-      class="sm:w-full",
       v-for="item, index in articles",
       :article="item",
       :key="index",
