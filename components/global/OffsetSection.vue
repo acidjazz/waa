@@ -1,6 +1,6 @@
 <template lang="pug">
-.bg-white.my-10(v-in-vp,class="mr-0 lg:mr-10 vp-r-f")
-  .px-10(class="-mr-0 lg:-mr-10 py-10 lg:py-20")
+.bg-white.my-20(v-in-vp,class="mr-0 lg:mr-10 vp-r-f")
+  .px-4.py-4(class="-mr-0 lg:-mr-10 lg:py-20")
     .mr-0(class="lg:mr-10")
       .container.mx-auto
         slot

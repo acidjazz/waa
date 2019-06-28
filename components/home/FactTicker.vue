@@ -1,5 +1,5 @@
 <template lang="pug">
-#FactTicker.py-10
+#FactTicker.p-10
   .mx-auto.max-w-4xl.text-white
     .timer-bar.relative.w-full.h-1(v-in-vp).vp-y
       .absolute.bg-white.h-1.w-full
