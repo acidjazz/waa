@@ -38,6 +38,7 @@
   "dependencies": {
     "@mdi/font": "^3.6.95",
     "@nuxtjs/google-tag-manager": "^2.2.0",
+    "@nuxtjs/ngrok": "^1.2.5",
     "@nuxtjs/pwa": "^3.0.0-beta.16",
     "@nuxtjs/tailwindcss": "^1.1.0",
     "aeonian": "^1.1.7",

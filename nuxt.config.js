@@ -67,6 +67,7 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/ngrok',
     ['@nuxtjs/google-tag-manager', { id: 'GTM-NP9HJPR', pageTracking: false }],
     ['@nuxtjs/pwa', { manifest: false }],
   ],
