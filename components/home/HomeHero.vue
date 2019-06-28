@@ -9,7 +9,7 @@
   .home-hero-outer.relative.w-screen.h-screen.bg-tranblue.z-10
     .h-screen.flex.flex-col.justify-center.items-center.m-auto.text-center
       .text-white.text.mb-10(v-in-vp).vp-y WE ARE APARTMENTS.
-      .text-white.text-3xl(v-in-vp).vp-y.vp-d-2 The country needs
+      .text-white.text-3xl.w-192(v-in-vp).vp-y.vp-d-2 The country needs
         span &nbsp;
         no-ssr
           VueCountUp(:endVal="endVal",:options="options")

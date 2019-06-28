@@ -20,6 +20,9 @@ module.exports = {
     colors: pkg.cfg.colors,
     extend: {
       width: {
+      '128': '32rem',
+      '192': '48rem',
+      '256': '64rem',
       '1_2': '50%',
       '1_3': '33.333333%',
       '2_3': '66.666667%',
