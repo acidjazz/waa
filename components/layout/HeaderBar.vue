@@ -2,11 +2,7 @@
 .header-nav.bg-black.text-white.fixed.z-20.inset-x-0.top-0.py-2.ani-sit.ani-d-4
   .container.lg.mx-auto.px-4
     .flex.justify-between
-      nuxt-link(to="/").font-os.text-2xl.flex
-        .mr-1
-          i.mdi.mdi-check-bold.text-flamingo.ani-sir.ani-d-8
-          i.mdi.mdi-check-bold.text-scooter.-ml-4.ani-sir.ani-d-9
-        .ani-sir.ani-d-10 WE ARE APARTMENTS
+      HeaderTitle
       .header-nav-menu.justify-end.ani-sil.ani-d-10.hidden.lg_flex
         nuxt-link.py-2.px-4.mr-1.rounded-full.hover-tran-bg.hover_bg-white.hover_text-black(
           v-for="item, index in menu",
@@ -15,7 +11,9 @@
 </template>
 
 <script>
+import HeaderTitle from '@/components/layout/HeaderTitle'
 export default {
+  components: { HeaderTitle },
   data () {
     return {
       menu: [

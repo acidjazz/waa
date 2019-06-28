@@ -6,7 +6,7 @@
       .absolute.bg-coolblue.h-1.left-0(
         :style="`width: ${width}%`",
         :class="{'tran-width-1s-l': width > 0}")
-    .nav-buttons.flex.justify-end.text-2xl.mt-6.mr-4
+    .flex.justify-end.text-2xl.mt-6.mr-4
       .border.border-white.rounded-full.w-10.text-center.mr-4.cursor-pointer.hover_border-coolblue.vp-l(v-in-vp)
         i.mdi.mdi-chevron-left.cursor-pointer(@click="next")
       .border.border-white.rounded-full.w-10.text-center.hover_border-coolblue.vp-l.vp-d-1(v-in-vp)

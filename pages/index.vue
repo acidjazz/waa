@@ -5,16 +5,6 @@
   TheDemand
   FactTicker
   OurInitiative
-  br
-  br
-  br
-  br
-  br
-  br
-  br
-  br
-  br
-  br
 </template>
 
 <script>

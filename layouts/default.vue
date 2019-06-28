@@ -1,14 +1,16 @@
 <template lang="pug">
 #waa
-  HeaderNav
+  HeaderBar
   HeaderMenu
   nuxt
+  FooterBar
 </template>
 
 <script>
-import HeaderNav from '@/components/header/HeaderNav'
-import HeaderMenu from '@/components/header/HeaderMenu'
+import HeaderBar from '@/components/layout/HeaderBar'
+import HeaderMenu from '@/components/layout/HeaderMenu'
+import FooterBar from '@/components/layout/FooterBar'
 export default {
-  components: { HeaderNav, HeaderMenu },
+  components: { HeaderBar, HeaderMenu, FooterBar },
 }
 </script>
