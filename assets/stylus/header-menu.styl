@@ -4,26 +4,26 @@
   &.is-open
     @apply w-fullbleed h-fullbleed
   &.is-closed
-    @apply tran-size-delay w-32 h-32
+    @apply tran-size-delay w-24 h-24
 
 .header-menu-blue
-  @apply rounded-full absolute top-0 right-0 bg-bigstone w-32 h-32
+  @apply rounded-full absolute top-0 right-0 bg-black w-24 h-24
   &.is-open
     @apply scale-30
   &.is-closed
     @apply scale-1
 
 .header-menu-inner
-  @apply absolute top-0 right-0 w-32 h-32
+  @apply absolute top-0 right-0 w-24 h-24
   &.is-open
     @apply w-fullbleed h-fullbleed
 
 .header-menu-swap
-  @apply tran-colors select-none absolute top-0 right-0 cursor-pointer rounded-full w-32 h-32 flex items-center justify-center
+  @apply tran-colors select-none absolute top-0 right-0 cursor-pointer rounded-full w-24 h-24 flex items-center justify-center
   &.is-open
     @apply bg-white text-black
   &.is-closed
-    @apply bg-lined text-white
+    @apply bg-black text-white
 
 .header-menu-content
   @apply text-white mt-40 mr-16 flex flex-col items-end justify-around
@@ -38,8 +38,8 @@
       animation-delay unit(0.05 * i, 's')
 
 .header-menu-burger
-  width 50px
-  height 40px
+  width 40px
+  height 30px
   cursor pointer
   i
     content ''
