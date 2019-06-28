@@ -15,6 +15,7 @@ module.exports = {
     },
     fontFamily: {
       oki: ['okomito regular', 'sans-serif'],
+      okib: ['okomito bold', 'sans-serif'],
       os: ['Oswald', 'sans-serif'],
     },
     colors: pkg.cfg.colors,
