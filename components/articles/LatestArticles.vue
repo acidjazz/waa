@@ -4,8 +4,13 @@ OffsetSection
   .block.text-3xl.ml-3.mb-6 Featured articles on
     span &nbsp;
     a.underline(href="https://medium.com/@WeAreApartments",target="_new") Medium.
-  .articles.flex.items-center.justify-center.flex-wrap.mb-4.mr-10
-    MediumArticle(v-for="item, index in articles", :article="item",:key="index",:index="index+1")
+  .articles.flex.flex-wrap.-mx-2
+    MediumArticle(
+      class="sm:w-full",
+      v-for="item, index in articles",
+      :article="item",
+      :key="index",
+      :index="index+1")
 </template>
 
 <script>

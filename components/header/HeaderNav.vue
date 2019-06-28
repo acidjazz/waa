@@ -7,7 +7,7 @@
           i.mdi.mdi-check-bold.text-flamingo.ani-sir.ani-d-8
           i.mdi.mdi-check-bold.text-scooter.-ml-4.ani-sir.ani-d-9
         .ani-sir.ani-d-10 WE ARE APARTMENTS
-      .header-nav-menu.flex.justify-end.ani-sil.ani-d-10
+      .header-nav-menu.flex.justify-end.ani-sil.ani-d-10.hidden(class="lg:flex")
         nuxt-link.py-2.px-4.mr-1.rounded-full.hover-tran-bg(
           v-for="item, index in menu",
           :key="index",

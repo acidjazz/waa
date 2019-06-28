@@ -13,14 +13,14 @@
       .border.border-white.rounded-full.w-10.text-center.vp-l.vp-d-1(
         class="hover:border-coolblue",v-in-vp)
         i.mdi.mdi-chevron-right.cursor-pointer(@click="prev")
-    transition(name="fade-in-right")
-      .text-2xl.h-24(
-        v-for="fact, index in facts",
-        v-if="index === current",
-        :key="index",
-        v-in-vp
-        class="w-10/12")
-          .copy(v-in-vp).vp-y.vp-d-2 {{ fact }}
+    .copy(v-in-vp).vp-y.vp-d-2
+      transition(name="fade-in-right")
+        .text-2xl.h-24(
+          v-for="fact, index in facts",
+          v-if="index === current",
+          :key="index",
+          v-in-vp
+          class="w-10/12"): div {{ fact }}
 </template>
 
 <script>

@@ -1,8 +1,9 @@
 <template lang="pug">
-.bg-white.my-10(v-in-vp,:class="outer_cls")
-  .py-20.px-10(:class="inner_cls")
-    .container.mx-auto
-      slot
+.bg-white.my-10(v-in-vp,class="mr-0 lg:mr-10 vp-r-f")
+  .px-10(class="-mr-0 lg:-mr-10 py-10 lg:py-20")
+    .mr-0(class="lg:mr-10")
+      .container.mx-auto
+        slot
 </template>
 
 <script>

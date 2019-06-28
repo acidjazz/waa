@@ -1,11 +1,12 @@
 <template lang="pug">
-a.article(:href="link(article)",target="_new",v-in-vp,:class="`vp-d-${index+2}`").vp-y
-  .article_image
-    img(:src="thumbnail(article)")
-  .article_header
-    .article_header_label.uppercase.text-sm featured
-    .article_header_title.text-xl {{ article.title }}
-    .article_header_description {{ article.virtuals.subtitle }}
+.article-outer(class="w-full lg:w-1/3")
+  a.article(:href="link(article)",target="_new",v-in-vp,:class="`vp-d-${index+2}`").vp-y
+    .article_image
+      img(:src="thumbnail(article)")
+    .article_header
+      .article_header_label.uppercase.text-sm featured
+      .article_header_title.text-xl {{ article.title }}
+      .article_header_description {{ article.virtuals.subtitle }}
 </template>
 
 <script>
