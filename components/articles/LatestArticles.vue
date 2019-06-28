@@ -1,7 +1,7 @@
 <template lang="pug">
 OffsetSection
-  nuxt-link.block.font-os.ml-3.mb-4(to="/articles") ARTICLES
-  .block.text-3xl.ml-3.mb-6 Featured articles on
+  nuxt-link.block.font-os.mb-4(to="/articles") ARTICLES
+  .block.text-3xl.mb-6 Featured articles on
     span &nbsp;
     a.underline(href="https://medium.com/@WeAreApartments",target="_new") Medium.
   .articles.flex.flex-wrap.-mx-2

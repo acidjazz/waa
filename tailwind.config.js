@@ -10,6 +10,9 @@ module.exports = {
   separator: '_',
   division: '_',
   theme: {
+    container: {
+      center: true,
+    },
     fontFamily: {
       oki: ['okomito regular', 'sans-serif'],
       os: ['Oswald', 'sans-serif'],

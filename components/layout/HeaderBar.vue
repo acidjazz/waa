@@ -1,6 +1,6 @@
 <template lang="pug">
 .header-nav.bg-black.text-white.fixed.z-20.inset-x-0.top-0.py-2.ani-sit.ani-d-4
-  .container.lg.mx-auto.px-4
+  .container.lg.px-4
     .flex.justify-between
       HeaderTitle
       .header-nav-menu.justify-end.ani-sil.ani-d-10.hidden.lg_flex

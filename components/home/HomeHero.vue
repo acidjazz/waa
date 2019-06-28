@@ -1,5 +1,5 @@
 <template lang="pug">
-.home-hero.w-screen.h-screen
+.home-hero.w-screen.h-screen.mb-32
   video(
     playsinline,
     autoplay="autoplay",
@@ -13,7 +13,7 @@
         span &nbsp;
         no-ssr
           VueCountUp(:endVal="endVal",:options="options")
-        span million new apartments<br /> by 2030.  How many are needed near you?
+        span million new apartments by 2030.  How many are needed near you?
       .buttons.mt-10
         nuxt-link(to="/vision",v-in-vp).waa-button.vp-z.mr-4.vp-d-3 our vision
         nuxt-link(to="/data",v-in-vp).waa-button.vp-z.vp-d-4 the data
