@@ -13,11 +13,15 @@
         i.mdi.mdi-chevron-right.cursor-pointer(@click="prev")
     .copy(v-in-vp).vp-y.vp-d-2.h-24
       transition(name="fade-in-right")
-        .text-2xl.w-full.mt-4.lg_w-10_12.lg_mt-0(
+        .text-2xl.w-full.mt-4.lg_w-10_12.lg_mt-0.ml-8.relative(
           v-for="fact, index in facts",
           v-if="index === current",
           :key="index",
-          v-in-vp): div {{ fact }}
+          v-in-vp)
+            div
+              i.absolute.text-6xl.mdi.mdi-format-quote-open.opacity-25.-mt-8.-ml-16.text-alum
+              span {{ fact }}
+              i.absolute.text-6xl.mdi.mdi-format-quote-close.opacity-25.-mt-6.text-alum
 </template>
 
 <script>
