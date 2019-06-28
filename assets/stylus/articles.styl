@@ -2,12 +2,12 @@
   @apply block relative no-underline px-2 mb-10
 a.article
   @apply block relative no-underline
-  height 400px
+  height 300px
   &:last-child
     mr-0
   &:hover
     .article_header
-      height 270px
+      height 210px
     .article_header_description
       transform translate(0, 0)
       opacity 1
@@ -17,23 +17,26 @@ a.article
   .article-header
     width 50%
 
+.article_header
+  @apply absolute bottom-0 left-0 right-0 text-white overflow-hidden p-4 bg-deepsky
+  height 110px
+
+
 .article_image, .article_header
   transition height .4s ease-in-out
 
 .article_image
-  height 400px
+  height 300px
   @apply overflow-hidden
   img
     @apply object-cover w-full h-full
     object-position 90% 100%
 
 .article_header_title
-  @apply pb-3
+  @apply pb-3 text-base font-bold
 .article_header_description
   transition opacity .3s linear .1s, transform .4s linear 0s
   transform translate(0, 10px)
   opacity 0
 
-.article_header
-  @apply absolute bottom-0 left-0 right-0 text-white overflow-hidden p-4 bg-scooter
-  height 170px
+

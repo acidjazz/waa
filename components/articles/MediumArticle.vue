@@ -4,7 +4,6 @@
     .article_image
       img(:src="thumbnail(article)")
     .article_header
-      .article_header_label.uppercase.text-sm featured
       .article_header_title.text-xl {{ article.title }}
       .article_header_description {{ article.virtuals.subtitle }}
 </template>

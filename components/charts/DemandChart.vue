@@ -46,9 +46,9 @@ export default {
     this.chartdata.labels = this.sheet_labels
     this.chartdata.datasets[0].data = this.sheet_values
 
-    let gradient = this.$refs.canvas.getContext('2d').createLinearGradient(1000, 0, 300, 0)
-    gradient.addColorStop(0, pkg.cfg.colors.coolblue)
-    gradient.addColorStop(1, pkg.cfg.colors.flamingo)
+    let gradient = this.$refs.canvas.getContext('2d').createLinearGradient(700, 0, 200, 0)
+    gradient.addColorStop(0, pkg.cfg.colors.bpink)
+    gradient.addColorStop(1, pkg.cfg.colors.orange)
 
     this.chartdata.datasets[0].borderColor = gradient
     this.chartdata.datasets[0].backgroundColor = gradient
