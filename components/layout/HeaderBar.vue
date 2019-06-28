@@ -4,12 +4,13 @@
     .flex.justify-between
       HeaderTitle
       .header-nav-menu.justify-end.ani-sil.ani-d-10.hidden.lg_flex
-        nuxt-link.py-2.px-4.mr-1.rounded-full.hover_text-coolblue.tran-colors(
+        nuxt-link.py-2.px-4.mr-1.rounded-full.tran-colors(
           v-for="option, index in options",
           :key="index",
-          :to="option.route")
+          :to="option.route",
+          :class="`hover_text-${option.color}`")
           div {{ option.label }}
-          div.h-1.mt-2.bg-borderblue.ani-sit(v-if="$route.name === option.name")
+          div.h-1.mt-2.ani-zi(v-if="$route.name === option.name",:class="option.gradient")
           div.h-1.mt-2(v-else)
 </template>
 
@@ -19,5 +20,6 @@ import options from '@/mixins/nav'
 export default {
   components: { HeaderTitle },
   mixins: [ options ],
+  mounted () { console.log(this.$route.name) }
 }
 </script>

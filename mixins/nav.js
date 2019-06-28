@@ -9,14 +9,11 @@ export default {
     return {
       options: [
         {
-          label: 'home',
-          name: 'index',
-          route: '/',
-        },
-        {
           label: 'apartment data',
           name: 'data',
           route: '/data',
+          gradient: 'bg-gradblue',
+          color: 'coolblue',
         },
         {
           label: 'latest news',
@@ -32,6 +29,8 @@ export default {
           label: 'the initiative',
           name: 'initiative',
           route: '/initiative',
+          color: 'tacao',
+          gradient: 'bg-gradred',
         },
         {
           label: 'our vision',
