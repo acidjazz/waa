@@ -4,46 +4,20 @@
     .flex.justify-between
       HeaderTitle
       .header-nav-menu.justify-end.ani-sil.ani-d-10.hidden.lg_flex
-        nuxt-link.py-2.px-4.mr-1.rounded-full.hover-tran-bg.hover_bg-white.hover_text-black(
-          v-for="item, index in menu",
+        nuxt-link.py-2.px-4.mr-1.rounded-full.hover_text-coolblue.tran-colors(
+          v-for="option, index in options",
           :key="index",
-          :to="item.to") {{ item.name }}
+          :to="option.route")
+          div {{ option.label }}
+          div.h-1.mt-2.bg-borderblue.ani-sit(v-if="$route.name === option.name")
+          div.h-1.mt-2(v-else)
 </template>
 
 <script>
 import HeaderTitle from '@/components/layout/HeaderTitle'
+import options from '@/mixins/nav'
 export default {
   components: { HeaderTitle },
-  data () {
-    return {
-      menu: [
-        {
-          name: 'apartment data',
-          route: 'data',
-          to: '/data',
-        },
-        {
-          name: 'latest news',
-          route: 'news',
-          to: '/news',
-        },
-        {
-          name: 'apartment calculator',
-          route: 'calculator',
-          to: '/calculator',
-        },
-        {
-          name: 'the initiative',
-          route: 'initiative',
-          to: '/initiative',
-        },
-        {
-          name: 'our vision',
-          route: 'vision',
-          to: '/vision',
-        },
-      ]
-    }
-  }
+  mixins: [ options ],
 }
 </script>

@@ -8,16 +8,13 @@
           i
           i
     .header-menu-content(v-if="is_open")
-        nuxt-link.is-active(to="/") home
-        nuxt-link(to="/") apartment data
-        nuxt-link(to="/") latest news
-        nuxt-link(to="/") apartment calculator
-        nuxt-link(to="/") the initiative
-        nuxt-link(to="/") our vision
+      nuxt-link(v-for="option, index in options",:key="index",to="/")  {{ option.label }}
 </template>
 
 <script>
+import options from '@/mixins/nav'
 export default {
+  mixins: [ options ],
   data () {
     return {
       is_open: false,
