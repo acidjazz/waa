@@ -8,5 +8,6 @@
 export default {
   'Filters': 'Filters!A2:D52',
   'Home-Demand': 'Home-Demand!A3:E16',
-  'Copy-Ticker': 'Copy!A4:A7',
+  'Copy-TickerHome': 'Copy!A4:A7',
+  'Copy-TickerInit': 'Copy!A10:A13',
 }

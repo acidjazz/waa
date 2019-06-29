@@ -29,9 +29,14 @@ import sheets from '@/mixins/sheets'
 import inViewport from 'vue-in-viewport-mixin'
 export default {
   mixins: [ sheets, inViewport ],
+  props: {
+    range: {
+      type: String,
+      required: true,
+    }
+  },
   data () {
     return {
-      range: 'Copy-Ticker',
       width: 0,
       current: 0,
       interval: false,
