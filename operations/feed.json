@@ -1,6 +1,5 @@
 {
   "success": true,
-  "url": "https://medium.com/we-are-apartments/latest?format=json",
   "payload": {
     "collection": {
       "id": "4933e15b493e",
@@ -26,8 +25,8 @@
         "width": 0
       },
       "metadata": {
-        "followerCount": 19,
-        "activeAt": 1558635715745
+        "followerCount": 27,
+        "activeAt": 1559581201946
       },
       "virtuals": {
         "permissions": {
@@ -49,10 +48,12 @@
           "canLockPostsForMediumMembers": false,
           "canLockOwnPostsForMediumMembers": false
         },
-        "isSubscribed": true,
-        "isNewsletterSubscribed": true,
+        "isSubscribed": false,
+        "isNewsletterSubscribed": false,
         "isEnrolledInHightower": false,
-        "isEligibleForHightower": false
+        "isEligibleForHightower": false,
+        "mediumNewsletterId": "",
+        "isSubscribedToMediumNewsletter": false
       },
       "logo": {
         "imageId": "1*NZ2Qi7Rove6gBzRLGFZmvg.jpeg",
@@ -76,9 +77,7 @@
               "originalWidth": 3126,
               "originalHeight": 1564
             },
-            "logoImage": {
-
-            },
+            "logoImage": {},
             "alignment": 1,
             "layout": 6
           }
@@ -89,9 +88,7 @@
             "source": 1,
             "layout": 2,
             "number": 3,
-            "postIds": [
-
-            ]
+            "postIds": []
           }
         },
         {
@@ -100,9 +97,7 @@
             "source": 1,
             "layout": 4,
             "number": 3,
-            "postIds": [
-
-            ]
+            "postIds": []
           }
         },
         {
@@ -111,9 +106,7 @@
             "source": 1,
             "layout": 6,
             "number": 3,
-            "postIds": [
-
-            ]
+            "postIds": []
           }
         }
       ],
@@ -180,28 +173,28 @@
           "type": 1,
           "title": "Challenges",
           "tagSlug": "challenges",
-          "url": "https:\/\/medium.com\/we-are-apartments\/tagged\/challenges",
+          "url": "https://medium.com/we-are-apartments/tagged/challenges",
           "source": "tagSlug"
         },
         {
           "type": 1,
           "title": "Solutions",
           "tagSlug": "solutions",
-          "url": "https:\/\/medium.com\/we-are-apartments\/tagged\/solutions",
+          "url": "https://medium.com/we-are-apartments/tagged/solutions",
           "source": "tagSlug"
         },
         {
           "type": 1,
           "title": "Impact",
           "tagSlug": "impact",
-          "url": "https:\/\/medium.com\/we-are-apartments\/tagged\/impact",
+          "url": "https://medium.com/we-are-apartments/tagged/impact",
           "source": "tagSlug"
         },
         {
           "type": 1,
           "title": "People",
           "tagSlug": "people",
-          "url": "https:\/\/medium.com\/we-are-apartments\/tagged\/people",
+          "url": "https://medium.com/we-are-apartments/tagged/people",
           "source": "tagSlug"
         }
       ],
@@ -226,9 +219,7 @@
           "originalWidth": 3126,
           "originalHeight": 1564
         },
-        "logoImage": {
-
-        },
+        "logoImage": {},
         "alignment": 1,
         "layout": 6
       },
@@ -236,21 +227,261 @@
     },
     "posts": [
       {
+        "id": "6d20cd2ddf1",
+        "versionId": "11995bea04a1",
+        "creatorId": "97d35ca792e3",
+        "homeCollectionId": "4933e15b493e",
+        "title": "Collaboration Is Key to Housing Innovation in Denver",
+        "detectedLanguage": "en",
+        "latestVersion": "11995bea04a1",
+        "latestPublishedVersion": "11995bea04a1",
+        "hasUnpublishedEdits": false,
+        "latestRev": 59,
+        "createdAt": 1559319230901,
+        "updatedAt": 1559587907724,
+        "acceptedAt": 0,
+        "firstPublishedAt": 1559581201766,
+        "latestPublishedAt": 1559587906825,
+        "vote": false,
+        "experimentalCss": "",
+        "displayAuthor": "",
+        "virtuals": {
+          "statusForCollection": "APPROVED",
+          "allowNotes": true,
+          "previewImage": {
+            "imageId": "1*widgke40WBWGpSBvDYyedQ.jpeg",
+            "filter": "",
+            "backgroundSize": "",
+            "originalWidth": 2501,
+            "originalHeight": 1400,
+            "strategy": "resample",
+            "height": 0,
+            "width": 0
+          },
+          "wordCount": 765,
+          "imageCount": 2,
+          "readingTime": 3.270125786163522,
+          "subtitle": "Multisector partners are working together to bring fresh thinking to the issues of apartment affordability and availability",
+          "publishedInCount": 1,
+          "usersBySocialRecommends": [],
+          "noIndex": false,
+          "recommends": 1,
+          "isBookmarked": false,
+          "tags": [
+            {
+              "slug": "housing",
+              "name": "Housing",
+              "postCount": 12413,
+              "metadata": {
+                "postCount": 12413,
+                "coverImage": {
+                  "id": "1*v87zrUc4q80jRJ_nCdvpbQ.jpeg",
+                  "originalWidth": 630,
+                  "originalHeight": 420,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "affordable-housing",
+              "name": "Affordable Housing",
+              "postCount": 1562,
+              "metadata": {
+                "postCount": 1562,
+                "coverImage": {
+                  "id": "1*Ij3jm0Hfsfvmwg4QvPAYgQ.jpeg",
+                  "originalWidth": 800,
+                  "originalHeight": 800,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "housing-crisis",
+              "name": "Housing Crisis",
+              "postCount": 470,
+              "metadata": {
+                "postCount": 470,
+                "coverImage": {
+                  "id": "1*cNlZkJWEO3v_12f6BTe3mA.jpeg",
+                  "originalWidth": 4000,
+                  "originalHeight": 2352,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "denver",
+              "name": "Denver",
+              "postCount": 1503,
+              "metadata": {
+                "postCount": 1503,
+                "coverImage": {
+                  "id": "1*LSYdlwkdqEQSA-p19HGF7Q.jpeg",
+                  "originalWidth": 2400,
+                  "originalHeight": 1733
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "solutions",
+              "name": "Solutions",
+              "postCount": 2341,
+              "metadata": {
+                "postCount": 2341,
+                "coverImage": {
+                  "id": "1*Mdr9jl825ZlYZ_nUghgrzA.jpeg",
+                  "originalWidth": 1864,
+                  "originalHeight": 1047
+                }
+              },
+              "type": "Tag"
+            }
+          ],
+          "socialRecommendsCount": 0,
+          "responsesCreatedCount": 0,
+          "links": {
+            "entries": [
+              {
+                "url": "https://cdn.ymaws.com/www.housingcolorado.org/resource/resmgr/2017_now!_workshops/Workshop_21.pdf",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "http://www.lisc.org/our-stories/story/bold-fix-denvers-affordable-housing-crisis",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://www.denvergov.org/content/dam/denvergov/Portals/690/Housing%20Advisory%20Committee/Housing%20an%20Inclusive%20Denver%20Public%20Review%20Draft%20--%20final%20(2017%2009-29).pdf",
+                "alts": [],
+                "httpStatus": 404
+              },
+              {
+                "url": "http://livedenver.org/",
+                "alts": [],
+                "httpStatus": 200
+              }
+            ],
+            "version": "0.3",
+            "generatedAt": 1559587911896
+          },
+          "isLockedPreviewOnly": false,
+          "metaDescription": "",
+          "totalClapCount": 1,
+          "sectionCount": 1,
+          "readingList": 0,
+          "topics": []
+        },
+        "coverless": true,
+        "slug": "collaboration-is-key-to-housing-innovation-in-denver",
+        "translationSourcePostId": "",
+        "translationSourceCreatorId": "",
+        "isApprovedTranslation": false,
+        "inResponseToPostId": "",
+        "inResponseToRemovedAt": 0,
+        "isTitleSynthesized": false,
+        "allowResponses": true,
+        "importedUrl": "",
+        "importedPublishedAt": 0,
+        "visibility": 0,
+        "uniqueSlug": "collaboration-is-key-to-housing-innovation-in-denver-6d20cd2ddf1",
+        "previewContent": {
+          "bodyModel": {
+            "paragraphs": [
+              {
+                "name": "previewImage",
+                "type": 4,
+                "text": "",
+                "layout": 10,
+                "metadata": {
+                  "id": "1*widgke40WBWGpSBvDYyedQ.jpeg",
+                  "originalWidth": 2501,
+                  "originalHeight": 1400,
+                  "isFeatured": true
+                }
+              },
+              {
+                "name": "5f2c",
+                "type": 3,
+                "text": "Collaboration Is Key to Housing Innovation in Denver",
+                "markups": [
+                  {
+                    "type": 1,
+                    "start": 0,
+                    "end": 52
+                  }
+                ],
+                "alignment": 1
+              }
+            ],
+            "sections": [
+              {
+                "startIndex": 0
+              }
+            ]
+          },
+          "isFullContent": false,
+          "subtitle": "Multisector partners are working together to bring fresh thinking to the issues of apartment affordability and availability"
+        },
+        "license": 0,
+        "inResponseToMediaResourceId": "",
+        "canonicalUrl": "",
+        "approvedHomeCollectionId": "4933e15b493e",
+        "newsletterId": "",
+        "webCanonicalUrl": "",
+        "mediumUrl": "",
+        "migrationId": "",
+        "notifyFollowers": true,
+        "notifyTwitter": false,
+        "notifyFacebook": false,
+        "responseHiddenOnParentPostAt": 0,
+        "isSeries": false,
+        "isSubscriptionLocked": false,
+        "seriesLastAppendedAt": 0,
+        "audioVersionDurationSec": 0,
+        "sequenceId": "",
+        "isNsfw": false,
+        "isEligibleForRevenue": false,
+        "isBlockedFromHightower": false,
+        "deletedAt": 0,
+        "lockedPostSource": 0,
+        "hightowerMinimumGuaranteeStartsAt": 0,
+        "hightowerMinimumGuaranteeEndsAt": 0,
+        "featureLockRequestAcceptedAt": 0,
+        "mongerRequestType": 1,
+        "layerCake": 0,
+        "socialTitle": "",
+        "socialDek": "",
+        "editorialPreviewTitle": "",
+        "editorialPreviewDek": "",
+        "curationEligibleAt": 0,
+        "isProxyPost": false,
+        "proxyPostFaviconUrl": "",
+        "proxyPostProviderName": "",
+        "proxyPostType": 0,
+        "type": "Post"
+      },
+      {
         "id": "b213b5243aac",
-        "versionId": "5d38953af815",
+        "versionId": "ba6731adb998",
         "creatorId": "97d35ca792e3",
         "homeCollectionId": "4933e15b493e",
         "title": "Keeping the Affordable Housing Crisis at Bay in the Bay State",
         "detectedLanguage": "en",
-        "latestVersion": "5d38953af815",
-        "latestPublishedVersion": "5d38953af815",
+        "latestVersion": "ba6731adb998",
+        "latestPublishedVersion": "ba6731adb998",
         "hasUnpublishedEdits": false,
-        "latestRev": 60,
+        "latestRev": 65,
         "createdAt": 1558549120943,
-        "updatedAt": 1558635715748,
+        "updatedAt": 1559572071111,
         "acceptedAt": 0,
         "firstPublishedAt": 1558635102876,
-        "latestPublishedAt": 1558635102876,
+        "latestPublishedAt": 1559572070937,
         "vote": false,
         "experimentalCss": "",
         "displayAuthor": "",
@@ -269,36 +500,10 @@
           },
           "wordCount": 882,
           "imageCount": 2,
-          "readingTime": 3.7116352201258,
-          "subtitle": "We talk to Chris Kluchman, director of Massachusetts\u2019 Housing Choice Initiative, about the Commonwealth\u2019s multifaceted approach",
-          "userPostRelation": {
-            "userId": "52f77b00a500",
-            "postId": "b213b5243aac",
-            "readAt": 0,
-            "readLaterAddedAt": 0,
-            "votedAt": 0,
-            "collaboratorAddedAt": 0,
-            "notesAddedAt": 0,
-            "subscribedAt": 0,
-            "lastReadSectionName": "",
-            "lastReadVersionId": "",
-            "lastReadAt": 0,
-            "lastReadParagraphName": "",
-            "lastReadPercentage": 0,
-            "viewedAt": 0,
-            "presentedCountInResponseManagement": 0,
-            "clapCount": 0,
-            "seriesUpdateNotifsOptedInAt": 0,
-            "queuedAt": 0,
-            "seriesFirstViewedAt": 0,
-            "presentedCountInStream": 2,
-            "seriesLastViewedAt": 0,
-            "audioProgressSec": 0
-          },
+          "readingTime": 3.7116352201257863,
+          "subtitle": "We talk to Chris Kluchman, director of Massachusetts’ Housing Choice Initiative, about the Commonwealth’s multifaceted approach",
           "publishedInCount": 1,
-          "usersBySocialRecommends": [
-
-          ],
+          "usersBySocialRecommends": [],
           "noIndex": false,
           "recommends": 0,
           "isBookmarked": false,
@@ -306,13 +511,13 @@
             {
               "slug": "housing",
               "name": "Housing",
-              "postCount": 11914,
+              "postCount": 12413,
               "metadata": {
-                "postCount": 11914,
+                "postCount": 12413,
                 "coverImage": {
-                  "id": "1*zwZAeBHIwRzEXVxjY5pWjA.jpeg",
-                  "originalWidth": 4427,
-                  "originalHeight": 2745,
+                  "id": "1*v87zrUc4q80jRJ_nCdvpbQ.jpeg",
+                  "originalWidth": 630,
+                  "originalHeight": 420,
                   "isFeatured": true
                 }
               },
@@ -321,13 +526,13 @@
             {
               "slug": "massachusetts",
               "name": "Massachusetts",
-              "postCount": 984,
+              "postCount": 1008,
               "metadata": {
-                "postCount": 984,
+                "postCount": 1008,
                 "coverImage": {
-                  "id": "1*pQDpxRpUf094i0QRovv1qw.jpeg",
-                  "originalWidth": 1023,
-                  "originalHeight": 945,
+                  "id": "1*NVo2IIQfiGPE9gacXre5qg.png",
+                  "originalWidth": 8000,
+                  "originalHeight": 6000,
                   "isFeatured": true
                 }
               },
@@ -336,13 +541,13 @@
             {
               "slug": "housing-crisis",
               "name": "Housing Crisis",
-              "postCount": 456,
+              "postCount": 470,
               "metadata": {
-                "postCount": 456,
+                "postCount": 470,
                 "coverImage": {
-                  "id": "0*NJWfwFuuYV9K-B3I",
-                  "originalWidth": 498,
-                  "originalHeight": 248,
+                  "id": "1*cNlZkJWEO3v_12f6BTe3mA.jpeg",
+                  "originalWidth": 4000,
+                  "originalHeight": 2352,
                   "isFeatured": true
                 }
               },
@@ -351,13 +556,14 @@
             {
               "slug": "affordable-housing",
               "name": "Affordable Housing",
-              "postCount": 1521,
+              "postCount": 1562,
               "metadata": {
-                "postCount": 1521,
+                "postCount": 1562,
                 "coverImage": {
-                  "id": "1*G4mgTiEwCv47AqGo5Nx1CQ.jpeg",
-                  "originalWidth": 3000,
-                  "originalHeight": 2000
+                  "id": "1*Ij3jm0Hfsfvmwg4QvPAYgQ.jpeg",
+                  "originalWidth": 800,
+                  "originalHeight": 800,
+                  "isFeatured": true
                 }
               },
               "type": "Tag"
@@ -383,24 +589,20 @@
           "links": {
             "entries": [
               {
-                "url": "https:\/\/www.masshousing.com\/portal\/server.pt\/community\/home\/217",
-                "alts": [
-
-                ],
+                "url": "https://www.masshousing.com/portal/server.pt/community/home/217",
+                "alts": [],
                 "httpStatus": 200
               }
             ],
             "version": "0.3",
-            "generatedAt": 1558635103649
+            "generatedAt": 1559572071641
           },
           "isLockedPreviewOnly": false,
           "metaDescription": "",
           "totalClapCount": 0,
           "sectionCount": 1,
           "readingList": 0,
-          "topics": [
-
-          ]
+          "topics": []
         },
         "coverless": true,
         "slug": "keeping-the-affordable-housing-crisis-at-bay-in-the-bay-state",
@@ -451,7 +653,7 @@
             ]
           },
           "isFullContent": false,
-          "subtitle": "We talk to Chris Kluchman, director of Massachusetts\u2019 Housing Choice Initiative, about the Commonwealth\u2019s multifaceted approach"
+          "subtitle": "We talk to Chris Kluchman, director of Massachusetts’ Housing Choice Initiative, about the Commonwealth’s multifaceted approach"
         },
         "license": 0,
         "inResponseToMediaResourceId": "",
@@ -485,6 +687,10 @@
         "editorialPreviewTitle": "",
         "editorialPreviewDek": "",
         "curationEligibleAt": 0,
+        "isProxyPost": false,
+        "proxyPostFaviconUrl": "",
+        "proxyPostProviderName": "",
+        "proxyPostType": 0,
         "type": "Post"
       },
       {
@@ -492,7 +698,7 @@
         "versionId": "1650a48c0ec6",
         "creatorId": "97d35ca792e3",
         "homeCollectionId": "4933e15b493e",
-        "title": "Minneapolis\u2019 New Comprehensive Plan Blazes a Trail Toward More Housing. Will Others Follow?",
+        "title": "Minneapolis’ New Comprehensive Plan Blazes a Trail Toward More Housing. Will Others Follow?",
         "detectedLanguage": "en",
         "latestVersion": "1650a48c0ec6",
         "latestPublishedVersion": "1650a48c0ec6",
@@ -521,36 +727,10 @@
           },
           "wordCount": 820,
           "imageCount": 2,
-          "readingTime": 3.4776729559748,
+          "readingTime": 3.477672955974843,
           "subtitle": "Minneapolis 2040 virtually eliminates single family zoning and lays out other bold steps toward more housing options for all",
-          "userPostRelation": {
-            "userId": "52f77b00a500",
-            "postId": "27f71c4d90ee",
-            "readAt": 0,
-            "readLaterAddedAt": 0,
-            "votedAt": 0,
-            "collaboratorAddedAt": 0,
-            "notesAddedAt": 0,
-            "subscribedAt": 0,
-            "lastReadSectionName": "",
-            "lastReadVersionId": "",
-            "lastReadAt": 0,
-            "lastReadParagraphName": "",
-            "lastReadPercentage": 0,
-            "viewedAt": 0,
-            "presentedCountInResponseManagement": 0,
-            "clapCount": 0,
-            "seriesUpdateNotifsOptedInAt": 0,
-            "queuedAt": 0,
-            "seriesFirstViewedAt": 0,
-            "presentedCountInStream": 2,
-            "seriesLastViewedAt": 0,
-            "audioProgressSec": 0
-          },
           "publishedInCount": 1,
-          "usersBySocialRecommends": [
-
-          ],
+          "usersBySocialRecommends": [],
           "noIndex": false,
           "recommends": 0,
           "isBookmarked": false,
@@ -558,14 +738,13 @@
             {
               "slug": "solutions",
               "name": "Solutions",
-              "postCount": 2296,
+              "postCount": 2341,
               "metadata": {
-                "postCount": 2296,
+                "postCount": 2341,
                 "coverImage": {
-                  "id": "1*XA8XdgWGxWklK-hd9DQYbA.png",
-                  "originalWidth": 3804,
-                  "originalHeight": 2004,
-                  "isFeatured": true
+                  "id": "1*Mdr9jl825ZlYZ_nUghgrzA.jpeg",
+                  "originalWidth": 1864,
+                  "originalHeight": 1047
                 }
               },
               "type": "Tag"
@@ -573,13 +752,13 @@
             {
               "slug": "housing-crisis",
               "name": "Housing Crisis",
-              "postCount": 456,
+              "postCount": 470,
               "metadata": {
-                "postCount": 456,
+                "postCount": 470,
                 "coverImage": {
-                  "id": "0*NJWfwFuuYV9K-B3I",
-                  "originalWidth": 498,
-                  "originalHeight": 248,
+                  "id": "1*cNlZkJWEO3v_12f6BTe3mA.jpeg",
+                  "originalWidth": 4000,
+                  "originalHeight": 2352,
                   "isFeatured": true
                 }
               },
@@ -588,13 +767,14 @@
             {
               "slug": "affordable-housing",
               "name": "Affordable Housing",
-              "postCount": 1521,
+              "postCount": 1562,
               "metadata": {
-                "postCount": 1521,
+                "postCount": 1562,
                 "coverImage": {
-                  "id": "1*G4mgTiEwCv47AqGo5Nx1CQ.jpeg",
-                  "originalWidth": 3000,
-                  "originalHeight": 2000
+                  "id": "1*Ij3jm0Hfsfvmwg4QvPAYgQ.jpeg",
+                  "originalWidth": 800,
+                  "originalHeight": 800,
+                  "isFeatured": true
                 }
               },
               "type": "Tag"
@@ -602,9 +782,9 @@
             {
               "slug": "minneapolis",
               "name": "Minneapolis",
-              "postCount": 960,
+              "postCount": 967,
               "metadata": {
-                "postCount": 960,
+                "postCount": 967,
                 "coverImage": {
                   "id": "1*jFr8pcIR6wkBu5-HgyHGXw.jpeg",
                   "originalWidth": 1600,
@@ -617,13 +797,13 @@
             {
               "slug": "housing",
               "name": "Housing",
-              "postCount": 11914,
+              "postCount": 12413,
               "metadata": {
-                "postCount": 11914,
+                "postCount": 12413,
                 "coverImage": {
-                  "id": "1*zwZAeBHIwRzEXVxjY5pWjA.jpeg",
-                  "originalWidth": 4427,
-                  "originalHeight": 2745,
+                  "id": "1*v87zrUc4q80jRJ_nCdvpbQ.jpeg",
+                  "originalWidth": 630,
+                  "originalHeight": 420,
                   "isFeatured": true
                 }
               },
@@ -635,122 +815,96 @@
           "links": {
             "entries": [
               {
-                "url": "https:\/\/www.curbed.com\/2019\/1\/9\/18175780\/minneapolis-2040-real-estate-rent-development-zoning",
+                "url": "https://www.curbed.com/2019/1/9/18175780/minneapolis-2040-real-estate-rent-development-zoning",
                 "alts": [
                   {
                     "type": 1,
-                    "url": "https:\/\/cdn.ampproject.org\/c\/s\/www.curbed.com\/platform\/amp\/2019\/1\/9\/18175780\/minneapolis-2040-real-estate-rent-development-zoning"
+                    "url": "https://cdn.ampproject.org/c/s/www.curbed.com/platform/amp/2019/1/9/18175780/minneapolis-2040-real-estate-rent-development-zoning"
                   }
                 ],
                 "httpStatus": 200
               },
               {
-                "url": "https:\/\/www.nytimes.com\/2018\/12\/13\/us\/minneapolis-single-family-zoning.html",
+                "url": "https://www.nytimes.com/2018/12/13/us/minneapolis-single-family-zoning.html",
                 "alts": [
                   {
                     "type": 3,
-                    "url": "nytimes:\/\/reader\/id\/100000006254314"
+                    "url": "nytimes://reader/id/100000006254314"
                   },
                   {
                     "type": 2,
-                    "url": "nytimes:\/\/www.nytimes.com\/2018\/12\/13\/us\/minneapolis-single-family-zoning.html"
+                    "url": "nytimes://www.nytimes.com/2018/12/13/us/minneapolis-single-family-zoning.html"
                   },
                   {
                     "type": 1,
-                    "url": "https:\/\/cdn.ampproject.org\/c\/s\/www.nytimes.com\/2018\/12\/13\/us\/minneapolis-single-family-zoning.amp.html"
+                    "url": "https://cdn.ampproject.org/c/s/www.nytimes.com/2018/12/13/us/minneapolis-single-family-zoning.amp.html"
                   }
                 ],
                 "httpStatus": 200
               },
               {
-                "url": "https:\/\/www.ryancompanies.com\/",
-                "alts": [
-
-                ],
+                "url": "https://www.ryancompanies.com/",
+                "alts": [],
                 "httpStatus": 200
               },
               {
-                "url": "https:\/\/www.census.gov\/housing\/hvs\/data\/ann17ind.html",
-                "alts": [
-
-                ],
+                "url": "https://www.census.gov/housing/hvs/data/ann17ind.html",
+                "alts": [],
                 "httpStatus": 200
               },
               {
-                "url": "https:\/\/next50.urban.org\/article\/precise-solutions-precise-damage-interview-minneapolis-mayor-jacob-frey",
-                "alts": [
-
-                ],
+                "url": "https://next50.urban.org/article/precise-solutions-precise-damage-interview-minneapolis-mayor-jacob-frey",
+                "alts": [],
                 "httpStatus": 200
               },
               {
-                "url": "https:\/\/www.weidner.com\/",
-                "alts": [
-
-                ],
+                "url": "https://www.weidner.com/",
+                "alts": [],
                 "httpStatus": 200
               },
               {
-                "url": "https:\/\/minneapolis2040.com\/",
-                "alts": [
-
-                ],
+                "url": "https://minneapolis2040.com/",
+                "alts": [],
                 "httpStatus": 200
               },
               {
-                "url": "https:\/\/minneapolis2040.com\/policies\/access-to-housing\/",
-                "alts": [
-
-                ],
+                "url": "https://minneapolis2040.com/policies/access-to-housing/",
+                "alts": [],
                 "httpStatus": 200
               },
               {
-                "url": "https:\/\/minneapolis2040.com\/policies\/housing-displacement\/",
-                "alts": [
-
-                ],
+                "url": "https://minneapolis2040.com/policies/housing-displacement/",
+                "alts": [],
                 "httpStatus": 200
               },
               {
-                "url": "https:\/\/minneapolis2040.com\/policies\/innovative-housing-strategies-data-driven-decisions\/",
-                "alts": [
-
-                ],
+                "url": "https://minneapolis2040.com/policies/innovative-housing-strategies-data-driven-decisions/",
+                "alts": [],
                 "httpStatus": 200
               },
               {
-                "url": "https:\/\/minneapolis2040.com\/policies\/pedestrian-oriented-building-and-site-design\/",
-                "alts": [
-
-                ],
+                "url": "https://minneapolis2040.com/policies/pedestrian-oriented-building-and-site-design/",
+                "alts": [],
                 "httpStatus": 200
               },
               {
-                "url": "https:\/\/minneapolis2040.com\/policies\/mixed-income-housing\/",
-                "alts": [
-
-                ],
+                "url": "https://minneapolis2040.com/policies/mixed-income-housing/",
+                "alts": [],
                 "httpStatus": 200
               },
               {
-                "url": "https:\/\/metrocouncil.org\/",
-                "alts": [
-
-                ],
+                "url": "https://metrocouncil.org/",
+                "alts": [],
                 "httpStatus": 200
               },
               {
-                "url": "http:\/\/www.startribune.com\/find-out-how-your-block-could-change-in-minneapolis-2040-plan\/489889431\/",
-                "alts": [
-
-                ],
+                "url": "http://www.startribune.com/find-out-how-your-block-could-change-in-minneapolis-2040-plan/489889431/",
+                "alts": [],
                 "httpStatus": 200
               },
               {
-                "url": "https:\/\/metrocouncil.org\/Data-and-Maps\/Publications-And-Resources\/MetroStats\/Land-Use-and-Development\/What-a-Difference-a-Rate-Makes-Population-Growth,.aspx",
-                "alts": [
-
-                ],
+                "url": "https://metrocouncil.org/Data-and-Maps/Publications-And-Resources/MetroStats/Land-Use-and-Development/What-a-Difference-a-Rate-Makes-Population-Growth,.aspx",
+                "alts": [],
                 "httpStatus": 200
               }
             ],
@@ -762,9 +916,7 @@
           "totalClapCount": 0,
           "sectionCount": 1,
           "readingList": 0,
-          "topics": [
-
-          ]
+          "topics": []
         },
         "coverless": true,
         "slug": "minneapolis-new-comprehensive-plan-blazes-a-trail-toward-more-housing-will-others-follow",
@@ -785,19 +937,15 @@
               {
                 "name": "1200",
                 "type": 3,
-                "text": "Minneapolis\u2019 New Comprehensive Plan Blazes a Trail Toward More Housing. Will Others Follow?",
-                "markups": [
-
-                ],
+                "text": "Minneapolis’ New Comprehensive Plan Blazes a Trail Toward More Housing. Will Others Follow?",
+                "markups": [],
                 "alignment": 1
               },
               {
                 "name": "4807",
                 "type": 13,
                 "text": "Minneapolis 2040 virtually eliminates single family zoning and lays out other bold steps",
-                "markups": [
-
-                ],
+                "markups": [],
                 "alignment": 1
               }
             ],
@@ -842,6 +990,10 @@
         "editorialPreviewTitle": "",
         "editorialPreviewDek": "",
         "curationEligibleAt": 0,
+        "isProxyPost": false,
+        "proxyPostFaviconUrl": "",
+        "proxyPostProviderName": "",
+        "proxyPostType": 0,
         "type": "Post"
       },
       {
@@ -878,36 +1030,10 @@
           },
           "wordCount": 620,
           "imageCount": 2,
-          "readingTime": 2.7229559748428,
+          "readingTime": 2.722955974842767,
           "subtitle": "A new policy aims to concentrate growth where there are transit, services and parks",
-          "userPostRelation": {
-            "userId": "52f77b00a500",
-            "postId": "5e0e4044fa21",
-            "readAt": 1557443346365,
-            "readLaterAddedAt": 0,
-            "votedAt": 0,
-            "collaboratorAddedAt": 0,
-            "notesAddedAt": 0,
-            "subscribedAt": 0,
-            "lastReadSectionName": "",
-            "lastReadVersionId": "",
-            "lastReadAt": 0,
-            "lastReadParagraphName": "",
-            "lastReadPercentage": 0,
-            "viewedAt": 1557443346371,
-            "presentedCountInResponseManagement": 0,
-            "clapCount": 0,
-            "seriesUpdateNotifsOptedInAt": 0,
-            "queuedAt": 0,
-            "seriesFirstViewedAt": 0,
-            "presentedCountInStream": 9,
-            "seriesLastViewedAt": 0,
-            "audioProgressSec": 0
-          },
           "publishedInCount": 1,
-          "usersBySocialRecommends": [
-
-          ],
+          "usersBySocialRecommends": [],
           "noIndex": false,
           "recommends": 1,
           "isBookmarked": false,
@@ -915,13 +1041,13 @@
             {
               "slug": "housing",
               "name": "Housing",
-              "postCount": 11914,
+              "postCount": 12413,
               "metadata": {
-                "postCount": 11914,
+                "postCount": 12413,
                 "coverImage": {
-                  "id": "1*zwZAeBHIwRzEXVxjY5pWjA.jpeg",
-                  "originalWidth": 4427,
-                  "originalHeight": 2745,
+                  "id": "1*v87zrUc4q80jRJ_nCdvpbQ.jpeg",
+                  "originalWidth": 630,
+                  "originalHeight": 420,
                   "isFeatured": true
                 }
               },
@@ -930,14 +1056,13 @@
             {
               "slug": "solutions",
               "name": "Solutions",
-              "postCount": 2296,
+              "postCount": 2341,
               "metadata": {
-                "postCount": 2296,
+                "postCount": 2341,
                 "coverImage": {
-                  "id": "1*XA8XdgWGxWklK-hd9DQYbA.png",
-                  "originalWidth": 3804,
-                  "originalHeight": 2004,
-                  "isFeatured": true
+                  "id": "1*Mdr9jl825ZlYZ_nUghgrzA.jpeg",
+                  "originalWidth": 1864,
+                  "originalHeight": 1047
                 }
               },
               "type": "Tag"
@@ -945,13 +1070,13 @@
             {
               "slug": "housing-crisis",
               "name": "Housing Crisis",
-              "postCount": 456,
+              "postCount": 470,
               "metadata": {
-                "postCount": 456,
+                "postCount": 470,
                 "coverImage": {
-                  "id": "0*NJWfwFuuYV9K-B3I",
-                  "originalWidth": 498,
-                  "originalHeight": 248,
+                  "id": "1*cNlZkJWEO3v_12f6BTe3mA.jpeg",
+                  "originalWidth": 4000,
+                  "originalHeight": 2352,
                   "isFeatured": true
                 }
               },
@@ -960,13 +1085,14 @@
             {
               "slug": "affordable-housing",
               "name": "Affordable Housing",
-              "postCount": 1521,
+              "postCount": 1562,
               "metadata": {
-                "postCount": 1521,
+                "postCount": 1562,
                 "coverImage": {
-                  "id": "1*G4mgTiEwCv47AqGo5Nx1CQ.jpeg",
-                  "originalWidth": 3000,
-                  "originalHeight": 2000
+                  "id": "1*Ij3jm0Hfsfvmwg4QvPAYgQ.jpeg",
+                  "originalWidth": 800,
+                  "originalHeight": 800,
+                  "isFeatured": true
                 }
               },
               "type": "Tag"
@@ -974,13 +1100,13 @@
             {
               "slug": "seattle",
               "name": "Seattle",
-              "postCount": 3364,
+              "postCount": 3444,
               "metadata": {
-                "postCount": 3364,
+                "postCount": 3444,
                 "coverImage": {
-                  "id": "1*rL-qjc49x-rmagzd1EMovg.jpeg",
-                  "originalWidth": 3747,
-                  "originalHeight": 2811,
+                  "id": "1*H2cmzG_qRbeGXIIs6Uv1CQ.jpeg",
+                  "originalWidth": 640,
+                  "originalHeight": 480,
                   "isFeatured": true
                 }
               },
@@ -992,71 +1118,63 @@
           "links": {
             "entries": [
               {
-                "url": "https:\/\/www.seattletimes.com\/seattle-news\/homeless\/seattle-mariners-launch-3-million-effort-for-homelessness-prevention-with-evictions-legal-clinic\/",
+                "url": "https://www.seattletimes.com/seattle-news/homeless/seattle-mariners-launch-3-million-effort-for-homelessness-prevention-with-evictions-legal-clinic/",
                 "alts": [
                   {
                     "type": 1,
-                    "url": "https:\/\/cdn.ampproject.org\/c\/s\/www.seattletimes.com\/seattle-news\/homeless\/seattle-mariners-launch-3-million-effort-for-homelessness-prevention-with-evictions-legal-clinic\/?amp=1"
+                    "url": "https://cdn.ampproject.org/c/s/www.seattletimes.com/seattle-news/homeless/seattle-mariners-launch-3-million-effort-for-homelessness-prevention-with-evictions-legal-clinic/?amp=1"
                   }
                 ],
                 "httpStatus": 200
               },
               {
-                "url": "https:\/\/durkan.seattle.gov\/2019\/03\/in-a-significant-step-toward-creating-a-more-affordable-seattle-mayor-durkan-signs-mandatory-housing-affordability-into-law\/",
-                "alts": [
-
-                ],
+                "url": "https://durkan.seattle.gov/2019/03/in-a-significant-step-toward-creating-a-more-affordable-seattle-mayor-durkan-signs-mandatory-housing-affordability-into-law/",
+                "alts": [],
                 "httpStatus": 200
               },
               {
-                "url": "https:\/\/www.seattle.gov\/hala\/about\/mandatory-housing-affordability-(mha)",
-                "alts": [
-
-                ],
+                "url": "https://www.seattle.gov/hala/about/mandatory-housing-affordability-(mha)",
+                "alts": [],
                 "httpStatus": 200
               },
               {
-                "url": "https:\/\/www.seattletimes.com\/seattle-news\/politics\/seattle-upzones-27-neighborhood-hubs-passes-affordable-housing-requirements\/",
+                "url": "https://www.seattletimes.com/seattle-news/politics/seattle-upzones-27-neighborhood-hubs-passes-affordable-housing-requirements/",
                 "alts": [
                   {
                     "type": 1,
-                    "url": "https:\/\/cdn.ampproject.org\/c\/s\/www.seattletimes.com\/seattle-news\/politics\/seattle-upzones-27-neighborhood-hubs-passes-affordable-housing-requirements\/?amp=1"
+                    "url": "https://cdn.ampproject.org/c/s/www.seattletimes.com/seattle-news/politics/seattle-upzones-27-neighborhood-hubs-passes-affordable-housing-requirements/?amp=1"
                   }
                 ],
                 "httpStatus": 200
               },
               {
-                "url": "https:\/\/www.seattletimes.com\/seattle-news\/homeless\/microsoft-pledges-500-million-to-help-develop-affordable-housing-in-seattle-and-on-eastside\/",
+                "url": "https://www.seattletimes.com/seattle-news/homeless/microsoft-pledges-500-million-to-help-develop-affordable-housing-in-seattle-and-on-eastside/",
                 "alts": [
                   {
                     "type": 1,
-                    "url": "https:\/\/cdn.ampproject.org\/c\/s\/www.seattletimes.com\/seattle-news\/homeless\/microsoft-pledges-500-million-to-help-develop-affordable-housing-in-seattle-and-on-eastside\/?amp=1"
+                    "url": "https://cdn.ampproject.org/c/s/www.seattletimes.com/seattle-news/homeless/microsoft-pledges-500-million-to-help-develop-affordable-housing-in-seattle-and-on-eastside/?amp=1"
                   }
                 ],
                 "httpStatus": 200
               },
               {
-                "url": "https:\/\/seattle.curbed.com\/2018\/6\/25\/17501872\/seattle-area-housing-cost-burden",
+                "url": "https://seattle.curbed.com/2018/6/25/17501872/seattle-area-housing-cost-burden",
                 "alts": [
                   {
                     "type": 1,
-                    "url": "https:\/\/cdn.ampproject.org\/c\/s\/seattle.curbed.com\/platform\/amp\/2018\/6\/25\/17501872\/seattle-area-housing-cost-burden"
+                    "url": "https://cdn.ampproject.org/c/s/seattle.curbed.com/platform/amp/2018/6/25/17501872/seattle-area-housing-cost-burden"
                   }
                 ],
                 "httpStatus": 200
               },
               {
-                "url": "https:\/\/crosscut.com\/2018\/11\/city-says-legal-fight-cost-seattle-717-affordable-homes",
-                "alts": [
-
-                ],
+                "url": "https://crosscut.com/2018/11/city-says-legal-fight-cost-seattle-717-affordable-homes",
+                "alts": [],
                 "httpStatus": 200
               },
               {
-                "url": "https:\/\/komonews.com\/news\/local\/washington-homelessness-result-of-evictions-rent-spikes-uw-study-finds",
-                "alts": [
-
-                ],
+                "url": "https://komonews.com/news/local/washington-homelessness-result-of-evictions-rent-spikes-uw-study-finds",
+                "alts": [],
                 "httpStatus": 200
               }
             ],
@@ -1068,9 +1186,7 @@
           "totalClapCount": 1,
           "sectionCount": 1,
           "readingList": 0,
-          "topics": [
-
-          ]
+          "topics": []
         },
         "coverless": true,
         "slug": "boosting-neighborhood-density-moves-seattle-toward-greater-housing-options-for-all",
@@ -1155,6 +1271,10 @@
         "editorialPreviewTitle": "",
         "editorialPreviewDek": "",
         "curationEligibleAt": 0,
+        "isProxyPost": false,
+        "proxyPostFaviconUrl": "",
+        "proxyPostProviderName": "",
+        "proxyPostType": 0,
         "type": "Post"
       },
       {
@@ -1162,7 +1282,7 @@
         "versionId": "894e9521afe4",
         "creatorId": "97d35ca792e3",
         "homeCollectionId": "4933e15b493e",
-        "title": "It\u2019s Time to Solve the Affordable Housing Crisis",
+        "title": "It’s Time to Solve the Affordable Housing Crisis",
         "detectedLanguage": "en",
         "latestVersion": "894e9521afe4",
         "latestPublishedVersion": "894e9521afe4",
@@ -1191,36 +1311,10 @@
           },
           "wordCount": 957,
           "imageCount": 1,
-          "readingTime": 3.811320754717,
+          "readingTime": 3.811320754716981,
           "subtitle": "Together, we can provide a wider, more diverse range of housing options at all price points",
-          "userPostRelation": {
-            "userId": "52f77b00a500",
-            "postId": "8deb03b504e2",
-            "readAt": 0,
-            "readLaterAddedAt": 0,
-            "votedAt": 0,
-            "collaboratorAddedAt": 0,
-            "notesAddedAt": 0,
-            "subscribedAt": 0,
-            "lastReadSectionName": "",
-            "lastReadVersionId": "",
-            "lastReadAt": 0,
-            "lastReadParagraphName": "",
-            "lastReadPercentage": 0,
-            "viewedAt": 1557443346338,
-            "presentedCountInResponseManagement": 0,
-            "clapCount": 0,
-            "seriesUpdateNotifsOptedInAt": 0,
-            "queuedAt": 0,
-            "seriesFirstViewedAt": 0,
-            "presentedCountInStream": 8,
-            "seriesLastViewedAt": 0,
-            "audioProgressSec": 0
-          },
           "publishedInCount": 1,
-          "usersBySocialRecommends": [
-
-          ],
+          "usersBySocialRecommends": [],
           "noIndex": false,
           "recommends": 3,
           "isBookmarked": false,
@@ -1228,13 +1322,13 @@
             {
               "slug": "housing",
               "name": "Housing",
-              "postCount": 11914,
+              "postCount": 12413,
               "metadata": {
-                "postCount": 11914,
+                "postCount": 12413,
                 "coverImage": {
-                  "id": "1*zwZAeBHIwRzEXVxjY5pWjA.jpeg",
-                  "originalWidth": 4427,
-                  "originalHeight": 2745,
+                  "id": "1*v87zrUc4q80jRJ_nCdvpbQ.jpeg",
+                  "originalWidth": 630,
+                  "originalHeight": 420,
                   "isFeatured": true
                 }
               },
@@ -1243,14 +1337,13 @@
             {
               "slug": "solutions",
               "name": "Solutions",
-              "postCount": 2296,
+              "postCount": 2341,
               "metadata": {
-                "postCount": 2296,
+                "postCount": 2341,
                 "coverImage": {
-                  "id": "1*XA8XdgWGxWklK-hd9DQYbA.png",
-                  "originalWidth": 3804,
-                  "originalHeight": 2004,
-                  "isFeatured": true
+                  "id": "1*Mdr9jl825ZlYZ_nUghgrzA.jpeg",
+                  "originalWidth": 1864,
+                  "originalHeight": 1047
                 }
               },
               "type": "Tag"
@@ -1258,13 +1351,13 @@
             {
               "slug": "apartments",
               "name": "Apartments",
-              "postCount": 3085,
+              "postCount": 3218,
               "metadata": {
-                "postCount": 3085,
+                "postCount": 3218,
                 "coverImage": {
-                  "id": "1*cZ0xMKZhHTeCqo-zbIrk9g.png",
-                  "originalWidth": 1080,
-                  "originalHeight": 1080,
+                  "id": "1*lXFqVGBRkHesHnJB0GugSQ.jpeg",
+                  "originalWidth": 1600,
+                  "originalHeight": 1600,
                   "isFeatured": true
                 }
               },
@@ -1273,13 +1366,14 @@
             {
               "slug": "affordable-housing",
               "name": "Affordable Housing",
-              "postCount": 1521,
+              "postCount": 1562,
               "metadata": {
-                "postCount": 1521,
+                "postCount": 1562,
                 "coverImage": {
-                  "id": "1*G4mgTiEwCv47AqGo5Nx1CQ.jpeg",
-                  "originalWidth": 3000,
-                  "originalHeight": 2000
+                  "id": "1*Ij3jm0Hfsfvmwg4QvPAYgQ.jpeg",
+                  "originalWidth": 800,
+                  "originalHeight": 800,
+                  "isFeatured": true
                 }
               },
               "type": "Tag"
@@ -1287,13 +1381,13 @@
             {
               "slug": "housing-crisis",
               "name": "Housing Crisis",
-              "postCount": 456,
+              "postCount": 470,
               "metadata": {
-                "postCount": 456,
+                "postCount": 470,
                 "coverImage": {
-                  "id": "0*NJWfwFuuYV9K-B3I",
-                  "originalWidth": 498,
-                  "originalHeight": 248,
+                  "id": "1*cNlZkJWEO3v_12f6BTe3mA.jpeg",
+                  "originalWidth": 4000,
+                  "originalHeight": 2352,
                   "isFeatured": true
                 }
               },
@@ -1305,73 +1399,61 @@
           "links": {
             "entries": [
               {
-                "url": "https:\/\/www.nytimes.com\/2018\/12\/13\/us\/minneapolis-single-family-zoning.html",
+                "url": "https://www.nytimes.com/2018/12/13/us/minneapolis-single-family-zoning.html",
                 "alts": [
                   {
                     "type": 3,
-                    "url": "nytimes:\/\/reader\/id\/100000006254314"
+                    "url": "nytimes://reader/id/100000006254314"
                   },
                   {
                     "type": 2,
-                    "url": "nytimes:\/\/www.nytimes.com\/2018\/12\/13\/us\/minneapolis-single-family-zoning.html"
+                    "url": "nytimes://www.nytimes.com/2018/12/13/us/minneapolis-single-family-zoning.html"
                   },
                   {
                     "type": 1,
-                    "url": "https:\/\/cdn.ampproject.org\/c\/s\/www.nytimes.com\/2018\/12\/13\/us\/minneapolis-single-family-zoning.amp.html"
+                    "url": "https://cdn.ampproject.org/c/s/www.nytimes.com/2018/12/13/us/minneapolis-single-family-zoning.amp.html"
                   }
                 ],
                 "httpStatus": 200
               },
               {
-                "url": "https:\/\/www.mass.gov\/service-details\/massachusetts-rental-voucher-program-mrvp",
-                "alts": [
-
-                ],
+                "url": "https://www.mass.gov/service-details/massachusetts-rental-voucher-program-mrvp",
+                "alts": [],
                 "httpStatus": 200
               },
               {
-                "url": "https:\/\/www.mass.gov\/housing-choice-initiative",
-                "alts": [
-
-                ],
+                "url": "https://www.mass.gov/housing-choice-initiative",
+                "alts": [],
                 "httpStatus": 200
               },
               {
-                "url": "https:\/\/www.whitehouse.gov\/sites\/whitehouse.gov\/files\/images\/Housing_Development_Toolkit%20f.2.pdf",
-                "alts": [
-
-                ],
+                "url": "https://www.whitehouse.gov/sites/whitehouse.gov/files/images/Housing_Development_Toolkit%20f.2.pdf",
+                "alts": [],
                 "httpStatus": 200
               },
               {
-                "url": "https:\/\/www.seattletimes.com\/seattle-news\/politics\/seattle-upzones-27-neighborhood-hubs-passes-affordable-housing-requirements\/",
+                "url": "https://www.seattletimes.com/seattle-news/politics/seattle-upzones-27-neighborhood-hubs-passes-affordable-housing-requirements/",
                 "alts": [
                   {
                     "type": 1,
-                    "url": "https:\/\/cdn.ampproject.org\/c\/s\/www.seattletimes.com\/seattle-news\/politics\/seattle-upzones-27-neighborhood-hubs-passes-affordable-housing-requirements\/?amp=1"
+                    "url": "https://cdn.ampproject.org/c/s/www.seattletimes.com/seattle-news/politics/seattle-upzones-27-neighborhood-hubs-passes-affordable-housing-requirements/?amp=1"
                   }
                 ],
                 "httpStatus": 200
               },
               {
-                "url": "https:\/\/www.jchs.harvard.edu\/blog\/more-than-a-third-of-american-households-were-cost-burdened-last-year\/",
-                "alts": [
-
-                ],
+                "url": "https://www.jchs.harvard.edu/blog/more-than-a-third-of-american-households-were-cost-burdened-last-year/",
+                "alts": [],
                 "httpStatus": 200
               },
               {
-                "url": "https:\/\/www.rentcafe.com\/blog\/rental-market\/apartment-construction-is-finally-slowing-down-in-2018-after-a-6-year-upward-streak\/",
-                "alts": [
-
-                ],
+                "url": "https://www.rentcafe.com/blog/rental-market/apartment-construction-is-finally-slowing-down-in-2018-after-a-6-year-upward-streak/",
+                "alts": [],
                 "httpStatus": 200
               },
               {
-                "url": "http:\/\/livedenver.org\/",
-                "alts": [
-
-                ],
+                "url": "http://livedenver.org/",
+                "alts": [],
                 "httpStatus": 200
               }
             ],
@@ -1383,9 +1465,7 @@
           "totalClapCount": 23,
           "sectionCount": 1,
           "readingList": 0,
-          "topics": [
-
-          ]
+          "topics": []
         },
         "coverless": true,
         "slug": "its-time-to-solve-the-affordable-housing-crisis",
@@ -1418,7 +1498,7 @@
               {
                 "name": "0201",
                 "type": 3,
-                "text": "It\u2019s Time to Solve the Affordable Housing Crisis",
+                "text": "It’s Time to Solve the Affordable Housing Crisis",
                 "markups": [
                   {
                     "type": 1,
@@ -1431,7 +1511,7 @@
               {
                 "name": "21d9",
                 "type": 13,
-                "text": "Together, we can provide a wider, more diverse range\u2026",
+                "text": "Together, we can provide a wider, more diverse range…",
                 "markups": [
                   {
                     "type": 2,
@@ -1483,24 +1563,28 @@
         "editorialPreviewTitle": "",
         "editorialPreviewDek": "",
         "curationEligibleAt": 0,
+        "isProxyPost": false,
+        "proxyPostFaviconUrl": "",
+        "proxyPostProviderName": "",
+        "proxyPostType": 0,
         "type": "Post"
       },
       {
         "id": "cfd1a69056fb",
-        "versionId": "71f7d1162b63",
+        "versionId": "dc6fd11711a7",
         "creatorId": "97d35ca792e3",
         "homeCollectionId": "4933e15b493e",
         "title": "The Future of Housing",
         "detectedLanguage": "en",
-        "latestVersion": "71f7d1162b63",
-        "latestPublishedVersion": "71f7d1162b63",
+        "latestVersion": "dc6fd11711a7",
+        "latestPublishedVersion": "dc6fd11711a7",
         "hasUnpublishedEdits": false,
-        "latestRev": 103,
+        "latestRev": 116,
         "createdAt": 1551796110210,
-        "updatedAt": 1551883141299,
+        "updatedAt": 1559310694158,
         "acceptedAt": 0,
         "firstPublishedAt": 1551815458518,
-        "latestPublishedAt": 1551883141299,
+        "latestPublishedAt": 1559310693990,
         "vote": false,
         "experimentalCss": "",
         "displayAuthor": "",
@@ -1508,49 +1592,21 @@
           "statusForCollection": "APPROVED",
           "allowNotes": true,
           "previewImage": {
-            "imageId": "1*1mRgpsjV7OC0HXEvOgX0AQ.jpeg",
+            "imageId": "1*Fcmt28rrVQCDUkskfPvAcA.jpeg",
             "filter": "",
             "backgroundSize": "",
-            "originalWidth": 1200,
-            "originalHeight": 628,
+            "originalWidth": 1920,
+            "originalHeight": 1080,
             "strategy": "resample",
             "height": 0,
-            "width": 0,
-            "focusPercentX": 50,
-            "focusPercentY": 43
+            "width": 0
           },
           "wordCount": 20,
           "imageCount": 2,
-          "readingTime": 0.45880503144654,
+          "readingTime": 0.4588050314465409,
           "subtitle": "The state of the housing crisis and how policymakers can take steps to help meet demand",
-          "userPostRelation": {
-            "userId": "52f77b00a500",
-            "postId": "cfd1a69056fb",
-            "readAt": 1554402334097,
-            "readLaterAddedAt": 0,
-            "votedAt": 0,
-            "collaboratorAddedAt": 0,
-            "notesAddedAt": 0,
-            "subscribedAt": 0,
-            "lastReadSectionName": "5db1",
-            "lastReadVersionId": "71f7d1162b63",
-            "lastReadAt": 1554402332207,
-            "lastReadParagraphName": "49a1",
-            "lastReadPercentage": 1,
-            "viewedAt": 1557448789478,
-            "presentedCountInResponseManagement": 0,
-            "clapCount": 0,
-            "seriesUpdateNotifsOptedInAt": 0,
-            "queuedAt": 0,
-            "seriesFirstViewedAt": 0,
-            "presentedCountInStream": 8,
-            "seriesLastViewedAt": 0,
-            "audioProgressSec": 0
-          },
           "publishedInCount": 1,
-          "usersBySocialRecommends": [
-
-          ],
+          "usersBySocialRecommends": [],
           "noIndex": false,
           "recommends": 4,
           "isBookmarked": false,
@@ -1558,13 +1614,13 @@
             {
               "slug": "housing",
               "name": "Housing",
-              "postCount": 11914,
+              "postCount": 12413,
               "metadata": {
-                "postCount": 11914,
+                "postCount": 12413,
                 "coverImage": {
-                  "id": "1*zwZAeBHIwRzEXVxjY5pWjA.jpeg",
-                  "originalWidth": 4427,
-                  "originalHeight": 2745,
+                  "id": "1*v87zrUc4q80jRJ_nCdvpbQ.jpeg",
+                  "originalWidth": 630,
+                  "originalHeight": 420,
                   "isFeatured": true
                 }
               },
@@ -1573,13 +1629,13 @@
             {
               "slug": "apartments",
               "name": "Apartments",
-              "postCount": 3085,
+              "postCount": 3218,
               "metadata": {
-                "postCount": 3085,
+                "postCount": 3218,
                 "coverImage": {
-                  "id": "1*cZ0xMKZhHTeCqo-zbIrk9g.png",
-                  "originalWidth": 1080,
-                  "originalHeight": 1080,
+                  "id": "1*lXFqVGBRkHesHnJB0GugSQ.jpeg",
+                  "originalWidth": 1600,
+                  "originalHeight": 1600,
                   "isFeatured": true
                 }
               },
@@ -1588,16 +1644,14 @@
             {
               "slug": "policy",
               "name": "Policy",
-              "postCount": 6674,
+              "postCount": 6850,
               "metadata": {
-                "postCount": 6674,
+                "postCount": 6850,
                 "coverImage": {
-                  "id": "1*pNeeINtnGBj4ZMH3XFDilg.jpeg",
-                  "originalWidth": 8655,
-                  "originalHeight": 5776,
-                  "isFeatured": true,
-                  "focusPercentX": 40,
-                  "focusPercentY": 70
+                  "id": "1*jO1zmh0STCI_XWQ5BcEKsg.png",
+                  "originalWidth": 1815,
+                  "originalHeight": 1150,
+                  "isFeatured": true
                 }
               },
               "type": "Tag"
@@ -1620,14 +1674,13 @@
             {
               "slug": "solutions",
               "name": "Solutions",
-              "postCount": 2296,
+              "postCount": 2341,
               "metadata": {
-                "postCount": 2296,
+                "postCount": 2341,
                 "coverImage": {
-                  "id": "1*XA8XdgWGxWklK-hd9DQYbA.png",
-                  "originalWidth": 3804,
-                  "originalHeight": 2004,
-                  "isFeatured": true
+                  "id": "1*Mdr9jl825ZlYZ_nUghgrzA.jpeg",
+                  "originalWidth": 1864,
+                  "originalHeight": 1047
                 }
               },
               "type": "Tag"
@@ -1636,20 +1689,16 @@
           "socialRecommendsCount": 0,
           "responsesCreatedCount": 0,
           "links": {
-            "entries": [
-
-            ],
+            "entries": [],
             "version": "0.3",
-            "generatedAt": 1551883141580
+            "generatedAt": 1559310694255
           },
           "isLockedPreviewOnly": false,
           "metaDescription": "",
           "totalClapCount": 55,
           "sectionCount": 1,
           "readingList": 0,
-          "topics": [
-
-          ]
+          "topics": []
         },
         "coverless": true,
         "slug": "the-future-of-housing",
@@ -1668,35 +1717,29 @@
           "bodyModel": {
             "paragraphs": [
               {
-                "name": "previewImage",
+                "name": "0853",
                 "type": 4,
                 "text": "",
-                "layout": 10,
+                "markups": [],
+                "layout": 9,
                 "metadata": {
-                  "id": "1*1mRgpsjV7OC0HXEvOgX0AQ.jpeg",
-                  "originalWidth": 1200,
-                  "originalHeight": 628,
-                  "isFeatured": true,
-                  "focusPercentX": 50,
-                  "focusPercentY": 43
+                  "id": "1*Fcmt28rrVQCDUkskfPvAcA.jpeg",
+                  "originalWidth": 1920,
+                  "originalHeight": 1080
                 }
               },
               {
                 "name": "3c36",
                 "type": 3,
                 "text": "The Future of Housing",
-                "markups": [
-
-                ],
+                "markups": [],
                 "alignment": 1
               },
               {
                 "name": "400c",
                 "type": 13,
-                "text": "The state of the housing crisis and how policymakers can take steps to help meet\u2026",
-                "markups": [
-
-                ],
+                "text": "The state of the housing crisis and how policymakers can take steps to help meet…",
+                "markups": [],
                 "alignment": 1
               }
             ],
@@ -1741,13 +1784,15 @@
         "editorialPreviewTitle": "",
         "editorialPreviewDek": "",
         "curationEligibleAt": 0,
+        "isProxyPost": false,
+        "proxyPostFaviconUrl": "",
+        "proxyPostProviderName": "",
+        "proxyPostType": 0,
         "type": "Post"
       }
     ],
     "tagName": null,
-    "writerNames": [
-
-    ],
+    "writerNames": [],
     "references": {
       "User": {
         "97d35ca792e3": {
@@ -1793,8 +1838,8 @@
             "width": 0
           },
           "metadata": {
-            "followerCount": 19,
-            "activeAt": 1558635715745
+            "followerCount": 27,
+            "activeAt": 1559581201946
           },
           "virtuals": {
             "permissions": {
@@ -1816,10 +1861,12 @@
               "canLockPostsForMediumMembers": false,
               "canLockOwnPostsForMediumMembers": false
             },
-            "isSubscribed": true,
-            "isNewsletterSubscribed": true,
+            "isSubscribed": false,
+            "isNewsletterSubscribed": false,
             "isEnrolledInHightower": false,
-            "isEligibleForHightower": false
+            "isEligibleForHightower": false,
+            "mediumNewsletterId": "",
+            "isSubscribedToMediumNewsletter": false
           },
           "logo": {
             "imageId": "1*NZ2Qi7Rove6gBzRLGFZmvg.jpeg",
@@ -1843,9 +1890,7 @@
                   "originalWidth": 3126,
                   "originalHeight": 1564
                 },
-                "logoImage": {
-
-                },
+                "logoImage": {},
                 "alignment": 1,
                 "layout": 6
               }
@@ -1856,9 +1901,7 @@
                 "source": 1,
                 "layout": 2,
                 "number": 3,
-                "postIds": [
-
-                ]
+                "postIds": []
               }
             },
             {
@@ -1867,9 +1910,7 @@
                 "source": 1,
                 "layout": 4,
                 "number": 3,
-                "postIds": [
-
-                ]
+                "postIds": []
               }
             },
             {
@@ -1878,9 +1919,7 @@
                 "source": 1,
                 "layout": 6,
                 "number": 3,
-                "postIds": [
-
-                ]
+                "postIds": []
               }
             }
           ],
@@ -1947,28 +1986,28 @@
               "type": 1,
               "title": "Challenges",
               "tagSlug": "challenges",
-              "url": "https:\/\/medium.com\/we-are-apartments\/tagged\/challenges",
+              "url": "https://medium.com/we-are-apartments/tagged/challenges",
               "source": "tagSlug"
             },
             {
               "type": 1,
               "title": "Solutions",
               "tagSlug": "solutions",
-              "url": "https:\/\/medium.com\/we-are-apartments\/tagged\/solutions",
+              "url": "https://medium.com/we-are-apartments/tagged/solutions",
               "source": "tagSlug"
             },
             {
               "type": 1,
               "title": "Impact",
               "tagSlug": "impact",
-              "url": "https:\/\/medium.com\/we-are-apartments\/tagged\/impact",
+              "url": "https://medium.com/we-are-apartments/tagged/impact",
               "source": "tagSlug"
             },
             {
               "type": 1,
               "title": "People",
               "tagSlug": "people",
-              "url": "https:\/\/medium.com\/we-are-apartments\/tagged\/people",
+              "url": "https://medium.com/we-are-apartments/tagged/people",
               "source": "tagSlug"
             }
           ],
@@ -1993,9 +2032,7 @@
               "originalWidth": 3126,
               "originalHeight": 1564
             },
-            "logoImage": {
-
-            },
+            "logoImage": {},
             "alignment": 1,
             "layout": 6
           },
@@ -2005,15 +2042,15 @@
     },
     "paging": {
       "previous": {
-        "limit": 10,
-        "from": "1558635102876"
+        "limit": 25,
+        "from": "1559581201766"
       },
       "next": {
-        "limit": 10,
+        "limit": 25,
         "to": "1551815458518"
       }
     }
   },
   "v": 3,
-  "b": "37630-65ee9d9"
+  "b": "37980-250756e"
 }
