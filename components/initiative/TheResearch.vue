@@ -17,8 +17,5 @@ OffsetSection
 
 <script>
 import OffsetSection from '@/components/global/OffsetSection'
-export default {
-  components: { OffsetSection },
-
-}
+export default { components: { OffsetSection } }
 </script>

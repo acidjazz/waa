@@ -46,7 +46,7 @@ export default {
     this.chartdata.labels = this.sheet_labels
     this.chartdata.datasets[0].data = this.sheet_values
 
-    if (typeof this.$refs.canvas.getContext !== "undefined") {
+    if (this.$refs.canvas && typeof this.$refs.canvas.getContext !== "undefined") {
       let gradient = this.$refs.canvas.getContext('2d').createLinearGradient(700, 0, 200, 0)
       gradient.addColorStop(0, pkg.cfg.colors.bpink)
       gradient.addColorStop(1, pkg.cfg.colors.orange)
