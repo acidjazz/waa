@@ -24,6 +24,8 @@ export default {
           label: 'apartment calculator',
           name: 'calculator',
           route: '/calculator',
+          gradient: 'bg-gradpurp',
+          color: 'magenta',
         },
         {
           label: 'the initiative',

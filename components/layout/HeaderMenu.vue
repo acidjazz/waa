@@ -8,7 +8,11 @@
           i
           i
     .header-menu-content(v-if="is_open")
-      nuxt-link(v-for="option, index in options",:key="index",to="/")  {{ option.label }}
+      nuxt-link(
+        v-for="option, index in options",
+        :key="index",
+        :to="option.route",
+        @click.native="is_open = false")  {{ option.label }}
 </template>
 
 <script>
