@@ -5,6 +5,7 @@
   TheDemand
   FactTicker(range="Copy-TickerHome")
   OurInitiative
+  SourceLine
 </template>
 
 <script>
@@ -13,7 +14,8 @@ import LatestArticles from '@/components/articles/LatestArticles'
 import TheDemand from '@/components/home/TheDemand'
 import FactTicker from '@/components/global/FactTicker'
 import OurInitiative from '@/components/home/OurInitiative'
+import SourceLine from '@/components/global/SourceLine'
 export default {
-  components: { HomeHero, LatestArticles, TheDemand, FactTicker, OurInitiative },
+  components: { HomeHero, LatestArticles, TheDemand, FactTicker, OurInitiative, SourceLine },
 }
 </script>

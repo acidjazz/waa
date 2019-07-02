@@ -1,9 +1,10 @@
 <template lang="pug">
-.flex.my-32
-  img(src="/apt1.jpg").object-cover.w-1_4.h-128
-  img(src="/apt2.jpg").object-cover.w-1_4.h-128
-  img(src="/apt3.jpg").object-cover.w-1_4.h-128
-  img(src="/apt4.jpg").object-cover.w-1_4.h-128
+.flex.flex-wrap.my-32
+  img.object-cover.w-1_2.lg_w-1_4.lg_h-128(
+  v-for="i in 4",
+  :src="`/apt${i}.jpg`",
+  :class="`vp-d-${i}`",
+  v-in-vp).vp-r
 </template>
 
 
