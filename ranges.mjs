@@ -7,7 +7,10 @@
 
 export default {
   'Filters': 'Filters!A2:D52',
-  'Home-Demand': 'Home-Demand!A3:E16',
-  'Copy-TickerHome': 'Copy!A4:A7',
-  'Copy-TickerInit': 'Copy!A10:A13',
+  'HomeDemand': 'Home-Demand!A3:E16',
+  'CopyTickerHome': 'Copy!A4:A7',
+  'CopyTickerInit': 'Copy!A10:A13',
+  'ApartmentsNational': 'Apartments!B2',
+  'ApartmentsState': 'Apartments!A5:B55',
+  'ApartmentsMetro': 'Apartments!A58:B108',
 }

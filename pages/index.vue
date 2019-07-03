@@ -3,7 +3,7 @@
   HomeHero
   LatestArticles(:limit="3")
   TheDemand
-  FactTicker(range="Copy-TickerHome")
+  FactTicker(range="CopyTickerHome")
   OurInitiative
   SourceLine
 </template>

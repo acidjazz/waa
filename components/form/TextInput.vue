@@ -26,8 +26,8 @@ export default {
     },
   },
   methods: {
-    update() {
-      this.$emit('input', this.value)
+    update(event) {
+      this.$emit('input', event.target.value)
     }
   },
 }

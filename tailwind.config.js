@@ -20,6 +20,10 @@ module.exports = {
     },
     colors: pkg.cfg.colors,
     extend: {
+      screens: {
+        'print': {'raw': 'print'},
+        'notprint': {'raw': 'not print'},
+      },
       width: {
       '128': '32rem',
       '192': '48rem',

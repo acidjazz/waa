@@ -9,7 +9,7 @@ export default {
   mixins: [ sheets ],
   data () {
     return {
-      range: 'Home-Demand',
+      range: 'HomeDemand',
       chartdata: {
         labels: [],
         datasets: [{

@@ -3,7 +3,7 @@
   InitHero
   TheResearch
   TheTeam
-  FactTicker(range="Copy-TickerInit")
+  FactTicker(range="CopyTickerInit")
   GallerySection
   SourceLine
 </template>
