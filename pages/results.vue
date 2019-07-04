@@ -1,15 +1,15 @@
 <template lang="pug">
 .page.page-calculate.mt-16
-  .bg-tranpurp.flex.justify-center.py-32
-    .bg-white.w-screen.max-w-5xl.p-8.text-black.text-left
+  .bg-tranpurp.flex.justify-center.py-32.min-h-screen
+    .bg-white.w-screen.max-w-5xl.p-8.text-black.text-left(v-if="show")
       .max-w-3xl.mx-auto.flex.items-stretch
         .w-1_5
         .flex-1
           .p-4
             .text-center
-              .font-os.text-lg.mb-4 METRO AREA
-              .font-okib.font-bold.text-6xl.mb-4 Albuquerque
-            .text-orange.font-bold.mb-4 Economic Impact of 44 New Apartment Homes.
+              .font-os.text-lg.mb-4.uppercase {{ area }}
+              .font-okib.font-bold.text-5xl.mb-4(v-if='!is_national') {{ place }}
+            .text-orange.font-bold.mb-4 Economic Impact of {{ homes }} New Apartment Homes.
 
             .text-3xl.font-okib.font-bold.mb-2 Total Impact
             .mb-4 The combined direct and indirect contribution of apartment construction, operations and resident spending to the state economy.
@@ -84,6 +84,7 @@ export default {
   mixins: [ sheets ],
   data () {
     return {
+      show: false,
       ranges: {
         'ApartmentsNational': 'single',
         'ApartmentsState': 'keyvalue',
@@ -92,8 +93,24 @@ export default {
     }
   },
 
+  computed: {
+    hash_array () {
+      return this.$route.hash.substr(1).split(/\//g)
+    },
+    type () { return this.hash_array[0] },
+    homes () { return this.hash_array[1] },
+    place () { return this.hash_array[2].replace(/_/g, ' ') },
+    is_national () { return this.place === 'national' },
+    area () {
+      return this.place === 'national' ? 'national' :
+        this.filters_states.includes(this.place) ? 'state' :
+        this.filters_metros.includes(this.place) ? 'metro area' :
+        ''
+    },
+  },
+
   mounted () {
-    console.log(this.$route)
+    this.show = true
   },
 
 }
