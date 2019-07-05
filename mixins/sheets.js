@@ -5,20 +5,25 @@
  * Distributed under terms of the APACHE license.
  */
 import rangelist from '@/ranges'
-import sheets from '@/data/sheets'
+import sheetdata from '@/data/sheets'
 export default {
   data () {
     return {
+      sheetName: 'main',
       rangelist: rangelist,
-      sheets: sheets,
+      sheetdata: sheetdata,
     }
   },
   computed: {
+    sheets () {
+      return this.sheetdata[this.sheetName]
+    },
     filters_data () {
-      return this.sheets.valueRanges.find(s => s.range.replace(/'/g, '') === this.rangelist['Filters']).values
+      return this.sheets.valueRanges.find(s => s.range.replace(/'/g, '') === this.rangelist['main'].ranges['Filters']).values
     },
     sheet_data () {
-      return this.sheets.valueRanges.find(s => s.range.replace(/'/g, '') === this.rangelist[this.range]).values
+      console.log(this.rangelist[this.sheetName])
+      return this.sheets.valueRanges.find(s => s.range.replace(/'/g, '') === this.rangelist[this.sheetName].ranges[this.range]).values
     },
     sheets_data () {
       var sheets = {}

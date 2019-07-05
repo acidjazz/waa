@@ -16,10 +16,24 @@ import ranges from './ranges.mjs'
 
 const gs = google.google.sheets({version: 'v4', auth: pkg.cfg.apiKey})
 
+const main = ranges['main']
+const calc = ranges['calc']
+
 gs.spreadsheets.values.batchGet({
-  spreadsheetId: pkg.cfg.sheetId,
-  ranges: Object.values(ranges),
+  spreadsheetId: main.id,
+  ranges: Object.values(main.ranges),
 }, (err, res) => {
   if (err) return console.log(err)
-  fs.writeFileSync('data/sheets.json', JSON.stringify(res.data, null, 2))
+
+  gs.spreadsheets.values.batchGet({
+    spreadsheetId: calc.id,
+    ranges: Object.values(calc.ranges),
+  }, (err2, res2) => {
+    if (err) return console.log(err)
+    const data = {
+      main: res.data,
+      calc: res2.data,
+    }
+    fs.writeFileSync('data/sheets.json', JSON.stringify(data, null, 2))
+  })
 })

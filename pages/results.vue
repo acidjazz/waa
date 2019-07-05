@@ -2,7 +2,7 @@
 .page.page-calculate.mt-16
   .bg-tranpurp.flex.justify-center.py-32.min-h-screen
     .bg-white.w-screen.max-w-5xl.p-8.text-black.text-left(v-if="show")
-      .max-w-3xl.mx-auto.flex.items-stretch
+      .max-w-4xl.mx-auto.flex.items-stretch
         .w-1_5
         .flex-1
           .p-4
@@ -94,9 +94,7 @@ export default {
   },
 
   computed: {
-    hash_array () {
-      return this.$route.hash.substr(1).split(/\//g)
-    },
+    hash_array () { return this.$route.hash.substr(1).split(/\//g) },
     type () { return this.hash_array[0] },
     homes () { return this.hash_array[1] },
     place () { return this.hash_array[2].replace(/_/g, ' ') },
