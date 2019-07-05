@@ -52,6 +52,12 @@ export default {
           return data[0][0]
         case 'keyvalue':
           return data.reduce( (o,[k,v]) => (o[k]=v.trim(),o), {} );
+        case 'keyvalues':
+          let kv = {}
+          for (let row of data) {
+            kv[row[0]] = row.splice(1).map(i => i.trim().replace(',', ''))
+          }
+          return kv
       }
     }
   },

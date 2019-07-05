@@ -87,7 +87,7 @@ export default {
       show: false,
       sheetName: 'calc',
       ranges: {
-        ImpactsState: 'keyvalue',
+        ImpactsState: 'keyvalues',
       },
     }
   },
