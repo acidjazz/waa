@@ -22,13 +22,12 @@ export default {
       return this.sheets.valueRanges.find(s => s.range.replace(/'/g, '') === this.rangelist['main'].ranges['Filters']).values
     },
     sheet_data () {
-      console.log(this.rangelist[this.sheetName])
       return this.sheets.valueRanges.find(s => s.range.replace(/'/g, '') === this.rangelist[this.sheetName].ranges[this.range]).values
     },
     sheets_data () {
       var sheets = {}
       for (let range in this.ranges) {
-        sheets[range] = this.flatten(this.ranges[range], this.sheets.valueRanges.find(s => s.range.replace(/'/g, '') === this.rangelist[range]).values)
+        sheets[range] = this.flatten(this.ranges[range], this.sheets.valueRanges.find(s => s.range.replace(/'/g, '') === this.rangelist[this.sheetName].ranges[range]).values)
       }
       return sheets
     },
@@ -52,7 +51,7 @@ export default {
         case 'single':
           return data[0][0]
         case 'keyvalue':
-          return data.reduce( (o,[k,v]) => (o[k]=v,o), {} );
+          return data.reduce( (o,[k,v]) => (o[k]=v.trim(),o), {} );
       }
     }
   },

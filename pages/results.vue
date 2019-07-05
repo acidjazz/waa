@@ -85,10 +85,9 @@ export default {
   data () {
     return {
       show: false,
+      sheetName: 'calc',
       ranges: {
-        'ApartmentsNational': 'single',
-        'ApartmentsState': 'keyvalue',
-        'ApartmentsMetro': 'keyvalue',
+        ImpactsState: 'keyvalue',
       },
     }
   },
@@ -109,6 +108,7 @@ export default {
 
   mounted () {
     this.show = true
+    console.log(this.sheets_data.ImpactsState)
   },
 
 }

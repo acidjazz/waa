@@ -21,7 +21,7 @@ export default {
   calc: {
     id: '1-BSBnznPjoUMJ3I1RSttUlGidAfZAgnoHBSiX2HUPz8',
     ranges: {
-      'ConstructionState': 'Construction Impacts!A4:M56',
+      'ImpactsState': 'Construction Impacts!A4:M56',
     }
   },
 }
