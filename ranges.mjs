@@ -22,9 +22,6 @@ export default {
         values: "Copy!A10:A13",
       },
     },
-      //HomeDemand: 'Home-Demand!A3:E16',
-      //CopyTickerHome: 'Copy!A4:A7',
-      //CopyTickerInit: 'Copy!A10:A13',
   },
   calc: {
     id: '1-BSBnznPjoUMJ3I1RSttUlGidAfZAgnoHBSiX2HUPz8',
@@ -40,6 +37,18 @@ export default {
       spendingImpacts: {
         labels: "'Spending Impacts'!A2:J2",
         values: "'Spending Impacts'!A3:J55",
+      },
+      constructionImpactsMetro: {
+        labels: "'Construction Impacts (metro)'!A2:M2",
+        values: "'Construction Impacts (metro)'!A3:M43",
+      },
+      operationImpactsMetro: {
+        labels: "'Operation Impacts (metro)'!A2:N2",
+        values: "'Operation Impacts (metro)'!A3:N43",
+      },
+      spendingImpactsMetro: {
+        labels: "'Spending Impacts (metro)'!A2:J2",
+        values: "'Spending Impacts (metro)'!A3:J43",
       },
     }
   },

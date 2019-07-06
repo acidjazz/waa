@@ -27,40 +27,40 @@
             .mb-4 Apartment homes are economic engines, driving dollars and jobs that strengthen local communities.
             .flex.justify-between.py-2.px-4
               .font-bold Operation Dollars Spent
-              .font-bold ${{ opDollarsSpent | numeral }}
+              .font-bold ${{ operationDollarsSpent | numeral }}
             .flex.justify-between.py-2.px-4
               .font-bold Direct On-site Jobs
-              .font-bold {{ opDirectOnsiteJobs | numeral }}
+              .font-bold {{ operationDirectOnSiteJobs | numeral }}
             .bg-black.text-white.flex.justify-between.py-2.px-4
               div Total Economic Contribution
-              div ${{ opContribution | numeral }}
+              div ${{ operationContribution | numeral }}
             .flex.justify-between.py-2.px-4.mb-8
               .font-bold Total Jobs Supported
-              .font-bold {{ opJobs | numeral }}
+              .font-bold {{ operationJobs | numeral }}
 
             .text-3xl.font-okib.font-bold Building Apartments
             .mb-4 Apartment construction continues as a bright spot in the economy, helping lead the housing recovery
             .bg-black.text-white.flex.justify-between.py-2.px-4
               div Total Economic Contribution
-              div ${{ coContribution | numeral }}
+              div ${{ constructionContribution | numeral }}
             .flex.justify-between.py-2.px-4.mb-8
               .font-bold Total Jobs Supported
-              .font-bold {{ coJobs | numeral }}
+              .font-bold {{ constructionJobs | numeral }}
 
             .text-3xl.font-okib.font-bold Living in Apartments
             .mb-4 Renting can be a smart choice for a wide range of individuals and families across all income levels. That's why a diverse array of people call apartments home.
             .flex.justify-between.py-2.px-4
               .font-bold Spending Power
-              .font-bold ${{ spDollars | numeral }}
+              .font-bold ${{ spendingDollars | numeral }}
             .flex.justify-between.py-2.px-4
               .font-bold Direct Jobs Supported
-              .font-bold {{ spJobsDirect | numeral }}
+              .font-bold {{ spendingDirectJobs | numeral }}
             .bg-black.text-white.flex.justify-between.py-2.px-4
               div Total Economic Contribution
-              div ${{ spContribution | numeral }}
+              div ${{ spendingContribution | numeral }}
             .flex.justify-between.py-2.px-4
               .font-bold Total Jobs Supported
-              .font-bold {{ spJobs | numeral }}
+              .font-bold {{ spendingJobs | numeral }}
         .w-1_5
           .border.border-seashell.m-2.p-2.text-center
             .mdi.mdi-48px.mdi-file-pdf
@@ -99,79 +99,98 @@ export default {
     homes () { return this.hash_array[1] },
     place () { return this.hash_array[2].replace(/_/g, ' ') },
     is_national () { return this.place === 'national' },
+    is_metro () { return this.area === 'metro area' },
     area () {
       return this.place === 'national' ? 'national' :
         this.states.includes(this.place) ? 'state' :
         this.metros.includes(this.place) ? 'metro area' :
         ''
     },
+    key () { return this.is_national ? 'USA_Total' : this.place },
 
-    coImpacts () { return this.sheet('calc', 'constructionImpacts', 'State') },
-    opImpacts () { return this.sheet('calc', 'operationImpacts', 'State') },
-    spImpacts () { return this.sheet('calc', 'spendingImpacts', 'State') },
+    constructionImpacts () {
+      return this.is_metro ?
+        this.sheet('calc', 'constructionImpactsMetro', 'Metro')
+        : this.sheet('calc', 'constructionImpacts', 'State')
+    },
+    operationImpacts () {
+      return this.is_metro ?
+        this.sheet('calc', 'operationImpactsMetro', 'Metro')
+        : this.sheet('calc', 'operationImpacts', 'State')
+    },
+    spendingImpacts () {
+      return this.is_metro ?
+        this.sheet('calc', 'spendingImpactsMetro', 'Metro')
+        : this.sheet('calc', 'spendingImpacts', 'State')
+    },
 
-    totalJobs () { return this.coJobs + this.opJobs + this.spJobs },
-    totalImpact () { return this.coContribution + this.opContribution + this.spContribution },
-    coJobs () {
-      return this.homes *
-        this.coImpacts.USA_Total.Total_Employment /
-        this.coImpacts.USA_Total.Building_Permits
+    totalJobs () { return this.constructionJobs + this.operationJobs + this.spendingJobs },
+    totalImpact () {
+      return this.constructionContribution +
+        this.operationContribution +
+        this.spendingContribution
     },
-    opJobs () {
+    constructionJobs () {
       return this.homes *
-        this.opImpacts.USA_Total.Total_Jobs /
-        this.opImpacts.USA_Total.Direct_On_Site_Jobs
+        this.constructionImpacts[this.key].Total_Employment /
+        this.constructionImpacts[this.key].Building_Permits
     },
-    spJobs () {
+    operationJobs () {
       return this.homes *
-        this.spImpacts.USA_Total.Total_Jobs_Supported /
-        this.spImpacts.USA_Total.Total_Number_of_Renter_Households
+        this.operationImpacts[this.key].Total_Jobs /
+        this.operationImpacts[this.key].Direct_On_Site_Jobs
     },
-    opDollarsSpent () {
+    spendingJobs () {
       return this.homes *
-        this.opImpacts.USA_Total.Total_Annual_Operation_Cost /
-        this.opImpacts.USA_Total.Total_Number_of_Apartments
+        this.spendingImpacts[this.key].Total_Jobs_Supported /
+        this.spendingImpacts[this.key].Total_Number_of_Renter_Households
     },
-    coDirectOnsiteJobs () {
+    operationDollarsSpent () {
       return this.homes *
-        this.coImpacts.USA_Total.Direct_Jobs /
-        this.coImpacts.USA_Total.Building_Permits
+        this.operationImpacts[this.key].Total_Annual_Operation_Cost /
+        this.operationImpacts[this.key].Total_Number_of_Apartments
     },
-    opDirectOnsiteJobs () {
+    constructionDirectOnSiteJobs () {
       return this.homes *
-        this.coImpacts.USA_Total.Direct_On_Site_Jobs /
-        this.coImpacts.USA_Total.Total_Number_of_Apartments
+        this.constructionImpacts[this.key].Direct_Jobs /
+        this.constructionImpacts[this.key].Building_Permits
     },
-    opContribution () {
+    operationDirectOnSiteJobs () {
       return this.homes *
-        this.opImpacts.USA_Total.Economic_Contribution /
-        this.opImpacts.USA_Total.Total_Number_of_Apartments
+        this.constructionImpacts[this.key].Direct_On_Site_Jobs /
+        this.constructionImpacts[this.key].Total_Number_of_Apartments
     },
-    coContribution () {
+    operationContribution () {
       return this.homes *
-        this.coImpacts.USA_Total.Economic_Contribution /
-        this.coImpacts.USA_Total.Building_Permits
+        this.operationImpacts[this.key].Economic_Contribution /
+        this.operationImpacts[this.key].Total_Number_of_Apartments
     },
-    spDollars () {
+    constructionContribution () {
       return this.homes *
-        this.spImpacts.USA_Total.Direct_Consumer_Spending /
-        this.spImpacts.USA_Total.Total_Number_of_Renter_Households
+        this.constructionImpacts[this.key].Economic_Contribution /
+        this.constructionImpacts[this.key].Building_Permits
     },
-    spJobsDirect () {
+    spendingDollars () {
       return this.homes *
-        this.spImpacts.USA_Total.Direct_Jobs_Supported /
-        this.spImpacts.USA_Total.Total_Number_of_Renter_Households
+        this.spendingImpacts[this.key].Direct_Consumer_Spending /
+        this.spendingImpacts[this.key].Total_Number_of_Renter_Households
     },
-    spContribution () {
+    spendingDirectJobs () {
       return this.homes *
-        this.spImpacts.USA_Total.Total_Consumer_Spending /
-        this.spImpacts.USA_Total.Total_Number_of_Renter_Households
+        this.spendingImpacts[this.key].Direct_Jobs_Supported /
+        this.spendingImpacts[this.key].Total_Number_of_Renter_Households
+    },
+    spendingContribution () {
+      return this.homes *
+        this.spendingImpacts[this.key].Total_Consumer_Spending /
+        this.spendingImpacts[this.key].Total_Number_of_Renter_Households
     },
 
   },
 
   mounted () {
     this.show = true
+    console.log(this.key)
   },
 
 }

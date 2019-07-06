@@ -45,9 +45,6 @@ export default {
     dataset () { return this.sheet('main', 'HomeDemand', 2) },
   },
   mounted () {
-
-    console.log(this.dataset)
-
     this.chartdata.labels = Object.keys(this.dataset)
     this.chartdata.datasets[0].data = Object.values(this.dataset)
 
