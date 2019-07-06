@@ -110,27 +110,23 @@ export default {
     opImpacts () { return this.sheet('calc', 'operationImpacts', 'State') },
     spImpacts () { return this.sheet('calc', 'spendingImpacts', 'State') },
 
+    totalJobs () { return this.coJobs + this.opJobs + this.spJobs },
+    totalImpact () { return this.coContribution + this.opContribution + this.spContribution },
     coJobs () {
       return this.homes *
         this.coImpacts.USA_Total.Total_Employment /
         this.coImpacts.USA_Total.Building_Permits
     },
-
     opJobs () {
       return this.homes *
         this.opImpacts.USA_Total.Total_Jobs /
         this.opImpacts.USA_Total.Direct_On_Site_Jobs
     },
-
     spJobs () {
       return this.homes *
         this.spImpacts.USA_Total.Total_Jobs_Supported /
         this.spImpacts.USA_Total.Total_Number_of_Renter_Households
     },
-
-    totalJobs () { return this.coJobs + this.opJobs + this.spJobs },
-    totalImpact () { return this.coContribution + this.opContribution + this.spContribution },
-
     opDollarsSpent () {
       return this.homes *
         this.opImpacts.USA_Total.Total_Annual_Operation_Cost /
@@ -156,25 +152,21 @@ export default {
         this.coImpacts.USA_Total.Economic_Contribution /
         this.coImpacts.USA_Total.Building_Permits
     },
-
     spDollars () {
       return this.homes *
         this.spImpacts.USA_Total.Direct_Consumer_Spending /
         this.spImpacts.USA_Total.Total_Number_of_Renter_Households
     },
-
     spJobsDirect () {
       return this.homes *
         this.spImpacts.USA_Total.Direct_Jobs_Supported /
         this.spImpacts.USA_Total.Total_Number_of_Renter_Households
     },
-
     spContribution () {
       return this.homes *
         this.spImpacts.USA_Total.Total_Consumer_Spending /
         this.spImpacts.USA_Total.Total_Number_of_Renter_Households
     },
-
 
   },
 

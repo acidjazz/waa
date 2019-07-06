@@ -12,6 +12,15 @@ export default {
       Filters: {
         values: 'Filters!A2:D52',
       },
+      HomeDemand: {
+        values: "'Home-Demand'!A3:E16",
+      },
+      CopyTickerHome: {
+        values: "Copy!A4:A7",
+      },
+      CopyTickerInit: {
+        values: "Copy!A10:A13",
+      },
     },
       //HomeDemand: 'Home-Demand!A3:E16',
       //CopyTickerHome: 'Copy!A4:A7',

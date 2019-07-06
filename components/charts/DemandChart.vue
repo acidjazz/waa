@@ -9,7 +9,6 @@ export default {
   mixins: [ sheets ],
   data () {
     return {
-      range: 'HomeDemand',
       chartdata: {
         labels: [],
         datasets: [{
@@ -42,9 +41,15 @@ export default {
       },
     }
   },
+  computed: {
+    dataset () { return this.sheet('main', 'HomeDemand', 2) },
+  },
   mounted () {
-    this.chartdata.labels = this.sheet_labels
-    this.chartdata.datasets[0].data = this.sheet_values
+
+    console.log(this.dataset)
+
+    this.chartdata.labels = Object.keys(this.dataset)
+    this.chartdata.datasets[0].data = Object.values(this.dataset)
 
     if (this.$refs.canvas && typeof this.$refs.canvas.getContext !== "undefined") {
       let gradient = this.$refs.canvas.getContext('2d').createLinearGradient(700, 0, 200, 0)

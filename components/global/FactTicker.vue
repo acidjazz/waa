@@ -42,7 +42,9 @@ export default {
       interval: false,
     }
   },
-  computed: { facts () { return this.sheet_oned }, },
+  computed: {
+    facts () { return this.sheet('main', this.range, false).flat() },
+  },
   watch: {
     'inViewport.now' (visible) {
       if (visible) this.start()

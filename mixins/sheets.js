@@ -33,24 +33,34 @@ export default {
     sheet (name, range, key) {
       var result = {}
       let config = rangeconfig[name].ranges[range]
-      let labels = this.find_values(name, config.labels)[0]
+      if (!Number.isInteger(key) && key !== false) {
+        let labels = this.find_values(name, config.labels)[0]
+      }
       let values = this.find_values(name, config.values)
+      if (key === false) {
+        return values
+      }
       for (let i in values) {
         let row = {}
-        for (let j in values[i])
-          if (values[i][j] !== '')
-            row[labels[j].trim().replace(/ |-/g, '_')] = this.cleanse(values[i][j])
-        result[row[key].trim().replace(/ |-/g, '_')] = row
+        if (Number.isInteger(3)) {
+          result[values[i][0]] = this.cleanse(values[i][key])
+        } else {
+          for (let j in values[i])
+            if (values[i][j] !== '')
+              row[labels[j].trim().replace(/ |-/g, '_')] = this.cleanse(values[i][j])
+          result[row[key].trim().replace(/ |-/g, '_')] = row
+        }
       }
      return result
     },
 
     find_values(name, range) {
+      console.log(name, range)
       return sheets[name].valueRanges.find( (r) => r.range === range).values
     },
     cleanse (value) {
       value = value.trim().replace(/,/g, '')
-      if (value.match(/^[0-9]+$/) !== null) {
+      if (value.match(/^[0-9\.-]+$/) !== null) {
         return value*1
       }
       return value
