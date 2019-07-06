@@ -4,9 +4,60 @@
  *
  * Distributed under terms of the APACHE license.
  */
-import rangelist from '@/ranges'
-import sheetdata from '@/data/sheets'
+import rangeconfig from '@/ranges'
+import sheets from '@/data/sheets'
 export default {
+
+  computed: {
+    filters () {
+      return sheets.main.valueRanges[0].values
+      /*
+      sheets.main.valueRanges.find(s => {
+        return s !== undefined && s.range === ranges.main.ranges.Filters.data
+      }).values
+      */
+    },
+    states () { return this.filters.map(r => r[0]) },
+    metros () {
+      return this.filters
+        .map(l => l[2]
+        .split(',')
+        .map(m => m.trim()))
+        .flat()
+        .filter(Boolean)
+    },
+
+  },
+
+  methods: {
+    sheet (name, range, key) {
+      var result = {}
+      let config = rangeconfig[name].ranges[range]
+      let labels = this.find_values(name, config.labels)[0]
+      let values = this.find_values(name, config.values)
+      for (let i in values) {
+        let row = {}
+        for (let j in values[i])
+          if (values[i][j] !== '')
+            row[labels[j].trim().replace(/ |-/g, '_')] = this.cleanse(values[i][j])
+        result[row[key].trim().replace(/ |-/g, '_')] = row
+      }
+     return result
+    },
+
+    find_values(name, range) {
+      return sheets[name].valueRanges.find( (r) => r.range === range).values
+    },
+    cleanse (value) {
+      value = value.trim().replace(/,/g, '')
+      if (value.match(/^[0-9]+$/) !== null) {
+        return value*1
+      }
+      return value
+    },
+  },
+
+  /*
   data () {
     return {
       sheetName: 'main',
@@ -19,7 +70,7 @@ export default {
       return this.sheetdata[this.sheetName]
     },
     filters_data () {
-      return this.sheets.valueRanges.find(s => s.range.replace(/'/g, '') === this.rangelist['main'].ranges['Filters']).values
+      return this.sheetdata['main'].valueRanges.find(s => s.range.replace(/'/g, '') === this.rangelist['main'].ranges['Filters']).values
     },
     sheet_data () {
       return this.sheets.valueRanges.find(s => s.range.replace(/'/g, '') === this.rangelist[this.sheetName].ranges[this.range]).values
@@ -32,7 +83,6 @@ export default {
       return sheets
     },
 
-    filters_states () { return this.filters_data.map(r => r[0]) },
     filters_metros () {
       return this.filters_data
         .map(l => l[2]
@@ -46,14 +96,7 @@ export default {
     sheet_oned () { return this.sheet_data.map(x => x[0]) },
   },
   methods: {
-    cleanse (value) {
-      value = value.trim().replace(/,/g, '')
-      if (value.match(/^[0-9]+$/) !== null) {
-        return value*1
-      }
-      return value
 
-    },
     flatten (type, range, data) {
       switch (type) {
         case 'single':
@@ -75,4 +118,5 @@ export default {
       }
     }
   },
+  */
 }

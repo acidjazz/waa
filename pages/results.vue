@@ -15,52 +15,52 @@
             .mb-4 The combined direct and indirect contribution of apartment construction, operations and resident spending to the state economy.
             .bg-black.text-white.flex.justify-between.py-2.px-4.mb-8
               div Total Economic Impact
-              div $3,796,154
+              div ${{ this.totalImpact | numeral }}
 
             .text-3xl.font-okib.font-bold.mb-2 Total Jobs
             .mb-4 The total number of direct and indirect jobs supported by apartment construction, operations and resident spending within the state economy.
             .bg-black.text-white.flex.justify-between.py-2.px-4.mb-8
               div Total Jobs Supported
-              div {{ totalJobs }}
+              div {{ totalJobs | numeral }}
 
             .text-3xl.font-okib.font-bold Managing Apartments
             .mb-4 Apartment homes are economic engines, driving dollars and jobs that strengthen local communities.
             .flex.justify-between.py-2.px-4
               .font-bold Operation Dollars Spent
-              .font-bold $34,909
+              .font-bold ${{ opDollarsSpent | numeral }}
             .flex.justify-between.py-2.px-4
               .font-bold Direct On-site Jobs
-              .font-bold 0
+              .font-bold {{ opDirectOnsiteJobs | numeral }}
             .bg-black.text-white.flex.justify-between.py-2.px-4
               div Total Economic Contribution
-              div $77,179
+              div ${{ opContribution | numeral }}
             .flex.justify-between.py-2.px-4.mb-8
               .font-bold Total Jobs Supported
-              .font-bold 1
+              .font-bold {{ opJobs | numeral }}
 
             .text-3xl.font-okib.font-bold Building Apartments
             .mb-4 Apartment construction continues as a bright spot in the economy, helping lead the housing recovery
             .bg-black.text-white.flex.justify-between.py-2.px-4
               div Total Economic Contribution
-              div $77,179
+              div ${{ coContribution | numeral }}
             .flex.justify-between.py-2.px-4.mb-8
               .font-bold Total Jobs Supported
-              .font-bold 1
+              .font-bold {{ coJobs | numeral }}
 
             .text-3xl.font-okib.font-bold Living in Apartments
             .mb-4 Renting can be a smart choice for a wide range of individuals and families across all income levels. That's why a diverse array of people call apartments home.
             .flex.justify-between.py-2.px-4
               .font-bold Spending Power
-              .font-bold $34,909
+              .font-bold ${{ spDollars | numeral }}
             .flex.justify-between.py-2.px-4
               .font-bold Direct Jobs Supported
-              .font-bold 2
+              .font-bold {{ spJobsDirect | numeral }}
             .bg-black.text-white.flex.justify-between.py-2.px-4
               div Total Economic Contribution
-              div $77,179
+              div ${{ spContribution | numeral }}
             .flex.justify-between.py-2.px-4
               .font-bold Total Jobs Supported
-              .font-bold 1
+              .font-bold {{ spJobs | numeral }}
         .w-1_5
           .border.border-seashell.m-2.p-2.text-center
             .mdi.mdi-48px.mdi-file-pdf
@@ -86,18 +86,11 @@ export default {
   data () {
     return {
       show: false,
-      sheetName: 'calc',
-      ranges: {
-        constructionImpacts: 'keyvalues',
-        operationImpacts: 'keyvalues',
-        spendingImpacts: 'keyvalues',
-      },
-      sheetKeys: {
-        constructionImpacts: ['state', 'permits', 'spending', 'contribution', 'earnings', 'directJobs', 'total'],
-        operationImpacts: ['state', 'totalCost', 'contribution', 'earnings', 'onSiteJobs', 'totalJobs'],
-        spendingImpacts: ['state', 'households', 'directSpending', 'directJobs', 'consumerSpending', 'totalJobs'],
-      },
     }
+  },
+
+  filters: {
+    numeral (val) { return numeral(val).format('0,0') }
   },
 
   computed: {
@@ -108,18 +101,80 @@ export default {
     is_national () { return this.place === 'national' },
     area () {
       return this.place === 'national' ? 'national' :
-        this.filters_states.includes(this.place) ? 'state' :
-        this.filters_metros.includes(this.place) ? 'metro area' :
+        this.states.includes(this.place) ? 'state' :
+        this.metros.includes(this.place) ? 'metro area' :
         ''
     },
 
-    totalJobs () {
-      return numeral(
-        this.sheets_data.constructionImpacts.USA_Total.directJobs +
-        this.sheets_data.operationImpacts.USA_Total.totalJobs +
-        this.sheets_data.spendingImpacts.USA_Total.totalJobs
-      ).format('0,0')
+    coImpacts () { return this.sheet('calc', 'constructionImpacts', 'State') },
+    opImpacts () { return this.sheet('calc', 'operationImpacts', 'State') },
+    spImpacts () { return this.sheet('calc', 'spendingImpacts', 'State') },
+
+    coJobs () {
+      return this.homes *
+        this.coImpacts.USA_Total.Total_Employment /
+        this.coImpacts.USA_Total.Building_Permits
     },
+
+    opJobs () {
+      return this.homes *
+        this.opImpacts.USA_Total.Total_Jobs /
+        this.opImpacts.USA_Total.Direct_On_Site_Jobs
+    },
+
+    spJobs () {
+      return this.homes *
+        this.spImpacts.USA_Total.Total_Jobs_Supported /
+        this.spImpacts.USA_Total.Total_Number_of_Renter_Households
+    },
+
+    totalJobs () { return this.coJobs + this.opJobs + this.spJobs },
+    totalImpact () { return this.coContribution + this.opContribution + this.spContribution },
+
+    opDollarsSpent () {
+      return this.homes *
+        this.opImpacts.USA_Total.Total_Annual_Operation_Cost /
+        this.opImpacts.USA_Total.Total_Number_of_Apartments
+    },
+    coDirectOnsiteJobs () {
+      return this.homes *
+        this.coImpacts.USA_Total.Direct_Jobs /
+        this.coImpacts.USA_Total.Building_Permits
+    },
+    opDirectOnsiteJobs () {
+      return this.homes *
+        this.coImpacts.USA_Total.Direct_On_Site_Jobs /
+        this.coImpacts.USA_Total.Total_Number_of_Apartments
+    },
+    opContribution () {
+      return this.homes *
+        this.opImpacts.USA_Total.Economic_Contribution /
+        this.opImpacts.USA_Total.Total_Number_of_Apartments
+    },
+    coContribution () {
+      return this.homes *
+        this.coImpacts.USA_Total.Economic_Contribution /
+        this.coImpacts.USA_Total.Building_Permits
+    },
+
+    spDollars () {
+      return this.homes *
+        this.spImpacts.USA_Total.Direct_Consumer_Spending /
+        this.spImpacts.USA_Total.Total_Number_of_Renter_Households
+    },
+
+    spJobsDirect () {
+      return this.homes *
+        this.spImpacts.USA_Total.Direct_Jobs_Supported /
+        this.spImpacts.USA_Total.Total_Number_of_Renter_Households
+    },
+
+    spContribution () {
+      return this.homes *
+        this.spImpacts.USA_Total.Total_Consumer_Spending /
+        this.spImpacts.USA_Total.Total_Number_of_Renter_Households
+    },
+
 
   },
 

@@ -21,13 +21,13 @@ const calc = ranges['calc']
 
 gs.spreadsheets.values.batchGet({
   spreadsheetId: main.id,
-  ranges: Object.values(main.ranges),
+    ranges: Object.values(main.ranges).map(o => Object.values(o)).flat()
 }, (err, res) => {
   if (err) return console.log(err)
 
   gs.spreadsheets.values.batchGet({
     spreadsheetId: calc.id,
-    ranges: Object.values(calc.ranges),
+    ranges: Object.values(calc.ranges).map(o => Object.values(o)).flat()
   }, (err2, res2) => {
     if (err) return console.log(err)
     const data = {

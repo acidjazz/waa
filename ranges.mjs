@@ -9,18 +9,29 @@ export default {
   main: {
     id: '1qBIHotCidfZRqc3p_Izss5r0JocbLc5dot9FVWP3Bew',
     ranges: {
-      Filters: 'Filters!A2:D52',
-      HomeDemand: 'Home-Demand!A3:E16',
-      CopyTickerHome: 'Copy!A4:A7',
-      CopyTickerInit: 'Copy!A10:A13',
-    }
+      Filters: {
+        values: 'Filters!A2:D52',
+      },
+    },
+      //HomeDemand: 'Home-Demand!A3:E16',
+      //CopyTickerHome: 'Copy!A4:A7',
+      //CopyTickerInit: 'Copy!A10:A13',
   },
   calc: {
     id: '1-BSBnznPjoUMJ3I1RSttUlGidAfZAgnoHBSiX2HUPz8',
     ranges: {
-      constructionImpacts: 'Construction Impacts!A4:M56',
-      operationImpacts: 'Operation Impacts!A3:M55',
-      spendingImpacts: 'Spending Impacts!A3:J55',
+      constructionImpacts: {
+        labels: "'Construction Impacts'!A3:M3",
+        values: "'Construction Impacts'!A4:M56",
+      },
+      operationImpacts: {
+        labels: "'Operation Impacts'!A2:N2",
+        values: "'Operation Impacts'!A3:N56",
+      },
+      spendingImpacts: {
+        labels: "'Spending Impacts'!A2:J2",
+        values: "'Spending Impacts'!A3:J55",
+      },
     }
   },
 }

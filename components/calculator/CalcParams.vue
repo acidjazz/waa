@@ -39,13 +39,13 @@ OffsetSection
       .w-1_5.mr-8.text-right
       .w-4_5.mr-4.flex
         CheckBox(:checked="by === 'metro'").w-12.mr-4
-        SelectInput(placeholder="Metro",:options="filters_metros",v-model="selected")
+        SelectInput(placeholder="Metro",:options="metros",v-model="selected")
 
     .flex.items-center.mb-2.cursor-pointer(@click="by = 'state'")
       .w-1_5.mr-8.text-right
       .w-4_5.mr-4.flex
         CheckBox(:checked="by === 'state'").w-12.mr-4
-        SelectInput(placeholder="State",:options="filters_states",v-model="selected")
+        SelectInput(placeholder="State",:options="states",v-model="selected")
 
     .flex.mt-12.justify-center
       .waa-button-black(@click="calculate") Calculate

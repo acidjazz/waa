@@ -20,6 +20,5 @@ import options from '@/mixins/nav'
 export default {
   components: { HeaderTitle },
   mixins: [ options ],
-  mounted () { console.log(this.$route.name) }
 }
 </script>
