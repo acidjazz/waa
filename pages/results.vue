@@ -21,7 +21,7 @@
             .mb-4 The total number of direct and indirect jobs supported by apartment construction, operations and resident spending within the state economy.
             .bg-black.text-white.flex.justify-between.py-2.px-4.mb-8
               div Total Jobs Supported
-              div 82
+              div {{ totalJobs }}
 
             .text-3xl.font-okib.font-bold Managing Apartments
             .mb-4 Apartment homes are economic engines, driving dollars and jobs that strengthen local communities.
@@ -79,6 +79,7 @@
 <script>
 import sheets from '@/mixins/sheets'
 import SectionHero from '@/components/global/SectionHero'
+import numeral from 'numeral'
 export default {
   components: { SectionHero },
   mixins: [ sheets ],
@@ -87,7 +88,14 @@ export default {
       show: false,
       sheetName: 'calc',
       ranges: {
-        ImpactsState: 'keyvalues',
+        constructionImpacts: 'keyvalues',
+        operationImpacts: 'keyvalues',
+        spendingImpacts: 'keyvalues',
+      },
+      sheetKeys: {
+        constructionImpacts: ['state', 'permits', 'spending', 'contribution', 'earnings', 'directJobs', 'total'],
+        operationImpacts: ['state', 'totalCost', 'contribution', 'earnings', 'onSiteJobs', 'totalJobs'],
+        spendingImpacts: ['state', 'households', 'directSpending', 'directJobs', 'consumerSpending', 'totalJobs'],
       },
     }
   },
@@ -104,11 +112,19 @@ export default {
         this.filters_metros.includes(this.place) ? 'metro area' :
         ''
     },
+
+    totalJobs () {
+      return numeral(
+        this.sheets_data.constructionImpacts.USA_Total.directJobs +
+        this.sheets_data.operationImpacts.USA_Total.totalJobs +
+        this.sheets_data.spendingImpacts.USA_Total.totalJobs
+      ).format('0,0')
+    },
+
   },
 
   mounted () {
     this.show = true
-    console.log(this.sheets_data.ImpactsState)
   },
 
 }

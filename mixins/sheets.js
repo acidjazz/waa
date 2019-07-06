@@ -27,7 +27,7 @@ export default {
     sheets_data () {
       var sheets = {}
       for (let range in this.ranges) {
-        sheets[range] = this.flatten(this.ranges[range], this.sheets.valueRanges.find(s => s.range.replace(/'/g, '') === this.rangelist[this.sheetName].ranges[range]).values)
+        sheets[range] = this.flatten(this.ranges[range], range, this.sheets.valueRanges.find(s => s.range.replace(/'/g, '') === this.rangelist[this.sheetName].ranges[range]).values)
       }
       return sheets
     },
@@ -46,18 +46,32 @@ export default {
     sheet_oned () { return this.sheet_data.map(x => x[0]) },
   },
   methods: {
-    flatten (type, data) {
+    cleanse (value) {
+      value = value.trim().replace(/,/g, '')
+      if (value.match(/^[0-9]+$/) !== null) {
+        return value*1
+      }
+      return value
+
+    },
+    flatten (type, range, data) {
       switch (type) {
         case 'single':
           return data[0][0]
         case 'keyvalue':
-          return data.reduce( (o,[k,v]) => (o[k]=v.trim(),o), {} );
+          return data.reduce( (o,[k,v]) => (o[k]=this.cleanse(v),o), {} );
         case 'keyvalues':
-          let kv = {}
+          let kva = {}
           for (let row of data) {
-            kv[row[0]] = row.splice(1).map(i => i.trim().replace(',', ''))
+            let kvb = {}
+            for (let index in row) {
+              if (this.sheetKeys[range][index]) {
+                kvb[this.sheetKeys[range][index]] = this.cleanse(row[index].trim())
+              }
+            }
+            kva[row[0].replace(/ /, '_')] = kvb
           }
-          return kv
+          return kva
       }
     }
   },
