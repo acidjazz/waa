@@ -17,8 +17,10 @@ export default {
         },
         {
           label: 'latest news',
-          name: 'news',
+          name: 'articles',
           route: '/articles',
+          gradient: 'bg-gradgreen',
+          color: 'persiangreen',
         },
         {
           label: 'apartment calculator',
