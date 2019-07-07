@@ -1,5 +1,5 @@
 <template lang="pug">
-.bg-seashell.mt-32.p-12.lg_p-24
+.bg-seashell.mt-32.p-12.lg_p-24.print_hidden
   .canister.flex.flex-col.lg_flex-row
     .w-full.lg_w-1_2.mb-10.lg_mb-0
       HeaderTitle.mb-4

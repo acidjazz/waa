@@ -1,5 +1,5 @@
 <template lang="pug">
-.header-nav.bg-black.text-white.fixed.z-20.inset-x-0.top-0.py-6.ani-sit.ani-d-4
+.header-nav.bg-black.text-white.fixed.z-20.inset-x-0.top-0.py-6.ani-sit.ani-d-4.print_hidden
   .container.lg.px-4
     .flex.justify-between
       HeaderTitle
