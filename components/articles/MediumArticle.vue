@@ -1,9 +1,9 @@
 <template lang="pug">
-.article-outer.w-full.lg_w-1_3
+.article-outer
   a.article(:href="link(article)",target="_new",v-in-vp,:class="`vp-d-${index+2}`").vp-r
     .article_image
       img(:src="thumbnail(article)")
-    .article_header
+    .article_header(:class="{'lg_w-1_3': featured}")
       .article_header_title.text-xl {{ article.title }}
       .article_header_description {{ article.virtuals.subtitle }}
 </template>
@@ -19,7 +19,12 @@ export default {
     article: {
       type: Object,
       required: true,
-    }
+    },
+    featured: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
   methods: {
     thumbnail (data) {

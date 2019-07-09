@@ -1,7 +1,7 @@
 <template lang="pug">
 .page.page-home
   HomeHero
-  LatestArticles(:limit="3")
+  LatestArticles(:feed="feed")
   TheDemand
   FactTicker(range="CopyTickerHome")
   OurInitiative
@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import feed from '@/data/feed.json'
 import HomeHero from '@/components/home/HomeHero'
 import LatestArticles from '@/components/articles/LatestArticles'
 import TheDemand from '@/components/home/TheDemand'
@@ -17,5 +18,6 @@ import OurInitiative from '@/components/home/OurInitiative'
 import SourceLine from '@/components/global/SourceLine'
 export default {
   components: { HomeHero, LatestArticles, TheDemand, FactTicker, OurInitiative, SourceLine },
+  data () { return { feed: feed.payload.posts.slice(0, 3), } },
 }
 </script>
