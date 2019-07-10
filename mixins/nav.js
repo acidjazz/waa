@@ -10,35 +10,35 @@ export default {
       options: [
         {
           label: 'apartment data',
-          name: 'data',
+          names: ['data'],
           route: '/data',
           gradient: 'bg-gradblue',
           color: 'coolblue',
         },
         {
           label: 'latest news',
-          name: 'articles',
+          names: ['articles'],
           route: '/articles',
           gradient: 'bg-gradgreen',
           color: 'persiangreen',
         },
         {
           label: 'apartment calculator',
-          name: 'calculator',
+          names: ['calculato', 'results'],
           route: '/calculator',
           gradient: 'bg-gradpurp',
           color: 'magenta',
         },
         {
           label: 'the initiative',
-          name: 'initiative',
+          names: ['initiative'],
           route: '/initiative',
           color: 'tacao',
           gradient: 'bg-gradred',
         },
         {
           label: 'our vision',
-          name: 'vision',
+          names: ['vision'],
           route: '/vision',
         },
       ]

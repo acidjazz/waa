@@ -10,7 +10,7 @@
           :to="option.route",
           :class="`hover_text-${option.color}`")
           div {{ option.label }}
-          div.h-1.mt-2.ani-zi(v-if="$route.name === option.name",:class="option.gradient")
+          div.h-1.mt-2.ani-zi(v-if="option.names.includes($route.name)",:class="option.gradient")
           div.h-1.mt-2(v-else)
 </template>
 
