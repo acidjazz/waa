@@ -42,15 +42,16 @@
               .font-bold Total Jobs Supported
               .font-bold {{ operationJobs | numeral }}
 
-            .text-3xl.font-okib.font-bold.print_text-lg.print_mb-0 Building Apartments
-            .mb-4.print_text-sm.print_mb-2
-              | Apartment construction continues as a bright spot in the economy, helping lead the housing recovery
-            .bg-black.text-white.flex.justify-between.py-2.px-4.print_py-0.print_bg-white.print_text-black
-              .font-bold Total Economic Contribution
-              .font-bold ${{ constructionContribution | numeral }}
-            .flex.justify-between.py-2.px-4.mb-8.print_mb-2.print_py-0
-              .font-bold Total Jobs Supported
-              .font-bold {{ constructionJobs | numeral }}
+            div(v-if="is_new")
+              .text-3xl.font-okib.font-bold.print_text-lg.print_mb-0 Building Apartments
+              .mb-4.print_text-sm.print_mb-2
+                | Apartment construction continues as a bright spot in the economy, helping lead the housing recovery
+              .bg-black.text-white.flex.justify-between.py-2.px-4.print_py-0.print_bg-white.print_text-black
+                .font-bold Total Economic Contribution
+                .font-bold ${{ constructionContribution | numeral }}
+              .flex.justify-between.py-2.px-4.mb-8.print_mb-2.print_py-0
+                .font-bold Total Jobs Supported
+                .font-bold {{ constructionJobs | numeral }}
 
             .text-3xl.font-okib.font-bold.print_text-lg.print_mb-0 Living in Apartments
             .mb-4.print_text-sm.print_mb-2
@@ -84,11 +85,12 @@
 
 <script>
 import sheets from '@/mixins/sheets'
+import formulas from '@/mixins/formulas'
 import SectionHero from '@/components/global/SectionHero'
 import numeral from 'numeral'
 export default {
   components: { SectionHero },
-  mixins: [ sheets ],
+  mixins: [ sheets, formulas ],
   data () {
     return {
       show: false,
@@ -115,6 +117,7 @@ export default {
         ''
     },
     key () { return this.is_national ? 'USA_Total' : this.place.replace(/ /g, '_') },
+
     constructionImpacts () {
       return this.is_metro ?
         this.sheet('calc', 'constructionImpactsMetro', 'Metro')
@@ -130,72 +133,6 @@ export default {
         this.sheet('calc', 'spendingImpactsMetro', 'Metro')
         : this.sheet('calc', 'spendingImpacts', 'State')
     },
-    totalJobs () {
-      return (this.is_new ? this.constructionJobs : 0) +
-        this.operationJobs +
-        this.spendingJobs
-    },
-    totalImpact () {
-      return (this.is_new ? this.constructionContribution : 0) +
-        this.operationContribution +
-        this.spendingContribution
-    },
-    constructionJobs () {
-      return this.homes *
-        this.constructionImpacts[this.key].Total_Employment /
-        this.constructionImpacts[this.key].Building_Permits
-    },
-    operationJobs () {
-      return this.homes *
-        this.operationImpacts[this.key].Total_Jobs /
-        this.operationImpacts[this.key].Total_Number_of_Apartments
-    },
-    spendingJobs () {
-      return this.homes *
-        this.spendingImpacts[this.key].Total_Jobs_Supported /
-        this.spendingImpacts[this.key].Total_Number_of_Renter_Households
-    },
-    operationDollarsSpent () {
-      return this.homes *
-        this.operationImpacts[this.key].Total_Annual_Operation_Cost /
-        this.operationImpacts[this.key].Total_Number_of_Apartments
-    },
-    constructionDirectOnSiteJobs () {
-      return this.homes *
-        this.constructionImpacts[this.key].Direct_Jobs /
-        this.constructionImpacts[this.key].Building_Permits
-    },
-    operationDirectOnSiteJobs () {
-      return this.homes *
-        this.operationImpacts[this.key].Direct_On_Site_Jobs /
-        this.operationImpacts[this.key].Total_Number_of_Apartments
-    },
-    operationContribution () {
-      return this.homes *
-        this.operationImpacts[this.key].Economic_Contribution /
-        this.operationImpacts[this.key].Total_Number_of_Apartments
-    },
-    constructionContribution () {
-      return this.homes *
-        this.constructionImpacts[this.key].Economic_Contribution /
-        this.constructionImpacts[this.key].Building_Permits
-    },
-    spendingDollars () {
-      return this.homes *
-        this.spendingImpacts[this.key].Direct_Consumer_Spending /
-        this.spendingImpacts[this.key].Total_Number_of_Renter_Households
-    },
-    spendingDirectJobs () {
-      return this.homes *
-        this.spendingImpacts[this.key].Direct_Jobs_Supported /
-        this.spendingImpacts[this.key].Total_Number_of_Renter_Households
-    },
-    spendingContribution () {
-      return this.homes *
-        this.spendingImpacts[this.key].Total_Consumer_Spending /
-        this.spendingImpacts[this.key].Total_Number_of_Renter_Households
-    },
-
   },
 
   mounted () { this.show = true },
