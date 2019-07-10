@@ -9,22 +9,26 @@
             .text-center
               .font-os.text-lg.mb-4.uppercase.print_mb-2 {{ area }}
               .font-okib.font-bold.text-5xl.print_text-3xl.mb-4.print_mb-2(v-if='!is_national') {{ place }}
-            .text-orange.font-bold.mb-4.text-center.print_text-sm Economic Impact of {{ homes }} {{ is_new ? 'New' : 'Existing' }} Apartment Homes.
+            .text-orange.font-bold.mb-4.text-center.print_text-sm
+              | Economic Impact of {{ homes }} {{ is_new ? 'New' : 'Existing' }} Apartment Homes.
 
             .text-3xl.font-okib.font-bold.mb-2.print_text-lg.print_mb-0 Total Impact
-            .mb-4.print_text-sm.print_mb-2 The combined direct and indirect contribution of apartment construction, operations and resident spending to the state economy.
+            .mb-4.print_text-sm.print_mb-2
+              | The combined direct and indirect contribution of apartment construction, operations and resident spending to the state economy.
             .bg-black.text-white.flex.justify-between.py-2.px-4.mb-8.print_mb-2.print_py-0.print_bg-white.print_text-black
               .font-bold Total Economic Impact
               .font-bold ${{ this.totalImpact | numeral }}
 
             .text-3xl.font-okib.font-bold.mb-2.print_text-lg.print_mb-0 Total Jobs
-            .mb-4.print_text-sm The total number of direct and indirect jobs supported by apartment construction, operations and resident spending within the state economy.
+            .mb-4.print_text-sm
+              | The total number of direct and indirect jobs supported by apartment construction, operations and resident spending within the state economy.
             .bg-black.text-white.flex.justify-between.py-2.px-4.mb-8.print_mb-2.print_py-0.print_bg-white.print_text-black
               .font-bold Total Jobs Supported
               .font-bold {{ totalJobs | numeral }}
 
             .text-3xl.font-okib.font-bold.print_text-lg.print_mb-0 Managing Apartments
-            .mb-4.print_text-sm.print_mb-2 Apartment homes are economic engines, driving dollars and jobs that strengthen local communities.
+            .mb-4.print_text-sm.print_mb-2
+              | Apartment homes are economic engines, driving dollars and jobs that strengthen local communities.
             .flex.justify-between.py-2.px-4.print_py-0
               .font-bold Operation Dollars Spent
               .font-bold ${{ operationDollarsSpent | numeral }}
@@ -39,7 +43,8 @@
               .font-bold {{ operationJobs | numeral }}
 
             .text-3xl.font-okib.font-bold.print_text-lg.print_mb-0 Building Apartments
-            .mb-4.print_text-sm.print_mb-2 Apartment construction continues as a bright spot in the economy, helping lead the housing recovery
+            .mb-4.print_text-sm.print_mb-2
+              | Apartment construction continues as a bright spot in the economy, helping lead the housing recovery
             .bg-black.text-white.flex.justify-between.py-2.px-4.print_py-0.print_bg-white.print_text-black
               .font-bold Total Economic Contribution
               .font-bold ${{ constructionContribution | numeral }}
@@ -48,7 +53,8 @@
               .font-bold {{ constructionJobs | numeral }}
 
             .text-3xl.font-okib.font-bold.print_text-lg.print_mb-0 Living in Apartments
-            .mb-4.print_text-sm.print_mb-2 Renting can be a smart choice for a wide range of individuals and families across all income levels. That's why a diverse array of people call apartments home.
+            .mb-4.print_text-sm.print_mb-2
+              | Renting can be a smart choice for a wide range of individuals and families across all income levels. That's why a diverse array of people call apartments home.
             .flex.justify-between.py-2.px-4.print_py-0
               .font-bold Spending Power
               .font-bold ${{ spendingDollars | numeral }}
@@ -125,12 +131,12 @@ export default {
         : this.sheet('calc', 'spendingImpacts', 'State')
     },
     totalJobs () {
-      return this.constructionJobs +
+      return (this.is_new ? this.constructionJobs : 0) +
         this.operationJobs +
         this.spendingJobs
     },
     totalImpact () {
-      return this.constructionContribution +
+      return (this.is_new ? this.constructionContribution : 0) +
         this.operationContribution +
         this.spendingContribution
     },
@@ -142,7 +148,7 @@ export default {
     operationJobs () {
       return this.homes *
         this.operationImpacts[this.key].Total_Jobs /
-        this.operationImpacts[this.key].Direct_On_Site_Jobs
+        this.operationImpacts[this.key].Total_Number_of_Apartments
     },
     spendingJobs () {
       return this.homes *
@@ -161,8 +167,8 @@ export default {
     },
     operationDirectOnSiteJobs () {
       return this.homes *
-        this.constructionImpacts[this.key].Direct_On_Site_Jobs /
-        this.constructionImpacts[this.key].Total_Number_of_Apartments
+        this.operationImpacts[this.key].Direct_On_Site_Jobs /
+        this.operationImpacts[this.key].Total_Number_of_Apartments
     },
     operationContribution () {
       return this.homes *
@@ -192,10 +198,7 @@ export default {
 
   },
 
-  mounted () {
-    this.show = true
-    console.log(this.key)
-  },
+  mounted () { this.show = true },
 
 }
 </script>
