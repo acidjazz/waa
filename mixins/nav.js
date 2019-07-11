@@ -40,6 +40,8 @@ export default {
           label: 'our vision',
           names: ['vision'],
           route: '/vision',
+          color: 'daisybush',
+          gradient: 'bg-graddaisy',
         },
       ]
     }

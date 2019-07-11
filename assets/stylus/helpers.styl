@@ -4,7 +4,6 @@
 .bg-gradgreen
   background linear-gradient(135deg, cfg-colors-persiangreen 0%, cfg-colors-persiangreen 45%, cfg-colors-mountainmeadow 55%)
 
-
 .bg-tranblue
   background linear-gradient(-67deg, rgba(cfg-colors-coolblue, 0.8), rgba(cfg-colors-deepsky, 0.8))
 
@@ -23,6 +22,11 @@
 .bg-gradpurp
   background linear-gradient(135deg, cfg-colors-heart 0%, cfg-colors-heart 45%, cfg-colors-magenta 55%)
 
+.bg-trandaisy
+  background linear-gradient(135deg, rgba(cfg-colors-daisybush, 0.8), rgba(cfg-colors-danube, 0.8))
+
+.bg-graddaisy
+  background linear-gradient(135deg, cfg-colors-daisybush 0%, cfg-colors-daisybush 45%, cfg-colors-danube 55%)
 
 
 .w-fullbleed
@@ -68,12 +72,14 @@
     transform scale(1.05)
 
 .waa-button-black
-  cursor pointer
-  @apply inline-block px-12 py-3 text-black rounded-full border border-black hover-tran-bg
+  @apply cursor-pointer inline-block px-12 py-3 text-black rounded-full border border-black hover-tran-bg
   &:hover
     @apply bg-black text-white
 
-
+.waa-button-black-small
+  @apply waa-button-black px-8 py-2
+  &:hover
+    @apply bg-black text-white
 
 .hover-tran-bg
   transition background-color 0.5s ease 0s
