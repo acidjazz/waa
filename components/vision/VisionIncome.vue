@@ -9,13 +9,12 @@
     .flex.items-center.text-xs.mb-12
       i.mdi.mdi-checkbox-blank-circle.text-orange.mr-2
       .font-okib.font-bold.uppercase income
-  .lg_w-1_3(v-in-vp).vp-r.border.border-seashell.rounded.m-2.p-2
-      .font-bold.font-okib Median apartment income
-      .font-bold.font-okib.mb-4 (2015 dollars)
+  .lg_w-1_3(v-in-vp).vp-r.border.border-seashell.rounded.m-2
+      .font-bold.font-okib.px-2.pt-2 Median apartment income
+      .font-bold.font-okib.mb-4.px-2.pb-2 (2015 dollars)
       ChartIncome(:height="220")
-  .lg_w-1_3(v-in-vp).vp-r.border.border-seashell.rounded.m-2.p-2
-      .font-bold.font-okib.mb-4 Apartment HHS paying over 30% of income on housing
-      .font-bold.font-okib.mb-4
+  .lg_w-1_3(v-in-vp).vp-r.border.border-seashell.rounded.m-2
+      .font-bold.font-okib.mb-4.p-2 Apartment HHS paying over 30% of income on housing
       ChartAfford(:height="220")
 
 </template>

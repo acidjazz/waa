@@ -12,6 +12,38 @@ import pkg from '@/package'
 export default {
   extends: Line,
   mixins: [ sheets ],
+  data () {
+    return {
+      chartdata: {
+        labels: [],
+        datasets: [{
+          ...charts.datasetLine,
+          borderColor: pkg.cfg.colors.orange
+        }]
+      },
+      options: {
+        ...charts.options,
+        scales: {
+          xAxes: [{
+            ...charts.options.scales.xAxes[0],
+            gridLines: { drawBorder: true, display: false, color: pkg.cfg.colors.seashell },
+            ticks: {
+              maxTicksLimit: 3,
+              maxRotation: 0,
+            }
+          }],
+          yAxes: [{
+            ...charts.options.scales.yAxes[0],
+            gridLines: { drawBorder: true, display: false, color: pkg.cfg.colors.seashell },
+            ticks: {
+              ...charts.options.scales.yAxes[0].ticks,
+              maxTicksLimit: 4,
+            }
+          }],
+        },
+      },
+    }
+  },
   computed: {
     datas () { return this.sheet('main', 'visionIncomeAfford', 'Year') },
     labels () { return Object.keys(this.datas) },
