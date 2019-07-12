@@ -1,4 +1,3 @@
-
 <script>
 import { Line } from 'vue-chartjs'
 import numeral from 'numeral'

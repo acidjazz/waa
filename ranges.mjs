@@ -21,6 +21,10 @@ export default {
       CopyTickerInit: {
         values: "Copy!A10:A13",
       },
+      visionBuildMore: {
+        labels: "'Vision-BuildMore'!A1:E1",
+        values: "'Vision-BuildMore'!A3:E16",
+      },
     },
   },
   calc: {

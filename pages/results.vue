@@ -135,10 +135,7 @@ export default {
     },
   },
 
-  mounted () {
-    this.show = true
-    console.log(this.$route.name)
-  },
+  mounted () { this.show = true },
 
 }
 </script>

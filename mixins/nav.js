@@ -24,7 +24,7 @@ export default {
         },
         {
           label: 'apartment calculator',
-          names: ['calculato', 'results'],
+          names: ['calculator', 'results'],
           route: '/calculator',
           gradient: 'bg-gradpurp',
           color: 'magenta',

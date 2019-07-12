@@ -14,7 +14,6 @@ OffsetSection
       .mt-4 Descriptive current and historical demographic and housing data (such as the number of apartment residents and the size of the apartment stock) are NMHC tabulations of the most recently available American Community Survey microdata.
 </template>
 
-
 <script>
 import OffsetSection from '@/components/global/OffsetSection'
 export default { components: { OffsetSection } }

@@ -50,7 +50,7 @@ export default {
           for (let j in values[i])
             if (values[i][j] !== '')
               row[labels[j].trim().replace(/ |-/g, '_')] = this.cleanse(values[i][j])
-          result[row[key].trim().replace(/ |-/g, '_')] = row
+          result[row[key].toString().trim().replace(/ |-/g, '_')] = row
         }
       }
      return result
