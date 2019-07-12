@@ -34,6 +34,7 @@ export default {
           }],
           yAxes: [{
             ...charts.options.scales.yAxes[0],
+            position: 'right',
             gridLines: { drawBorder: true, display: false, color: pkg.cfg.colors.seashell },
             ticks: {
               ...charts.options.scales.yAxes[0].ticks,
