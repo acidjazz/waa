@@ -12,8 +12,8 @@ export default {
           label: 'apartment data',
           names: ['data'],
           route: '/data',
-          gradient: 'bg-gradblue',
-          color: 'coolblue',
+          gradient: 'bg-gradtrue',
+          color: 'trueblue',
         },
         {
           label: 'latest news',

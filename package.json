@@ -32,7 +32,9 @@
       "trueblue": "#0074d3",
       "zaffre": "#09189b",
       "daisybush": "#624296",
-      "danube": "#6397d1"
+      "danube": "#6397d1",
+      "trueblue": "#0074d2",
+      "zaffre": "#08179b"
     }
   },
   "scripts": {
