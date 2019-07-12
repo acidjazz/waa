@@ -25,6 +25,10 @@ export default {
         labels: "'Vision-BuildMore'!A1:E1",
         values: "'Vision-BuildMore'!A3:E16",
       },
+      visionIncomeAfford: {
+        labels: "'Vision-IncomeAfford'!A1:C1",
+        values: "'Vision-IncomeAfford'!A2:C17",
+      },
     },
   },
   calc: {
