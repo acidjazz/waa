@@ -9,14 +9,7 @@ import sheets from '@/data/sheets'
 export default {
 
   computed: {
-    filters () {
-      return sheets.main.valueRanges[0].values
-      /*
-      sheets.main.valueRanges.find(s => {
-        return s !== undefined && s.range === ranges.main.ranges.Filters.data
-      }).values
-      */
-    },
+    filters () { return sheets.main.valueRanges[0].values },
     states () { return this.filters.map(r => r[0]) },
     metros () {
       return this.filters
