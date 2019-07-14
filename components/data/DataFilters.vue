@@ -12,21 +12,21 @@
   .py-8.bg-seashell(v-if="select")
     .canister
       transition(name="fade-in-left")
-        .flex.flex-wrap.justify-center(v-if="select === 'state'")
+        .flex.flex-wrap(v-if="select === 'state'")
           nuxt-link.w-40.tran-colors.m-2(
             v-for="state in states",
             :key="`state-${state}`",
             :to="`/data/${state}`"
             :class="is_state && state == location ? classes.types.active : classes.type.inactive")
             | {{ state }}
-        .flex.flex-wrap.justify-center(v-if="select === 'metro'")
+        .flex.flex-wrap(v-if="select === 'metro'")
           nuxt-link.w-40.tran-colors.m-2(
             v-for="metro in metros",
             :key="`metro-${metro}`",
             :to="`/data/${metro}`",
             :class="is_metro && metro == location ? classes.types.active : classes.type.inactive")
             | {{ metro }}
-        .flex.flex-wrap.justify-center(v-if="select === 'district'")
+        .flex.flex-wrap(v-if="select === 'district'")
           nuxt-link.w-40.tran-colors.m-2(
             v-for="dist in districts[state]",
             :key="`district-${state}-${dist}`",
@@ -66,29 +66,39 @@ export default {
       return numeral(value).format('0o')
     }
   },
+
   computed: {
     is_national () { return this.$route.params.loc === undefined },
     is_state () { return this.states.includes(this.location) },
     is_metro () { return this.metros.includes(this.location) },
     is_district () { return this.$route.params.loc ? this.$route.params.loc.includes('-') : false },
     district () { return this.is_district ? this.$route.params.loc.split('-')[1] : false },
-    state () { return this.is_state ? this.location: this.is_district ? this.$route.params.loc.split('-')[0] : false },
-    location () { return this.$route.params.loc },
+    state () { return this.is_state ? this.location : this.is_district ? this.$route.params.loc.split('-')[0] : false },
+    district_full () { return this.is_district ? `${this.state} ${this.$options.filters.nth(this.district)}` : false },
+    location () { return this.is_national ? 'National' : this.$route.params.loc },
     type () { return this.is_national ? 'national' : this.is_state ? 'state' : this.is_district ? 'district' : 'metro' },
-
   },
+
   methods: {
     choose (type) {
       if (type === 'national') return this.$router.push('/data')
       if (type === 'district' && !this.is_state && !this.is_district ) return false
       this.select = type
+    },
+    chose () {
+      this.$emit(
+      'chose',
+        {
+          type: this.type,
+          location: this.is_district ? this.district_full : this.location,
+          state: this.state,
+          metro: this.metro,
+          district: this.district
+        })
     }
   },
-  //.relative.flex.justify-center
-  //  .py-8.bg-seashell.absolute.z-10
-  mounted () {
-    console.log(this.district)
-    console.log(this.district_state)
-  },
+  mounted () { this.chose() },
 }
+//.relative.flex.justify-center
+//  .py-8.bg-seashell.absolute.z-10
 </script>
