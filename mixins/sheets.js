@@ -12,12 +12,15 @@ export default {
     filters () { return sheets.main.valueRanges[0].values },
     states () { return this.filters.map(r => r[0]) },
     metros () {
-      return this.filters
+      return [...new Set(this.filters
         .map(l => l[2]
         .split(',')
         .map(m => m.trim()))
         .flat()
-        .filter(Boolean)
+        .filter(Boolean))]
+    },
+    districts () {
+      return Object.assign(...this.filters.map(([key, ab, metros, districts]) => ({[key]: districts*1})))
     },
 
   },
