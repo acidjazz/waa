@@ -271,14 +271,16 @@
             {
               "slug": "housing",
               "name": "Housing",
-              "postCount": 12706,
+              "postCount": 12813,
               "metadata": {
-                "postCount": 12706,
+                "postCount": 12813,
                 "coverImage": {
-                  "id": "1*AlG87i9sC1_4Vla1ZgmJGQ.gif",
-                  "originalWidth": 1086,
-                  "originalHeight": 610,
-                  "isFeatured": true
+                  "id": "1*Iq1J3giR71RhU2i3CXYjyw.jpeg",
+                  "originalWidth": 4147,
+                  "originalHeight": 2328,
+                  "isFeatured": true,
+                  "focusPercentX": 49,
+                  "focusPercentY": 39
                 }
               },
               "type": "Tag"
@@ -286,13 +288,13 @@
             {
               "slug": "nimby",
               "name": "Nimby",
-              "postCount": 67,
+              "postCount": 68,
               "metadata": {
-                "postCount": 67,
+                "postCount": 68,
                 "coverImage": {
-                  "id": "1*OWJ3Kip4N5dQq-A3x9YRfA.jpeg",
-                  "originalWidth": 5209,
-                  "originalHeight": 2917,
+                  "id": "1*xad0p4WjJCdHIsdk7z0-Tw.png",
+                  "originalWidth": 1427,
+                  "originalHeight": 446,
                   "isFeatured": true
                 }
               },
@@ -301,13 +303,13 @@
             {
               "slug": "affordable-housing",
               "name": "Affordable Housing",
-              "postCount": 1576,
+              "postCount": 1582,
               "metadata": {
-                "postCount": 1576,
+                "postCount": 1582,
                 "coverImage": {
-                  "id": "0*OAo-v5g19GpCroGH",
-                  "originalWidth": 864,
-                  "originalHeight": 572,
+                  "id": "1*ELTOswi_K9HYYZPxAwXdCQ.png",
+                  "originalWidth": 900,
+                  "originalHeight": 450,
                   "isFeatured": true
                 }
               },
@@ -316,13 +318,14 @@
             {
               "slug": "local-government",
               "name": "Local Government",
-              "postCount": 1895,
+              "postCount": 1905,
               "metadata": {
-                "postCount": 1895,
+                "postCount": 1905,
                 "coverImage": {
-                  "id": "1*CRVkVBePvC8DQ4A6Mv6aJw.png",
-                  "originalWidth": 1024,
-                  "originalHeight": 512
+                  "id": "1*Qbu9FEkEpI180gk75zIFkw.png",
+                  "originalWidth": 900,
+                  "originalHeight": 450,
+                  "isFeatured": true
                 }
               },
               "type": "Tag"
@@ -330,15 +333,14 @@
             {
               "slug": "people",
               "name": "People",
-              "postCount": 13540,
+              "postCount": 13585,
               "metadata": {
-                "postCount": 13540,
+                "postCount": 13585,
                 "coverImage": {
-                  "id": "0*_rp--ZEXSreOuRA9",
-                  "originalWidth": 5472,
-                  "originalHeight": 3648,
-                  "isFeatured": true,
-                  "unsplashPhotoId": "WFBVn6fSgys"
+                  "id": "1*5Tw8x-pfRBkRlohrDZ2Yjw.jpeg",
+                  "originalWidth": 4898,
+                  "originalHeight": 3265,
+                  "isFeatured": true
                 }
               },
               "type": "Tag"
@@ -512,14 +514,16 @@
             {
               "slug": "housing",
               "name": "Housing",
-              "postCount": 12706,
+              "postCount": 12813,
               "metadata": {
-                "postCount": 12706,
+                "postCount": 12813,
                 "coverImage": {
-                  "id": "1*AlG87i9sC1_4Vla1ZgmJGQ.gif",
-                  "originalWidth": 1086,
-                  "originalHeight": 610,
-                  "isFeatured": true
+                  "id": "1*Iq1J3giR71RhU2i3CXYjyw.jpeg",
+                  "originalWidth": 4147,
+                  "originalHeight": 2328,
+                  "isFeatured": true,
+                  "focusPercentX": 49,
+                  "focusPercentY": 39
                 }
               },
               "type": "Tag"
@@ -527,13 +531,13 @@
             {
               "slug": "affordable-housing",
               "name": "Affordable Housing",
-              "postCount": 1576,
+              "postCount": 1582,
               "metadata": {
-                "postCount": 1576,
+                "postCount": 1582,
                 "coverImage": {
-                  "id": "0*OAo-v5g19GpCroGH",
-                  "originalWidth": 864,
-                  "originalHeight": 572,
+                  "id": "1*ELTOswi_K9HYYZPxAwXdCQ.png",
+                  "originalWidth": 900,
+                  "originalHeight": 450,
                   "isFeatured": true
                 }
               },
@@ -542,15 +546,14 @@
             {
               "slug": "housing-crisis",
               "name": "Housing Crisis",
-              "postCount": 473,
+              "postCount": 481,
               "metadata": {
-                "postCount": 473,
+                "postCount": 481,
                 "coverImage": {
-                  "id": "0*0hcUQHMNfuux9m9F",
-                  "originalWidth": 5472,
-                  "originalHeight": 3648,
-                  "isFeatured": true,
-                  "unsplashPhotoId": "gL_6NfEazeE"
+                  "id": "0*mHuBZ5adTlqxLEXs.jpg",
+                  "originalWidth": 1233,
+                  "originalHeight": 800,
+                  "externalSrc": "https://citizentruth.org/wp-content/uploads/2019/07/24153653047_36e43c3193_o.jpg"
                 }
               },
               "type": "Tag"
@@ -558,13 +561,13 @@
             {
               "slug": "denver",
               "name": "Denver",
-              "postCount": 1510,
+              "postCount": 1515,
               "metadata": {
-                "postCount": 1510,
+                "postCount": 1515,
                 "coverImage": {
-                  "id": "1*VCTNSgT81_V-41N9RLi-GA.jpeg",
-                  "originalWidth": 6000,
-                  "originalHeight": 4000,
+                  "id": "1*xvXNuKZmcVV95BvvEBBT1Q.jpeg",
+                  "originalWidth": 1920,
+                  "originalHeight": 1278,
                   "isFeatured": true
                 }
               },
@@ -573,13 +576,13 @@
             {
               "slug": "solutions",
               "name": "Solutions",
-              "postCount": 2372,
+              "postCount": 2396,
               "metadata": {
-                "postCount": 2372,
+                "postCount": 2396,
                 "coverImage": {
-                  "id": "1*KZElZRnfk166eJllCfFNug.jpeg",
-                  "originalWidth": 1200,
-                  "originalHeight": 633,
+                  "id": "1*WX-qofIA5FrDgr6HIKdfXQ.jpeg",
+                  "originalWidth": 750,
+                  "originalHeight": 395,
                   "isFeatured": true
                 }
               },
@@ -755,14 +758,16 @@
             {
               "slug": "housing",
               "name": "Housing",
-              "postCount": 12706,
+              "postCount": 12813,
               "metadata": {
-                "postCount": 12706,
+                "postCount": 12813,
                 "coverImage": {
-                  "id": "1*AlG87i9sC1_4Vla1ZgmJGQ.gif",
-                  "originalWidth": 1086,
-                  "originalHeight": 610,
-                  "isFeatured": true
+                  "id": "1*Iq1J3giR71RhU2i3CXYjyw.jpeg",
+                  "originalWidth": 4147,
+                  "originalHeight": 2328,
+                  "isFeatured": true,
+                  "focusPercentX": 49,
+                  "focusPercentY": 39
                 }
               },
               "type": "Tag"
@@ -770,9 +775,9 @@
             {
               "slug": "massachusetts",
               "name": "Massachusetts",
-              "postCount": 1014,
+              "postCount": 1019,
               "metadata": {
-                "postCount": 1014,
+                "postCount": 1019,
                 "coverImage": {
                   "id": "1*NVo2IIQfiGPE9gacXre5qg.png",
                   "originalWidth": 8000,
@@ -785,15 +790,14 @@
             {
               "slug": "housing-crisis",
               "name": "Housing Crisis",
-              "postCount": 473,
+              "postCount": 481,
               "metadata": {
-                "postCount": 473,
+                "postCount": 481,
                 "coverImage": {
-                  "id": "0*0hcUQHMNfuux9m9F",
-                  "originalWidth": 5472,
-                  "originalHeight": 3648,
-                  "isFeatured": true,
-                  "unsplashPhotoId": "gL_6NfEazeE"
+                  "id": "0*mHuBZ5adTlqxLEXs.jpg",
+                  "originalWidth": 1233,
+                  "originalHeight": 800,
+                  "externalSrc": "https://citizentruth.org/wp-content/uploads/2019/07/24153653047_36e43c3193_o.jpg"
                 }
               },
               "type": "Tag"
@@ -801,13 +805,13 @@
             {
               "slug": "affordable-housing",
               "name": "Affordable Housing",
-              "postCount": 1576,
+              "postCount": 1582,
               "metadata": {
-                "postCount": 1576,
+                "postCount": 1582,
                 "coverImage": {
-                  "id": "0*OAo-v5g19GpCroGH",
-                  "originalWidth": 864,
-                  "originalHeight": 572,
+                  "id": "1*ELTOswi_K9HYYZPxAwXdCQ.png",
+                  "originalWidth": 900,
+                  "originalHeight": 450,
                   "isFeatured": true
                 }
               },
@@ -983,13 +987,13 @@
             {
               "slug": "solutions",
               "name": "Solutions",
-              "postCount": 2372,
+              "postCount": 2396,
               "metadata": {
-                "postCount": 2372,
+                "postCount": 2396,
                 "coverImage": {
-                  "id": "1*KZElZRnfk166eJllCfFNug.jpeg",
-                  "originalWidth": 1200,
-                  "originalHeight": 633,
+                  "id": "1*WX-qofIA5FrDgr6HIKdfXQ.jpeg",
+                  "originalWidth": 750,
+                  "originalHeight": 395,
                   "isFeatured": true
                 }
               },
@@ -998,15 +1002,14 @@
             {
               "slug": "housing-crisis",
               "name": "Housing Crisis",
-              "postCount": 473,
+              "postCount": 481,
               "metadata": {
-                "postCount": 473,
+                "postCount": 481,
                 "coverImage": {
-                  "id": "0*0hcUQHMNfuux9m9F",
-                  "originalWidth": 5472,
-                  "originalHeight": 3648,
-                  "isFeatured": true,
-                  "unsplashPhotoId": "gL_6NfEazeE"
+                  "id": "0*mHuBZ5adTlqxLEXs.jpg",
+                  "originalWidth": 1233,
+                  "originalHeight": 800,
+                  "externalSrc": "https://citizentruth.org/wp-content/uploads/2019/07/24153653047_36e43c3193_o.jpg"
                 }
               },
               "type": "Tag"
@@ -1014,13 +1017,13 @@
             {
               "slug": "affordable-housing",
               "name": "Affordable Housing",
-              "postCount": 1576,
+              "postCount": 1582,
               "metadata": {
-                "postCount": 1576,
+                "postCount": 1582,
                 "coverImage": {
-                  "id": "0*OAo-v5g19GpCroGH",
-                  "originalWidth": 864,
-                  "originalHeight": 572,
+                  "id": "1*ELTOswi_K9HYYZPxAwXdCQ.png",
+                  "originalWidth": 900,
+                  "originalHeight": 450,
                   "isFeatured": true
                 }
               },
@@ -1029,13 +1032,13 @@
             {
               "slug": "minneapolis",
               "name": "Minneapolis",
-              "postCount": 970,
+              "postCount": 975,
               "metadata": {
-                "postCount": 970,
+                "postCount": 975,
                 "coverImage": {
-                  "id": "1*jFr8pcIR6wkBu5-HgyHGXw.jpeg",
-                  "originalWidth": 1600,
-                  "originalHeight": 900,
+                  "id": "1*zL3AGEsdYsTizc7JUzIYSw.jpeg",
+                  "originalWidth": 1125,
+                  "originalHeight": 724,
                   "isFeatured": true
                 }
               },
@@ -1044,14 +1047,16 @@
             {
               "slug": "housing",
               "name": "Housing",
-              "postCount": 12706,
+              "postCount": 12813,
               "metadata": {
-                "postCount": 12706,
+                "postCount": 12813,
                 "coverImage": {
-                  "id": "1*AlG87i9sC1_4Vla1ZgmJGQ.gif",
-                  "originalWidth": 1086,
-                  "originalHeight": 610,
-                  "isFeatured": true
+                  "id": "1*Iq1J3giR71RhU2i3CXYjyw.jpeg",
+                  "originalWidth": 4147,
+                  "originalHeight": 2328,
+                  "isFeatured": true,
+                  "focusPercentX": 49,
+                  "focusPercentY": 39
                 }
               },
               "type": "Tag"
@@ -1288,14 +1293,16 @@
             {
               "slug": "housing",
               "name": "Housing",
-              "postCount": 12706,
+              "postCount": 12813,
               "metadata": {
-                "postCount": 12706,
+                "postCount": 12813,
                 "coverImage": {
-                  "id": "1*AlG87i9sC1_4Vla1ZgmJGQ.gif",
-                  "originalWidth": 1086,
-                  "originalHeight": 610,
-                  "isFeatured": true
+                  "id": "1*Iq1J3giR71RhU2i3CXYjyw.jpeg",
+                  "originalWidth": 4147,
+                  "originalHeight": 2328,
+                  "isFeatured": true,
+                  "focusPercentX": 49,
+                  "focusPercentY": 39
                 }
               },
               "type": "Tag"
@@ -1303,13 +1310,13 @@
             {
               "slug": "solutions",
               "name": "Solutions",
-              "postCount": 2372,
+              "postCount": 2396,
               "metadata": {
-                "postCount": 2372,
+                "postCount": 2396,
                 "coverImage": {
-                  "id": "1*KZElZRnfk166eJllCfFNug.jpeg",
-                  "originalWidth": 1200,
-                  "originalHeight": 633,
+                  "id": "1*WX-qofIA5FrDgr6HIKdfXQ.jpeg",
+                  "originalWidth": 750,
+                  "originalHeight": 395,
                   "isFeatured": true
                 }
               },
@@ -1318,15 +1325,14 @@
             {
               "slug": "housing-crisis",
               "name": "Housing Crisis",
-              "postCount": 473,
+              "postCount": 481,
               "metadata": {
-                "postCount": 473,
+                "postCount": 481,
                 "coverImage": {
-                  "id": "0*0hcUQHMNfuux9m9F",
-                  "originalWidth": 5472,
-                  "originalHeight": 3648,
-                  "isFeatured": true,
-                  "unsplashPhotoId": "gL_6NfEazeE"
+                  "id": "0*mHuBZ5adTlqxLEXs.jpg",
+                  "originalWidth": 1233,
+                  "originalHeight": 800,
+                  "externalSrc": "https://citizentruth.org/wp-content/uploads/2019/07/24153653047_36e43c3193_o.jpg"
                 }
               },
               "type": "Tag"
@@ -1334,13 +1340,13 @@
             {
               "slug": "affordable-housing",
               "name": "Affordable Housing",
-              "postCount": 1576,
+              "postCount": 1582,
               "metadata": {
-                "postCount": 1576,
+                "postCount": 1582,
                 "coverImage": {
-                  "id": "0*OAo-v5g19GpCroGH",
-                  "originalWidth": 864,
-                  "originalHeight": 572,
+                  "id": "1*ELTOswi_K9HYYZPxAwXdCQ.png",
+                  "originalWidth": 900,
+                  "originalHeight": 450,
                   "isFeatured": true
                 }
               },
@@ -1349,14 +1355,17 @@
             {
               "slug": "seattle",
               "name": "Seattle",
-              "postCount": 3468,
+              "postCount": 3484,
               "metadata": {
-                "postCount": 3468,
+                "postCount": 3484,
                 "coverImage": {
-                  "id": "1*9CHuGDdrt_UGP1euNKQYrw.jpeg",
-                  "originalWidth": 2232,
-                  "originalHeight": 1464,
-                  "isFeatured": true
+                  "id": "0*4K2oLjZqVpYPTc2B",
+                  "originalWidth": 6000,
+                  "originalHeight": 4000,
+                  "isFeatured": true,
+                  "focusPercentX": 58,
+                  "focusPercentY": 60,
+                  "unsplashPhotoId": "zLT3VqWEgOQ"
                 }
               },
               "type": "Tag"
@@ -1571,14 +1580,16 @@
             {
               "slug": "housing",
               "name": "Housing",
-              "postCount": 12706,
+              "postCount": 12813,
               "metadata": {
-                "postCount": 12706,
+                "postCount": 12813,
                 "coverImage": {
-                  "id": "1*AlG87i9sC1_4Vla1ZgmJGQ.gif",
-                  "originalWidth": 1086,
-                  "originalHeight": 610,
-                  "isFeatured": true
+                  "id": "1*Iq1J3giR71RhU2i3CXYjyw.jpeg",
+                  "originalWidth": 4147,
+                  "originalHeight": 2328,
+                  "isFeatured": true,
+                  "focusPercentX": 49,
+                  "focusPercentY": 39
                 }
               },
               "type": "Tag"
@@ -1586,13 +1597,13 @@
             {
               "slug": "solutions",
               "name": "Solutions",
-              "postCount": 2372,
+              "postCount": 2396,
               "metadata": {
-                "postCount": 2372,
+                "postCount": 2396,
                 "coverImage": {
-                  "id": "1*KZElZRnfk166eJllCfFNug.jpeg",
-                  "originalWidth": 1200,
-                  "originalHeight": 633,
+                  "id": "1*WX-qofIA5FrDgr6HIKdfXQ.jpeg",
+                  "originalWidth": 750,
+                  "originalHeight": 395,
                   "isFeatured": true
                 }
               },
@@ -1601,13 +1612,13 @@
             {
               "slug": "apartments",
               "name": "Apartments",
-              "postCount": 3259,
+              "postCount": 3292,
               "metadata": {
-                "postCount": 3259,
+                "postCount": 3292,
                 "coverImage": {
-                  "id": "0*WGZqQR0WdxwrhP7U.JPG",
-                  "originalWidth": 640,
-                  "originalHeight": 480,
+                  "id": "1*1hRpzyBt5gb7dKY1cVRrIg.png",
+                  "originalWidth": 1808,
+                  "originalHeight": 1017,
                   "isFeatured": true
                 }
               },
@@ -1616,13 +1627,13 @@
             {
               "slug": "affordable-housing",
               "name": "Affordable Housing",
-              "postCount": 1576,
+              "postCount": 1582,
               "metadata": {
-                "postCount": 1576,
+                "postCount": 1582,
                 "coverImage": {
-                  "id": "0*OAo-v5g19GpCroGH",
-                  "originalWidth": 864,
-                  "originalHeight": 572,
+                  "id": "1*ELTOswi_K9HYYZPxAwXdCQ.png",
+                  "originalWidth": 900,
+                  "originalHeight": 450,
                   "isFeatured": true
                 }
               },
@@ -1631,15 +1642,14 @@
             {
               "slug": "housing-crisis",
               "name": "Housing Crisis",
-              "postCount": 473,
+              "postCount": 481,
               "metadata": {
-                "postCount": 473,
+                "postCount": 481,
                 "coverImage": {
-                  "id": "0*0hcUQHMNfuux9m9F",
-                  "originalWidth": 5472,
-                  "originalHeight": 3648,
-                  "isFeatured": true,
-                  "unsplashPhotoId": "gL_6NfEazeE"
+                  "id": "0*mHuBZ5adTlqxLEXs.jpg",
+                  "originalWidth": 1233,
+                  "originalHeight": 800,
+                  "externalSrc": "https://citizentruth.org/wp-content/uploads/2019/07/24153653047_36e43c3193_o.jpg"
                 }
               },
               "type": "Tag"
@@ -1865,14 +1875,16 @@
             {
               "slug": "housing",
               "name": "Housing",
-              "postCount": 12706,
+              "postCount": 12813,
               "metadata": {
-                "postCount": 12706,
+                "postCount": 12813,
                 "coverImage": {
-                  "id": "1*AlG87i9sC1_4Vla1ZgmJGQ.gif",
-                  "originalWidth": 1086,
-                  "originalHeight": 610,
-                  "isFeatured": true
+                  "id": "1*Iq1J3giR71RhU2i3CXYjyw.jpeg",
+                  "originalWidth": 4147,
+                  "originalHeight": 2328,
+                  "isFeatured": true,
+                  "focusPercentX": 49,
+                  "focusPercentY": 39
                 }
               },
               "type": "Tag"
@@ -1880,13 +1892,13 @@
             {
               "slug": "apartments",
               "name": "Apartments",
-              "postCount": 3259,
+              "postCount": 3292,
               "metadata": {
-                "postCount": 3259,
+                "postCount": 3292,
                 "coverImage": {
-                  "id": "0*WGZqQR0WdxwrhP7U.JPG",
-                  "originalWidth": 640,
-                  "originalHeight": 480,
+                  "id": "1*1hRpzyBt5gb7dKY1cVRrIg.png",
+                  "originalWidth": 1808,
+                  "originalHeight": 1017,
                   "isFeatured": true
                 }
               },
@@ -1895,14 +1907,16 @@
             {
               "slug": "policy",
               "name": "Policy",
-              "postCount": 6925,
+              "postCount": 6951,
               "metadata": {
-                "postCount": 6925,
+                "postCount": 6951,
                 "coverImage": {
-                  "id": "1*ko_FhYRGh34ARJDgjwncHQ.png",
-                  "originalWidth": 1500,
-                  "originalHeight": 750,
-                  "isFeatured": true
+                  "id": "1*GenjiRrKlfGLqKf-UVKxeA.jpeg",
+                  "originalWidth": 720,
+                  "originalHeight": 720,
+                  "isFeatured": true,
+                  "focusPercentX": 42,
+                  "focusPercentY": 42
                 }
               },
               "type": "Tag"
@@ -1925,13 +1939,13 @@
             {
               "slug": "solutions",
               "name": "Solutions",
-              "postCount": 2372,
+              "postCount": 2396,
               "metadata": {
-                "postCount": 2372,
+                "postCount": 2396,
                 "coverImage": {
-                  "id": "1*KZElZRnfk166eJllCfFNug.jpeg",
-                  "originalWidth": 1200,
-                  "originalHeight": 633,
+                  "id": "1*WX-qofIA5FrDgr6HIKdfXQ.jpeg",
+                  "originalWidth": 750,
+                  "originalHeight": 395,
                   "isFeatured": true
                 }
               },
@@ -2304,5 +2318,5 @@
     }
   },
   "v": 3,
-  "b": "38043-d3f3c51"
+  "b": "38103-6e8928c"
 }
