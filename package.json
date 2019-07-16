@@ -29,12 +29,10 @@
       "deepsky": "#00d2ec",
       "dodgerblue": "#059ef3",
       "coolblue": "#0199ff",
-      "trueblue": "#0074d3",
-      "zaffre": "#09189b",
-      "daisybush": "#624296",
-      "danube": "#6397d1",
       "trueblue": "#0074d2",
-      "zaffre": "#08179b"
+      "zaffre": "#08179b",
+      "daisybush": "#624296",
+      "danube": "#6397d1"
     }
   },
   "scripts": {
@@ -57,7 +55,7 @@
     "chart.js": "^2.8.0",
     "countup.js": "^2.0.4",
     "cross-env": "^5.2.0",
-    "googleapis": "^40.0.0",
+    "googleapis": "^41.0.0",
     "numeral": "^2.0.6",
     "nuxt": "^2.8.1",
     "pug": "^2.0.3",
