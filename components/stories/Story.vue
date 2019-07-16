@@ -21,9 +21,7 @@ export default {
       return `https://cdn-images-1.medium.com/max/1600/${data.virtuals.previewImage.imageId}`
     },
     link (story) {
-      console.log(story.slug)
       return `https://www.medium.com/we-are-apartments/${story.uniqueSlug}`
-
     },
   },
 }

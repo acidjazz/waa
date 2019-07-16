@@ -26,7 +26,7 @@
       },
       "metadata": {
         "followerCount": 31,
-        "activeAt": 1561754985322
+        "activeAt": 1563282525454
       },
       "virtuals": {
         "permissions": {
@@ -271,16 +271,17 @@
             {
               "slug": "housing",
               "name": "Housing",
-              "postCount": 12813,
+              "postCount": 12835,
               "metadata": {
-                "postCount": 12813,
+                "postCount": 12835,
                 "coverImage": {
-                  "id": "1*Iq1J3giR71RhU2i3CXYjyw.jpeg",
-                  "originalWidth": 4147,
-                  "originalHeight": 2328,
+                  "id": "1*X-1lEeVKUkqvpUaNkG5oJw.jpeg",
+                  "originalWidth": 3000,
+                  "originalHeight": 2000,
                   "isFeatured": true,
-                  "focusPercentX": 49,
-                  "focusPercentY": 39
+                  "focusPercentX": 51,
+                  "focusPercentY": 43,
+                  "alt": "A luxury 5-story condominium building is proposed to replace this narrow two-story house at 180 Washington Ave."
                 }
               },
               "type": "Tag"
@@ -303,9 +304,9 @@
             {
               "slug": "affordable-housing",
               "name": "Affordable Housing",
-              "postCount": 1582,
+              "postCount": 1584,
               "metadata": {
-                "postCount": 1582,
+                "postCount": 1584,
                 "coverImage": {
                   "id": "1*ELTOswi_K9HYYZPxAwXdCQ.png",
                   "originalWidth": 900,
@@ -333,14 +334,15 @@
             {
               "slug": "people",
               "name": "People",
-              "postCount": 13585,
+              "postCount": 13591,
               "metadata": {
-                "postCount": 13585,
+                "postCount": 13591,
                 "coverImage": {
-                  "id": "1*5Tw8x-pfRBkRlohrDZ2Yjw.jpeg",
-                  "originalWidth": 4898,
-                  "originalHeight": 3265,
-                  "isFeatured": true
+                  "id": "0*4Ou2EcPc_h044i0H",
+                  "originalWidth": 1932,
+                  "originalHeight": 2425,
+                  "isFeatured": true,
+                  "unsplashPhotoId": "rpPvrOQmR2s"
                 }
               },
               "type": "Tag"
@@ -470,6 +472,245 @@
         "type": "Post"
       },
       {
+        "id": "961ef11abcab",
+        "versionId": "2df66d53c67d",
+        "creatorId": "97d35ca792e3",
+        "homeCollectionId": "4933e15b493e",
+        "title": "Columbus, Ohio, Stays Ahead of the Curve on Affordable Housing",
+        "detectedLanguage": "en",
+        "latestVersion": "2df66d53c67d",
+        "latestPublishedVersion": "2df66d53c67d",
+        "hasUnpublishedEdits": false,
+        "latestRev": 62,
+        "createdAt": 1560347246784,
+        "updatedAt": 1563282525458,
+        "acceptedAt": 0,
+        "firstPublishedAt": 1560379914818,
+        "latestPublishedAt": 1560379914818,
+        "vote": false,
+        "experimentalCss": "",
+        "displayAuthor": "",
+        "virtuals": {
+          "statusForCollection": "APPROVED",
+          "allowNotes": true,
+          "previewImage": {
+            "imageId": "1*ZB5xn_LkLkBJ_dpMUU93nw.jpeg",
+            "filter": "",
+            "backgroundSize": "",
+            "originalWidth": 2501,
+            "originalHeight": 1400,
+            "strategy": "resample",
+            "height": 0,
+            "width": 0
+          },
+          "wordCount": 853,
+          "imageCount": 2,
+          "readingTime": 3.602201257861635,
+          "subtitle": "Through multisector partnerships, the growing state capital is dealing with the issue head on",
+          "publishedInCount": 1,
+          "usersBySocialRecommends": [],
+          "noIndex": false,
+          "recommends": 3,
+          "isBookmarked": false,
+          "tags": [
+            {
+              "slug": "housing",
+              "name": "Housing",
+              "postCount": 12835,
+              "metadata": {
+                "postCount": 12835,
+                "coverImage": {
+                  "id": "1*X-1lEeVKUkqvpUaNkG5oJw.jpeg",
+                  "originalWidth": 3000,
+                  "originalHeight": 2000,
+                  "isFeatured": true,
+                  "focusPercentX": 51,
+                  "focusPercentY": 43,
+                  "alt": "A luxury 5-story condominium building is proposed to replace this narrow two-story house at 180 Washington Ave."
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "ohio",
+              "name": "Ohio",
+              "postCount": 1132,
+              "metadata": {
+                "postCount": 1132,
+                "coverImage": {
+                  "id": "0*In-v3TDQjh13_i7C.jpg",
+                  "originalWidth": 1300,
+                  "originalHeight": 724
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "affordable-housing",
+              "name": "Affordable Housing",
+              "postCount": 1584,
+              "metadata": {
+                "postCount": 1584,
+                "coverImage": {
+                  "id": "1*ELTOswi_K9HYYZPxAwXdCQ.png",
+                  "originalWidth": 900,
+                  "originalHeight": 450,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "solutions",
+              "name": "Solutions",
+              "postCount": 2401,
+              "metadata": {
+                "postCount": 2401,
+                "coverImage": {
+                  "id": "1*WX-qofIA5FrDgr6HIKdfXQ.jpeg",
+                  "originalWidth": 750,
+                  "originalHeight": 395,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "apartments",
+              "name": "Apartments",
+              "postCount": 3294,
+              "metadata": {
+                "postCount": 3294,
+                "coverImage": {
+                  "id": "1*1hRpzyBt5gb7dKY1cVRrIg.png",
+                  "originalWidth": 1808,
+                  "originalHeight": 1017,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            }
+          ],
+          "socialRecommendsCount": 0,
+          "responsesCreatedCount": 1,
+          "links": {
+            "entries": [
+              {
+                "url": "https://radio.wosu.org/post/franklin-county-struggles-overcome-high-number-evictions#stream/0",
+                "alts": [],
+                "httpStatus": 200
+              },
+              {
+                "url": "https://www.dispatch.com/news/20190415/columbus-city-council-approves-56-million-to-provide-affordable-housing",
+                "alts": [
+                  {
+                    "type": 1,
+                    "url": "https://cdn.ampproject.org/c/s/www.dispatch.com/news/20190415/columbus-city-council-approves-56-million-to-provide-affordable-housing?template=ampart"
+                  }
+                ],
+                "httpStatus": 200
+              }
+            ],
+            "version": "0.3",
+            "generatedAt": 1560379915220
+          },
+          "isLockedPreviewOnly": false,
+          "metaDescription": "",
+          "totalClapCount": 3,
+          "sectionCount": 1,
+          "readingList": 0,
+          "topics": []
+        },
+        "coverless": true,
+        "slug": "columbus-ohio-stays-ahead-of-the-curve-on-affordable-housing",
+        "translationSourcePostId": "",
+        "translationSourceCreatorId": "",
+        "isApprovedTranslation": false,
+        "inResponseToPostId": "",
+        "inResponseToRemovedAt": 0,
+        "isTitleSynthesized": false,
+        "allowResponses": true,
+        "importedUrl": "",
+        "importedPublishedAt": 0,
+        "visibility": 0,
+        "uniqueSlug": "columbus-ohio-stays-ahead-of-the-curve-on-affordable-housing-961ef11abcab",
+        "previewContent": {
+          "bodyModel": {
+            "paragraphs": [
+              {
+                "name": "previewImage",
+                "type": 4,
+                "text": "",
+                "layout": 10,
+                "metadata": {
+                  "id": "1*ZB5xn_LkLkBJ_dpMUU93nw.jpeg",
+                  "originalWidth": 2501,
+                  "originalHeight": 1400,
+                  "isFeatured": true
+                }
+              },
+              {
+                "name": "d698",
+                "type": 3,
+                "text": "Columbus, Ohio, Stays Ahead of the Curve on Affordable Housing",
+                "markups": [
+                  {
+                    "type": 1,
+                    "start": 0,
+                    "end": 62
+                  }
+                ],
+                "alignment": 1
+              }
+            ],
+            "sections": [
+              {
+                "startIndex": 0
+              }
+            ]
+          },
+          "isFullContent": false,
+          "subtitle": "Through multisector partnerships, the growing state capital is dealing with the issue head on"
+        },
+        "license": 0,
+        "inResponseToMediaResourceId": "",
+        "canonicalUrl": "",
+        "approvedHomeCollectionId": "4933e15b493e",
+        "newsletterId": "",
+        "webCanonicalUrl": "",
+        "mediumUrl": "",
+        "migrationId": "",
+        "notifyFollowers": true,
+        "notifyTwitter": false,
+        "notifyFacebook": false,
+        "responseHiddenOnParentPostAt": 0,
+        "isSeries": false,
+        "isSubscriptionLocked": false,
+        "seriesLastAppendedAt": 0,
+        "audioVersionDurationSec": 0,
+        "sequenceId": "",
+        "isNsfw": false,
+        "isEligibleForRevenue": false,
+        "isBlockedFromHightower": false,
+        "deletedAt": 0,
+        "lockedPostSource": 0,
+        "hightowerMinimumGuaranteeStartsAt": 0,
+        "hightowerMinimumGuaranteeEndsAt": 0,
+        "featureLockRequestAcceptedAt": 0,
+        "mongerRequestType": 1,
+        "layerCake": 0,
+        "socialTitle": "",
+        "socialDek": "",
+        "editorialPreviewTitle": "",
+        "editorialPreviewDek": "",
+        "curationEligibleAt": 1563282519724,
+        "isProxyPost": false,
+        "proxyPostFaviconUrl": "",
+        "proxyPostProviderName": "",
+        "proxyPostType": 0,
+        "type": "Post"
+      },
+      {
         "id": "6d20cd2ddf1",
         "versionId": "11995bea04a1",
         "creatorId": "97d35ca792e3",
@@ -514,16 +755,17 @@
             {
               "slug": "housing",
               "name": "Housing",
-              "postCount": 12813,
+              "postCount": 12835,
               "metadata": {
-                "postCount": 12813,
+                "postCount": 12835,
                 "coverImage": {
-                  "id": "1*Iq1J3giR71RhU2i3CXYjyw.jpeg",
-                  "originalWidth": 4147,
-                  "originalHeight": 2328,
+                  "id": "1*X-1lEeVKUkqvpUaNkG5oJw.jpeg",
+                  "originalWidth": 3000,
+                  "originalHeight": 2000,
                   "isFeatured": true,
-                  "focusPercentX": 49,
-                  "focusPercentY": 39
+                  "focusPercentX": 51,
+                  "focusPercentY": 43,
+                  "alt": "A luxury 5-story condominium building is proposed to replace this narrow two-story house at 180 Washington Ave."
                 }
               },
               "type": "Tag"
@@ -531,9 +773,9 @@
             {
               "slug": "affordable-housing",
               "name": "Affordable Housing",
-              "postCount": 1582,
+              "postCount": 1584,
               "metadata": {
-                "postCount": 1582,
+                "postCount": 1584,
                 "coverImage": {
                   "id": "1*ELTOswi_K9HYYZPxAwXdCQ.png",
                   "originalWidth": 900,
@@ -576,9 +818,9 @@
             {
               "slug": "solutions",
               "name": "Solutions",
-              "postCount": 2396,
+              "postCount": 2401,
               "metadata": {
-                "postCount": 2396,
+                "postCount": 2401,
                 "coverImage": {
                   "id": "1*WX-qofIA5FrDgr6HIKdfXQ.jpeg",
                   "originalWidth": 750,
@@ -758,16 +1000,17 @@
             {
               "slug": "housing",
               "name": "Housing",
-              "postCount": 12813,
+              "postCount": 12835,
               "metadata": {
-                "postCount": 12813,
+                "postCount": 12835,
                 "coverImage": {
-                  "id": "1*Iq1J3giR71RhU2i3CXYjyw.jpeg",
-                  "originalWidth": 4147,
-                  "originalHeight": 2328,
+                  "id": "1*X-1lEeVKUkqvpUaNkG5oJw.jpeg",
+                  "originalWidth": 3000,
+                  "originalHeight": 2000,
                   "isFeatured": true,
-                  "focusPercentX": 49,
-                  "focusPercentY": 39
+                  "focusPercentX": 51,
+                  "focusPercentY": 43,
+                  "alt": "A luxury 5-story condominium building is proposed to replace this narrow two-story house at 180 Washington Ave."
                 }
               },
               "type": "Tag"
@@ -775,9 +1018,9 @@
             {
               "slug": "massachusetts",
               "name": "Massachusetts",
-              "postCount": 1019,
+              "postCount": 1021,
               "metadata": {
-                "postCount": 1019,
+                "postCount": 1021,
                 "coverImage": {
                   "id": "1*NVo2IIQfiGPE9gacXre5qg.png",
                   "originalWidth": 8000,
@@ -805,9 +1048,9 @@
             {
               "slug": "affordable-housing",
               "name": "Affordable Housing",
-              "postCount": 1582,
+              "postCount": 1584,
               "metadata": {
-                "postCount": 1582,
+                "postCount": 1584,
                 "coverImage": {
                   "id": "1*ELTOswi_K9HYYZPxAwXdCQ.png",
                   "originalWidth": 900,
@@ -987,9 +1230,9 @@
             {
               "slug": "solutions",
               "name": "Solutions",
-              "postCount": 2396,
+              "postCount": 2401,
               "metadata": {
-                "postCount": 2396,
+                "postCount": 2401,
                 "coverImage": {
                   "id": "1*WX-qofIA5FrDgr6HIKdfXQ.jpeg",
                   "originalWidth": 750,
@@ -1017,9 +1260,9 @@
             {
               "slug": "affordable-housing",
               "name": "Affordable Housing",
-              "postCount": 1582,
+              "postCount": 1584,
               "metadata": {
-                "postCount": 1582,
+                "postCount": 1584,
                 "coverImage": {
                   "id": "1*ELTOswi_K9HYYZPxAwXdCQ.png",
                   "originalWidth": 900,
@@ -1032,9 +1275,9 @@
             {
               "slug": "minneapolis",
               "name": "Minneapolis",
-              "postCount": 975,
+              "postCount": 976,
               "metadata": {
-                "postCount": 975,
+                "postCount": 976,
                 "coverImage": {
                   "id": "1*zL3AGEsdYsTizc7JUzIYSw.jpeg",
                   "originalWidth": 1125,
@@ -1047,16 +1290,17 @@
             {
               "slug": "housing",
               "name": "Housing",
-              "postCount": 12813,
+              "postCount": 12835,
               "metadata": {
-                "postCount": 12813,
+                "postCount": 12835,
                 "coverImage": {
-                  "id": "1*Iq1J3giR71RhU2i3CXYjyw.jpeg",
-                  "originalWidth": 4147,
-                  "originalHeight": 2328,
+                  "id": "1*X-1lEeVKUkqvpUaNkG5oJw.jpeg",
+                  "originalWidth": 3000,
+                  "originalHeight": 2000,
                   "isFeatured": true,
-                  "focusPercentX": 49,
-                  "focusPercentY": 39
+                  "focusPercentX": 51,
+                  "focusPercentY": 43,
+                  "alt": "A luxury 5-story condominium building is proposed to replace this narrow two-story house at 180 Washington Ave."
                 }
               },
               "type": "Tag"
@@ -1293,16 +1537,17 @@
             {
               "slug": "housing",
               "name": "Housing",
-              "postCount": 12813,
+              "postCount": 12835,
               "metadata": {
-                "postCount": 12813,
+                "postCount": 12835,
                 "coverImage": {
-                  "id": "1*Iq1J3giR71RhU2i3CXYjyw.jpeg",
-                  "originalWidth": 4147,
-                  "originalHeight": 2328,
+                  "id": "1*X-1lEeVKUkqvpUaNkG5oJw.jpeg",
+                  "originalWidth": 3000,
+                  "originalHeight": 2000,
                   "isFeatured": true,
-                  "focusPercentX": 49,
-                  "focusPercentY": 39
+                  "focusPercentX": 51,
+                  "focusPercentY": 43,
+                  "alt": "A luxury 5-story condominium building is proposed to replace this narrow two-story house at 180 Washington Ave."
                 }
               },
               "type": "Tag"
@@ -1310,9 +1555,9 @@
             {
               "slug": "solutions",
               "name": "Solutions",
-              "postCount": 2396,
+              "postCount": 2401,
               "metadata": {
-                "postCount": 2396,
+                "postCount": 2401,
                 "coverImage": {
                   "id": "1*WX-qofIA5FrDgr6HIKdfXQ.jpeg",
                   "originalWidth": 750,
@@ -1340,9 +1585,9 @@
             {
               "slug": "affordable-housing",
               "name": "Affordable Housing",
-              "postCount": 1582,
+              "postCount": 1584,
               "metadata": {
-                "postCount": 1582,
+                "postCount": 1584,
                 "coverImage": {
                   "id": "1*ELTOswi_K9HYYZPxAwXdCQ.png",
                   "originalWidth": 900,
@@ -1355,9 +1600,9 @@
             {
               "slug": "seattle",
               "name": "Seattle",
-              "postCount": 3484,
+              "postCount": 3488,
               "metadata": {
-                "postCount": 3484,
+                "postCount": 3488,
                 "coverImage": {
                   "id": "0*4K2oLjZqVpYPTc2B",
                   "originalWidth": 6000,
@@ -1580,16 +1825,17 @@
             {
               "slug": "housing",
               "name": "Housing",
-              "postCount": 12813,
+              "postCount": 12835,
               "metadata": {
-                "postCount": 12813,
+                "postCount": 12835,
                 "coverImage": {
-                  "id": "1*Iq1J3giR71RhU2i3CXYjyw.jpeg",
-                  "originalWidth": 4147,
-                  "originalHeight": 2328,
+                  "id": "1*X-1lEeVKUkqvpUaNkG5oJw.jpeg",
+                  "originalWidth": 3000,
+                  "originalHeight": 2000,
                   "isFeatured": true,
-                  "focusPercentX": 49,
-                  "focusPercentY": 39
+                  "focusPercentX": 51,
+                  "focusPercentY": 43,
+                  "alt": "A luxury 5-story condominium building is proposed to replace this narrow two-story house at 180 Washington Ave."
                 }
               },
               "type": "Tag"
@@ -1597,9 +1843,9 @@
             {
               "slug": "solutions",
               "name": "Solutions",
-              "postCount": 2396,
+              "postCount": 2401,
               "metadata": {
-                "postCount": 2396,
+                "postCount": 2401,
                 "coverImage": {
                   "id": "1*WX-qofIA5FrDgr6HIKdfXQ.jpeg",
                   "originalWidth": 750,
@@ -1612,9 +1858,9 @@
             {
               "slug": "apartments",
               "name": "Apartments",
-              "postCount": 3292,
+              "postCount": 3294,
               "metadata": {
-                "postCount": 3292,
+                "postCount": 3294,
                 "coverImage": {
                   "id": "1*1hRpzyBt5gb7dKY1cVRrIg.png",
                   "originalWidth": 1808,
@@ -1627,9 +1873,9 @@
             {
               "slug": "affordable-housing",
               "name": "Affordable Housing",
-              "postCount": 1582,
+              "postCount": 1584,
               "metadata": {
-                "postCount": 1582,
+                "postCount": 1584,
                 "coverImage": {
                   "id": "1*ELTOswi_K9HYYZPxAwXdCQ.png",
                   "originalWidth": 900,
@@ -1875,16 +2121,17 @@
             {
               "slug": "housing",
               "name": "Housing",
-              "postCount": 12813,
+              "postCount": 12835,
               "metadata": {
-                "postCount": 12813,
+                "postCount": 12835,
                 "coverImage": {
-                  "id": "1*Iq1J3giR71RhU2i3CXYjyw.jpeg",
-                  "originalWidth": 4147,
-                  "originalHeight": 2328,
+                  "id": "1*X-1lEeVKUkqvpUaNkG5oJw.jpeg",
+                  "originalWidth": 3000,
+                  "originalHeight": 2000,
                   "isFeatured": true,
-                  "focusPercentX": 49,
-                  "focusPercentY": 39
+                  "focusPercentX": 51,
+                  "focusPercentY": 43,
+                  "alt": "A luxury 5-story condominium building is proposed to replace this narrow two-story house at 180 Washington Ave."
                 }
               },
               "type": "Tag"
@@ -1892,9 +2139,9 @@
             {
               "slug": "apartments",
               "name": "Apartments",
-              "postCount": 3292,
+              "postCount": 3294,
               "metadata": {
-                "postCount": 3292,
+                "postCount": 3294,
                 "coverImage": {
                   "id": "1*1hRpzyBt5gb7dKY1cVRrIg.png",
                   "originalWidth": 1808,
@@ -1907,16 +2154,15 @@
             {
               "slug": "policy",
               "name": "Policy",
-              "postCount": 6951,
+              "postCount": 6960,
               "metadata": {
-                "postCount": 6951,
+                "postCount": 6960,
                 "coverImage": {
-                  "id": "1*GenjiRrKlfGLqKf-UVKxeA.jpeg",
-                  "originalWidth": 720,
-                  "originalHeight": 720,
+                  "id": "1*ArsRlKkj4-GdSe31p1ImHQ.jpeg",
+                  "originalWidth": 4074,
+                  "originalHeight": 2706,
                   "isFeatured": true,
-                  "focusPercentX": 42,
-                  "focusPercentY": 42
+                  "alt": "An older “grid” style prison cell block."
                 }
               },
               "type": "Tag"
@@ -1939,9 +2185,9 @@
             {
               "slug": "solutions",
               "name": "Solutions",
-              "postCount": 2396,
+              "postCount": 2401,
               "metadata": {
-                "postCount": 2396,
+                "postCount": 2401,
                 "coverImage": {
                   "id": "1*WX-qofIA5FrDgr6HIKdfXQ.jpeg",
                   "originalWidth": 750,
@@ -2105,7 +2351,7 @@
           },
           "metadata": {
             "followerCount": 31,
-            "activeAt": 1561754985322
+            "activeAt": 1563282525454
           },
           "virtuals": {
             "permissions": {
