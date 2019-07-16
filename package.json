@@ -40,7 +40,7 @@
     "xls": "^0.5.1"
   },
   "devDependencies": {
-    "aeonian": "^1.0.9",
+    "aeonian": "^1.2.0",
     "autoprefixer": "^9.4.3",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.10.0",
