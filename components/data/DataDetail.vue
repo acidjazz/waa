@@ -12,7 +12,7 @@
       .text-bolder.text-6xl: VueCountUp(:endVal="count_val(residents)",:options="count_opts(residents)")
       .text-bolder.text-2xl Apartment Residents
       .my-8.h-24
-        | Spending from {{ area_copy }}'s apartment residents contributes
+        | Spending from {{ loc_copy }}'s apartment residents contributes
         |
         span.text-trueblue.font-bold ${{ format(contribution) }}
         |
@@ -29,16 +29,16 @@
       .text-trueblue.text-bolder.text-3xl.mt-8: VueCountUp(:endVal="count_val(building)",:options="count_opts(building)")
       .text-2xl.font-bold.text-steel New Apartments Needed Annually
       .my-8
-        | Atlanta
+        | {{ loc_copy }}
         | needs to build
         |
-        span.text-trueblue.font-bold ??,??
+        span.text-trueblue.font-bold {{ building | numeral }}
         |
         | new apartment homes each year to meet demand.  Apartment construction contributes
         |
-        span.text-trueblue.font-bold $?.? b
+        span.text-trueblue.font-bold $?.?b
         |
-        | to Atlanta's economy annually, creating
+        | to {{ loc_copy }}'s economy annually, creating
         |
         span.text-trueblue.font-bold ?.?k
         |
@@ -48,7 +48,7 @@
       .text-bolder.text-6xl: VueCountUp(:endVal="count_val(apartments)",:options="count_opts(apartments)")
       .text-bolder.text-2xl Apartment Homes
       .my-8.h-24
-        | The operation of Atlanta's apartment homes contributes
+        | The operation of {{ loc_copy }}'s apartment homes contributes
         |
         span.text-trueblue.font-bold $?.?b
         |
@@ -64,11 +64,11 @@
 
       .bg-black.h-2
 
-      .text-trueblue.text-bolder.text-3xl.mt-8 ??% of Atlanta's
+      .text-trueblue.text-bolder.text-3xl.mt-8 ??% of {{ loc_copy }}'s
       .text-2xl.font-bold.text-steel Apartments Built Before 1980
 
       .my-8
-        | Atlanta
+        | {{ loc_copy }}
         | needs to build
         |
         span.text-trueblue.font-bold ??,???
@@ -77,7 +77,7 @@
         |
         span.text-trueblue.font-bold $?.?b
         |
-        | to Atlanta's economy annually, creating
+        | to {{ loc_copy }}'s economy annually, creating
         |
         span.text-trueblue.font-bold ?.?k
         |
@@ -87,6 +87,7 @@
 
 <script>
 import data from '@/mixins/data'
+import numeral from 'numeral'
 export default {
   mixins: [ data ],
   props: {
@@ -95,8 +96,13 @@ export default {
       required: true,
     }
   },
+  filters: {
+    numeral (value) {
+      return numeral(value).format('0,0')
+    },
+  },
   computed: {
-    area_copy () {
+    loc_copy () {
       if (this.area.type === 'national') return 'the country'
       return this.area.location
     }
