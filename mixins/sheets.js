@@ -30,7 +30,7 @@ export default {
       var result = {}
       let config = rangeconfig[name].ranges[range]
 
-      if (typeof key === 'string') {
+      if (typeof key === 'string' || typeof key === 'object') {
         var labels = this.find_values(name, config.labels)[0]
       }
 
@@ -45,8 +45,12 @@ export default {
           let row = {}
           for (let j in values[i])
             if (values[i][j] !== '')
-              row[labels[j].trim().replace(/ |-/g, '_')] = this.cleanse(values[i][j])
-          result[row[key].toString().trim().replace(/ |-/g, '_')] = row
+              row[this.key(labels[j])] = this.cleanse(values[i][j])
+          if (typeof key === 'object')
+            result[`${row[this.key(key[0])]}_${row[this.key(key[1])]}`] = row
+          else {
+            result[this.key(row[this.key(key)])] = row
+          }
         }
       }
      return result
@@ -54,6 +58,9 @@ export default {
 
     find_values(name, range) {
       return sheets[name].valueRanges.find( (r) => r.range === range).values
+    },
+    key (value) {
+      return value.toString().trim().replace(/ |-/g, '_')
     },
     cleanse (value) {
       value = value.trim().replace(/,/g, '')

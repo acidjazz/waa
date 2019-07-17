@@ -74,6 +74,7 @@ export default {
     is_district () { return this.$route.params.loc ? this.$route.params.loc.includes('-') : false },
     district () { return this.is_district ? this.$route.params.loc.split('-')[1] : false },
     state () { return this.is_state ? this.location : this.is_district ? this.$route.params.loc.split('-')[0] : false },
+    metro () { return this.is_metro ? this.location : false },
     district_full () { return this.is_district ? `${this.state} ${this.$options.filters.nth(this.district)}` : false },
     location () { return this.is_national ? 'National' : this.$route.params.loc },
     type () { return this.is_national ? 'national' : this.is_state ? 'state' : this.is_district ? 'district' : 'metro' },
@@ -91,6 +92,7 @@ export default {
         {
           type: this.type,
           location: this.is_district ? this.district_full : this.location,
+          key: this.key(this.location),
           state: this.state,
           metro: this.metro,
           district: this.district

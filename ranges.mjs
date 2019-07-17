@@ -29,6 +29,54 @@ export default {
         labels: "'Vision-IncomeAfford'!A1:C1",
         values: "'Vision-IncomeAfford'!A2:C17",
       },
+      dataResidentsUS: {
+        values: "'Data-Residents'!A2:B2",
+      },
+      dataResidentsState: {
+        labels: "'Data-Residents'!A3:C3",
+        values: "'Data-Residents'!A4:C54",
+      },
+      dataResidentsMetro: {
+        labels: "'Data-Residents'!A55:C55",
+        values: "'Data-Residents'!A56:C106",
+      },
+      dataResidentsDistrict: {
+        labels: "'Data-Residents'!A107:D107",
+        values: "'Data-Residents'!A108:D543",
+      },
+
+      dataJobsUS: {
+        values: "'Data-Jobs'!A2:B2",
+      },
+      dataJobsState: {
+        labels: "'Data-Jobs'!A3:B3",
+        values: "'Data-Jobs'!A4:B54",
+      },
+      dataJobsMetro: {
+        labels: "'Data-Jobs'!A55:B55",
+        values: "'Data-Jobs'!A56:B106",
+      },
+      dataJobsDistrict: {
+        labels: "'Data-Jobs'!A107:C107",
+        values: "'Data-Jobs'!A108:C543",
+      },
+
+      dataContributionUS: {
+        values: "'Data-Contribution'!A2:B2",
+      },
+      dataContributionState: {
+        labels: "'Data-Contribution'!A3:B3",
+        values: "'Data-Contribution'!A4:B54",
+      },
+      dataContributionMetro: {
+        labels: "'Data-Contribution'!A55:B55",
+        values: "'Data-Contribution'!A56:B106",
+      },
+      dataContributionDistrict: {
+        labels: "'Data-Contribution'!A107:C107",
+        values: "'Data-Contribution'!A108:C543",
+      },
+
     },
   },
   calc: {
