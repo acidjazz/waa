@@ -1,0 +1,108 @@
+<template lang="pug">
+#DataDetails
+  .font-os.uppercase.text-2xl.mb-8
+    | {{ area.type }} data
+    span(v-if="area.location != 'National'")
+      |
+      | -
+      | {{ area.location }}
+  .flex.w-5_6.mx-auto.-p-4
+
+    .lg_w-1_2.p-4
+      .text-bolder.text-6xl: VueCountUp(:endVal="count_val(residents)",:options="count_opts(residents)")
+      .text-bolder.text-2xl Apartment Residents
+      .my-8.h-24
+        | Spending from {{ area_copy }}'s apartment residents contributes
+        |
+        span.text-trueblue.font-bold ${{ format(contribution) }}
+        |
+        | to the local economy each year (including
+        |
+        span.text-trueblue.font-bold $?.?
+        |
+        | in taxes), creating
+        |
+        span.text-trueblue.font-bold ??.?k
+        |
+        | jobs
+      .bg-black.h-2
+      .text-trueblue.text-bolder.text-3xl.mt-8: VueCountUp(:endVal="count_val(building)",:options="count_opts(building)")
+      .text-2xl.font-bold.text-steel New Apartments Needed Annually
+      .my-8
+        | Atlanta
+        | needs to build
+        |
+        span.text-trueblue.font-bold ??,??
+        |
+        | new apartment homes each year to meet demand.  Apartment construction contributes
+        |
+        span.text-trueblue.font-bold $?.? b
+        |
+        | to Atlanta's economy annually, creating
+        |
+        span.text-trueblue.font-bold ?.?k
+        |
+        | jobs
+
+    .lg_w-1_2.p-4
+      .text-bolder.text-6xl: VueCountUp(:endVal="count_val(apartments)",:options="count_opts(apartments)")
+      .text-bolder.text-2xl Apartment Homes
+      .my-8.h-24
+        | The operation of Atlanta's apartment homes contributes
+        |
+        span.text-trueblue.font-bold $?.?b
+        |
+        | to the local economy each year (including
+        |
+        span.text-trueblue.font-bold $?.?b
+        |
+        | in property taxes), creating
+        |
+        span.text-trueblue.font-bold ?.?b
+        |
+        | jobs
+
+      .bg-black.h-2
+
+      .text-trueblue.text-bolder.text-3xl.mt-8 ??% of Atlanta's
+      .text-2xl.font-bold.text-steel Apartments Built Before 1980
+
+      .my-8
+        | Atlanta
+        | needs to build
+        |
+        span.text-trueblue.font-bold ??,???
+        |
+        | new apartment homes each year to meet demand.  Apartment construction contributes
+        |
+        span.text-trueblue.font-bold $?.?b
+        |
+        | to Atlanta's economy annually, creating
+        |
+        span.text-trueblue.font-bold ?.?k
+        |
+        | jobs
+</template>
+
+
+<script>
+import data from '@/mixins/data'
+export default {
+  mixins: [ data ],
+  props: {
+    area: {
+      type: Object,
+      required: true,
+    }
+  },
+  computed: {
+    area_copy () {
+      if (this.area.type === 'national') return 'the country'
+      return this.area.location
+    }
+  },
+  mounted () {
+    console.log(this.building)
+  },
+}
+</script>

@@ -5,15 +5,3 @@
       .canister
         slot
 </template>
-
-<script>
-export default {
-  props: {
-    side: {
-      type: String,
-      required: false,
-      default: 'left',
-    }
-  }
-}
-</script>

@@ -77,6 +77,33 @@ export default {
         values: "'Data-Contribution'!A108:C543",
       },
 
+      dataApartmentsUS: {
+        values: "'Data-Apartments'!A2:B2",
+      },
+      dataApartmentsState: {
+        labels: "'Data-Apartments'!A3:B3",
+        values: "'Data-Apartments'!A4:B54",
+      },
+      dataApartmentsMetro: {
+        labels: "'Data-Apartments'!A55:B55",
+        values: "'Data-Apartments'!A56:B106",
+      },
+      dataApartmentsDistrict: {
+        labels: "'Data-Apartments'!A107:C107",
+        values: "'Data-Apartments'!A108:C543",
+      },
+
+      dataBuildingUS: {
+        values: "'Data-Building'!A2:D2",
+      },
+      dataBuildingState: {
+        labels: "'Data-Building'!A6:C6",
+        values: "'Data-Building'!A7:C57",
+      },
+      dataBuildingMetro: {
+        labels: "'Data-Building'!A58:C58",
+        values: "'Data-Building'!A58:C109",
+      },
     },
   },
   calc: {
