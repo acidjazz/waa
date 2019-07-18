@@ -26,3 +26,28 @@
 
 .fade-in-right-leave-to div
   transform translate(4px, 0)
+
+
+
+.slide-left-enter-active,
+.slide-right-enter-active
+  transition opacity 0.2s ease-in-out 0s, transform 0.2s ease-in-out 0s
+.slide-left-leave-active,
+.slide-right-leave-active
+  transition opacity 0.2s ease-in-out 0s, transform 0.2s ease-in-out 0s
+
+.slide-left-enter, .slide-left-leave-to,
+.slide-right-enter, .slide-right-leave-to
+  opacity 0
+
+.slide-left-enter
+  transform translate(20px, 0)
+
+.slide-left-leave-to
+  transform translate(-20px, 0)
+
+.slide-right-enter
+  transform translate(-20px, 0)
+
+.slide-right-leave-to
+  transform translate(20px, 0)

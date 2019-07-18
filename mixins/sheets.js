@@ -22,10 +22,14 @@ export default {
     districts () {
       return Object.assign(...this.filters.map(([key, ab, metros, districts]) => ({[key]: districts*1})))
     },
-
   },
 
   methods: {
+
+    state_from_metro(metro) {
+      return this.filters.find(([key, ab, metros]) => metros.split(',').map(m => m.trim()).includes(metro))[0]
+    },
+
     sheet (name, range, key) {
       var result = {}
       let config = rangeconfig[name].ranges[range]
@@ -61,6 +65,9 @@ export default {
     },
     key (value) {
       return value.toString().trim().replace(/ |-/g, '_')
+    },
+    value (key) {
+      return key.replace(/_|-/g, ' ')
     },
     cleanse (value) {
       value = value.trim().replace(/,/g, '')

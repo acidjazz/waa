@@ -44,6 +44,8 @@
         |
         | jobs
 
+        RenterGrowth(:area="area")
+
     .lg_w-1_2.p-4
       .text-bolder.text-6xl: VueCountUp(:endVal="count_val(apartments)",:options="count_opts(apartments)")
       .text-bolder.text-2xl Apartment Homes
@@ -88,7 +90,9 @@
 <script>
 import data from '@/mixins/data'
 import numeral from 'numeral'
+import RenterGrowth from '@/components/data/RenterGrowth'
 export default {
+  components: { RenterGrowth },
   mixins: [ data ],
   props: {
     area: {
@@ -106,9 +110,6 @@ export default {
       if (this.area.type === 'national') return 'the country'
       return this.area.location
     }
-  },
-  mounted () {
-    console.log(this.building)
   },
 }
 </script>

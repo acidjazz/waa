@@ -10,7 +10,7 @@ export default {
       options: [
         {
           label: 'apartment data',
-          names: ['data'],
+          names: ['data-loc'],
           route: '/data',
           gradient: 'bg-gradtrue',
           color: 'trueblue',

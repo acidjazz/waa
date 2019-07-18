@@ -1,7 +1,7 @@
 <template lang="pug">
 .header-nav.bg-black.text-white.fixed.z-20.inset-x-0.top-0.py-6.ani-sit.ani-d-4.print_hidden
   .container.lg.px-4
-    .flex.justify-between
+    .flex.justify-between.items-center
       HeaderTitle
       .header-nav-menu.justify-end.ani-sil.ani-d-10.hidden.lg_flex
         nuxt-link.py-2.px-4.mr-1.rounded-full.tran-colors(

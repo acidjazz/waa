@@ -104,6 +104,19 @@ export default {
         labels: "'Data-Building'!A58:C58",
         values: "'Data-Building'!A58:C109",
       },
+
+      dataPopulationUS: {
+        labels: "'Data-Population'!A1:B1",
+        values: "'Data-Population'!A2:B25",
+      },
+      dataPopulationState: {
+        labels: "'Data-Population'!A26:F26",
+        values: "'Data-Population'!A26:F77",
+      },
+      dataPopulationMetro: {
+        labels: "'Data-Population'!A78:AZ78",
+        values: "'Data-Population'!A79:AZ103",
+      },
     },
   },
   calc: {

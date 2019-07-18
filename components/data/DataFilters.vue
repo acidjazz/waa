@@ -1,38 +1,39 @@
 <template lang="pug">
 #DataFilters
-  .pt-8.bg-white
-    .flex.items-center.justify-center.-mx-2
-      .mx-2(v-for="option in types")
+  .pt-12.bg-white
+    .flex.items-center.justify-center.lg_-mx-2.-mx-1
+      .mx-1.lg_mx-2(v-for="option in types")
         .uppercase.text-bolder.rounded-full.py-2.px-4.mb-8(
           @click="choose(option)",
-          :class="option === type ? classes.type.active : option === 'district' && !is_state ? classes.type.disabled : classes.type.inactive") {{ option }}
+          :class="option === type ? classes.type.active : option === 'district' && (!is_state && !is_metro) ? classes.type.disabled : classes.type.inactive") {{ option }}
         .ani-sib(v-if="select && select === option")
-          .carat.mx-auto.bg-seashell
+          .carat.mx-auto.bg-seashell.shadow-md
         .carat.mx-auto(v-else)
-  .py-8.bg-seashell(v-if="select")
-    .canister
-      transition(name="fade-in-left")
-        .flex.flex-wrap(v-if="select === 'state'")
-          nuxt-link.w-40.tran-colors.m-2(
-            v-for="state in states",
-            :key="`state-${state}`",
-            :to="`/data/${state}`"
-            :class="is_state && state == location ? classes.types.active : classes.type.inactive")
-            | {{ state }}
-        .flex.flex-wrap(v-if="select === 'metro'")
-          nuxt-link.w-40.tran-colors.m-2(
-            v-for="metro in metros",
-            :key="`metro-${metro}`",
-            :to="`/data/${metro}`",
-            :class="is_metro && metro == location ? classes.types.active : classes.type.inactive")
-            | {{ metro }}
-        .flex.flex-wrap(v-if="select === 'district'")
-          nuxt-link.w-40.tran-colors.m-2(
-            v-for="dist in districts[state]",
-            :key="`district-${state}-${dist}`",
-            :to="`/data/${state}-${dist}`",
-            :class="is_district && dist == district ? classes.types.active : classes.type.inactive")
-            | {{ state }} {{ dist | nth }}
+  .relative(v-if="select")
+    .py-8.absolute.z-10.w-screen.inset-0.-mt-12
+      .canister.lg_p-4.lg_pl-20.bg-seashell.shadow-md.rounded-lg.ani-zi
+        transition(:name="direction",mode="out-in")
+          .flex.flex-wrap(key="states",v-if="select === 'state'").-p-4
+            nuxt-link.w-1_2.px-4.py-2.lg_w-40.lg_py-0.lg_px-0.tran-colors.lg_m-2(
+              v-for="state in states",
+              :key="`state-${state}`",
+              :to="`/data/${state}`"
+              :class="is_state && state == location ? classes.types.active : classes.type.inactive")
+              | {{ state }}
+          .flex.flex-wrap(key="metros",v-if="select === 'metro'")
+            nuxt-link.lg_w-40.tran-colors.m-2(
+              v-for="metro in metros",
+              :key="`metro-${metro}`",
+              :to="`/data/${metro}`",
+              :class="is_metro && metro == location ? classes.types.active : classes.type.inactive")
+              | {{ metro }}
+          .flex.flex-wrap(key="districts",v-if="select === 'district'")
+            nuxt-link.lg_w-40.tran-colors.m-2(
+              v-for="dist in districts[state]",
+              :key="`district-${state}-${dist}`",
+              :to="`/data/${state}-${dist}`",
+              :class="is_district && dist == district ? classes.types.active : classes.type.inactive")
+              | {{ state }} {{ dist | nth }}
 
 
 
@@ -46,6 +47,7 @@ export default {
   mixins: [ sheets ],
   data () {
     return {
+      direction: 'slide-right',
       select: false,
       types: [ 'national', 'state', 'metro', 'district' ],
       classes: {
@@ -73,7 +75,11 @@ export default {
     is_metro () { return this.metros.includes(this.location) },
     is_district () { return this.$route.params.loc ? this.$route.params.loc.includes('-') : false },
     district () { return this.is_district ? this.$route.params.loc.split('-')[1] : false },
-    state () { return this.is_state ? this.location : this.is_district ? this.$route.params.loc.split('-')[0] : false },
+    state () {
+      return this.is_state ? this.location :
+        this.is_district ? this.$route.params.loc.split('-')[0] :
+        this.is_metro ? this.state_from_metro(this.metro) : false
+    },
     metro () { return this.is_metro ? this.location : false },
     district_full () { return this.is_district ? `${this.state} ${this.$options.filters.nth(this.district)}` : false },
     location () { return this.is_national ? 'National' : this.$route.params.loc },
@@ -82,8 +88,23 @@ export default {
 
   methods: {
     choose (type) {
-      if (type === 'national') return this.$router.push('/data')
-      if (type === 'district' && !this.is_state && !this.is_district ) return false
+      if (type === 'national') {
+        this.select = false;
+        return this.$router.push('/data')
+      }
+      if (type === 'district' && !this.is_state && !this.is_district && !this.is_metro) return false
+      if (this.select !== false) {
+        if (this.select === 'state') {
+          this.direction = 'slide-right'
+        }
+        if (this.select === 'metro' && type === 'state') {
+          this.direction = 'slide-left'
+        }
+        if (this.select === 'district') {
+          this.direction = 'slide-left'
+        }
+      }
+
       this.select = type
     },
     chose () {
@@ -93,13 +114,16 @@ export default {
           type: this.type,
           location: this.is_district ? this.district_full : this.location,
           key: this.key(this.location),
+          value: this.value(this.location),
           state: this.state,
           metro: this.metro,
           district: this.district
         })
     }
   },
-  mounted () { this.chose() },
+  mounted () {
+    this.chose()
+  },
 }
 //.relative.flex.justify-center
 //  .py-8.bg-seashell.absolute.z-10

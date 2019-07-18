@@ -1,5 +1,5 @@
 <template lang="pug">
-.page.page-data.mt-24.bg-coolblue
+.page.page-data.pt-20.bg-coolblue
   DataFilters(@chose="chose")
   DataSummary(v-if="chosen",:area="area")
   OffsetSection.mt-0

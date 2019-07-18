@@ -46,6 +46,10 @@ export default {
     // building_district () { return this.sheet('main', 'dataBuildingState', 'State')[this.key(this.area.state)].Building },
     building () { return this[`building_${this.area.type}`] },
 
+    populationUS () { return this.sheet('main', 'dataPopulationUS', 1) },
+    populationState () { return this.sheet('main', 'dataPopulationState', 'State') },
+    populationMetro () { return this.sheet('main', 'dataPopulationMetro', 'Year') },
+
   },
 
   methods: {
