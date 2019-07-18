@@ -6,7 +6,7 @@
       |
       | -
       | {{ area.location }}
-  .flex.w-5_6.mx-auto.-p-4
+  .flex.lg_w-5_6.mx-auto.-p-4.flex-col.lg_flex-row
 
     .lg_w-1_2.p-4
       .text-bolder.text-6xl: VueCountUp(:endVal="count_val(residents)",:options="count_opts(residents)")

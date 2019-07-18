@@ -14,7 +14,7 @@
       .canister.lg_p-4.lg_pl-20.bg-seashell.shadow-md.rounded-lg.ani-zi
         transition(:name="direction",mode="out-in")
           .flex.flex-wrap(key="states",v-if="select === 'state'").-p-4
-            nuxt-link.w-1_2.px-4.py-2.lg_w-40.lg_py-0.lg_px-0.tran-colors.lg_m-2(
+            nuxt-link.lg_w-40.tran-colors.m-2(
               v-for="state in states",
               :key="`state-${state}`",
               :to="`/data/${state}`"
