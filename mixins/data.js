@@ -32,7 +32,7 @@ export default {
     contribution_state () { return this.sheet('main', 'dataContributionState', 'State')[this.area.key].Contribution },
     contribution_metro () { return this.sheet('main', 'dataContributionMetro', 'Metro Area')[this.area.key].Contribution },
     contribution_district () { return this.sheet('main', 'dataContributionDistrict', ['State', 'District'])[this.area.key].Contribution },
-    contribution () { return this[`contribution_${this.area.type}`].replace(/\$/, '')*1 },
+    contribution () { return this.sheet_select('contribution', this.area.type) },
 
     apartments_national () { return this.sheet('main', 'dataApartmentsUS', 1)['Total U.S.'] },
     apartments_state () { return this.sheet('main', 'dataApartmentsState', 'State')[this.area.key].Apartments },
@@ -50,20 +50,20 @@ export default {
     populationState () { return this.sheet('main', 'dataPopulationState', 'State') },
     populationMetro () { return this.sheet('main', 'dataPopulationMetro', 'Year') },
 
+    stockUS () { return this.sheet('main', 'dataStockUS', 'Type') },
+    stockState () { return this.sheet('main', 'dataStockState', 'State') },
+    stockMetro () { return this.sheet('main', 'dataStockMetro', 'Year') },
+    stockDistrict () { return this.sheet('main', 'dataStockDistrict', ['State', 'District']) },
+
   },
 
   methods: {
-    format(value) { return numeral(value).format('0.0a') },
-    count_val (value) {
-      return numeral(value).format('0.0a').slice(0, -1)*1
-    },
-    count_opts (value, prefix='') {
-      return {
-        prefix: prefix,
-        decimalPlaces: 1,
-        suffix: numeral(value).format('0,0a').slice(-1),
-      }
-    },
+    sheet_select(value, type) {
+      if (this[`${value}_${type}`])
+        return this[`${value}_${type}`].replace(/\$/, '')*1
+      else
+        return false
+    }
   },
 
 }

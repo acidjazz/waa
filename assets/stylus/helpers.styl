@@ -20,8 +20,12 @@
 .tran-colors
   transition background 0.5s ease-in-out 0s, color 0.5s ease-in-out 0s
 
-.tran-width-1s-l
+.tran-width
   transition width 1s linear
+.tran-all-1s
+  transition all 1s linear
+.tran-all-p2s
+  transition all .2s  ease
 
 // cubic-bezier(.87,-0.41,.19,1.44)
 
@@ -63,3 +67,8 @@
 .carat
   @apply w-4 h-4 mb-2 -mt-4
   transform rotate(45deg)
+
+.mt-15px
+  margin-top 15px
+.-mt-15px
+  margin-top -22px

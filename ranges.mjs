@@ -117,6 +117,23 @@ export default {
         labels: "'Data-Population'!A78:AZ78",
         values: "'Data-Population'!A79:AZ103",
       },
+
+      dataStockUS: {
+        labels: "'Data-Stock'!A1:E1",
+        values: "'Data-Stock'!A2:E3",
+      },
+      dataStockState: {
+        labels: "'Data-Stock'!A4:E4",
+        values: "'Data-Stock'!A5:E55",
+      },
+      dataStockMetro: {
+        labels: "'Data-Stock'!A56:E56",
+        values: "'Data-Stock'!A57:E107",
+      },
+      dataStockDistrict: {
+        labels: "'Data-Stock'!A108:F108",
+        values: "'Data-Stock'!A109:F544",
+      },
     },
   },
   calc: {

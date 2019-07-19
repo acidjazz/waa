@@ -4,7 +4,7 @@ SectionHero(type="video", src="/condos.mp4", gradient="bg-tranblue")
   .lg_text-5xl.text-2xl.px-4.lg_px-4.lg_w-256(v-in-vp).vp-y.vp-d-2 The country needs
     span &nbsp;
     no-ssr
-      VueCountUp(:endVal="endVal",:options="options")
+      VueCountUp(:endVal="count_val(endVal)",:options="options")
     span &nbsp;
     span million new apartments by 2030.  How many are needed near you?
   .buttons.mt-10
@@ -17,7 +17,9 @@ SectionHero(type="video", src="/condos.mp4", gradient="bg-tranblue")
 <script>
 import SectionHero from '@/components/global/SectionHero'
 import ScrollDown from '@/components/global/ScrollDown'
+import count from '@/mixins/count'
 export default {
+  mixins: [ count ],
   components: { SectionHero, ScrollDown },
   data () {
     return {

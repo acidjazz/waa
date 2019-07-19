@@ -3,9 +3,10 @@ import { Line } from 'vue-chartjs'
 import numeral from 'numeral'
 import sheets from '@/mixins/sheets'
 import pkg from '@/package'
+import count from '@/mixins/count'
 export default {
   extends: Line,
-  mixins: [ sheets ],
+  mixins: [ sheets, count ],
   data () {
     return {
       chartdata: {
@@ -43,20 +44,20 @@ export default {
   computed: {
     dataset () { return this.sheet('main', 'HomeDemand', 2) },
   },
-  mounted () {
-    this.chartdata.labels = Object.keys(this.dataset)
-    this.chartdata.datasets[0].data = Object.values(this.dataset)
-
-    if (this.$refs.canvas && typeof this.$refs.canvas.getContext !== "undefined") {
-      let gradient = this.$refs.canvas.getContext('2d').createLinearGradient(700, 0, 200, 0)
-      gradient.addColorStop(0, pkg.cfg.colors.bpink)
-      gradient.addColorStop(1, pkg.cfg.colors.orange)
-
-      this.chartdata.datasets[0].borderColor = gradient
-      this.chartdata.datasets[0].backgroundColor = gradient
+  watch: {
+    fire (result) {
+      if (result) setTimeout( () => this.renderChart(this.chartdata, this.options), 400)
+      else if (this.$data._chart) this.$data._chart.destroy()
     }
-
-    setTimeout( () => this.renderChart(this.chartdata, this.options), 300)
+  },
+  mounted () {
+   this.chartdata.labels = Object.keys(this.dataset)
+    this.chartdata.datasets[0].data = Object.values(this.dataset)
+    let gradient = this.$refs.canvas.getContext('2d').createLinearGradient(700, 0, 200, 0)
+    gradient.addColorStop(0, pkg.cfg.colors.bpink)
+    gradient.addColorStop(1, pkg.cfg.colors.orange)
+    this.chartdata.datasets[0].borderColor = gradient
+    this.chartdata.datasets[0].backgroundColor = gradient
   }
 }
 </script>

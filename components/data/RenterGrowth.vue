@@ -42,15 +42,5 @@ export default {
     },
   },
 
-  mounted () {
-    console.log(this.current, this.future)
-    console.log(this.populationMetro)
-    /*
-    console.log(this.populationUS[2016])
-    console.log(this.populationUS[2030])
-    console.log(this.populationMetro)
-    */
-  }
-
 }
 </script>

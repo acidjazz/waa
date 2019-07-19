@@ -1,11 +1,14 @@
 <template lang="pug">
-#DataFilters
-  .pt-12.bg-white
-    .flex.items-center.justify-center.lg_-mx-2.-mx-1
-      .mx-1.lg_mx-2(v-for="option in types")
-        .uppercase.text-bolder.rounded-full.py-2.px-4.mb-8(
+#DataFilters.fixed.z-20.inset-x-0
+  .bg-white.tran-all-p2s(:class="{'shadow pt-2 -mt-15px': has_scrolled, 'pt-8 mt-15px': !has_scrolled}")
+    .flex.items-center.justify-center.lg_-mx-2.-mx-1.ani-d-5
+      .mx-1.lg_mx-2.relative(v-for="option in types",:key="option")
+        .uppercase.text-bolder.rounded-full.py-2.px-4.tran-all-p2s(
           @click="choose(option)",
-          :class="option === type ? classes.type.active : option === 'district' && (!is_state && !is_metro) ? classes.type.disabled : classes.type.inactive") {{ option }}
+          :class="option_class(option)")
+          .inline-flex(v-if="option !== type") {{ option }}
+          .inline-flex(v-else-if="is_district") {{ district_full }}
+          .inline-flex(v-else) {{ location }}
         .ani-sib(v-if="select && select === option")
           .carat.mx-auto.bg-seashell.shadow-md
         .carat.mx-auto(v-else)
@@ -14,37 +17,39 @@
       .canister.lg_p-4.lg_pl-20.bg-seashell.shadow-md.rounded-lg.ani-zi
         transition(:name="direction",mode="out-in")
           .flex.flex-wrap(key="states",v-if="select === 'state'").-p-4
-            nuxt-link.lg_w-40.tran-colors.m-2(
+            a.lg_w-40.tran-colors.m-2(
               v-for="state in states",
               :key="`state-${state}`",
-              :to="`/data/${state}`"
+              @click="select_go('state', state)",
               :class="is_state && state == location ? classes.types.active : classes.type.inactive")
               | {{ state }}
           .flex.flex-wrap(key="metros",v-if="select === 'metro'")
-            nuxt-link.lg_w-40.tran-colors.m-2(
+            a.lg_w-40.tran-colors.m-2(
               v-for="metro in metros",
               :key="`metro-${metro}`",
-              :to="`/data/${metro}`",
+              @click="select_go('metro', metro)",
               :class="is_metro && metro == location ? classes.types.active : classes.type.inactive")
               | {{ metro }}
           .flex.flex-wrap(key="districts",v-if="select === 'district'")
-            nuxt-link.lg_w-40.tran-colors.m-2(
+            a.lg_w-40.tran-colors.m-2(
               v-for="dist in districts[state]",
               :key="`district-${state}-${dist}`",
-              :to="`/data/${state}-${dist}`",
+              @click="select_go('district', `${state}-${dist}`)",
               :class="is_district && dist == district ? classes.types.active : classes.type.inactive")
               | {{ state }} {{ dist | nth }}
-
-
-
 </template>
-
 
 <script>
 import sheets from '@/mixins/sheets'
+import scrolled from '@/mixins/scrolled'
 import numeral from 'numeral'
 export default {
-  mixins: [ sheets ],
+  filters: {
+    nth (value) {
+      return numeral(value).format('0o')
+    }
+  },
+  mixins: [ sheets, scrolled ],
   data () {
     return {
       direction: 'slide-right',
@@ -52,7 +57,7 @@ export default {
       types: [ 'national', 'state', 'metro', 'district' ],
       classes: {
         type: {
-          active: 'bg-orange text-white cursor-pointer',
+          active: 'bg-orange text-white cursor-pointer ani-zi',
           inactive: 'hover_text-orange tran-colors cursor-pointer',
           disabled: 'text-alum'
         },
@@ -63,12 +68,6 @@ export default {
       }
     }
   },
-  filters: {
-    nth (value) {
-      return numeral(value).format('0o')
-    }
-  },
-
   computed: {
     is_national () { return this.$route.params.loc === undefined },
     is_state () { return this.states.includes(this.location) },
@@ -87,10 +86,29 @@ export default {
   },
 
   methods: {
+    option_class (option) {
+      let classes = []
+      if (option === this.type) {
+        classes.push(this.classes.type.active)
+      }
+      if (option === 'district' && (!this.is_state && !this.is_metro)) {
+        classes.push(this.classes.type.disabled)
+      } else {
+        classes.push(this.classes.type.inactive)
+      }
+
+      if (this.has_scrolled) {
+        classes.push('mb-0')
+      } else {
+        classes.push('mb-8')
+      }
+      return classes
+    },
+
     choose (type) {
       if (type === 'national') {
         this.select = false;
-        return this.$router.push('/data')
+        return this.$router.replace('/data')
       }
       if (type === 'district' && !this.is_state && !this.is_district && !this.is_metro) return false
       if (this.select !== false) {
@@ -104,8 +122,11 @@ export default {
           this.direction = 'slide-left'
         }
       }
-
       this.select = type
+    },
+    select_go(type, val) {
+      this.type == type,
+      this.$router.replace(`/data/${val}`)
     },
     chose () {
       this.$emit(

@@ -3,8 +3,10 @@ import { Bar } from 'vue-chartjs'
 import charts from '@/mixins/charts'
 import pkg from '@/package'
 import numeral from 'numeral'
+import fire from '@/mixins/fire'
 export default {
   extends: Bar,
+  mixins: [ charts, fire ],
   props: {
     current: {
       type: Number,
@@ -47,8 +49,11 @@ export default {
       },
     }
   },
-  mounted () {
-    setTimeout ( () => this.renderChart(this.chartdata, this.options), 1000)
+  watch: {
+    fire (result) {
+      if (result) this.renderChart(this.chartdata, this.options)
+      else this.$data._chart.destroy()
+    }
   },
 }
 </script>
