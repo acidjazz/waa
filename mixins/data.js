@@ -55,6 +55,8 @@ export default {
     stockMetro () { return this.sheet('main', 'dataStockMetro', 'Year') },
     stockDistrict () { return this.sheet('main', 'dataStockDistrict', ['State', 'District']) },
 
+    restrictionMetro () { return this.sheet('main', 'dataRestrictionsMetro', 'Metro Area ') },
+
   },
 
   methods: {

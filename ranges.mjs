@@ -134,6 +134,10 @@ export default {
         labels: "'Data-Stock'!A108:F108",
         values: "'Data-Stock'!A109:F544",
       },
+      dataRestrictionsMetro: {
+        labels: "'Data-MetroRestrictions'!A1:B1",
+        values: "'Data-MetroRestrictions'!A2:B51",
+      },
     },
   },
   calc: {

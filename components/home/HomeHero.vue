@@ -19,8 +19,8 @@ import SectionHero from '@/components/global/SectionHero'
 import ScrollDown from '@/components/global/ScrollDown'
 import count from '@/mixins/count'
 export default {
-  mixins: [ count ],
   components: { SectionHero, ScrollDown },
+  mixins: [ count ],
   data () {
     return {
       endVal: 4.6,

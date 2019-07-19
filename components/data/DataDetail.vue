@@ -1,11 +1,6 @@
 <template lang="pug">
 #DataDetails
-  .font-os.uppercase.text-2xl.mb-8
-    | {{ area.type }} data
-    span(v-if="area.location != 'National'")
-      |
-      | -
-      | {{ area.location }}
+  DataName(:area="area")
   .flex.lg_w-5_6.mx-auto.-p-4.flex-col.lg_flex-row
 
     .lg_w-1_2.p-4
@@ -89,18 +84,20 @@
 import count from '@/mixins/count'
 import data from '@/mixins/data'
 import numeral from 'numeral'
+import DataName from '@/components/data/DataName'
 export default {
+  components: { DataName },
+  filters: {
+    numeral (value) {
+      return numeral(value).format('0,0')
+    },
+  },
   mixins: [ data, count ],
   props: {
     area: {
       type: Object,
       required: true,
     }
-  },
-  filters: {
-    numeral (value) {
-      return numeral(value).format('0,0')
-    },
   },
   computed: {
     loc_copy () {

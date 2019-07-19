@@ -9,6 +9,8 @@
         RenterGrowth(:area="area")
       .lg_w-1_2.p-4
         StockAge(:area="area")
+  OffsetSection
+    DataBarriers(:area="area")
 </template>
 
 
@@ -19,6 +21,7 @@ import DataSummary from '@/components/data/DataSummary'
 import DataDetail from '@/components/data/DataDetail'
 import RenterGrowth from '@/components/data/RenterGrowth'
 import StockAge from '@/components/data/StockAge'
+import DataBarriers from '@/components/data/DataBarriers'
 export default {
   components: {
     OffsetSection,
@@ -27,6 +30,7 @@ export default {
     DataDetail,
     RenterGrowth,
     StockAge,
+    DataBarriers,
   },
   data () {
     return {
