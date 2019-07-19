@@ -1,20 +1,23 @@
 <template lang="pug">
-#DataFilters.fixed.z-20.inset-x-0
-  .bg-white.tran-all-p2s(:class="{'shadow pt-2 -mt-15px': has_scrolled, 'pt-8 mt-15px': !has_scrolled}")
+#DataFilters.fixed.z-10.inset-x-0
+  .bg-white.tran-all-p2s(:class="{'shadow-md p-2 -mt-22px': has_scrolled, 'p-8 mt-36px': !has_scrolled}")
     .flex.items-center.justify-center.lg_-mx-2.-mx-1.ani-d-5
       .mx-1.lg_mx-2.relative(v-for="option in types",:key="option")
-        .uppercase.text-bolder.rounded-full.py-2.px-4.tran-all-p2s(
+        .uppercase.text-bolder.text-xs.lg_text-base.rounded-full.py-2.px-2.lg_px-4.tran-all-p2s(
           @click="choose(option)",
           :class="option_class(option)")
           .inline-flex(v-if="option !== type") {{ option }}
           .inline-flex(v-else-if="is_district") {{ district_full }}
           .inline-flex(v-else) {{ location }}
-        .ani-sib(v-if="select && select === option")
-          .carat.mx-auto.bg-seashell.shadow-md
-        .carat.mx-auto(v-else)
+        .ani-sib.relative(v-if="select && select === option")
+          .inset-0.absolute
+            .carat.mx-auto.bg-seashell.shadow-md.-mt-2
+        .ani-sib.relative(v-else)
+          .inset-0.absolute
+            .carat.mx-auto
   .relative(v-if="select")
-    .py-8.absolute.z-10.w-screen.inset-0.-mt-12
-      .canister.lg_p-4.lg_pl-20.bg-seashell.shadow-md.rounded-lg.ani-zi
+    .py-8.absolute.z-10.w-screen.inset-0(:class="{'-mt-16': !has_scrolled, '-mt-10': has_scrolled}")
+      .canister.p-4.lg_pl-20.bg-seashell.shadow-md.rounded-lg.ani-zi
         transition(:name="direction",mode="out-in")
           .flex.flex-wrap(key="states",v-if="select === 'state'").-p-4
             a.lg_w-40.tran-colors.m-2(
@@ -91,16 +94,10 @@ export default {
       if (option === this.type) {
         classes.push(this.classes.type.active)
       }
-      if (option === 'district' && (!this.is_state && !this.is_metro)) {
+      if (option === 'district' && (!this.is_state && !this.is_metro && !this.is_district)) {
         classes.push(this.classes.type.disabled)
-      } else {
+      } else if (option !== this.type) {
         classes.push(this.classes.type.inactive)
-      }
-
-      if (this.has_scrolled) {
-        classes.push('mb-0')
-      } else {
-        classes.push('mb-8')
       }
       return classes
     },

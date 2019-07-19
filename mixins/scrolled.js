@@ -13,7 +13,7 @@ export default {
   },
   methods: {
     check_scroll () {
-      this.has_scrolled = process.browser && window.scrollY >= 240 && window.innerWidth >= 1000
+      this.has_scrolled = process.browser && window.scrollY >= 240 // && window.innerWidth >= 1000
     }
   },
   mounted () {

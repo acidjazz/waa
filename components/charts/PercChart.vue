@@ -3,7 +3,10 @@
   .flex.flex-col(v-for="value, label in datas")
     .flex.justify-between.my-2
       .text-bold {{ label }}
-      .text-bold {{ perc(value) }}%
+      .text-bold
+        no-ssr
+          VueCountUp(:endVal="perc(value)")
+        span %
     .relative.h-4
       .absolute.bg-seashell.inset-0.my-1.w-full
       .absolute.bg-gradtrue.inset-0.tran-width.inset-y(:style="`width: ${perc(value)}%;`")

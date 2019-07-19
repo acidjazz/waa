@@ -65,10 +65,16 @@
   @apply font-okib font-bold
 
 .carat
-  @apply w-4 h-4 mb-2 -mt-4
+  @apply w-4 h-4
   transform rotate(45deg)
 
-.mt-15px
-  margin-top 15px
-.-mt-15px
-  margin-top -22px
+.mt-36px
+  @media (min-width: 1024px)
+    margin-top 36px
+  margin-top 22px
+
+.-mt-22px
+  margin-top -34px
+  @media (min-width: 1024px)
+    margin-top -22px
+
