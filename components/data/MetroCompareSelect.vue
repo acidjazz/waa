@@ -18,8 +18,12 @@
             v-for="city in matches(input)",
             @click="select(input, city)",
             ) {{ city }}
-    .waa-button-black(v-if="ready") Calculate
-    .waa-button-readonly(v-else) Calculate
+    .flex.items-center
+      .waa-button-black(v-if="ready",@click="compare") Calculate
+      .waa-button-readonly(v-else) Calculate
+      .ml-6
+        i.mdi.mdi-close-circle.text-alum.mdi-32px.cursor-pointer(v-if="ready",@click="clear")
+
 </template>
 
 <script>
@@ -49,17 +53,31 @@ export default {
       return  this.city.one.name === this.city.one.selected &&
         this.city.two.name === this.city.two.selected
     },
+    metrosf () {
+      return Object.keys(this.sheet('calc', 'operationImpactsMetro', 'Metro')).map(m => this.value(m))
+    },
   },
   methods: {
     matches(model) {
       if (this.city[model].name === '') return false
       if (this.city[model].name === this.city[model].selected) return false
-      return this.metros.filter(m => m.match(new RegExp(this.city[model].name, 'gi')))
+      return this.metrosf.filter(m => m.match(new RegExp(this.city[model].name, 'gi')))
     },
     select (input, city) {
       this.city[input].name = city
       this.city[input].selected = city
     },
+    compare () {
+      return this.$emit('compare', [this.city.one.selected, this.city.two.selected])
+    },
+    clear () {
+      this.city.one.name = ''
+      this.city.one.selected = false
+      this.city.two.name = ''
+      this.city.two.selected = false
+      return this.$emit('compare', false)
+    },
   },
+
 }
 </script>

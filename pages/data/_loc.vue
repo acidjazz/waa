@@ -12,8 +12,8 @@
   OffsetSection
     DataBarriers(:area="area")
   OffsetSection
-    MetroCompare
-  MetroResults
+    MetroCompareSelect(@compare="compare")
+    MetroCompareResults(v-if="comparison",:comparison="comparison")
 </template>
 
 <script>
@@ -24,8 +24,8 @@ import DataDetail from '@/components/data/DataDetail'
 import RenterGrowth from '@/components/data/RenterGrowth'
 import StockAge from '@/components/data/StockAge'
 import DataBarriers from '@/components/data/DataBarriers'
-import MetroCompare from '@/components/data/MetroCompare'
-import MetroResults from '@/components/data/MetroResults'
+import MetroCompareSelect from '@/components/data/MetroCompareSelect'
+import MetroCompareResults from '@/components/data/MetroCompareResults'
 export default {
   components: {
     OffsetSection,
@@ -35,20 +35,24 @@ export default {
     RenterGrowth,
     StockAge,
     DataBarriers,
-    MetroCompare,
-    MetroResults,
+    MetroCompareSelect,
+    MetroCompareResults,
   },
   data () {
     return {
       chosen: false,
-      area: {}
+      area: {},
+      comparison: false,
     }
   },
   methods: {
     chose(area) {
       this.chosen = true
       this.area = area
-    }
+    },
+    compare(metros) {
+      this.comparison = metros
+    },
   },
 }
 </script>
