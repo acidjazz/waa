@@ -1,5 +1,7 @@
 <template lang="pug">
 .mt-24.pt-24.bg-trantrue.text-center.text-white.pb-64.-mb-48
+  .font-os.uppercase(v-if="area.metro") {{ area.state }}
+  .font-os.uppercase(v-if="area.district") {{ area.state }}
   .text-5xl.mb-4.font-bolder.ani-sit {{ area.location }}
   .lg_w-128.text-lg.mx-auto.ani-sit.ani-d-1.mb-8.px-2
     | {{ area.location }} apartments and their residents contribute

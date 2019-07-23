@@ -5,7 +5,7 @@
       .absolute.bg-white.h-1.w-full
       .absolute.bg-coolblue.h-1.left-0(
         :style="`width: ${width}%`",
-        :class="{'tran-width-1s-l': width > 0}")
+        :class="{'tran-width': width > 0}")
     .flex.justify-end.text-2xl.mt-6.mr-4
       .border.border-white.rounded-full.w-10.text-center.mr-4.cursor-pointer.hover_border-coolblue.vp-l(v-in-vp)
         i.mdi.mdi-chevron-left.cursor-pointer(@click="next")

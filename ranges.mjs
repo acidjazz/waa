@@ -69,7 +69,7 @@ export default {
       },
       dataContributionMetro: {
         labels: "'Data-Contribution'!A58:B58",
-        values: "'Data-Contribution'!A59:B106",
+        values: "'Data-Contribution'!A59:B108",
       },
       dataContributionDistrict: {
         labels: "'Data-Contribution'!A111:C111",
