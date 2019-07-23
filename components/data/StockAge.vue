@@ -34,8 +34,5 @@ export default {
       return keyed
     }
   },
-  mounted () {
-    console.log(this.datas)
-  },
 }
 </script>

@@ -27,6 +27,9 @@
 .tran-all-p2s
   transition all .2s  ease
 
+.tran-text-4s
+  transition text 4s ease
+
 // cubic-bezier(.87,-0.41,.19,1.44)
 
 .top-50
@@ -53,6 +56,9 @@
   @apply waa-button-black px-8 py-2
   &:hover
     @apply bg-black text-white
+
+.waa-button-readonly
+  @apply border border-seashell inline-block px-12 py-3 text-alum rounded-full cursor-not-allowed
 
 .hover-tran-bg
   transition background-color 0.5s ease 0s

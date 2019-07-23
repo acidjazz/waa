@@ -11,8 +11,9 @@
         StockAge(:area="area")
   OffsetSection
     DataBarriers(:area="area")
+  OffsetSection
+    MetroCompare
 </template>
-
 
 <script>
 import OffsetSection from '@/components/global/OffsetSection'
@@ -22,6 +23,7 @@ import DataDetail from '@/components/data/DataDetail'
 import RenterGrowth from '@/components/data/RenterGrowth'
 import StockAge from '@/components/data/StockAge'
 import DataBarriers from '@/components/data/DataBarriers'
+import MetroCompare from '@/components/data/MetroCompare'
 export default {
   components: {
     OffsetSection,
@@ -31,6 +33,7 @@ export default {
     RenterGrowth,
     StockAge,
     DataBarriers,
+    MetroCompare,
   },
   data () {
     return {

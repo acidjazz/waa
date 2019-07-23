@@ -25,6 +25,7 @@ module.exports = {
         'notprint': {'raw': 'not print'},
       },
       width: {
+      '96': '24rem',
       '128': '32rem',
       '192': '48rem',
       '256': '64rem',
