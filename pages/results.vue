@@ -90,17 +90,15 @@ import SectionHero from '@/components/global/SectionHero'
 import numeral from 'numeral'
 export default {
   components: { SectionHero },
+  filters: {
+    numeral (val) { return numeral(val).format('0,0') }
+  },
   mixins: [ sheets, formulas ],
   data () {
     return {
       show: false,
     }
   },
-
-  filters: {
-    numeral (val) { return numeral(val).format('0,0') }
-  },
-
   computed: {
     hash_array () { return this.$route.hash.substr(1).split(/\//g) },
     type () { return this.hash_array[0] },

@@ -29,9 +29,9 @@ export default {
     jobs () { return this[`jobs_${this.area.type}`] },
 
     contribution_national () { return this.sheet('main', 'dataContributionUS', 1)['Total U.S.'] },
-    contribution_state () { return this.sheet('main', 'dataContributionState', 'State')[this.area.key].Contribution },
-    contribution_metro () { return this.sheet('main', 'dataContributionMetro', 'Metro Area')[this.area.key].Contribution },
-    contribution_district () { return this.sheet('main', 'dataContributionDistrict', ['State', 'District'])[this.area.key].Contribution },
+    contribution_state () { return this.sheet('main', 'dataContributionState', 'State')[this.area.key]['Economic_Impact_($)'] },
+    contribution_metro () { return this.sheet('main', 'dataContributionMetro', 'Metro Area')[this.area.key]['Economic_Impact_($)'] },
+    contribution_district () { return this.sheet('main', 'dataContributionDistrict', ['State', 'District'])[this.area.key]['Economic_Impact_($)'] },
     contribution () { return this.sheet_select('contribution', this.area.type) },
 
     apartments_national () { return this.sheet('main', 'dataApartmentsUS', 1)['Total U.S.'] },
