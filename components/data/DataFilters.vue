@@ -11,12 +11,12 @@
           .inline-flex(v-else) {{ location }}
         .ani-sib.relative(v-if="select && select === option")
           .inset-0.absolute
-            .carat.mx-auto.bg-seashell.shadow-md.-mt-2
+            .carat.mx-auto.bg-seashell.shadow-md(:class="{'-mt-0': !has_scrolled, '-mt-2': has_scrolled}")
         .ani-sib.relative(v-else)
           .inset-0.absolute
             .carat.mx-auto
   .relative(v-if="select")
-    .py-8.absolute.z-10.w-screen.inset-0(:class="{'-mt-16': !has_scrolled, '-mt-10': has_scrolled}")
+    .absolute.z-10.w-screen(:class="{'-mt-6': !has_scrolled, '-mt-2': has_scrolled}")
       .canister.p-4.lg_pl-20.bg-seashell.shadow-md.rounded-lg.ani-zi
         transition(:name="direction",mode="out-in")
           .flex.flex-wrap(key="states",v-if="select === 'state'").-p-4

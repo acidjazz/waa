@@ -13,14 +13,14 @@
         td.p-2.border-l.border-alum {{ str.label }}
         td.p-2.px-8.border-l.border-alum
           .flex.justify-between
-            i.mdi.mdi-check.text-mountainmeadow(v-if="data[str.compute][first][str.key] > data[str.compute][second][str.key]")
+            i.mdi.mdi-check.text-mountainmeadow(v-if="val(data[str.compute][first][str.key]) > val(data[str.compute][second][str.key])")
             i.mdi.mdi-check.text-white(v-else)
-            span {{ data[str.compute][first][str.key] | numeral }}
+            span {{ val(data[str.compute][first][str.key]) | numeral(str.format) }}
         td.p-2.px-8.border-l.border-r.border-alum
           .flex.justify-between
-            i.mdi.mdi-check.text-mountainmeadow(v-if="data[str.compute][first][str.key] < data[str.compute][second][str.key]")
+            i.mdi.mdi-check.text-mountainmeadow(v-if="val(data[str.compute][first][str.key]) < val(data[str.compute][second][str.key])")
             i.mdi.mdi-check.text-white(v-else)
-            span {{ data[str.compute][second][str.key] | numeral }}
+            span {{ val(data[str.compute][second][str.key]) | numeral(str.format) }}
 </template>
 
 
@@ -29,8 +29,8 @@ import sheets from '@/mixins/sheets'
 import numeral from 'numeral'
 export default {
   filters: {
-    numeral (value) {
-      return numeral(value).format('0.0a')
+    numeral (value, format) {
+      return numeral(value).format(format)
     },
   },
   mixins: [ sheets ],
@@ -47,36 +47,43 @@ export default {
           label: 'Total Apartment Homes',
           compute: 'apartments',
           key: 'Apartments',
+          format: '0.0a',
         },
         {
           label: 'Operation Dollars Spent',
           compute: 'operations',
           key: 'Economic_Contribution',
+          format: '$0.0a',
         },
         {
           label: 'Direct On-Site Jobs',
           compute: 'spending',
           key: 'Total_Jobs_Supported',
+          format: '0.0a',
         },
         {
           label: 'Total Economic Contribution',
           compute: 'contribution',
           key: 'Economic_Impact_($)',
+          format: '$0.0a',
         },
         {
           label: 'Total Jobs Supported',
           compute: 'spending',
           key: 'Total_Jobs_Supported',
+          format: '0.0a',
         },
         {
           label: 'Construction Dollars Spent',
           compute: 'construction',
           key: 'Economic_Contribution',
+          format: '$0.0a',
         },
         {
           label: 'Spending Power',
           compute: 'spending',
           key: 'Total_Jobs_Supported',
+          format: '0.0a',
         },
       ]
     }
@@ -95,14 +102,10 @@ export default {
     second () { return this.key(this.comparison[1]) },
   },
 
-  mounted () {
-    console.log(this.first, this.second)
-    /*
-    console.log(this.operations)
-    console.log(this.contribution)
-    console.log(this.construction)
-    console.log(this.spending)
-    */
+  methods: {
+    val (val) {
+      return val.toString().replace(/\$/g, '')*1
+    }
   },
 
 }

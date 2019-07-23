@@ -1,8 +1,8 @@
 <template lang="pug">
 .flex
-  .lg_w-1_2
+  .hidden.lg_w-1_2
     img(src="/apt1.jpg")
-  .lg_w-1_2.ml-10
+  .lg_w-1_2.lg_ml-10
     .font-os.uppercase.text-2xl.mb-4 ACTIVITY
     .text-bolder.text-4xl.mb-4 Compare your metro
     .mb-4 Enter two cities to cities below to compare how they stack up against another city.
@@ -22,7 +22,7 @@
       .waa-button-black(v-if="ready",@click="compare") Calculate
       .waa-button-readonly(v-else) Calculate
       .ml-6
-        i.mdi.mdi-close-circle.text-alum.mdi-32px.cursor-pointer(v-if="ready",@click="clear")
+        i.mdi.mdi-close-circle.text-alum.mdi-36px.cursor-pointer(v-if="ready",@click="clear")
 
 </template>
 
@@ -61,7 +61,7 @@ export default {
     matches(model) {
       if (this.city[model].name === '') return false
       if (this.city[model].name === this.city[model].selected) return false
-      return this.metrosf.filter(m => m.match(new RegExp(this.city[model].name, 'gi')))
+      return this.metrosf.filter(m => m.match(new RegExp(this.city[model].name, 'gi'))).slice(0, 5)
     },
     select (input, city) {
       this.city[input].name = city
