@@ -1,6 +1,11 @@
 <template lang="pug">
 #DataDetailRepair
-  .text-trueblue.text-bolder.text-3xl.mt-8 {{ before_eighty | numeral('0%') }} of {{ loc_copy }}'s
+  .text-trueblue.text-bolder.text-3xl.mt-8
+    no-ssr
+      VueCountUp(:endVal="count_val(Math.round(before_eighty*100))", :options="{}")
+    | %
+    |
+    | of {{ loc_copy }}'s
   .text-2xl.font-bold.text-steel Apartments Built Before 1980
   .my-8
     | The renovation and repair of apartments helps preserve
@@ -20,9 +25,6 @@ export default {
   computed:{
     stock_sum () { return Object.values(this.stock).slice(1).reduce((a,b) => a + b) },
     before_eighty () { return (this.stock['Before_1959'] + this.stock['1960_1979']) / this.stock_sum },
-  },
-  mounted () {
-    console.log(this.stock)
   },
 }
 </script>

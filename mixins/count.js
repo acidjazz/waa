@@ -15,11 +15,11 @@ export default {
       if (!this.fire) return 0
       return numeral(value).format(format).slice(0, -1)*1
     },
-    count_opts (value, prefix='') {
+    count_opts (value, prefix='',decimals=1,format='0,0a') {
       return {
         prefix: prefix,
-        decimalPlaces: 1,
-        suffix: numeral(value).format('0,0a').slice(-1),
+        decimalPlaces: decimals,
+        suffix: numeral(value).format(format).slice(-1),
       }
     },
   },
