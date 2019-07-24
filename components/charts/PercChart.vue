@@ -26,14 +26,15 @@ export default {
   data () { return { fire: false, } },
   computed: {
     vals () { return Object.values(this.datas) },
+    sum () { return this.vals.reduce( (a,b) => a + b) },
   },
   watch: { 'inViewport.now' (visible) { return this.fire = visible } },
 
   methods: {
     perc (value) {
       if (!this.fire) return 0
-      return Math.round(value / ( this.vals[0] + this.vals[this.vals.length-1] ) * 100)
-    }
+      return Math.round(value / this.sum * 100)
+    },
   },
 }
 </script>

@@ -4,7 +4,7 @@
   DataSummary(v-if="chosen",:area="area")
   OffsetSection.mt-0
     DataDetail(v-if="chosen",:area="area")
-    .flex.lg_w-5_6.mx-auto.-p-4.flex-col.lg_flex-row
+    .flex.lg_w-5_6.mx-auto.-p-4.flex-col.lg_flex-row(v-if="chosen")
       .lg_w-1_2.p-4
         RenterGrowth(:area="area")
       .lg_w-1_2.p-4

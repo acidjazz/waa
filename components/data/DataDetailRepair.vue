@@ -1,0 +1,28 @@
+<template lang="pug">
+#DataDetailRepair
+  .text-trueblue.text-bolder.text-3xl.mt-8 {{ before_eighty | numeral('0%') }} of {{ loc_copy }}'s
+  .text-2xl.font-bold.text-steel Apartments Built Before 1980
+  .my-8
+    | The renovation and repair of apartments helps preserve
+    | {{ loc_copy }}’s
+    | older more affordable units, contributing
+    .data-val {{ contribution.Repair_Economic_Impact | numeral('$0.0a') }}
+    | to the local economy annually and creating
+    .data-val {{ contribution.Repair_Employment_Impact | numeral('0,0a') }}
+    | jobs.
+</template>
+
+<script>
+import count from '@/mixins/count'
+import data from '@/mixins/data'
+export default {
+  mixins: [ count, data ],
+  computed:{
+    stock_sum () { return Object.values(this.stock).slice(1).reduce((a,b) => a + b) },
+    before_eighty () { return (this.stock['Before_1959'] + this.stock['1960_1979']) / this.stock_sum },
+  },
+  mounted () {
+    console.log(this.stock)
+  },
+}
+</script>

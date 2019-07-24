@@ -87,7 +87,9 @@ export default {
     location () { return this.is_national ? 'National' : this.$route.params.loc },
     type () { return this.is_national ? 'national' : this.is_state ? 'state' : this.is_district ? 'district' : 'metro' },
   },
-
+  mounted () {
+    this.chose()
+  },
   methods: {
     option_class (option) {
       let classes = []
@@ -138,9 +140,6 @@ export default {
           district: this.district
         })
     }
-  },
-  mounted () {
-    this.chose()
   },
 }
 //.relative.flex.justify-center

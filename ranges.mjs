@@ -61,19 +61,20 @@ export default {
         values: "'Data-Jobs'!A108:C543",
       },
       dataContributionUS: {
-        values: "'Data-Contribution'!A3:B3",
+        labels: "'Data-Contribution'!A2:O2",
+        values: "'Data-Contribution'!A3:O3",
       },
       dataContributionState: {
         labels: "'Data-Contribution'!A5:O5",
         values: "'Data-Contribution'!A6:O56",
       },
       dataContributionMetro: {
-        labels: "'Data-Contribution'!A58:B58",
-        values: "'Data-Contribution'!A59:B108",
+        labels: "'Data-Contribution'!A58:O58",
+        values: "'Data-Contribution'!A59:O108",
       },
       dataContributionDistrict: {
-        labels: "'Data-Contribution'!A111:C111",
-        values: "'Data-Contribution'!A112:C547",
+        labels: "'Data-Contribution'!A111:P111",
+        values: "'Data-Contribution'!A112:P547",
       },
 
       dataApartmentsUS: {

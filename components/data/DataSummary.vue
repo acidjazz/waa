@@ -7,7 +7,7 @@
     | {{ area.location }} apartments and their residents contribute
     |
     no-ssr(v-if="contribution")
-      span.text-bolder: VueCountUp(:endVal="count_val(contribution / 365)",:options="count_opts(contribution / 365, '$')")
+      span.text-bolder(title="Total_Economic_Impact / 365"): VueCountUp(:endVal="count_val(impact)",:options="count_opts(impact, '$')")
     |
     | to the
     |
@@ -17,7 +17,7 @@
     no-ssr(v-if="jobs")
       | , supporting
       |
-      span.text-bolder: VueCountUp(:endVal="count_val(jobs)",:options="count_opts(jobs)")
+      span.text-bolder(title="Total_Employment_Impact / 365"): VueCountUp(:endVal="count_val(jobs)",:options="count_opts(jobs)")
       |
       | jobs.
     span(v-else) .
@@ -28,5 +28,13 @@ import data from '@/mixins/data'
 import count from '@/mixins/count'
 export default {
   mixins: [ data, count ],
+  computed: {
+    impact () { return this.contribution.Total_Economic_Impact.replace(/\$/, '') / 365 },
+    jobs () { return this.contribution.Total_Employment_Impact / 365 },
+  },
+  mounted () {
+    console.log()
+  },
+
 }
 </script>

@@ -8,6 +8,11 @@ import numeral from 'numeral'
 import sheets from '@/mixins/sheets'
 export default {
   mixins: [ sheets ],
+  filters: {
+    numeral (value, format='0.0a') {
+      return numeral(value).format(format)
+    },
+  },
   props: {
     area: {
       type: Object,
@@ -28,10 +33,10 @@ export default {
     jobs_district () { return this.sheet('main', 'dataJobsDistrict', ['State', 'District'])[this.area.key].Jobs },
     jobs () { return this[`jobs_${this.area.type}`] },
 
-    contribution_national () { return this.sheet('main', 'dataContributionUS', 1)['Total U.S.'] },
-    contribution_state () { return this.sheet('main', 'dataContributionState', 'State')[this.area.key]['Economic_Impact_($)'] },
-    contribution_metro () { return this.sheet('main', 'dataContributionMetro', 'Metro Area')[this.area.key]['Economic_Impact_($)'] },
-    contribution_district () { return this.sheet('main', 'dataContributionDistrict', ['State', 'District'])[this.area.key]['Economic_Impact_($)'] },
+    contribution_national () { return this.sheet('main', 'dataContributionUS', 'Geography')['Total_U.S.'] },
+    contribution_state () { return this.sheet('main', 'dataContributionState', 'State')[this.area.key] },
+    contribution_metro () { return this.sheet('main', 'dataContributionMetro', 'Metro Area')[this.area.key] },
+    contribution_district () { return this.sheet('main', 'dataContributionDistrict', ['State', 'District'])[this.area.key] },
     contribution () { return this.sheet_select('contribution', this.area.type) },
 
     apartments_national () { return this.sheet('main', 'dataApartmentsUS', 1)['Total U.S.'] },
@@ -50,21 +55,24 @@ export default {
     populationState () { return this.sheet('main', 'dataPopulationState', 'State') },
     populationMetro () { return this.sheet('main', 'dataPopulationMetro', 'Year') },
 
-    stockUS () { return this.sheet('main', 'dataStockUS', 'Type') },
-    stockState () { return this.sheet('main', 'dataStockState', 'State') },
-    stockMetro () { return this.sheet('main', 'dataStockMetro', 'Year') },
-    stockDistrict () { return this.sheet('main', 'dataStockDistrict', ['State', 'District']) },
+    stock_national () { return this.sheet('main', 'dataStockUS', 'Type')['Growth'] },
+    stock_state () { return this.sheet('main', 'dataStockState', 'State')[this.area.key] },
+    stock_metro () { return this.sheet('main', 'dataStockMetro', 'Metro')[this.area.key] },
+    stock_district () { return this.sheet('main', 'dataStockDistrict', ['State', 'District'])[this.area.key] },
+    stock () { return this.sheet_select('stock', this.area.type) },
 
     restrictionMetro () { return this.sheet('main', 'dataRestrictionsMetro', 'Metro Area ') },
+
+    loc_copy () {
+      if (this.area.type === 'national') return 'the country'
+      return this.area.location
+    }
 
   },
 
   methods: {
     sheet_select(value, type) {
-      if (this[`${value}_${type}`])
-        return this[`${value}_${type}`].replace(/\$/, '')*1
-      else
-        return false
+      return this[`${value}_${type}`]
     }
   },
 
