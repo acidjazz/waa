@@ -19,58 +19,58 @@ export default {
     },
     constructionJobs () {
       return this.homes *
-        this.constructionImpacts[this.key].Total_Employment /
-        this.constructionImpacts[this.key].Building_Permits
+        this.constructionImpacts[this.ckey].Total_Employment /
+        this.constructionImpacts[this.ckey].Building_Permits
     },
     operationJobs () {
       return this.homes *
-        this.operationImpacts[this.key].Total_Jobs /
-        this.operationImpacts[this.key].Total_Number_of_Apartments
+        this.operationImpacts[this.ckey].Total_Jobs /
+        this.operationImpacts[this.ckey].Total_Number_of_Apartments
     },
     spendingJobs () {
       return this.homes *
-        this.spendingImpacts[this.key].Total_Jobs_Supported /
-        this.spendingImpacts[this.key].Total_Number_of_Renter_Households
+        this.spendingImpacts[this.ckey].Total_Jobs_Supported /
+        this.spendingImpacts[this.ckey].Total_Number_of_Renter_Households
     },
     operationDollarsSpent () {
       return this.homes *
-        this.operationImpacts[this.key].Total_Annual_Operation_Cost /
-        this.operationImpacts[this.key].Total_Number_of_Apartments
+        this.operationImpacts[this.ckey].Total_Annual_Operation_Cost /
+        this.operationImpacts[this.ckey].Total_Number_of_Apartments
     },
     constructionDirectOnSiteJobs () {
       return this.homes *
-        this.constructionImpacts[this.key].Direct_Jobs /
-        this.constructionImpacts[this.key].Building_Permits
+        this.constructionImpacts[this.ckey].Direct_Jobs /
+        this.constructionImpacts[this.ckey].Building_Permits
     },
     operationDirectOnSiteJobs () {
       return this.homes *
-        this.operationImpacts[this.key].Direct_On_Site_Jobs /
-        this.operationImpacts[this.key].Total_Number_of_Apartments
+        this.operationImpacts[this.ckey].Direct_On_Site_Jobs /
+        this.operationImpacts[this.ckey].Total_Number_of_Apartments
     },
     operationContribution () {
       return this.homes *
-        this.operationImpacts[this.key].Economic_Contribution /
-        this.operationImpacts[this.key].Total_Number_of_Apartments
+        this.operationImpacts[this.ckey].Economic_Contribution /
+        this.operationImpacts[this.ckey].Total_Number_of_Apartments
     },
     constructionContribution () {
       return this.homes *
-        this.constructionImpacts[this.key].Economic_Contribution /
-        this.constructionImpacts[this.key].Building_Permits
+        this.constructionImpacts[this.ckey].Economic_Contribution /
+        this.constructionImpacts[this.ckey].Building_Permits
     },
     spendingDollars () {
       return this.homes *
-        this.spendingImpacts[this.key].Direct_Consumer_Spending /
-        this.spendingImpacts[this.key].Total_Number_of_Renter_Households
+        this.spendingImpacts[this.ckey].Direct_Consumer_Spending /
+        this.spendingImpacts[this.ckey].Total_Number_of_Renter_Households
     },
     spendingDirectJobs () {
       return this.homes *
-        this.spendingImpacts[this.key].Direct_Jobs_Supported /
-        this.spendingImpacts[this.key].Total_Number_of_Renter_Households
+        this.spendingImpacts[this.ckey].Direct_Jobs_Supported /
+        this.spendingImpacts[this.ckey].Total_Number_of_Renter_Households
     },
     spendingContribution () {
       return this.homes *
-        this.spendingImpacts[this.key].Total_Consumer_Spending /
-        this.spendingImpacts[this.key].Total_Number_of_Renter_Households
+        this.spendingImpacts[this.ckey].Total_Consumer_Spending /
+        this.spendingImpacts[this.ckey].Total_Number_of_Renter_Households
     },
   }
 }

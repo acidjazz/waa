@@ -114,7 +114,7 @@ export default {
         this.metros.includes(this.place) ? 'metro area' :
         ''
     },
-    key () { return this.is_national ? 'USA_Total' : this.place.replace(/ /g, '_') },
+    ckey () { return this.is_national ? 'USA_Total' : this.place.replace(/ /g, '_') },
 
     constructionImpacts () {
       return this.is_metro ?
