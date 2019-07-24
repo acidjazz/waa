@@ -1,8 +1,8 @@
 <template lang="pug">
 #DataDetailNeeded
-  .text-trueblue.text-bolder.text-3xl.mt-8
+  .text-bolder.text-6xl
     VueCountUp(:endVal="count_val(building, '0,0a')",:options="count_opts(building)")
-  .text-2xl.font-bold.text-steel New Apartments Needed Annually
+  .text-bolder.text-2xl New Apartments Needed Annually
   .my-8
     | {{ loc_copy }}
     | needs to build

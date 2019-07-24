@@ -1,12 +1,12 @@
 <template lang="pug">
 #DataDetailRepair
-  .text-trueblue.text-bolder.text-3xl.mt-8
-    no-ssr
-      VueCountUp(:endVal="count_val(Math.round(before_eighty*100))", :options="{}")
+  .text-bolder.text-6xl
+    VueCountUp(:endVal="count_val(Math.round(before_eighty*100))", :options="{}")
     | %
-    |
-    | of {{ loc_copy }}'s
-  .text-2xl.font-bold.text-steel Apartments Built Before 1980
+    .text-bolder.text-2xl
+      |
+      | of {{ loc_copy }}'s
+      | Apartments Built Before 1980
   .my-8
     | The renovation and repair of apartments helps preserve
     | {{ loc_copy }}’s
