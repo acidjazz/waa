@@ -62,9 +62,14 @@ export default {
     stock () { return this.sheet_select('stock', this.area.type) },
 
     persons_national () { return this.sheet('main', 'dataPersonsUS', 'Geography')['Total_U.S.'] },
-    persons_state () { return this.sheet('main', 'dataPersonsState', 'State')[this.area.key] },
-    persons_metro () { return this.sheet('main', 'dataPersonsMetro', 'Metro')[this.area.key] },
+    persons_state () { return this.sheet('main', 'dataPersonsState', 'Geography')[this.area.key] },
+    persons_metro () { return this.sheet('main', 'dataPersonsMetro', 'Geography')[this.area.key] },
     persons () { return this.sheet_select('persons', this.area.type) },
+
+    housetype_national () { return this.sheet('main', 'dataHouseTypeUS', 'Geography')['Total_U.S.'] },
+    housetype_state () { return this.sheet('main', 'dataHouseTypeState', 'Geography')[this.area.key] },
+    housetype_metro () { return this.sheet('main', 'dataHouseTypeMetro', 'Geography')[this.area.key] },
+    housetype () { return this.sheet_select('housetype', this.area.type) },
 
     restrictionMetro () { return this.sheet('main', 'dataRestrictionsMetro', 'Metro Area ') },
 
@@ -77,7 +82,9 @@ export default {
 
   methods: {
     sheet_select(value, type) {
-      return this[`${value}_${type}`]
+      if (this[`${value}_${type}`])
+        return this[`${value}_${type}`]
+      return false
     }
   },
 

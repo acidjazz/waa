@@ -17,10 +17,11 @@
           .bg-black.h-2(v-if="!area.district")
           DataDetailRepair(:area="area")
           StockAge(:area="area")
-      .bg-black.h-2.my-12
-      DataName(:area="area",name="natinoal apartment data")
-      .flex.lg_w-11_12.mx-auto.-p-4.flex-col.lg_flex-row
+      .bg-black.h-2.my-12(v-if="!area.district")
+      .flex.lg_w-11_12.mx-auto.-p-4.flex-col.lg_flex-row(v-if="!area.district")
         DataPersons(:area="area")
+      .flex.lg_w-11_12.mx-auto.-p-4.flex-col.lg_flex-row.my-12(v-if="!area.district")
+        DataHouseType(:area="area")
     OffsetSection
       DataBarriers(:area="area")
     OffsetSection
@@ -44,6 +45,7 @@ import RenterGrowth from '@/components/data/RenterGrowth'
 import StockAge from '@/components/data/StockAge'
 
 import DataPersons from '@/components/data/DataPersons'
+import DataHouseType from '@/components/data/DataHouseType'
 
 import DataBarriers from '@/components/data/DataBarriers'
 
@@ -65,6 +67,7 @@ export default {
     StockAge,
 
     DataPersons,
+    DataHouseType,
 
     DataBarriers,
 

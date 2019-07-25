@@ -151,6 +151,18 @@ export default {
         values: "'Data-Persons'!A56:E106",
       },
 
+      dataHouseTypeUS: {
+        labels: "'Data-HouseType'!A1:G1",
+        values: "'Data-HouseType'!A2:G2",
+      },
+      dataHouseTypeState: {
+        labels: "'Data-HouseType'!A3:G3",
+        values: "'Data-HouseType'!A4:G55",
+      },
+      dataHouseTypeMetro: {
+        labels: "'Data-HouseType'!A56:G56",
+        values: "'Data-HouseType'!A57:G107",
+      },
     },
   },
   calc: {
