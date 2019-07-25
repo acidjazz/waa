@@ -5,18 +5,22 @@
     DataSummary(:area="area")
     OffsetSection.mt-0
       DataName(:area="area")
-      .flex.lg_w-5_6.mx-auto.-p-4.flex-col.lg_flex-row
-        .lg_w-1_2.p-4
+      .flex.lg_w-11_12.mx-auto.-p-4.flex-col.lg_flex-row
+        .lg_w-1_2.pr-4
           DataDetailResidents(:area="area")
           .bg-black.h-2
           DataDetailHomes(v-if="area.district",:area="area")
           DataDetailNeeded(v-else,:area="area")
           RenterGrowth(v-if="!area.district",:area="area")
-        .lg_w-1_2.p-4
+        .lg_w-1_2.pl-4
           DataDetailHomes(v-if="!area.district",:area="area")
           .bg-black.h-2(v-if="!area.district")
           DataDetailRepair(:area="area")
           StockAge(:area="area")
+      .bg-black.h-2.my-12
+      DataName(:area="area",name="natinoal apartment data")
+      .flex.lg_w-11_12.mx-auto.-p-4.flex-col.lg_flex-row
+        DataPersons(:area="area")
     OffsetSection
       DataBarriers(:area="area")
     OffsetSection
@@ -38,7 +42,11 @@ import DataDetailRepair from '@/components/data/DataDetailRepair'
 
 import RenterGrowth from '@/components/data/RenterGrowth'
 import StockAge from '@/components/data/StockAge'
+
+import DataPersons from '@/components/data/DataPersons'
+
 import DataBarriers from '@/components/data/DataBarriers'
+
 import MetroCompareSelect from '@/components/data/MetroCompareSelect'
 import MetroCompareResults from '@/components/data/MetroCompareResults'
 export default {
@@ -55,7 +63,11 @@ export default {
 
     RenterGrowth,
     StockAge,
+
+    DataPersons,
+
     DataBarriers,
+
     MetroCompareSelect,
     MetroCompareResults,
   },

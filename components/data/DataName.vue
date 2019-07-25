@@ -1,16 +1,22 @@
 <template lang="pug">
   .font-os.uppercase.text-2xl.mb-8
-    | {{ area.type }} data
-    span(v-if="area.location != 'National'")
-      |
-      | -
-      | {{ area.location }}
+    span(v-if="name") {{ name }}
+    span(v-else) {{ area.type }} data
+      span(v-if="area.location != 'National'")
+        |
+        | -
+        | {{ area.location }}
 </template>
 
 
 <script>
 export default {
   props: {
+    name: {
+      type: [Boolean,String],
+      required: false,
+      default: false,
+    },
     area: {
       type: Object,
       required: true,

@@ -138,6 +138,19 @@ export default {
         labels: "'Data-MetroRestrictions'!A1:B1",
         values: "'Data-MetroRestrictions'!A2:B51",
       },
+      dataPersonsUS: {
+        labels: "'Data-Persons'!A1:E1",
+        values: "'Data-Persons'!A2:E2",
+      },
+      dataPersonsState: {
+        labels: "'Data-Persons'!A3:E3",
+        values: "'Data-Persons'!A4:E54",
+      },
+      dataPersonsMetro: {
+        labels: "'Data-Persons'!A55:E55",
+        values: "'Data-Persons'!A56:E106",
+      },
+
     },
   },
   calc: {

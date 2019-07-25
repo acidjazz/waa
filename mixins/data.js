@@ -61,6 +61,11 @@ export default {
     stock_district () { return this.sheet('main', 'dataStockDistrict', ['State', 'District'])[this.area.key] },
     stock () { return this.sheet_select('stock', this.area.type) },
 
+    persons_national () { return this.sheet('main', 'dataPersonsUS', 'Geography')['Total_U.S.'] },
+    persons_state () { return this.sheet('main', 'dataPersonsState', 'State')[this.area.key] },
+    persons_metro () { return this.sheet('main', 'dataPersonsMetro', 'Metro')[this.area.key] },
+    persons () { return this.sheet_select('persons', this.area.type) },
+
     restrictionMetro () { return this.sheet('main', 'dataRestrictionsMetro', 'Metro Area ') },
 
     loc_copy () {

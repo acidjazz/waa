@@ -1,6 +1,6 @@
 <template lang="pug">
 #DataBarriers
-  DataName(:area="area")
+  DataName(:area="area",name="national data")
   .flex.flex-col.lg_flex-row
     .w-full.lg_w-1_3
       .text-bolder.text-4xl Barriers to new apartments
