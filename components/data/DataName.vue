@@ -18,8 +18,9 @@ export default {
       default: false,
     },
     area: {
-      type: Object,
-      required: true,
+      type: [Boolean,Object],
+      required: false,
+      default: false,
     }
   }
 }
