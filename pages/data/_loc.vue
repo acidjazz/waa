@@ -12,7 +12,7 @@
           .bg-black.h-2
           DataDetailHomes(v-if="area.district",:area="area")
           DataDetailNeeded(v-else,:area="area")
-          RenterGrowth(v-if="!area.district",:area="area").print_w-2_3
+          RenterGrowth(v-if="!area.district",:area="area")
 
         .lg_w-1_2.pl-4.print_w-1_2
 
