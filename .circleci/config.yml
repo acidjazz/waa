@@ -41,6 +41,9 @@ jobs:
           name: Generate icons
           command: yarn mdi
       - run:
+          name: Generate our routes
+          command: yarn route
+      - run:
           name: Generate static files
           command: yarn generate
 
