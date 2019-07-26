@@ -58,6 +58,9 @@ export default {
     key (value) {
       return value.toString().trim().replace(/ |-/g, '_')
     },
+    keyspace (value) {
+      return value.toString().trim().replace(/ /g, '_')
+    },
     value (key) {
       return key.replace(/_|-/g, ' ')
     },

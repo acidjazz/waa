@@ -29,9 +29,5 @@ export default {
       return result
     }
   },
-  mounted () {
-    console.log(this.datas)
-    console.log(this.housetype)
-  },
 }
 </script>

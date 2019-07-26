@@ -1,5 +1,5 @@
 <template lang="pug">
-#DataFilters.fixed.z-10.inset-x-0
+#DataFilters.fixed.z-10.inset-x-0.print_hidden
   .bg-white.tran-all-p2s(:class="{'shadow-md p-2 -mt-22px': has_scrolled, 'p-8 mt-36px': !has_scrolled}")
     .flex.items-center.justify-center.lg_-mx-2.-mx-1.ani-d-5
       .mx-1.lg_mx-2.relative(v-for="option in types",:key="option")
@@ -8,7 +8,7 @@
           :class="option_class(option)")
           .inline-flex(v-if="option !== type") {{ option }}
           .inline-flex(v-else-if="is_district") {{ district_full }}
-          .inline-flex(v-else) {{ location }}
+          .inline-flex(v-else) {{ value(location) }}
         .ani-sib.relative(v-if="select && select === option")
           .inset-0.absolute
             .carat.mx-auto.bg-seashell.shadow-md(:class="{'-mt-0': !has_scrolled, '-mt-2': has_scrolled}")
@@ -37,7 +37,7 @@
             a.lg_w-40.tran-colors.m-2(
               v-for="dist in districts[state]",
               :key="`district-${state}-${dist}`",
-              @click="select_go('district', `${state}-${numeral(dist).format('0o')}`)",
+              @click="select_go('district', `${state}-${nth(dist)}`)",
               :class="is_district && dist == district ? classes.types.active : classes.type.inactive")
               | {{ state }} {{ dist | nth }}
 </template>
@@ -73,14 +73,14 @@ export default {
   },
   computed: {
     is_national () { return this.$route.params.loc === undefined },
-    is_state () { return this.states.includes(this.location) },
-    is_metro () { return this.metros.includes(this.location) },
+    is_state () { return this.states.includes(this.value(this.location)) },
+    is_metro () { return this.metros.includes(this.value(this.location)) },
     is_district () { return this.$route.params.loc ? this.$route.params.loc.includes('-') : false },
     district () { return this.is_district ? numeral(this.$route.params.loc.split('-')[1]).value() : false },
     state () {
       return this.is_state ? this.location :
         this.is_district ? this.$route.params.loc.split('-')[0] :
-        this.is_metro ? this.state_from_metro(this.metro) : false
+        this.is_metro ? this.state_from_metro(this.value(this.metro)) : false
     },
     metro () { return this.is_metro ? this.location : false },
     district_full () { return this.is_district ? `${this.state} ${this.$options.filters.nth(this.district)}` : false },
@@ -90,6 +90,9 @@ export default {
   },
   mounted () { this.chose() },
   methods: {
+    nth (value) {
+      return numeral(value).format('0o')
+    },
     option_class (option) {
       let classes = []
       if (option === this.type) {
@@ -124,7 +127,7 @@ export default {
     },
     select_go(type, val) {
       this.type == type,
-      this.$router.replace(`/data/${val}`)
+      this.$router.replace(`/data/${this.keyspace(val)}`)
     },
     chose () {
       this.$emit(

@@ -1,12 +1,12 @@
 <template lang="pug">
-#RenterGrowth.my-4
-  .flex.items-center.my-4
+#RenterGrowth.my-4.print_my-0
+  .flex.items-center.my-4.print_my-0
     .w-2.h-2.mr-4.bg-trueblue
-    .text-2xl.font-bold.text-steel Renter Household Growth
-  .text-bolder.text-3xl {{ increase }}% Increase
+    .text-2xl.font-bold.text-stee.print_text-lg Renter Household Growth
+  .text-bolder.text-3xl.print_text-xl {{ increase }}% Increase
   .text Forecasted by the year 2030
   .bar.w-16.h-1.bg-mountainmeadow.my-2
-  GrowthChart(:current="current",:future="future",:height="200").w-full
+  GrowthChart(:current="current",:future="future",:height="140")
 </template>
 
 <script>
@@ -39,6 +39,7 @@ export default {
       if (this.area.type === 'metro')
         return Math.round(this.populationMetro[2016][this.area.key] /
           this.populationMetro[2030][this.area.key]*10)
+      return 0
     },
   },
 

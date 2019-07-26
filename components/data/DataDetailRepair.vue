@@ -1,13 +1,13 @@
 <template lang="pug">
 #DataDetailRepair
-  .text-bolder.text-6xl
+  .text-bolder.text-6xl.print_text-3xl
     VueCountUp(:endVal="count_val(Math.round(before_eighty*100))", :options="{}")
     | %
     .text-bolder.text-2xl
       |
       | of {{ loc_copy }}'s
       | Apartments Built Before 1980
-  .my-8
+  .my-8.print_my-2.print_text-sm
     | The renovation and repair of apartments helps preserve
     | {{ loc_copy }}’s
     | older more affordable units, contributing

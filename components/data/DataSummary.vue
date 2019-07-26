@@ -1,10 +1,10 @@
 <template lang="pug">
-.mt-24.pt-24.bg-trantrue.text-center.text-white.pb-64.-mb-48
+.mt-24.pt-24.bg-trantrue.text-center.text-white.pb-64.-mb-48.print_mt-0.print_py-4.print_mb-0
   .font-os.uppercase(v-if="area.metro") {{ area.state }}
   .font-os.uppercase(v-if="area.district") {{ area.state }}
-  .text-5xl.mb-4.font-bolder.ani-sit {{ area.location }}
-  .lg_w-128.text-lg.mx-auto.ani-sit.ani-d-1.mb-8.px-2
-    | {{ area.location }} apartments and their residents contribute
+  .text-5xl.mb-4.text-bolder.ani-sit.print_text-4xl {{ area.value }}
+  .lg_w-128.text-lg.mx-auto.ani-sit.ani-d-1.mb-8.px-2.print_mb-2
+    | {{ area.value }} apartments and their residents contribute
     |
     no-ssr(v-if="contribution")
       span.text-bolder(title="Total_Economic_Impact / 365"): VueCountUp(:endVal="count_val(impact)",:options="count_opts(impact, '$')")
@@ -32,9 +32,5 @@ export default {
     impact () { return this.contribution.Total_Economic_Impact.replace(/\$/, '') / 365 },
     jobs () { return this.contribution.Total_Employment_Impact / 365 },
   },
-  mounted () {
-    console.log()
-  },
-
 }
 </script>

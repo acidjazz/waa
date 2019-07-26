@@ -9,10 +9,8 @@
         span %
     .relative.h-4
       .absolute.bg-seashell.inset-0.my-1.w-full
-      .absolute.bg-gradtrue.inset-0.tran-width.inset-y(:style="`width: ${perc(value)}%;`")
+      .absolute.bg-coolblue.inset-0.tran-width.inset-y(:style="`width: ${perc(value)}%;`")
 </template>
-
-
 <script>
 import inViewport from 'vue-in-viewport-mixin'
 export default {
@@ -28,6 +26,7 @@ export default {
     vals () { return Object.values(this.datas) },
     sum () { return this.vals.reduce( (a,b) => a + b) },
   },
+
   watch: { 'inViewport.now' (visible) { return this.fire = visible } },
 
   methods: {

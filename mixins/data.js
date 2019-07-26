@@ -75,7 +75,7 @@ export default {
 
     loc_copy () {
       if (this.area.type === 'national') return 'the country'
-      return this.area.location
+      return this.area.value
     }
 
   },

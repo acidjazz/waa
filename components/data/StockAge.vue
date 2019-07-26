@@ -1,9 +1,9 @@
 <template lang="pug">
-#StockAge.my-4
-  .flex.items-center.my-4
+#StockAge.my-4.print_my-0
+  .flex.items-center.my-4.print_my-0
     .w-2.h-2.mr-4.bg-trueblue
-    .text-2xl.font-bold.text-steel Age of Stock
-  PercChart(:datas="datas")
+    .text-2xl.font-bold.print_text-lg Age of Stock
+  PercChart(:datas="datas",:width="200")
 </template>
 
 <script>

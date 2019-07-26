@@ -1,11 +1,11 @@
 <template lang="pug">
-  .font-os.uppercase.text-2xl.mb-8
+  .font-os.uppercase.text-2xl.mb-8.print_hidden
     span(v-if="name") {{ name }}
     span(v-else) {{ area.type }} data
       span(v-if="area.location != 'National'")
         |
         | -
-        | {{ area.location }}
+        | {{ area.value }}
 </template>
 
 

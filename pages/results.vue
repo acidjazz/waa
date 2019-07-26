@@ -1,7 +1,7 @@
 <template lang="pug">
 .page.page-calculate.pt-16.bg-white.print_pt-0
   .bg-tranpurp.flex.justify-center.lg_py-32.min-h-screen.print_py-0.print_bg-white
-    .bg-white.w-screen.max-w-5xl.lg_p-8.p-4.text-black.text-left(v-if="show")
+    .bg-white.w-screen.max-w-5xl.lg_p-8.p-4.text-black.text-left.ani-zi(v-if="show")
       .max-w-4xl.mx-auto.flex.items-stretch
 
         .w-1_6.hidden.lg_block
@@ -11,7 +11,7 @@
           .text-orange.font-bold
             | Economic Impact of {{ homes }} {{ is_new ? 'New' : 'Existing' }} Apartment Homes.
 
-          .border.border-alum.rounded.lg_p-4.p-2.my-4
+          .border.border-seashell.rounded.lg_p-4.p-2.my-4
             .text-2xl.font-bold Economic Impact
             .my-2 The combined contribution of apartment construction, renovation and repair, operations and resident spending to the metro economy.
 
@@ -38,7 +38,7 @@
                 .w-2_3.text-bolder Total Impact from Tax Revenue
                 .text-right.text-bolder ${{ totalImpactTax | numeral }}
 
-          .border.border-alum.rounded.p-4
+          .border.border-seashell.rounded.p-4
             .text-2xl.font-bold Employment Impact
             .my-2 The total number of jobs supported by apartment construction, operations, and resident spending within the metro economy.
             .flex.flex-wrap.items-center.justify-between.p-4.lg_mr-12

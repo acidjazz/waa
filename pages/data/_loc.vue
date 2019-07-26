@@ -1,34 +1,38 @@
 <template lang="pug">
-.page.page-data.pt-20.bg-black
+.page.page-data.pt-20.bg-black.print_pt-0
   DataFilters(@chose="chose")
   div(v-if="chosen")
     DataSummary(:area="area")
     OffsetSection.mt-0
       DataName(:area="area")
-      .flex.lg_w-11_12.mx-auto.-p-4.flex-col.lg_flex-row
-        .lg_w-1_2.pr-4
+      .flex.lg_w-11_12.mx-auto.-p-4.flex-col.lg_flex-row.print_flex-row
+        .lg_w-1_2.pr-4.print_w-1_2
+
           DataDetailResidents(:area="area")
           .bg-black.h-2
           DataDetailHomes(v-if="area.district",:area="area")
           DataDetailNeeded(v-else,:area="area")
-          RenterGrowth(v-if="!area.district",:area="area")
-        .lg_w-1_2.pl-4
+          RenterGrowth(v-if="!area.district",:area="area").print_w-2_3
+
+        .lg_w-1_2.pl-4.print_w-1_2
+
           DataDetailHomes(v-if="!area.district",:area="area")
           .bg-black.h-2(v-if="!area.district")
           DataDetailRepair(:area="area")
           StockAge(:area="area")
-      div(v-if="!area.district")
+
+      .print_hidden(v-if="!area.district")
         .bg-black.h-2.my-12
-        DataName(:name="`other data - ${area.location}`")
-        .lg_w-11_12.mx-auto.my-12(v-if="!area.district")
+        DataName(:name="`other data - ${area.value}`")
+        .lg_w-11_12.mx-auto.my-12
           .text-4xl.text-bolder Apartment Stats
           .text.my-8 Married couples with children account for an ever-diminishing share of apartment households, while single-person households represent by far the most common living situation.
           .flex.flex-col.lg_flex-row.-p-4
             DataPersons.lg_w-1_2.lg_pr-8.mb-8(:area="area")
             DataHouseType.lg_w-1_2.lg_pl-8.mb-8(:area="area")
-    OffsetSection
+    OffsetSection.print_hidden
       DataBarriers(:area="area")
-    OffsetSection
+    OffsetSection.print_hidden
       MetroCompareSelect(@compare="compare")
       MetroCompareResults(v-if="comparison",:comparison="comparison")
 </template>
