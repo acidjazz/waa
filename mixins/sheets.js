@@ -4,24 +4,16 @@
  *
  * Distributed under terms of the APACHE license.
  */
-import rangeconfig from '@/ranges'
+import rangeconfig from '@/operations/ranges'
+import filters from '@/operations/filters'
 import sheets from '@/data/sheets'
 export default {
 
   computed: {
-    filters () { return sheets.main.valueRanges[0].values },
-    states () { return this.filters.map(r => r[0]) },
-    metros () {
-      return [...new Set(this.filters
-        .map(l => l[2]
-        .split(',')
-        .map(m => m.trim()))
-        .flat()
-        .filter(Boolean))]
-    },
-    districts () {
-      return Object.assign(...this.filters.map(([key, ab, metros, districts]) => ({[key]: districts*1})))
-    },
+    filters () { return filters.filters() },
+    states () { return filters.states() },
+    metros () { return filters.metros() },
+    districts () { return filters.districts() },
   },
 
   methods: {

@@ -1,4 +1,5 @@
 import pkg from './package'
+import routes from './data/routes'
 export default {
   mode: 'universal',
   cfg: pkg.cfg,
@@ -79,5 +80,6 @@ export default {
   build: {
     extend(config, ctx) {
     }
-  }
+  },
+  generate: { routes: routes }
 }

@@ -41,8 +41,9 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "feed": "node --experimental-modules ./feed.mjs",
-    "sheets": "node --experimental-modules ./sheets.mjs",
+    "feed": "node --experimental-modules ./operations/feed.mjs",
+    "sheets": "node --experimental-modules ./operations/sheets.mjs",
+    "route": "node --experimental-modules ./operations/route.mjs",
     "mdi": "cp node_modules/@mdi/font/css/materialdesignicons.min.css static/mdi.css; cp node_modules/@mdi/font/fonts/* static/fonts/.; cp node_modules/@mdi/font/css/materialdesignicons.min.css.map static/.",
     "staging": "node ./aeonian.js staging",
     "production": "node ./aeonian.js production"

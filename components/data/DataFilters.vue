@@ -37,7 +37,7 @@
             a.lg_w-40.tran-colors.m-2(
               v-for="dist in districts[state]",
               :key="`district-${state}-${dist}`",
-              @click="select_go('district', `${state}-${dist}`)",
+              @click="select_go('district', `${state}-${numeral(dist).format('0o')}`)",
               :class="is_district && dist == district ? classes.types.active : classes.type.inactive")
               | {{ state }} {{ dist | nth }}
 </template>
@@ -76,7 +76,7 @@ export default {
     is_state () { return this.states.includes(this.location) },
     is_metro () { return this.metros.includes(this.location) },
     is_district () { return this.$route.params.loc ? this.$route.params.loc.includes('-') : false },
-    district () { return this.is_district ? this.$route.params.loc.split('-')[1] : false },
+    district () { return this.is_district ? numeral(this.$route.params.loc.split('-')[1]).value() : false },
     state () {
       return this.is_state ? this.location :
         this.is_district ? this.$route.params.loc.split('-')[0] :
@@ -84,12 +84,11 @@ export default {
     },
     metro () { return this.is_metro ? this.location : false },
     district_full () { return this.is_district ? `${this.state} ${this.$options.filters.nth(this.district)}` : false },
+    district_key () { return this.is_district ? `${this.state}_${this.district}` : false },
     location () { return this.is_national ? 'National' : this.$route.params.loc },
     type () { return this.is_national ? 'national' : this.is_state ? 'state' : this.is_district ? 'district' : 'metro' },
   },
-  mounted () {
-    this.chose()
-  },
+  mounted () { this.chose() },
   methods: {
     option_class (option) {
       let classes = []
@@ -133,7 +132,7 @@ export default {
         {
           type: this.type,
           location: this.is_district ? this.district_full : this.location,
-          key: this.key(this.location),
+          key: this.is_district ? this.district_key : this.key(this.location),
           value: this.value(this.location),
           state: this.state,
           metro: this.metro,

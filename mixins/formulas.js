@@ -18,6 +18,10 @@ export default {
         this.operationContribution +
         this.spendingContribution
     },
+    totalImpactTax () {
+      return this.operationExpenditures +
+        this.spendingResident
+    },
     renovationImpact () {
       return this.homes *
         this.renovationImpacts[this.ckey].Economic_Contribution /
@@ -48,6 +52,11 @@ export default {
         this.operationImpacts[this.ckey].Total_Annual_Operation_Cost /
         this.operationImpacts[this.ckey].Total_Number_of_Apartments
     },
+    operationExpenditures () {
+      return this.homes *
+        this.operationImpacts[this.ckey].Tax_Economic_Impact /
+        this.operationImpacts[this.ckey].Total_Number_of_Apartments
+    },
     constructionDirectOnSiteJobs () {
       return this.homes *
         this.constructionImpacts[this.ckey].Direct_Jobs /
@@ -67,6 +76,11 @@ export default {
       return this.homes *
         this.constructionImpacts[this.ckey].Economic_Contribution /
         this.constructionImpacts[this.ckey].Building_Permits
+    },
+    spendingResident () {
+      return this.homes *
+        this.spendingImpacts[this.ckey].Tax_Economic_Impact /
+        this.spendingImpacts[this.ckey].Total_Number_of_Renter_Households
     },
     spendingDollars () {
       return this.homes *

@@ -16,8 +16,8 @@
             .my-2 The combined contribution of apartment construction, renovation and repair, operations and resident spending to the metro economy.
 
             .flex.flex-wrap.items-center.justify-between.p-4.lg_mr-12
-              .text.w-1_2 Construction
-              .w-1_2.text-right ${{ constructionContribution | numeral }}
+              .text.w-1_2(v-if="is_new") Construction
+              .w-1_2.text-right(v-if="is_new") ${{ constructionContribution | numeral }}
               .text.w-1_2 Renovation & Repair
               .w-1_2.text-right ${{ renovationImpact | numeral }}
               .text.w-1_2 Operation Expenditures
@@ -30,20 +30,20 @@
 
             .bg-seashell.p-4.my-4.rounded.border.border-alum
               .text-xl Impact form Tax Revenue
-              .flex.flex-wrap.justify-between.p-4.lg_mr-12
+              .flex.flex-wrap.items-center.justify-between.p-4.lg_mr-12
                 .w-2_3 Operation Expenditures
-                .text-right ??
+                .text-right ${{ operationExpenditures | numeral }}
                 .w-2_3 Resident Spending
-                .text-right ??
+                .text-right ${{ spendingResident | numeral }}
                 .w-2_3.text-bolder Total Impact from Tax Revenue
-                .text-right ??
+                .text-right.text-bolder ${{ totalImpactTax | numeral }}
 
           .border.border-alum.rounded.p-4
             .text-2xl.font-bold Employment Impact
             .my-2 The total number of jobs supported by apartment construction, operations, and resident spending within the metro economy.
-            .flex.flex-wrap.justify-between.p-4.lg_mr-12
-              .text.w-1_2 Construction
-              .w-1_2.text-right {{ constructionJobs | numeral }}
+            .flex.flex-wrap.items-center.justify-between.p-4.lg_mr-12
+              .text.w-1_2(v-if="is_new") Construction
+              .w-1_2.text-right(v-if="is_new") {{ constructionJobs | numeral }}
               .text.w-1_2 Renovation & Repair
               .w-1_2.text-right {{ renovationJobs | numeral }}
               .text.w-1_2 Operations
