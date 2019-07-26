@@ -60,8 +60,8 @@ import SelectInput from '@/components/form/SelectInput'
 import TextInput from '@/components/form/TextInput'
 import sheets from '@/mixins/sheets'
 export default {
-  mixins: [ sheets ],
   components: { OffsetSection, CheckBox, TextInput, SelectInput },
+  mixins: [ sheets ],
   data () {
     return {
       type: 'existing',

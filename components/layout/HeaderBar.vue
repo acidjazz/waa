@@ -1,6 +1,6 @@
 <template lang="pug">
 .header-nav.bg-black.text-white.fixed.z-20.inset-x-0.top-0.ani-sit.print_hidden.tran-all-p2s(
-  :class="{'py-8': !has_scrolled, 'py-1': has_scrolled}")
+  :class="{'lg_py-8 py-2': !has_scrolled, 'lg_py-1 py-2': has_scrolled}")
   .container.lg.px-4
     .flex.justify-between.items-center
       HeaderTitle

@@ -1,74 +1,60 @@
 <template lang="pug">
-.page.page-calculate.lg_mt-16.print_mt-0
-  .bg-tranpurp.flex.justify-center.lg_py-32.print_py-2.min-h-screen
-    .bg-white.w-screen.max-w-5xl.p-8.text-black.text-left(v-if="show")
+.page.page-calculate.pt-16.bg-white.print_pt-0
+  .bg-tranpurp.flex.justify-center.lg_py-32.min-h-screen.print_py-0.print_bg-white
+    .bg-white.w-screen.max-w-5xl.lg_p-8.p-4.text-black.text-left(v-if="show")
       .max-w-4xl.mx-auto.flex.items-stretch
-        .w-1_5.hidden.lg_block
+
+        .w-1_6.hidden.lg_block
         .flex-1
-          .lg_p-4
-            .text-center
-              .font-os.text-lg.mb-4.uppercase.print_mb-2 {{ area }}
-              .font-okib.font-bold.text-5xl.print_text-3xl.mb-4.print_mb-2(v-if='!is_national') {{ place }}
-            .text-orange.font-bold.mb-4.text-center.print_text-sm
-              | Economic Impact of {{ homes }} {{ is_new ? 'New' : 'Existing' }} Apartment Homes.
+          .font-os.text-lg.mb-4.uppercase.text-center {{ area }}
+          .font-okib.font-bold.text-4xl.mb-2(v-if='!is_national') {{ place }}
+          .text-orange.font-bold
+            | Economic Impact of {{ homes }} {{ is_new ? 'New' : 'Existing' }} Apartment Homes.
 
-            .text-3xl.font-okib.font-bold.mb-2.print_text-lg.print_mb-0 Total Impact
-            .mb-4.print_text-sm.print_mb-2
-              | The combined direct and indirect contribution of apartment construction, operations and resident spending to the state economy.
-            .bg-black.text-white.flex.justify-between.py-2.px-4.mb-8.print_mb-2.print_py-0.print_bg-white.print_text-black
-              .font-bold Total Economic Impact
-              .font-bold ${{ this.totalImpact | numeral }}
+          .border.border-alum.rounded.lg_p-4.p-2.my-4
+            .text-2xl.font-bold Economic Impact
+            .my-2 The combined contribution of apartment construction, renovation and repair, operations and resident spending to the metro economy.
 
-            .text-3xl.font-okib.font-bold.mb-2.print_text-lg.print_mb-0 Total Jobs
-            .mb-4.print_text-sm
-              | The total number of direct and indirect jobs supported by apartment construction, operations and resident spending within the state economy.
-            .bg-black.text-white.flex.justify-between.py-2.px-4.mb-8.print_mb-2.print_py-0.print_bg-white.print_text-black
-              .font-bold Total Jobs Supported
-              .font-bold {{ totalJobs | numeral }}
+            .flex.flex-wrap.items-center.justify-between.p-4.lg_mr-12
+              .text.w-1_2 Construction
+              .w-1_2.text-right ${{ constructionContribution | numeral }}
+              .text.w-1_2 Renovation & Repair
+              .w-1_2.text-right ${{ renovationImpact | numeral }}
+              .text.w-1_2 Operation Expenditures
+              .w-1_2.text-right ${{ operationContribution | numeral }}
+              .text.w-1_2 Resident Spending
+              .w-1_2.text-right ${{ spendingContribution | numeral }}
+            .flex.items-center.justify-between.lg_mr-12
+              .text-xl.text-bolder.w-1_2 Total Economic Impact
+              .text-xl.text-bolder.w-1_2.text-right ${{ totalImpact | numeral }}
 
-            .text-3xl.font-okib.font-bold.print_text-lg.print_mb-0 Managing Apartments
-            .mb-4.print_text-sm.print_mb-2
-              | Apartment homes are economic engines, driving dollars and jobs that strengthen local communities.
-            .flex.justify-between.py-2.px-4.print_py-0
-              .font-bold Operation Dollars Spent
-              .font-bold ${{ operationDollarsSpent | numeral }}
-            .flex.justify-between.py-2.px-4.print_py-0
-              .font-bold Direct On-site Jobs
-              .font-bold {{ operationDirectOnSiteJobs | numeral }}
-            .bg-black.text-white.flex.justify-between.py-2.px-4.print_py-0.print_bg-white.print_text-black
-              .font-bold Total Economic Contribution
-              .font-bold ${{ operationContribution | numeral }}
-            .flex.justify-between.py-2.px-4.mb-8.print_mb-2.print_py-0
-              .font-bold Total Jobs Supported
-              .font-bold {{ operationJobs | numeral }}
+            .bg-seashell.p-4.my-4.rounded.border.border-alum
+              .text-xl Impact form Tax Revenue
+              .flex.flex-wrap.justify-between.p-4.lg_mr-12
+                .w-2_3 Operation Expenditures
+                .text-right ??
+                .w-2_3 Resident Spending
+                .text-right ??
+                .w-2_3.text-bolder Total Impact from Tax Revenue
+                .text-right ??
 
-            div(v-if="is_new")
-              .text-3xl.font-okib.font-bold.print_text-lg.print_mb-0 Building Apartments
-              .mb-4.print_text-sm.print_mb-2
-                | Apartment construction continues as a bright spot in the economy, helping lead the housing recovery
-              .bg-black.text-white.flex.justify-between.py-2.px-4.print_py-0.print_bg-white.print_text-black
-                .font-bold Total Economic Contribution
-                .font-bold ${{ constructionContribution | numeral }}
-              .flex.justify-between.py-2.px-4.mb-8.print_mb-2.print_py-0
-                .font-bold Total Jobs Supported
-                .font-bold {{ constructionJobs | numeral }}
+          .border.border-alum.rounded.p-4
+            .text-2xl.font-bold Employment Impact
+            .my-2 The total number of jobs supported by apartment construction, operations, and resident spending within the metro economy.
+            .flex.flex-wrap.justify-between.p-4.lg_mr-12
+              .text.w-1_2 Construction
+              .w-1_2.text-right {{ constructionJobs | numeral }}
+              .text.w-1_2 Renovation & Repair
+              .w-1_2.text-right {{ renovationJobs | numeral }}
+              .text.w-1_2 Operations
+              .w-1_2.text-right {{ operationJobs | numeral }}
+              .text.w-1_2 Resident Spending
+              .w-1_2.text-right {{ spendingJobs | numeral }}
+              .w-2_3.text-bolder Total Jobs Supported
+              .text-right.text-bolder {{ totalJobs | numeral }}
 
-            .text-3xl.font-okib.font-bold.print_text-lg.print_mb-0 Living in Apartments
-            .mb-4.print_text-sm.print_mb-2
-              | Renting can be a smart choice for a wide range of individuals and families across all income levels. That's why a diverse array of people call apartments home.
-            .flex.justify-between.py-2.px-4.print_py-0
-              .font-bold Spending Power
-              .font-bold ${{ spendingDollars | numeral }}
-            .flex.justify-between.py-2.px-4.print_py-0
-              .font-bold Direct Jobs Supported
-              .font-bold {{ spendingDirectJobs | numeral }}
-            .bg-black.text-white.flex.justify-between.py-2.px-4.print_py-0.print_bg-white.print_text-black
-              .font-bold Total Economic Contribution
-              .font-bold ${{ spendingContribution | numeral }}
-            .flex.justify-between.py-2.px-4.print_py-0
-              .font-bold Total Jobs Supported
-              .font-bold {{ spendingJobs | numeral }}
-        .w-1_5.hidden.lg_block
+
+        .w-1_6.hidden.lg_block
           .border.border-seashell.m-2.p-2.text-center
             .mdi.mdi-48px.mdi-file-pdf
             .text-center.font-bold.underline Printable PDF
@@ -130,6 +116,11 @@ export default {
       return this.is_metro ?
         this.sheet('calc', 'spendingImpactsMetro', 'Metro')
         : this.sheet('calc', 'spendingImpacts', 'State')
+    },
+    renovationImpacts () {
+      return this.is_metro ?
+        this.sheet('calc', 'renovationImpactsMetro', 'Metro')
+        : this.sheet('calc', 'renovationImpacts', 'State')
     },
   },
 

@@ -14,8 +14,19 @@ export default {
     },
     totalImpact () {
       return (this.is_new ? this.constructionContribution : 0) +
+        this.renovationImpact +
         this.operationContribution +
         this.spendingContribution
+    },
+    renovationImpact () {
+      return this.homes *
+        this.renovationImpacts[this.ckey].Economic_Contribution /
+        this.renovationImpacts[this.ckey].Total_Number_of_Apartments
+    },
+    renovationJobs () {
+      return this.homes *
+        this.renovationImpacts[this.ckey].Total_Jobs /
+        this.renovationImpacts[this.ckey].Total_Number_of_Apartments
     },
     constructionJobs () {
       return this.homes *

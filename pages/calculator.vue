@@ -12,7 +12,7 @@ export default {
   components: { CalcHero, CalcParams },
   methods: {
     calculate (data) {
-      this.$router.push(`/results/#${data.type}/${data.homes}/${data.by != 'national' ? data.selected.replace(' ', '_') : data.by}`)
+      this.$router.push(`/results/#${data.type}/${data.homes}/${data.by != 'national' ? data.selected.replace(/ /g, '_') : data.by}`)
     },
   },
 }

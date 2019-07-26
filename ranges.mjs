@@ -180,6 +180,14 @@ export default {
         labels: "'Spending Impacts'!A2:J2",
         values: "'Spending Impacts'!A3:J55",
       },
+      renovationImpacts: {
+        labels: "'Renovation & Repair Impacts'!A2:N2",
+        values: "'Renovation & Repair Impacts'!A3:N55",
+      },
+      renovationImpactsMetro: {
+        labels: "'Renovation & Repair (metro)'!A2:G2",
+        values: "'Renovation & Repair (metro)'!A3:G52",
+      },
       constructionImpactsMetro: {
         labels: "'Construction Impacts (metro)'!A2:M2",
         values: "'Construction Impacts (metro)'!A3:M43",
