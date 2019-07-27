@@ -6,7 +6,6 @@
 
         .w-1_6.hidden.lg_block
         .flex-1
-          input(type="hidden")
           .font-os.text-lg.mb-4.uppercase.text-center {{ area }}
           .font-okib.font-bold.text-4xl.mb-2(v-if='!is_national') {{ place }}
           .text-orange.font-bold
@@ -63,10 +62,6 @@
               .mdi.mdi-24px.mdi-facebook-box
               .mdi.mdi-24px.mdi-twitter
             div Share link
-  //pre.w-64.block.mx-auto {{ $route.params }}
-  //pre
-    pre.print_hidden.text-center this will not show in print
-    pre.notprint_hidden.text-center this will show in print
 </template>
 
 
@@ -87,16 +82,13 @@ export default {
     }
   },
   computed: {
-    host () {
-      if (!process.browser) return false
-      return window.document.URL
-    },
+    host () { return process.browser ? window.document.URL : false },
     hash_array () { return this.$route.hash.substr(1).split(/\//g) },
     type () { return this.hash_array[0] },
     is_new () { return this.type === 'new' },
     is_existing () { return this.type === 'existing' },
     homes () { return this.hash_array[1] },
-    place () { return this.hash_array[2].replace(/_/g, ' ') },
+    place () { return this.hash_array[2] ? this.hash_array[2].replace(/_/g, ' ') : 'national' },
     is_national () { return this.place === 'national' },
     is_metro () { return this.area === 'metro area' },
     area () {
@@ -129,7 +121,7 @@ export default {
     },
   },
 
-  mounted () { this.show = true },
+  created () { this.show = true },
 
 }
 </script>
