@@ -56,7 +56,7 @@
 
         .w-1_6.hidden.lg_block
           .border.border-seashell.m-2.p-2.text-center
-            a(:href="`https://pdf-api.weareapartments.org/api/render?emulateScreenMedia=false&url=${host}`")
+            a(:href="`https://pdf-api.weareapartments.org/api/render?emulateScreenMedia=false&goto.waitUntil=networkidle&scrollPage=true&url=${host}`")
               .mdi.mdi-48px.mdi-file-pdf
               .text-center.font-bold.underline Printable PDF
             .flex.justify-center.mt-8
