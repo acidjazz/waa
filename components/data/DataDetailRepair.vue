@@ -3,7 +3,7 @@
   .text-bolder.text-6xl.print_text-3xl
     VueCountUp(:endVal="count_val(Math.round(before_eighty*100))", :options="{}")
     | %
-    .text-bolder.text-2xl
+    .text-bolder.text-2xl.print_text-lg
       |
       | of {{ loc_copy }}'s
       | Apartments Built Before 1980
@@ -11,7 +11,7 @@
     | The renovation and repair of apartments helps preserve
     | {{ loc_copy }}’s
     | older more affordable units, contributing
-    .data-val {{ contribution.Repair_Economic_Impact | numeral('$0.0a') }}
+    .data-val {{ contribution.Repair_Economic_Impact | numeral('$0,0a') }}
     | to the local economy annually and creating
     .data-val {{ contribution.Repair_Employment_Impact | numeral('0,0a') }}
     | jobs.

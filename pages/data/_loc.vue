@@ -6,8 +6,7 @@
     OffsetSection.mt-0
       DataName(:area="area")
       .flex.lg_w-11_12.mx-auto.-p-4.flex-col.lg_flex-row.print_flex-row
-        .lg_w-1_2.pr-4.print_w-1_2
-
+        .lg_w-1_2.pr-4.print_w-1_2.flex.flex-col.justify-around
           DataDetailResidents(:area="area")
           .bg-black.h-2
           DataDetailHomes(v-if="area.district",:area="area")
@@ -21,7 +20,7 @@
           DataDetailRepair(:area="area")
           StockAge(:area="area")
 
-      .print_hidden(v-if="area.district")
+      div(v-if="area.district")
         .bg-black.h-2.my-12
         DataDistrictNeeded(:area="area")
         .bg-black.h-2.my-12
