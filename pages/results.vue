@@ -6,6 +6,7 @@
 
         .w-1_6.hidden.lg_block
         .flex-1
+          input(type="hidden")
           .font-os.text-lg.mb-4.uppercase.text-center {{ area }}
           .font-okib.font-bold.text-4xl.mb-2(v-if='!is_national') {{ place }}
           .text-orange.font-bold
@@ -55,7 +56,7 @@
 
         .w-1_6.hidden.lg_block
           .border.border-seashell.m-2.p-2.text-center
-            a(:href="`https://pdf-api.weareapartments.org/api/render?emulateScreenMedia=false&url=${host}`")
+            a(:href="`https://pdf-api.weareapartments.org/api/render?waitFor=input&emulateScreenMedia=false&url=${host}`")
               .mdi.mdi-48px.mdi-file-pdf
               .text-center.font-bold.underline Printable PDF
             .flex.justify-center.mt-8
