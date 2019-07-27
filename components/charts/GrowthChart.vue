@@ -20,6 +20,7 @@ export default {
   data () {
     return {
       chartdata: {
+        animation: false,
         labels: [2016, 2030],
         datasets: [{
           ...charts.datasetLine,

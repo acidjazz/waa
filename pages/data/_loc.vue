@@ -21,6 +21,10 @@
           DataDetailRepair(:area="area")
           StockAge(:area="area")
 
+      .print_hidden(v-if="area.district")
+        .bg-black.h-2.my-12
+        DataDistrictNeeded(:area="area")
+        .bg-black.h-2.my-12
       .print_hidden(v-if="!area.district")
         .bg-black.h-2.my-12
         DataName(:name="`other data - ${area.value}`")
@@ -52,6 +56,8 @@ import DataDetailRepair from '@/components/data/DataDetailRepair'
 import RenterGrowth from '@/components/data/RenterGrowth'
 import StockAge from '@/components/data/StockAge'
 
+import DataDistrictNeeded from '@/components/data/DataDistrictNeeded'
+
 import DataPersons from '@/components/data/DataPersons'
 import DataHouseType from '@/components/data/DataHouseType'
 
@@ -73,6 +79,8 @@ export default {
 
     RenterGrowth,
     StockAge,
+
+    DataDistrictNeeded,
 
     DataPersons,
     DataHouseType,
