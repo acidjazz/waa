@@ -1,8 +1,8 @@
 <template lang="pug">
 .page.page-calculate.pt-16.bg-white.print_pt-0
-  .flex.justify-center.lg_py-32.min-h-screen.print_py-0.print_bg-white
-    .bg-white.w-screen.max-w-5xl.lg_p-8.p-4.text-black.text-left(v-if="show")
-      .max-w-4xl.mx-auto.flex.items-stretch
+  .bg-tranpurp.flex.justify-center.lg_py-32.min-h-screen.print_py-0.print_bg-white
+    .bg-white.w-screen.max-w-5xl.lg_p-8.p-4.text-black.text-left
+      .max-w-4xl.mx-auto.flex.items-stretch(v-if="show")
 
         .w-1_6.hidden.lg_block
         .flex-1
@@ -56,7 +56,7 @@
 
         .w-1_6.hidden.lg_block
           .border.border-seashell.m-2.p-2.text-center
-            a(:href="`https://pdf-api.weareapartments.org/api/render?waitFor=input&emulateScreenMedia=false&url=${host}`")
+            a(:href="`https://pdf-api.weareapartments.org/api/render?emulateScreenMedia=false&url=${host}`")
               .mdi.mdi-48px.mdi-file-pdf
               .text-center.font-bold.underline Printable PDF
             .flex.justify-center.mt-8
