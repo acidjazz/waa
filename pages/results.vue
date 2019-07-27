@@ -53,11 +53,11 @@
               .w-2_3.text-bolder Total Jobs Supported
               .text-right.text-bolder {{ totalJobs | numeral }}
 
-
         .w-1_6.hidden.lg_block
           .border.border-seashell.m-2.p-2.text-center
-            .mdi.mdi-48px.mdi-file-pdf
-            .text-center.font-bold.underline Printable PDF
+            a(:href="`https://pdf-api.weareapartments.org/api/render?emulateScreenMedia=false&url=${host}`")
+              .mdi.mdi-48px.mdi-file-pdf
+              .text-center.font-bold.underline Printable PDF
             .flex.justify-center.mt-8
               .mdi.mdi-24px.mdi-facebook-box
               .mdi.mdi-24px.mdi-twitter
@@ -86,6 +86,10 @@ export default {
     }
   },
   computed: {
+    host () {
+      if (!process.browser) return false
+      return window.document.URL
+    },
     hash_array () { return this.$route.hash.substr(1).split(/\//g) },
     type () { return this.hash_array[0] },
     is_new () { return this.type === 'new' },
