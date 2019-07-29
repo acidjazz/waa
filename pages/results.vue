@@ -3,7 +3,6 @@
   .bg-tranpurp.flex.justify-center.lg_py-32.min-h-screen.print_py-0.print_bg-white
     .bg-white.w-screen.max-w-5xl.lg_p-8.p-4.text-black.text-left
       .max-w-4xl.mx-auto.flex.items-stretch(v-if="show")
-
         .w-1_6.hidden.lg_block
         .flex-1
           .font-os.text-lg.mb-4.uppercase.text-center {{ area }}
@@ -55,7 +54,7 @@
 
         .w-1_6.hidden.lg_block
           .border.border-seashell.m-2.p-2.text-center
-            a(:href="`https://pdf-api.weareapartments.org/api/render?emulateScreenMedia=false&goto.waitUntil=networkidle&scrollPage=true&url=${host}`")
+            a(:href="url")
               .mdi.mdi-48px.mdi-file-pdf
               .text-center.font-bold.underline Printable PDF
             .flex.justify-center.mt-8
@@ -82,7 +81,14 @@ export default {
     }
   },
   computed: {
-    host () { return process.browser ? window.document.URL : false },
+    host () { return process.browser ? encodeURI(window.document.URL).replace(/#/g, '%23') : false },
+    url () {
+      return 'https://pdf-api.weareapartments.org/api/render?' +
+      Object.entries({
+        emulateScreenMedia: 'false',
+        url: this.host,
+      }).map(v => `${v[0]}=${v[1]}`).join('&')
+    },
     hash_array () { return this.$route.hash.substr(1).split(/\//g) },
     type () { return this.hash_array[0] },
     is_new () { return this.type === 'new' },
@@ -121,7 +127,7 @@ export default {
     },
   },
 
-  created () { this.show = true },
+  mounted () { this.show = true },
 
 }
 </script>
