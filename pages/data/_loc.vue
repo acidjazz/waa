@@ -3,8 +3,10 @@
   DataFilters(@chose="chose")
   div(v-if="chosen")
     DataSummary(:area="area")
-    OffsetSection.mt-0
+    OffsetSection.mt-0.relative
       DataName(:area="area")
+      .absolute.right-0.top-0.mr-8.mt-8
+        PrintAndShare
       .flex.lg_w-11_12.mx-auto.-p-4.flex-col.lg_flex-row.print_flex-row
         .lg_w-1_2.pr-4.print_w-1_2.flex.flex-col.justify-around
           DataDetailResidents(:area="area")
@@ -42,6 +44,7 @@
 
 <script>
 import OffsetSection from '@/components/global/OffsetSection'
+import PrintAndShare from '@/components/global/PrintAndShare'
 import DataFilters from '@/components/data/DataFilters'
 import DataSummary from '@/components/data/DataSummary'
 import DataDetail from '@/components/data/DataDetail'
@@ -67,6 +70,7 @@ import MetroCompareResults from '@/components/data/MetroCompareResults'
 export default {
   components: {
     OffsetSection,
+    PrintAndShare,
     DataFilters,
     DataSummary,
 
