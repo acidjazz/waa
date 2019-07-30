@@ -18,6 +18,7 @@ export default {
     url () {
       return 'https://pdf-api.weareapartments.org/api/render?' +
       Object.entries({
+        scrollPage: 'true',
         emulateScreenMedia: 'false',
         url: this.host,
       }).map(v => `${v[0]}=${v[1]}`).join('&')
