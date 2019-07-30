@@ -16,7 +16,7 @@ export default {
       .filter(Boolean))]
   },
   districts () {
-    return Object.assign(...this.filters().map(([key, ab, metros, districts]) => ({[key]: districts*1})))
+    return Object.assign(...this.filters().map(([key, , , districts]) => ({[key]: districts*1})))
   },
   encode (value) {
     return value.toString().trim().replace(/ |-/g, '_')
