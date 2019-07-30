@@ -1,5 +1,5 @@
 <template lang="pug">
-.page.page-data.pt-20.bg-black.print_pt-0.print_bg-white
+.page.page-data.pt-20.bg-black.print_pt-0.print_bg-white.print_min-h-screen
   DataFilters(@chose="chose")
   div(v-if="chosen")
     DataSummary(:area="area")
