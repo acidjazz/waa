@@ -5,9 +5,9 @@
     .text-lg.mb-2 Apartment demand is growing and the industry needs to keep up. However, producing enough new apartments to meet demand requires new development approaches, more incentives and fewer restrictions.
     .text-lg
       | The construction of every 100 apartment units in your district contributes
-      .data-val ${{ format(contribution.Construction_Economic_Impact) }}
+      .data-val ${{ contribution.Construction_Economic_Impact | numeral }}
       | and
-      .data-val {{ format(contribution.Construction_Employment_Impact) }}
+      .data-val {{ contribution.Construction_Employment_Impact | numeral }}
       | jobs to the state economy.
 </template>
 

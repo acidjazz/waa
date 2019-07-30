@@ -6,7 +6,7 @@
   .text-bolder.text-3xl.print_text-xl {{ increase }}% Increase
   .text Forecasted by the year 2030
   .bar.w-16.h-1.bg-mountainmeadow.my-2
-  GrowthChart(:current="current",:future="future",:height="140")
+  GrowthChart(:current="current",:future="future",:height="140").w-5_6.print_-mt-8
 </template>
 
 <script>

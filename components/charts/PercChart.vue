@@ -12,9 +12,9 @@
       .absolute.bg-coolblue.inset-0.tran-width.inset-y(:style="`width: ${perc(value)}%;`")
 </template>
 <script>
-import inViewport from 'vue-in-viewport-mixin'
+// import inViewport from 'vue-in-viewport-mixin'
 export default {
-  mixins: [ inViewport ],
+  // mixins: [ inViewport ],
   props: {
     datas: {
       type: Object,
@@ -26,13 +26,13 @@ export default {
       default: false,
     },
   },
-  data () { return { fire: this.print ? true : false, } },
+  data () { return { fire: true, } },
   computed: {
     vals () { return Object.values(this.datas) },
     sum () { return this.vals.reduce( (a,b) => a + b) },
   },
 
-  watch: { 'inViewport.now' (visible) { return this.fire = visible } },
+  // watch: { 'inViewport.now' (visible) { return this.fire = visible } },
 
   methods: {
     perc (value) {
