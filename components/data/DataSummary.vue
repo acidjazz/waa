@@ -1,5 +1,5 @@
 <template lang="pug">
-.mt-24.pt-24.bg-trantrue.text-center.text-white.pb-64.-mb-48.print_mt-0.print_p-4.print_mb-0
+.mt-24.pt-24.bg-trantrue.text-center.text-white.pb-64.-mb-48.print_m-0.print_p-4.print_mb-0
   .font-os.uppercase(v-if="area.metro") {{ area.state }}
   .font-os.uppercase(v-if="area.district") {{ area.state }}
   .text-5xl.mb-4.text-bolder.ani-sit.print_text-4xl {{ area.value }}

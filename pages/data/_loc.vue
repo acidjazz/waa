@@ -1,5 +1,5 @@
 <template lang="pug">
-.page.page-data.pt-20.bg-black.print_pt-0.print_bg-white.print_min-h-screen
+.page.page-data.pt-20.bg-black.print_pt-0.print_bg-white
   DataFilters(@chose="chose")
   div(v-if="chosen")
     DataSummary(:area="area")
@@ -10,7 +10,7 @@
       .flex.lg_w-11_12.mx-auto.-p-4.flex-col.lg_flex-row.print_flex-row
         .lg_w-1_2.pr-4.print_w-1_2.flex.flex-col.justify-around
           DataDetailResidents(:area="area")
-          .bg-black.h-2
+          .bg-black.h-2.-mt-2
           DataDetailHomes(v-if="area.district",:area="area")
           DataDetailNeeded(v-else,:area="area")
           RenterGrowth(v-if="!area.district",:area="area")
