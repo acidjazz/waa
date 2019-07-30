@@ -8,8 +8,7 @@ let routes = ['/data']
 
 filters.states().map(v => routes.push(`/data/${filters.encode(v)}`))
 filters.metros().map(v => routes.push(`/data/${filters.encode(v)}`))
-filters.metros().map((k,v) =>
-  Array(v).fill().map((_, n) =>
-    routes.push(`/data/${filters.encode(k)}-${numeral(n).format('0o')}`)))
-
+Object.entries(filters.districts()).map( ([s,d]) => {
+    Array(d).fill().map((_, n) => routes.push(`/data/${filters.encode(s)}-${numeral(n+1).format('0o')}`))
+})
 fs.writeFileSync('./data/routes.json', JSON.stringify(routes, null, 2))
