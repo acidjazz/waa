@@ -6,7 +6,7 @@
         .absolute.right-0
           PrintAndShare
         .font-os.text-lg.mb-4.uppercase.text-center {{ area }}
-        .font-okib.font-bold.text-4xl.mb-2(v-if='!is_national') {{ place }}
+        .text-bolder.text-4xl.mb-2(v-if='!is_national') {{ place }}
         .text-orange.font-bold
           | Economic Impact of {{ homes }} {{ is_new ? 'New' : 'Existing' }} Apartment Homes.
 
