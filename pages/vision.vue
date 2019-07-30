@@ -5,6 +5,7 @@
   OffsetSection
     VisionBuild
     VisionIncome
+  VisionFAQ
   TheReport
 </template>
 
@@ -15,6 +16,7 @@ import VisionOutreach from '@/components/vision/VisionOutreach'
 import VisionBuild from '@/components/vision/VisionBuild'
 import VisionIncome from '@/components/vision/VisionIncome'
 import TheReport from '@/components/global/TheReport'
+import VisionFAQ from '@/components/vision/VisionFAQ'
 export default {
   components: {
     VisionHero,
@@ -23,6 +25,7 @@ export default {
     VisionBuild,
     VisionIncome,
     TheReport,
+    VisionFAQ,
   },
 }
 </script>
