@@ -15,8 +15,6 @@
           img(src="/icon-nmhc.png").mr-8.object-contain.h-8
         a(href="https://www.naahq.org/",target="_new")
           img(src="/icon-naa.png").object-contain.h-8
-
-
 </template>
 
 

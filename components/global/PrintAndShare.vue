@@ -21,7 +21,7 @@ export default {
         scrollPage: 'true',
         emulateScreenMedia: 'false',
         url: this.host,
-      }).map(v => `${v[0]}=${v[1]}`).join('&')
+      }).map(([k,v]) => `${k}=${v}`).join('&')
     },
   },
 }

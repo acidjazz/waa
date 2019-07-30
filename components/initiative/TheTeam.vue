@@ -1,7 +1,7 @@
 <template lang="pug">
 OffsetSection
   .flex.flex-col.lg_flex-row
-    img(src="/pathway.jpg").w-full.lg_w-2_3.mb-4
+    img(src="/initiative-team.jpg").w-full.lg_w-2_3.mb-4
     .lg_ml-10.ml-0
       .font-os.mb-4(v-in-vp).vp-r PEOPLE
       .text-5xl.font-okib.font-bold.mb-4(v-in-vp).vp-r.vp-d-1 The Team

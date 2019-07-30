@@ -22,6 +22,8 @@
           DataDetailRepair(:area="area")
           StockAge(:area="area")
 
+      PrintFooter
+
       div(v-if="area.district")
         .bg-black.h-2.my-12
         DataDistrictNeeded(:area="area")
@@ -67,6 +69,8 @@ import DataBarriers from '@/components/data/DataBarriers'
 
 import MetroCompareSelect from '@/components/data/MetroCompareSelect'
 import MetroCompareResults from '@/components/data/MetroCompareResults'
+
+import PrintFooter from '@/components/global/PrintFooter'
 export default {
   components: {
     OffsetSection,
@@ -89,6 +93,8 @@ export default {
     DataHouseType,
 
     DataBarriers,
+
+    PrintFooter,
 
     MetroCompareSelect,
     MetroCompareResults,
