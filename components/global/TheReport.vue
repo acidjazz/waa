@@ -2,7 +2,7 @@
 OffsetSection.bg-deepsky
   .flex
     a.flex.items-center.w-12.cursor-pointer(@click="prev")
-      i.mdi.mdi-chevron-left.mdi-48px.w-4.-ml-4.text-white
+      i.mdi.mdi-chevron-left.mdi-48px.-ml-4.text-white
     transition(:name="direction",mode="out-in")
       .ml-10.text-white(key="report",v-if="section === 'report'").lg_h-48
         .text-bolder.text-4xl.mb-4 The Report
@@ -35,7 +35,7 @@ OffsetSection.bg-deepsky
                 div.pl-4
                   i.mdi.mdi-file-pdf-outline.mdi-48px
     a.flex.items-center.w-12.cursor-pointer(@click="next")
-      i.mdi.mdi-chevron-right.mdi-48px.w-4.lg_-mr-4.text-white.-ml-4
+      i.mdi.mdi-chevron-right.mdi-48px.lg_-mr-4.text-white
 </template>
 
 <script>
