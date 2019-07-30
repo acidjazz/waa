@@ -1,5 +1,5 @@
 <template lang="pug">
-.page.page-initiative
+.page.page-initiative.bg-black
   InitHero
   TheResearch
   TheTeam
