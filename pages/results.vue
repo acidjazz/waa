@@ -6,7 +6,7 @@
         .absolute.right-0
           PrintAndShare
         .font-os.text-lg.mb-4.uppercase.text-center {{ area }}
-        .font-bold.text-5xl.mb-2(v-if='!is_national') {{ place }}
+        .font-okib.text-5xl.mb-2(v-if='!is_national') {{ place }}
         .text-orange.font-bold
           | Economic Impact of {{ homes }} {{ is_new ? 'New' : 'Existing' }} Apartment Homes.
 
@@ -24,8 +24,8 @@
             .text.w-1_2 Resident Spending
             .w-1_2.text-right ${{ spendingContribution | numeral }}
           .flex.items-center.justify-between.lg_mr-12
-            .text-xl.font-bold.w-1_2 Total Economic Impact
-            .text-xl.font-bold.w-1_2.text-right ${{ totalImpact | numeral }}
+            .text-xl.text-bolder.w-1_2 Total Economic Impact
+            .text-xl.text-bolder.w-1_2.text-right ${{ totalImpact | numeral }}
 
           .bg-seashell.p-4.my-4.rounded.border.border-alum
             .text-xl Impact form Tax Revenue
