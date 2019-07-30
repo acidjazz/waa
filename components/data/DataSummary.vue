@@ -3,7 +3,7 @@
   .font-os.uppercase(v-if="area.metro") {{ area.state }}
   .font-os.uppercase(v-if="area.district") {{ area.state }}
   .text-5xl.mb-4.text-bolder.ani-sit.print_text-4xl {{ area.value }}
-  .lg_w-128.text-lg.mx-auto.ani-sit.ani-d-1.mb-8.px-2.print_mb-2
+  .lg_w-128.text-2xl.mx-auto.ani-sit.ani-d-1.mb-8.px-2.print_mb-2
     | {{ area.value }} apartments and their residents contribute
     |
     no-ssr(v-if="contribution")

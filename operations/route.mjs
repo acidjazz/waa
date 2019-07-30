@@ -4,7 +4,7 @@ import filters from '../operations/filters.mjs'
 import numeral from 'numeral'
 import fs from 'fs'
 
-let routes = []
+let routes = ['/data']
 
 filters.states().map(v => routes.push(`/data/${filters.encode(v)}`))
 filters.metros().map(v => routes.push(`/data/${filters.encode(v)}`))
