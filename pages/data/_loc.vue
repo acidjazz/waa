@@ -23,7 +23,7 @@
           StockAge(:area="area")
 
       div(v-if="area.district")
-        .bg-black.h-2.my-12.print_my-2
+        .bg-black.h-2.my-12.print_mt-8.print_my-2
         DataDistrictNeeded(:area="area")
         .bg-black.h-2.my-12.print_hidden
       .print_hidden(v-if="!area.district")
