@@ -1,7 +1,8 @@
 <template lang="pug">
 #DataDetailRepair
   .text-bolder.text-6xl.print_text-3xl
-    VueCountUp(:endVal="count_val(Math.round(before_eighty*100))", :options="{}")
+    VueCountUp.print_hidden(:endVal="count_val(Math.round(before_eighty*100))", :options="{}")
+    span.hidden.print_inline {{ before_eighty*100 | numeral('0,0a') }}
     | %
     .text-bolder.text-2xl.print_text-lg
       |
