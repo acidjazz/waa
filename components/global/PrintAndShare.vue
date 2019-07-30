@@ -20,10 +20,10 @@ export default {
       Object.entries({
         scrollPage: 'true',
         emulateScreenMedia: 'false',
-        'pdf.margin.top': '2cm',
-        'pdf.margin.bottom': '2cm',
-        'pdf.margin.left': '2cm',
-        'pdf.margin.right': '2cm',
+        'pdf.margin.top': '1cm',
+        'pdf.margin.bottom': '1cm',
+        'pdf.margin.left': '1cm',
+        'pdf.margin.right': '1cm',
         url: this.host,
       }).map(([k,v]) => `${k}=${v}`).join('&')
     },
