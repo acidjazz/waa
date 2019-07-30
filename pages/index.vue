@@ -1,5 +1,5 @@
 <template lang="pug">
-.page.page-home
+.page.page-home.bg-black
   HomeHero
   LatestArticles(:feed="feed")
   TheDemand

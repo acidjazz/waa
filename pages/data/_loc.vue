@@ -22,12 +22,10 @@
           DataDetailRepair(:area="area")
           StockAge(:area="area")
 
-      PrintFooter
-
       div(v-if="area.district")
-        .bg-black.h-2.my-12
+        .bg-black.h-2.my-12.print_my-2
         DataDistrictNeeded(:area="area")
-        .bg-black.h-2.my-12
+        .bg-black.h-2.my-12.print_hidden
       .print_hidden(v-if="!area.district")
         .bg-black.h-2.my-12
         DataName(:name="`other data - ${area.value}`")
@@ -37,6 +35,7 @@
           .flex.flex-col.lg_flex-row.-p-4
             DataPersons.lg_w-1_2.lg_pr-8.mb-8(:area="area")
             DataHouseType.lg_w-1_2.lg_pl-8.mb-8(:area="area")
+      PrintFooter
     OffsetSection.print_hidden
       DataBarriers(:area="area")
     OffsetSection.print_hidden
