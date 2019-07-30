@@ -19,9 +19,14 @@ export default {
     datas: {
       type: Object,
       required: true,
-    }
+    },
+    print: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
-  data () { return { fire: false, } },
+  data () { return { fire: this.print ? true : false, } },
   computed: {
     vals () { return Object.values(this.datas) },
     sum () { return this.vals.reduce( (a,b) => a + b) },
