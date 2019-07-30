@@ -3,19 +3,18 @@ OffsetSection.bg-deepsky
   .flex
     a.flex.items-center.w-4.cursor-pointer(@click="prev")
       i.mdi.mdi-chevron-left.mdi-48px.w-4.-ml-4.text-white
-
     transition(:name="direction",mode="out-in")
-      .lg_ml-10.ml-0.text-white(key="report",v-if="section === 'report'").h-48
+      .ml-10.text-white(key="report",v-if="section === 'report'").lg_h-48
         .text-bolder.text-4xl.mb-4 The Report
-        .flex
-          .w-2_3.text-xl
-            .w-2_3
+        .flex.flex-col.lg_flex-row
+          .lg_w-2_3.text-xl
+            .lg_w-2_3
               | NMHC and NAA partnered with
               a.text-bold.underline.px-2(href="http://hoytgroup.org/hoyt-advisory-services/") Hoyt Advisory Services
               | to identify the demand for apartments through 2030.  Download their analysis of the apartment industry.
-          .w-1_3
-            a.inline-block.border.border-white.rounded.p-4.hover_shadow.hover_bg-white.hover_text-deepsky(href="/NMHC-NAA-US-Apartment-Demand-in-2030.pdf")
-              .flex
+          .lg_w-1_3.text-center
+            a.mt-4.lg_mt-0.inline-block.border.border-white.rounded.p-4.hover_shadow.hover_bg-white.hover_text-deepsky.tran-colors(href="/NMHC-NAA-US-Apartment-Demand-in-2030.pdf")
+              .flex.text-left
                 div
                   .text-sm U.S. Apartment
                   .text-sm Demand – A
@@ -23,23 +22,20 @@ OffsetSection.bg-deepsky
                   .text-sm.text-bold.underline Download PDF
                 div.pl-4
                   i.mdi.mdi-file-pdf-outline.mdi-48px
-      .lg_ml-10.ml-0.text-white(key="vision",v-else).h-48
+      .ml-10.text-white(key="vision",v-else).lg_h-48
         .text-bolder.text-4xl.mb-4 A Vision for 2030
-        .flex
-          .w-2_3.text-xl
-            .w-2_3
+        .flex.flex-col.lg_flex-row
+          .lg_w-2_3.text-xl
+            .lg_w-2_3
               | Meeting the country's demand for apartments will take courageous steps at the federal, state and local levels.
-          .w-1_3
-            a.inline-block.border.border-white.rounded.p-4.hover_shadow.hover_bg-white.hover_text-deepsky(href="/Vision2030.pdf")
+          .lg_w-1_3.text-center
+            a.mt-4.lg_mt-0.inline-block.border.border-white.rounded.p-4.hover_shadow.hover_bg-white.hover_text-deepsky.tran-colors(href="/Vision2030.pdf")
               .flex.items-center
                 .text-sm.text-bold.underline Download PDF
                 div.pl-4
                   i.mdi.mdi-file-pdf-outline.mdi-48px
     a.flex.items-center.w-4.cursor-pointer(@click="next")
-      i.mdi.mdi-chevron-right.mdi-48px.w-4.-mr-4.text-white
-
-
-
+      i.mdi.mdi-chevron-right.mdi-48px.w-4.lg_-mr-4.text-white.-ml-4
 </template>
 
 <script>
