@@ -1,5 +1,5 @@
 <template lang="pug">
-select.text-xl.bg-seashell.p-4.w-full.font-bold(@input="update")
+select.text-xl.bg-seashell.p-2.w-full.font-bold(@input="update")
   option(:selected="value == '' || !options.includes(value)") {{ placeholder }}
   option(
     v-for="option in options",
