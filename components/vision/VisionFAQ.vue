@@ -1,7 +1,11 @@
 <template lang="pug">
 #VisionFAQ.p-2.pb-4.text-white
-  .mx-auto.max-w-4xl
-    .text-4xl.text-bolder.mb-10 Why should I care?
+  .mx-auto.max-w-4xl.relative
+    .text-bolder.mb-10.flex.flex-row
+      .short.mr-2.text-center.tran-all-1s.cursor-pointer(
+        @click="current = index",
+        v-for="qa, index in faq",
+        :class="{'o-p2': index != current}") {{ qa.Short_Question }}
     .timer-bar.relative.w-full.h-1(v-in-vp).vp-y
       .absolute.bg-white.h-1.w-full
       .absolute.bg-coolblue.h-1.left-0(
@@ -12,6 +16,9 @@
         i.mdi.mdi-chevron-left.cursor-pointer(@click="next")
       .border.border-white.rounded-full.w-10.text-center.hover_border-coolblue.vp-l.vp-d-1(v-in-vp)
         i.mdi.mdi-chevron-right.cursor-pointer(@click="prev")
+    .absolute.scale-2.opacity-p1.-mt-4
+      .text-bolder.text-6xl Q
+      .text-bolder.text-6xl.-mt-8 A
     .copy(v-in-vp).vp-y.vp-d-2.h-24
       transition(name="fade-in-right")
         .mt-4.lg_w-10_12.lg_mt-0.ml-8.relative(
@@ -19,7 +26,7 @@
           v-if="index === current",
           :key="index",
           v-in-vp)
-            .text-2xl.text-bold {{ qa.Question }}
+            .text-2xl.text-bolder {{ qa.Question }}
             .mt-4 {{ qa.Answer }}
 </template>
 
@@ -37,6 +44,7 @@ export default {
   },
   computed: {
     faq () { return Object.values(this.sheet('main', 'CopyFAQVision', 'Num')) },
+    cfaq () { return this.faq[this.current] },
   },
   watch: {
     'inViewport.now' (visible) {

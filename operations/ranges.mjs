@@ -16,8 +16,8 @@ export default {
         values: "'Home-Demand'!A3:E16",
       },
       CopyFAQVision: {
-        labels: "Copy!A16:C16",
-        values: "Copy!A17:C22",
+        labels: "Copy!A16:D16",
+        values: "Copy!A17:D22",
       },
       CopyTickerHome: {
         values: "Copy!A4:A7",
