@@ -41,7 +41,7 @@
     OffsetSection.print_hidden
       MetroCompareSelect(@compare="compare")
       MetroCompareResults(v-if="comparison",:comparison="comparison")
-    DataSource.print_hidden
+    DataSource
 </template>
 
 <script>

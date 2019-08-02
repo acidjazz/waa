@@ -1,5 +1,5 @@
 <template lang="pug">
-.canister
+.print_hidden.canister
   .text-white.text-xs(v-in-vp).vp-y
     span Source:
     span &nbsp;
