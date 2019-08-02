@@ -11,7 +11,7 @@
     | new apartment homes each year to meet demand.  Apartment construction contributes
     .data-val ${{ contribution.Construction_Economic_Impact | numeral }}
     | to {{ loc_copy }}'s economy annually, creating
-    .data-val ${{ contribution.Construction_Employment_Impact | numeral }}
+    .data-val {{ contribution.Construction_Employment_Impact | numeral }}
     | jobs
 </template>
 

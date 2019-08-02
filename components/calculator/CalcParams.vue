@@ -34,7 +34,7 @@ OffsetSection
       .w-4_5.mr-4.flex
         CheckBox(:checked="by === 'national'").w-12.mr-4
         select.text-xl.bg-seashell.p-2.w-full.font-bold(disabled,readonly)
-          option(selected, value="National") Natonal
+          option(selected, value="National") National
 
     .flex.items-center.mb-2.cursor-pointer(@click="by = 'metro'")
       .w-1_5.mr-8.text-right
