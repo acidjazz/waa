@@ -44,6 +44,7 @@ export default {
   },
   computed: {
     facts () { return this.sheet('main', this.range, false).flat() },
+    delay () { return this.sheet('main', 'CopyTickerDelay', false).flat()[1] },
   },
   watch: {
     'inViewport.now' (visible) {
@@ -52,8 +53,11 @@ export default {
     }
   },
   methods: {
-    start () { this.interval = setInterval(this.tick, 1000) },
-    end () { clearInterval(this.interval) },
+    start () { this.interval = setInterval(this.tick, this.delay*200) },
+    end () {
+      clearInterval(this.interval)
+      this.width = 0
+    },
     tick () {
       if (this.width === 100) this.next(false)
       return this.width = (this.width >= 100) ? 0 : this.width+20

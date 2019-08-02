@@ -15,6 +15,9 @@ export default {
       HomeDemand: {
         values: "'Home-Demand'!A3:E16",
       },
+      CopyTickerDelay: {
+        values: "Copy!A24:A25",
+      },
       CopyFAQVision: {
         labels: "Copy!A16:D16",
         values: "Copy!A17:D22",

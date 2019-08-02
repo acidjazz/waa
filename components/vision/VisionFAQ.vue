@@ -3,7 +3,7 @@
   .mx-auto.max-w-4xl.relative
     .text-bolder.mb-10.flex.flex-row
       .short.mr-2.text-center.tran-all-1s.cursor-pointer(
-        @click="current = index",
+        @click="current = index; width = 0",
         v-for="qa, index in faq",
         :class="{'o-p2': index != current}") {{ qa.Short_Question }}
     .timer-bar.relative.w-full.h-1(v-in-vp).vp-y
@@ -48,8 +48,8 @@ export default {
   },
   watch: {
     'inViewport.now' (visible) {
-      if (visible) this.start()
-      if (!visible) this.end()
+      //if (visible) this.start()
+      //if (!visible) this.end()
     }
   },
   mounted () {
@@ -62,11 +62,11 @@ export default {
       if (this.width === 100) this.next(false)
       return this.width = (this.width >= 100) ? 0 : this.width+20
     },
-    next (reset=true) {
+    prev (reset=true) {
       if (this.reset) this.width = 0
       this.current = this.current === (this.faq.length-1) ? 0 : this.current+1
     },
-    prev (reset=true) {
+    next (reset=true) {
       if (this.reset) this.width = 0
       this.current = this.current === 0 ? this.faq.length-1 : this.current-1
     },
