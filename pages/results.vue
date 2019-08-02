@@ -50,9 +50,8 @@
             .text.w-1_2 Resident Spending
             .w-1_2.text-right {{ spendingJobs | numeral }}
             .w-2_3.text-bolder Total Jobs Supported
-            .text-right.text-bolder {{ totalJobs | numeral }}
+            .text-right.text-bolder {{ totalJobs| numeral }}
 </template>
-
 
 <script>
 import sheets from '@/mixins/sheets'

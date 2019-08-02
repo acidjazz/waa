@@ -102,6 +102,10 @@ export default {
     second () { return this.key(this.comparison[1]) },
   },
 
+  mounted () {
+    console.log(this.comparison)
+  },
+
   methods: {
     val (val) {
       return val.toString().replace(/\$/g, '')*1

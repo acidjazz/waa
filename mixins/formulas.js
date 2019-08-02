@@ -5,22 +5,24 @@
  * Distributed under terms of the APACHE license.
  */
 
+import numeral from 'numeral'
 export default {
   computed: {
     totalJobs () {
-      return (this.is_new ? this.constructionJobs : 0) +
-        this.operationJobs +
-        this.spendingJobs
+      return (this.is_new ? this.n(this.constructionJobs) : 0) +
+        this.n(this.renovationJobs) +
+        this.n(this.operationJobs) +
+        this.n(this.spendingJobs)
     },
     totalImpact () {
-      return (this.is_new ? this.constructionContribution : 0) +
-        this.renovationImpact +
-        this.operationContribution +
-        this.spendingContribution
+      return (this.is_new ? this.n(this.constructionContribution) : 0) +
+        this.n(this.renovationImpact) +
+        this.n(this.operationContribution) +
+        this.n(this.spendingContribution)
     },
     totalImpactTax () {
-      return this.operationExpenditures +
-        this.spendingResident
+      return this.n(this.operationExpenditures) +
+        this.n(this.spendingResident)
     },
     renovationImpact () {
       return this.homes *
@@ -97,5 +99,10 @@ export default {
         this.spendingImpacts[this.ckey].Total_Consumer_Spending /
         this.spendingImpacts[this.ckey].Total_Number_of_Renter_Households
     },
-  }
+  },
+  methods: {
+    n (val) {
+      return numeral(val).format('0,0').replace(/,/g, '')*1
+    }
+  },
 }
