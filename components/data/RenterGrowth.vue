@@ -1,8 +1,6 @@
 <template lang="pug">
 #RenterGrowth
-  .flex.items-center.my-4.print_my-0
-    .w-2.h-2.mr-4.bg-trueblue
-    .text-2xl.font-bold.print_text-lg Renter Household Growth
+  .text-2xl.font-bold.print_text-lg Renter Household Growth
   .text-bolder.text-3xl.print_text-xl {{ increase }}% Increase
   .text Forecasted by the year 2030
   .bar.w-16.h-1.bg-mountainmeadow.my-2.print_hidden
