@@ -3,7 +3,7 @@
   .canister.flex.flex-col.lg_flex-row
     .w-full.lg_w-1_2.mb-10.lg_mb-0
       HeaderTitle.mb-4
-      .mt-4.ml-4.w-64 In communities across the country, apartments work - helping people live in a home that’s right for them.
+      .mt-4.w-64 In communities across the country, apartments work - helping people live in a home that’s right for them.
     div.w-full.lg_w-1_2.flex.flex-col.items-center.lg_items-end
       div
         .text-3xl.font-bold.mb-4 Join Us
