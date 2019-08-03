@@ -1,5 +1,5 @@
 <template lang="pug">
-#VisionFAQ.p-2.pb-4.text-white
+#VisionFAQ.py-4.text-white
   .mx-auto.max-w-4xl.relative
     .text-bolder.mb-10.flex.flex-row
       .short.mr-2.text-center.tran-all-1s.cursor-pointer(
@@ -19,7 +19,7 @@
     .absolute.scale-2.opacity-p1.-mt-4
       .text-bolder.text-6xl Q
       .text-bolder.text-6xl.-mt-8 A
-    .copy(v-in-vp).vp-y.vp-d-2.h-24
+    .copy(v-in-vp).vp-y.vp-d-2.lg_h-36
       transition(name="fade-in-right")
         .mt-4.lg_w-10_12.lg_mt-0.ml-8.relative(
           v-for="qa, index in faq",

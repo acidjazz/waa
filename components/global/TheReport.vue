@@ -67,7 +67,7 @@ export default {
         },
         impact: {
           bg: 'japonica',
-          fg: 'black',
+          fg: 'white',
         },
       }
     }

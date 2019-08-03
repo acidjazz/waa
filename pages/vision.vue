@@ -7,6 +7,7 @@
     VisionIncome
   VisionFAQ
   TheReport
+  SourceLine
 </template>
 
 <script>
@@ -17,6 +18,7 @@ import VisionBuild from '@/components/vision/VisionBuild'
 import VisionIncome from '@/components/vision/VisionIncome'
 import TheReport from '@/components/global/TheReport'
 import VisionFAQ from '@/components/vision/VisionFAQ'
+import SourceLine from '@/components/global/SourceLine'
 export default {
   components: {
     VisionHero,
@@ -26,6 +28,7 @@ export default {
     VisionIncome,
     TheReport,
     VisionFAQ,
+    SourceLine
   },
 }
 </script>
