@@ -1,6 +1,6 @@
 <template lang="pug">
 .canister
-  .text-white.text-xs(v-in-vp).vp-y
+  .text-white.text-xs(v-in-vp).vp-y.ml-10.lg_ml-0
     span Source:
     span &nbsp;
     a(href="http://hoytgroup.org/hoyt-advisory-services/",target="_new") Hoyt Advisory Services

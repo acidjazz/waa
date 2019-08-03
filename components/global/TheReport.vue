@@ -37,8 +37,8 @@
               .text-bolder.text-4xl.mb-4 Economic Impact
               .flex.flex-col.lg_flex-row
                 .lg_w-2_3.text-xl This report summarizes the methods and findings of a study that was conducted by Hoyt Advisory Services on  behalf  of  the  National  Apartment  Association  (NAA)  and  the  National  Multifamily  Housing  Council (NMHC). The study explored the impact the apartment industry had on the US economy in 2013 and 2016.
-                .lg_w-1_3.text-center
-                  a.mt-4.lg_mt-0.inline-block.border.rounded.p-4.hover_shadow(href="/Economic_Impact.pdf")
+                .lg_w-1_3
+                  a.mt-8.lg_mt-0.inline-block.border.rounded.p-4.hover_shadow(href="/Economic_Impact.pdf")
                     .flex.items-center
                       .text-sm.text-bold.underline Download PDF
                       .pl-4.text-white
