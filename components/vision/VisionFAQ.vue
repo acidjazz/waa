@@ -52,9 +52,6 @@ export default {
       //if (!visible) this.end()
     }
   },
-  mounted () {
-    console.log(this.faq)
-  },
   methods: {
     start () { this.interval = setInterval(this.tick, 1000) },
     end () { clearInterval(this.interval) },
