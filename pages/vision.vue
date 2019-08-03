@@ -6,7 +6,7 @@
     VisionBuild
     VisionIncome
   VisionFAQ
-  TheReport
+  TheReport(bg="supernova",fg="black")
 </template>
 
 <script>

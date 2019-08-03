@@ -6,7 +6,7 @@
   FactTicker(range="CopyTickerInit")
   GallerySection
   ThePeople
-  TheReport
+  TheReport(bg="scooter",fg="white")
   SourceLine
 </template>
 
