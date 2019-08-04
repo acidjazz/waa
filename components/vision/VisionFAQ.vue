@@ -1,8 +1,8 @@
 <template lang="pug">
-#VisionFAQ.py-4.text-white
-  .mx-auto.max-w-4xl.relative
-    .text-bolder.mb-10.flex.flex-row.overflow-scroll.whitespace-no-wrap.text-4xl.no-scrollbar
-      .short.mr-8.text-center.tran-all-1s.cursor-pointer(
+#VisionFAQ.text-white
+  .mx-auto.max-w-5xl.relative
+    .text-bolder.mb-10.flex.flex-row.overflow-scroll.whitespace-no-wrap.text-xl.lg_text-4xl.no-scrollbar
+      .short.mx-4.text-center.tran-all-1s.cursor-pointer(
         :ref="`short_${index}`",
         :id="`short_${index}`",
         @click="choose(index)",
