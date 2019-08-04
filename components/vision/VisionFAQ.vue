@@ -1,9 +1,11 @@
 <template lang="pug">
 #VisionFAQ.py-4.text-white
   .mx-auto.max-w-4xl.relative
-    .text-bolder.mb-10.flex.flex-row
-      .short.mr-2.text-center.tran-all-1s.cursor-pointer(
-        @click="current = index; width = 0",
+    .text-bolder.mb-10.flex.flex-row.overflow-scroll.whitespace-no-wrap.text-4xl.no-scrollbar
+      .short.mr-8.text-center.tran-all-1s.cursor-pointer(
+        :ref="`short_${index}`",
+        :id="`short_${index}`",
+        @click="choose(index)",
         v-for="qa, index in faq",
         :class="{'o-p2': index != current}") {{ qa.Short_Question }}
     .timer-bar.relative.w-full.h-1(v-in-vp).vp-y
@@ -53,6 +55,16 @@ export default {
     }
   },
   methods: {
+    choose(index) {
+      this.current = index
+      this.width = 0
+      if (process.browser) {
+        this.$refs[`short_${index}`][0].scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+          inline: 'start'})
+      }
+    },
     start () { this.interval = setInterval(this.tick, 1000) },
     end () { clearInterval(this.interval) },
     tick () {
