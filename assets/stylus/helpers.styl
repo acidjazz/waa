@@ -4,7 +4,9 @@
   height calc(100vh + 1rem)
 
 .h-screen-bl48
-  height calc(100vh + 12rem)
+  height 100vh
+  @media (min-width: 1024px)
+    height calc(100vh + 12rem)
 
 .scale-2
   transform scale(2)
@@ -82,10 +84,10 @@
 .mt-36px
   @media (min-width: 1024px)
     margin-top 26px
-  margin-top -25px
+  margin-top -28px
 
 .-mt-22px
-  margin-top -26px
+  margin-top -28px
   @media (min-width: 1024px)
     margin-top -22px
 

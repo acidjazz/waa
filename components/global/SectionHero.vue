@@ -1,5 +1,5 @@
 <template lang="pug">
-.w-screen.h-screen-bl48.relative.-mb-48
+.w-screen.h-screen-bl48.relative.lg_-mb-48
   video(
     v-if="type === 'video'",
     playsinline,
