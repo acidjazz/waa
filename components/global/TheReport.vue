@@ -4,11 +4,11 @@
     .mr-0.lg_mr-10
       .canister
         .flex
-          a.flex.items-center.w-12.cursor-pointer(@click="prev")
-            i.mdi.mdi-chevron-left.mdi-48px.-ml-4
+          a.flex.items-center.w-4.lg_w-12.cursor-pointer(@click="prev")
+            i.mdi.mdi-chevron-left.mdi-48px.lg_-ml-4.-ml-8
           transition(:name="direction",mode="out-in")
 
-            .ml-10(key="report",v-if="section == 'report'").lg_h-64
+            .ml-4.lg_ml-10(key="report",v-if="section == 'report'").lg_h-64
               .text-bolder.text-4xl.mb-4 The Report
               .flex.flex-col.lg_flex-row
                 .lg_w-2_3.text-xl
@@ -22,7 +22,7 @@
                       .pl-4.text-white
                         i.mdi.mdi-file-pdf-outline.mdi-48px
 
-            .ml-10(key="vision",v-else-if="section == 'vision'").lg_h-64
+            .lg_ml-10(key="vision",v-else-if="section == 'vision'").lg_h-64
               .text-bolder.text-4xl.mb-4 A Vision for 2030
               .flex.flex-col.lg_flex-row.items-center
                 .lg_w-2_3.text-xl Meeting the country's demand for apartments will take courageous steps at the federal, state and local levels.
@@ -33,7 +33,7 @@
                       .pl-4.text-white
                         i.mdi.mdi-file-pdf-outline.mdi-48px
 
-            .ml-10(key="impact",v-else-if="section == 'impact'").lg_h-64
+            .lg_ml-10(key="impact",v-else-if="section == 'impact'").lg_h-64
               .text-bolder.text-4xl.mb-4 Economic Impact
               .flex.flex-col.lg_flex-row
                 .lg_w-2_3.text-xl This report summarizes the methods and findings of a study that was conducted by Hoyt Advisory Services on  behalf  of  the  National  Apartment  Association  (NAA)  and  the  National  Multifamily  Housing  Council (NMHC). The study explored the impact the apartment industry had on the US economy in 2013 and 2016.
@@ -44,7 +44,7 @@
                       .pl-4.text-white
                         i.mdi.mdi-file-pdf-outline.mdi-48px
 
-          a.flex.items-center.w-12.cursor-pointer(@click="next")
+          a.flex.items-center.w-4.lg_w-12.cursor-pointer(@click="next")
             i.mdi.mdi-chevron-right.mdi-48px
 </template>
 
@@ -54,7 +54,7 @@ export default {
   components: { OffsetSection },
   data () {
     return  {
-      section: 'impact',
+      section: 'report',
       direction: 'slide-right',
       sections: {
         report: {
