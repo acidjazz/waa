@@ -107,7 +107,7 @@ export default {
     return {
       chosen: false,
       area: {},
-      comparison: ['Los Angeles', 'San Francisco'],
+      comparison: false,
     }
   },
   methods: {

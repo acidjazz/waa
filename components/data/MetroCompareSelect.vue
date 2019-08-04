@@ -8,7 +8,7 @@
     .mb-4 Enter two cities to cities below to compare how they stack up against another city.
     form(autocomplete="off").relative
       .input.relative.mb-4(v-for="name, input in inputs")
-        input.py-2.px-4.bg-seashell.w-96(
+        input.py-2.px-4.bg-seashell.lg_w-96(
           type="text",
           v-model="city[input].name",
           :placeholder="`ENTER CITY ${name}`",
@@ -21,8 +21,8 @@
     .flex.items-center
       .waa-button-black(v-if="ready",@click="compare") Calculate
       .waa-button-readonly(v-else) Calculate
-      .ml-6
-        i.mdi.mdi-close-circle.text-alum.mdi-36px.cursor-pointer(v-if="ready",@click="clear")
+      .ml-2
+        i.mdi.mdi-close-circle.text-alum.mdi-24px.cursor-pointer(v-if="ready",@click="clear")
 
 </template>
 
