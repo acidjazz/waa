@@ -64,7 +64,7 @@ export default {
         {
           label: 'Total Economic Contribution',
           compute: 'contribution',
-          key: 'Economic_Impact_($)',
+          key: 'Total_Economic_Impact',
           format: '$0.0a',
         },
         {
@@ -100,10 +100,6 @@ export default {
     },
     first () { return this.key(this.comparison[0]) },
     second () { return this.key(this.comparison[1]) },
-  },
-
-  mounted () {
-    console.log(this.comparison)
   },
 
   methods: {
