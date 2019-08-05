@@ -5,7 +5,7 @@
     DataSummary(:area="area")
     OffsetSection.mt-0.relative
       DataName(:area="area")
-      .absolute.right-0.top-0.mr-8.mt-8
+      .absolute.right-0.top-0.mr-1.mt-24.lg_mr-8.lg_mt-8
         PrintAndShare
       .flex.lg_w-11_12.mx-auto.-p-4.flex-col.lg_flex-row.print_flex-row
         .lg_w-1_2.pr-4.print_w-1_2.flex.flex-col.justify-around

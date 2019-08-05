@@ -15,6 +15,10 @@
         .ani-sib.relative(v-else)
           .inset-0.absolute
             .carat.mx-auto
+        //.absolute.-ml-10.-mr-10(v-if="option === 'district'")
+          .w-4.h-4.border-l.border-t.border-seashell.mx-auto.carat.-mb-2.bg-white
+          .border.border-seashell.rounded.bg-white.p-4.shadow
+            .text-sm Please choose a state
   .relative(v-if="select")
     .absolute.z-10.w-screen(:class="{'-mt-6': !has_scrolled, '-mt-2': has_scrolled}")
       .canister.p-4.lg_pl-20.bg-seashell.shadow-md.rounded-lg.ani-zi
