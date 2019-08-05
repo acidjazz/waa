@@ -82,14 +82,12 @@ export default {
       let a = Object.keys(this.sections)
       let s = a.indexOf(this.section)
       this.section = s == 2 ? 'report' : a[s+1]
-      console.log(this.section)
     },
     prev () {
       this.direction = 'slide-left'
       let a = Object.keys(this.sections)
       let s = a.indexOf(this.section)
       this.section = s == 0 ? 'impact' : a[s-1]
-      console.log(this.section)
     },
   },
 }
