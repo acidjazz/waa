@@ -8,6 +8,18 @@
         @click="choose(index)",
         v-for="qa, index in faq",
         :class="{'o-p2': index != current}") {{ qa.Short_Question }}
+      .block.px-16
+        | &nbsp;&nbsp;&nbsp;&nbsp;
+        | &nbsp;&nbsp;&nbsp;&nbsp;
+        | &nbsp;&nbsp;&nbsp;&nbsp;
+        | &nbsp;&nbsp;&nbsp;&nbsp;
+        | &nbsp;&nbsp;&nbsp;&nbsp;
+        | &nbsp;&nbsp;&nbsp;&nbsp;
+        | &nbsp;&nbsp;&nbsp;&nbsp;
+        | &nbsp;&nbsp;&nbsp;&nbsp;
+        | &nbsp;&nbsp;&nbsp;&nbsp;
+        | &nbsp;&nbsp;&nbsp;&nbsp;
+        | &nbsp;&nbsp;&nbsp;&nbsp;
     .timer-bar.relative.w-full.h-1(v-in-vp).vp-y
       .absolute.bg-white.h-1.w-full
       .absolute.bg-coolblue.h-1.left-0(
