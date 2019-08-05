@@ -42,9 +42,9 @@ export default {
           for (let j in values[i])
             if (values[i][j] !== '')
               row[this.key(labels[j])] = this.cleanse(values[i][j])
-          if (typeof key === 'object')
-            result[`${row[this.key(key[0])]}_${row[this.key(key[1])]}`] = row
-          else {
+          if (typeof key === 'object') {
+            result[`${this.key(row[this.key(key[0])])}_${row[this.key(key[1])]}`] = row
+          } else {
             result[this.key(row[this.key(key)])] = row
           }
         }

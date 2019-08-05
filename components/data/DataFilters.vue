@@ -35,11 +35,11 @@
               | {{ metro }}
           .flex.flex-wrap(key="districts",v-if="select === 'district'")
             a.lg_w-40.tran-colors.m-2(
-              v-for="dist in districts[state]",
+              v-for="dist in districts[state_value]",
               :key="`district-${state}-${dist}`",
               @click="select_go('district', `${state}-${nth(dist)}`)",
               :class="is_district && dist == district ? classes.types.active : classes.type.inactive")
-              | {{ state }} {{ dist | nth }}
+              | {{ state_value }} {{ dist | nth }}
 </template>
 
 <script>
@@ -82,6 +82,7 @@ export default {
         this.is_district ? this.$route.params.loc.split('-')[0] :
         this.is_metro ? this.state_from_metro(this.value(this.metro)) : false
     },
+    state_value () { return this.value(this.state) },
     metro () { return this.is_metro ? this.location : false },
     district_full () { return this.is_district ? `${this.state} ${this.$options.filters.nth(this.district)}` : false },
     district_key () { return this.is_district ? `${this.state}_${this.district}` : false },
