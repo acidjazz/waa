@@ -1,6 +1,6 @@
 <template lang="pug">
 #VisionFAQ.text-white
-  .mx-auto.max-w-5xl.relative
+  .mx-auto.max-w-5xl.relative.lg_h-64
     .text-bolder.mb-10.flex.flex-row.overflow-scroll.whitespace-no-wrap.text-xl.lg_text-4xl.no-scrollbar
       .short.mx-4.text-center.tran-all-1s.cursor-pointer(
         :ref="`short_${index}`",
