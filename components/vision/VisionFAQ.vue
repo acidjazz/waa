@@ -74,10 +74,12 @@ export default {
     prev (reset=true) {
       if (this.reset) this.width = 0
       this.current = this.current === (this.faq.length-1) ? 0 : this.current+1
+      this.choose(this.current)
     },
     next (reset=true) {
       if (this.reset) this.width = 0
       this.current = this.current === 0 ? this.faq.length-1 : this.current-1
+      this.choose(this.current)
     },
   }
 }
