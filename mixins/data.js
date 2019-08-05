@@ -21,6 +21,8 @@ export default {
   },
   computed: {
 
+    metro_msa () { return this.sheet('main', 'MetroMSA', 'Metro')[this.area.key] },
+
     residents_national () { return this.sheet('main', 'dataResidentsUS', 1)['Total U.S.'] },
     residents_state () { return this.sheet('main', 'dataResidentsState', 'State')[this.area.key].Apartment_Residents },
     residents_metro () { return this.sheet('main', 'dataResidentsMetro', 'Metro Area')[this.area.key].Apartment_Residents },

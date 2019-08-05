@@ -7,7 +7,7 @@
           @click="choose(option)",
           :class="option_class(option)")
           .inline-flex(v-if="option !== type") {{ option }}
-          .inline-flex(v-else-if="is_district") {{ district_full }}
+          .inline-flex(v-else-if="is_district") {{ state_value }} {{ district | nth }}
           .inline-flex(v-else) {{ value(location) }}
         .ani-sib.relative(v-if="select && select === option")
           .inset-0.absolute
@@ -143,6 +143,7 @@ export default {
           key: this.is_district ? this.district_key : this.key(this.location),
           value: this.value(this.location),
           state: this.state,
+          state_value: this.state_value,
           metro: this.metro,
           district: this.district
         })

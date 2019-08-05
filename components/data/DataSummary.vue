@@ -1,7 +1,7 @@
 <template lang="pug">
 .lg_mt-24.mt-16.pt-24.bg-trantrue.text-center.text-white.pb-64.-mb-48.print_m-0.print_p-4.print_mb-0
-  .font-os.uppercase(v-if="area.metro") {{ area.state }}
-  .font-os.uppercase(v-if="area.district") {{ area.state }}
+  .font-os.uppercase(v-if="area.metro") {{ metro_msa.MSA }}
+  .font-os.uppercase(v-if="area.district") {{ area.state_value }}
   .text-5xl.mb-4.text-bolder.ani-sit.print_text-4xl {{ area.value }}
   .lg_w-128.text-2xl.mx-auto.ani-sit.ani-d-1.mb-8.px-2.print_mb-2
     | {{ area.value }} apartments and their residents contribute

@@ -12,6 +12,10 @@ export default {
       Filters: {
         values: 'Filters!A2:D52',
       },
+      MetroMSA: {
+        labels: 'Filters!A54:B54',
+        values: 'Filters!A55:B105',
+      },
       HomeDemand: {
         values: "'Home-Demand'!A3:E16",
       },
