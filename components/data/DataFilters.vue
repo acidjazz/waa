@@ -86,7 +86,7 @@ export default {
         this.is_district ? this.$route.params.loc.split('-')[0] :
         this.is_metro ? this.state_from_metro(this.value(this.metro)) : false
     },
-    state_value () { return this.value(this.state) },
+    state_value () { return this.is_state ? this.value(this.state) : false },
     metro () { return this.is_metro ? this.location : false },
     district_full () { return this.is_district ? `${this.state} ${this.$options.filters.nth(this.district)}` : false },
     district_key () { return this.is_district ? `${this.state}_${this.district}` : false },
