@@ -8,15 +8,14 @@
       .absolute.right-0.top-0.mr-1.mt-24.lg_mr-8.lg_mt-8
         PrintAndShare
       .flex.lg_w-11_12.mx-auto.-p-4.flex-col.lg_flex-row.print_flex-row
-        .lg_w-1_2.pr-4.print_w-1_2.flex.flex-col.justify-around
+        .lg_w-1_2.pl-4.print_w-1_2
           DataDetailResidents(:area="area")
-          .bg-black.h-2.-mt-2
+          .bg-black.h-2
           DataDetailHomes(v-if="area.district",:area="area")
           DataDetailNeeded(v-else,:area="area")
           RenterGrowth(v-if="!area.district",:area="area")
 
         .lg_w-1_2.pl-4.print_w-1_2
-
           DataDetailHomes(v-if="!area.district",:area="area")
           .bg-black.h-2(v-if="!area.district")
           DataDetailRepair(:area="area")
