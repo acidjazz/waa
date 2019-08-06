@@ -15,9 +15,10 @@
         .ani-sib.relative(v-else)
           .inset-0.absolute
             .carat.mx-auto
-        //.absolute.-ml-10.-mr-10(v-if="option === 'district'")
-          .w-4.h-4.border-l.border-t.border-seashell.mx-auto.carat.-mb-2.bg-white
-          .border.border-seashell.rounded.bg-white.p-4.shadow
+        .absolute.-ml-10.-mr-10(v-if="statetip && option === 'district'")
+          .ani-sib.z-10.relative
+            .w-4.h-4.border-l.border-t.border-seashell.mx-auto.carat.-mb-2.bg-white
+          .border.border-seashell.rounded.bg-white.p-4.shadow.ani-zi
             .text-sm Please choose a state
   .relative(v-if="select")
     .absolute.z-10.w-screen(:class="{'-mt-6': !has_scrolled, '-mt-2': has_scrolled}")
@@ -59,6 +60,7 @@ export default {
   mixins: [ sheets, scrolled ],
   data () {
     return {
+      statetip: false,
       direction: 'slide-right',
       select: false,
       types: [ 'national', 'state', 'metro', 'district' ],
@@ -103,7 +105,7 @@ export default {
       if (option === this.type) {
         classes.push(this.classes.type.active)
       }
-      if (option === 'district' && (!this.is_state && !this.is_metro && !this.is_district)) {
+      if (option === 'district' && (!this.is_state  && !this.is_district)) {
         classes.push(this.classes.type.disabled)
       } else if (option !== this.type) {
         classes.push(this.classes.type.inactive)
@@ -116,7 +118,12 @@ export default {
         this.select = false;
         return this.$router.replace('/data')
       }
-      if (type === 'district' && !this.is_state && !this.is_district && !this.is_metro) return false
+      if (type === 'district' && !this.is_state && !this.is_district) {
+        this.select = false
+        this.statetip = !this.statetip
+        return false
+      }
+      this.statetip = false
       if (this.select !== false) {
         if (this.select === 'state') {
           this.direction = 'slide-right'
