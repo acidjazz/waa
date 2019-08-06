@@ -46,6 +46,9 @@ export default {
       { rel: 'mask-icon', href: '/icons/safari-pinned-tab.svg', color: '#2f3e5d' },
       { rel: 'shortcut icon', href: '/icons/favicon.ico' }
     ],
+    script: [
+      { src: 'https://unpkg.com/array-flat-polyfill' },
+    ],
   },
   /*
   ** Customize the progress-bar color
