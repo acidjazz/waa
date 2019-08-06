@@ -10,9 +10,14 @@ SectionHero(type="image",src="/balconies.png",gradient="bg-tranred")
 <script>
 import SectionHero from '@/components/global/SectionHero'
 export default {
+  name: 'NuxtError',
   components: { SectionHero },
-  name: 'nuxt-error',
-  props: ['error'],
+  props: {
+    error: {
+      type: String,
+      required: true,
+    }
+  },
   head () {
     return {
       title: this.error.message || 'An error occured'
