@@ -1,5 +1,5 @@
 <template lang="pug">
-.bg-seashell.mt-16.p-12.lg_p-24.print_hidden
+footer.bg-seashell.mt-16.p-12.lg_p-24.print_hidden
   .canister.flex.flex-col.lg_flex-row
     .w-full.lg_w-1_2.mb-10.lg_mb-0
       HeaderTitle.mb-4
@@ -9,12 +9,12 @@
         .text-3xl.font-bold.mb-4 Join Us
         input.p-2.rounded.font-os.w-64.mb-8(placeholder="E-MAIL")
         .text-right.w-64
-          .inline.bg-flamingo.text-white.px-8.py-4.text-sm.rounded-full.text-center Subscribe
+          .inline.bg-orange.px-8.py-4.text-sm.rounded-full.text-center Subscribe
       .mt-10.flex.flex-row
         a(href="https://nmhc.org",target="_new")
-          img(src="/icon-nmhc.png").mr-8.object-contain.h-8
+          img(src="/icon-nmhc.png",alt="NMHC logo").mr-8.object-contain.h-8
         a(href="https://www.naahq.org/",target="_new")
-          img(src="/icon-naa.png").object-contain.h-8
+          img(src="/icon-naa.png",alt="NAA logo").object-contain.h-8
 </template>
 
 

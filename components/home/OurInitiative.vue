@@ -2,7 +2,7 @@
 #OurInitiative
   OffsetSection
     .flex.flex-col.lg_flex-row(v-in-vp).vp-r.vp-d-3
-      img(src="/pathway.jpg").w-full.lg_w-3_4
+      img(src="/pathway.jpg",alt="pathway").w-full.lg_w-3_4
       .lg_ml-10.my-10.lg_my-0.flex.items-center(v-in-vp).vp-r.vp-d-4
         .copy
           .font-os.mb-4 CAMPAIGN

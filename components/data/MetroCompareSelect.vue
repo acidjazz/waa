@@ -1,7 +1,7 @@
 <template lang="pug">
 .flex
   .hidden.lg_block.lg_w-1_2
-    img(src="/apt1.jpg")
+    img(src="/apt1.jpg",alt="Metro Compare")
   .lg_w-1_2.lg_ml-10
     .font-os.uppercase.text-2xl.mb-4 ACTIVITY
     .text-bolder.text-4xl.mb-4 Compare your metro

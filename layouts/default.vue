@@ -2,7 +2,8 @@
 #waa
   HeaderBar
   HeaderMenu
-  nuxt
+  main
+    nuxt
   FooterBar
 </template>
 

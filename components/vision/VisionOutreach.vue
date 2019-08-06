@@ -2,7 +2,7 @@
 OffsetSection
   .flex.mb-12.flex-col.lg_flex-row-reverse
     .lg_w-2_3(v-in-vp).vp-r.vp-d-1
-      img(src="/pathway.jpg")
+      img(src="/pathway.jpg",alt="Pathway")
     .lg_w-1_3.lg_mr-12(v-in-vp).vp-r
       .font-os.my-4 OUTREACH
       .text-4xl.font-bold.mb-2 We can do this
