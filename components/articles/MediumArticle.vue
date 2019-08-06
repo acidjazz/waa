@@ -1,5 +1,5 @@
 <template lang="pug">
-.article-outer
+article.article-outer
   a.article(:href="link(article)",target="_new",v-in-vp,:class="`vp-d-${index+2}`").vp-r
     .article_image
       img(:src="thumbnail(article)",loading="lazy",alt="Article Image")
