@@ -39,7 +39,7 @@ OffsetSection
       .w-1_5.mr-8.text-right
       .w-4_5.mr-4.flex
         CheckBox(:checked="by === 'metro'").w-12.mr-4
-        SelectInput(placeholder="Metro",:options="metros_cleansed",v-model="selected")
+        SelectInput(placeholder="Metro",:options="metros",v-model="selected")
 
     .flex.items-center.mb-2.cursor-pointer(@click="by = 'state'")
       .w-1_5.mr-8.text-right
@@ -69,11 +69,7 @@ export default {
       by: 'national',
       selected: '',
       error: false,
-      banned: [ 'Sacramento', 'San Jose' ],
     }
-  },
-  computed: {
-    metros_cleansed () { return this.metros.filter(m => !this.banned.includes(m)) },
   },
   methods: {
     change_type(type) {
