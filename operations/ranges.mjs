@@ -201,15 +201,15 @@ export default {
       },
       constructionImpactsMetro: {
         labels: "'Construction Impacts (metro)'!A2:M2",
-        values: "'Construction Impacts (metro)'!A3:M43",
+        values: "'Construction Impacts (metro)'!A3:M52",
       },
       operationImpactsMetro: {
         labels: "'Operation Impacts (metro)'!A2:N2",
-        values: "'Operation Impacts (metro)'!A3:N43",
+        values: "'Operation Impacts (metro)'!A3:N52",
       },
       spendingImpactsMetro: {
         labels: "'Spending Impacts (metro)'!A2:J2",
-        values: "'Spending Impacts (metro)'!A3:J43",
+        values: "'Spending Impacts (metro)'!A3:J52",
       },
     }
   },
