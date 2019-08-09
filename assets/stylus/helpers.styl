@@ -32,6 +32,9 @@
 .tran-all-p2s
   transition all .2s ease
 
+.tran-all-children *
+  transition all 1s ease-in-out
+
 .tran-text-4s
   transition text 4s ease
 
@@ -80,6 +83,16 @@
 .carat
   @apply w-4 h-4
   transform rotate(45deg)
+
+.pointer
+  border-left 10px solid transparent
+  border-right 10px solid transparent
+.pointer-orange
+  border-bottom 10px solid cfg-colors-orange
+.pointer-bpink
+  border-bottom 10px solid cfg-colors-bpink
+.pointer-mountainmeadow
+  border-bottom 10px solid cfg-colors-mountainmeadow
 
 .mt-36px
   @media (min-width: 1024px)
