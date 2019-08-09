@@ -43,8 +43,5 @@ export default {
     },
     plural () { return this.metro.Metro_Area.substr(-1) === 's' ? "'" : "'s" },
   },
-  mounted () {
-    console.log(this.metro)
-  },
 }
 </script>
