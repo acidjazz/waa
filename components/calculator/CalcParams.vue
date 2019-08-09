@@ -52,7 +52,6 @@ OffsetSection
 
 </template>
 
-
 <script>
 import OffsetSection from '@/components/global/OffsetSection'
 import CheckBox from '@/components/form/CheckBox'

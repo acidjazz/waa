@@ -10,7 +10,7 @@ SectionHero(type="video", src="/condos.mp4", gradient="bg-tranblue")
     | trillion to the U.S. economy annually, supporting
     | &nbsp;
     no-ssr
-      VueCountUp(:endVal="count_val(contrib.endVal)",:options="contrib.options")
+      VueCountUp(:endVal="count_val(jobs.endVal)",:options="contrib.options")
     | &nbsp;
     | million jobs.
   .buttons.mt-10
