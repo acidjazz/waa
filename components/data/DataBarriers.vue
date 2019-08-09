@@ -11,7 +11,7 @@
         :metro="cmetro",
         :color="color(cmetro.Restriction_Index)")
     .w-full.lg_w-2_3.mt-8.lg_mt-0
-      .flex.justify-between.mb-4
+      .flex.flex-col.lg_flex-row.justify-between.mb-4.text-sm
         span
           i.mdi.mdi-circle.mx-4.text-bpink
           span.text-alum Difficult Entry Point

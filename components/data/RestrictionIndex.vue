@@ -1,19 +1,18 @@
 <template lang="pug">
-#RestrictionIndex
-  .flex.items-center
-    .chart
-      .w-32.h-32.rounded-full.bg-rainbow.p-3.tran-all-children
-        .w-full.h-full.bg-white.rounded-full.p-3
-          .relative.w-full.h-full(:style="`transform: rotate(${rotation}deg);`")
-            .border-4.w-full.h-full.rounded-full.flex.items-center.justify-center(:class="`border-${color}`")
-              .pointer.top-0.absolute.-mt-2(:class="`pointer-${color}`")
-              .text-3xl.text-bolder(:style="`transform: rotate(${-rotation}deg);`") {{ index }}
-      .w-32.flex.text-alum.bg-white.justify-between.-mt-6
-        span Harder
-        span Easier
-    .ml-4.text-bolder
-      div {{ metro.Metro_Area }}'s
-      div Restriction Index
+#RestrictionIndex.flex.items-center.justify-center.lg_justify-start
+  .chart
+    .w-32.h-32.rounded-full.bg-rainbow.p-3.tran-all-children
+      .w-full.h-full.bg-white.rounded-full.p-3
+        .relative.w-full.h-full(:style="`transform: rotate(${rotation}deg);`")
+          .border-4.w-full.h-full.rounded-full.flex.items-center.justify-center(:class="`border-${color}`")
+            .pointer.top-0.absolute.-mt-2(:class="`pointer-${color}`")
+            .text-3xl.text-bolder(:style="`transform: rotate(${-rotation}deg);`") {{ index }}
+    .w-32.flex.text-alum.bg-white.justify-between.-mt-6
+      span Harder
+      span Easier
+  .ml-4.text-bolder
+    div {{ metro.Metro_Area }}'s
+    div Restriction Index
 </template>
 
 
