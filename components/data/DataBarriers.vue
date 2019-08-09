@@ -1,7 +1,7 @@
 <template lang="pug">
 #DataBarriers
   DataName(:area="area",name="metro data")
-  .flex.flex-col.lg_flex-row
+  .flex.flex-col.lg_flex-row.justify-between
     .w-full.lg_w-1_4.flex.flex-col.lg_mr-8
       .text-bolder.text-4xl Barriers to new apartments
       .text-2xl.font-bold.my-4 Multifamily supply restrictions index
@@ -11,19 +11,19 @@
         :metro="cmetro",
         :color="color(cmetro.Restriction_Index)")
     .w-full.lg_w-3_4.mt-8.lg_mt-0
-      .flex.flex-col.lg_flex-row.justify-between.mb-8.text-sm
+      .flex.flex-col.lg_flex-row.mb-8.text-sm
         span
-          i.mdi.mdi-circle.mx-4.text-bpink
+          i.mdi.mdi-circle.mr-4.text-bpink
           span.text-alum Difficult Entry Point
         span
-          i.mdi.mdi-circle.mx-4.text-orange
+          i.mdi.mdi-circle.mr-4.lg_ml-4.text-orange
           span.text-alum Moderate Entry Point
         span
-          i.mdi.mdi-circle.mx-4.text-mountainmeadow
+          i.mdi.mdi-circle.mr-4.lg_ml-4.text-mountainmeadow
           span.text-alum Easier Entry Point
       .flex.flex-row.flex-wrap
-        .flex.w-1_2.lg_w-1_4.mb-2(v-for="metro in sorted")
-          .text-bolder.text-right.w-8.mr-4.tran-text-4s(:class="`text-${color(val(metro.Restriction_Index))}`")
+        .flex.w-1_2.lg_w-1_4.mb-4(v-for="metro in sorted")
+          .text-bolder.w-8.mr-4.tran-text-4s(:class="`text-${color(val(metro.Restriction_Index))}`")
             no-ssr
               VueCountUp(:endVal="val(metro.Restriction_Index)",:options="{decimalPlaces: 1}")
           span(:class="{'text-bolder underline': metro.Metro_Area === area.value}") {{ metro.Metro_Area }}
