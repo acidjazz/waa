@@ -2,7 +2,7 @@
 #DataBarriers
   DataName(:area="area",name="metro data")
   .flex.flex-col.lg_flex-row
-    .w-full.lg_w-1_3.flex.flex-col.lg_mr-8
+    .w-full.lg_w-1_4.flex.flex-col.lg_mr-8
       .text-bolder.text-4xl Barriers to new apartments
       .text-2xl.font-bold.my-4 Multifamily supply restrictions index
       .text Based on specific factors like local regulations and available land to develop, the Barriers to Apartment Construction Index ranks 50 metro areas on how hard it is to build new apartments. See how your city stacks up.
@@ -10,7 +10,7 @@
         v-if="area.type === 'metro'",
         :metro="cmetro",
         :color="color(cmetro.Restriction_Index)")
-    .w-full.lg_w-2_3.mt-8.lg_mt-0
+    .w-full.lg_w-3_4.mt-8.lg_mt-0
       .flex.flex-col.lg_flex-row.justify-between.mb-2.text-sm
         span
           i.mdi.mdi-circle.mx-4.text-bpink
