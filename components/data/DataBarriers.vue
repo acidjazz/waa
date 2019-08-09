@@ -26,7 +26,7 @@
           .text-bolder.text-right.w-8.mr-4.tran-text-4s(:class="`text-${color(val(metro.Restriction_Index))}`")
             no-ssr
               VueCountUp(:endVal="val(metro.Restriction_Index)",:options="{decimalPlaces: 1}")
-          .metro {{ metro.Metro_Area }}
+          span(:class="{'text-bolder': metro.Metro_Area === area.value}") {{ metro.Metro_Area }}
 
 </template>
 
