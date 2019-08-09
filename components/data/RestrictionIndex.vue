@@ -11,7 +11,7 @@
       span Harder
       span Easier
   .ml-4.text-bolder
-    div {{ metro.Metro_Area }}'s
+    div {{ metro.Metro_Area }}{{ plural }}
     div Restriction Index
 </template>
 
@@ -41,6 +41,7 @@ export default {
     rotation () {
       return ( (this.index-this.a) * ( (this.d-this.c) / (this.b-this.a) ) ) + this.c
     },
+    plural () { return this.metro.Metro_Area.substr(-1) === 's' ? "'" : "'s" },
   },
   mounted () {
     console.log(this.metro)
