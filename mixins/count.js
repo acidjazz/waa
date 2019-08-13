@@ -10,7 +10,7 @@ import inViewport from 'vue-in-viewport-mixin'
 export default {
   mixins: [ inViewport, fire ],
   methods: {
-    count_val (value,format='0.00a') {
+    count_val (value,format='0.0a') {
       if (!this.fire) return 0
       return numeral(value).format(format).slice(0, -1)*1
     },
