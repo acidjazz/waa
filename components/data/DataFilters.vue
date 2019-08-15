@@ -22,7 +22,7 @@
             .text-sm Please choose a state
   .relative(v-if="select")
     .absolute.z-10.w-screen(:class="{'-mt-6': !has_scrolled, '-mt-2': has_scrolled}")
-      .canister.p-4.lg_pl-20.bg-seashell.shadow-md.rounded-lg.ani-zi.overflow-y-scroll.max-h-c
+      .canister.p-4.lg_pl-20.bg-seashell.shadow-md.rounded-lg.ani-zi.overflow-y-scroll.max-h-filters
         transition(:name="direction",mode="out-in")
           ul.col-cnt-2.lg_col-cnt-4(key="states",v-if="select === 'state'").-p-4
             li.tran-colors.m-2(
