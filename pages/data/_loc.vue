@@ -40,7 +40,7 @@
     OffsetSection.print_hidden
       MetroCompareSelect(@compare="compare")
       MetroCompareResults(v-if="comparison",:comparison="comparison")
-    DataSource
+    SourceLine
 </template>
 
 <script>
@@ -69,7 +69,7 @@ import DataBarriers from '@/components/data/DataBarriers'
 import MetroCompareSelect from '@/components/data/MetroCompareSelect'
 import MetroCompareResults from '@/components/data/MetroCompareResults'
 
-import DataSource from '@/components/data/DataSource'
+import SourceLine from '@/components/global/SourceLine'
 
 import PrintFooter from '@/components/global/PrintFooter'
 export default {
@@ -95,7 +95,7 @@ export default {
 
     DataBarriers,
 
-    DataSource,
+    SourceLine,
 
     PrintFooter,
 
