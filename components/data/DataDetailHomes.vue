@@ -3,7 +3,7 @@
   .text-bolder.text-6xl.print_hidden: VueCountUp(:endVal="count_val(apartments)",:options="count_opts(apartments)")
   .text-bolder.text-3xl.hidden.print_block {{ apartments | numeral }}
   .text-bolder.text-2xl Apartment Homes
-  .lg_my-6.print_my-2.print_text-sm.mb-6.print_mb-2
+  .my-6.lg_mt-6.print_mt-2.print_my-2.print_text-sm
     | The operation of {{ loc_copy }}'s apartment homes contributes
     .data-val ${{ contribution.Property_Economic_Impact | numeral }}
     | to the local economy each year (including
