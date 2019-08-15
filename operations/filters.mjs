@@ -6,6 +6,7 @@ export default {
   },
   states () {
     return this.filters().map(r => r[0])
+      .sort( (a,b) => a.localeCompare(b) )
   },
   metros () {
     return [...new Set(this.filters()
@@ -14,6 +15,7 @@ export default {
       .map(m => m.trim()))
       .flat()
       .filter(Boolean))]
+      .sort( (a,b) => a.localeCompare(b) )
   },
   districts () {
     return Object.assign(...this.filters().map(([key, , , districts]) => ({[key]: districts*1})))

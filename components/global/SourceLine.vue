@@ -10,8 +10,4 @@
     a(href="http://www.naahq.org/",target="_new") NAA
     span ;&nbsp;
     a(href="https://www.census.gov/",target="_new") U.S. Census Bureau
-    span ;&nbsp;
-    a(href="https://www.axiometrics.com/",target="_new") Axiometrics
-    span , a
-    a(href="https://www.realpage.com/",target="_new") RealPage Company
 </template>

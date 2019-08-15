@@ -12,7 +12,7 @@
     .data-val ${{ contribution.Construction_Economic_Impact | numeral }}
     | to {{ loc_copy }}'s economy annually, creating
     .data-val {{ contribution.Construction_Employment_Impact | numeral('0,0a') }}
-    | jobs
+    | jobs.
 </template>
 
 <script>

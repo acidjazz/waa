@@ -1,6 +1,6 @@
 <template lang="pug">
 SectionHero(type="video", src="/condos.mp4", gradient="bg-tranblue")
-  .text-xl.font-os.mb-10(v-in-vp).vp-y WE ARE APARTMENTS.
+  .text-xl.font-os.mb-10(v-in-vp).vp-y WE ARE APARTMENTS
   .lg_text-5xl.text-2xl.px-4.lg_px-4.lg_w-256(v-in-vp).vp-y.vp-d-2
     | Apartments and their residents contribute
     | &nbsp;$

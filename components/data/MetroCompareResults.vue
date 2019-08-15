@@ -49,7 +49,7 @@ export default {
           key: 'Apartments',
           format: '0.0a',
         },
-        {
+        /*{
           label: 'Operation Dollars Spent',
           compute: 'operations',
           key: 'Economic_Contribution',
@@ -60,14 +60,14 @@ export default {
           compute: 'spending',
           key: 'Total_Jobs_Supported',
           format: '0.0a',
-        },
+        },*/
         {
           label: 'Total Economic Contribution',
           compute: 'contribution',
           key: 'Total_Economic_Impact',
           format: '$0.0a',
         },
-        {
+        /*{
           label: 'Total Jobs Supported',
           compute: 'spending',
           key: 'Total_Jobs_Supported',
@@ -84,7 +84,7 @@ export default {
           compute: 'spending',
           key: 'Total_Jobs_Supported',
           format: '0.0a',
-        },
+        },*/
       ]
     }
   },

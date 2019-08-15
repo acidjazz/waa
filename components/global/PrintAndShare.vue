@@ -6,8 +6,8 @@
     .text-sm.hover_underline.hidden.lg_block Printable PDF
   .flex.flex-col.items-center.justify-between
     .flex
-      a.mdi.p-1.lg_p-2.mdi-24px.mdi-facebook-box.hover_text-orange(@click="share('facebook')")
-      a.mdi.p-1.lg_p-2.mdi-24px.mdi-twitter.hover_text-orange(@click="share('twitter')")
+      a.mdi.p-1.lg_p-2.mdi-24px.mdi-facebook-box.hover_text-orange.cursor-pointer(@click="share('facebook')")
+      a.mdi.p-1.lg_p-2.mdi-24px.mdi-twitter.hover_text-orange.cursor-pointer(@click="share('twitter')")
     .text-sm.hidden.lg_block Share link
 </template>
 

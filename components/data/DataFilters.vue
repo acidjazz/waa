@@ -22,24 +22,24 @@
             .text-sm Please choose a state
   .relative(v-if="select")
     .absolute.z-10.w-screen(:class="{'-mt-6': !has_scrolled, '-mt-2': has_scrolled}")
-      .canister.p-4.lg_pl-20.bg-seashell.shadow-md.rounded-lg.ani-zi
+      .canister.p-4.lg_pl-20.bg-seashell.shadow-md.rounded-lg.ani-zi.max-h-screen.overflow-y-scroll
         transition(:name="direction",mode="out-in")
-          .flex.flex-wrap(key="states",v-if="select === 'state'").-p-4
-            a.lg_w-40.tran-colors.m-2(
+          ul.col-cnt-2.lg_col-cnt-4(key="states",v-if="select === 'state'").-p-4
+            li.tran-colors.m-2(
               v-for="state in states",
               :key="`state-${state}`",
               @click="select_go('state', state)",
               :class="is_state && state == location ? classes.types.active : classes.type.inactive")
               | {{ state }}
-          .flex.flex-wrap(key="metros",v-if="select === 'metro'")
-            a.lg_w-40.tran-colors.m-2(
+          ul.col-cnt-2.lg_col-cnt-4(key="metros",v-if="select === 'metro'")
+            li.tran-colors.m-2(
               v-for="metro in metros",
               :key="`metro-${metro}`",
               @click="select_go('metro', metro)",
               :class="is_metro && metro == location ? classes.types.active : classes.type.inactive")
               | {{ metro }}
-          .flex.flex-wrap(key="districts",v-if="select === 'district'")
-            a.lg_w-40.tran-colors.m-2(
+          ul.col-cnt-2.lg_col-cnt-4(key="districts",v-if="select === 'district'")
+            li.tran-colors.m-2(
               v-for="dist in districts[state_value]",
               :key="`district-${state}-${dist}`",
               @click="select_go('district', `${state}-${nth(dist)}`)",

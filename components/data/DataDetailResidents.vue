@@ -10,7 +10,7 @@
     .data-val ${{ contribution.Spending_Economic_Impact | numeral }}
     | in taxes), creating
     .data-val {{ contribution.Renter_Employment_Impact | numeral('0,0a') }}
-    | jobs
+    | jobs.
 </template>
 
 <script>

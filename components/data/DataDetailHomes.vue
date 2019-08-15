@@ -10,7 +10,7 @@
     .data-val ${{ contribution.Tax_Economic_Impact | numeral }}
     | in property taxes), creating
     .data-val {{ contribution.Property_Employment_Impact | numeral('0,0a') }}
-    | jobs
+    | jobs.
 </template>
 
 

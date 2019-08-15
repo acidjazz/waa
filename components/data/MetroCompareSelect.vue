@@ -5,13 +5,13 @@
   .lg_w-1_2.lg_ml-10
     .font-os.uppercase.text-2xl.mb-4 ACTIVITY
     .text-bolder.text-4xl.mb-4 Compare your metro
-    .mb-4 Enter two cities to cities below to compare how they stack up against another city.
+    .mb-4 Enter two metros below to compare how they stack up against another metro.
     form(autocomplete="off").relative
       .input.relative.mb-4(v-for="name, input in inputs")
         input.py-2.px-4.bg-seashell.lg_w-96(
           type="text",
           v-model="city[input].name",
-          :placeholder="`ENTER CITY ${name}`",
+          :placeholder="`ENTER METRO ${name}`",
           autocomplete="off")
         .matches.absolute.z-10.bg-white.w-96(v-if="matches(input)")
           .match.py-2.px-4.border.border-seashell.cursor-pointer.hover_bg-coolblue.hover_text-white(

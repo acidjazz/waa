@@ -3,9 +3,9 @@
   DataName(:area="area",name="metro data")
   .flex.flex-col.lg_flex-row.justify-between
     .w-full.lg_w-1_4.flex.flex-col.lg_mr-8
-      .text-bolder.text-4xl Barriers to new apartments
+      .text-bolder.text-4xl Barriers to New Apartments
       .text-2xl.font-bold.my-4 Multifamily supply restrictions index
-      .text.lg_mr-4 Based on specific factors like local regulations and available land to develop, the Barriers to Apartment Construction Index ranks 50 metro areas on how hard it is to build new apartments. See how your city stacks up.
+      .text.lg_mr-4 Development costs and local regulations are making it difficult to build new apartments everywhere, but some areas are harder than others. See how your metro stacks up.
       RestrictionIndex.mt-4(
         v-if="area.type === 'metro'",
         :metro="cmetro",
@@ -26,7 +26,9 @@
           .text-bolder.w-8.mr-4.tran-text-4s(:class="`text-${color(val(metro.Restriction_Index))}`")
             no-ssr
               VueCountUp(:endVal="val(metro.Restriction_Index)",:options="{decimalPlaces: 1}")
-          span(:class="{'text-bolder underline': metro.Metro_Area === area.value}") {{ metro.Metro_Area }}
+          nuxt-link(
+            :to="`/data/${metro.Metro_Area.replace(/ /g, '_')}`",
+            :class="{'text-bolder underline': metro.Metro_Area === area.value}") {{ metro.Metro_Area }}
 
 </template>
 
