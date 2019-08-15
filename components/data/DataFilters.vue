@@ -3,7 +3,7 @@
   .bg-white.tran-all-p2s(:class="{'shadow-md p-2 -mt-22px': has_scrolled, 'p-8 mt-36px': !has_scrolled}")
     .flex.items-center.justify-center.lg_-mx-2.-mx-1.ani-d-5
       .mx-1.lg_mx-2.relative(v-for="option in types",:key="option")
-        .uppercase.text-bolder.text-xs.lg_text-base.rounded-full.py-2.px-2.lg_px-4.tran-all-p2s(
+        .whitespace-no-wrap.uppercase.text-bolder.text-xs.lg_text-base.rounded-full.py-2.px-2.lg_px-4.tran-all-p2s(
           @click="choose(option)",
           :class="option_class(option)")
           .inline-flex(v-if="option !== type") {{ option }}
@@ -22,7 +22,7 @@
             .text-sm Please choose a state
   .relative(v-if="select")
     .absolute.z-10.w-screen(:class="{'-mt-6': !has_scrolled, '-mt-2': has_scrolled}")
-      .canister.p-4.lg_pl-20.bg-seashell.shadow-md.rounded-lg.ani-zi.max-h-screen.overflow-y-scroll
+      .canister.p-4.lg_pl-20.bg-seashell.shadow-md.rounded-lg.ani-zi.overflow-y-scroll.max-h-c
         transition(:name="direction",mode="out-in")
           ul.col-cnt-2.lg_col-cnt-4(key="states",v-if="select === 'state'").-p-4
             li.tran-colors.m-2(
