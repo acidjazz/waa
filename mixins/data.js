@@ -76,6 +76,10 @@ export default {
     restrictionMetro () { return this.sheet('main', 'dataRestrictionsMetro', 'Metro Area ') },
 
     loc_copy () {
+      if (this.area.type === 'national') return 'the country'
+      return this.area.value
+    },
+    loc_copy_caps () {
       if (this.area.type === 'national') return 'The country'
       return this.area.value
     }

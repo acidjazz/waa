@@ -67,13 +67,13 @@ export default {
           key: 'Total_Economic_Impact',
           format: '$0.0a',
         },
-        /*{
+        {
           label: 'Total Jobs Supported',
           compute: 'spending',
           key: 'Total_Jobs_Supported',
           format: '0.0a',
         },
-        {
+        /*{
           label: 'Construction Dollars Spent',
           compute: 'construction',
           key: 'Economic_Contribution',
