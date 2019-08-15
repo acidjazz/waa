@@ -1,7 +1,7 @@
 <template lang="pug">
-#DataDetailResidents.lg_h-64.print_h-48
-  .text-bolder.text-6xl.print_hidden: VueCountUp(:endVal="count_val(residents)",:options="count_opts(residents)")
-  .text-bolder.text-3xl.hidden.print_block {{ residents | numeral }}
+#DataDetailResidents.lg_h-64.print_h-48.flex.flex-col
+  .text-bolder.text-6xl.hidden.lg_block.sm_block.md_block: VueCountUp(:endVal="count_val(residents)",:options="count_opts(residents)")
+  .text-bolder.text-3xl.hidden.print_block {{ residents | numeral }} wat
   .text-bolder.text-2xl Apartment Residents
   .my-6.lg_mt-6.print_mt-2.print_my-2.print_text-sm
     | Spending from {{ loc_copy }}'s apartment residents contributes
