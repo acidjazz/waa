@@ -2,7 +2,7 @@
 article.article-outer
   a.article(:href="link(article)",target="_new",v-in-vp,:class="`vp-d-${index+2}`").vp-r
     .article_image
-      img(:src="thumbnail(article)",loading="lazy",alt="Article Image")
+      img(:src="thumbnail(article)",loading="lazy",alt="Article Image", width="330", height="300")
     .article_header(:class="{'lg_w-1_3': featured}")
       .article_header_title.text-xl {{ article.title }}
       .article_header_description {{ article.virtuals.subtitle }}

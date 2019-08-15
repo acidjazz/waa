@@ -41,19 +41,19 @@ export default {
         values: "'Vision-IncomeAfford'!A2:C17",
       },
       dataResidentsUS: {
-        values: "'Data-Residents'!A2:B2",
+        values: "'Data-Residents'!A2:C2",
       },
       dataResidentsState: {
-        labels: "'Data-Residents'!A3:C3",
-        values: "'Data-Residents'!A4:C54",
+        labels: "'Data-Residents'!A3:D3",
+        values: "'Data-Residents'!A4:D54",
       },
       dataResidentsMetro: {
-        labels: "'Data-Residents'!A55:C55",
-        values: "'Data-Residents'!A56:C106",
+        labels: "'Data-Residents'!A55:D55",
+        values: "'Data-Residents'!A56:D106",
       },
       dataResidentsDistrict: {
-        labels: "'Data-Residents'!A107:D107",
-        values: "'Data-Residents'!A108:D543",
+        labels: "'Data-Residents'!A107:E107",
+        values: "'Data-Residents'!A108:E543",
       },
 
       dataJobsUS: {
@@ -89,19 +89,19 @@ export default {
       },
 
       dataApartmentsUS: {
-        values: "'Data-Apartments'!A2:B2",
+        values: "'Data-Apartments'!A2:C2",
       },
       dataApartmentsState: {
-        labels: "'Data-Apartments'!A3:B3",
-        values: "'Data-Apartments'!A4:B54",
+        labels: "'Data-Apartments'!A3:C3",
+        values: "'Data-Apartments'!A4:C54",
       },
       dataApartmentsMetro: {
-        labels: "'Data-Apartments'!A55:B55",
-        values: "'Data-Apartments'!A56:B106",
+        labels: "'Data-Apartments'!A55:C55",
+        values: "'Data-Apartments'!A56:C106",
       },
       dataApartmentsDistrict: {
-        labels: "'Data-Apartments'!A107:C107",
-        values: "'Data-Apartments'!A108:C543",
+        labels: "'Data-Apartments'!A107:D107",
+        values: "'Data-Apartments'!A108:D543",
       },
 
       dataBuildingUS: {
