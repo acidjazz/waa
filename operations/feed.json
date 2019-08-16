@@ -25,8 +25,8 @@
         "width": 0
       },
       "metadata": {
-        "followerCount": 31,
-        "activeAt": 1563282525454
+        "followerCount": 37,
+        "activeAt": 1565892105421
       },
       "virtuals": {
         "permissions": {
@@ -227,6 +227,232 @@
     },
     "posts": [
       {
+        "id": "fef10783c704",
+        "versionId": "5b5fd35ca4fa",
+        "creatorId": "97d35ca792e3",
+        "homeCollectionId": "4933e15b493e",
+        "title": "Why Building Multifamily Rental Units Costs So Much, and What Can We Do About It?",
+        "detectedLanguage": "en",
+        "latestVersion": "5b5fd35ca4fa",
+        "latestPublishedVersion": "5b5fd35ca4fa",
+        "hasUnpublishedEdits": false,
+        "latestRev": 75,
+        "createdAt": 1565886815753,
+        "updatedAt": 1565897530120,
+        "acceptedAt": 0,
+        "firstPublishedAt": 1565892105248,
+        "latestPublishedAt": 1565897514041,
+        "vote": false,
+        "experimentalCss": "",
+        "displayAuthor": "",
+        "virtuals": {
+          "statusForCollection": "APPROVED",
+          "allowNotes": true,
+          "previewImage": {
+            "imageId": "1*NycLpIWh6sKZ4tNMl4SR4g.jpeg",
+            "filter": "",
+            "backgroundSize": "",
+            "originalWidth": 2501,
+            "originalHeight": 1400,
+            "strategy": "resample",
+            "height": 0,
+            "width": 0
+          },
+          "wordCount": 716,
+          "imageCount": 2,
+          "readingTime": 3.0852201257861633,
+          "subtitle": "Real estate and markets expert Paige Mueller explains why building housing is so expensive and points toward solutions.",
+          "publishedInCount": 1,
+          "usersBySocialRecommends": [],
+          "noIndex": false,
+          "recommends": 0,
+          "isBookmarked": false,
+          "tags": [
+            {
+              "slug": "housing",
+              "name": "Housing",
+              "postCount": 13376,
+              "metadata": {
+                "postCount": 13376,
+                "coverImage": {
+                  "id": "1*Ur6hR_2VVYRATITg-xzgow.gif",
+                  "originalWidth": 800,
+                  "originalHeight": 456,
+                  "isFeatured": true,
+                  "focusPercentX": 44,
+                  "focusPercentY": 34
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "rental",
+              "name": "Rental",
+              "postCount": 1980,
+              "metadata": {
+                "postCount": 1980,
+                "coverImage": {
+                  "id": "0*cuA1nfvONsmxXK24.jpg",
+                  "originalWidth": 1280,
+                  "originalHeight": 882,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "apartments",
+              "name": "Apartments",
+              "postCount": 3410,
+              "metadata": {
+                "postCount": 3410,
+                "coverImage": {
+                  "id": "1*wBZnX_iBO5Qxaq-Tssbe1Q.png",
+                  "originalWidth": 1274,
+                  "originalHeight": 688
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "affordable-housing",
+              "name": "Affordable Housing",
+              "postCount": 1613,
+              "metadata": {
+                "postCount": 1613,
+                "coverImage": {
+                  "id": "1*XGo8hW7-X50bgSRKv8PXpg.png",
+                  "originalWidth": 544,
+                  "originalHeight": 465,
+                  "isFeatured": true
+                }
+              },
+              "type": "Tag"
+            },
+            {
+              "slug": "regulation",
+              "name": "Regulation",
+              "postCount": 5209,
+              "metadata": {
+                "postCount": 5209,
+                "coverImage": {
+                  "id": "1*UVwIsfRZPsOA5b38P2Dk9A.jpeg",
+                  "originalWidth": 5184,
+                  "originalHeight": 3456,
+                  "isFeatured": true,
+                  "focusPercentX": 45,
+                  "focusPercentY": 49
+                }
+              },
+              "type": "Tag"
+            }
+          ],
+          "socialRecommendsCount": 0,
+          "responsesCreatedCount": 0,
+          "links": {
+            "entries": [
+              {
+                "url": "https://www.naahq.org/news-publications/barriers-apartment-construction-index",
+                "alts": [],
+                "httpStatus": 200
+              }
+            ],
+            "version": "0.3",
+            "generatedAt": 1565897537585
+          },
+          "isLockedPreviewOnly": false,
+          "metaDescription": "",
+          "totalClapCount": 0,
+          "sectionCount": 1,
+          "readingList": 0,
+          "topics": []
+        },
+        "coverless": true,
+        "slug": "why-building-multifamily-rental-units-costs-so-much-and-what-can-we-do-about-it",
+        "translationSourcePostId": "",
+        "translationSourceCreatorId": "",
+        "isApprovedTranslation": false,
+        "inResponseToPostId": "",
+        "inResponseToRemovedAt": 0,
+        "isTitleSynthesized": false,
+        "allowResponses": true,
+        "importedUrl": "",
+        "importedPublishedAt": 0,
+        "visibility": 0,
+        "uniqueSlug": "why-building-multifamily-rental-units-costs-so-much-and-what-can-we-do-about-it-fef10783c704",
+        "previewContent": {
+          "bodyModel": {
+            "paragraphs": [
+              {
+                "name": "previewImage",
+                "type": 4,
+                "text": "",
+                "layout": 10,
+                "metadata": {
+                  "id": "1*NycLpIWh6sKZ4tNMl4SR4g.jpeg",
+                  "originalWidth": 2501,
+                  "originalHeight": 1400,
+                  "isFeatured": true
+                }
+              },
+              {
+                "name": "2927",
+                "type": 3,
+                "text": "Why Building Multifamily Rental Units Costs So Much, and What Can We Do About It?",
+                "markups": [],
+                "alignment": 1
+              }
+            ],
+            "sections": [
+              {
+                "startIndex": 0
+              }
+            ]
+          },
+          "isFullContent": false,
+          "subtitle": "Real estate and markets expert Paige Mueller explains why building housing is so expensive and points toward solutions."
+        },
+        "license": 0,
+        "inResponseToMediaResourceId": "",
+        "canonicalUrl": "",
+        "approvedHomeCollectionId": "4933e15b493e",
+        "newsletterId": "",
+        "webCanonicalUrl": "",
+        "mediumUrl": "",
+        "migrationId": "",
+        "notifyFollowers": true,
+        "notifyTwitter": false,
+        "notifyFacebook": false,
+        "responseHiddenOnParentPostAt": 0,
+        "isSeries": false,
+        "isSubscriptionLocked": false,
+        "seriesLastAppendedAt": 0,
+        "audioVersionDurationSec": 0,
+        "sequenceId": "",
+        "isNsfw": false,
+        "isEligibleForRevenue": false,
+        "isBlockedFromHightower": false,
+        "deletedAt": 0,
+        "lockedPostSource": 0,
+        "hightowerMinimumGuaranteeStartsAt": 0,
+        "hightowerMinimumGuaranteeEndsAt": 0,
+        "featureLockRequestAcceptedAt": 0,
+        "mongerRequestType": 1,
+        "layerCake": 0,
+        "socialTitle": "",
+        "socialDek": "",
+        "editorialPreviewTitle": "",
+        "editorialPreviewDek": "",
+        "curationEligibleAt": 1565892104746,
+        "isProxyPost": false,
+        "proxyPostFaviconUrl": "",
+        "proxyPostProviderName": "",
+        "proxyPostType": 0,
+        "isSuspended": false,
+        "isLimitedState": false,
+        "type": "Post"
+      },
+      {
         "id": "f96bf1acfa8d",
         "versionId": "a25be554bfb0",
         "creatorId": "97d35ca792e3",
@@ -238,7 +464,7 @@
         "hasUnpublishedEdits": false,
         "latestRev": 66,
         "createdAt": 1561749704680,
-        "updatedAt": 1561754985637,
+        "updatedAt": 1563283819560,
         "acceptedAt": 0,
         "firstPublishedAt": 1561754985216,
         "latestPublishedAt": 1561754985216,
@@ -265,23 +491,22 @@
           "publishedInCount": 1,
           "usersBySocialRecommends": [],
           "noIndex": false,
-          "recommends": 1,
+          "recommends": 4,
           "isBookmarked": false,
           "tags": [
             {
               "slug": "housing",
               "name": "Housing",
-              "postCount": 12835,
+              "postCount": 13376,
               "metadata": {
-                "postCount": 12835,
+                "postCount": 13376,
                 "coverImage": {
-                  "id": "1*X-1lEeVKUkqvpUaNkG5oJw.jpeg",
-                  "originalWidth": 3000,
-                  "originalHeight": 2000,
+                  "id": "1*Ur6hR_2VVYRATITg-xzgow.gif",
+                  "originalWidth": 800,
+                  "originalHeight": 456,
                   "isFeatured": true,
-                  "focusPercentX": 51,
-                  "focusPercentY": 43,
-                  "alt": "A luxury 5-story condominium building is proposed to replace this narrow two-story house at 180 Washington Ave."
+                  "focusPercentX": 44,
+                  "focusPercentY": 34
                 }
               },
               "type": "Tag"
@@ -289,13 +514,13 @@
             {
               "slug": "nimby",
               "name": "Nimby",
-              "postCount": 68,
+              "postCount": 71,
               "metadata": {
-                "postCount": 68,
+                "postCount": 71,
                 "coverImage": {
-                  "id": "1*xad0p4WjJCdHIsdk7z0-Tw.png",
-                  "originalWidth": 1427,
-                  "originalHeight": 446,
+                  "id": "1*8iJEtKBkYLFLqczsMOF9Jg.jpeg",
+                  "originalWidth": 600,
+                  "originalHeight": 439,
                   "isFeatured": true
                 }
               },
@@ -304,13 +529,13 @@
             {
               "slug": "affordable-housing",
               "name": "Affordable Housing",
-              "postCount": 1584,
+              "postCount": 1613,
               "metadata": {
-                "postCount": 1584,
+                "postCount": 1613,
                 "coverImage": {
-                  "id": "1*ELTOswi_K9HYYZPxAwXdCQ.png",
-                  "originalWidth": 900,
-                  "originalHeight": 450,
+                  "id": "1*XGo8hW7-X50bgSRKv8PXpg.png",
+                  "originalWidth": 544,
+                  "originalHeight": 465,
                   "isFeatured": true
                 }
               },
@@ -319,13 +544,13 @@
             {
               "slug": "local-government",
               "name": "Local Government",
-              "postCount": 1905,
+              "postCount": 1948,
               "metadata": {
-                "postCount": 1905,
+                "postCount": 1948,
                 "coverImage": {
-                  "id": "1*Qbu9FEkEpI180gk75zIFkw.png",
-                  "originalWidth": 900,
-                  "originalHeight": 450,
+                  "id": "1*v7YY1cjrsvTIS6ghx01dlA.jpeg",
+                  "originalWidth": 589,
+                  "originalHeight": 902,
                   "isFeatured": true
                 }
               },
@@ -334,15 +559,14 @@
             {
               "slug": "people",
               "name": "People",
-              "postCount": 13591,
+              "postCount": 13845,
               "metadata": {
-                "postCount": 13591,
+                "postCount": 13845,
                 "coverImage": {
-                  "id": "0*4Ou2EcPc_h044i0H",
-                  "originalWidth": 1932,
-                  "originalHeight": 2425,
-                  "isFeatured": true,
-                  "unsplashPhotoId": "rpPvrOQmR2s"
+                  "id": "1*jSO5J6RYjFug17M8IN9TVA.jpeg",
+                  "originalWidth": 3840,
+                  "originalHeight": 2160,
+                  "isFeatured": true
                 }
               },
               "type": "Tag"
@@ -383,7 +607,7 @@
           },
           "isLockedPreviewOnly": false,
           "metaDescription": "",
-          "totalClapCount": 1,
+          "totalClapCount": 4,
           "sectionCount": 1,
           "readingList": 0,
           "topics": []
@@ -464,11 +688,13 @@
         "socialDek": "",
         "editorialPreviewTitle": "",
         "editorialPreviewDek": "",
-        "curationEligibleAt": 0,
+        "curationEligibleAt": 1563283819530,
         "isProxyPost": false,
         "proxyPostFaviconUrl": "",
         "proxyPostProviderName": "",
         "proxyPostType": 0,
+        "isSuspended": false,
+        "isLimitedState": false,
         "type": "Post"
       },
       {
@@ -483,7 +709,7 @@
         "hasUnpublishedEdits": false,
         "latestRev": 62,
         "createdAt": 1560347246784,
-        "updatedAt": 1563282525458,
+        "updatedAt": 1563887966554,
         "acceptedAt": 0,
         "firstPublishedAt": 1560379914818,
         "latestPublishedAt": 1560379914818,
@@ -516,17 +742,16 @@
             {
               "slug": "housing",
               "name": "Housing",
-              "postCount": 12835,
+              "postCount": 13376,
               "metadata": {
-                "postCount": 12835,
+                "postCount": 13376,
                 "coverImage": {
-                  "id": "1*X-1lEeVKUkqvpUaNkG5oJw.jpeg",
-                  "originalWidth": 3000,
-                  "originalHeight": 2000,
+                  "id": "1*Ur6hR_2VVYRATITg-xzgow.gif",
+                  "originalWidth": 800,
+                  "originalHeight": 456,
                   "isFeatured": true,
-                  "focusPercentX": 51,
-                  "focusPercentY": 43,
-                  "alt": "A luxury 5-story condominium building is proposed to replace this narrow two-story house at 180 Washington Ave."
+                  "focusPercentX": 44,
+                  "focusPercentY": 34
                 }
               },
               "type": "Tag"
@@ -534,13 +759,14 @@
             {
               "slug": "ohio",
               "name": "Ohio",
-              "postCount": 1132,
+              "postCount": 1192,
               "metadata": {
-                "postCount": 1132,
+                "postCount": 1192,
                 "coverImage": {
-                  "id": "0*In-v3TDQjh13_i7C.jpg",
-                  "originalWidth": 1300,
-                  "originalHeight": 724
+                  "id": "1*neAal8NoJeThCVuuSEXL5w.jpeg",
+                  "originalWidth": 720,
+                  "originalHeight": 540,
+                  "isFeatured": true
                 }
               },
               "type": "Tag"
@@ -548,13 +774,13 @@
             {
               "slug": "affordable-housing",
               "name": "Affordable Housing",
-              "postCount": 1584,
+              "postCount": 1613,
               "metadata": {
-                "postCount": 1584,
+                "postCount": 1613,
                 "coverImage": {
-                  "id": "1*ELTOswi_K9HYYZPxAwXdCQ.png",
-                  "originalWidth": 900,
-                  "originalHeight": 450,
+                  "id": "1*XGo8hW7-X50bgSRKv8PXpg.png",
+                  "originalWidth": 544,
+                  "originalHeight": 465,
                   "isFeatured": true
                 }
               },
@@ -563,13 +789,13 @@
             {
               "slug": "solutions",
               "name": "Solutions",
-              "postCount": 2401,
+              "postCount": 2525,
               "metadata": {
-                "postCount": 2401,
+                "postCount": 2525,
                 "coverImage": {
-                  "id": "1*WX-qofIA5FrDgr6HIKdfXQ.jpeg",
-                  "originalWidth": 750,
-                  "originalHeight": 395,
+                  "id": "1*7g-ioyr3WWOrZFKyqQt8uA.png",
+                  "originalWidth": 2272,
+                  "originalHeight": 782,
                   "isFeatured": true
                 }
               },
@@ -578,14 +804,13 @@
             {
               "slug": "apartments",
               "name": "Apartments",
-              "postCount": 3294,
+              "postCount": 3410,
               "metadata": {
-                "postCount": 3294,
+                "postCount": 3410,
                 "coverImage": {
-                  "id": "1*1hRpzyBt5gb7dKY1cVRrIg.png",
-                  "originalWidth": 1808,
-                  "originalHeight": 1017,
-                  "isFeatured": true
+                  "id": "1*wBZnX_iBO5Qxaq-Tssbe1Q.png",
+                  "originalWidth": 1274,
+                  "originalHeight": 688
                 }
               },
               "type": "Tag"
@@ -698,7 +923,7 @@
         "hightowerMinimumGuaranteeEndsAt": 0,
         "featureLockRequestAcceptedAt": 0,
         "mongerRequestType": 1,
-        "layerCake": 0,
+        "layerCake": 4,
         "socialTitle": "",
         "socialDek": "",
         "editorialPreviewTitle": "",
@@ -708,6 +933,8 @@
         "proxyPostFaviconUrl": "",
         "proxyPostProviderName": "",
         "proxyPostType": 0,
+        "isSuspended": false,
+        "isLimitedState": false,
         "type": "Post"
       },
       {
@@ -755,17 +982,16 @@
             {
               "slug": "housing",
               "name": "Housing",
-              "postCount": 12835,
+              "postCount": 13376,
               "metadata": {
-                "postCount": 12835,
+                "postCount": 13376,
                 "coverImage": {
-                  "id": "1*X-1lEeVKUkqvpUaNkG5oJw.jpeg",
-                  "originalWidth": 3000,
-                  "originalHeight": 2000,
+                  "id": "1*Ur6hR_2VVYRATITg-xzgow.gif",
+                  "originalWidth": 800,
+                  "originalHeight": 456,
                   "isFeatured": true,
-                  "focusPercentX": 51,
-                  "focusPercentY": 43,
-                  "alt": "A luxury 5-story condominium building is proposed to replace this narrow two-story house at 180 Washington Ave."
+                  "focusPercentX": 44,
+                  "focusPercentY": 34
                 }
               },
               "type": "Tag"
@@ -773,13 +999,13 @@
             {
               "slug": "affordable-housing",
               "name": "Affordable Housing",
-              "postCount": 1584,
+              "postCount": 1613,
               "metadata": {
-                "postCount": 1584,
+                "postCount": 1613,
                 "coverImage": {
-                  "id": "1*ELTOswi_K9HYYZPxAwXdCQ.png",
-                  "originalWidth": 900,
-                  "originalHeight": 450,
+                  "id": "1*XGo8hW7-X50bgSRKv8PXpg.png",
+                  "originalWidth": 544,
+                  "originalHeight": 465,
                   "isFeatured": true
                 }
               },
@@ -788,14 +1014,14 @@
             {
               "slug": "housing-crisis",
               "name": "Housing Crisis",
-              "postCount": 481,
+              "postCount": 489,
               "metadata": {
-                "postCount": 481,
+                "postCount": 489,
                 "coverImage": {
-                  "id": "0*mHuBZ5adTlqxLEXs.jpg",
-                  "originalWidth": 1233,
-                  "originalHeight": 800,
-                  "externalSrc": "https://citizentruth.org/wp-content/uploads/2019/07/24153653047_36e43c3193_o.jpg"
+                  "id": "1*lpbM_ZKWmKBc0udtnGW0zQ.jpeg",
+                  "originalWidth": 6048,
+                  "originalHeight": 4024,
+                  "isFeatured": true
                 }
               },
               "type": "Tag"
@@ -803,9 +1029,9 @@
             {
               "slug": "denver",
               "name": "Denver",
-              "postCount": 1515,
+              "postCount": 1544,
               "metadata": {
-                "postCount": 1515,
+                "postCount": 1544,
                 "coverImage": {
                   "id": "1*xvXNuKZmcVV95BvvEBBT1Q.jpeg",
                   "originalWidth": 1920,
@@ -818,13 +1044,13 @@
             {
               "slug": "solutions",
               "name": "Solutions",
-              "postCount": 2401,
+              "postCount": 2525,
               "metadata": {
-                "postCount": 2401,
+                "postCount": 2525,
                 "coverImage": {
-                  "id": "1*WX-qofIA5FrDgr6HIKdfXQ.jpeg",
-                  "originalWidth": 750,
-                  "originalHeight": 395,
+                  "id": "1*7g-ioyr3WWOrZFKyqQt8uA.png",
+                  "originalWidth": 2272,
+                  "originalHeight": 782,
                   "isFeatured": true
                 }
               },
@@ -953,6 +1179,8 @@
         "proxyPostFaviconUrl": "",
         "proxyPostProviderName": "",
         "proxyPostType": 0,
+        "isSuspended": false,
+        "isLimitedState": false,
         "type": "Post"
       },
       {
@@ -1000,17 +1228,16 @@
             {
               "slug": "housing",
               "name": "Housing",
-              "postCount": 12835,
+              "postCount": 13376,
               "metadata": {
-                "postCount": 12835,
+                "postCount": 13376,
                 "coverImage": {
-                  "id": "1*X-1lEeVKUkqvpUaNkG5oJw.jpeg",
-                  "originalWidth": 3000,
-                  "originalHeight": 2000,
+                  "id": "1*Ur6hR_2VVYRATITg-xzgow.gif",
+                  "originalWidth": 800,
+                  "originalHeight": 456,
                   "isFeatured": true,
-                  "focusPercentX": 51,
-                  "focusPercentY": 43,
-                  "alt": "A luxury 5-story condominium building is proposed to replace this narrow two-story house at 180 Washington Ave."
+                  "focusPercentX": 44,
+                  "focusPercentY": 34
                 }
               },
               "type": "Tag"
@@ -1018,13 +1245,13 @@
             {
               "slug": "massachusetts",
               "name": "Massachusetts",
-              "postCount": 1021,
+              "postCount": 1042,
               "metadata": {
-                "postCount": 1021,
+                "postCount": 1042,
                 "coverImage": {
-                  "id": "1*NVo2IIQfiGPE9gacXre5qg.png",
-                  "originalWidth": 8000,
-                  "originalHeight": 6000,
+                  "id": "1*TaQwJsSd3_7HwCacxYK5IA.jpeg",
+                  "originalWidth": 1300,
+                  "originalHeight": 738,
                   "isFeatured": true
                 }
               },
@@ -1033,14 +1260,14 @@
             {
               "slug": "housing-crisis",
               "name": "Housing Crisis",
-              "postCount": 481,
+              "postCount": 489,
               "metadata": {
-                "postCount": 481,
+                "postCount": 489,
                 "coverImage": {
-                  "id": "0*mHuBZ5adTlqxLEXs.jpg",
-                  "originalWidth": 1233,
-                  "originalHeight": 800,
-                  "externalSrc": "https://citizentruth.org/wp-content/uploads/2019/07/24153653047_36e43c3193_o.jpg"
+                  "id": "1*lpbM_ZKWmKBc0udtnGW0zQ.jpeg",
+                  "originalWidth": 6048,
+                  "originalHeight": 4024,
+                  "isFeatured": true
                 }
               },
               "type": "Tag"
@@ -1048,13 +1275,13 @@
             {
               "slug": "affordable-housing",
               "name": "Affordable Housing",
-              "postCount": 1584,
+              "postCount": 1613,
               "metadata": {
-                "postCount": 1584,
+                "postCount": 1613,
                 "coverImage": {
-                  "id": "1*ELTOswi_K9HYYZPxAwXdCQ.png",
-                  "originalWidth": 900,
-                  "originalHeight": 450,
+                  "id": "1*XGo8hW7-X50bgSRKv8PXpg.png",
+                  "originalWidth": 544,
+                  "originalHeight": 465,
                   "isFeatured": true
                 }
               },
@@ -1183,6 +1410,8 @@
         "proxyPostFaviconUrl": "",
         "proxyPostProviderName": "",
         "proxyPostType": 0,
+        "isSuspended": false,
+        "isLimitedState": false,
         "type": "Post"
       },
       {
@@ -1230,13 +1459,13 @@
             {
               "slug": "solutions",
               "name": "Solutions",
-              "postCount": 2401,
+              "postCount": 2525,
               "metadata": {
-                "postCount": 2401,
+                "postCount": 2525,
                 "coverImage": {
-                  "id": "1*WX-qofIA5FrDgr6HIKdfXQ.jpeg",
-                  "originalWidth": 750,
-                  "originalHeight": 395,
+                  "id": "1*7g-ioyr3WWOrZFKyqQt8uA.png",
+                  "originalWidth": 2272,
+                  "originalHeight": 782,
                   "isFeatured": true
                 }
               },
@@ -1245,14 +1474,14 @@
             {
               "slug": "housing-crisis",
               "name": "Housing Crisis",
-              "postCount": 481,
+              "postCount": 489,
               "metadata": {
-                "postCount": 481,
+                "postCount": 489,
                 "coverImage": {
-                  "id": "0*mHuBZ5adTlqxLEXs.jpg",
-                  "originalWidth": 1233,
-                  "originalHeight": 800,
-                  "externalSrc": "https://citizentruth.org/wp-content/uploads/2019/07/24153653047_36e43c3193_o.jpg"
+                  "id": "1*lpbM_ZKWmKBc0udtnGW0zQ.jpeg",
+                  "originalWidth": 6048,
+                  "originalHeight": 4024,
+                  "isFeatured": true
                 }
               },
               "type": "Tag"
@@ -1260,13 +1489,13 @@
             {
               "slug": "affordable-housing",
               "name": "Affordable Housing",
-              "postCount": 1584,
+              "postCount": 1613,
               "metadata": {
-                "postCount": 1584,
+                "postCount": 1613,
                 "coverImage": {
-                  "id": "1*ELTOswi_K9HYYZPxAwXdCQ.png",
-                  "originalWidth": 900,
-                  "originalHeight": 450,
+                  "id": "1*XGo8hW7-X50bgSRKv8PXpg.png",
+                  "originalWidth": 544,
+                  "originalHeight": 465,
                   "isFeatured": true
                 }
               },
@@ -1275,13 +1504,13 @@
             {
               "slug": "minneapolis",
               "name": "Minneapolis",
-              "postCount": 976,
+              "postCount": 983,
               "metadata": {
-                "postCount": 976,
+                "postCount": 983,
                 "coverImage": {
-                  "id": "1*zL3AGEsdYsTizc7JUzIYSw.jpeg",
-                  "originalWidth": 1125,
-                  "originalHeight": 724,
+                  "id": "1*2jp5cvoSI7jwAz-c31mpdw.jpeg",
+                  "originalWidth": 2935,
+                  "originalHeight": 2201,
                   "isFeatured": true
                 }
               },
@@ -1290,17 +1519,16 @@
             {
               "slug": "housing",
               "name": "Housing",
-              "postCount": 12835,
+              "postCount": 13376,
               "metadata": {
-                "postCount": 12835,
+                "postCount": 13376,
                 "coverImage": {
-                  "id": "1*X-1lEeVKUkqvpUaNkG5oJw.jpeg",
-                  "originalWidth": 3000,
-                  "originalHeight": 2000,
+                  "id": "1*Ur6hR_2VVYRATITg-xzgow.gif",
+                  "originalWidth": 800,
+                  "originalHeight": 456,
                   "isFeatured": true,
-                  "focusPercentX": 51,
-                  "focusPercentY": 43,
-                  "alt": "A luxury 5-story condominium building is proposed to replace this narrow two-story house at 180 Washington Ave."
+                  "focusPercentX": 44,
+                  "focusPercentY": 34
                 }
               },
               "type": "Tag"
@@ -1490,6 +1718,8 @@
         "proxyPostFaviconUrl": "",
         "proxyPostProviderName": "",
         "proxyPostType": 0,
+        "isSuspended": false,
+        "isLimitedState": false,
         "type": "Post"
       },
       {
@@ -1537,17 +1767,16 @@
             {
               "slug": "housing",
               "name": "Housing",
-              "postCount": 12835,
+              "postCount": 13376,
               "metadata": {
-                "postCount": 12835,
+                "postCount": 13376,
                 "coverImage": {
-                  "id": "1*X-1lEeVKUkqvpUaNkG5oJw.jpeg",
-                  "originalWidth": 3000,
-                  "originalHeight": 2000,
+                  "id": "1*Ur6hR_2VVYRATITg-xzgow.gif",
+                  "originalWidth": 800,
+                  "originalHeight": 456,
                   "isFeatured": true,
-                  "focusPercentX": 51,
-                  "focusPercentY": 43,
-                  "alt": "A luxury 5-story condominium building is proposed to replace this narrow two-story house at 180 Washington Ave."
+                  "focusPercentX": 44,
+                  "focusPercentY": 34
                 }
               },
               "type": "Tag"
@@ -1555,13 +1784,13 @@
             {
               "slug": "solutions",
               "name": "Solutions",
-              "postCount": 2401,
+              "postCount": 2525,
               "metadata": {
-                "postCount": 2401,
+                "postCount": 2525,
                 "coverImage": {
-                  "id": "1*WX-qofIA5FrDgr6HIKdfXQ.jpeg",
-                  "originalWidth": 750,
-                  "originalHeight": 395,
+                  "id": "1*7g-ioyr3WWOrZFKyqQt8uA.png",
+                  "originalWidth": 2272,
+                  "originalHeight": 782,
                   "isFeatured": true
                 }
               },
@@ -1570,14 +1799,14 @@
             {
               "slug": "housing-crisis",
               "name": "Housing Crisis",
-              "postCount": 481,
+              "postCount": 489,
               "metadata": {
-                "postCount": 481,
+                "postCount": 489,
                 "coverImage": {
-                  "id": "0*mHuBZ5adTlqxLEXs.jpg",
-                  "originalWidth": 1233,
-                  "originalHeight": 800,
-                  "externalSrc": "https://citizentruth.org/wp-content/uploads/2019/07/24153653047_36e43c3193_o.jpg"
+                  "id": "1*lpbM_ZKWmKBc0udtnGW0zQ.jpeg",
+                  "originalWidth": 6048,
+                  "originalHeight": 4024,
+                  "isFeatured": true
                 }
               },
               "type": "Tag"
@@ -1585,13 +1814,13 @@
             {
               "slug": "affordable-housing",
               "name": "Affordable Housing",
-              "postCount": 1584,
+              "postCount": 1613,
               "metadata": {
-                "postCount": 1584,
+                "postCount": 1613,
                 "coverImage": {
-                  "id": "1*ELTOswi_K9HYYZPxAwXdCQ.png",
-                  "originalWidth": 900,
-                  "originalHeight": 450,
+                  "id": "1*XGo8hW7-X50bgSRKv8PXpg.png",
+                  "originalWidth": 544,
+                  "originalHeight": 465,
                   "isFeatured": true
                 }
               },
@@ -1600,17 +1829,14 @@
             {
               "slug": "seattle",
               "name": "Seattle",
-              "postCount": 3488,
+              "postCount": 3565,
               "metadata": {
-                "postCount": 3488,
+                "postCount": 3565,
                 "coverImage": {
-                  "id": "0*4K2oLjZqVpYPTc2B",
-                  "originalWidth": 6000,
-                  "originalHeight": 4000,
-                  "isFeatured": true,
-                  "focusPercentX": 58,
-                  "focusPercentY": 60,
-                  "unsplashPhotoId": "zLT3VqWEgOQ"
+                  "id": "1*kq8q2OullJgmUiUTkm9e-Q.png",
+                  "originalWidth": 1574,
+                  "originalHeight": 1122,
+                  "isFeatured": true
                 }
               },
               "type": "Tag"
@@ -1778,6 +2004,8 @@
         "proxyPostFaviconUrl": "",
         "proxyPostProviderName": "",
         "proxyPostType": 0,
+        "isSuspended": false,
+        "isLimitedState": false,
         "type": "Post"
       },
       {
@@ -1825,17 +2053,16 @@
             {
               "slug": "housing",
               "name": "Housing",
-              "postCount": 12835,
+              "postCount": 13376,
               "metadata": {
-                "postCount": 12835,
+                "postCount": 13376,
                 "coverImage": {
-                  "id": "1*X-1lEeVKUkqvpUaNkG5oJw.jpeg",
-                  "originalWidth": 3000,
-                  "originalHeight": 2000,
+                  "id": "1*Ur6hR_2VVYRATITg-xzgow.gif",
+                  "originalWidth": 800,
+                  "originalHeight": 456,
                   "isFeatured": true,
-                  "focusPercentX": 51,
-                  "focusPercentY": 43,
-                  "alt": "A luxury 5-story condominium building is proposed to replace this narrow two-story house at 180 Washington Ave."
+                  "focusPercentX": 44,
+                  "focusPercentY": 34
                 }
               },
               "type": "Tag"
@@ -1843,13 +2070,13 @@
             {
               "slug": "solutions",
               "name": "Solutions",
-              "postCount": 2401,
+              "postCount": 2525,
               "metadata": {
-                "postCount": 2401,
+                "postCount": 2525,
                 "coverImage": {
-                  "id": "1*WX-qofIA5FrDgr6HIKdfXQ.jpeg",
-                  "originalWidth": 750,
-                  "originalHeight": 395,
+                  "id": "1*7g-ioyr3WWOrZFKyqQt8uA.png",
+                  "originalWidth": 2272,
+                  "originalHeight": 782,
                   "isFeatured": true
                 }
               },
@@ -1858,14 +2085,13 @@
             {
               "slug": "apartments",
               "name": "Apartments",
-              "postCount": 3294,
+              "postCount": 3410,
               "metadata": {
-                "postCount": 3294,
+                "postCount": 3410,
                 "coverImage": {
-                  "id": "1*1hRpzyBt5gb7dKY1cVRrIg.png",
-                  "originalWidth": 1808,
-                  "originalHeight": 1017,
-                  "isFeatured": true
+                  "id": "1*wBZnX_iBO5Qxaq-Tssbe1Q.png",
+                  "originalWidth": 1274,
+                  "originalHeight": 688
                 }
               },
               "type": "Tag"
@@ -1873,13 +2099,13 @@
             {
               "slug": "affordable-housing",
               "name": "Affordable Housing",
-              "postCount": 1584,
+              "postCount": 1613,
               "metadata": {
-                "postCount": 1584,
+                "postCount": 1613,
                 "coverImage": {
-                  "id": "1*ELTOswi_K9HYYZPxAwXdCQ.png",
-                  "originalWidth": 900,
-                  "originalHeight": 450,
+                  "id": "1*XGo8hW7-X50bgSRKv8PXpg.png",
+                  "originalWidth": 544,
+                  "originalHeight": 465,
                   "isFeatured": true
                 }
               },
@@ -1888,14 +2114,14 @@
             {
               "slug": "housing-crisis",
               "name": "Housing Crisis",
-              "postCount": 481,
+              "postCount": 489,
               "metadata": {
-                "postCount": 481,
+                "postCount": 489,
                 "coverImage": {
-                  "id": "0*mHuBZ5adTlqxLEXs.jpg",
-                  "originalWidth": 1233,
-                  "originalHeight": 800,
-                  "externalSrc": "https://citizentruth.org/wp-content/uploads/2019/07/24153653047_36e43c3193_o.jpg"
+                  "id": "1*lpbM_ZKWmKBc0udtnGW0zQ.jpeg",
+                  "originalWidth": 6048,
+                  "originalHeight": 4024,
+                  "isFeatured": true
                 }
               },
               "type": "Tag"
@@ -2074,6 +2300,8 @@
         "proxyPostFaviconUrl": "",
         "proxyPostProviderName": "",
         "proxyPostType": 0,
+        "isSuspended": false,
+        "isLimitedState": false,
         "type": "Post"
       },
       {
@@ -2121,17 +2349,16 @@
             {
               "slug": "housing",
               "name": "Housing",
-              "postCount": 12835,
+              "postCount": 13376,
               "metadata": {
-                "postCount": 12835,
+                "postCount": 13376,
                 "coverImage": {
-                  "id": "1*X-1lEeVKUkqvpUaNkG5oJw.jpeg",
-                  "originalWidth": 3000,
-                  "originalHeight": 2000,
+                  "id": "1*Ur6hR_2VVYRATITg-xzgow.gif",
+                  "originalWidth": 800,
+                  "originalHeight": 456,
                   "isFeatured": true,
-                  "focusPercentX": 51,
-                  "focusPercentY": 43,
-                  "alt": "A luxury 5-story condominium building is proposed to replace this narrow two-story house at 180 Washington Ave."
+                  "focusPercentX": 44,
+                  "focusPercentY": 34
                 }
               },
               "type": "Tag"
@@ -2139,14 +2366,13 @@
             {
               "slug": "apartments",
               "name": "Apartments",
-              "postCount": 3294,
+              "postCount": 3410,
               "metadata": {
-                "postCount": 3294,
+                "postCount": 3410,
                 "coverImage": {
-                  "id": "1*1hRpzyBt5gb7dKY1cVRrIg.png",
-                  "originalWidth": 1808,
-                  "originalHeight": 1017,
-                  "isFeatured": true
+                  "id": "1*wBZnX_iBO5Qxaq-Tssbe1Q.png",
+                  "originalWidth": 1274,
+                  "originalHeight": 688
                 }
               },
               "type": "Tag"
@@ -2154,15 +2380,14 @@
             {
               "slug": "policy",
               "name": "Policy",
-              "postCount": 6960,
+              "postCount": 7114,
               "metadata": {
-                "postCount": 6960,
+                "postCount": 7114,
                 "coverImage": {
-                  "id": "1*ArsRlKkj4-GdSe31p1ImHQ.jpeg",
-                  "originalWidth": 4074,
-                  "originalHeight": 2706,
-                  "isFeatured": true,
-                  "alt": "An older “grid” style prison cell block."
+                  "id": "1*xakZXYPv3GiklIsGcWNuOg.jpeg",
+                  "originalWidth": 5760,
+                  "originalHeight": 3840,
+                  "isFeatured": true
                 }
               },
               "type": "Tag"
@@ -2185,13 +2410,13 @@
             {
               "slug": "solutions",
               "name": "Solutions",
-              "postCount": 2401,
+              "postCount": 2525,
               "metadata": {
-                "postCount": 2401,
+                "postCount": 2525,
                 "coverImage": {
-                  "id": "1*WX-qofIA5FrDgr6HIKdfXQ.jpeg",
-                  "originalWidth": 750,
-                  "originalHeight": 395,
+                  "id": "1*7g-ioyr3WWOrZFKyqQt8uA.png",
+                  "originalWidth": 2272,
+                  "originalHeight": 782,
                   "isFeatured": true
                 }
               },
@@ -2300,6 +2525,8 @@
         "proxyPostFaviconUrl": "",
         "proxyPostProviderName": "",
         "proxyPostType": 0,
+        "isSuspended": false,
+        "isLimitedState": false,
         "type": "Post"
       }
     ],
@@ -2322,6 +2549,7 @@
           "isNsfw": false,
           "isWriterProgramEnrolled": true,
           "isQuarantined": false,
+          "isSuspended": false,
           "type": "User"
         }
       },
@@ -2350,8 +2578,8 @@
             "width": 0
           },
           "metadata": {
-            "followerCount": 31,
-            "activeAt": 1563282525454
+            "followerCount": 37,
+            "activeAt": 1565892105421
           },
           "virtuals": {
             "permissions": {
@@ -2555,7 +2783,7 @@
     "paging": {
       "previous": {
         "limit": 25,
-        "from": "1561754985216"
+        "from": "1565892105248"
       },
       "next": {
         "limit": 25,
@@ -2564,5 +2792,5 @@
     }
   },
   "v": 3,
-  "b": "38103-6e8928c"
+  "b": "38367-69813be"
 }
