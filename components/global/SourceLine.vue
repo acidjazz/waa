@@ -11,5 +11,5 @@
     span ;&nbsp;
     a(href="https://www.census.gov/",target="_new") U.S. Census Bureau
     span ;&nbsp;
-    a(href="https://www.realpage.com/",target="_new") Realpage
+    a(href="https://www.realpage.com/",target="_new") RealPage
 </template>
