@@ -29,13 +29,13 @@ export default {
           gradient: 'bg-gradpurp',
           color: 'magenta',
         },
-        {
+        /*{
           label: 'the initiative',
           names: ['initiative'],
           route: '/initiative',
           color: 'tacao',
           gradient: 'bg-gradred',
-        },
+        },*/
         {
           label: 'our vision',
           names: ['vision'],
