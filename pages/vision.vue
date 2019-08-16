@@ -5,7 +5,7 @@
   OffsetSection
     VisionBuild
     // VisionIncome
-  VisionFAQ
+  // VisionFAQ
   Publications
   GallerySection
   TheResearch
