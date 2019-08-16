@@ -24,7 +24,7 @@ export default {
         '2017 American Community Survey, 1-Year Estimates, US Census Bureau',
       ],
       sourcesB: [
-        'Realpage',
+        'RealPage',
         'NMHC tabulations of 2017 American Community Survey microdata, IPUMS',
         'U.S. Census Bureau, New Residential Construction',
       ],
