@@ -7,7 +7,7 @@
           .border-4.w-full.h-full.rounded-full.flex.items-center.justify-center(:class="`border-${color}`")
             .pointer.top-0.absolute.-mt-2(:class="`pointer-${color}`")
             .text-3xl.text-bolder(:style="`transform: rotate(${-rotation}deg);`") {{ index }}
-    .w-32.flex.text-alum.bg-white.justify-between.-mt-6
+    .w-32.flex.text-alum.bg-white.justify-between.-mt-8.pb-2
       span Harder
       span Easier
   .ml-4.text-bolder
