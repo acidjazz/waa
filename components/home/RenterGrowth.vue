@@ -5,7 +5,8 @@ OffsetSection
       .font-os.mb-4 NATIONAL DATA
       .text-2xl.font-bold.print_text-lg Renter Household Growth
       .text-bolder.text-3xl.print_text-xl {{ increase }}% Increase
-      .text Forecasted by the year 2030
+      .text.mb-4 Forecasted by the year 2030
+      .text The country needs to build 328,000 new apartment homes each year to meet demand.
     .w-full.lg_w-3_4(v-in-vp).vp-r.vp-d-5
       .chart.w-full
         GrowthChart(:current="current",:future="future",:height="140")
