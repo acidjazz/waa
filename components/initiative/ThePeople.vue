@@ -3,28 +3,32 @@
   .lg_ml-10.ml-0
     .flex.flex-col.lg_flex-row.-p-4
       .lg_w-1_3.p-4.flex.flex-col.justify-around.pl-0(v-in-vp).vp-r.vp-d-1
-        .text-4xl.font-okib.font-bold.mb-4 We are proud to have worked with the following sources
+        .text-3xl.mb-4 We are proud to have worked with the following sources
       .lg_w-1_3.p-4.flex.flex-col.justify-around(v-in-vp).vp-r.vp-d-2
-        .flex
+        .flex.mb-4(v-for="source in sourcesA")
           i.mdi.mdi-circle.text-alum.mr-2
-          .text-sm Dr. Stephen Fuller on behalf of NMHC and NAA, “The Trillion Dollar Apartment Industry”
-        .flex
+          .text-sm {{ source }}
+      .lg_w-1_3.p-4.flex.flex-col.justify-around(v-in-vp).vp-r.vp-d-2
+        .flex.mb-4(v-for="source in sourcesB")
           i.mdi.mdi-circle.text-alum.mr-2
-          .text-sm Hoyt Advisory Services, Dinn Focused Marketing, and Whitegate Real Estate Advisors
-        .flex
-          i.mdi.mdi-circle.text-alum.mr-2
-          .text-sm NMHC Tabulations of American Housing Survey microdata, US Census Bureau & US Dept. of Housing and Urban Development
-      .lg_w-1_3.p-4.flex.flex-col.justify-around.pr-0(v-in-vp).vp-r.vp-d-3
-        .flex
-          i.mdi.mdi-circle.text-alum.mr-2
-          .text-sm 2015 American Community Survey, 1-Year Estimates, US Census Bureau
-        .flex
-          i.mdi.mdi-circle.text-alum.mr-2
-          .text-sm Axiometrics, a RealPage Company
-        .flex
-          i.mdi.mdi-circle.text-alum.mr-2
-          .text-sm NMHC tabulations of 2015 American Community Survey microdata, IPUMS
-        .flex
-          i.mdi.mdi-circle.text-alum.mr-2
-          .text-sm U.S. Census Bureau, New Residential Construction
+          .text-sm {{ source }}
 </template>
+
+<script>
+export default {
+  data () {
+    return {
+      sourcesA: [
+        'Hoyt Advisory Services, Eigen10 Advisors, and Dinn Focused Marketing',
+        'NMHC Tabulations of American Housing Survey microdata, US Census Bureau & US Dept. of Housing and Urban Development',
+        '2017 American Community Survey, 1-Year Estimates, US Census Bureau',
+      ],
+      sourcesB: [
+        'Realpage',
+        'NMHC tabulations of 2017 American Community Survey microdata, IPUMS',
+        'U.S. Census Bureau, New Residential Construction',
+      ],
+    }
+  }
+}
+</script>

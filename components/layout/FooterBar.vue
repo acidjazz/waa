@@ -14,7 +14,7 @@ footer.bg-seashell.mt-16.p-12.lg_p-24.print_hidden
         label.block.text-3xl.font-bold.mb-4(for="mce-EMAIL") Join Us
         input.p-2.rounded.font-os.w-64.mb-8(id="mce-EMAIL",type="email",placeholder="E-MAIL",name="EMAIL")
         .text-right.w-64
-          a.inline.bg-orange.px-8.py-4.text-sm.rounded-full.text-center(
+          a.inline.bg-supernova.px-8.py-4.text-sm.rounded-full.text-center(
             href="/",
             onclick="document.forms['joinus'].submit(); return false;") Subscribe
       .mt-10.flex.flex-row

@@ -7,7 +7,7 @@
       | The construction of every 100 apartment units in your district contributes
       .data-val ${{ contribution.Construction_Economic_Impact | numeral }}
       | and
-      .data-val {{ contribution.Construction_Employment_Impact | numeral }}
+      .data-val {{ contribution.Construction_Employment_Impact | numeral('0,0a') }}
       | jobs to the state economy.
 </template>
 
