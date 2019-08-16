@@ -41,7 +41,7 @@ export default {
         values: "'Vision-IncomeAfford'!A2:C17",
       },
       dataResidentsUS: {
-        values: "'Data-Residents'!A2:C2",
+        values: "'Data-Residents'!A2:D2",
       },
       dataResidentsState: {
         labels: "'Data-Residents'!A3:D3",
@@ -89,7 +89,7 @@ export default {
       },
 
       dataApartmentsUS: {
-        values: "'Data-Apartments'!A2:C2",
+        values: "'Data-Apartments'!A2:D2",
       },
       dataApartmentsState: {
         labels: "'Data-Apartments'!A3:C3",

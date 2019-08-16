@@ -24,7 +24,7 @@ export default {
 
     metro_msa () { return this.sheet('main', 'MetroMSA', 'Metro')[this.area.key] },
 
-    residents_national () { return this.sheet('main', 'dataResidentsUS', 1)['Total U.S.'] },
+    residents_national () { return this.sheet('main', 'dataResidentsUS', 3)['Total U.S.'] },
     residents_state () { return this.sheet('main', 'dataResidentsState', 'State')[this.area.key].Apartment_Residents_2017 },
     residents_metro () { return this.sheet('main', 'dataResidentsMetro', 'Metro Area')[this.area.key].Apartment_Residents_2017 },
     residents_district () { return this.sheet('main', 'dataResidentsDistrict', ['State', 'District'])[this.area.key].Apartment_Residents_2017 },
@@ -42,7 +42,7 @@ export default {
     contribution_district () { return this.sheet('main', 'dataContributionDistrict', ['State', 'District'])[this.area.key] },
     contribution () { return this.sheet_select('contribution', this.area.type) },
 
-    apartments_national () { return this.sheet('main', 'dataApartmentsUS', 1)['Total U.S.'] },
+    apartments_national () { return this.sheet('main', 'dataApartmentsUS', 2)['Total U.S.'] },
     apartments_state () { return this.sheet('main', 'dataApartmentsState', 'State')[this.area.key].Apartments_2017 },
     apartments_metro () { return this.sheet('main', 'dataApartmentsMetro', 'Metro Area')[this.area.key].Apartments_2017 },
     apartments_district () { return this.sheet('main', 'dataApartmentsDistrict', ['State', 'District'])[this.area.key].Apartments_2017 },
