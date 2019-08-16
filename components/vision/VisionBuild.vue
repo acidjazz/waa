@@ -2,7 +2,7 @@
 .flex.mb-12.flex-col
   .font-os.my-4(v-in-vp).vp-r NATIONAL DATA
   .text-4xl.font-okib.font-bold.mb-2(v-in-vp).vp-r We need to build more
-  .text-3xl.mb-6.lg_w-2_3(v-in-vp).vp-r The country will need to build an average of 328,000 new apartment homes each year to keep up with demand. The industry averaged just 242,614 completions from 2011-2017.
+  .text-3xl.mb-6(v-in-vp).vp-r The country needs to build 328,000 new apartment homes each year to meet demand. Yet, the industry averaged just 255,000 annual completions from 2011-2018. If this demand goes unmet, existing affordability issues will only be exacerbated.
 
   .flex.flex-col.lg_flex-row
     .lg_w-1_2.lg_mr-4
