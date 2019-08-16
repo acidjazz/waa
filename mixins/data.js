@@ -16,7 +16,8 @@ export default {
   props: {
     area: {
       type: Object,
-      required: true,
+      required: false,
+      default: () => {},
     }
   },
   computed: {

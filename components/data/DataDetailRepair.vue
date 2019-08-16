@@ -24,7 +24,7 @@ export default {
     stock_sum () { return Object.values(this.stock).slice(1).reduce((a,b) => a + b) },
     before_eighty () { return (this.stock['Before_1959'] + this.stock['1960_1979']) / this.stock_sum },
     copy () {
-      return this.loc_copy === 'The country' ?
+      return this.loc_copy === 'the country' ?
         'Share of U.S. Apartments Built Before 1980' :
         `Share of ${this.loc_copy}${this.plural} Apartments Built Before 1980`
     },
