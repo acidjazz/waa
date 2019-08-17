@@ -1,7 +1,7 @@
 <template lang="pug">
 OffsetSection
   .font-os.mb-4(v-in-vp).vp-r THE RESEARCH
-  .text-3xl.text-bolder.w-full.lg_w-3_4.mb-8(v-in-vp).vp-r.vp-d-1 We partnered with top researchers to estimate the demand for apartments in the future.
+  .text-3xl.text-bolder.w-full.lg_w-3_4.mb-8(v-in-vp).vp-r.vp-d-1 We partnered with top researchers at Hoyt Advisory Services and Eigen10 Advisors to estimate the economic impact of the apartment industry as well as demand for apartments in the future.
   .flex.flex-col.lg_flex-row.-mx-4
     .w-full.lg_w-1_3.p-4(v-in-vp).vp-r.vp-d-2
       .text-4xl.font-okib.font-bold.h-28 Forecasted demographic
