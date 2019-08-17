@@ -64,6 +64,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '@/plugins/ie.client.js',
     '@/plugins/countup.client.js',
     '@/plugins/viewport.client.js',
   ],
