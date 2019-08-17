@@ -6,8 +6,10 @@
     a.underline(href="https://google.com/chrome") Chrome
     | ,&nbsp;
     a.underline(href="https://apple.com/safari") Safari
-    |, or&nbsp;
+    |, &nbsp;
     a.underline(href="https://firefox.com/") FireFox
+    |, or&nbsp;
+    a.underline(href="https://www.microsoft.com/en-us/windows/microsoft-edge/") Edge
 </template>
 
 <script>
