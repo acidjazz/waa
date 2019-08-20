@@ -5,12 +5,12 @@ SectionHero(type="video", src="/condos.mp4", gradient="bg-tranblue")
     | Apartments and their residents contribute
     | &nbsp;$
     no-ssr
-      VueCountUp(:endVal="count_val(contrib.endVal)",:options="contrib.options")
+      VueCountUp(:endVal="contrib.endVal",:options="contrib.options")
     | &nbsp;
     | trillion to the U.S. economy annually, supporting
     | &nbsp;
     no-ssr
-      VueCountUp(:endVal="count_val(jobs.endVal)",:options="contrib.options")
+      VueCountUp(:endVal="jobs.endVal",:options="contrib.options")
     | &nbsp;
     | million jobs.
   .buttons.mt-10
