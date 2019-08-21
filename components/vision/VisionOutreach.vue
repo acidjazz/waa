@@ -17,7 +17,7 @@ OffsetSection
     .lg_w-1_2(v-in-vp).vp-r.vp-d-3
       .text-3xl.font-bold.mb-4.lg_h-28.lg_w-48 Our Vision
       .mb-5 The Vision 2030 program outlines how public-private partnerships can help us solve the country's housing affordability challenge.
-      .waa-button-black-small.mb-8 Download PDF
+      a.waa-button-black-small.mb-8(href="/Vision2030.pdf") Download PDF
 </template>
 
 <script>
