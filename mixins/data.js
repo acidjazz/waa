@@ -74,6 +74,11 @@ export default {
     housetype_metro () { return this.sheet('main', 'dataHouseTypeMetro', 'Geography')[this.area.key] },
     housetype () { return this.sheet_select('housetype', this.area.type) },
 
+    rentergrowth_national () { return this.sheet('main', 'dataRenterGrowthUS', 'State')['Total_U.S.']  },
+    rentergrowth_state () { return this.sheet('main', 'dataRenterGrowthState', 'State')  },
+    rentergrowth_metro () { return this.sheet('main', 'dataRenterGrowthMetro', 'State')  },
+    rentergrowth () { return this.sheet_select('rentergrowth', this.area.type) },
+
     restrictionMetro () { return this.sheet('main', 'dataRestrictionsMetro', 'Metro Area ') },
 
     loc_copy () {

@@ -174,6 +174,18 @@ export default {
         labels: "'Data-HouseType'!A56:G56",
         values: "'Data-HouseType'!A57:G107",
       },
+      dataRenterGrowthUS: {
+        labels: "'Data-Renter HH Growth'!A1:D1",
+        values: "'Data-Renter HH Growth'!A2:D2",
+      },
+      dataRenterGrowthState: {
+        labels: "'Data-Renter HH Growth'!A1:D1",
+        values: "'Data-Renter HH Growth'!A3:D55",
+      },
+      dataRenterGrowthMetro: {
+        labels: "'Data-Renter HH Growth'!A1:D1",
+        values: "'Data-Renter HH Growth'!A56:D104",
+      },
     },
   },
   calc: {
