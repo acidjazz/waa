@@ -29,8 +29,8 @@
         .bg-black.h-2.my-12
         DataName(:name="`other data - ${area.value}`")
         .lg_w-11_12.mx-auto.my-12
-          .text-4xl.text-bolder Apartment Stats
-          .text.my-8 Married couples with children account for an ever-diminishing share of apartment households, while single-person households represent by far the most common living situation.
+          .text-4xl.text-bolder.mb-8 Apartment Stats
+          //.text.my-8 Married couples with children account for an ever-diminishing share of apartment households, while single-person households represent by far the most common living situation.
           .flex.flex-col.lg_flex-row.-px-4
             DataPersons.lg_w-1_2.lg_pr-8.mb-8(:area="area")
             DataHouseType.lg_w-1_2.lg_pl-8.mb-8(:area="area")

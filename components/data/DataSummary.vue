@@ -9,7 +9,7 @@
     | partments and their residents contribute
     |
     span(v-if="contribution")
-      span.text-bolder(title="Total_Economic_Impact") {{ impact | numeral }}
+      span.text-bolder(title="Total_Economic_Impact") ${{ impact | numeral }}
     |
     | to the
     |

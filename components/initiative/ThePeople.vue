@@ -19,7 +19,7 @@ export default {
   data () {
     return {
       sourcesA: [
-        'Hoyt Advisory Services, Eigen10 Advisors, and Dinn Focused Marketing',
+        'Hoyt Advisory Services, Eigen10 Advisors and Dinn Focused Marketing',
         'NMHC Tabulations of American Housing Survey microdata, US Census Bureau & US Dept. of Housing and Urban Development',
         '2017 American Community Survey, 1-Year Estimates, US Census Bureau',
       ],

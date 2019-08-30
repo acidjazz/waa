@@ -18,9 +18,9 @@
           v-if="index === current",
           :key="index", v-in-vp)
             div
-              i.absolute.text-6xl.mdi.mdi-format-quote-open.opacity-25.-mt-8.-ml-16.text-alum
+              //i.absolute.text-6xl.mdi.mdi-format-quote-open.opacity-25.-mt-8.-ml-16.text-alum
               span {{ fact }}
-              i.absolute.text-6xl.mdi.mdi-format-quote-close.opacity-25.-mt-6.text-alum
+              //i.absolute.text-6xl.mdi.mdi-format-quote-close.opacity-25.-mt-6.text-alum
 </template>
 
 <script>
