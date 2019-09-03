@@ -1,10 +1,12 @@
 <template lang="pug">
-#DataDetailNeeded
+#DataDetailNeeded.text-center
   .text-bolder.text-6xl.print_hidden
     VueCountUp(:endVal="count_val(building, '0,0a')",:options="count_opts(building, '', 0, '0,0a')")
   .text-bolder.text-3xl.hidden.print_block {{ building | numeral('0,0a') }}
   .text-bolder.text-2xl New Apartments Needed Annually
   .my-8.print_my-2.print_text-sm
+  .text-lg.print_text-sm.mb-2.print_mb-0 Apartment demand is growing and the industry needs to keep up. However, producing enough new apartments to meet demand requires new development approaches, more incentives and fewer restrictions.
+  .text-lg.print_text-sm
     | {{ loc_copy_caps }}
     | needs to build
     .data-val {{ building | numeral('0,0a') }}
@@ -13,6 +15,17 @@
     | to {{ loc_copy }}'s economy annually, creating
     .data-val {{ contribution.Construction_Employment_Impact | numeral('0,0a') }}
     | jobs.
+
+
+  //.text-lg.print_text-sm
+    | The construction of every 100 apartment units in your district contributes
+    .data-val ${{ contribution.Construction_Economic_Impact | numeral }}
+    | and
+    .data-val {{ contribution.Construction_Employment_Impact | numeral('0,0a') }}
+    | jobs to the state economy.
+
+
+
 </template>
 
 <script>

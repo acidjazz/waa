@@ -5,7 +5,7 @@
     span.hidden.print_inline {{ before_eighty*100 | numeral('0,0a') }}
     | %
     .text-bolder.text-2xl.print_text-lg {{ copy }}
-  .my-8.print_my-2.print_text-sm
+  .mt-4.mb-8.print_my-2.print_text-sm
     | The renovation and repair of apartments helps preserve
     | {{ loc_copy }}’s
     | older more affordable units, contributing

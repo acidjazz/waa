@@ -75,7 +75,7 @@ export default {
     ['@nuxtjs/google-tag-manager', { id: 'GTM-NP9HJPR', pageTracking: false }],
     ['@nuxtjs/pwa', { manifest: false }],
   ],
-  devModules: [
+  buildModules: [
     '@nuxtjs/tailwindcss',
   ],
   /*
