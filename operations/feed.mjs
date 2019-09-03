@@ -18,7 +18,7 @@ https.get('https://medium.com/we-are-apartments/latest?format=json', (res) => {
 */
 
 let result = fs.readFileSync('data.js', 'utf8')
-fs.writeFileSync('data/feed.json', JSON.stringify(result, null, 2))
+fs.writeFileSync('data/feed.json', result)
 
 
 // https://medium.com/we-are-apartments/latest?format=json
