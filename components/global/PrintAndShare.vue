@@ -24,6 +24,7 @@ export default {
         'pdf.margin.bottom': '0.5cm',
         'pdf.margin.left': '0.5cm',
         'pdf.margin.right': '0.5cm',
+        'pdf.pageRanges': 1,
         url: this.host,
       }).map(([k,v]) => `${k}=${v}`).join('&')
     },
