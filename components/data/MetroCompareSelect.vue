@@ -5,7 +5,7 @@
   .lg_w-1_2.lg_ml-10
     .font-os.uppercase.text-2xl.mb-4 ACTIVITY
     .text-bolder.text-4xl.mb-4 Compare your metro
-    .mb-4 Enter two metros below to compare how they stack up against another metro.
+    .mb-4 Enter two metros below to compare how they stack up.
     form(autocomplete="off").relative
       .input.relative.mb-4(v-for="name, input in inputs")
         input.py-2.px-4.bg-seashell.lg_w-96(
