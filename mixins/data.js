@@ -10,7 +10,7 @@ export default {
   mixins: [ sheets ],
   filters: {
     numeral (value, format='0.0a') {
-      return numeral(value).format(format)
+      return numeral(value).format(format).toUpperCase()
     },
   },
   props: {

@@ -18,7 +18,7 @@ export default {
       return {
         prefix: prefix,
         decimalPlaces: decimals,
-        suffix: numeral(value).format(format).slice(-1),
+        suffix: numeral(value).format(format).slice(-1).toUpperCase(),
       }
     },
   },
