@@ -4,7 +4,7 @@
     VueCountUp(:endVal="count_val(building, '0,0a')",:options="count_opts(building, '', 0, '0,0a')")
   .text-bolder.text-3xl.hidden.print_block(v-if="building") {{ building | numeral('0,0a') }}
   .text-bolder.text-2xl(v-if="building") New Apartments Needed Annually
-  .text-bolder.text-2xl.mt-8(v-else) New Apartments Needed Annually
+  .text-bolder.text-2xl.mt-8(v-else) New Apartments Needed
   .my-8.print_my-2.print_text-sm
   .text-lg.print_text-sm.mb-2.print_mb-0 Apartment demand is growing and the industry needs to keep up. However, producing enough new apartments to meet demand requires new development approaches, more incentives and fewer restrictions.
 
