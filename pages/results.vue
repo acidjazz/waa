@@ -28,7 +28,7 @@
             .text-xl.text-bolder.w-1_2.text-right ${{ totalImpact | numeral }}
 
           .bg-seashell.p-4.my-4.rounded.border.border-alum
-            .text-xl Impact form Tax Revenue
+            .text-xl Impact from Tax Revenue
             .flex.flex-wrap.items-center.justify-between.p-4.lg_mr-12
               .w-2_3 Operation Expenditures
               .text-right ${{ operationExpenditures | numeral }}
