@@ -74,7 +74,9 @@ export default {
   modules: [
     ['@nuxtjs/google-tag-manager', { id: 'GTM-NP9HJPR', pageTracking: false }],
     ['@nuxtjs/pwa', { manifest: false }],
+    '@nuxtjs/vendor',
   ],
+  vendor: ['babel-polyfill', 'eventsource-polyfill'],
   buildModules: [
     '@nuxtjs/tailwindcss',
   ],
