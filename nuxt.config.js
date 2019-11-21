@@ -74,7 +74,34 @@ export default {
   modules: [
     ['@nuxtjs/google-tag-manager', { id: 'GTM-NP9HJPR', pageTracking: false }],
     ['@nuxtjs/pwa', { manifest: false }],
+    'nuxt-polyfill',
   ],
+
+  polyfill: {
+      features: [
+          {
+              require: 'url-polyfill' // NPM package or require path of file
+          },
+          {
+              require: 'intersection-observer',
+              detect: () => 'IntersectionObserver' in window,
+          },
+          {
+              require: 'smoothscroll-polyfill',
+
+              // Detection found in source: https://github.com/iamdustan/smoothscroll/blob/master/src/smoothscroll.js
+              detect: () => 'scrollBehavior' in document.documentElement.style && window.__forceSmoothScrollPolyfill__ !== true,
+
+              // Optional install function called client side after the package is required:
+              install: (smoothscroll) => smoothscroll.polyfill()
+          }
+      ]
+  },
+
+    // Add it to the modules section:
+
+
+
   buildModules: [
     '@nuxtjs/tailwindcss',
   ],

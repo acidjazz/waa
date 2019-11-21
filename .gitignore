@@ -97,4 +97,7 @@ static/mdi.css
 static/materialdesignicons.min.css.map
 static/fonts/material*
 
+# vendor
+static/vendor
+
 data/*.json
