@@ -100,8 +100,6 @@ export default {
 
     // Add it to the modules section:
 
-
-
   buildModules: [
     '@nuxtjs/tailwindcss',
   ],
