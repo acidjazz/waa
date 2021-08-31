@@ -69,7 +69,7 @@
     "numeral": "^2.0.6",
     "nuxt": "^2.8.1",
     "nuxt-polyfill": "^1.0.3",
-    "pug": "^2.0.3",
+    "pug": "^3.0.1",
     "pug-plain-loader": "^1.0.0",
     "smoothscroll-polyfill": "^0.4.4",
     "stylus": "^0.54.7",
