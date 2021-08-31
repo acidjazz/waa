@@ -1,0 +1,24 @@
+name: Deploy with Fume
+on:
+  push:
+    branches: [ staging, production ]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Generate our medium feed
+        run: yarn feed
+      - name: Generate sheets
+        run: yarn sheets
+      - name: Generate icons
+        run: yarn mdi
+      - name: Generate our routes
+        run: yarn route
+      - uses: fumeapp/action@master
+        with:
+          token: ${{ secrets.FUME_TOKEN }}
+          environment: ${GITHUB_REF##*/}
+
+
+
