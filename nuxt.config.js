@@ -1,7 +1,6 @@
 import pkg from './package'
 import routes from './data/routes'
 export default {
-  mode: 'universal',
   cfg: pkg.cfg,
   /*
   ** Headers of the page

@@ -4,7 +4,7 @@
     .flex.justify-between.my-2
       .text-bold {{ label }}
       .text-bold
-        no-ssr
+        client-only
           VueCountUp(:endVal="perc(value)")
         span %
     .relative.h-4

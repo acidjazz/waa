@@ -24,7 +24,7 @@
       .flex.flex-row.flex-wrap
         .flex.w-1_2.lg_w-1_4.mb-4(v-for="metro in sorted")
           .text-bolder.w-8.mr-4.tran-text-4s(:class="`text-${color(val(metro.Restriction_Index))}`")
-            no-ssr
+            client-only
               VueCountUp(:endVal="val(metro.Restriction_Index)",:options="{decimalPlaces: 1}")
           nuxt-link(
             :to="`/data/${metro.Metro_Area.replace(/ /g, '_')}`",
