@@ -7,6 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Install our dependencies
+        run: yarn
       - name: Generate our medium feed
         run: yarn feed
       - name: Generate sheets
