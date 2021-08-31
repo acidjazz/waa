@@ -55,16 +55,10 @@
     "@mdi/font": "^4.0.96",
     "@nuxtjs/google-tag-manager": "^2.2.0",
     "@nuxtjs/pwa": "^3.0.0-beta.16",
-    "@nuxtjs/tailwindcss": "^4.2.1",
     "aeonian": "^1.1.7",
-    "babel-eslint": "^10.0.2",
     "chart.js": "^2.8.0",
     "countup.js": "^2.0.4",
     "cross-env": "^5.2.0",
-    "eslint": "^7.10.0",
-    "eslint-loader": "^3.0.0",
-    "eslint-plugin-vue": "^7.12.1",
-    "eslint-plugin-nuxt": "^2.0.0",
     "googleapis": "^84.0.0",
     "intersection-observer": "^0.7.0",
     "numeral": "^2.0.6",
@@ -82,7 +76,12 @@
     "vue-in-viewport-mixin": "^2.0.0"
   },
   "devDependencies": {
-    "autoprefixer": "^9.6.0",
-    "nodemon": "^1.18.9"
+    "babel-eslint": "^10.0.2",
+    "eslint": "^7.10.0",
+    "eslint-loader": "^3.0.0",
+    "eslint-plugin-nuxt": "^2.0.0",
+    "eslint-plugin-vue": "^7.12.1",
+    "@nuxtjs/tailwindcss": "^4.2.1",
+    "autoprefixer": "^9.6.0"
   }
 }
