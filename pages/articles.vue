@@ -24,8 +24,8 @@ export default {
   components: { OffsetSection, ArticlesHero, ArticleList, MediumArticle },
     data () {
       return {
-        featured: feed.payload.posts[0],
-        feed: feed.payload.posts.slice(1),
+        featured: feed.find(a => a.featured === true),
+        feed: feed.filter(a => a.featured !== true),
       }
   },
 }
