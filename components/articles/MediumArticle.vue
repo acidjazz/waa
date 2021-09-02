@@ -1,11 +1,11 @@
 <template lang="pug">
 article.article-outer
-  a.article(:href="link(article)",target="_new",v-in-vp,:class="`vp-d-${index+2}`").vp-r
+  a.article(:href="article.url",target="_new",v-in-vp,:class="`vp-d-${index+2}`").vp-r
     .article_image
-      img(:src="thumbnail(article)",loading="lazy",alt="Article Image", width="330", height="300")
-    .article_header(:class="{'lg_w-1_3': featured}")
+      img(:src="article.image",loading="lazy",alt="Article Image", width="330", height="300")
+    .article_header(:class="{'lg_w-1_3': article.featured && !article.frontpage}")
       .article_header_title.text-xl {{ article.title }}
-      .article_header_description {{ article.virtuals.subtitle }}
+      .article_header_description {{ article.description }}
 </template>
 
 <script>

@@ -48,6 +48,7 @@
     "sheets": "node --experimental-modules --experimental-json-modules ./operations/sheets.mjs",
     "route": "node --experimental-modules --experimental-json-modules ./operations/route.mjs",
     "mdi": "cp node_modules/@mdi/font/css/materialdesignicons.min.css static/mdi.css; cp node_modules/@mdi/font/fonts/* static/fonts/.; cp node_modules/@mdi/font/css/materialdesignicons.min.css.map static/.",
+    "compile": "yarn feed; yarn sheets; yarn route; yarn mdi;",
     "staging": "node ./aeonian.js staging",
     "production": "node ./aeonian.js production"
   },
@@ -76,12 +77,13 @@
     "vue-in-viewport-mixin": "^2.0.0"
   },
   "devDependencies": {
+    "@nuxtjs/tailwindcss": "^4.2.1",
+    "autoprefixer": "^9.6.0",
     "babel-eslint": "^10.0.2",
     "eslint": "^7.10.0",
     "eslint-loader": "^3.0.0",
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-vue": "^7.12.1",
-    "@nuxtjs/tailwindcss": "^4.2.1",
-    "autoprefixer": "^9.6.0"
+    "yaml": "^1.10.2"
   }
 }

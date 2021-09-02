@@ -19,6 +19,10 @@ import OurInitiative from '@/components/home/OurInitiative'
 import SourceLine from '@/components/global/SourceLine'
 export default {
   components: { HomeHero, LatestArticles, NationalForecast, FactTicker, OurInitiative, SourceLine },
-  data () { return { feed: feed.payload.posts.slice(0, 3), } },
+  data () {
+    return {
+      feed: feed.filter(f => f.frontpage === true),
+    }
+ },
 }
 </script>
