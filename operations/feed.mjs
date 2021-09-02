@@ -23,7 +23,7 @@ for (const article of config.articles) {
   await sleep(200)
   const html = await get_page(article.url)
   let title, description, image = null
-  let match = /<title data-rh="true">(.*?)<\/title>/.exec(html)
+  let match = /<title data-rh="true">(.*?)\|.*<\/title>/.exec(html)
   if (match) title = match[1]
   else console.log(article.url, html)
   match = /<meta data-rh="true" name="description" content="(.*?)"\/>/.exec(html)
