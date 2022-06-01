@@ -10,6 +10,8 @@ jobs:
         node-version: [16.x]
     steps:
       - uses: actions/checkout@v2
+      - name: See Node Version
+        run: node --version
       - name: Install our dependencies
         run: yarn
       - name: Generate our medium feed
