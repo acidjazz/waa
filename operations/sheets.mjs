@@ -11,18 +11,10 @@
 import fs from 'fs'
 import google from 'googleapis'
 
-// import pkg from '../package.json'
 import ranges from './ranges.mjs'
+import { json } from './json.mjs'
 
-
-import { readFile } from 'fs/promises'
-const pkg = JSON.parse(
-  await readFile(
-    new URL('../package.json', import.meta.url)
-  )
-);
-
-
+const pkg = json('../package.json')
 
 const gs = google.google.sheets({version: 'v4', auth: pkg.cfg.apiKey})
 

@@ -1,12 +1,6 @@
 // import sheets from '../data/sheets.json'
-
-import { readFile } from 'fs/promises'
-const sheets = JSON.parse(
-  await readFile(
-    new URL('../data/sheets.json', import.meta.url)
-  )
-);
-
+import { json } from './json.mjs'
+const sheets = json('../data/sheets.json')
 export default {
   filters () {
     return sheets.main.valueRanges[0].values
