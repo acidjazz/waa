@@ -1,6 +1,6 @@
 // import sheets from '../data/sheets.json'
 import json from './json.mjs'
-const sheets = json('../data/sheets.json')
+const sheets = json('./data/sheets.json')
 export default {
   filters () {
     return sheets.main.valueRanges[0].values
