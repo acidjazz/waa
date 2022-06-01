@@ -1,6 +1,7 @@
 import pkg from './package'
 import routes from './data/routes'
 export default {
+  target: 'static',
   cfg: pkg.cfg,
   /*
   ** Headers of the page
