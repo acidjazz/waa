@@ -33,5 +33,5 @@
 <script>
 import count from '@/mixins/count'
 import data from '@/mixins/data'
-export default { mixins: [ count, data ], mounted () { console.log(this.building) } }
+export default { mixins: [ count, data ] }
 </script>
