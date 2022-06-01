@@ -14,7 +14,7 @@ import google from 'googleapis'
 import ranges from './ranges.mjs'
 import json from './json.mjs'
 
-const pkg = json('../package.json')
+const pkg = json('./package.json')
 
 const gs = google.google.sheets({version: 'v4', auth: pkg.cfg.apiKey})
 
