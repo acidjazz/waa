@@ -12,7 +12,7 @@ import fs from 'fs'
 import google from 'googleapis'
 
 import ranges from './ranges.mjs'
-import { json } from './json.mjs'
+import json from './json.mjs'
 
 const pkg = json('../package.json')
 

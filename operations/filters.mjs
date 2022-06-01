@@ -1,5 +1,5 @@
 // import sheets from '../data/sheets.json'
-import { json } from './json.mjs'
+import json from './json.mjs'
 const sheets = json('../data/sheets.json')
 export default {
   filters () {
