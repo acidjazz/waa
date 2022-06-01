@@ -1,4 +1,11 @@
-import sheets from '../data/sheets.json'
+// import sheets from '../data/sheets.json'
+
+import { readFile } from 'fs/promises'
+const sheets = JSON.parse(
+  await readFile(
+    new URL('../data/sheets.json', import.meta.url)
+  )
+);
 
 export default {
   filters () {
