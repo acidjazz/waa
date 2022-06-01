@@ -11,7 +11,7 @@
 import fs from 'fs'
 import google from 'googleapis'
 
-import pkg from '../package.json' assert {type: "json"}
+import pkg from '../package.json'
 import ranges from './ranges.mjs'
 
 const gs = google.google.sheets({version: 'v4', auth: pkg.cfg.apiKey})

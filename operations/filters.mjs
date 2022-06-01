@@ -1,4 +1,4 @@
-import sheets from '../data/sheets.json' assert {type: "json"}
+import sheets from '../data/sheets.json'
 
 export default {
   filters () {
