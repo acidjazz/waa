@@ -1,5 +1,5 @@
 
-import { readFileSync } from 'fs/promises'
+import { readFileSync } from 'fs'
 
 
 export default async function json (file) {
