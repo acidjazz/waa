@@ -1,18 +1,20 @@
-<template lang="pug">
-.header-menu.lg_hidden(:class="state")
-  .header-menu-blue(:class="state")
-  .header-menu-inner(:class="state")
-    .header-menu-swap(:class="state",@click="swap")
-      .header-menu-burger(:class="state")
-          i
-          i
-          i
-    .header-menu-content(v-if="is_open")
-      nuxt-link(
-        v-for="option, index in options",
-        :key="index",
-        :to="option.route",
-        @click.native="is_open = false")  {{ option.label }}
+<template>
+  <div class="header-menu lg:hidden" :class="state">
+    <div class="header-menu-blue" :class="state" />
+    <div class="header-menu-inner" :class="state">
+      <div class="header-menu-swap" :class="state" @click="swap">
+        <div class="header-menu-burger" :class="state"><i /><i /><i /></div>
+      </div>
+      <div v-if="is_open" class="header-menu-content">
+        <nuxt-link
+          v-for="option, index in options" :key="index" :to="option.route"
+          @click.native="is_open = false"
+        >
+          {{ option.label }}
+        </nuxt-link>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>

@@ -1,10 +1,12 @@
-<template lang="pug">
-#waa
-  HeaderBar
-  HeaderMenu
-  main
-    nuxt
-  FooterBar
+<template>
+  <div id="waa">
+    <HeaderBar />
+    <HeaderMenu />
+    <main>
+      <nuxt />
+    </main>
+    <FooterBar />
+  </div>
 </template>
 
 <script>

@@ -1,14 +1,21 @@
-<template lang="pug">
-.border.border-seashell.rounded.flex.items-stretch.lg_p-2.print_hidden
-  a(:href="url").flex.flex-col.items-center.lg_mr-3.hover_text-orange
-    .mdi.mdi-36px.mdi-file-pdf.hidden.lg_block
-    .mdi.p-1.mdi-24px.mdi-file-pdf.lg_hidden
-    .text-sm.hover_underline.hidden.lg_block Printable PDF
-  .flex.flex-col.items-center.justify-between
-    .flex
-      a.mdi.p-1.lg_p-2.mdi-24px.mdi-facebook-box.hover_text-orange.cursor-pointer(@click="share('facebook')")
-      a.mdi.p-1.lg_p-2.mdi-24px.mdi-twitter.hover_text-orange.cursor-pointer(@click="share('twitter')")
-    .text-sm.hidden.lg_block Share link
+<template>
+  <div class="border border-seashell rounded flex items-stretch bg-red-200 lg:p-2 print:hidden">
+    <a class="flex flex-col items-center lg:mr-3 hover:text-orange" :href="url">
+      <Icon icon="mdi:file-pdf" class="hidden lg:block w-8 h-8 mb-2" />
+      <Icon icon="mdi:file-pdf" class="lg:hidden w-6 h-6" />
+      <div class="text-sm hover:underline hidden lg:block">Printable PDF</div></a>
+    <div class="flex flex-col items-center justify-between">
+      <div class="flex">
+        <a class="p-1 lg:p-2 hover:text-orange cursor-pointer" @click="share('facebook')">
+          <Icon icon="mdi:facebook-box" class="w-6 h-6" />
+        </a>
+        <a class="p-1 lg:p-2 hover:text-orange cursor-pointer" @click="share('twitter')">
+          <Icon icon="mdi:twitter" class="w-6 h-6" />
+        </a>
+      </div>
+      <div class="text-sm hidden lg:block">Share link</div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -32,9 +39,9 @@ export default {
   methods: {
     share (type) {
       let href = location.href
-      if (this.query) {
+      if (this.query)
         href = href.replace('#', '?')
-      }
+
 
       if (type === 'facebook') {
         this.popup('https://www.facebook.com/sharer/sharer.php?u=' + href,
@@ -59,11 +66,11 @@ export default {
       let newWindow = window.open(url, title, 'scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left)
 
       // Puts focus on the newWindow
-      if (window.focus) {
+      if (window.focus)
         newWindow.focus()
-      }
-    }
 
-  }
+    },
+
+  },
 }
 </script>

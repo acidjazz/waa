@@ -1,7 +1,12 @@
-<template lang="pug">
-.checkbox.text-white.rounded.w-10.h-10.flex.items-center.justify-center.border-2.cursor-pointer(
-  :class="{'bg-orange border-orange': this.checked, 'border-black': !this.checked}")
-  i.mdi.mdi-36px.mdi-check-bold.ani-zi(v-if="checked")
+<template>
+  <div
+    class="checkbox text-white rounded h-10 flex items-center justify-center border-2 cursor-pointer"
+    :class="{'bg-orange border-orange': checked, 'border-black': !checked}"
+  >
+    <client-only>
+      <Icon v-if="checked" icon="mdi:check-bold" class="ani-zi" />
+    </client-only>
+  </div>
 </template>
 
 
@@ -11,7 +16,7 @@ export default {
     checked: {
       type: Boolean,
       required: true,
-    }
-  }
+    },
+  },
 }
 </script>
