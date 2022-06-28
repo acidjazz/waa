@@ -5,11 +5,11 @@ module.exports = {
     node: true
   },
   extends: [
-    'plugin:vue/recommended'
+    'plugin:vue/recommended',
   ],
   // required to lint *.vue files
   plugins: [
-    'vue'
+    'vue',
   ],
   // add your custom rules here
   rules: {
@@ -44,6 +44,7 @@ module.exports = {
 
     // https://eslint.vuejs.org/rules/no-v-html.html
     'vue/no-v-html': 'off',
+    'vue/component-name-in-template-casing': ['error', 'kebab-case'],
     "vue/max-attributes-per-line": ["error", {
       "singleline": {
         "max": 3,

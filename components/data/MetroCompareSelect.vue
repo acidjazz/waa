@@ -1,29 +1,37 @@
-<template lang="pug">
-.flex
-  .hidden.lg_block.lg_w-1_2
-    img(src="/apt1.jpg",alt="Metro Compare")
-  .lg_w-1_2.lg_ml-10
-    .font-os.uppercase.text-2xl.mb-4 ACTIVITY
-    .text-bolder.text-4xl.mb-4 Compare your metro
-    .mb-4 Enter two metros below to compare how they stack up.
-    form(autocomplete="off").relative
-      .input.relative.mb-4(v-for="name, input in inputs")
-        input.py-2.px-4.bg-seashell.lg_w-96(
-          type="text",
-          v-model="city[input].name",
-          :placeholder="`ENTER METRO ${name}`",
-          autocomplete="off")
-        .matches.absolute.z-10.bg-white.w-96(v-if="matches(input)")
-          .match.py-2.px-4.border.border-seashell.cursor-pointer.hover_bg-coolblue.hover_text-white(
-            v-for="city in matches(input)",
-            @click="select(input, city)",
-            ) {{ city }}
-    .flex.items-center
-      .waa-button-black(v-if="ready",@click="compare") Calculate
-      .waa-button-readonly(v-else) Calculate
-      .ml-2
-        i.mdi.mdi-close-circle.text-alum.mdi-24px.cursor-pointer(v-if="ready",@click="clear")
-
+<template>
+  <div class="flex">
+    <div class="hidden lg:block lg:w-1:2">
+      <img src="/apt1.jpg" alt="Metro Compare">
+    </div>
+    <div class="lg:w-1/2 lg:ml-10">
+      <div class="font-os uppercase text-2xl mb-4">ACTIVITY</div>
+      <div class="text-bolder text-4xl mb-4">Compare your metro</div>
+      <div class="mb-4">Enter two metros below to compare how they stack up.</div>
+      <form class="relative" autocomplete="off">
+        <div v-for="name, input in inputs" :key="name" class="input relative mb-4">
+          <input
+            v-model="city[input].name" class="py-2 px-4 bg-seashell lg:w-96" type="text"
+            :placeholder="`ENTER METRO ${name}`" autocomplete="off"
+          >
+          <div v-if="matches(input)" class="matches absolute z-10 bg-white w-96">
+            <div
+              v-for="lcity in matches(input)"
+              :key="lcity"
+              class="match py-2 px-4 border border-seashell cursor-pointer hover:bg-coolblue hover:text-white"
+              @click="select(input, lcity)"
+            >
+              {{ lcity }}
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="flex items-center">
+        <div v-if="ready" class="waa-button-black" @click="compare">Calculate</div>
+        <div v-else class="waa-button-readonly">Calculate</div>
+        <div class="ml-2"><i v-if="ready" class="mdi mdi-close-circle text-alum mdi-24px cursor-pointer" @click="clear" /></div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -44,8 +52,8 @@ export default {
         two: {
           name: '',
           selected: false,
-        }
-      }
+        },
+      },
     }
   },
   computed: {

@@ -1,11 +1,11 @@
 <template>
   <div class="page page-home bg-black">
-    <HomeHero />
-    <LatestArticles :feed="feed" />
-    <NationalForecast />
-    <FactTicker range="CopyTickerHome" />
-    <OurInitiative />
-    <SourceLine />
+    <home-hero />
+    <latest-articles :feed="feed" />
+    <national-forecast />
+    <fact-ticker range="CopyTickerHome" />
+    <our-initiative />
+    <source-line />
   </div>
 </template>
 

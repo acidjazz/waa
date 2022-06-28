@@ -5,16 +5,18 @@
         <div class="absolute bg-white h-1 w-full" />
         <div class="absolute bg-coolblue h-1 left-0" :style="`width: ${width}%`" :class="{'tran-width': width &gt; 0}" />
       </div>
-      <client-only>
         <div class="flex justify-end text-2xl mt-6 mr-4">
           <div v-in-vp class="border border-white rounded-full w-10 text-center mr-4 cursor-pointer hover:border-coolblue vp-l" @click="next">
-            <Icon icon="mdi:chevron-left" class="cursor-pointer mx-auto" />
+            <client-only>
+              <Icon icon="mdi:chevron-left" class="cursor-pointer mx-auto" />
+            </client-only>
           </div>
           <div v-in-vp class="border border-white rounded-full w-10 text-center hover:border-coolblue vp-l vp-d-1" @click="prev">
-            <Icon icon="mdi:chevron-right" class="cursor-pointer mx-auto" />
+            <client-only>
+              <Icon icon="mdi:chevron-right" class="cursor-pointer mx-auto" />
+            </client-only>
           </div>
         </div>
-      </client-only>
       <div v-in-vp class="copy vp-y vp-d-2 h-24">
         <transition name="fade-in-right">
           <div

@@ -1,26 +1,39 @@
-<template lang="pug">
-#MetroCompareResults.my-8
-  .font-os.uppercase.text-2xl.mb-4 YOUR METRO COMPARISON
-
-  table.table.w-full
-    thead
-      tr.border-b.border-alum
-        th
-        th {{ comparison[0] }}
-        th {{ comparison[1] }}
-    tbody
-      tr.border-b.border-alum(v-for="str in structure")
-        td.p-2.border-l.border-alum {{ str.label }}
-        td.p-2.px-8.border-l.border-alum
-          .flex.justify-between
-            i.mdi.mdi-check.text-mountainmeadow(v-if="val(data[str.compute][first][str.key]) > val(data[str.compute][second][str.key])")
-            i.mdi.mdi-check.text-white(v-else)
-            span {{ val(data[str.compute][first][str.key]) | numeral(str.format) }}
-        td.p-2.px-8.border-l.border-r.border-alum
-          .flex.justify-between
-            i.mdi.mdi-check.text-mountainmeadow(v-if="val(data[str.compute][first][str.key]) < val(data[str.compute][second][str.key])")
-            i.mdi.mdi-check.text-white(v-else)
-            span {{ val(data[str.compute][second][str.key]) | numeral(str.format) }}
+<template>
+  <div id="MetroCompareResults" class="my-8">
+    <div class="font-os uppercase text-2xl mb-4">YOUR METRO COMPARISON</div>
+    <table class="table w-full">
+      <thead>
+        <tr class="border-b border-alum">
+          <th />
+          <th>{{ comparison[0] }}</th>
+          <th>{{ comparison[1] }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          v-for="str in structure"
+          :key="str.key"
+          class="border-b border-alum"
+        >
+          <td class="p-2 border-l border-alum">{{ str.label }}</td>
+          <td class="p-2 px-8 border-l border-alum">
+            <div class="flex justify-between">
+              <Icon v-if="val(data[str.compute][first][str.key]) &gt; val(data[str.compute][second][str.key])" class="text-mountainmeadow" icon="mdi:check" />
+              <Icon v-else class="text-white" icon="mdi:check" />
+              <span>{{ val(data[str.compute][first][str.key]) | numeral(str.format) }}</span>
+            </div>
+          </td>
+          <td class="p-2 px-8 border-l border-r border-alum">
+            <div class="flex justify-between">
+              <Icon v-if="val(data[str.compute][first][str.key]) &lt; val(data[str.compute][second][str.key])" class="text-mountainmeadow" icon="mdi:check" />
+              <Icon v-else class="text-white" icon="mdi:check" />
+              <span>{{ val(data[str.compute][second][str.key]) | numeral(str.format) }}</span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </template>
 
 
@@ -38,7 +51,7 @@ export default {
     comparison: {
       type: Array,
       required: true,
-    }
+    },
   },
   data () {
     return {
@@ -85,7 +98,7 @@ export default {
           key: 'Total_Jobs_Supported',
           format: '0.0a',
         },*/
-      ]
+      ],
     }
   },
   computed: {
@@ -105,7 +118,7 @@ export default {
   methods: {
     val (val) {
       return val.toString().replace(/\$/g, '')*1
-    }
+    },
   },
 
 }

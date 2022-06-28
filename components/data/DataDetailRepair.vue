@@ -1,18 +1,18 @@
-<template lang="pug">
-#DataDetailRepair
-  .text-bolder.text-6xl.print_text-3xl
-    VueCountUp.print_hidden(:endVal="count_val(Math.round(before_eighty*100))", :options="{}")
-    span.hidden.print_inline {{ before_eighty*100 | numeral('0,0a') }}
-    | %
-    .text-bolder.text-2xl.print_text-lg {{ copy }}
-  .mt-4.mb-8.print_my-2.print_text-sm
-    | The renovation and repair of apartments helps preserve
-    | {{ loc_copy }}’s
-    | older more affordable units, contributing
-    .data-val {{ contribution.Repair_Economic_Impact | numeral('$0,0a') }}
-    | to the local economy annually and creating
-    .data-val {{ contribution.Repair_Employment_Impact | numeral('0,0a') }}
-    | jobs.
+<template>
+  <div id="DataDetailRepair">
+    <div class="text-bolder text-6xl print:text-3xl">
+      <VueCountUp class="print:hidden" :end-val="count_val(Math.round(before_eighty*100))" :options="{}" />
+      <span class="hidden print:inline">{{ before_eighty*100 | numeral('0,0a') }}</span>%
+      <div class="text-bolder text-2xl print:text-lg">{{ copy }}</div>
+    </div>
+    <div class="mt-4 mb-8 print:my-2 print:text-sm">
+      The renovation and repair of apartments helps preserve
+      {{ loc_copy }}’s
+      older more affordable units, contributing
+      <div class="data-val">{{ contribution.Repair_Economic_Impact | numeral('$0,0a') }}</div>to the local economy annually and creating
+      <div class="data-val">{{ contribution.Repair_Employment_Impact | numeral('0,0a') }}</div>jobs.
+    </div>
+  </div>
 </template>
 
 <script>
@@ -28,7 +28,7 @@ export default {
         'Share of U.S. Apartments Built Before 1980' :
         `Share of ${this.loc_copy}${this.plural} Apartments Built Before 1980`
     },
-    plural () { return this.loc_copy.substr(-1) === 's' ? "'" : "'s" }
+    plural () { return this.loc_copy.substr(-1) === 's' ? "'" : "'s" },
   },
 }
 </script>

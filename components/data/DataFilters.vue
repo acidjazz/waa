@@ -1,50 +1,67 @@
-<template lang="pug">
-#DataFilters.fixed.z-10.inset-x-0.print_hidden
-  .bg-white.tran-all-p2s(:class="{'shadow-md p-2 -mt-22px': has_scrolled, 'p-8 mt-36px': !has_scrolled}")
-    .flex.items-center.justify-center.lg_-mx-2.-mx-1.ani-d-5
-      .mx-1.lg_mx-2.relative(v-for="option in types",:key="option")
-        .whitespace-no-wrap.uppercase.text-bolder.text-xs.lg_text-base.rounded-full.py-2.px-2.lg_px-4.tran-all-p2s(
-          @click="choose(option)",
-          :class="option_class(option)")
-          .inline-flex(v-if="option !== type") {{ option }}
-          .inline-flex(v-else-if="is_district") {{ state_value }} {{ district | nth }}
-          .inline-flex(v-else) {{ value(location) }}
-        .ani-sib.relative(v-if="select && select === option")
-          .inset-0.absolute
-            .carat.mx-auto.bg-seashell.shadow-md(:class="{'-mt-0': !has_scrolled, '-mt-2': has_scrolled}")
-        .ani-sib.relative(v-else)
-          .inset-0.absolute
-            .carat.mx-auto
-        .absolute.-ml-10.-mr-10(v-if="statetip && option === 'district'")
-          .ani-sib.z-10.relative
-            .w-4.h-4.border-l.border-t.border-seashell.mx-auto.carat.-mb-2.bg-white
-          .border.border-seashell.rounded.bg-white.p-4.shadow.ani-zi
-            .text-sm Please choose a state
-  .relative(v-if="select")
-    .absolute.z-10.w-screen(:class="{'-mt-6': !has_scrolled, '-mt-2': has_scrolled}")
-      .canister.p-4.lg_pl-20.bg-seashell.shadow-md.rounded-lg.ani-zi.overflow-y-scroll.max-h-filters
-        transition(:name="direction",mode="out-in")
-          ul.col-cnt-2.lg_col-cnt-4(key="states",v-if="select === 'state'").-p-4
-            li.tran-colors.m-2(
-              v-for="state in states",
-              :key="`state-${state}`",
-              @click="select_go('state', state)",
-              :class="is_state && state == location ? classes.types.active : classes.type.inactive")
-              | {{ state }}
-          ul.col-cnt-2.lg_col-cnt-4(key="metros",v-if="select === 'metro'")
-            li.tran-colors.m-2(
-              v-for="metro in metros",
-              :key="`metro-${metro}`",
-              @click="select_go('metro', metro)",
-              :class="is_metro && metro == location ? classes.types.active : classes.type.inactive")
-              | {{ metro }}
-          ul.col-cnt-2.lg_col-cnt-4(key="districts",v-if="select === 'district'")
-            li.tran-colors.m-2(
-              v-for="dist in districts[state_value]",
-              :key="`district-${state}-${dist}`",
-              @click="select_go('district', `${state}-${nth(dist)}`)",
-              :class="is_district && dist == district ? classes.types.active : classes.type.inactive")
-              | {{ state_value }} {{ dist | nth }}
+<template>
+  <div id="DataFilters" class="fixed z-10 inset-x-0 print:hidden">
+    <div class="bg-white tran-all-p2s" :class="{'shadow-md p-2 -mt-22px': has_scrolled, 'p-8 mt-36px': !has_scrolled}">
+      <div class="flex items-center justify-center lg:-mx-2 -mx-1 ani-d-5">
+        <div v-for="option in types" :key="option" class="mx-1 lg:mx-2 relative">
+          <div class="whitespace-no-wrap uppercase text-bolder text-xs lg:text-base rounded-full py-2 px-2 lg:px-4 tran-all-p2s" :class="option_class(option)" @click="choose(option)">
+            <div v-if="option !== type" class="inline-flex">{{ option }}</div>
+            <div v-else-if="is_district" class="inline-flex">{{ state_value }} {{ district | nth }}</div>
+            <div v-else class="inline-flex">{{ value(location) }}</div>
+          </div>
+          <div v-if="select &amp;&amp; select === option" class="ani-sib relative">
+            <div class="inset-0 absolute">
+              <div class="carat mx-auto bg-seashell shadow-md" :class="{'-mt-0': !has_scrolled, '-mt-2': has_scrolled}" />
+            </div>
+          </div>
+          <div v-else class="ani-sib relative">
+            <div class="inset-0 absolute">
+              <div class="carat mx-auto" />
+            </div>
+          </div>
+          <div v-if="statetip &amp;&amp; option === 'district'" class="absolute -ml-10 -mr-10">
+            <div class="ani-sib z-10 relative">
+              <div class="w-4 h-4 border-l border-t border-seashell mx-auto carat -mb-2 bg-white" />
+            </div>
+            <div class="border border-seashell rounded bg-white p-4 shadow ani-zi">
+              <div class="text-sm">Please choose a state</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div v-if="select" class="relative">
+      <div class="absolute z-10 w-screen" :class="{'-mt-6': !has_scrolled, '-mt-2': has_scrolled}">
+        <div class="canister p-4 lg:pl-20 bg-seashell shadow-md rounded-lg ani-zi overflow-y-scroll max-h-filters">
+          <transition :name="direction" mode="out-in">
+            <ul v-if="select === 'state'" key="states" class="col-cnt-2 lg:col-cnt-4 -p-4">
+              <li
+                v-for="state in states" :key="`state-${state}`" class="tran-colors m-2"
+                :class="is_state && state == location ? classes.types.active : classes.type.inactive" @click="select_go('state', state)"
+              >
+                {{ state }}
+              </li>
+            </ul>
+            <ul v-if="select === 'metro'" key="metros" class="col-cnt-2 lg:col-cnt-4">
+              <li
+                v-for="metro in metros" :key="`metro-${metro}`" class="tran-colors m-2"
+                :class="is_metro && metro == location ? classes.types.active : classes.type.inactive" @click="select_go('metro', metro)"
+              >
+                {{ metro }}
+              </li>
+            </ul>
+            <ul v-if="select === 'district'" key="districts" class="col-cnt-2 lg:col-cnt-4">
+              <li
+                v-for="dist in districts[state_value]" :key="`district-${state}-${dist}`" class="tran-colors m-2"
+                :class="is_district && dist == district ? classes.types.active : classes.type.inactive" @click="select_go('district', `${state}-${nth(dist)}`)"
+              >
+                {{ state_value }} {{ dist | nth }}
+              </li>
+            </ul>
+          </transition>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -55,7 +72,7 @@ export default {
   filters: {
     nth (value) {
       return numeral(value).format('0o')
-    }
+    },
   },
   mixins: [ sheets, scrolled ],
   data () {
@@ -67,14 +84,14 @@ export default {
       classes: {
         type: {
           active: 'bg-orange text-white cursor-pointer ani-zi',
-          inactive: 'hover_text-orange tran-colors cursor-pointer',
-          disabled: 'text-alum'
+          inactive: 'hover:text-orange tran-colors cursor-pointer',
+          disabled: 'text-alum',
         },
         types: {
-          inactive: 'hover_text-orange tran-colors hover_bg-white',
+          inactive: 'hover:text-orange tran-colors hover:bg-white',
           active: 'text-orange underline',
         },
-      }
+      },
     }
   },
   computed: {
@@ -102,14 +119,14 @@ export default {
     },
     option_class (option) {
       let classes = []
-      if (option === this.type) {
+      if (option === this.type)
         classes.push(this.classes.type.active)
-      }
-      if (option === 'district' && (!this.is_state  && !this.is_district)) {
+
+      if (option === 'district' && (!this.is_state  && !this.is_district))
         classes.push(this.classes.type.disabled)
-      } else if (option !== this.type) {
+       else if (option !== this.type)
         classes.push(this.classes.type.inactive)
-      }
+
       return classes
     },
 
@@ -125,15 +142,15 @@ export default {
       }
       this.statetip = false
       if (this.select !== false) {
-        if (this.select === 'state') {
+        if (this.select === 'state')
           this.direction = 'slide-right'
-        }
-        if (this.select === 'metro' && type === 'state') {
+
+        if (this.select === 'metro' && type === 'state')
           this.direction = 'slide-left'
-        }
-        if (this.select === 'district') {
+
+        if (this.select === 'district')
           this.direction = 'slide-left'
-        }
+
       }
       this.select = type
     },
@@ -152,9 +169,9 @@ export default {
           state: this.state,
           state_value: this.state_value,
           metro: this.metro,
-          district: this.district
+          district: this.district,
         })
-    }
+    },
   },
 }
 //.relative.flex.justify-center
