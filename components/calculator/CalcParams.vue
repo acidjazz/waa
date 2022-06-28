@@ -10,7 +10,7 @@
       </div>
       <div class="flex items-center justify-between cursor-pointer mb-2" @click="change_type('new')">
         <div class="w-1/5 mr-8" />
-        <div class="w-3.5 font-bold text-xl">Potential new development</div>
+        <div class="w-3/5 font-bold text-xl">Potential new development</div>
         <check-box class="mr-4 w-10" :checked="type === 'new'" />
       </div>
       <div class="bg-seashell h-px w-full my-10" />
