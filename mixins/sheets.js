@@ -26,29 +26,28 @@ export default {
       var result = {}
       let config = rangeconfig[name].ranges[range]
 
-      if (typeof key === 'string' || typeof key === 'object') {
+      if (typeof key === 'string' || typeof key === 'object')
         var labels = this.find_values(name, config.labels)[0]
-      }
 
       let values = this.find_values(name, config.values)
-      if (key === false) {
+      if (key === false)
         return values
-      }
-      for (let i in values) {
-        if (Number.isInteger(key)) {
+
+      for (let i in values)
+        if (Number.isInteger(key))
           result[values[i][0]] = this.cleanse(values[i][key])
-        } else {
+         else {
           let row = {}
           for (let j in values[i])
             if (values[i][j] !== '')
               row[this.key(labels[j])] = this.cleanse(values[i][j])
-          if (typeof key === 'object') {
+          if (typeof key === 'object')
             result[`${this.key(row[this.key(key[0])])}_${row[this.key(key[1])]}`] = row
-          } else {
+           else
             result[this.key(row[this.key(key)])] = row
-          }
+
         }
-      }
+
      return result
     },
 
@@ -66,9 +65,9 @@ export default {
     },
     cleanse (value) {
       value = value.trim().replace(/,/g, '')
-      if (value.match(/^[0-9\.-]+$/) !== null) {
+      if (value.match(/^[0-9\.-]+$/) !== null)
         return value*1
-      }
+
       return value
     },
   },

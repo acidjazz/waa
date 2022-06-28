@@ -8,7 +8,7 @@
             <div v-else-if="is_district" class="inline-flex">{{ state_value }} {{ district | nth }}</div>
             <div v-else class="inline-flex">{{ value(location) }}</div>
           </div>
-          <div v-if="select &amp;&amp; select === option" class="ani-sib relative">
+          <div v-if="select && select === option" class="ani-sib relative">
             <div class="inset-0 absolute">
               <div class="carat mx-auto bg-seashell shadow-md" :class="{'-mt-0': !has_scrolled, '-mt-2': has_scrolled}" />
             </div>
@@ -18,7 +18,7 @@
               <div class="carat mx-auto" />
             </div>
           </div>
-          <div v-if="statetip &amp;&amp; option === 'district'" class="absolute -ml-10 -mr-10">
+          <div v-if="statetip && option === 'district'" class="absolute -ml-10 -mr-10">
             <div class="ani-sib z-10 relative">
               <div class="w-4 h-4 border-l border-t border-seashell mx-auto carat -mb-2 bg-white" />
             </div>

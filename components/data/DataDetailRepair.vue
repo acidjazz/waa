@@ -1,8 +1,8 @@
 <template>
   <div id="DataDetailRepair">
     <div class="text-bolder text-6xl print:text-3xl">
-      <VueCountUp class="print:hidden" :end-val="count_val(Math.round(before_eighty*100))" :options="{}" />
-      <span class="hidden print:inline">{{ before_eighty*100 | numeral('0,0a') }}</span>%
+      <VueCountUp class="print:hidden" :end-val="count_val(Math.round(before_eighty*100))" :options="{suffix: '%'}" />
+      <span class="hidden print:inline">{{ before_eighty*100 | numeral('0,0a') }}</span>
       <div class="text-bolder text-2xl print:text-lg">{{ copy }}</div>
     </div>
     <div class="mt-4 mb-8 print:my-2 print:text-sm">

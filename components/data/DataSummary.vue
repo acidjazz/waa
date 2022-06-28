@@ -11,8 +11,7 @@
       </span>
       to the
       <span>{{ area.type }}</span>
-      economy annually<span v-if="jobs">
-        , supporting
+      economy annually<span v-if="jobs">, supporting
         <span class="text-bolder" title="Total_Employment_Impact">{{ jobs | numeral }}</span>
         jobs.</span><span v-else>.</span>
     </div>

@@ -2,7 +2,7 @@ module.exports = {
   root: true,
   env: {
     browser: true,
-    node: true
+    node: true,
   },
   extends: [
     'plugin:vue/recommended',
@@ -57,5 +57,5 @@ module.exports = {
 
     // Turn this off until we can figure out how to ignore pages/ and layouts/
     "vue/multi-word-component-names": "off",
-  }
+  },
 }
