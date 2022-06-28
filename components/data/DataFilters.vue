@@ -33,23 +33,23 @@
       <div class="absolute z-10 w-screen" :class="{'-mt-6': !has_scrolled, '-mt-2': has_scrolled}">
         <div class="canister p-4 lg:pl-20 bg-seashell shadow-md rounded-lg ani-zi overflow-y-scroll max-h-filters">
           <transition :name="direction" mode="out-in">
-            <ul v-if="select === 'state'" key="states" class="col-cnt-2 lg:col-cnt-4 -p-4">
+            <ul v-if="select === 'state'" key="states" class="grid grid-cols-2 lg:grid-cols-4 -p-4">
               <li
-                v-for="state in states" :key="`state-${state}`" class="tran-colors m-2"
-                :class="is_state && state == location ? classes.types.active : classes.type.inactive" @click="select_go('state', state)"
+                v-for="lstate in states" :key="`state-${lstate}`" class="tran-colors m-2"
+                :class="is_state && lstate == location ? classes.types.active : classes.type.inactive" @click="select_go('state', lstate)"
               >
-                {{ state }}
+                {{ lstate }}
               </li>
             </ul>
-            <ul v-if="select === 'metro'" key="metros" class="col-cnt-2 lg:col-cnt-4">
+            <ul v-if="select === 'metro'" key="metros" class="grid grid-cols-2 lg:grid-cols-4">
               <li
-                v-for="metro in metros" :key="`metro-${metro}`" class="tran-colors m-2"
-                :class="is_metro && metro == location ? classes.types.active : classes.type.inactive" @click="select_go('metro', metro)"
+                v-for="lmetro in metros" :key="`metro-${lmetro}`" class="tran-colors m-2"
+                :class="is_metro && lmetro == location ? classes.types.active : classes.type.inactive" @click="select_go('metro', lmetro)"
               >
-                {{ metro }}
+                {{ lmetro }}
               </li>
             </ul>
-            <ul v-if="select === 'district'" key="districts" class="col-cnt-2 lg:col-cnt-4">
+            <ul v-if="select === 'district'" key="districts" class="grid grid-cols-2 lg:grid-cols-4">
               <li
                 v-for="dist in districts[state_value]" :key="`district-${state}-${dist}`" class="tran-colors m-2"
                 :class="is_district && dist == district ? classes.types.active : classes.type.inactive" @click="select_go('district', `${state}-${nth(dist)}`)"
