@@ -1,18 +1,21 @@
-<template lang="pug">
-.page.page-vision
-  VisionHero
-  VisionOutreach
-  OffsetSection
-    VisionBuild
-    // VisionIncome
-  // VisionFAQ
-  Publications
-  GallerySection
-  TheResearch
-  OffsetSection
-    TheTeam
-    ThePeople
-  SourceLine
+<template>
+  <div class="page page-vision">
+    <vision-hero />
+    <vision-outreach />
+    <offset-section>
+      <vision-build />
+    <!-- VisionIncome-->
+    </offset-section>
+    <!-- VisionFAQ-->
+    <publications />
+    <gallery-section />
+    <the-research />
+    <offset-section>
+      <the-team />
+      <the-people />
+    </offset-section>
+    <source-line />
+  </div>
 </template>
 
 <script>
