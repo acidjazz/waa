@@ -28,7 +28,12 @@
       <div class="flex items-center">
         <div v-if="ready" class="waa-button-black" @click="compare">Calculate</div>
         <div v-else class="waa-button-readonly">Calculate</div>
-        <div class="ml-2"><i v-if="ready" class="mdi mdi-close-circle text-alum mdi-24px cursor-pointer" @click="clear" /></div>
+        <div class="ml-2">
+          <Icon
+            v-if="ready" icon="mdi:close-circle" class=" text-alum cursor-pointer"
+            @click="clear"
+          />
+        </div>
       </div>
     </div>
   </div>
