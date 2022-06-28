@@ -1,5 +1,5 @@
 <template>
-  <div class="border border-seashell rounded flex items-stretch bg-red-200 lg:p-2 print:hidden">
+  <div class="border border-seashell rounded flex items-stretch lg:p-2 print:hidden">
     <a class="flex flex-col items-center lg:mr-3 hover:text-orange" :href="url">
       <Icon icon="mdi:file-pdf" class="hidden lg:block w-8 h-8 mb-2" />
       <Icon icon="mdi:file-pdf" class="lg:hidden w-6 h-6" />

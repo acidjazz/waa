@@ -1,12 +1,12 @@
-<template lang="pug">
-.page.page-home.bg-black
-  HomeHero
-  LatestArticles(:feed="feed")
-  // RenterGrowth
-  NationalForecast
-  FactTicker(range="CopyTickerHome")
-  OurInitiative
-  SourceLine
+<template>
+  <div class="page page-home bg-black">
+    <HomeHero />
+    <LatestArticles :feed="feed" />
+    <NationalForecast />
+    <FactTicker range="CopyTickerHome" />
+    <OurInitiative />
+    <SourceLine />
+  </div>
 </template>
 
 <script>

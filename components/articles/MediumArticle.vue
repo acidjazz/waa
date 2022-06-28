@@ -1,11 +1,20 @@
-<template lang="pug">
-article.article-outer
-  a.article(:href="article.url",target="_new",v-in-vp,:class="`vp-d-${index+2}`").vp-r
-    .article_image
-      img(:src="article.image",loading="lazy",alt="Article Image", width="330", height="300")
-    .article_header(:class="{'lg_w-1_3': article.featured && !article.frontpage}")
-      .article_header_title.text-xl {{ article.title }}
-      .article_header_description {{ article.description }}
+<template>
+  <article class="article-outer">
+    <a
+      v-in-vp class="article vp-r" :href="article.url"
+      target="_new" :class="`vp-d-${index+2}`"
+    >
+      <div class="article_image">
+        <img
+          :src="article.image" loading="lazy" alt="Article Image"
+          width="330" height="300"
+        >
+      </div>
+      <div class="article_header" :class="{'lg:w-1/3': article.featured && !article.frontpage}">
+        <div class="article_header_title text-xl">{{ article.title }}</div>
+        <div class="article_header_description">{{ article.description }}</div>
+      </div></a>
+  </article>
 </template>
 
 <script>

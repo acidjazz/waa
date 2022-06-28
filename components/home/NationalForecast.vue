@@ -1,10 +1,10 @@
-<template lang="pug">
-OffsetSection(bg="supernova",fg="black")
-  .font-os.my-4(v-in-vp).vp-r  NATIONAL DATA
-  .text-4xl.text-bolder(v-in-vp).vp-r
-    | The country needs to build 328,000 new apartment homes each year to meet demand.
-  .mt-4.w-12.h-1.bg-white(v-in-vp).vp-r
-  .mt-4.text-bolder(v-in-vp).vp-r Forecasted by the year 2030
+<template>
+  <OffsetSection bg="supernova" fg="black">
+    <div v-in-vp class="font-os my-4 vp-r"> NATIONAL DATA</div>
+    <div v-in-vp class="text-4xl text-bolder vp-r">The country needs to build 328,000 new apartment homes each year to meet demand.</div>
+    <div v-in-vp class="mt-4 w-12 h-1 bg-white vp-r" />
+    <div v-in-vp class="mt-4 text-bolder vp-r">Forecasted by the year 2030</div>
+  </OffsetSection>
 </template>
 
 <script>
@@ -20,9 +20,9 @@ export default {
         options: {
           decimalPlaces: 0,
           duration: 4,
-        }
+        },
       },
     }
-  }
+  },
 }
 </script>
