@@ -1,26 +1,36 @@
-<template lang="pug">
-#FactTicker.p-10
-  .mx-auto.max-w-4xl.text-white
-    .timer-bar.relative.w-full.h-1(v-in-vp).vp-y
-      .absolute.bg-white.h-1.w-full
-      .absolute.bg-coolblue.h-1.left-0(
-        :style="`width: ${width}%`",
-        :class="{'tran-width': width > 0}")
-    .flex.justify-end.text-2xl.mt-6.mr-4
-      .border.border-white.rounded-full.w-10.text-center.mr-4.cursor-pointer.hover_border-coolblue.vp-l(v-in-vp)
-        i.mdi.mdi-chevron-left.cursor-pointer(@click="next")
-      .border.border-white.rounded-full.w-10.text-center.hover_border-coolblue.vp-l.vp-d-1(v-in-vp)
-        i.mdi.mdi-chevron-right.cursor-pointer(@click="prev")
-    .copy(v-in-vp).vp-y.vp-d-2.h-24
-      transition(name="fade-in-right")
-        .lg_text-2xl.w-full.mt-4.lg_w-10_12.lg_mt-0.ml-8.relative(
-          v-for="fact, index in facts",
-          v-if="index === current",
-          :key="index", v-in-vp)
-            div
-              //i.absolute.text-6xl.mdi.mdi-format-quote-open.opacity-25.-mt-8.-ml-16.text-alum
-              span {{ fact }}
-              //i.absolute.text-6xl.mdi.mdi-format-quote-close.opacity-25.-mt-6.text-alum
+<template>
+  <div id="FactTicker" class="p-10">
+    <div class="mx-auto max-w-4xl text-white">
+      <div v-in-vp class="timer-bar relative w-full h-1 vp-y">
+        <div class="absolute bg-white h-1 w-full" />
+        <div class="absolute bg-coolblue h-1 left-0" :style="`width: ${width}%`" :class="{'tran-width': width &gt; 0}" />
+      </div>
+        <div class="flex justify-end text-2xl mt-6 mr-4">
+          <div v-in-vp class="border border-white rounded-full w-10 text-center mr-4 cursor-pointer hover:border-coolblue vp-l" @click="next">
+            <client-only>
+              <Icon icon="mdi:chevron-left" class="cursor-pointer mx-auto" />
+            </client-only>
+          </div>
+          <div v-in-vp class="border border-white rounded-full w-10 text-center hover:border-coolblue vp-l vp-d-1" @click="prev">
+            <client-only>
+              <Icon icon="mdi:chevron-right" class="cursor-pointer mx-auto" />
+            </client-only>
+          </div>
+        </div>
+      <div v-in-vp class="copy vp-y vp-d-2 h-24">
+        <transition name="fade-in-right">
+          <div
+            v-for="fact, index in facts" v-if="index === current" :key="index"
+            v-in-vp class="lg:text-2xl w-full mt-4 lg:w-10/12 lg:mt-0 ml-8 relative"
+          >
+            <div>
+              <span>{{ fact }}</span>
+            </div>
+          </div>
+        </transition>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -32,7 +42,7 @@ export default {
     range: {
       type: String,
       required: true,
-    }
+    },
   },
   data () {
     return {
@@ -49,7 +59,7 @@ export default {
     'inViewport.now' (visible) {
       if (visible) this.start()
       if (!visible) this.end()
-    }
+    },
   },
   methods: {
     start () { this.interval = setInterval(this.tick, this.delay*200) },
@@ -69,6 +79,6 @@ export default {
       if (this.reset) this.width = 0
       this.current = this.current === 0 ? this.facts.length-1 : this.current-1
     },
-  }
+  },
 }
 </script>

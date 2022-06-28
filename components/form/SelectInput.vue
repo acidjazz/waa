@@ -1,12 +1,17 @@
-<template lang="pug">
-#SelectInput.w-full.relative
-  select.text-xl.bg-seashell.p-2.w-full.font-bold.appearance-none(@input="update")
-    option(:selected="value == '' || !options.includes(value)") {{ placeholder }}
-    option(
-      v-for="option in options",
-      :value="option",
-      :selected="value === option") {{ option }}
-  i.mdi.mdi-24px.mdi-chevron-down.absolute.right-0.mt-1.mr-2
+<template>
+  <div id="SelectInput" class="w-full relative">
+    <select class="text-xl bg-seashell p-2 w-full font-bold appearance-none" @input="update">
+      <option :selected="value == '' || !options.includes(value)">{{ placeholder }}</option>
+      <option
+        v-for="option in options"
+        :key="option"
+        :value="option"
+        :selected="value === option"
+      >
+        {{ option }}
+      </option>
+    </select><i class="mdi mdi-24px mdi-chevron-down absolute right-0 mt-1 mr-2" />
+  </div>
 </template>
 
 <script>
@@ -28,7 +33,7 @@ export default {
   methods: {
     update(event) {
       this.$emit('input', event.target.value)
-    }
+    },
   },
 }
 </script>

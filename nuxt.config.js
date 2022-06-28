@@ -3,6 +3,7 @@ import routes from './data/routes'
 export default {
   target: 'static',
   cfg: pkg.cfg,
+  devServerHandlers: [],
   /*
   ** Headers of the page
   */
@@ -37,14 +38,13 @@ export default {
 
     link: [
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Oswald&display=swap' },
-      { rel: 'stylesheet', href: '/mdi.css' },
 
       { rel: 'apple-touch-icon', sizes: '180x180', href: '/icons/apple-touch-icon.png' },
       { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/icons/favicon-32x32.png' },
       { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/icons/favicon-16x16.png' },
       { rel: 'manifest', href: '/icons/manifest.json' },
       { rel: 'mask-icon', href: '/icons/safari-pinned-tab.svg', color: '#2f3e5d' },
-      { rel: 'shortcut icon', href: '/icons/favicon.ico' }
+      { rel: 'shortcut icon', href: '/icons/favicon.ico' },
     ],
     script: [
       { src: 'https://unpkg.com/array-flat-polyfill' },
@@ -66,6 +66,7 @@ export default {
   plugins: [
     '@/plugins/ie.client.js',
     '@/plugins/countup.client.js',
+    '@/plugins/icon.client.js',
     '@/plugins/viewport.client.js',
   ],
   /*
@@ -80,7 +81,7 @@ export default {
   polyfill: {
       features: [
           {
-              require: 'url-polyfill' // NPM package or require path of file
+              require: 'url-polyfill', // NPM package or require path of file
           },
           {
               require: 'intersection-observer',
@@ -93,9 +94,9 @@ export default {
               detect: () => 'scrollBehavior' in document.documentElement.style && window.__forceSmoothScrollPolyfill__ !== true,
 
               // Optional install function called client side after the package is required:
-              install: (smoothscroll) => smoothscroll.polyfill()
-          }
-      ]
+              install: (smoothscroll) => smoothscroll.polyfill(),
+          },
+      ],
   },
 
     // Add it to the modules section:
@@ -108,7 +109,7 @@ export default {
   */
   build: {
     extend(config, ctx) {
-    }
+    },
   },
-  generate: { routes: routes }
+  generate: { routes: routes },
 }

@@ -1,11 +1,13 @@
-<template lang="pug">
-  .font-os.uppercase.text-2xl.mb-8.print_hidden
-    span(v-if="name") {{ name }}
-    span(v-else) {{ area.type }} data
-      span(v-if="area.location != 'National'")
-        |
-        | -
-        | {{ area.value }}
+<template>
+  <div class="font-os uppercase text-2xl mb-8 print:hidden">
+    <span v-if="name">{{ name }}</span>
+    <span v-else>{{ area.type }} data
+      <span v-if="area.location != 'National'">
+        -
+        {{ area.value }}
+      </span>
+    </span>
+  </div>
 </template>
 
 
@@ -21,7 +23,7 @@ export default {
       type: [Boolean,Object],
       required: false,
       default: false,
-    }
-  }
+    },
+  },
 }
 </script>

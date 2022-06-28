@@ -1,10 +1,12 @@
-<template lang="pug">
-.articles.flex.flex-wrap.-mx-2
-  MediumArticle.w-full.lg_w-1_3(
-    v-for="item, index in feed",
-    :article="item",
-    :key="index",
-    :index="index+1")
+<template>
+  <div class="articles flex flex-wrap -mx-2">
+    <MediumArticle
+      v-for="item, index in feed"
+      :key="index"
+      class="w-full lg:w-1/3"
+      :article="item" :index="index+1"
+    />
+  </div>
 </template>
 
 <script>
@@ -15,7 +17,7 @@ export default {
     feed: {
       type: Array,
       required: true,
-    }
-  }
+    },
+  },
 }
 </script>

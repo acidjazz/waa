@@ -1,7 +1,10 @@
-<template lang="pug">
-SectionHero(type="image",src="/calculator.jpg",gradient="bg-tranpurp")
-  .text-lg.font-os.mb-10(v-in-vp).vp-y CALCULATOR
-  .mx-auto.text-4xl.w-10_12.lg_w-192.mb-10(v-in-vp).vp-y.vp-d-2 Calculate the economic contribution of an apartment community nationally, in your state or metro area below.
+<template>
+  <SectionHero type="image" src="/calculator.jpg" gradient="bg-tranpurp">
+    <div v-in-vp class="text-lg font-os mb-10 vp-y">CALCULATOR</div>
+    <div v-in-vp class="mx-auto text-4xl w-10/12 lg:w-192 mb-10 vp-y vp-d-2">
+      Calculate the economic contribution of an apartment community nationally, in your state or metro area below.
+    </div>
+  </SectionHero>
 </template>
 
 <script>
