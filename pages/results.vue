@@ -4,7 +4,7 @@
       <div class="bg-white w-screen max-w-5xl lg:p-8 p-4 text-black text-left">
         <div v-if="show" class="max-w-4xl mx-auto flex flex-col relative">
           <div class="absolute right-0">
-            <PrintAndShare />
+            <print-and-share />
           </div>
           <div class="font-os text-lg mb-4 uppercase text-center">{{ area }}</div>
           <div v-if="!is_national" class="font-okib text-5xl mb-2">{{ place }}</div>

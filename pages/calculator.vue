@@ -1,7 +1,7 @@
 <template>
   <div class="page page-calculator">
-    <CalcHero />
-    <CalcParams @calculate="calculate" />
+    <calc-hero />
+    <calc-params @calculate="calculate" />
   </div>
 </template>
 
