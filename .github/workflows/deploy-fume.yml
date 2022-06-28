@@ -17,8 +17,6 @@ jobs:
         run: yarn feed
       - name: Generate sheets
         run: yarn sheets
-      - name: Generate icons
-        run: yarn mdi
       - name: Generate our routes
         run: yarn route
       - uses: fumeapp/action@master
