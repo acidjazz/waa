@@ -84,8 +84,8 @@ export default {
         values: "'Data-Contribution'!A59:O108",
       },
       dataContributionDistrict: {
-        labels: "'Data-Contribution'!A111:P111",
-        values: "'Data-Contribution'!A112:P547",
+        labels: "'Data-Contribution'!A110:P110",
+        values: "'Data-Contribution'!A111:P547",
       },
 
       dataApartmentsUS: {
