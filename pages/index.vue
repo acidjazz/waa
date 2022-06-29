@@ -1,7 +1,7 @@
 <template>
   <div class="page page-home bg-black">
     <home-hero />
-    <latest-articles :feed="feed" />
+    <!--<latest-articles :feed="feed" /> -->
     <national-forecast />
     <fact-ticker range="CopyTickerHome" />
     <our-initiative />
