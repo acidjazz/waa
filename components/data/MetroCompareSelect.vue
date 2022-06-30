@@ -67,7 +67,9 @@ export default {
         this.city.two.name === this.city.two.selected
     },
     metrosf () {
-      return Object.keys(this.sheet('calc', 'operationImpactsMetro', 'Metro')).map(m => this.value(m))
+      return Object.keys(this.sheet('calc', 'operationImpactsMetro', 'Metro'))
+        .map(m => this.value(m))
+        .filter(m => !['Sioux Falls', 'Hololulu', 'Pittsburgh'].includes(m))
     },
   },
   methods: {
