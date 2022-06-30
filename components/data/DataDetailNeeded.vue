@@ -16,9 +16,17 @@
     <div v-else class="text-lg print:text-sm">
       {{ loc_copy_caps }}
       needs to build
-      <div class="data-val">{{ building | numeral('0,0a') }}</div>new apartment homes each year to meet demand.  Apartment construction contributes
-      <div class="data-val">${{ contribution.Construction_Economic_Impact | numeral }}</div>to {{ loc_copy }}'s economy annually, creating
-      <div class="data-val">{{ contribution.Construction_Employment_Impact | numeral('0,0a') }}</div>jobs.
+      <div class="data-val">{{ building | numeral('0,0a') }}</div>new apartment homes each year to meet demand.
+
+      <span v-if="state_impact">
+        The construction of every 100 apartment units contributes <div class="data-val">${{ contribution.Construction_Economic_Impact | numeral }}</div>
+        and <div class="data-val">{{ contribution.Construction_Employment_Impact | numeral('0,0a') }}</div> jobs to the state economy.
+      </span>
+      <span v-else>
+        Apartment construction contributes
+        <div class="data-val">${{ contribution.Construction_Economic_Impact | numeral }}</div>to {{ loc_copy }}'s economy annually, creating
+        <div class="data-val">{{ contribution.Construction_Employment_Impact | numeral('0,0a') }}</div>jobs.
+      </span>
     </div>
   </div>
 </template>
