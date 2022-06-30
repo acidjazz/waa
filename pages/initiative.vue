@@ -3,7 +3,6 @@
   InitHero
   TheResearch
   TheTeam
-  FactTicker(range="CopyTickerInit")
   GallerySection
   ThePeople
   TheReport(bg="scooter",fg="white")
@@ -14,7 +13,6 @@
 import InitHero from '@/components/initiative/InitHero'
 import TheResearch from '@/components/initiative/TheResearch'
 import TheTeam from '@/components/initiative/TheTeam'
-import FactTicker from '@/components/global/FactTicker'
 import GallerySection from '@/components/initiative/GallerySection'
 import ThePeople from '@/components/initiative/ThePeople'
 import TheReport from '@/components/global/TheReport'
@@ -24,11 +22,10 @@ export default {
     InitHero,
     TheResearch,
     TheTeam,
-    FactTicker,
     GallerySection,
     ThePeople,
     TheReport,
-    SourceLine
+    SourceLine,
   },
 }
 </script>

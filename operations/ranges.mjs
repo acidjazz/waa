@@ -27,10 +27,7 @@ export default {
         values: "Copy!A17:D22",
       },
       CopyTickerHome: {
-        values: "Copy!A4:A6",
-      },
-      CopyTickerInit: {
-        values: "Copy!A10:A13",
+        values: "Copy!A4:A7",
       },
       visionBuildMore: {
         labels: "'Vision-BuildMore'!A1:E1",
