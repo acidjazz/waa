@@ -1,5 +1,5 @@
 <template>
-  <SectionHero type="video" src="/condos.mp4" gradient="bg-tranblue">
+  <section-hero type="video" src="/condos.mp4" gradient="bg-tranblue">
     <div v-in-vp class="text-xl font-os mb-10 vp-y">WE ARE APARTMENTS</div>
     <div v-in-vp class="lg:text-5xl text-2xl px-4 lg:px-4 lg:max-w-5xl vp-y vp-d-2">
       Apartments and their residents contribute
@@ -7,19 +7,14 @@
       <client-only>
         <VueCountUp :end-val="contrib.endVal" :options="contrib.optionsMoney" />
       </client-only>&nbsp;
-      trillion to the U.S. economy annually, supporting
-      &nbsp;
-      <client-only>
-        <VueCountUp :end-val="jobs.endVal" :options="contrib.options" />
-      </client-only>&nbsp;
-      million jobs.
+      trillion to the U.S. economy annually, supporting {{ jobs.endVal }} million jobs.
     </div>
     <div class="buttons mt-10">
-      <nuxt-link v-in-vp class="waa-button vp-z mr-4 vp-d-3" to="/vision">Our vision</nuxt-link>
+      <nuxt-link v-in-vp class="waa-button vp-z mr-4 vp-d-3" to="/vision">Our Resources</nuxt-link>
       <nuxt-link v-in-vp class="waa-button vp-z vp-d-4" to="/data">The data</nuxt-link>
     </div>
-    <ScrollDown />
-  </SectionHero>
+    <scroll-down />
+  </section-hero>
 </template>
 
 
@@ -33,7 +28,7 @@ export default {
   data () {
     return {
       contrib: {
-        endVal: 3.4,
+        endVal: 4.3,
         options: {
           decimalPlaces: 1,
           duration: 4,
