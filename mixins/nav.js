@@ -39,9 +39,9 @@ export default {
           gradient: 'bg-gradred',
         },*/
         {
-          label: 'our vision',
-          names: ['vision'],
-          route: '/vision',
+          label: 'our resources',
+          names: ['resources'],
+          route: '/resources',
           color: 'daisybush',
           gradient: 'bg-graddaisy',
         },

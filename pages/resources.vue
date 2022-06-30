@@ -1,12 +1,10 @@
 <template>
-  <div class="page page-vision">
-    <vision-hero />
-    <vision-outreach />
+  <div class="page page-resources">
+    <resources-hero />
+    <resources-outreach />
     <offset-section>
-      <vision-build />
-    <!-- VisionIncome-->
+      <resources-build />
     </offset-section>
-    <!-- VisionFAQ-->
     <publications />
     <gallery-section />
     <the-research />
@@ -19,13 +17,11 @@
 </template>
 
 <script>
-import VisionHero from '@/components/vision/VisionHero'
+import ResourcesHero from '@/components/resources/ResourcesHero'
 import OffsetSection from '@/components/global/OffsetSection'
-import VisionOutreach from '@/components/vision/VisionOutreach'
-import VisionBuild from '@/components/vision/VisionBuild'
-import VisionIncome from '@/components/vision/VisionIncome'
+import ResourcesOutreach from '@/components/resources/ResourcesOutreach'
+import ResourcesBuild from '@/components/resources/ResourcesBuild'
 import Publications from '@/components/global/Publications'
-import VisionFAQ from '@/components/vision/VisionFAQ'
 import SourceLine from '@/components/global/SourceLine'
 
 import GallerySection from '@/components/initiative/GallerySection'
@@ -34,13 +30,11 @@ import TheTeam from '@/components/initiative/TheTeam'
 import ThePeople from '@/components/initiative/ThePeople'
 export default {
   components: {
-    VisionHero,
-    VisionOutreach,
+    ResourcesHero,
+    ResourcesOutreach,
     OffsetSection,
-    VisionBuild,
-    VisionIncome,
+    ResourcesBuild,
     Publications,
-    VisionFAQ,
     SourceLine,
 
     GallerySection,
