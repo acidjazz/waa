@@ -1,5 +1,5 @@
 <template>
-  <div id="DataDetailNeeded" class="text-center">
+  <div v-if="building > 0" id="DataDetailNeeded" class="text-center">
     <div v-if="building" class="text-bolder text-6xl print:hidden">
       <VueCountUp :end-val="count_val(building, '0,0a')" :options="count_opts(building, '', 0, '0,0a')" />
     </div>
