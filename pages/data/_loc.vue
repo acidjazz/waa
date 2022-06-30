@@ -19,9 +19,9 @@
             <stock-age :area="area" />
           </div>
         </div>
-        <div class="bg-black h-2 mt-12 print:mt-8 print:my-2" />
-        <data-detail-needed :area="area" />
-        <div class="bg-black h-2 my-12 print:mt-8 print:my-2" />
+        <div v-if="building > 0" class="bg-black h-2 mt-12 print:mt-8 print:my-2" />
+        <data-detail-needed v-if="building > 0" :area="area" @building="reportBuilding" />
+        <div v-if="building > 0" class="bg-black h-2 my-12 print:mt-8 print:my-2" />
         <print-footer />
       </offset-section>
       <!--
@@ -102,6 +102,7 @@ export default {
       chosen: false,
       area: {},
       comparison: false,
+      building: 1,
     }
   },
   methods: {
@@ -111,6 +112,9 @@ export default {
     },
     compare(metros) {
       this.comparison = metros
+    },
+    reportBuilding (building) {
+      this.building = building
     },
   },
 }

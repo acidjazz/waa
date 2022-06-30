@@ -26,5 +26,10 @@
 <script>
 import count from '@/mixins/count'
 import data from '@/mixins/data'
-export default { mixins: [ count, data ] }
+export default {
+  mixins: [ count, data ],
+  mounted () {
+    this.$emit('building', this.building)
+  },
+}
 </script>
