@@ -21,7 +21,8 @@
         </div>
         <div v-if="building > 0" class="bg-black h-2 mt-12 print:mt-8 print:my-2" />
         <data-detail-needed v-if="building > 0" :area="area" @building="reportBuilding" />
-        <div v-if="building > 0" class="bg-black h-2 my-12 print:mt-8 print:my-2" />
+        <div class="bg-black h-2 my-12 print:mt-8 print:my-2" />
+        <state-impact :area="area" />
         <print-footer />
       </offset-section>
       <!--
@@ -44,6 +45,7 @@ import PrintAndShare from '@/components/global/PrintAndShare'
 import DataFilters from '@/components/data/DataFilters'
 import DataSummary from '@/components/data/DataSummary'
 import DataDetail from '@/components/data/DataDetail'
+import StateImpact from '@/components/data/StateImpact'
 
 import DataName from '@/components/data/DataName'
 import DataDetailResidents from '@/components/data/DataDetailResidents'
@@ -96,6 +98,8 @@ export default {
 
     MetroCompareSelect,
     MetroCompareResults,
+
+    StateImpact,
   },
   data () {
     return {

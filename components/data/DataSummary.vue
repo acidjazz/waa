@@ -14,6 +14,7 @@
       economy annually<span v-if="jobs">, supporting
         <span class="text-bolder" title="Total_Employment_Impact">{{ jobs | numeral }}</span>
         jobs.</span><span v-else>.</span>
+      <span v-if="state_impact">*</span>
     </div>
   </div>
 </template>
