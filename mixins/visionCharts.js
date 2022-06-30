@@ -18,8 +18,8 @@ export default {
         labels: [],
         datasets: [{
           ...charts.datasetLine,
-          borderColor: pkg.cfg.colors.orange
-        }]
+          borderColor: pkg.cfg.colors.orange,
+        }],
       },
       options: {
         ...charts.options,
@@ -30,7 +30,7 @@ export default {
             ticks: {
               maxTicksLimit: 3,
               maxRotation: 0,
-            }
+            },
           }],
           yAxes: [{
             ...charts.options.scales.yAxes[0],

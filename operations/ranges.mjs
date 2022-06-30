@@ -35,7 +35,7 @@ export default {
       },
       visionIncomeAfford: {
         labels: "'Vision-IncomeAfford'!A1:C1",
-        values: "'Vision-IncomeAfford'!A2:C17",
+        values: "'Vision-IncomeAfford'!A2:C19",
       },
       dataResidentsUS: {
         values: "'Data-Residents'!A2:D2",

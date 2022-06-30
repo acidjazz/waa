@@ -31,7 +31,7 @@ export default {
         label: (item, data) => `${numeral(item.yLabel).format('0,0')} units`,
       },
     },
-    legend: { display: false, },
+    legend: { display: false },
     scales: {
       xAxes: [{
         gridLines: {
