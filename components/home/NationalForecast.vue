@@ -1,10 +1,12 @@
 <template>
-  <OffsetSection bg="supernova" fg="black">
+  <offset-section bg="supernova" fg="black">
     <div v-in-vp class="font-os my-4 vp-r"> NATIONAL DATA</div>
-    <div v-in-vp class="text-4xl text-bolder vp-r">The country needs to build 328,000 new apartment homes each year to meet demand.</div>
+    <div v-in-vp class="text-4xl text-bolder vp-r">
+      Apartments and their residents contribute $3.4 trillion to the U.S. economy annually, supporting 17.5 million jobs.
+    </div>
     <div v-in-vp class="mt-4 w-12 h-1 bg-white vp-r" />
     <div v-in-vp class="mt-4 text-bolder vp-r">Forecasted by the year 2030</div>
-  </OffsetSection>
+  </offset-section>
 </template>
 
 <script>
