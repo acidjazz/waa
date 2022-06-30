@@ -45,7 +45,7 @@ export default {
           color: 'daisybush',
           gradient: 'bg-graddaisy',
         },
-      ]
+      ],
     }
-  }
+  },
 }
