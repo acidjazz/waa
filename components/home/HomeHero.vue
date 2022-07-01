@@ -2,12 +2,11 @@
   <section-hero type="video" src="/condos.mp4" gradient="bg-tranblue">
     <div v-in-vp class="text-xl font-os mb-10 vp-y">WE ARE APARTMENTS</div>
     <div v-in-vp class="lg:text-5xl text-2xl px-4 lg:px-4 lg:max-w-5xl vp-y vp-d-2">
-      Apartments and their residents contribute
-      &nbsp;
+      The country needs to build
       <client-only>
-        <VueCountUp :end-val="contrib.endVal" :options="contrib.optionsMoney" />
+        <VueCountUp :end-val="contrib.endVal" :options="contrib.options" />
       </client-only>&nbsp;
-      trillion to the U.S. economy annually, supporting {{ jobs.endVal }} million jobs.
+      million more apartments by 2035.
     </div>
     <div class="buttons mt-10">
       <nuxt-link v-in-vp class="waa-button vp-z mr-4 vp-d-3" to="/resources">Our Resources</nuxt-link>
