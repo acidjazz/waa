@@ -8,10 +8,12 @@
     <publications />
     <gallery-section />
     <the-research />
+    <!--
     <offset-section>
-      <!--<the-team />-->
+      <the-team />
       <the-people />
     </offset-section>
+    -->
     <source-line />
   </div>
 </template>
