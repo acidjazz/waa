@@ -7,7 +7,7 @@
           <div class="copy">
             <div class="text-3xl font-bold mb-4">Our Resources</div>
             <div class="text-black">The apartment industry stands ready to work with urban, suburban and rural communities in every region to meet the housing demand of Americans across all income levels.</div>
-            <nuxt-link class="mt-8 inline-block border border-black rounded-full px-6 py-2 hover:bg-daisybush hover:text-white tran-colors" to="/vision"><span>Our Resources</span></nuxt-link>
+            <nuxt-link class="mt-8 inline-block border border-black rounded-full px-6 py-2 hover:bg-daisybush hover:text-white tran-colors" to="/resources"><span>Our Resources</span></nuxt-link>
           </div>
         </div>
       </div>
