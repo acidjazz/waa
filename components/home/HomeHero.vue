@@ -10,7 +10,7 @@
       trillion to the U.S. economy annually, supporting {{ jobs.endVal }} million jobs.
     </div>
     <div class="buttons mt-10">
-      <nuxt-link v-in-vp class="waa-button vp-z mr-4 vp-d-3" to="/vision">Our Resources</nuxt-link>
+      <nuxt-link v-in-vp class="waa-button vp-z mr-4 vp-d-3" to="/resources">Our Resources</nuxt-link>
       <nuxt-link v-in-vp class="waa-button vp-z vp-d-4" to="/data">The data</nuxt-link>
     </div>
     <scroll-down />
