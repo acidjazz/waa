@@ -28,8 +28,8 @@ export default {
             ...charts.options.scales.xAxes[0],
             gridLines: { drawBorder: true, display: false, color: pkg.cfg.colors.seashell },
             ticks: {
-              maxTicksLimit: 4,
-              maxRotation: 0,
+              maxTicksLimit: 18,
+              maxRotation: 60,
             },
           }],
           yAxes: [{

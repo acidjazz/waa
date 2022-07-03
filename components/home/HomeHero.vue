@@ -4,7 +4,7 @@
     <div v-in-vp class="lg:text-5xl text-2xl px-4 lg:px-4 lg:max-w-5xl vp-y vp-d-2">
       The country needs to build
       <client-only>
-        <VueCountUp :end-val="contrib.endVal" :options="contrib.options" />
+        <vue-count-up :end-val="contrib.endVal" :options="contrib.options" />
       </client-only>&nbsp;
       million more apartments by 2035.
     </div>
