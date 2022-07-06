@@ -5,7 +5,7 @@
     <offset-section>
       <resources-build />
     </offset-section>
-    <publications />
+    <!-- <publications /> -->
     <gallery-section />
     <the-research />
     <!--

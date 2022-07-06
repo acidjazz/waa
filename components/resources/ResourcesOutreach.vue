@@ -30,9 +30,8 @@
           <li><a href="#" class="text-heart">Download Executive Summary</a></li>
           <li><a href="#" class="text-heart">Download National Report</a></li>
           <li><a href="#" class="text-heart">Download 50-Markets Report</a></li>
-          <li><a href="#" class="text-heart">Download the full Report</a></li>
         </ul>
-        <div class="my-8 inline-block border border-black rounded-full px-6 py-2"><a href="/NMHC-NAA-US-Apartment-Demand-in-2030.pdf">Download PDF</a></div>
+        <div class="my-8 inline-block border border-black rounded-full px-6 py-2"><a href="/NMHC-NAA-US-Apartment-Demand-in-2030.pdf">Download Full Report PDF</a></div>
       </div>
       <div v-in-vp class="lg:w-1/3 vp-r vp-d-2">
         <div class="text-2xl text-bolder mb-4">Policies that work</div>
