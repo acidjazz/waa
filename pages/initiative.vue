@@ -1,12 +1,13 @@
-<template lang="pug">
-.page.page-initiative.bg-black
-  InitHero
-  TheResearch
-  TheTeam
-  GallerySection
-  ThePeople
-  TheReport(bg="scooter",fg="white")
-  SourceLine
+<template>
+  <div class="page page-initiative bg-black">
+    <init-hero />
+    <the-research />
+    <the-team />
+    <gallery-section />
+    <the-people />
+    <the-report bg="scooter" fg="white" />
+    <source-line />
+  </div>
 </template>
 
 <script>

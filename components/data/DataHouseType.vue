@@ -1,7 +1,8 @@
-<template lang="pug">
-#DataHouseType
-  .text-bolder.text-2xl.mb-8 Household type
-  PercChart(:datas="datas")
+<template>
+  <div id="DataHouseType">
+    <div class="text-bolder text-2xl mb-8">Household type</div>
+    <perc-chart :datas="datas" />
+  </div>
 </template>
 
 
@@ -19,7 +20,7 @@ export default {
         'Married_or_Partners_without_Children': 'Married or partners without children',
         //Roommate: 'Roommate',
         Other: 'Other',
-      }
+      },
     }
   },
   computed: {
@@ -27,7 +28,7 @@ export default {
       let result = {}
       Object.keys(this.keys).forEach((key) => { result[this.keys[key]] = this.housetype[key] })
       return result
-    }
+    },
   },
 }
 </script>
