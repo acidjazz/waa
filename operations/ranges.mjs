@@ -210,7 +210,7 @@ export default {
       },
       constructionImpactsMetro: {
         labels: "'Construction Impacts (metro)'!A2:M2",
-        values: "'Construction Impacts (metro)'!A3:M52",
+        values: "'Construction Impacts (metro)'!A3:M49",
       },
       operationImpactsMetro: {
         labels: "'Operation Impacts (metro)'!A2:N2",
@@ -220,6 +220,6 @@ export default {
         labels: "'Spending Impacts (metro)'!A2:J2",
         values: "'Spending Impacts (metro)'!A3:J52",
       },
-    }
+    },
   },
 }
