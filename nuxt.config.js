@@ -29,7 +29,7 @@ export default {
 
       // twitter
       { name: 'twitter:card', content: 'summary_large_image' },
-      { name: 'twitter:image', content: pkg.cfg.url + pkg.cfg.image },
+      { name: 'twitter:image', content: pkg.cfgturl + pkg.cfg.image },
 
       { hid: 'twitter:title', name: 'twitter:title', content: pkg.cfg.title },
       { hid: 'twitter:description', name: 'twitter:description', content: pkg.cfg.description },
@@ -58,7 +58,7 @@ export default {
   ** Global CSS
   */
   css: [
-    '@/assets/stylus/main.styl',
+    '@/assets/css/main.css',
   ],
   /*
   ** Plugins to load before mounting the App

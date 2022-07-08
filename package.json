@@ -52,10 +52,8 @@
     "production": "node ./aeonian.js production"
   },
   "dependencies": {
-    "@mdi/font": "^6.7.96",
     "@nuxtjs/google-tag-manager": "^2.2.0",
     "@nuxtjs/pwa": "^3.0.0-beta.16",
-    "aeonian": "^1.1.7",
     "chart.js": "^2.8.0",
     "countup.js": "^2.0.4",
     "cross-env": "^7.0.3",
@@ -64,11 +62,7 @@
     "numeral": "^2.0.6",
     "nuxt": "^2.8.1",
     "nuxt-polyfill": "^1.0.3",
-    "pug": "^3.0.2",
-    "pug-plain-loader": "^1.0.0",
     "smoothscroll-polyfill": "^0.4.4",
-    "stylus": "^0.58.1",
-    "stylus-loader": "^4.0.0",
     "url-polyfill": "^1.1.7",
     "vue-chartjs": "^3.5.1",
     "vue-countup-v2": "^4.0.0",

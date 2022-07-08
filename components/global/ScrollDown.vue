@@ -1,6 +1,6 @@
 <template>
-  <div class="relative w-full flex justify-center items-center">
-    <icon v-if="visible" icon="mdi:chevron-down" class="mt-24 absolute animate-bounce duration-1000 w-6 h-6" />
+  <div class="absolute bottom-10 w-screen h-0 flex justify-center items-center">
+    <icon v-if="visible" icon="mdi:chevron-down" class="animate-bounce duration-1000 text-white w-6 h-6" />
   </div>
 </template>
 
