@@ -31,7 +31,7 @@
         <ul class="mt-6 list-disc text-sm ml-6">
           <li><a href="#" class="text-heart">Download Executive Summary</a></li>
           <li><a href="#" class="text-heart">Download National Report (Only)</a></li>
-          <li><a href="#" class="text-heart">Download 50-Markets Report (Only)</a></li>
+          <li><a href="#" class="text-heart">Download 50-Metros Report (Only)</a></li>
         </ul>
         <div class="mt-8 inline-block border border-black rounded-full px-6 py-2">
           <a href="/pdf/NMHC-NAA-US-Apartment-Demand-in-2030.pdf">
