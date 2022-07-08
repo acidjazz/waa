@@ -20,7 +20,7 @@
           Hoyt Advisory Services and Eigen10 Advisors research estimates the estimated how much apartments and their residents contribute to the economy at the national, state and local level.
         </div>
         <div class="mt-6 inline-block border border-black rounded-full px-6 py-2">
-          <a href="/Economic_Impact.pdf">Download PDF</a>
+          <a href="/pdf/Economic_Impact.pdf">Download PDF</a>
         </div>
       </div>
       <div v-in-vp class="lg:w-1/3 vp-r vp-d-1">
@@ -30,11 +30,14 @@
         </div>
         <ul class="mt-6 list-disc text-sm ml-6">
           <li><a href="#" class="text-heart">Download Executive Summary</a></li>
-          <li><a href="#" class="text-heart">Download National Report</a></li>
-          <li><a href="#" class="text-heart">Download 50-Markets Report</a></li>
+          <li><a href="#" class="text-heart">Download National Report (Only)</a></li>
+          <li><a href="#" class="text-heart">Download 50-Markets Report (Only)</a></li>
         </ul>
         <div class="mt-8 inline-block border border-black rounded-full px-6 py-2">
-          <a href="/NMHC-NAA-US-Apartment-Demand-in-2030.pdf">Download Full Report PDF</a>
+          <a href="/pdf/NMHC-NAA-US-Apartment-Demand-in-2030.pdf">
+            <div> Download Full Report PDF </div>
+            <div class="text-sm">(National Report + 50 Metros)</div>
+          </a>
         </div>
       </div>
       <div v-in-vp class="lg:w-1/3 vp-r vp-d-2">
@@ -43,7 +46,7 @@
           Solutions to help build the housing the nation needs are out there but need to be more broadly adopted across the country. They include reducing barriers to apartment construction, reforming land-use and zoning regulations, reducing parking requirements, and creating more public-private partnerships.
         </div>
         <div class="mt-6 inline-block border border-black rounded-full px-6 py-2">
-          <a href="/Vision2030.pdf">Download PDF</a>
+          <a href="/pdf/Policy.Recommendations.Vision.2035.pdf">Download PDF</a>
         </div>
       </div>
     </div>
