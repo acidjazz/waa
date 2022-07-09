@@ -1,8 +1,8 @@
 <template>
   <offset-section>
     <div v-in-vp class="font-os mb-4 vp-r">THE RESEARCH</div>
+    <div v-in-vp class="text-3xl text-bolder w-full lg:w-3/4 mb-8 vp-r vp-d-1">We partnered with top researchers at Hoyt Advisory Services and Eigen10 Advisors to estimate the economic impact of the apartment industry as well as demand for apartments in the future.</div>
     <div class="flex flex-col lg:flex-row lg:flex-wrap -mx-4">
-      <div v-in-vp class="text-3xl text-bolder w-full lg:w-3/4 mb-8 vp-r vp-d-1">We partnered with top researchers at Hoyt Advisory Services and Eigen10 Advisors to estimate the economic impact of the apartment industry as well as demand for apartments in the future.</div>
       <div v-in-vp class="w-full lg:w-1/3 p-4 vp-r vp-d-2">
         <div class="text-4xl font-okib font-bold h-28">Forecasted Demographic Data</div>
         <div class="mt-4">
