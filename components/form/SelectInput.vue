@@ -10,7 +10,8 @@
       >
         {{ option }}
       </option>
-    </select><i class="mdi mdi-24px mdi-chevron-down absolute right-0 mt-1 mr-2" />
+    </select>
+    <icon icon="mdi:chevron-down" class="w-6 h-6 absolute right-0 top-2 mt-1 mr-2" />
   </div>
 </template>
 
