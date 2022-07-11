@@ -23,7 +23,7 @@
       <div class="flex items-center mb-2">
         <div class="w-1_5 mr-8 text-right" />
         <div class="w-4_5 text-left mr-4 text-sm text-bpink">
-          <div v-if="error" class="ani-sir">Please specify a number</div>
+          <div v-if="error" class="ani-sir"> {{ error }} </div>
           <div v-else>&nbsp;</div>
         </div>
       </div>
@@ -87,8 +87,13 @@ export default {
       this.by = by
     },
     calculate () {
-      if (this.homes === '') return this.error = true
-      this.$emit('calculate', {type: this.type, homes: this.homes, by: this.by, selected: this.selected})
+      this.error = false
+      if (this.homes === '') this.error = 'Please specify a number'
+      if (this.by === 'metro' && this.selected === '') this.error = 'Please specify a metro'
+      if (this.by === 'state' && this.selected === '') this.error = 'Please specify a state'
+
+      if (this.error === false)
+        this.$emit('calculate', {type: this.type, homes: this.homes, by: this.by, selected: this.selected})
     },
   },
 }
