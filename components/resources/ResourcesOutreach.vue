@@ -29,7 +29,7 @@
           NMHC and NAA partnered with Hoyt Advisory Services to identify the demand for apartments through 2035. Download their analysis of the apartment industry.
         </div>
         <ul class="mt-6 list-disc text-sm ml-6">
-          <li><a href="#" class="text-heart">Download Executive Summary</a></li>
+          <li><a href="/pdf/Executive_Summary.pdf" class="text-heart">Download Executive Summary</a></li>
           <li><a href="#" class="text-heart">Download National Report (Only)</a></li>
           <li><a href="/pdf/50_Metros_Report.pdf" class="text-heart">Download 50-Metros Report (Only)</a></li>
         </ul>
