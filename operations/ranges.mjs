@@ -190,7 +190,7 @@ export default {
     ranges: {
       constructionImpacts: {
         labels: "'Construction Impacts'!A3:M3",
-        values: "'Construction Impacts'!A4:M50",
+        values: "'Construction Impacts'!A4:M56",
       },
       operationImpacts: {
         labels: "'Operation Impacts'!A2:N2",
