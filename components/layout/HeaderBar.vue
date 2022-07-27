@@ -1,18 +1,34 @@
-<template lang="pug">
-header.header-nav.bg-black.text-white.fixed.z-20.inset-x-0.top-0.ani-sit.print_hidden.tran-all-p2s(
-  :class="{'lg_py-8 py-2': !has_scrolled, 'lg_py-1 py-2': has_scrolled}")
-  .container.lg.px-4
-    .flex.justify-between.items-center
-      HeaderTitle
-      nav.header-nav-menu.justify-end.ani-sil.ani-d-1.hidden.lg_flex
-        nuxt-link.py-2.px-4.mr-1.rounded-full.tran-colors(
-          v-for="option, index in options",
-          :key="index",
-          :to="option.route",
-          :class="`hover_text-${option.color}`")
-          div {{ option.label }}
-          .h-1.mt-2.ani-zi(v-if="option.names.includes($route.name)",:class="option.gradient")
-          .h-1.mt-2(v-else)
+<template>
+  <header
+    class="header-nav bg-black text-white fixed z-20 inset-x-0 top-0 ani-sit print:hidden tran-all-p2s"
+    :class="{'lg:py-8 py-2': !has_scrolled, 'lg:py-1 py-2': has_scrolled}"
+  >
+    <div class="container lg:px-4">
+      <div class="flex justify-between items-center">
+        <HeaderTitle />
+        <nav class="header-nav-menu justify-end ani-sil ani-d-1 hidden lg:flex">
+          <nuxt-link
+            v-for="option, index in options"
+            :key="index"
+            class="py-2 px-4 mr-1 rounded-full tran-colors"
+            :to="option.route"
+            :class="`hover:text-${option.color}`"
+          >
+            <div>{{ option.label }}</div>
+            <div
+              v-if="option.names.includes($route.name)"
+              class="h-1 mt-2 ani-zi"
+              :class="option.gradient"
+            />
+            <div
+              v-else
+              class="h-1 mt-2"
+            />
+          </nuxt-link>
+        </nav>
+      </div>
+    </div>
+  </header>
 </template>
 
 <script>

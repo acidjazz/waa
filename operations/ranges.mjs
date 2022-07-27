@@ -27,10 +27,7 @@ export default {
         values: "Copy!A17:D22",
       },
       CopyTickerHome: {
-        values: "Copy!A4:A6",
-      },
-      CopyTickerInit: {
-        values: "Copy!A10:A13",
+        values: "Copy!A4:A7",
       },
       visionBuildMore: {
         labels: "'Vision-BuildMore'!A1:E1",
@@ -38,7 +35,7 @@ export default {
       },
       visionIncomeAfford: {
         labels: "'Vision-IncomeAfford'!A1:C1",
-        values: "'Vision-IncomeAfford'!A2:C17",
+        values: "'Vision-IncomeAfford'!A2:C19",
       },
       dataResidentsUS: {
         values: "'Data-Residents'!A2:D2",
@@ -84,8 +81,8 @@ export default {
         values: "'Data-Contribution'!A59:O108",
       },
       dataContributionDistrict: {
-        labels: "'Data-Contribution'!A111:P111",
-        values: "'Data-Contribution'!A112:P547",
+        labels: "'Data-Contribution'!A110:P110",
+        values: "'Data-Contribution'!A111:P547",
       },
 
       dataApartmentsUS: {
@@ -193,7 +190,7 @@ export default {
     ranges: {
       constructionImpacts: {
         labels: "'Construction Impacts'!A3:M3",
-        values: "'Construction Impacts'!A4:M56",
+        values: "'Construction Impacts'!A4:M50",
       },
       operationImpacts: {
         labels: "'Operation Impacts'!A2:N2",
@@ -213,7 +210,7 @@ export default {
       },
       constructionImpactsMetro: {
         labels: "'Construction Impacts (metro)'!A2:M2",
-        values: "'Construction Impacts (metro)'!A3:M52",
+        values: "'Construction Impacts (metro)'!A3:M49",
       },
       operationImpactsMetro: {
         labels: "'Operation Impacts (metro)'!A2:N2",
@@ -223,6 +220,6 @@ export default {
         labels: "'Spending Impacts (metro)'!A2:J2",
         values: "'Spending Impacts (metro)'!A3:J52",
       },
-    }
+    },
   },
 }

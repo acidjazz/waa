@@ -18,9 +18,13 @@ export default {
       type: Object,
       required: false,
       default: () => {},
-    }
+    },
   },
   computed: {
+
+    state_impact () {
+      return ['Boise', 'Jacksonville', 'Virginia_Beach'].includes(this.area.key)
+    },
 
     metro_msa () { return this.sheet('main', 'MetroMSA', 'Metro')[this.area.key] },
 
@@ -88,7 +92,7 @@ export default {
     loc_copy_caps () {
       if (this.area.type === 'national') return 'The country'
       return this.area.value
-    }
+    },
 
   },
 
@@ -97,7 +101,7 @@ export default {
       if (this[`${value}_${type}`])
         return this[`${value}_${type}`]
       return false
-    }
+    },
   },
 
 }

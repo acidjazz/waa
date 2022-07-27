@@ -1,55 +1,59 @@
-<template lang="pug">
-OffsetSection
-  .font-os.mb-4(v-in-vp).vp-r ACTIVITY
-  .text-3xl.mb-8.w-full.lg_w-1_2(v-in-vp).vp-r.vp-d-1 Fill out a few parameters below and see the results.
-
-  .flex.flex-col.w-full.lg_w-128.mx-auto(v-in-vp).vp-r.vp-d-2
-
-    .flex.items-center.justify-between.cursor-pointer.mb-2(@click="change_type('existing')")
-      .w-1_5.mr-8.text-right Type
-      .w-3_5.font-bold.text-xl Existing apartment community
-      CheckBox(:checked="type === 'existing'").mr-4
-
-    .flex.items-center.justify-between.cursor-pointer.mb-2(@click="change_type('new')")
-      .w-1_5.mr-8
-      .w-3_5.font-bold.text-xl Potential new development
-      CheckBox(:checked="type === 'new'").mr-4
-
-    .bg-seashell.h-px.w-full.my-10
-
-    .flex.items-center.mb-2
-      .w-1_5.mr-8.text-right Number of homes
-      .w-4_5.text-right.mr-4
-        TextInput(type="number",v-model="homes",placeholder="How many apartment homes?")
-    .flex.items-center.mb-2
-      .w-1_5.mr-8.text-right
-      .w-4_5.text-left.mr-4.text-sm.text-bpink
-        .ani-sir(v-if="error") Please specify a number
-        div(v-else) &nbsp;
-
-    .bg-seashell.h-px.w-full.my-10
-
-    .flex.items-center.mb-2.cursor-pointer(@click="by = 'national'; selected = ''")
-      .w-1_5.mr-8.text-right Calculate by
-      .w-4_5.mr-4.flex
-        CheckBox(:checked="by === 'national'").w-12.mr-4
-        .bg-seashell.text-xl.font-bold.w-full.rounded.py-1.px-2 National
-
-    .flex.items-center.mb-2.cursor-pointer(@click="by = 'metro'")
-      .w-1_5.mr-8.text-right
-      .w-4_5.mr-4.flex
-        CheckBox(:checked="by === 'metro'").w-12.mr-4
-        SelectInput(placeholder="Metro",:options="metros",v-model="selected")
-
-    .flex.items-center.mb-2.cursor-pointer(@click="by = 'state'")
-      .w-1_5.mr-8.text-right
-      .w-4_5.mr-4.flex
-        CheckBox(:checked="by === 'state'").w-12.mr-4
-        SelectInput(placeholder="State",:options="states",v-model="selected")
-
-    .flex.mt-12.justify-center
-      .waa-button-black(@click="calculate") Calculate
-
+<template>
+  <offset-section>
+    <div v-in-vp class="font-os mb-4 vp-r">ACTIVITY</div>
+    <div v-in-vp class="text-3xl mb-8 w-full lg:w-1/2 vp-r vp-d-1">Fill out a few parameters below and see the results.</div>
+    <div v-in-vp class="flex flex-col w-full lg:max-w-lg mx-auto vp-r vp-d-2">
+      <div class="flex items-center justify-between cursor-pointer mb-2" @click="change_type('existing')">
+        <div class="w-1/5 mr-8 text-right">Type</div>
+        <div class="w-3/5 font-bold text-xl">Existing apartment community</div>
+        <check-box class="mr-4 w-10" :checked="type === 'existing'" />
+      </div>
+      <div class="flex items-center justify-between cursor-pointer mb-2" @click="change_type('new')">
+        <div class="w-1/5 mr-8" />
+        <div class="w-3/5 font-bold text-xl">Potential new development</div>
+        <check-box class="mr-4 w-10" :checked="type === 'new'" />
+      </div>
+      <div class="bg-seashell h-px w-full my-10" />
+      <div class="flex items-center mb-2">
+        <div class="w-1/5 mr-8 text-right">Number of homes</div>
+        <div class="w-4/5 text-right mr-4">
+          <text-input v-model="homes" type="number" placeholder="How many apartment homes?" />
+        </div>
+      </div>
+      <div class="flex items-center mb-2">
+        <div class="w-1_5 mr-8 text-right" />
+        <div class="w-4_5 text-left mr-4 text-sm text-bpink">
+          <div v-if="error" class="ani-sir"> {{ error }} </div>
+          <div v-else>&nbsp;</div>
+        </div>
+      </div>
+      <div class="bg-seashell h-px w-full my-10" />
+      <div class="flex items-center mb-2 cursor-pointer" @click="by = 'national'; selected = ''">
+        <div class="w-1/5 mr-8 text-right">Calculate by</div>
+        <div class="w-4/5 mr-4 flex">
+          <check-box class="w-12 mr-4" :checked="by === 'national'" />
+          <div class="bg-seashell text-xl font-bold w-full rounded py-1 px-2">National</div>
+        </div>
+      </div>
+      <div class="flex items-center mb-2 cursor-pointer" @click="by = 'metro'">
+        <div class="w-1/5 mr-8 text-right" />
+        <div class="w-4/5 mr-4 flex">
+          <check-box class="w-12 mr-4" :checked="by === 'metro'" />
+          <select-input v-model="selected" placeholder="Metro" :options="calc_metros" />
+        </div>
+      </div>
+      <div class="flex items-center mb-2 cursor-pointer" @click="by = 'state'">
+        <div class="w-1/5 mr-8 text-right" />
+        <div class="w-4/5 mr-4 flex">
+          <check-box class="w-12 mr-4" :checked="by === 'state'" />
+          <select-input v-model="selected" placeholder="State" :options="states" />
+        </div>
+      </div>
+      <div class="flex mt-12 justify-center">
+        <div class="waa-button-black" @click="calculate">Calculate</div>
+      </div>
+    </div>
+  </offset-section>
 </template>
 
 <script>
@@ -70,6 +74,11 @@ export default {
       error: false,
     }
   },
+  computed: {
+    calc_metros() {
+      return Object.keys(this.sheet('calc', 'constructionImpactsMetro', 'Metro')).map(m => m.replace(/_/g, ' '))
+    },
+  },
   methods: {
     change_type(type) {
       this.type = type
@@ -78,8 +87,13 @@ export default {
       this.by = by
     },
     calculate () {
-      if (this.homes === '') return this.error = true
-      this.$emit('calculate', {type: this.type, homes: this.homes, by: this.by, selected: this.selected})
+      this.error = false
+      if (this.homes === '') this.error = 'Please specify a number'
+      if (this.by === 'metro' && this.selected === '') this.error = 'Please specify a metro'
+      if (this.by === 'state' && this.selected === '') this.error = 'Please specify a state'
+
+      if (this.error === false)
+        this.$emit('calculate', {type: this.type, homes: this.homes, by: this.by, selected: this.selected})
     },
   },
 }

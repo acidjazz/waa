@@ -18,8 +18,8 @@ export default {
         labels: [],
         datasets: [{
           ...charts.datasetLine,
-          borderColor: pkg.cfg.colors.orange
-        }]
+          borderColor: pkg.cfg.colors.orange,
+        }],
       },
       options: {
         ...charts.options,
@@ -28,9 +28,9 @@ export default {
             ...charts.options.scales.xAxes[0],
             gridLines: { drawBorder: true, display: false, color: pkg.cfg.colors.seashell },
             ticks: {
-              maxTicksLimit: 3,
-              maxRotation: 0,
-            }
+              maxTicksLimit: 18,
+              maxRotation: 60,
+            },
           }],
           yAxes: [{
             ...charts.options.scales.yAxes[0],
@@ -39,7 +39,7 @@ export default {
             ticks: {
               ...charts.options.scales.yAxes[0].ticks,
               maxTicksLimit: 4,
-            }
+            },
           }],
         },
       },

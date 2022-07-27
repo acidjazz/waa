@@ -1,32 +1,42 @@
-<template lang="pug">
-.page.page-data.pt-20.bg-black.print_pt-0.print_bg-white
-  DataFilters(@chose="chose")
-  div(v-if="chosen")
-    DataSummary(:area="area")
-    OffsetSection.mt-0.relative
-      DataName(:area="area")
-      .absolute.right-0.top-0.mr-1.mt-24.lg_mr-8.lg_mt-8
-        PrintAndShare
-      .flex.w-full.lg_w-11_12.mx-auto.-px-4.flex-col.lg_flex-row.print_flex-row
-        .lg_w-1_2.pl-4.print_w-1_2
-          DataDetailResidents(:area="area")
-          .bg-black.h-2
-          DataDetailHomes(:area="area")
-
-        .lg_w-1_2.pl-4.print_w-1_2
-          DataDetailRepair(:area="area")
-          StockAge(:area="area")
-
-      .bg-black.h-2.mt-12.print_mt-8.print_my-2
-      DataDetailNeeded(:area="area")
-      .bg-black.h-2.my-12.print_mt-8.print_my-2
-      PrintFooter
-    OffsetSection.print_hidden
-      DataBarriers(:area="area")
-    OffsetSection.print_hidden
-      MetroCompareSelect(@compare="compare")
-      MetroCompareResults(v-if="comparison",:comparison="comparison")
-    SourceLine
+<template>
+  <div class="page page-data pt-20 bg-black print:pt-0 print:bg-white">
+    <data-filters @chose="chose" />
+    <div v-if="chosen">
+      <data-summary :area="area" />
+      <offset-section class="mt-0 relative">
+        <data-name :area="area" />
+        <div class="absolute right-0 top-0 mr-1 mt-24 lg:mr-8 lg:mt-8">
+          <print-and-share />
+        </div>
+        <div class="flex w-full lg:w-11/12 mx-auto -px-4 flex-col lg:flex-row print:flex-row">
+          <div class="lg:w-1/2 pl-4 print:w-1/2">
+            <data-detail-residents :area="area" />
+            <div class="bg-black h-2" />
+            <data-detail-homes :area="area" />
+          </div>
+          <div class="lg:w-1/2 pl-4 print:w-1/2">
+            <data-detail-repair :area="area" />
+            <stock-age :area="area" />
+          </div>
+        </div>
+        <div v-if="building > 0" class="bg-black h-2 mt-12 print:mt-8 print:my-2" />
+        <data-detail-needed v-if="building > 0" :area="area" @building="reportBuilding" />
+        <div class="bg-black h-2 my-12 print:mt-8 print:my-2" />
+        <state-impact :area="area" />
+        <print-footer />
+      </offset-section>
+      <!--
+      <offset-section class="print:hidden">
+        <data-barriers :area="area" />
+      </offset-section>
+      -->
+      <offset-section class="print:hidden">
+        <metro-compare-select @compare="compare" />
+        <metro-compare-results v-if="comparison" :comparison="comparison" />
+      </offset-section>
+      <source-line />
+    </div>
+  </div>
 </template>
 
 <script>
@@ -35,6 +45,7 @@ import PrintAndShare from '@/components/global/PrintAndShare'
 import DataFilters from '@/components/data/DataFilters'
 import DataSummary from '@/components/data/DataSummary'
 import DataDetail from '@/components/data/DataDetail'
+import StateImpact from '@/components/data/StateImpact'
 
 import DataName from '@/components/data/DataName'
 import DataDetailResidents from '@/components/data/DataDetailResidents'
@@ -87,12 +98,15 @@ export default {
 
     MetroCompareSelect,
     MetroCompareResults,
+
+    StateImpact,
   },
   data () {
     return {
       chosen: false,
       area: {},
       comparison: false,
+      building: 1,
     }
   },
   methods: {
@@ -102,6 +116,9 @@ export default {
     },
     compare(metros) {
       this.comparison = metros
+    },
+    reportBuilding (building) {
+      this.building = building
     },
   },
 }

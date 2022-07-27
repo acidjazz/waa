@@ -1,64 +1,37 @@
-<template lang="pug">
-.scroll-down(:class="{visible: visible}")
+<template>
+  <div class="absolute bottom-10 w-screen h-0 flex justify-center items-center">
+    <icon v-if="visible" icon="mdi:chevron-down" class="animate-bounce duration-1000 text-white w-6 h-6" />
+  </div>
 </template>
 
 <script>
 export default {
-  created () {
-    if (process.browser) {
-      window.addEventListener('scroll', this.scroll)
-    }
-    setTimeout(() => { this.visible = true }, 1000)
-  },
-  destroyed () {
-    if (process.browser) {
-      window.removeEventListener('scroll', this.scroll)
-    }
-  },
-  methods: {
-    scroll (event) {
-      if (window.scrollY >= 100 && this.visible === true) {
-        this.visible = false
-      }
-      if (window.scrollY <= 60 && this.visible === false) {
-        this.visible = true
-      }
-    },
-  },
 
   data () {
     return {
       visible: false,
     }
-  }
+  },
+  created () {
+    if (process.browser)
+      window.addEventListener('scroll', this.scroll)
+
+    setTimeout(() => { this.visible = true }, 1000)
+  },
+  destroyed () {
+    if (process.browser)
+      window.removeEventListener('scroll', this.scroll)
+
+  },
+  methods: {
+    scroll (event) {
+      if (window.scrollY >= 100 && this.visible === true)
+        this.visible = false
+
+      if (window.scrollY <= 60 && this.visible === false)
+        this.visible = true
+
+    },
+  },
 }
 </script>
-
-
-<style lang="stylus">
-.scroll-down
-  @apply absolute text-center z-20 opacity-0
-  bottom 30px
-  left 50%
-  font-size 20px
-  width 13px
-  height 13px
-  border-bottom 2px solid transparent
-  border-right 2px solid transparent
-  transform translate(-50%, 0%) rotate(45deg)
-  animation scrolldown 4s ease-in-out infinite
-  transition border 0.5s ease
-  &.visible
-    border-bottom 2px solid white
-    border-right 2px solid white
-
-@keyframes scrolldown
-  0%
-    transform translate(0, -10px) rotate(45deg)
-    opacity 0
-  50%
-    opacity 1
-  100%
-    transform translate(0, 10px) rotate(45deg)
-    opacity 0
-</style>

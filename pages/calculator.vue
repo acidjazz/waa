@@ -1,9 +1,9 @@
-<template lang="pug">
-.page.page-calculator
-  CalcHero
-  CalcParams(@calculate="calculate")
+<template>
+  <div class="page page-calculator">
+    <calc-hero />
+    <calc-params @calculate="calculate" />
+  </div>
 </template>
-
 
 <script>
 import CalcHero from '@/components/calculator/CalcHero'
@@ -16,4 +16,4 @@ export default {
     },
   },
 }
-</script>
+  </script>

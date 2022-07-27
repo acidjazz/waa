@@ -1,17 +1,25 @@
-<template lang="pug">
-.flex.flex-col.lg_flex-row
-  .lg_ml-10.ml-0
-    .flex.flex-col.lg_flex-row.-p-4
-      .lg_w-1_3.p-4.flex.flex-col.justify-around.pl-0(v-in-vp).vp-r.vp-d-1
-        .text-3xl.mb-4 We are proud to have worked with the following sources
-      .lg_w-1_3.p-4.flex.flex-col.justify-around(v-in-vp).vp-r.vp-d-2
-        .flex.mb-4(v-for="source in sourcesA")
-          i.mdi.mdi-circle.text-alum.mr-2
-          .text-sm {{ source }}
-      .lg_w-1_3.p-4.flex.flex-col.justify-around(v-in-vp).vp-r.vp-d-2
-        .flex.mb-4(v-for="source in sourcesB")
-          i.mdi.mdi-circle.text-alum.mr-2
-          .text-sm {{ source }}
+<template>
+  <div class="flex flex-col lg:flex-row">
+    <div class="lg:ml-10 ml-0">
+      <div class="flex flex-col lg:flex-row -p-4">
+        <div v-in-vp class="lg:w-1/3 p-4 flex flex-col justify-around pl-0 vp-r vp-d-1">
+          <div class="text-3xl mb-4">We are proud to have worked with the following sources</div>
+        </div>
+        <div v-in-vp class="lg:w-1/3 p-4 flex flex-col justify-around vp-r vp-d-2">
+          <div v-for="source in sourcesA" :key="source" class="flex mb-4">
+            <Icon icon="mdi:circle" class="text-alum mr-2 w-4 h-4 flex-shrink-0" />
+            <div class="text-sm">{{ source }}</div>
+          </div>
+        </div>
+        <div v-in-vp class="lg:w-1/3 p-4 flex flex-col justify-around vp-r vp-d-2">
+          <div v-for="source in sourcesB" :key="source" class="flex mb-4">
+            <Icon icon="mdi:circle" class="text-alum mr-2 w-4 h-4 flex-shrink-0" />
+            <div class="text-sm">{{ source }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -29,6 +37,6 @@ export default {
         'U.S. Census Bureau, New Residential Construction',
       ],
     }
-  }
+  },
 }
 </script>

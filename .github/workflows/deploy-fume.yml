@@ -6,15 +6,20 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 14
       - uses: actions/checkout@v2
+      - name: Where is nodejs
+        run: which node
+      - name: See Node Version
+        run: node --version
       - name: Install our dependencies
         run: yarn
       - name: Generate our medium feed
         run: yarn feed
       - name: Generate sheets
         run: yarn sheets
-      - name: Generate icons
-        run: yarn mdi
       - name: Generate our routes
         run: yarn route
       - uses: fumeapp/action@master

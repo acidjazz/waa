@@ -1,9 +1,8 @@
-<template lang="pug">
-input.text-xl.bg-seashell.rounded.p-2.w-full.font-bold(
-  :type="type",
-  :placeholder="placeholder",
-  :value="value",
-  @input="update")
+<template>
+  <input
+    class="text-xl bg-seashell rounded p-2 w-full font-bold" :type="type" :placeholder="placeholder"
+    :value="value" @input="update"
+  >
 </template>
 
 
@@ -28,7 +27,7 @@ export default {
   methods: {
     update(event) {
       this.$emit('input', event.target.value)
-    }
+    },
   },
 }
 </script>

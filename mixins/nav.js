@@ -15,6 +15,7 @@ export default {
           gradient: 'bg-gradtrue',
           color: 'trueblue',
         },
+        /*
         {
           label: 'latest news',
           names: ['articles'],
@@ -22,6 +23,7 @@ export default {
           gradient: 'bg-gradgreen',
           color: 'persiangreen',
         },
+        */
         {
           label: 'apartment calculator',
           names: ['calculator', 'results'],
@@ -37,13 +39,13 @@ export default {
           gradient: 'bg-gradred',
         },*/
         {
-          label: 'our vision',
-          names: ['vision'],
-          route: '/vision',
+          label: 'our resources',
+          names: ['resources'],
+          route: '/resources',
           color: 'daisybush',
           gradient: 'bg-graddaisy',
         },
-      ]
+      ],
     }
-  }
+  },
 }

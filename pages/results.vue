@@ -1,68 +1,74 @@
-<template lang="pug">
-.page.page-calculate.pt-16.bg-white.print_pt-0
-  .bg-tranpurp.flex.justify-center.lg_py-32.min-h-screen.print_py-0.print_bg-white
-    .bg-white.w-screen.max-w-5xl.lg_p-8.p-4.text-black.text-left
-      .max-w-4xl.mx-auto.flex.flex-col.relative(v-if="show")
-        .absolute.right-0
-          PrintAndShare
-        .font-os.text-lg.mb-4.uppercase.text-center {{ area }}
-        .font-okib.text-5xl.mb-2(v-if='!is_national') {{ place }}
-        .text-orange.font-bold
-          | Economic Impact of {{ homes }} {{ is_new ? 'New' : 'Existing' }} Apartment Homes.
-
-        .border.border-seashell.rounded.lg_p-4.p-2.my-4
-          .text-2xl.font-bold Economic Impact
-          .my-2 The combined contribution of apartment construction, renovation and repair, operations and resident spending to the metro economy.
-
-          .flex.flex-wrap.items-center.justify-between.p-4.lg_mr-12
-            .text.w-1_2(v-if="is_new") Construction
-            .w-1_2.text-right(v-if="is_new") ${{ constructionContribution | numeral }}
-            .text.w-1_2 Renovation & Repair
-            .w-1_2.text-right ${{ renovationImpact | numeral }}
-            .text.w-1_2 Operation Expenditures
-            .w-1_2.text-right ${{ operationContribution | numeral }}
-            .text.w-1_2 Resident Spending
-            .w-1_2.text-right ${{ spendingContribution | numeral }}
-          .flex.items-center.justify-between.lg_mr-12
-            .text-xl.text-bolder.w-1_2 Total Economic Impact
-            .text-xl.text-bolder.w-1_2.text-right ${{ totalImpact | numeral }}
-
-          .bg-seashell.p-4.my-4.rounded.border.border-alum
-            .text-xl Impact from Tax Revenue
-            .flex.flex-wrap.items-center.justify-between.p-4.lg_mr-12
-              .w-2_3 Operation Expenditures
-              .text-right ${{ operationExpenditures | numeral }}
-              .w-2_3 Resident Spending
-              .text-right ${{ spendingResident | numeral }}
-              .w-2_3.text-bolder Total Impact from Tax Revenue
-              .text-right.text-bolder ${{ totalImpactTax | numeral }}
-
-        .border.border-seashell.rounded.p-4
-          .text-2xl.font-bold Employment Impact
-          .my-2 The total number of jobs supported by apartment construction, operations, and resident spending within the metro economy.
-          .flex.flex-wrap.items-center.justify-between.p-4.lg_mr-12
-            .text.w-1_2(v-if="is_new") Construction
-            .w-1_2.text-right(v-if="is_new") {{ constructionJobs | numeral }}
-            .text.w-1_2 Renovation & Repair
-            .w-1_2.text-right {{ renovationJobs | numeral }}
-            .text.w-1_2 Operations
-            .w-1_2.text-right {{ operationJobs | numeral }}
-            .text.w-1_2 Resident Spending
-            .w-1_2.text-right {{ spendingJobs | numeral }}
-            .w-2_3.text-bolder Total Jobs Supported
-            .text-right.text-bolder {{ totalJobs| numeral }}
+<template>
+  <div class="page page-calculate pt-16 bg-white print:pt-0">
+    <div class="bg-tranpurp flex justify-center lg:py-32 min-h-screen print:py-0 print:bg-white">
+      <div class="bg-white w-screen max-w-5xl lg:p-8 p-4 text-black text-left">
+        <div v-if="show" class="max-w-4xl mx-auto flex flex-col relative">
+          <div class="absolute right-0">
+            <print-and-share />
+          </div>
+          <div class="font-os text-lg mb-4 uppercase text-center">{{ area }}</div>
+          <div v-if="!is_national" class="font-okib text-5xl mb-2">{{ place }}</div>
+          <div class="text-orange font-bold">Economic Impact of {{ homes }} {{ is_new ? 'New' : 'Existing' }} Apartment Homes.</div>
+          <div class="border border-seashell rounded lg:p-4 p-2 my-4">
+            <div class="text-2xl font-bold">Economic Impact</div>
+            <div class="my-2">The combined contribution of apartment construction, renovation and repair, operations and resident spending to the metro economy.</div>
+            <div class="flex flex-wrap items-center justify-between p-4 lg:mr-12">
+              <div v-if="is_new" class="text w-1/2">Construction</div>
+              <div v-if="is_new" class="w-1/2 text-right">${{ constructionContribution | numeral }}</div>
+              <div class="text w-1/2">Renovation & Repair</div>
+              <div class="w-1/2 text-right">${{ renovationImpact | numeral }}</div>
+              <div class="text w-1/2">Operation Expenditures</div>
+              <div class="w-1/2 text-right">${{ operationContribution | numeral }}</div>
+              <div class="text w-1/2">Resident Spending</div>
+              <div class="w-1/2 text-right">${{ spendingContribution | numeral }}</div>
+            </div>
+            <div class="flex items-center justify-between lg:mr-12">
+              <div class="text-xl text-bolder w-1/2">Total Economic Impact</div>
+              <div class="text-xl text-bolder w-1/2 text-right">${{ totalImpact | numeral }}</div>
+            </div>
+            <div class="bg-seashell p-4 my-4 rounded border border-alum">
+              <div class="text-xl">Impact from Tax Revenue</div>
+              <div class="flex flex-wrap items-center justify-between p-4 lg:mr-12">
+                <div class="w-2/3">Operation Expenditures</div>
+                <div class="text-right">${{ operationExpenditures | numeral }}</div>
+                <div class="w-2/3">Resident Spending</div>
+                <div class="text-right">${{ spendingResident | numeral }}</div>
+                <div class="w-2/3 text-bolder">Total Impact from Tax Revenue</div>
+                <div class="text-right text-bolder">${{ totalImpactTax | numeral }}</div>
+              </div>
+            </div>
+          </div>
+          <div class="border border-seashell rounded p-4">
+            <div class="text-2xl font-bold">Employment Impact</div>
+            <div class="my-2">The total number of jobs supported by apartment construction, operations, and resident spending within the metro economy.</div>
+            <div class="flex flex-wrap items-center justify-between p-4 lg:mr-12">
+              <div v-if="is_new" class="text w-1/2">Construction</div>
+              <div v-if="is_new" class="w-1/2 text-right">{{ constructionJobs | numeral }}</div>
+              <div class="text w-1/2">Renovation & Repair</div>
+              <div class="w-1/2 text-right">{{ renovationJobs | numeral }}</div>
+              <div class="text w-1/2">Operations</div>
+              <div class="w-1/2 text-right">{{ operationJobs | numeral }}</div>
+              <div class="text w-1/2">Resident Spending</div>
+              <div class="w-1/2 text-right">{{ spendingJobs | numeral }}</div>
+              <div class="w-2/3 text-bolder">Total Jobs Supported</div>
+              <div class="text-right text-bolder">{{ totalJobs| numeral }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
 import sheets from '@/mixins/sheets'
 import formulas from '@/mixins/formulas'
-import SectionHero from '@/components/global/SectionHero'
 import numeral from 'numeral'
 import PrintAndShare from '@/components/global/PrintAndShare'
 export default {
-  components: { SectionHero, PrintAndShare },
+  components: { PrintAndShare },
   filters: {
-    numeral (val) { return numeral(val).format('0,0') }
+    numeral (val) { return numeral(val).format('0,0') },
   },
   mixins: [ sheets, formulas ],
   data () {

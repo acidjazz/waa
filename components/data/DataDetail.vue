@@ -1,6 +1,7 @@
-<template lang="pug">
-#DataDetail
-  DataName(:area="area")
+<template>
+  <div id="DataDetail">
+    <DataName :area="area" />
+  </div>
 </template>
 
 <script>
@@ -11,7 +12,7 @@ export default {
     area: {
       type: Object,
       required: true,
-    }
+    },
   },
 }
 </script>
