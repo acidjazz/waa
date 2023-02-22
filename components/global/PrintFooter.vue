@@ -4,7 +4,7 @@
       <img class="object-contain h-8 mr-4 filter-gray" src="/icon-nmhc.png" alt="NMHC Logo"><img class="object-contain h-8 filter-gray" src="/icon-naa.png" alt="NAA Logo">
     </div>
     <div class="text-xs">
-      Source: Hoyt Advisory Services; NMHC/NAA; 2020 American Community Survey, U.S. Census Bureau
+      Source: Hoyt Advisory Services; NMHC/NAA; 2021 American Community Survey, U.S. Census Bureau
     </div>
   </div>
 </template>
