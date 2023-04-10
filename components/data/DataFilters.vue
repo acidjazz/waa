@@ -160,9 +160,6 @@ export default {
   },
   mounted () {
     this.chose()
-    console.log(this.districts)
-    console.log(this.state_value)
-    console.log(this.districts[this.state_value])
   },
   methods: {
     nth (value) {
@@ -213,8 +210,10 @@ export default {
       return this.hiddenDistricts.filter(d => d.name === state).length
     },
     is_hidden_district (state, district) {
-      return this.hiddenDistricts.filter(d => d.name === state).length > 0 &&
-        this.hiddenDistricts.filter(d => d.name === state)[0].hidden.includes(district)
+      return this.hiddenDistricts.filter(d => d.name === state && d.hidden.includes(district)).length > 0
+    },
+    is_disclaimer_district(state, district) {
+      return this.disclaimerDistricts.filter(d => d.name === state && d.districts.includes(district)).length > 0
     },
     chose () {
       this.$emit(
@@ -228,6 +227,7 @@ export default {
           state_value: this.state_value,
           metro: this.metro,
           district: this.district,
+          disclaimer: this.is_disclaimer_district(this.state, this.district),
         })
     },
   },

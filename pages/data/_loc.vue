@@ -4,6 +4,7 @@
     <div v-if="chosen">
       <data-summary :area="area" />
       <offset-section class="mt-0 relative">
+        <span v-if="area.disclaimer" class="absolute -mt-8 text-xs font-semibold">Note: This area was redistricted in 2022. The information included herein is reflective of the previous district data.</span>
         <data-name :area="area" />
         <div class="absolute right-0 top-0 mr-1 mt-24 lg:mr-8 lg:mt-8">
           <print-and-share />
@@ -103,6 +104,7 @@ export default {
   },
   data () {
     return {
+      disclaimer: false,
       chosen: false,
       area: {},
       comparison: false,
@@ -119,6 +121,9 @@ export default {
     },
     reportBuilding (building) {
       this.building = building
+    },
+    checkDisclaimer (value) {
+      this.disclaimer = value
     },
   },
 }
