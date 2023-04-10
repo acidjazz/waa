@@ -50,8 +50,10 @@
               </li>
             </ul>
             <ul v-if="select === 'district'" key="districts" class="grid grid-cols-2 lg:grid-cols-4">
+              <!-- eslint-disable vue/no-use-v-if-with-v-for -->
               <li
-                v-for="dist in districts[state_value]" :key="`district-${state}-${dist}`" class="tran-colors m-2"
+                v-for="dist in districts[state_value]" v-if="!is_hidden_district(state, dist)" :key="`district-${state}-${dist}`"
+                class="tran-colors m-2"
                 :class="is_district && dist == district ? classes.types.active : classes.type.inactive" @click="select_go('district', `${state}-${nth(dist)}`)"
               >
                 {{ state_value }} {{ dist | nth }}
@@ -80,6 +82,50 @@ export default {
       statetip: false,
       direction: 'slide-right',
       select: false,
+      hiddenDistricts: [
+        {
+          name: 'California',
+          hidden: [40],
+        },
+        {
+          name: 'Illinois',
+          hidden: [18],
+        },
+        {
+          name: 'Michigan',
+          hidden: [4],
+        },
+        {
+          name: 'New York',
+          hidden: [22],
+        },
+        {
+          name: 'Ohio',
+          hidden: [13],
+        },
+        {
+          name: 'Pennsylvania',
+          hidden: [12],
+        },
+        {
+          name: 'West Virginia',
+          hidden: [2],
+        },
+      ],
+      disclaimerDistricts: [
+        {
+          name: 'Florida',
+          districts: [5],
+        },
+        {
+          name: 'Montana',
+          districts: [1],
+        },
+        {
+          name: 'North Caorlina',
+          districts: [5,8,9,13],
+        },
+      ],
       types: [ 'national', 'state', 'metro', 'district' ],
       classes: {
         type: {
@@ -112,7 +158,9 @@ export default {
     location () { return this.is_national ? 'National' : this.$route.params.loc },
     type () { return this.is_national ? 'national' : this.is_state ? 'state' : this.is_district ? 'district' : 'metro' },
   },
-  mounted () { this.chose() },
+  mounted () {
+    this.chose()
+  },
   methods: {
     nth (value) {
       return numeral(value).format('0o')
@@ -158,6 +206,15 @@ export default {
       this.type == type,
       this.$router.replace(`/data/${this.keyspace(val)}`)
     },
+    hidden_districts(state) {
+      return this.hiddenDistricts.filter(d => d.name === state).length
+    },
+    is_hidden_district (state, district) {
+      return this.hiddenDistricts.filter(d => d.name === state && d.hidden.includes(district)).length > 0
+    },
+    is_disclaimer_district(state, district) {
+      return this.disclaimerDistricts.filter(d => d.name === state && d.districts.includes(district)).length > 0
+    },
     chose () {
       this.$emit(
       'chose',
@@ -170,6 +227,7 @@ export default {
           state_value: this.state_value,
           metro: this.metro,
           district: this.district,
+          disclaimer: this.is_disclaimer_district(this.state, this.district),
         })
     },
   },
