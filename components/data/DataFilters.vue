@@ -108,7 +108,7 @@ export default {
           hidden: [12],
         },
         {
-          name: 'West Virginia',
+          name: 'West_Virginia',
           hidden: [2],
         },
       ],
@@ -122,7 +122,7 @@ export default {
           districts: [1],
         },
         {
-          name: 'North Caorlina',
+          name: 'North_Carolina',
           districts: [5,8,9,13],
         },
       ],
