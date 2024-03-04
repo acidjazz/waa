@@ -113,18 +113,6 @@ export default {
         },
       ],
       disclaimerDistricts: [
-        {
-          name: 'Florida',
-          districts: [5],
-        },
-        {
-          name: 'Montana',
-          districts: [1],
-        },
-        {
-          name: 'North_Carolina',
-          districts: [5,8,9,13],
-        },
       ],
       types: [ 'national', 'state', 'metro', 'district' ],
       classes: {
