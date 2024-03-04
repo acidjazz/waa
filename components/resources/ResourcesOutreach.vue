@@ -8,7 +8,7 @@
         <div class="font-os my-4">OUTREACH</div>
         <div class="text-4xl font-bold mb-2">We can do this</div>
         <div class="text-2xl font-bold mb-4">It takes a team</div>
-        <div class="mb-4">Apartments and their residents contribute $3.4 trillion to the national economy annually, supporting 17.5 million jobs.</div>
+        <div class="mb-4">Apartments and their residents contribute $3.9 trillion to the national economy annually, supporting 20 million jobs.</div>
         <div class="mb-4">The apartment industry and lawmakers at all levels of government have a variety of policy levers they can use to address the need for more apartments.</div>
         <div class="mb-4">By working together we can solve housing affordability challenges.</div>
       </div>
