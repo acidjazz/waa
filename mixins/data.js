@@ -23,8 +23,7 @@ export default {
   computed: {
 
     state_impact () {
-      // return ['Boise', 'Jacksonville', 'Virginia_Beach'].includes(this.area.key)
-      return false
+      return ['Boise', 'Jacksonville', 'Virginia_Beach'].includes(this.area.key)
     },
 
     metro_msa () { return this.sheet('main', 'MetroMSA', 'Metro')[this.area.key] },
