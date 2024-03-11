@@ -18,7 +18,7 @@
       needs to build
       <div class="data-val">{{ building | numeral('0,0a') }}</div>new apartment homes each year to meet demand.
 
-      <span v-if="state_impact || false">
+      <span v-if="false">
         The construction of every 100 apartment units contributes <div class="data-val">${{ contribution.Construction_Economic_Impact | numeral }}</div>
         and <div class="data-val">{{ contribution.Construction_Employment_Impact | numeral('0,0a') }}</div> jobs to the state economy.
       </span>
