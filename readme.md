@@ -1,4 +1,4 @@
-<p align="center">
+<p align="center"> 
   <img src="https://github.com/acidjazz/waa/blob/master/static/icons/android-chrome-512x512.png" width="300" alt="jared stanley"/>
 </p>
 
