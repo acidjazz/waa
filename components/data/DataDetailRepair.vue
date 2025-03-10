@@ -9,7 +9,7 @@
       The renovation and repair of apartments helps preserve
       {{ loc_copy }}’s
       older more affordable units, contributing
-      <div class="data-val">{{ contribution.Repair_Economic_Impact | numeral('$0,0a') }}</div>to the local economy annually and creating
+      <div class="data-val">{{ contribution.Repair_Economic_Impact | numeral('$0.0a') }}</div>to the local economy annually and creating
       <div class="data-val">{{ contribution.Repair_Employment_Impact | numeral('0,0a') }}</div>jobs.
     </div>
   </div>
